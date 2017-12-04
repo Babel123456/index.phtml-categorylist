@@ -1,4 +1,4 @@
- @charset "UTF-8";
+@charset "UTF-8";
 /* Welcome to Compass.
 /* Welcome to Compass. In this file you should write your main styles. (or centralize your imports) Import this file using the following HTML or equivalent: <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=cyrillic-ext,latin,greek-ext);
@@ -407,8 +407,8 @@ html a { text-decoration: none; }
   #content .categoryListwrapper .categoryListArrows { display: none; width: 0; }
   #content .categoryListwrapper .categoryListArrows img { display: none; } }
 @media (max-width: 764px) { #content .categoryList .product_scroll1 { width: 200%; } }
-@media (max-width: 640px) { #content .categoryList .product_scroll1 { width: 180%; } }
-@media (max-width: 569px) { #content .categoryList .product_scroll1 { width: 150%; } }
+@media (max-width: 640px) { #content .categoryList .product_scroll1 { width: 210%; } }
+@media (max-width: 569px) { #content .categoryList .product_scroll1 { width: 210%; } }
 #content ul#layout { width: 100%; /*album::explore*/ }
 #content ul#layout div.eventFotorama { margin-bottom: 12px; }
 @media (min-width: 570px) and (max-width: 1024px) { #content ul#layout div.eventFotorama { height: 500px; margin-bottom: 40px; }
