@@ -19,7 +19,7 @@
     <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap.min.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/fontello.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/font-awesome/css/font-awesome.css" rel="stylesheet" /><link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/jBox.css" rel="stylesheet" /><link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/css/lightgallery.min.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/css/lightgallery-custom.min.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/mediaelement-2.22.0/mediaelementplayer.min.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.magnific-popup/css/magnific-popup.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/social-likes/css/social-likes_flat.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/dropit.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/style.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/jquery-ui.min.css" rel="stylesheet" />    <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" href="style.css" rel="stylesheet" />
+
     <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -268,7 +268,44 @@ function mobile_notice() {
 <div id="content">
 
 <!--  首頁分類小圖示 -->
+<style>
+#content .categoryListwrapper{ display: table-row; width: 100%; }
+#content .categoryListwrapper .categoryListArrows, #content .categoryListwrapper .categoryList{display: table-cell; vertical-align:middle;}
+#content .categoryListwrapper .categoryListArrows{  width:30px; height: 30px; }
+#content .categoryList{ text-align: left; display: inline-block;}
+#content .categoryList div.icon{ width: 90px; height: 100px;  text-align: center; }
+#content .categoryList div.icon a{ font-size: 16px; font-style: normal; font-stretch: normal; line-height: 1.1; letter-spacing: 1px; color: #4d4d4d; }
+#content .categoryList div.icon a img{ margin: 0px 2px 5px 0px; padding: 5px; background-color: white; border-radius: 100%; box-shadow: 3px 4px 2px rgba(51, 51, 102, 0), 1px 1px 1px rgba(51, 51, 102, 0), 5px 5px 2px rgba(158, 158, 158, 0.21); }
+#content .categoryList div.icon:hover{ opacity: 0.6; }
+#content .categoryList .product_scroll{ margin-left:-10px;width:130%;}
+#content .categoryListwrapper .categoryListArrows .arrow-up img, #content .categoryListwrapper .categoryListArrows .arrow-down img{
+  opacity:0.7;
+}
+#content .categoryListwrapper .categoryListArrows .arrow-up img:hover, #content .categoryListwrapper .categoryListArrows .arrow-down img:hover{
+  opacity:1;
+  //background:#fff; 
+  //border-radius: 50%; 
+    
+}
 
+@media (max-width: 959px) { 
+  #content .categoryList{margin-left:-10px;width:100%;} 
+  #content .categoryList .product_scroll { width:150%; }  
+}
+@media (max-width: 764px) { 
+  #content .categoryList .product_scroll { width:300%; }  
+}
+@media (max-width: 640px) {  
+  #content .categoryList .product_scroll { width:210%; }  
+}
+@media (max-width: 569px) { 
+  //#content .categoryList .product_scroll { width:310%; }
+}
+@media (max-width: 372px) { 
+  //#content .categoryList .product_scroll { width:310%; }
+}
+
+</style>
 <div class="categoryListwrapper">
   <div class="categoryListArrows">
     <span class="arrow-up"><img  src="20171130-left.svg"></span>
@@ -1062,6 +1099,29 @@ $(document).ready(function(e) {
 		cursoropacitymax: 0,
 	});
 
+	
+	nicesx2.onscrollend = function (data) {
+    //alert(data.end.x);
+	if (data.end.x <= 0) {
+        // at top
+        //console.log('top');
+        arrowUp.addClass('disabled');
+    } else {
+        arrowUp.removeClass('disabled');
+    }
+    if (data.end.x >= this.page.maxw) {
+        // at bottom
+        //console.log('bottom');
+        arrowDown.addClass('disabled');
+    } else {
+        arrowDown.removeClass('disabled');
+    }
+	
+};
+// trigger the scrollend event right away to set the inital state
+//nicesx2.triggerScrollEnd();
+	
+    //alert(nicesx2.scroll.x);
 	$('.arrow-up').on('click', function(){nicesx2.doScrollLeft(-300, 1.5);});
 	$('.arrow-down').on('click', function(){nicesx2.doScrollLeft(400, 1.5);});
 });
