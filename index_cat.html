@@ -299,7 +299,7 @@ function mobile_notice() {
   #content .categoryList .product_scroll { width:210%; }  
 }
 @media (max-width: 569px) { 
-  #content .categoryList .product_scroll { width:300%; }
+  #content .categoryList .product_scroll { width:310%; }
 }
 @media (max-width: 372px) { 
   #content .categoryList .product_scroll { width:310%; }
@@ -1091,6 +1091,7 @@ $(document).ready(function(e) {
 		cursoropacitymax: 0.6,
 		cursorwidth: 8
 	});
+	/*
     var nicesx2 = $(".categoryList").niceScroll({
 		touchbehavior: true,
 		cursorcolor: "transparent",
@@ -1115,14 +1116,14 @@ $(document).ready(function(e) {
     } else {
         arrowDown.removeClass('disabled');
     }
-	
+	*/
 };
 // trigger the scrollend event right away to set the inital state
 //nicesx2.triggerScrollEnd();
 	
     //alert(nicesx2.scroll.x);
-	$('.arrow-up').on('click', function(){nicesx2.doScrollLeft(-300, 1.5);});
-	$('.arrow-down').on('click', function(){nicesx2.doScrollLeft(400, 1.5);});
+	//$('.arrow-up').on('click', function(){nicesx2.doScrollLeft(-300, 1.5);});
+	//$('.arrow-down').on('click', function(){nicesx2.doScrollLeft(400, 1.5);});
 });
 
 $(document).on('click', '#alert_btn' , function(e){
