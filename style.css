@@ -409,7 +409,7 @@ html a { text-decoration: none; }
 @media (max-width: 764px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 200%; } }
 @media (max-width: 640px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 180%; } }
 @media (max-width: 639px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 200%; } }
-@media (max-width: 569px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 160%; } }
+@media (max-width: 569px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 150%; } }
 @media (max-width: 374px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 180%; } }
 #content ul#layout { width: 100%; /*album::explore*/ }
 #content ul#layout div.eventFotorama { margin-bottom: 12px; }
