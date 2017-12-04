@@ -410,7 +410,6 @@ html a { text-decoration: none; }
 @media (max-width: 640px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 180%; } }
 @media (max-width: 639px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 200%; } }
 @media (max-width: 569px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 150%; } }
-@media (max-width: 374px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 180%; } }
 #content ul#layout { width: 100%; /*album::explore*/ }
 #content ul#layout div.eventFotorama { margin-bottom: 12px; }
 @media (min-width: 570px) and (max-width: 1024px) { #content ul#layout div.eventFotorama { height: 500px; margin-bottom: 40px; }
