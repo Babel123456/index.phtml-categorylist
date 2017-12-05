@@ -404,7 +404,7 @@ html a { text-decoration: none; }
 #content .categoryList .icon a img { margin: 0px 5px 5px 5px; padding: 5px; background-color: white; border-radius: 100%; box-shadow: 3px 4px 2px rgba(51, 51, 102, 0), 1px 1px 1px rgba(51, 51, 102, 0), 5px 5px 2px rgba(158, 158, 158, 0.21); }
 #content .categoryList .icon:hover { opacity: 0.6; }
 @media (max-width: 1024px) { #content .categoryListwrapper { display: block; width: 105%; margin-left: -20px; }
-  #content .categoryListwrapper .categoryListArrows { display: none; width: 0; }
+  #content .categoryListwrapper .categoryListArrows { width: 0; display: none; }
   #content .categoryListwrapper .categoryListArrows img { display: none; } }
 @media (max-width: 764px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 200%; } }
 @media (max-width: 640px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 180%; } }
