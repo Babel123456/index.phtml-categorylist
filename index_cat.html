@@ -1056,10 +1056,10 @@ $(document).ready(function(e) {
     var nicesx2 = $(".categoryList").niceScroll({
 		touchbehavior: true,
 		cursorcolor: "transparent",
-		cursorwidth: 8,
+		cursorwidth: 10,
 		cursoropacitymax: 0,
 	});
-
+    $(".categoryList").getNiceScroll().resize();
 	$('.arrow-up').on('click', function(){nicesx2.doScrollLeft(-300, 1.5);});
 	$('.arrow-down').on('click', function(){nicesx2.doScrollLeft(400, 1.5);});
 });
