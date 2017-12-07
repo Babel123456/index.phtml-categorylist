@@ -406,7 +406,8 @@ html a { text-decoration: none; }
 @media (max-width: 1024px) { #content .categoryListwrapper { display: block; width: 105%; margin-left: -20px; }
   #content .categoryListwrapper .categoryListArrows { width: 0; display: none; }
   #content .categoryListwrapper .categoryListArrows img { display: none; } }
-@media (max-width: 764px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 200%; } }
+@media (max-width: 959px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 220%; } }
+@media (max-width: 640px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 240%; } }
 @media (max-width: 639px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 220%; } }
 @media (max-width: 569px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 200%; height: 200px; writing-mode: tb-lr; -webkit-writing-mode: vertical-lr; writing-mode: vertical-lr; }
   #content .categoryListwrapper .categoryList .product_scroll1 .icon { writing-mode: horizontal-tb; } }
