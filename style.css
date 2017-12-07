@@ -397,7 +397,7 @@ html a { text-decoration: none; }
 #content .categoryListwrapper .categoryListArrows img { opacity: 0.7; width: 30px; }
 #content .categoryListwrapper .categoryListArrows img:hover { opacity: 1; -ms-transform: scale(1.2, 1.2); /* IE 9 */ -webkit-transform: scale(1.2, 1.2); /* Safari */ transform: scale(1.2, 1.2); }
 #content .categoryList { vertical-align: middle; text-align: center; margin-bottom: 5px; width: 100%; overflow: hidden; }
-#content .categoryList .product_scroll1 { width: 150%; text-align: left; }
+#content .categoryList .product_scroll1 { width: 160%; text-align: left; }
 @media (max-width: 640px) { #content .categoryList { text-align: center; } }
 #content .categoryList .icon { width: 85px; margin: 0 5px; height: 100px; display: inline-block; text-align: center; }
 #content .categoryList .icon a { font-size: 16px; font-style: normal; font-stretch: normal; line-height: 1.1; letter-spacing: 1px; color: #4d4d4d; }
@@ -407,9 +407,9 @@ html a { text-decoration: none; }
   #content .categoryListwrapper .categoryListArrows { width: 0; display: none; }
   #content .categoryListwrapper .categoryListArrows img { display: none; } }
 @media (max-width: 764px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 200%; } }
-@media (max-width: 640px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 180%; } }
-@media (max-width: 639px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 200%; } }
-@media (max-width: 569px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 150%; } }
+@media (max-width: 639px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 220%; } }
+@media (max-width: 569px) { #content .categoryListwrapper .categoryList .product_scroll1 { width: 200%; height: 200px; writing-mode: tb-lr; -webkit-writing-mode: vertical-lr; writing-mode: vertical-lr; }
+  #content .categoryListwrapper .categoryList .product_scroll1 .icon { writing-mode: horizontal-tb; } }
 #content ul#layout { width: 100%; /*album::explore*/ }
 #content ul#layout div.eventFotorama { margin-bottom: 12px; }
 @media (min-width: 570px) and (max-width: 1024px) { #content ul#layout div.eventFotorama { height: 500px; margin-bottom: 40px; }
