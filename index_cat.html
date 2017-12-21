@@ -274,8 +274,7 @@ function mobile_notice() {
     <span class="arrow-up"><img  src="20171130-left.svg"></span>
   </div>
    <div class="categoryList"><div class= "product_scroll1">
-        <div class="icon">
-			<a title="首頁" href="https://www.pinpinbox.com/">
+        <div class="icon"><a title="首頁" href="https://www.pinpinbox.com/">
 				<img width="60" src="home.svg">首頁
 			</a>
 		</div><div class="icon">
@@ -1063,6 +1062,8 @@ $(document).ready(function(e) {
     $(".categoryList").getNiceScroll().resize();
 	$('.arrow-up').on('click', function(){nicesx2.doScrollLeft(-300, 1.5);});
 	$('.arrow-down').on('click', function(){nicesx2.doScrollLeft(400, 1.5);});
+	
+	$('.categoryList .icon a').on('click', function(){location.href = $(this).attr('href');});
 });
 
 $(document).on('click', '#alert_btn' , function(e){
