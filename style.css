@@ -723,7 +723,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow ul.dropdown-menu li.divider { margin: 5px auto; width: 80%; height: 2px; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .blackCover { height: 100%; background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png); background-repeat: repeat; position: absolute; width: 100%; z-index: 2; display: none; }
 
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic {height:160px;overflow:hidden;}
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic {height:145px;overflow:hidden;}
 //#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic img {position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;}
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic img {-ms-transform: scale(1.3, 1.3);-webkit-transform: scale(1.3, 1.3);transform: scale(1.3, 1.3);position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;}
 
