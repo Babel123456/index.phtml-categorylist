@@ -1170,7 +1170,6 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #tem_content .seemore_content .item_box.item_ad { width: 370px; }
 @media (max-width: 370px) { #tem_content .seemore_content .item_box.item_ad { width: 90%; } }
 #tem_content .seemore_content .item_box .item_info { width: 100%; padding: 5px 0px 0px 0px; }
-@media (max-width: 1024px) { #tem_content .seemore_content .item_box .item_info { display: none; } }
 #tem_content .seemore_content .item_box .item_info .info_name { padding: 0 10px; width: 100%; position: relative; }
 #tem_content .seemore_content .item_box .item_info .info_name .info_icon { width: 100%; }
 #tem_content .seemore_content .item_box .item_info .info_name .info_icon i { width: 20px; height: 21px; float: right; margin: 0 3px; }
