@@ -1178,7 +1178,8 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_love { background: url(../images/album_icon03_big.png); background-image: url(../images/icon_collection_click.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
 #tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_act01 { background: url(../images/album_icon04.png); background-image: url(../images/icon_vote.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
 #tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_act02 { background: url(../images/album_icon05.png); background-image: url(../images/icon_activity.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
-#tem_content .seemore_content .item_box .item_info .info_name h3 { width: 100%; line-height: 25px; max-height: 50px; font-size: 18px; overflow: hidden; height: 50px; }
+#tem_content .seemore_content .item_box .item_info .info_name h3 { width: 100%; line-height: 25px; max-height: 50px; font-size: 18px; overflow: hidden; }
+#tem_content .seemore_content .item_box .item_info .info_name h3 .multi_ellipsis { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-height: 25px; height: 45px; }
 #tem_content .seemore_content .item_box .item_info .info_name h3 a { color: #5b5b5b; letter-spacing: -1px; text-align: left; line-height: 25px; max-height: 50px; font-size: 16px; overflow: hidden; height: 45px; }
 #tem_content .seemore_content .item_box .item_info .info_name h3 a:hover { color: #00b7b0; }
 #tem_content .seemore_content .item_box .item_info .info_name .name_more { width: 100%; height: auto; max-height: 54px; line-height: 18px; font-size: 12px; text-align: justify; overflow: hidden; color: #9d9d9d; word-break: break-all; }
