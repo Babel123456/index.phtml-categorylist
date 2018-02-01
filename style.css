@@ -296,9 +296,9 @@ html a { text-decoration: none; }
 #banner #banner_content .fotorama { width: 100%; }
 #banner #banner_content .fotorama .owl-theme .owl-controls { margin-top: 0px; }
 #banner #banner_content .fotorama .owl-carousel .owl-wrapper-outer { background-color: #FFF; -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
-#banner #banner_content .fotorama .page { width: 100%; position: relative; }
+#banner #banner_content .fotorama .page { width: 100%; position: relative; overflow:hidden;}
 
-#banner #banner_content .fotorama .page .emb_movie_wrapper {position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 100%; height:300px; overflow:hidden;}
+#banner #banner_content .fotorama .page .emb_movie_wrapper {position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 100%; height:320px; overflow:hidden;}
 #banner #banner_content .fotorama .page .emb_movie {width: 540px; height: 100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 5;}
 
 
