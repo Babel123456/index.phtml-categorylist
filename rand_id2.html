@@ -240,18 +240,24 @@ function mobile_notice() {
 							
 				
 				<div id="slide_pic">
-				
-				        <div  id="album_tags" >
-						  <ul>
-						    <li><img alt="影片" title="影片" src="play-01.svg"></li>
-						    <li><img  alt="聲音" title="聲音"  src="speaker-01.svg"></li>
-							<li class="pgtxt">2頁</li>
-						  </ul>
+				        <div class="album_tags_gift">
+				          <img alt="禮物" title="禮物" src="gift-01.svg">
+						  <div class="album_tags_gift_bg"></div>
 				        </div>
+						<div  id="album_tags" >						 
+						    <img alt="影片" title="影片" src="play-01.svg">
+						    <img  alt="聲音" title="聲音"  src="speaker-01.svg">
+							<span class="pgtxt1" ><span class="pgtxt" alt="2頁" title="2頁">2頁</span></span>
+							<!--
+							<span class="pgtxt">2頁</span>
+							-->
+				        </div>
+						<style>
 						
+						</style>
 						
 				    <div onclick="browseKit_album('https://www.pinpinbox.com/index/album/show_photo/', {album_id: '5308'})" class="slide_pic_out">
-						<img alt="天天讀詩-簡媜《守燭》" title="天天讀詩-簡媜《守燭》" src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170716/596a6cbc58da0.jpg">				
+						<img alt="天天讀詩-簡媜《守燭》" title="天天讀詩-簡媜《守燭》" src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170711/5963f6d0f2170.jpg">				
 					</div>
 				</div>
 				<div id="temp_infobox">
@@ -1250,7 +1256,9 @@ var askAutoPlay = true,
 	a_album_item = [];		//browseKit item of album
 
 function browseKit_album(url, param) {
-	param.pageCalledByXHR = $('#pageCalledByXHR').length;
+
+	param.pageCalledByXHR = 1; //$('#pageCalledByXHR').length;
+
 	if (a_album_item.length == 0) {
 		$.post(url, param, function(r) {
 			r = $.parseJSON(r);
@@ -1339,11 +1347,13 @@ function browseKit_album(url, param) {
 			}
 		});
 	} else {
+	
 		browseKit_v2(this, a_album_item, param);
 	}
 }
 
 function browseKit_v2(that, item, param) {
+
 	a_album_element.push(that);
 	var	indexId = ($('#mask02').data('indexId')) ? $('#mask02').data('indexId') : 0,
 		$lg = $(that).lightGallery({
