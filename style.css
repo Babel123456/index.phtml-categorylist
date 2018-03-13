@@ -888,22 +888,23 @@ background-image: linear-gradient(#17b1ad, #10859a);
 	//border-top-left-radius: 0 5px;
 	border-color: #FF5E68 transparent transparent transparent;
     border-style: solid solid solid solid;
-    border-width: 50px 100px 0px 0px;
+    border-width: 50px 50px 0px 0px;
     height: 0px;
     width: 0px;
 }
 
 .water_content .item_box .album_tags_gift-txt{
+	display:none;
 	position: absolute; top:8px; left:30px;z-index: 3;
 	color: #fff;
 }
 
 @media (max-width: 568px){
 	.water_content .item_box .album_tags_gift img{
-		width:26px; height:26px;left:4px;
+		width:26px; height:26px;left:2px;
 	}
 	.water_content .item_box .album_tags_gift_bg{
-    border-width: 50px 90px 0px 0px;
+    border-width: 40px 40px 0px 0px;
    }
 	.water_content .item_box .album_tags_gift-txt{
 	top:8px; left:28px;
