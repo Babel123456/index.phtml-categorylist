@@ -26,13 +26,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 #head_desk .head_center, #top_search_in, #big_search, #nav, #nav ul, #head_mobile #head_all #head_in, #head_nav02 ul, #head_nav02 ul li #login_no a, #nav_wrapper #scroller ul li, #nav_wrapper #scroller ul li a, #footer #footer_content, #banner #banner_content, #banner #banner_content .fotorama, #banner #banner_content .fotorama .page .page_content, #banner #recuit_banner #recuit_info, #content, #content_big, .water_content, #member_content, #member_in, #member_in ul, #member_in ul li a.member_enter, #member_in ul li #set_facepic, #member_interest, #member_interest ul, #member_interest ul li a.member_enter, #member_interest ul li .interest_list .interest_check, #tem_content ul li a.used, #album_content, #album_content .promote_list ul, #album_content ul li #memberbox_info ul li #memberbox_pic, #album_content ul li #memberbox_item .album_total03 a.used, #album_content ul li #memberbox_item .album_total02 a.link, #album_content ul li #memberbox_item .album_all a.used, #album_content ul li #memberbox_item #chart_box, #album_content ul li #memberbox_item .album_list02 .tem_imgbox .control_box a img, #album_content ul li #memberbox_item #memset_info ul li a.used, #album_content ul li #memberbox_item #account_total ul li a.used, #follow_content, #follow_content .follow_box, #follow_content .follow_guy, #follow_content .follow_all, #follow_content .follow_all .product_list, #act_content, #act_content #act_left .water_content, #act_content a.join_big, #rescuit_content, #rescuit_ad, .button, .button a, #rescuit_in_apply, #rescuit_in_apply ul, #rescuit_in_apply ul li a.member_enter, #rescuit_in_apply ul li #set_facepic, #rescuit_in, #rescuit_in ul, #rescuit_in ul li a.member_enter, #creatop_box .creatop_list ul li p.create_info, #creatop_box .creatop_list ul li .create_pic, #creat_else .create_list ul, #creat_else .create_list ul li .create_pic, #crea_content, #crea_content #crea_in, #promote_box, .promote_list ul, .promote_list ul li .circle, .promote_list ul li a.buy, #point_content, #point_content a.used, #alert_in, #alert_content ul li a.used, #alert_content ul li a.cancel, .set_box_in, .set_box_content ul li a.used, .set_box_content ul li a.cancel, #alert_video, .pop_al_out .pop_al_in, .pop_al_out .pop_al_top ul li .top_left .top_face, .pop_al_out .pop_al_top ul li .top_left a.pin, #pg_content { margin: 0 auto; }
 
-#tem_upload a.upload, #member_in ul li a.member_enter, #member_interest ul li a.member_enter, #tem_content ul li a.used, #album_content ul li a.upload, #album_content ul li #album_item #album_tab a.upload, #album_content ul li #memberbox_item #album_tab a.upload, #album_content ul li #memberbox_item .album_total03 a.used, #album_content ul li #memberbox_item .album_total02 a.link, #album_content ul li #memberbox_item .album_all a.used, #album_content ul li #memberbox_item .album_list02 .tem_imgbox .control_box a, #album_content ul li #memberbox_item #memset_info ul li a.used, #album_content ul li #memberbox_item #account_total ul li a.used, #act_content #act_search .search_enter, #act_content .act_else ul li a.join, #act_content .act_list02 .act_else ul li a.join, #act_content a.join_big, .button a, #rescuit_in_apply ul li a.member_enter, #rescuit_in ul li a.member_enter, #crea_content #crea_in #crea_header a.crea_edit02, #point_content a.used { background-color: #00acc1; }
+#tem_upload a.upload, #member_in ul li a.member_enter, #member_interest ul li a.member_enter, #tem_content ul li a.used, #album_content ul li a.upload, #album_content ul li #album_item #album_tab a.upload, #album_content ul li #memberbox_item #album_tab a.upload, #album_content ul li #memberbox_item .album_total03 a.used, #album_content ul li #memberbox_item .album_total02 a.link, #album_content ul li #memberbox_item .album_all a.used, #album_content ul li #memberbox_item .album_list02 .tem_imgbox .control_box a, #album_content ul li #memberbox_item #memset_info ul li a.used, #album_content ul li #memberbox_item #account_total ul li a.used, #act_content #act_search .search_enter, #act_content .act_else ul li a.join, #act_content .act_list02 .act_else ul li a.join, #act_content a.join_big, .button a, #rescuit_in_apply ul li a.member_enter, #rescuit_in ul li a.member_enter, #crea_content #crea_in #crea_header a.crea_edit02, #point_content a.used { background-color: #00b7b0; }
 
 #crea_content #crea_in #crea_header a.crea_edit03 { background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlNWI4ZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2UzMmU2YyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='); background-size: 100%; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ee5b8d), color-stop(100%, #e32e6c)); background-image: -moz-linear-gradient(#ee5b8d, #e32e6c); background-image: -webkit-linear-gradient(#ee5b8d, #e32e6c); background-image: linear-gradient(#ee5b8d, #e32e6c); }
 
 .new_nav .btn.active { background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYjdiMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE3OTBhOCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='); background-size: 100%; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00b7b0), color-stop(100%, #1790a8)); background-image: -moz-linear-gradient(#00b7b0, #1790a8); background-image: -webkit-linear-gradient(#00b7b0, #1790a8); background-image: linear-gradient(#00b7b0, #1790a8); }
 
-#content .page_title, .page_bread, #content_big .page_title, #album_content h2, #follow_content h2, #act_content h2, #act_content #tab-container #act_more_all h3 { background-image: url("../images/p_icon.png"); background-repeat: no-repeat; background-position: left center; padding-left: 30px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 18px; }
+#content .page_title, .page_bread, #content_big .page_title, #album_content h2, #follow_content h2, #act_content h2, #act_content #tab-container #act_more_all h3 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/p_icon.png"); background-repeat: no-repeat; background-position: left center; padding-left: 30px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 18px; }
 
 #tem_content, #album_content ul li #memberbox_item, #creatop_box .creatop_list, #head_desk .head_center #head_other ul li .cicle_btn .num, #head_desk .head_center #head_other ul li .cicle_btn .num2, .search_style, #top_search_in, #head_mobile #head_all #head_in .top_search, #banner #banner_content .fotorama .page .creator_box .color_box p, .page_bread, #album_top ul li a, #item_box .controls, .water_content .item_box .item_info, .water_content .item_box .item_info .info_name, .water_content .item_box .item_info .info_user, .water_content .item_box .user_number, .water_content .index_item_box .item_info, .water_content .index_item_box .item_info .info_name, .water_content .index_item_box .item_info .info_user, .water_content .index_item_box .user_number, #member_content, #member_in ul li.float_li, #member_in ul li input, #tem_content .seemore_content .item_box .item_info, #tem_content .seemore_content .item_box .item_info .info_name, #tem_content .seemore_content .item_box .item_info .info_user, #tem_content .seemore_content .item_box .item_info .info_user .user_name, #tem_content .seemore_content .item_box .more_see, #tem_content #albumedit a.e_edit, #tem_content .image_down .dd-option, #tem_content #memset_info, #tem_content #memset_info ul li input, #tem_content #memset_info ul li textarea, #tem_content #memset_info ul li .tdtitle, #tem_content ul li a.used.white, #tem_content ul li #slide_pic, #tem_content ul li #slide_pic .temp_slide #temp_scroll_container .temp_list ul li img, #tem_content ul li #slide_pic .temp_slide #temp_bigimage, #tem_content ul li #slide_pic .slide_pic_out, #tem_content ul li #temp_infobox, #tem_content ul li #temp_infobox .act_info_name, #tem_content ul li #temp_infobox ul li p.tdtitle, #tem_content ul li #temp_infobox ul li input, #tem_content ul li #temp_infobox ul li textarea, #tem_content ul li #temp_else #tempelse_in ul li, #album_content ul li.mobile_open a, #album_content ul li.mobile_open02 a, #album_content ul li.mobile_open03 a, #album_content ul li.mobile_open04 a, #album_content ul li #album_category, #album_content ul li #album_item .album_list, #album_content ul li #memberbox_info, #album_content ul li #memberbox_info ul li #memberbox_pic, #album_content ul li #member_category, #album_content ul li #memberbox_item .album_total02 input, #album_content ul li #memberbox_item .act_album, #album_content ul li #memberbox_item .album_list02, #album_content ul li #memberbox_item .ear_info, #album_content ul li #memberbox_item .album_list, #album_content ul li #memberbox_item .album_list .black_box .openinfo, #album_content ul li #memberbox_item #memset_info, #album_content ul li #memberbox_item #memset_info ul li input, #album_content ul li #memberbox_item #memset_info ul li textarea, #album_content ul li #memberbox_item #memset_info ul li .tdtitle, #album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo, #album_content ul li #memberbox_item #account_box, #admin_mobile a.adminmo_btn, #admin_mobile02 a.adminmo_btn, #follow_content .follow_box, #follow_content .follow_guy, #follow_content .follow_guy .follow_face, #follow_content .follow_outside, #follow_content .follow_all, #follow_content .follow_all .product_info, #follow_content .follow_all .follow_else .favorite ul li, #act_content #act_right, #act_content #act_search .actsearch_txt, #act_content .act_info, #act_content .act_else, #act_content .act_list, #act_content .act_list02, #act_content .act_list02 .act_else ul li.float_left, #act_content .act_album, #act_content .album_download, #act_content .album_download .vote_info, #act_content .album_list, #act_content #tab-container .etabs li, #act_content #tab-container .tab_content div.title, #act_content #tab-container .tab_content h4, #act_content #tab-container #act_more_all, #act_content #tab-container #act_more_all ol, #act_content #tab-container #act_more_all ul, #act_content #tab-container #act_more_all p, #act_content #tab-container #act_more_all .award_item, #act_content #tab-container #act_more_all .award_item .award_info, #rescuit_content, #rescuit_in_apply ul li.float_li, #rescuit_in_apply ul li input, #rescuit_in_apply ul li #tab-container #act_more_all, #rescuit_in ul li.float_li, #rescuit_in ul li input, #creatop_box .creatop_list ul li .top_img, #crea_content, #crea_content #crea_in #crea_header #crea_left #crea_face, #crea_content #crea_in #crea_header #crea_right, #crea_content #crea_in #crea_header #crea_right ul li span, #crea_content #crea_in .album_list, #crea_content #crea_in .act_album, #crea_content #crea_in .album_download, #crea_content #crea_in .tab-container #act_more_all, .promote_list, .promote_list ul li .circle, #point_content .point_list, #alert_content, #alert_content ul li input[type="text"], #alert_content ul li textarea, .set_box_content, .set_box_content ul li input, .set_box_content ul li textarea, .pop_al_out #pop_al_info, .pop_al_out .pop_al_top ul li .top_left .top_face, .pop_al_out .pop_al_top ul li .top_right, .pop_al_out .pop_al_top ul li .top_right li .name, .see_more { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
@@ -56,10 +56,10 @@ html a { text-decoration: none; }
 
 #head_desk { display: block; }
 @media (max-width: 1024px) { #head_desk { display: none; } }
-#head_desk .head_top { width: 100%; border-bottom: 2px solid #00acc1; }
+#head_desk .head_top { width: 100%; border-bottom: 2px solid #00b7b0; }
 #head_desk .head_center { width: 960px; padding: 5px 0px; position: relative; }
 #head_desk .head_center .logo { float: left; margin-top: 3px; width: 200px; }
-#head_desk .head_center .logo a { background: url("../images/logo.png") no-repeat center center; display: block; background-size: 200px 40px; height: 40px; width: 100%; }
+#head_desk .head_center .logo a { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/logo.png") no-repeat center center; display: block; background-size: 200px 40px; height: 40px; width: 100%; }
 #head_desk .head_center .logo a:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #head_desk .head_center #head_lang { float: left; margin-left: 10px; margin-top: 13px; width: auto; }
 #head_desk .head_center #head_lang a:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; }
@@ -67,7 +67,7 @@ html a { text-decoration: none; }
 #head_desk .head_center #head_lang .member_nav02 ul { position: initial; height: auto; }
 #head_desk .head_center #head_lang .member_nav02 li { width: 100%; float: none; margin: 0px 0px 10px 0px; color: #9d9d9d; font-size: 12px; line-height: 35px; }
 #head_desk .head_center #head_lang .member_nav02 li a { display: block; font-size: 12px; text-decoration: none; line-height: 35px; width: 100%; color: #9d9d9d; margin-bottom: 10px; max-width: 100%; overflow: hidden; /*超過內容消失*/ white-space: nowrap; /*文字不換行*/ text-overflow: ellipsis; /*省略符號*/ }
-#head_desk .head_center #head_lang .member_nav02 li a:hover { color: #00acc1; }
+#head_desk .head_center #head_lang .member_nav02 li a:hover { color: #00b7b0; }
 #head_desk .head_center #head_other { float: right; margin-right: 0px; margin-top: 5px; width: auto; }
 #head_desk .head_center #head_other ul { margin-bottom: 0px; }
 #head_desk .head_center #head_other ul li { float: right; width: auto; margin: 0px 10px; height: 38px; }
@@ -75,9 +75,9 @@ html a { text-decoration: none; }
 #head_desk .head_center #head_other ul li a.menu_open img { width: 100%; height: auto; }
 #head_desk .head_center #head_other ul li .cicle_btn { width: 38px; color: #ffffff; text-align: center; position: relative; display: block; }
 #head_desk .head_center #head_other ul li .cicle_btn img { width: 38px; height: auto; }
-#head_desk .head_center #head_other ul li .cicle_btn .pushqueue_hasunviewed { background-image: url("../images/icon_pushqueue_hasunviewed.png"); background-size: 20px 20px; background-repeat: no-repeat; height: 20px; position: absolute; right: -13px; top: -5px; width: 20px; }
+#head_desk .head_center #head_other ul li .cicle_btn .pushqueue_hasunviewed { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_pushqueue_hasunviewed.png"); background-size: 20px 20px; background-repeat: no-repeat; height: 20px; position: absolute; right: -13px; top: -5px; width: 20px; }
 #head_desk .head_center #head_other ul li .cicle_btn .num { width: auto; min-width: 20px; height: 20px; padding: 0px 3px; -moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px; background-color: #ee5b8d; color: #FFF; position: absolute; line-height: 20px; text-align: center; font-size: 12px; right: -5px; top: -5px; }
-#head_desk .head_center #head_other ul li .cicle_btn .num2 { width: auto; min-width: 20px; height: 20px; padding: 0px 3px; -moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px; background-color: #ee5b8d; color: #FFF; position: absolute; line-height: 20px; text-align: center; font-size: 12px; right: -13px; top: -5px; background-image: url("../images/icon-import.png"); background-size: 20px 20px; background-repeat: no-repeat; }
+#head_desk .head_center #head_other ul li .cicle_btn .num2 { width: auto; min-width: 20px; height: 20px; padding: 0px 3px; -moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px; background-color: #ee5b8d; color: #FFF; position: absolute; line-height: 20px; text-align: center; font-size: 12px; right: -13px; top: -5px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon-import.png"); background-size: 20px 20px; background-repeat: no-repeat; }
 #head_desk .head_center #head_other ul li .follow_btn { width: 30px; height: 32px; position: relative; margin-top: 10px; display: block; }
 #head_desk .head_center #head_other ul li .follow_btn .follow_icon { position: absolute; right: 0px; }
 #head_desk .head_center #head_other ul li .follow_btn .new { width: 31px; height: 9px; position: absolute; top: 4px; left: -15px; }
@@ -125,7 +125,7 @@ html a { text-decoration: none; }
 .search_box { width: 210px; position: relative; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
 @media (max-width: 1024px) { .search_box { display: none; } }
 .search_box.big { width: 320px; }
-.search_box .select_item { width: 50px; background: url(../images/select_icon.png) no-repeat right center; height: 30px; overflow: hidden; float: left; background-color: #11b2ad; }
+.search_box .select_item { width: 50px; background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/select_icon.png) no-repeat right center; height: 30px; overflow: hidden; float: left; background-color: #11b2ad; }
 .search_box .select_item select { background-color: transparent; width: 100%; color: #FFF; border: none; height: 30px; width: 78px; }
 .search_box .select_item select option { background-color: #11b2ad; }
 .search_box .search_input { width: 158px; height: 30px; line-height: 30px; border: 1px solid #11b2ad; float: left; position: absolute; color: #108199; }
@@ -136,7 +136,7 @@ html a { text-decoration: none; }
 .search_style { width: 100%; height: 44px; background-color: #f6f6f6; display: none; padding: 5px 0px; }
 
 #top_search_in { width: 960px; height: 34px; border-left: 1px solid #cccccc; border-right: 1px solid #cccccc; }
-#top_search_in .search_item { width: 80px; background: url(../images/right.png) no-repeat 70px center; background-size: 10px; height: 34px; overflow: hidden; float: left; background-color: #f6f6f6; padding-left: 10px; }
+#top_search_in .search_item { width: 80px; background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/right.png) no-repeat 70px center; background-size: 10px; height: 34px; overflow: hidden; float: left; background-color: #f6f6f6; padding-left: 10px; }
 #top_search_in .search_item select { background-color: transparent; color: #9d9d9d; border: none; height: 34px; line-height: 34px; font-size: 14px; width: 108px; }
 #top_search_in .search_input { width: 820px; height: 34px; line-height: 34px; border: none; float: left; color: #9d9d9d; font-size: 16px; background-color: #f6f6f6; }
 #top_search_in .search_enter { width: 45px; float: left; height: 34px; text-align: center; }
@@ -144,7 +144,7 @@ html a { text-decoration: none; }
 
 #big_search { width: 90%; height: 34px; overflow: hidden; background-color: #f6f6f6; display: none; position: relative; }
 @media (max-width: 1024px) { #big_search { display: block; } }
-#big_search .big_item { width: 80px; background: url(../images/right.png) no-repeat 70px center; background-size: 10px; height: 34px; overflow: hidden; float: left; padding-left: 10px; }
+#big_search .big_item { width: 80px; background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/right.png) no-repeat 70px center; background-size: 10px; height: 34px; overflow: hidden; float: left; padding-left: 10px; }
 #big_search .big_item select { background-color: transparent; color: #9d9d9d; border: none; height: 34px; line-height: 34px; font-size: 14px; width: 108px; }
 #big_search .search_input02 { width: 70%; height: 34px; line-height: 34px; border: none; float: left; margin-left: 1%; color: #9d9d9d; background-color: #f6f6f6; font-size: 14px; padding: 0px; }
 @media (max-width: 600px) { #big_search .search_input02 { width: 50%; } }
@@ -161,8 +161,8 @@ html a { text-decoration: none; }
 #nav ul li:nth-child(5):after { content: ""; display: none; }
 #nav ul li a { display: inline-block; text-align: center; line-height: 50px; color: #3e3a39; font-size: 14px; padding-right: 20px; text-decoration: none; }
 #nav ul li a .new_event { margin-right: 3px; vertical-align: text-top; width: 13px; height: auto; }
-#nav ul li a:hover { color: #00acc1; }
-#nav ul li a.active { color: #00acc1; }
+#nav ul li a:hover { color: #00b7b0; }
+#nav ul li a.active { color: #00b7b0; }
 #nav ul li.active ul.sub_nav { display: block; z-index: 5; opacity: 1; }
 #nav ul li ul { width: 100%; height: 32px; z-index: 10; position: fixed; top: 110px; left: 0px; background-color: #2cb0aa; display: none; opacity: 0; text-align: center; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
 #nav ul li ul li { width: auto; height: 32px; display: inline-block; text-align: center; }
@@ -191,7 +191,7 @@ html a { text-decoration: none; }
 #nav ul li:hover > ul { display: block; opacity: 1; }
 
 #head_mobile { display: none; }
-#head_mobile #head_all { width: 100%; background-color: #FFF; border-bottom: 2px solid #00acc1; }
+#head_mobile #head_all { width: 100%; background-color: #FFF; border-bottom: 2px solid #00b7b0; }
 #head_mobile #head_all #head_in { width: 95%; height: 48px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding-top: 10px; position: relative; }
 #head_mobile #head_all #head_in .logo a { position: absolute; left: 0px; top: 8px; display: block; width: 30px; z-index: 2; }
 #head_mobile #head_all #head_in .logo a img { width: 100%; height: auto; }
@@ -230,8 +230,8 @@ html a { text-decoration: none; }
 #nav_wrapper #scroller ul li a { text-align: center; display: block; width: 70%; line-height: 80px; font-size: 18px; color: #5b5b5b; background-size: 5px; background-repeat: no-repeat; background-position: 30% center; text-decoration: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding-left: 20px; }
 @media (max-width: 600px) { #nav_wrapper #scroller ul li a { width: 90%; background-position: 20% center; } }
 #nav_wrapper #scroller ul li a:hover { color: #FFF; background-size: 8px; text-shadow: #9d9d9d 0px 0px 5px; }
-#nav_wrapper #scroller ul li a.drop { background-image: url("../images/list.png"); }
-#nav_wrapper #scroller ul li a.drop:hover { background-image: url("../images/list_open.png"); }
+#nav_wrapper #scroller ul li a.drop { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/list.png"); }
+#nav_wrapper #scroller ul li a.drop:hover { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/list_open.png"); }
 
 /*頁尾*/
 #footer { width: 100%; background-color: #6d6e72; padding: 1px 0px; position: fixed; bottom: 0px; z-index: 20; }
@@ -245,7 +245,7 @@ html a { text-decoration: none; }
 #footer #footer_content #footer_nav ul li a { color: #FFF; line-height: 40px; height: 40px; text-align: center; }
 #footer #footer_content #footer_nav ul li a:hover { color: #6bebef; }
 #footer #footer_content #footer_nav ul li a .caret { vertical-align: middle; margin-left: 5px; border-bottom: 4px solid #FFF; }
-#footer #footer_content #footer_nav ul li a .num2 { min-width: 20px; height: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; position: absolute; margin-left: 65px; top: -5px; background-image: url(../images/icon-import.png); background-size: 20px 19px; background-repeat: no-repeat; }
+#footer #footer_content #footer_nav ul li a .num2 { min-width: 20px; height: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; position: absolute; margin-left: 65px; top: -5px; background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon-import.png); background-size: 20px 19px; background-repeat: no-repeat; }
 #footer #footer_content #footer_nav ul li .dropdown-menu li { width: 100%; }
 #footer #footer_content #footer_nav ul li .dropdown-menu li a { color: #9d9d9d; }
 #footer #footer_content #footer_nav ul li .dropdown-menu li a:hover { color: #FFF; }
@@ -287,8 +287,8 @@ html a { text-decoration: none; }
 #banner { width: 100%; }
 #banner img { width: 100%; height: auto; vertical-align: bottom; }
 #banner #fullWidthBanner { width: 100%; background-size: cover; position: relative; margin-bottom: 3%; height: 380px; }
-#banner #fullWidthBanner.aboutBanner { background-image: url(../images/assets-v5/aboutbanner.png); }
-#banner #fullWidthBanner.tutorialBanner { background-image: url(../images/assets-v6/tutorial.png); }
+#banner #fullWidthBanner.aboutBanner { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/aboutbanner.png); }
+#banner #fullWidthBanner.tutorialBanner { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/tutorial.png); }
 #banner #fullWidthBanner .bannerContent { width: 100%; height: 380px; font-size: 48px; letter-spacing: 5px; text-align: center; color: #ffffff; position: relative; line-height: 7; }
 #banner #fullWidthBanner .bannerContent p { height: 25%; }
 #banner #fullWidthBanner .bannerContent a.btnLink { width: 200px; padding: 0; border: 0; border-radius: 5px; font-size: 16px; font-style: normal; font-stretch: normal; line-height: 2.85; letter-spacing: 1.6px; color: #ffffff; text-shadow: 0 0 0 #fff; height: 45px; background-color: #00acc1; background-image: none; }
@@ -297,23 +297,20 @@ html a { text-decoration: none; }
 #banner #banner_content .fotorama .owl-theme .owl-controls { margin-top: 0px; }
 #banner #banner_content .fotorama .owl-carousel .owl-wrapper-outer { background-color: #FFF; -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
 #banner #banner_content .fotorama .page { width: 100%; position: relative; }
-#banner #banner_content .fotorama .page .emb_movie_wrapper { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 100%; height: 320px; overflow: hidden; }
-#banner #banner_content .fotorama .page .emb_movie { width: 540px; height: 100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 5; }
 #banner #banner_content .fotorama .page.one_page { background-color: #77d9cc; }
 #banner #banner_content .fotorama .page .page_content { width: 960px; position: relative; }
 #banner #banner_content .fotorama .page .creator_box { width: 960px; height: 380px; position: relative; background-color: #FFF; }
 #banner #banner_content .fotorama .page .creator_box .color_box { width: 100%; height: 190px; position: absolute; top: 0px; left: 0px; }
 #banner #banner_content .fotorama .page .creator_box .color_box p { width: 100%; margin-top: 40px; text-align: right; padding-right: 30px; color: #FFF; font-size: 42px; }
-#banner #banner_content .fotorama .page .creator_box .color_box.color01 { background-image: url(../images/banner/creator_01.jpg); }
-#banner #banner_content .fotorama .page .creator_box .color_box.color02 { background-image: url(../images/banner/creator_02.jpg); }
-#banner #banner_content .fotorama .page .creator_box .color_box.color03 { background-image: url(../images/banner/creator_03.jpg); }
-#banner #banner_content .fotorama .page .creator_box .color_box.color04 { background-image: url(../images/banner/creator_04.jpg); }
-#banner #banner_content .fotorama .page .creator_box .color_box.color05 { background-image: url(../images/banner/creator_05.jpg); }
-#banner #banner_content .fotorama .page .creator_box .color_box.color06 { background-image: url(../images/banner/creator_06.jpg); }
-#banner #banner_content .fotorama .page .creator_box .color_box.color07 { background-image: url(../images/banner/creator_07.jpg); }
-#banner #banner_content .fotorama .page .creator_box .color_box.color08 { background-image: url(../images/banner/creator_08.jpg); }
-#banner #banner_content .fotorama .page .creator_box .color_box.color09 { background-image: url(../images/banner/creator_09.jpg); }
-#banner #banner_content .fotorama .page .creator_box .color_box.color010 { background-image: url(../images/banner/creator_10.jpg); }
+#banner #banner_content .fotorama .page .creator_box .color_box.color01 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/banner/creator_01.jpg); }
+#banner #banner_content .fotorama .page .creator_box .color_box.color02 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/banner/creator_02.jpg); }
+#banner #banner_content .fotorama .page .creator_box .color_box.color03 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/banner/creator_03.jpg); }
+#banner #banner_content .fotorama .page .creator_box .color_box.color04 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/banner/creator_04.jpg); }
+#banner #banner_content .fotorama .page .creator_box .color_box.color05 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/banner/creator_05.jpg); }
+#banner #banner_content .fotorama .page .creator_box .color_box.color06 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/banner/creator_06.jpg); }
+#banner #banner_content .fotorama .page .creator_box .color_box.color07 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/banner/creator_07.jpg); }
+#banner #banner_content .fotorama .page .creator_box .color_box.color08 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/banner/creator_08.jpg); }
+#banner #banner_content .fotorama .page .creator_box .color_box.color09 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/banner/creator_09.jpg); }
 #banner #banner_content .fotorama .page a { text-decoration: none; }
 #banner #banner_content .fotorama .page a:hover { text-decoration: none; }
 #banner #banner_content .fotorama .page .creator_list { width: 100%; position: absolute; top: 135px; text-align: center; }
@@ -326,18 +323,17 @@ html a { text-decoration: none; }
 #banner #banner_content .fotorama .page .creator_list .creator_item .name i.follow img { width: 15px; margin-right: 5px; }
 #banner #banner_content .fotorama .page .creator_list .creator_item .name i.fa { margin-right: 5px; font-size: 14px; vertical-align: middle; line-height: 20px; width: 15px; color: #00b7b0; }
 #banner #banner_content .fotorama .page .line { width: 100%; height: 2px; position: absolute; bottom: 25px; }
-#banner #banner_content .fotorama .page .line.color01 { background-color: #c3e8a5; }
-#banner #banner_content .fotorama .page .line.color02 { background-color: #d4c3e3; }
+#banner #banner_content .fotorama .page .line.color01 { background-color: #ff6a59; }
+#banner #banner_content .fotorama .page .line.color02 { background-color: #ffaa3f; }
 #banner #banner_content .fotorama .page .line.color03 { background-color: #ffe69c; }
-#banner #banner_content .fotorama .page .line.color04 { background-color: #fcc8ca; }
+#banner #banner_content .fotorama .page .line.color04 { background-color: #91d9cd; }
 #banner #banner_content .fotorama .page .line.color05 { background-color: #d4c3e3; }
 #banner #banner_content .fotorama .page .line.color06 { background-color: #f1d0ab; }
-#banner #banner_content .fotorama .page .line.color07 { background-color: #90dacd; }
-#banner #banner_content .fotorama .page .line.color08 { background-color: #f7a298; }
-#banner #banner_content .fotorama .page .line.color09 { background-color: #ffca86; }
-#banner #banner_content .fotorama .page .line.color010 { background-color: #8DE1F7; }
-#banner #banner_content .fotorama .page .start_btn { width: 125px; height: 125px; display: block; right: 50px; top: 110px; background-image: url("../images/btn_start.png"); background-position: center; background-size: 125px; background-repeat: no-repeat; position: absolute; }
-#banner #banner_content .fotorama .page .start_btn:hover { background-image: url("../images/btn_start_hover.png"); }
+#banner #banner_content .fotorama .page .line.color07 { background-color: #c3e8a5; }
+#banner #banner_content .fotorama .page .line.color08 { background-color: #aec3ee; }
+#banner #banner_content .fotorama .page .line.color09 { background-color: #fea6b2; }
+#banner #banner_content .fotorama .page .start_btn { width: 125px; height: 125px; display: block; right: 50px; top: 110px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/btn_start.png"); background-position: center; background-size: 125px; background-repeat: no-repeat; position: absolute; }
+#banner #banner_content .fotorama .page .start_btn:hover { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/btn_start_hover.png"); }
 #banner #banner_content .fotorama .page .start_android { width: 89px; position: absolute; top: 310px; right: 120px; }
 #banner #banner_content .fotorama .page .start_ios { width: 89px; position: absolute; top: 310px; right: 20px; }
 #banner #banner_content .fotorama .page a.start { display: block; text-align: center; position: absolute; left: 50%; bottom: 32px; height: 42px; margin-left: -88px; line-height: 42px; font-size: 18px; width: 176px; color: #b1b6da; border: 1px solid #fee9e9; -moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px; }
@@ -358,8 +354,8 @@ html a { text-decoration: none; }
 #banner #recuit_banner #recuit_info .recuit_title { width: 100%; font-size: 20px; margin-bottom: 20px; letter-spacing: 10px; text-align: center; color: #FFF; }
 #banner #recuit_banner #recuit_info img { width: 100%; height: auto; margin-bottom: 15px; max-width: 180px; }
 @media (max-width: 600px) { #banner #recuit_banner #recuit_info img { width: 40%; } }
-#banner #recuit_banner.banner01 { background-image: url("../images/recuit_banner.jpg"); }
-#banner #recuit_banner.banner02 { background-image: url("../images/creator_banner.png"); }
+#banner #recuit_banner.banner01 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/recuit_banner.jpg"); }
+#banner #recuit_banner.banner02 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/creator_banner.png"); }
 
 @media (max-width: 1025px) { .index_banner { display: none; } }
 
@@ -552,10 +548,7 @@ html a { text-decoration: none; }
 @media (min-width: 1024px) { #content ul#layout li .create_box .color09 { background-color: #fff; } }
 @media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color09 { border-left: 10px #fea6b2 solid; } }
 @media (max-width: 767px) { #content ul#layout li .create_box .color09 { border-left: 10px #fea6b2 solid; } }
-@media (min-width: 1024px) { #content ul#layout li .create_box .color10 { background-color: #fff; } }
-@media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color10 { border-left: 10px #8DE1F7 solid; } }
-@media (max-width: 767px) { #content ul#layout li .create_box .color10 { border-left: 10px #8DE1F7 solid; } }
-#content ul#layout li .black_box { background-image: url("../images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 85%; z-index: 2; display: none; }
+#content ul#layout li .black_box { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 85%; z-index: 2; display: none; }
 #content ul#layout li .black_box p { color: #FFF; font-size: 14px; width: 100%; text-align: center; height: 260px; line-height: 30px; position: absolute; top: 13%; margin-top: -15px; }
 #content ul#layout li .black_box p img { vertical-align: middle; margin-right: 10px; }
 #content ul#layout li .create_list { width: 22.5%; margin: 15px 0%; display: inline-block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #FFF; padding: 2%; height: 400px; overflow: hidden; }
@@ -576,8 +569,8 @@ html a { text-decoration: none; }
 #content ul#layout li .create_list ul li p.crea_name { height: 25px; max-width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: bold; letter-spacing: 2px; }
 #content ul#layout li .create_list ul li p.pink { color: #ca6285; }
 #content ul#layout li .create_list ul li p.pink img { vertical-align: middle; margin-right: 8px; }
-#content ul#layout li .create_list ul li div.create_info { text-align: left; height: 160px; overflow: hidden; font-size: 0.9em; letter-spacing: 3px; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 8; -webkit-box-orient: vertical; }
-@media (max-width: 767px) { #content ul#layout li .create_list ul li div.create_info { height: 36px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } }
+#content ul#layout li .create_list ul li p.create_info { text-align: left; height: 160px; overflow: hidden; font-size: 0.9em; letter-spacing: 3px; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 8; -webkit-box-orient: vertical; }
+@media (max-width: 767px) { #content ul#layout li .create_list ul li p.create_info { height: 36px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } }
 #content ul#layout li .create_list ul li .create_pic { width: 130px; height: 130px; overflow: hidden; margin-bottom: 5px; -moz-border-radius: 100px; -webkit-border-radius: 100px; border-radius: 100px; display: inline-block; }
 @media (max-width: 767px) { #content ul#layout li .create_list ul li .create_pic { width: 70px; height: 70px; } }
 #content ul#layout li .create_list ul li .create_pic img { width: 100%; height: 100%; }
@@ -590,7 +583,6 @@ html a { text-decoration: none; }
 @media (min-width: 1024px) { #content ul#layout li .create_list .color6 { background-color: #edbce2; } }
 @media (min-width: 1024px) { #content ul#layout li .create_list .color7 { background-color: #91d9cd; } }
 @media (min-width: 1024px) { #content ul#layout li .create_list .color8 { background-color: #aec3ed; } }
-@media (min-width: 1024px) { #content ul#layout li .create_list .color9 { background-color: #ffca87; } }
 #content ul#layout li .tab-container { width: 100%; position: relative; }
 #content ul#layout li .tab-container ul.etabs { position: absolute; width: 320px; height: 25px; top: -41px; z-index: 20; }
 @media (max-width: 1024px) { #content ul#layout li .tab-container ul.etabs { top: 0px; left: 0px; width: 100%; height: 40px; padding-left: 10%; } }
@@ -722,26 +714,28 @@ background-image: linear-gradient(#17b1ad, #10859a);
 @media (max-width: 1024px) { #content ul#layout.albumExplore .bookcase-container .tab_content .product_scroll { width: 1920px; } }
 @media (max-width: 1024px) { #content ul#layout.albumExplore .bookcase-container .tab_content { padding: 25px 0px; } }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem { width: 220px; margin: 15px 10px; float: left; background-color: #FFF; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #cccccc; position: relative; cursor: zoom-in; }
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem { position: relative; overflow: hidden; }
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem { position: relative; overflow:hidden;}
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow { position: absolute; left: 90%; text-align: right; z-index: 3; padding-right: 6px; display: none; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow p.dropdown-sign { font-size: 16px; margin-top: 8px; color: #9D9D9D; cursor: pointer; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow a { color: #9d9d9d; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow ul.dropdown-menu { min-width: 130px; left: -110px; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow ul.dropdown-menu li { margin-bottom: 3px; text-align: left; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow ul.dropdown-menu li.divider { margin: 5px auto; width: 80%; height: 2px; }
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .blackCover { height: 98.5%; background-image: url(../images/background02.png); background-repeat: repeat; position: absolute; width: 100%; z-index: 2; display: none; }
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic { height: 145px; }
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic img { -ms-transform: scale(1.3, 1.3); -webkit-transform: scale(1.3, 1.3); transform: scale(1.3, 1.3); position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 1; }
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info { display: block; padding: 10px 2px 10px 5px; text-align: left; overflow: hidden; }
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info p.title { text-align: left; line-height: 25px; max-height: 50px; font-size: 18px; overflow: hidden; letter-spacing: 1px; cursor: default; width: 200px; text-overflow: ellipsis; white-space: nowrap; }
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .blackCover { height: 100%; background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png); background-repeat: repeat; position: absolute; width: 100%; z-index: 2; display: none; }
+
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic {height:145px;}
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic img { -ms-transform: scale(1.3, 1.3);-webkit-transform: scale(1.3, 1.3);transform: scale(1.3, 1.3);position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;z-index: 1;}
+
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info { display: block; padding: 10px 2px 10px 5px; text-align: left; }
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info p.title { text-align: left; line-height: 25px; max-height: 50px; font-size: 18px; overflow: hidden; letter-spacing: 1px; cursor: default; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info p.title img { width: 20px; float: right; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info p.title a { color: #5b5b5b; }
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info p.title :hover { color: #00acc1; }
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info p.title :hover { color: #00b7b0; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .info_user { width: 93%; margin-top: 5px; position: relative; padding-right: 15px; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .info_user .user_face { display: inline-block; width: 36px; height: 36px; overflow: hidden; -moz-border-radius: 36px; -webkit-border-radius: 36px; border-radius: 36px; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .info_user .user_name { display: inline-block; margin-left: 10px; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .info_user .user_name p { line-height: 18px; color: #2cb0aa; font-size: 12px; }
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .info_user .user_name p.name_id { width: 130px; height: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #3e3a39; }
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .info_user .user_name p.name_id { width: 100%; height: 18px; overflow: hidden; max-width: 100%; text-overflow: ellipsis; white-space: nowrap; color: #3e3a39; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .user_dropdown { display: none; cursor: pointer; float: right; margin-top: -1.2em; color: #9D9D9D; right: 2%; }
 @media (max-width: 1024px) { #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .user_dropdown { display: block; } }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .user_dropdown .dropdown-arrow p.dropdown-sign { font-size: 16px; color: #9D9D9D; cursor: pointer; }
@@ -770,12 +764,12 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .fullWidthBanner.Banner1 .tabs .tabBodyContainer { width: 52.5%; height: 375px; float: left; background-color: #61c8d5; -webkit-border-radius: 0 5px 5px 0; -moz-border-radius: 0 5px 5px 0; border-radius: 0 5px 5px 0; }
 .fullWidthBanner.Banner1 .tabs .tabItemContainer > li { list-style: none; text-align: center; }
 .fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a { float: left; width: 100%; height: 125px; padding: 30px 0 30px 0; font: 16px "微软雅黑", Arial, Helvetica, sans-serif; color: #808080; cursor: pointer; text-decoration: none; border: 1px solid transparent; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn01 { width: 103%; z-index: 1; background-image: url("../images/assets-v5/about-ppb-left-menu-01.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn02 { width: 103%; z-index: 1; background-image: url("../images/assets-v5/about-ppb-left-menu-02.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn03 { width: 103%; z-index: 1; background-image: url("../images/assets-v5/about-ppb-left-menu-03.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn01-b { background-image: url("../images/assets-v5/about-ppb-left-menu-01-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn02-b { background-image: url("../images/assets-v5/about-ppb-left-menu-02-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn03-b { background-image: url("../images/assets-v5/about-ppb-left-menu-03-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn01 { width: 103%; z-index: 1; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-01.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn02 { width: 103%; z-index: 1; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-02.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn03 { width: 103%; z-index: 1; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-03.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn01-b { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-01-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn02-b { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-02-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn03-b { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-03-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
 .fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a:hover { color: #333; }
 .fullWidthBanner.Banner1 .tabs .tabBodyItem { position: absolute; width: 52.5%; height: 375px; display: none; }
 .fullWidthBanner.Banner1 .tabs .tabBodyItem > p { font: 13px "微软雅黑", Arial, Helvetica, sans-serif; text-align: center; margin-top: 30px; }
@@ -854,9 +848,9 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_top { width: 100%; position: relative; margin-bottom: 20px; }
 #album_top .album_search { position: absolute; top: -2px; right: 0px; }
 #album_top .album_search.temp { top: -2px; }
-#album_top .album_search a.start_temp { width: 85px; height: 68px; display: block; background: url("../images/start_temp.png") no-repeat; background-size: 85px auto; }
+#album_top .album_search a.start_temp { width: 85px; height: 68px; display: block; background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/start_temp.png") no-repeat; background-size: 85px auto; }
 @media (max-width: 1024px) { #album_top .album_search a.start_temp { display: none; } }
-#album_top .album_search a.start_temp:hover { background: url("../images/start_temp_hover.png") no-repeat; background-size: 85px auto; }
+#album_top .album_search a.start_temp:hover { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/start_temp_hover.png") no-repeat; background-size: 85px auto; }
 #album_top ul { width: 100%; }
 #album_top ul.template_ul { width: 100%; }
 @media (max-width: 1024px) { #album_top ul.template_ul li { margin: 0 1%; width: 18%; } }
@@ -875,9 +869,9 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_top ul li:nth-child(4):after { content: ""; }
 
 #tem_tips { width: 100%; margin: 20px 0px; -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
-#tem_tips .tips_image { width: 100%; height: auto; display: block; background-image: "../images/tem_part.png"; }
+#tem_tips .tips_image { width: 100%; height: auto; display: block; background-image: "https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/tem_part.png"; }
 #tem_tips .tips_image img { width: 100%; height: auto; vertical-align: bottom; }
-#tem_tips .tips_control { width: 100%; height: 36px; line-height: 36px; text-align: center; background-image: url(../images/open_tem_bg.jpg); background-repeat: repeat-y; background-size: 100%; cursor: pointer; -moz-transition: all 0.3s; -o-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; }
+#tem_tips .tips_control { width: 100%; height: 36px; line-height: 36px; text-align: center; background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/open_tem_bg.jpg); background-repeat: repeat-y; background-size: 100%; cursor: pointer; -moz-transition: all 0.3s; -o-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; }
 #tem_tips .tips_control:hover { background-color: #5b5b5b; }
 #tem_tips .tips_control a { line-height: 36px; color: #FFF; font-size: 20px; }
 #tem_tips .albumExploreBennaer p.title { position: absolute; top: 7%; line-height: 100%; width: 100%; text-align: center; font-size: 50px; font-style: normal; font-stretch: normal; letter-spacing: 5px; color: #ffffff; font-family: MicrosoftJhengHei; }
@@ -889,24 +883,13 @@ background-image: linear-gradient(#17b1ad, #10859a);
 
 #item_box { width: 100%; margin-bottom: 20px; display: none; }
 @media (max-width: 1024px) { #item_box { display: block; } }
-#item_box .controls { width: 100%; height: 42px; padding: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: url(../images/right.png) no-repeat 98% center; overflow: hidden; background-color: #FFF; background-size: 10px; border: 1px solid #cccccc; }
+#item_box .controls { width: 100%; height: 42px; padding: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/right.png) no-repeat 98% center; overflow: hidden; background-color: #FFF; background-size: 10px; border: 1px solid #cccccc; }
 #item_box .controls select { width: 120%; height: 32px; background-color: transparent; border: none; font-size: 16px; color: #9d9d9d; }
 
 .water_content { width: 100%; margin-bottom: 30px; }
 .water_content .item_box { background-color: #FFF; width: 225px; overflow: hidden; margin-bottom: 20px; margin-top: 13px; position: relative; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
 @media (min-width: 335px) and (max-width: 374px) { .water_content .item_box { width: 160px; } }
 @media (max-width: 334px) { .water_content .item_box { width: 46%; } }
-.water_content .item_box .album_tags_gift img { width: 28px; height: 28px; position: absolute; top: 5px; left: 5px; z-index: 5; }
-@media (max-width: 568px) { .water_content .item_box .album_tags_gift img { width: 26px; height: 26px; left: 2px; } }
-.water_content .item_box .album_tags_gift img:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
-
-
-.water_content .item_box .album_tags_gift_bg { position: absolute; top: 4px; left: 4px; z-index: 2; border-color: #FF5E68 transparent transparent transparent; border-style: solid solid solid solid; border-width: 50px 50px 0px 0px; height: 0px; width: 0px; }
-
-
-@media (max-width: 568px) { .water_content .item_box .album_tags_gift_bg { border-width: 40px 40px 0px 0px; } }
-.water_content .item_box .album_tags_gift-txt { display: none; position: absolute; top: 8px; left: 30px; z-index: 3; color: #fff; }
-@media (max-width: 568px) { .water_content .item_box .album_tags_gift-txt { top: 8px; left: 28px; font-size: 13px; } }
 .water_content .item_box .item_pic div { border: 4px solid #FFF; border-radius: 5px; }
 .water_content .item_box .item_pic div img { border-radius: 5px; }
 .water_content .item_box .item_pic .blackCover { border-radius: 8px; }
@@ -929,22 +912,22 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .water_content .item_box .item_info { width: 100%; padding: 5px 0px 0px 0px; }
 .water_content .item_box .item_info .info_icon { width: 100%; }
 .water_content .item_box .item_info .info_icon i { width: 20px; height: 21px; float: right; margin: 0 3px; }
-.water_content .item_box .item_info .info_icon i.new_icon { background: url("../images/water_icon01.png") no-repeat; background-size: 20px auto; }
-.water_content .item_box .item_info .info_icon i.add_no { background: url(../images/album_icon01_big.png); background-image: url(../images/icon_collection.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
-.water_content .item_box .item_info .info_icon i.add_love { background: url(../images/album_icon03_big.png); background-image: url(../images/icon_collection_click.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
-.water_content .item_box .item_info .info_icon i.add_act01 { background: url(../images/album_icon04.png); background-image: url(../images/icon_vote.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
-.water_content .item_box .item_info .info_icon i.add_act02 { background: url(../images/album_icon05.png); background-image: url(../images/icon_activity.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+.water_content .item_box .item_info .info_icon i.new_icon { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/water_icon01.png") no-repeat; background-size: 20px auto; }
+.water_content .item_box .item_info .info_icon i.add_no { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon01_big.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_collection.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+.water_content .item_box .item_info .info_icon i.add_love { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon03_big.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_collection_click.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+.water_content .item_box .item_info .info_icon i.add_act01 { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon04.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_vote.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+.water_content .item_box .item_info .info_icon i.add_act02 { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon05.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_activity.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
 .water_content .item_box .item_info .info_icon i.add_info { color: #bfbfbf; font-size: 14px; text-align: center; line-height: 21px; -moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px; }
 .water_content .item_box .item_info .info_name { padding: 0 10px; width: 100%; position: relative; }
 .water_content .item_box .item_info .info_name h3 { width: 100%; line-height: 25px; max-height: 50px; font-size: 18px; overflow: hidden; margin-bottom: 5px; }
 .water_content .item_box .item_info .info_name h3.user_name { text-align: center; }
 .water_content .item_box .item_info .info_name h3.long { width: 100%; max-width: 100%; }
-.water_content .item_box .item_info .info_name h3.ad { color: #00acc1; }
-.water_content .item_box .item_info .info_name h3.ad a { color: #00acc1; }
+.water_content .item_box .item_info .info_name h3.ad { color: #00b7b0; }
+.water_content .item_box .item_info .info_name h3.ad a { color: #00b7b0; }
 .water_content .item_box .item_info .info_name h3.maquee { max-height: 25px; white-space: nowrap; -moz-animation: marquee 20s linear infinite; -webkit-animation: marquee 20s linear infinite; animation: marquee 20s linear infinite; }
 .water_content .item_box .item_info .info_name h3.maquee:hover { animation-play-state: paused; }
 .water_content .item_box .item_info .info_name h3 a { color: #5b5b5b; }
-.water_content .item_box .item_info .info_name h3 a:hover { color: #00acc1; }
+.water_content .item_box .item_info .info_name h3 a:hover { color: #00b7b0; }
 .water_content .item_box .item_info .info_name h3 img { width: 25px; float: right; margin-left: 1px; }
 .water_content .item_box .item_info .info_name .name_more { width: 100%; height: auto; max-height: 117px; line-height: 18px; font-size: 12px; text-align: left; color: #9d9d9d; word-break: break-all; }
 .water_content .item_box .item_info .info_name .name_more a { letter-spacing: 0px; }
@@ -952,8 +935,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .water_content .item_box .item_info .info_name.creative_info_name h3 { font-size: 16px; }
 .water_content .item_box .item_info .info_name.creative_info_name h3 a { letter-spacing: -1px; display: block; color: #4d4d4d; }
 .water_content .item_box .item_info .info_name.creative_info_name h3 a:hover { color: #00acc1; }
-.water_content .item_box .item_info .info_user { width: 100%; padding: 5px 4px 10px 10px; margin-top: 5px; position: relative; }
-@media (max-width: 1024px) { .water_content .item_box .item_info .info_user { padding: 5px 25px 10px 10px; } }
+.water_content .item_box .item_info .info_user { width: 100%; padding: 5px 25px 10px 10px; margin-top: 5px; position: relative; }
 .water_content .item_box .item_info .info_user a.share_setting { display: block; position: absolute; right: 0px; bottom: 0px; }
 .water_content .item_box .item_info .info_user a.share_setting img { width: 25px; height: auto; }
 .water_content .item_box .item_info .info_user:hover { background-color: #f6f6f6; }
@@ -968,7 +950,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .water_content .item_box .user_number { margin: 10px 0px; width: 100%; padding: 0px 10px; }
 .water_content .item_box .user_number p { color: #9d9d9d; font-size: 12px; margin-bottom: 5px; line-height: 20px; word-break: break-all; }
 .water_content .item_box .user_number p i { margin-right: 5px; font-size: 14px; vertical-align: middle; line-height: 20px; width: 15px; }
-.water_content .item_box .user_number p i.fa { color: #00acc1; }
+.water_content .item_box .user_number p i.fa { color: #00b7b0; }
 .water_content .item_box .user_number p i img { width: 15px; height: auto; vertical-align: middle; }
 .water_content .item_box .line { width: 100%; height: 2px; margin: 0px 0px 30px 0px; }
 .water_content .item_box .line.color01 { background-color: #ff6a59; }
@@ -988,7 +970,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .water_content .item_box .dropdown-arrow ul.dropdown-menu li.divider { margin: 5px auto; width: 80%; height: 2px; }
 @media (max-width: 1024px) { .water_content .item_box .dropdown-arrow.sub_dropdown-arrow { display: block; left: 0%; position: static; }
   .water_content .item_box .dropdown-arrow.sub_dropdown-arrow ul.dropdown-menu { bottom: 1.5em; left: -8em; } }
-.water_content .item_box .blackCover { height: 100%; background-image: url(../images/background02.png); background-repeat: repeat; position: absolute; width: 100%; z-index: 2; display: none; }
+.water_content .item_box .blackCover { height: 100%; background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png); background-repeat: repeat; position: absolute; width: 100%; z-index: 2; display: none; }
 .water_content .index_item_box { background-color: #FFF; width: 230px; overflow: hidden; margin-bottom: 15px; margin-left: 6px; position: relative; padding: 15px 15px 0px 15px; display: inline-block; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
 @media (min-width: 335px) and (max-width: 374px) { .water_content .index_item_box { width: 160px; } }
 @media (min-width: 375px) and (max-width: 569px) { .water_content .index_item_box { width: 180px; } }
@@ -1034,29 +1016,29 @@ background-image: linear-gradient(#17b1ad, #10859a);
 @media (min-width: 335px) and (max-width: 374px) { .water_content .index_item_box .vary_unuse img { height: 104px; } }
 @media (max-width: 334px) { .water_content .index_item_box .vary_unuse img { height: 120px; } }
 .water_content .index_item_box .vote_box { width: 100%; display: block; color: #FFF; background-color: #9d9d9d; height: 24px; line-height: 24px; text-align: center; }
-.water_content .index_item_box .vote_box.active { background-color: #00acc1; }
+.water_content .index_item_box .vote_box.active { background-color: #00b7b0; }
 .water_content .index_item_box .vote_box i { color: #FFF; font-size: 16px; line-height: 24px; margin-right: 5px; }
 .water_content .index_item_box .item_info { width: 100%; padding: 5px 0px 0px 0px; }
 .water_content .index_item_box .item_info .info_icon { width: 100%; }
 .water_content .index_item_box .item_info .info_icon i { width: 20px; height: 21px; float: left; margin: 0 10px 0 0; }
 .water_content .index_item_box .item_info .info_icon i.index_icon { background-size: 20px auto; }
-.water_content .index_item_box .item_info .info_icon i.new_icon { background: url("../images/water_icon01.png") no-repeat; background-size: 20px auto; }
-.water_content .index_item_box .item_info .info_icon i.add_no { background: url(../images/album_icon01_big.png); background-image: url(../images/icon_collection.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
-.water_content .index_item_box .item_info .info_icon i.add_love { background: url(../images/album_icon03_big.png); background-image: url(../images/icon_collection_click.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
-.water_content .index_item_box .item_info .info_icon i.add_act01 { background: url(../images/album_icon04.png); background-image: url(../images/icon_vote.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
-.water_content .index_item_box .item_info .info_icon i.add_act02 { background: url(../images/album_icon05.png); background-image: url(../images/icon_activity.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
-.water_content .index_item_box .item_info .info_icon i.add_info { background-color: #00acc1; color: #FFF; font-size: 14px; text-align: center; line-height: 21px; -moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px; margin-bottom: 10px; }
+.water_content .index_item_box .item_info .info_icon i.new_icon { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/water_icon01.png") no-repeat; background-size: 20px auto; }
+.water_content .index_item_box .item_info .info_icon i.add_no { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon01_big.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_collection.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+.water_content .index_item_box .item_info .info_icon i.add_love { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon03_big.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_collection_click.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+.water_content .index_item_box .item_info .info_icon i.add_act01 { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon04.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_vote.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+.water_content .index_item_box .item_info .info_icon i.add_act02 { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon05.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_activity.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+.water_content .index_item_box .item_info .info_icon i.add_info { background-color: #00b7b0; color: #FFF; font-size: 14px; text-align: center; line-height: 21px; -moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px; margin-bottom: 10px; }
 .water_content .index_item_box .item_info .info_icon i.add_info:hover { background-color: #9d9d9d; }
 .water_content .index_item_box .item_info .info_name { padding: 0 0px; width: 100%; position: relative; }
 .water_content .index_item_box .item_info .info_name h3 { width: 100%; line-height: 25px; max-height: 50px; font-size: 18px; overflow: hidden; margin-bottom: 5px; }
 .water_content .index_item_box .item_info .info_name h3.user_name { text-align: center; }
 .water_content .index_item_box .item_info .info_name h3.long { width: 100%; max-width: 100%; }
-.water_content .index_item_box .item_info .info_name h3.ad { color: #00acc1; }
-.water_content .index_item_box .item_info .info_name h3.ad a { color: #00acc1; }
+.water_content .index_item_box .item_info .info_name h3.ad { color: #00b7b0; }
+.water_content .index_item_box .item_info .info_name h3.ad a { color: #00b7b0; }
 .water_content .index_item_box .item_info .info_name h3.maquee { max-height: 25px; white-space: nowrap; -moz-animation: marquee 20s linear infinite; -webkit-animation: marquee 20s linear infinite; animation: marquee 20s linear infinite; }
 .water_content .index_item_box .item_info .info_name h3.maquee:hover { animation-play-state: paused; }
 .water_content .index_item_box .item_info .info_name h3 a { color: #5b5b5b; }
-.water_content .index_item_box .item_info .info_name h3 a:hover { color: #00acc1; }
+.water_content .index_item_box .item_info .info_name h3 a:hover { color: #00b7b0; }
 .water_content .index_item_box .item_info .info_name .name_more { width: 100%; height: auto; max-height: 117px; line-height: 18px; font-size: 12px; text-align: justify; color: #9d9d9d; word-break: break-all; }
 .water_content .index_item_box .item_info .info_user { width: 100%; padding: 5px 10px 10px 0px; margin-top: 5px; position: relative; }
 .water_content .index_item_box .item_info .info_user a.share_setting { display: block; position: absolute; right: 0px; bottom: 0px; }
@@ -1074,7 +1056,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .water_content .index_item_box .user_number { margin: 10px 0px; width: 100%; padding: 0px 10px; }
 .water_content .index_item_box .user_number p { color: #9d9d9d; font-size: 12px; margin-bottom: 5px; line-height: 20px; word-break: break-all; }
 .water_content .index_item_box .user_number p i { margin-right: 5px; font-size: 14px; vertical-align: middle; line-height: 20px; width: 15px; }
-.water_content .index_item_box .user_number p i.fa { color: #00acc1; }
+.water_content .index_item_box .user_number p i.fa { color: #00b7b0; }
 .water_content .index_item_box .user_number p i img { width: 15px; height: auto; vertical-align: middle; }
 .water_content .index_item_box .line { width: 100%; height: 2px; margin: 0px 0px 30px 0px; }
 .water_content .index_item_box .line.color01 { background-color: #ff6a59; }
@@ -1134,10 +1116,10 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #member_in ul li .check_name { line-height: 20px; }
 #member_in ul li .country-list { width: 430px; }
 #member_in ul li .country-list li { text-align: left; font-size: 12px; margin-bottom: 5px; }
-#member_in ul li #set_facepic { width: 160px; height: 160px; position: relative; background-color: #959595; background-image: url("../images/face_add.png"); background-repeat: no-repeat; background-position: center center; overflow: hidden; }
+#member_in ul li #set_facepic { width: 160px; height: 160px; position: relative; background-color: #959595; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_add.png"); background-repeat: no-repeat; background-position: center center; overflow: hidden; }
 #member_in ul li #set_facepic img { max-width: inherit; width: 100%; height: auto; }
 #member_in ul li #set_facepic .cropControls { height: 60px; }
-#member_in ul li #set_facepic .cropControls i { display: block; float: left; margin: 0; cursor: pointer; background-image: url("../images/cropperIcons.png"); width: 30px; height: 30px; text-align: center; line-height: 30px; color: #FFF; font-size: 13px; font-weight: bold; font-style: normal; background-size: 300px 30px; }
+#member_in ul li #set_facepic .cropControls i { display: block; float: left; margin: 0; cursor: pointer; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/cropperIcons.png"); width: 30px; height: 30px; text-align: center; line-height: 30px; color: #FFF; font-size: 13px; font-weight: bold; font-style: normal; background-size: 300px 30px; }
 #member_in ul li #set_facepic .cropControls i.cropControlZoomMuchIn { background-position: 0px 0px; }
 #member_in ul li #set_facepic .cropControls i.cropControlZoomIn { background-position: -30px 0px; }
 #member_in ul li #set_facepic .cropControls i.cropControlZoomOut { background-position: -90px 0px; }
@@ -1181,34 +1163,32 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #tem_content .more_title p { position: absolute; line-height: 24px; height: 24px; display: inline-block; border-bottom: 2px solid #9c9c9c; left: 0px; top: -24px; font-size: 16px; color: #3f4549; }
 #tem_content .seemore_content { width: 100%; }
 #tem_content .seemore_content .item_box { background-color: #FFF; width: 23%; overflow: hidden; float: left; margin: 0 1%; margin-bottom: 10px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
-@media (max-width: 640px) { #tem_content .seemore_content .item_box { width: 48%; } }
-#tem_content .seemore_content .item_box .imgh { display: block; position: relative; width: 100%; padding-top: 66.66%; overflow: hidden; }
-#tem_content .seemore_content .item_box .imgh img { -ms-transform: scale(1.3, 1.3); -webkit-transform: scale(1.3, 1.3); transform: scale(1.3, 1.3); position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 1; cursor: -webkit-zoom-in; }
-@media (max-width: 640px) { #tem_content .seemore_content .item_box .imgh img { -ms-transform: scale(1.5, 1.5); -webkit-transform: scale(1.5, 1.5); transform: scale(1.5, 1.5); } }
-#tem_content .seemore_content .item_box .imgh img:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
-#tem_content .seemore_content .item_box .imgh img.tem_bg { background-color: #c8c9ca; }
+@media (max-width: 370px) { #tem_content .seemore_content .item_box { width: 48%; } }
+#tem_content .seemore_content .item_box img { width: 100%; max-width: 100%; height: auto; vertical-align: bottom; cursor: -webkit-zoom-in; }
+#tem_content .seemore_content .item_box img:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
+#tem_content .seemore_content .item_box img.tem_bg { background-color: #c8c9ca; }
 #tem_content .seemore_content .item_box.item_ad { width: 370px; }
 @media (max-width: 370px) { #tem_content .seemore_content .item_box.item_ad { width: 90%; } }
 #tem_content .seemore_content .item_box .item_info { width: 100%; padding: 5px 0px 0px 0px; }
+@media (max-width: 1024px) { #tem_content .seemore_content .item_box .item_info { display: none; } }
 #tem_content .seemore_content .item_box .item_info .info_name { padding: 0 10px; width: 100%; position: relative; }
 #tem_content .seemore_content .item_box .item_info .info_name .info_icon { width: 100%; }
 #tem_content .seemore_content .item_box .item_info .info_name .info_icon i { width: 20px; height: 21px; float: right; margin: 0 3px; }
-#tem_content .seemore_content .item_box .item_info .info_name .info_icon i.new_icon { background: url("../images/water_icon01.png") no-repeat; background-size: 20px auto; }
-#tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_no { background: url(../images/album_icon01_big.png); background-image: url(../images/icon_collection.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
-#tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_love { background: url(../images/album_icon03_big.png); background-image: url(../images/icon_collection_click.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
-#tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_act01 { background: url(../images/album_icon04.png); background-image: url(../images/icon_vote.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
-#tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_act02 { background: url(../images/album_icon05.png); background-image: url(../images/icon_activity.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+#tem_content .seemore_content .item_box .item_info .info_name .info_icon i.new_icon { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/water_icon01.png") no-repeat; background-size: 20px auto; }
+#tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_no { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon01_big.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_collection.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+#tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_love { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon03_big.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_collection_click.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+#tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_act01 { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon04.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_vote.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
+#tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_act02 { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon05.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_activity.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
 #tem_content .seemore_content .item_box .item_info .info_name h3 { width: 100%; line-height: 25px; max-height: 50px; font-size: 18px; overflow: hidden; height: 50px; }
-#tem_content .seemore_content .item_box .item_info .info_name h3 .multi_ellipsis { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-height: 25px; height: 50px; }
-#tem_content .seemore_content .item_box .item_info .info_name h3 a { color: #5b5b5b; letter-spacing: -1px; text-align: left; line-height: 25px; max-height: 50px; font-size: 16px; overflow: hidden; height: 50px; }
-#tem_content .seemore_content .item_box .item_info .info_name h3 a:hover { color: #00acc1; }
+#tem_content .seemore_content .item_box .item_info .info_name h3 a { color: #5b5b5b; }
+#tem_content .seemore_content .item_box .item_info .info_name h3 a:hover { color: #00b7b0; }
 #tem_content .seemore_content .item_box .item_info .info_name .name_more { width: 100%; height: auto; max-height: 54px; line-height: 18px; font-size: 12px; text-align: justify; overflow: hidden; color: #9d9d9d; word-break: break-all; }
 #tem_content .seemore_content .item_box .item_info .info_user { width: 100%; padding: 5px 10px 10px 10px; margin-top: 5px; }
 #tem_content .seemore_content .item_box .item_info .info_user .user_face { width: 36px; height: 36px; overflow: hidden; float: left; -moz-border-radius: 36px; -webkit-border-radius: 36px; border-radius: 36px; }
 #tem_content .seemore_content .item_box .item_info .info_user .user_face img { width: 100%; height: auto; }
 #tem_content .seemore_content .item_box .item_info .info_user .user_name { padding-left: 42px; width: 75%; max-width: 75%; }
-#tem_content .seemore_content .item_box .item_info .info_user .user_name p { line-height: 18px; color: #9d9d9d; font-size: 12px; }
-#tem_content .seemore_content .item_box .item_info .info_user .user_name p.name_id { height: 18px; overflow: hidden; width: 155px; text-overflow: ellipsis; white-space: nowrap; color: #4d4d4d; }
+#tem_content .seemore_content .item_box .item_info .info_user .user_name p { line-height: 18px; color: #2cb0aa; font-size: 12px; }
+#tem_content .seemore_content .item_box .item_info .info_user .user_name p.name_id { height: 18px; overflow: hidden; width: 155px; text-overflow: ellipsis; white-space: nowrap; color: #3e3a39; }
 #tem_content .seemore_content .item_box .more_see { width: 100%; height: auto; text-align: right; padding: 5px; background-color: #2cb0aa; cursor: pointer; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
 @media (max-width: 1024px) { #tem_content .seemore_content .item_box .more_see { display: none; } }
 #tem_content .seemore_content .item_box .more_see a { width: 100%; display: block; }
@@ -1216,7 +1196,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #tem_content .seemore_content .item_box .more_see:hover { background-color: #5b5b5b; }
 #tem_content #albumedit { width: 15%; float: right; }
 @media (max-width: 1024px) { #tem_content #albumedit { display: none; } }
-#tem_content #albumedit a.e_edit { width: 100%; display: block; background-image: url("../images/edit_icon.png"); background-repeat: no-repeat; background-position: left 0px; height: 22px; line-height: 22px; padding-left: 28px; font-size: 14px; color: #108199; margin-bottom: 15px; }
+#tem_content #albumedit a.e_edit { width: 100%; display: block; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon.png"); background-repeat: no-repeat; background-position: left 0px; height: 22px; line-height: 22px; padding-left: 28px; font-size: 14px; color: #108199; margin-bottom: 15px; }
 #tem_content #albumedit a.e_edit:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #tem_content #albumedit a.e_edit.p1 { background-position: left 0px; }
 #tem_content #albumedit a.e_edit.p2 { background-position: left -31px; }
@@ -1258,7 +1238,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #tem_content #memset_info ul li .tdtxt #set_facepic img { max-width: inherit; width: 100%; height: auto; }
 #tem_content #memset_info ul li .tdtxt #set_facepic img#uploadPreview1 { cursor: move; }
 #tem_content #memset_info ul li .tdtxt #set_facepic .cropControls { height: 60px; }
-#tem_content #memset_info ul li .tdtxt #set_facepic .cropControls i { display: block; float: left; margin: 0; cursor: pointer; background-image: url("../images/cropperIcons.png"); width: 30px; height: 30px; text-align: center; line-height: 30px; color: #FFF; font-size: 13px; font-weight: bold; font-style: normal; background-size: 300px 30px; }
+#tem_content #memset_info ul li .tdtxt #set_facepic .cropControls i { display: block; float: left; margin: 0; cursor: pointer; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/cropperIcons.png"); width: 30px; height: 30px; text-align: center; line-height: 30px; color: #FFF; font-size: 13px; font-weight: bold; font-style: normal; background-size: 300px 30px; }
 #tem_content #memset_info ul li .tdtxt #set_facepic .cropControls i.cropControlZoomMuchIn { background-position: 0px 0px; }
 #tem_content #memset_info ul li .tdtxt #set_facepic .cropControls i.cropControlZoomIn { background-position: -30px 0px; }
 #tem_content #memset_info ul li .tdtxt #set_facepic .cropControls i.cropControlZoomOut { background-position: -90px 0px; }
@@ -1292,23 +1272,12 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #tem_content ul li a.used.big { width: 100%; margin: 0px 0px; }
 @media (max-width: 960px) { #tem_content ul li a.used.big { width: 100%; } }
 #tem_content ul li a.used.float { width: 48%; float: left; margin: 0px 1%; }
-#tem_content ul li a.used.white { background-color: #FFF; border: 1px solid #00acc1; color: #00acc1; }
+#tem_content ul li a.used.white { background-color: #FFF; border: 1px solid #00b7b0; color: #00b7b0; }
 #tem_content ul li a.noblock { text-align: center; display: inherit; }
-#tem_content ul li #slide_pic { position: relative; width: 44%; padding: 0 0 0 0%; float: left; }
-#tem_content ul li #slide_pic #album_tags { position: absolute; bottom: 5px; right: 10px; z-index: 5; }
-#tem_content ul li #slide_pic #album_tags img { width: 28px; height: 28px; }
-#tem_content ul li #slide_pic #album_tags img, #tem_content ul li #slide_pic #album_tags .pgtxt1 { margin: 0 1px; display: inline-block; background: rgba(0, 0, 0, 0.65); -moz-border-radius: 28px; -webkit-border-radius: 28px; border-radius: 28px; }
-#tem_content ul li #slide_pic #album_tags .pgtxt1 { vertical-align: top; }
-#tem_content ul li #slide_pic #album_tags .pgtxt { display: inline-block; line-height: 28px; color: #fff; padding: 0px 6px; }
-#tem_content ul li #slide_pic .album_tags_gift img { width: 28px; height: 28px; position: absolute; top: 5px; left: 5px; z-index: 5; }
-
-//#tem_content ul li #slide_pic .album_tags_gift_bg { position: absolute; top: 5px; left: 5px; z-index: 2; border-color: #FF5E68 transparent transparent transparent; border-style: solid solid solid solid; border-width: 50px 100px 0px 0px; height: 0px; width: 0px; }
-
-
-//#tem_content ul li #slide_pic .album_tags_gift-txt { position: absolute; top: 8px; left: 30px; z-index: 3; color: #fff; }
-#tem_content ul li #slide_pic .album_tags_gift-txt { position: absolute; top: 5px; left: 5px; z-index: 3; color: #fff; display:block; background:#FF5E68; padding:5px; padding-left: 24px; }
-
-
+#tem_content ul li #album_tags { width: 4%; margin-right: -20px; margin-top: 8px; float: left; }
+#tem_content ul li #album_tags img { width: 68%; margin-top: 6px; }
+@media (max-width: 1024px) { #tem_content ul li #album_tags { display: none; } }
+#tem_content ul li #slide_pic { width: 44%; padding: 0 0 0 1%; float: left; }
 @media (max-width: 960px) { #tem_content ul li #slide_pic { width: 100%; float: none; margin-bottom: 15px; } }
 #tem_content ul li #slide_pic ul li { margin-bottom: 0px; }
 #tem_content ul li #slide_pic .temp_slide { width: 100%; position: relative; }
@@ -1316,31 +1285,31 @@ background-image: linear-gradient(#17b1ad, #10859a);
 @media (max-width: 600px) { #tem_content ul li #slide_pic .temp_slide #temp_scroll_container { display: none; } }
 #tem_content ul li #slide_pic .temp_slide #temp_scroll_container .abtn { position: absolute; left: 0px; width: 76px; height: 29px; overflow: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #tem_content ul li #slide_pic .temp_slide #temp_scroll_container .abtn:hover { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
-#tem_content ul li #slide_pic .temp_slide #temp_scroll_container .abtn.aleft { top: 0px; background-image: url("../images/up.png"); }
-#tem_content ul li #slide_pic .temp_slide #temp_scroll_container .abtn.aright { bottom: 0px; background-image: url("../images/downs.png"); }
+#tem_content ul li #slide_pic .temp_slide #temp_scroll_container .abtn.aleft { top: 0px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/up.png"); }
+#tem_content ul li #slide_pic .temp_slide #temp_scroll_container .abtn.aright { bottom: 0px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/downs.png"); }
 #tem_content ul li #slide_pic .temp_slide #temp_scroll_container .temp_list { width: 76px; height: 456px; overflow: hidden; position: relative; }
 #tem_content ul li #slide_pic .temp_slide #temp_scroll_container .temp_list ul { width: 100%; height: 100%; }
 #tem_content ul li #slide_pic .temp_slide #temp_scroll_container .temp_list ul li { width: 76px; height: 114px; }
 #tem_content ul li #slide_pic .temp_slide #temp_scroll_container .temp_list ul li img { width: 100%; height: auto; border: 2px solid transparent; }
-#tem_content ul li #slide_pic .temp_slide #temp_scroll_container .temp_list ul li img:hover, #tem_content ul li #slide_pic .temp_slide #temp_scroll_container .temp_list ul li img.active { border: 2px solid #00acc1; }
+#tem_content ul li #slide_pic .temp_slide #temp_scroll_container .temp_list ul li img:hover, #tem_content ul li #slide_pic .temp_slide #temp_scroll_container .temp_list ul li img.active { border: 2px solid #00b7b0; }
 #tem_content ul li #slide_pic .temp_slide #temp_bigimage { float: left; width: 305px; position: relative; border: 2px solid #3e3a39; background-color: #3e3a39; }
 #tem_content ul li #slide_pic .temp_slide #temp_bigimage img { vertical-align: bottom; }
 @media (max-width: 600px) { #tem_content ul li #slide_pic .temp_slide #temp_bigimage { width: 100%; } }
-#tem_content ul li #slide_pic .temp_slide #temp_bigimage .zoom { display: none; width: 46px; height: 46px; position: absolute; top: 50%; left: 50%; margin-top: -23px; margin-left: -23px; background: url("../images/zoom.png") no-repeat; background-size: 46px auto; }
+#tem_content ul li #slide_pic .temp_slide #temp_bigimage .zoom { display: none; width: 46px; height: 46px; position: absolute; top: 50%; left: 50%; margin-top: -23px; margin-left: -23px; background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/zoom.png") no-repeat; background-size: 46px auto; }
 #tem_content ul li #slide_pic .temp_slide #temp_bigimage:hover .zoom { display: block; }
 #tem_content ul li #slide_pic .slide_pic_out { position: relative; width: 100%; height: auto; padding: 5px; -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
 #tem_content ul li #slide_pic .slide_pic_out img { width: 100%; height: auto; vertical-align: bottom; }
-#tem_content ul li #slide_pic .big_pic { position: absolute; left: 0px; bottom: 0px; width: 28px; height: 28px; background-image: url("../images/album_big.png"); background-size: 100% auto; background-repeat: no-repeat; z-index: 20; }
+#tem_content ul li #slide_pic .big_pic { position: absolute; left: 0px; bottom: 0px; width: 28px; height: 28px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_big.png"); background-size: 100% auto; background-repeat: no-repeat; z-index: 20; }
 #tem_content ul li #slide_pic #slider_set { position: relative; }
-#tem_content ul li #slide_pic #setting_pic { width: 100%; height: 42px; line-height: 42px; background-image: url("../images/background02.png"); position: absolute; bottom: 0px; text-align: center; z-index: 20; }
+#tem_content ul li #slide_pic #setting_pic { width: 100%; height: 42px; line-height: 42px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png"); position: absolute; bottom: 0px; text-align: center; z-index: 20; }
 #tem_content ul li #slide_pic #setting_pic a { text-align: center; color: #FFF; line-height: 42px; }
-#tem_content ul li #slide_pic #setting_pic a:hover { color: #00acc1; }
+#tem_content ul li #slide_pic #setting_pic a:hover { color: #00b7b0; }
 #tem_content ul li #slide_pic .bx-wrapper { -moz-box-shadow: #cccccc 0px 0px 5px; -webkit-box-shadow: #cccccc 0px 0px 5px; box-shadow: #cccccc 0px 0px 5px; }
 #tem_content ul li #slide_pic img { width: 100%; height: auto; }
 #tem_content ul li #slide_pic #location { margin-top: 15px; width: 100%; }
 #tem_content ul li #slide_pic #location ul { width: 100%; }
 #tem_content ul li #slide_pic #location ul li { margin-bottom: 10px; font-size: 14px; color: #9d9d9d; line-height: 20px; }
-#tem_content ul li #slide_pic #location ul li.local_name { list-style-image: url("../images/location.png"); list-style-position: outside; margin-left: 20px; }
+#tem_content ul li #slide_pic #location ul li.local_name { list-style-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/location.png"); list-style-position: outside; margin-left: 20px; }
 #tem_content ul li #slide_pic #location ul li img { float: left; display: inline-block; margin-right: 1%; width: 10px; }
 #tem_content ul li #slide_pic #location ul li img.nomap { width: 100%; height: auto; }
 #tem_content ul li #slide_pic #location ul li p { width: 100%; display: block; font-size: 12px; }
@@ -1350,8 +1319,8 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #tem_content ul li #slide_pic #location ul li #vvv iframe { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
 #tem_content ul li #temp_infobox { width: 50%; float: left; margin-left: 3%; position: relative; padding-right: 2%; }
 @media (max-width: 960px) { #tem_content ul li #temp_infobox { width: 100%; margin-left: 0px; padding-right: 0px; } }
-#tem_content ul li #temp_infobox .act_info_name { background: url(../images/album_icon04.png); background-image: url(../images/icon_vote.svg), none; background-repeat: no-repeat; background-size: 20px auto; background-position: left center; width: 50%; height: 30px; position: absolute; max-width: 100%; padding-left: 25px; overflow: hidden; z-index: 2; }
-#tem_content ul li #temp_infobox .act_info_name a { color: #00acc1; text-decoration: underline; font-size: 14px; line-height: 30px; display: block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+#tem_content ul li #temp_infobox .act_info_name { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/album_icon04.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_vote.svg), none; background-repeat: no-repeat; background-size: 20px auto; background-position: left center; width: 50%; height: 30px; position: absolute; max-width: 100%; padding-left: 25px; overflow: hidden; z-index: 2; }
+#tem_content ul li #temp_infobox .act_info_name a { color: #00b7b0; text-decoration: underline; font-size: 14px; line-height: 30px; display: block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 #tem_content ul li #temp_infobox .act_info_name a:hover { color: #108199; }
 #tem_content ul li #temp_infobox ul { min-width: 90px; width: 100%; }
 @media (max-width: 1024px) { #tem_content ul li #temp_infobox ul { left: auto; right: 0; } }
@@ -1391,7 +1360,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #tem_content ul li #temp_infobox ul li p.editpoint input { width: 50%; }
 #tem_content ul li #temp_infobox ul li p.editpoint img { margin-top: -15px; }
 #tem_content ul li #temp_infobox ul li .more_open { width: 100%; height: 19px; line-height: 19px; text-align: center; background-color: #f6f6f6; color: #808080; font-size: 22px; cursor: pointer; margin-top: 5px; padding-top: 0px; }
-#tem_content ul li #temp_infobox ul li .more_open:hover { background-color: #00acc1; color: #FFF; }
+#tem_content ul li #temp_infobox ul li .more_open:hover { background-color: #00b7b0; color: #FFF; }
 #tem_content ul li #temp_infobox ul li .social-likes__button_line { background: #00b900; color: #FFF; padding: 0px; height: 26px; display: none; }
 @media (max-width: 1024px) { #tem_content ul li #temp_infobox ul li .social-likes__button_line { display: block; } }
 #tem_content ul li #temp_infobox ul li .social-likes__button_line:before { display: none; }
@@ -1402,7 +1371,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #tem_content ul li #temp_infobox ul li.info div.lnr.right ul.dropdown-menu li a:hover { color: #9d9d9d; }
 #tem_content ul li #temp_infobox ul li.social { text-align: right; }
 @media (max-width: 1024px) { #tem_content ul li #temp_infobox ul li.social { text-align: left; } }
-#tem_content ul li #temp_infobox ul li .social-likes__icon_line { background: url(../images/line_icon.png) no-repeat; background-position-y: 3px; width: 21px; height: 20px; display: block; margin-left: 0px; }
+#tem_content ul li #temp_infobox ul li .social-likes__icon_line { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/line_icon.png) no-repeat; background-position-y: 3px; width: 21px; height: 20px; display: block; margin-left: 0px; }
 #tem_content ul li #temp_infobox ul li h3 { display: inline-block; float: left; color: #108199; font-size: 18px; line-height: 30px; }
 #tem_content ul li #temp_infobox ul li span.red { display: inline-block; float: right; line-height: 25px; text-align: center; border: 1px solid #ee5b8d; color: #ee5b8d; padding: 2px; }
 #tem_content ul li #temp_infobox ul li input { line-height: 25px; height: 25px; padding: 0px 5px; border: 1px solid #cccccc; color: #5b5b5b; }
@@ -1427,11 +1396,6 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #tem_content ul li div.mobile_button a.twobtns { width: 47.5%; margin: 0px 1%; }
 #tem_content ul li div.mobile_button a.threebtns { width: 30.5%; margin: 0px 1%; }
 #tem_content ul li div.mobile_button a img.icon_vote { width: 25px; }
-
-/* 當作品只有一頁時, 不秀出頁數資訊 */
-*.pgtxt[title="1頁"] { display: none !important; }
-/* 當作品有抽獎與兌換時, 讓背景三角變寬 */
-//*.album_tags_gift-txt[title*="兌換"][title*="抽獎"] + .album_tags_gift_bg {border-width: 50px 170px 0px 0px  !important; }
 
 /*通知中心*/
 .notifications .row .title { text-align: left; color: #108199; font-size: 18px; box-sizing: border-box; }
@@ -1490,13 +1454,13 @@ background-image: linear-gradient(#17b1ad, #10859a);
 @media (max-width: 1024px) { #album_content ul li.mobile_open04 { display: block; } }
 #album_content ul li.mobile_open04 .item_info { width: 23%; height: 42px; float: left; margin: 0px 1%; overflow: hidden; }
 #album_content ul li.mobile_open04 .item_info p { border-left: 3px solid #9d9d9d; color: #9d9d9d; font-size: 12px; padding-left: 10px; line-height: 14px; }
-#album_content ul li.mobile_open04 .item_info p.active { border-left: 3px solid #00acc1; color: #00acc1; }
+#album_content ul li.mobile_open04 .item_info p.active { border-left: 3px solid #00b7b0; color: #00b7b0; }
 #album_content ul li.mobile_open04 a { display: block; width: 23%; height: 42px; line-height: 42px; float: left; text-align: center; margin: 0px 1%; overflow: hidden; color: #9d9d9d; border: 1px solid #9d9d9d; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
 #album_content ul li.mobile_open04 a:hover, #album_content ul li.mobile_open04 a.active { background-color: #9d9d9d; color: #FFF; }
 #album_content ul li #album_category { float: left; width: 20%; margin-right: 5%; background-color: #FFF; border: 1px solid #e8e8e8; padding: 20px 10px; display: none; }
 @media (max-width: 1024px) { #album_content ul li #album_category { display: block; width: 100%; float: none; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; padding: 20px 10px; } }
 #album_content ul li #album_category h3 { font-size: 16px; color: #108199; margin-bottom: 25px; }
-#album_content ul li #album_category h3.open_item { line-height: 25px; font-size: 18px; margin-bottom: 0px; display: none; background-image: url("../images/right.png"); background-repeat: no-repeat; background-position: center right; }
+#album_content ul li #album_category h3.open_item { line-height: 25px; font-size: 18px; margin-bottom: 0px; display: none; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/right.png"); background-repeat: no-repeat; background-position: center right; }
 @media (max-width: 1024px) { #album_content ul li #album_category h3.open_item { display: block; } }
 @media (max-width: 1024px) { #album_content ul li #album_category h3 { display: none; } }
 #album_content ul li #album_category ul { width: 100%; }
@@ -1526,13 +1490,13 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_content ul li #album_item .album_list:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #album_content ul li #album_item .album_list:hover .black_box { display: block; }
 #album_content ul li #album_item .album_list ul li img { width: 100%; height: auto; background-color: #cccccc; }
-#album_content ul li #album_item .album_list ul li .collect_icon { width: 22px; height: 21px; position: absolute; right: 5px; top: 3px; background-image: url("../images/collection_icon.png"); background-size: 100% auto; background-repeat: no-repeat; }
+#album_content ul li #album_item .album_list ul li .collect_icon { width: 22px; height: 21px; position: absolute; right: 5px; top: 3px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/collection_icon.png"); background-size: 100% auto; background-repeat: no-repeat; }
 #album_content ul li #album_item .album_list ul li .product_info { width: 100%; height: 60px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 5px; position: relative; overflow: hidden; }
 #album_content ul li #album_item .album_list ul li .product_info .point { width: 95px; height: 25px; position: absolute; right: 0px; top: 5px; }
 #album_content ul li #album_item .album_list ul li .product_info .point p { font-size: 12px; color: #108199; width: auto; line-height: 21px; float: right; margin-right: 5px; padding: 2px 5px; }
 #album_content ul li #album_item .album_list ul li .product_info p { text-align: left; font-size: 12px; color: #5b5b5b; line-height: 20px; width: 100%; white-space: nowrap; /*文字不換行*/ text-overflow: ellipsis; /*省略符號*/ max-width: 70%; overflow: hidden; }
 @media (max-width: 1024px) { #album_content ul li #album_item .album_list ul li .product_info p { max-width: 55%; } }
-#album_content ul li #album_item .album_list .black_box { background-image: url("../images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 100%; z-index: 2; display: none; }
+#album_content ul li #album_item .album_list .black_box { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 100%; z-index: 2; display: none; }
 #album_content ul li #album_item .album_list .black_box p { color: #FFF; font-size: 14px; width: 100%; text-align: center; height: 30px; line-height: 30px; position: absolute; top: 50%; margin-top: -15px; }
 #album_content ul li #album_item .album_list .black_box p img { vertical-align: middle; margin-right: 10px; }
 #album_content ul li #album_item #table_box { width: 100%; }
@@ -1547,7 +1511,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 @media (max-width: 1024px) { #album_content ul li #member_category { display: none; } }
 #album_content ul li #member_category.nobg { background-color: transparent; border: none; }
 #album_content ul li #member_category h3 { font-size: 16px; color: #108199; margin-bottom: 25px; }
-#album_content ul li #member_category h3.open_item { line-height: 25px; font-size: 18px; margin-bottom: 0px; display: none; background-image: url("../images/right.png"); background-repeat: no-repeat; background-position: center right; }
+#album_content ul li #member_category h3.open_item { line-height: 25px; font-size: 18px; margin-bottom: 0px; display: none; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/right.png"); background-repeat: no-repeat; background-position: center right; }
 @media (max-width: 1024px) { #album_content ul li #member_category h3.open_item { display: block; } }
 @media (max-width: 1024px) { #album_content ul li #member_category h3 { display: none; } }
 #album_content ul li #member_category ul { width: 100%; }
@@ -1556,8 +1520,8 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_content ul li #member_category ul li.cate_title { margin-bottom: 10px; font-size: 16px; }
 #album_content ul li #member_category ul li.cate_down { margin-left: 20px; }
 #album_content ul li #member_category ul li a { color: #9d9d9d; }
-#album_content ul li #member_category ul li a.active { color: #00acc1; }
-#album_content ul li #member_category ul li a:hover { color: #00acc1; }
+#album_content ul li #member_category ul li a.active { color: #00b7b0; }
+#album_content ul li #member_category ul li a:hover { color: #00b7b0; }
 #album_content ul li #member_category ul li ul { display: none; }
 #album_content ul li #member_category ul li ul.active { display: block; }
 #album_content ul li #member_category ul li ul li { margin: 10px 0px 15px 15px; }
@@ -1571,10 +1535,10 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_content ul li #memberbox_item .album_info ul { width: 100%; position: absolute; top: -30px; }
 #album_content ul li #memberbox_item .album_info ul li { float: left; width: 130px; margin: 0 5px; overflow: hidden; }
 #album_content ul li #memberbox_item .album_info ul li a { color: #9d9d9d; }
-#album_content ul li #memberbox_item .album_info ul li a:hover { color: #00acc1; }
+#album_content ul li #memberbox_item .album_info ul li a:hover { color: #00b7b0; }
 #album_content ul li #memberbox_item .album_info ul li p { font-size: 12px; line-height: 30px; width: 100%; overflow: hidden; height: 30px; color: #9d9d9d; }
 #album_content ul li #memberbox_item .album_info ul li p.title { font-size: 14px; color: #3e3a39; }
-#album_content ul li #memberbox_item .album_info ul li p.title.active, #album_content ul li #memberbox_item .album_info ul li p.title:hover { color: #00acc1; }
+#album_content ul li #memberbox_item .album_info ul li p.title.active, #album_content ul li #memberbox_item .album_info ul li p.title:hover { color: #00b7b0; }
 #album_content ul li #memberbox_item #album_tab { width: 100%; height: 55px; position: relative; line-height: 55px; }
 @media (max-width: 1024px) { #album_content ul li #memberbox_item #album_tab { display: none; } }
 #album_content ul li #memberbox_item #album_tab h3 { margin-right: 10px; color: #108199; float: left; font-size: 18px; }
@@ -1585,7 +1549,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_content ul li #memberbox_item #album_tab a.upload { position: absolute; width: 120px; height: 40px; line-height: 40px; text-align: center; color: #FFF; top: 5px; right: 0px; margin-right: 0px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
 #album_content ul li #memberbox_item #album_tab a.upload:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #album_content ul li #memberbox_item #album_tab .album_search { position: absolute; right: 0px; top: 10px; }
-#album_content ul li #memberbox_item #album_tab .member_sort { position: absolute; top: 10px; right: 218px; width: 72px; float: left; line-height: 0px; background: url(../images/dropdown_icon.png) no-repeat right center; background-size: 8px; height: 30px; overflow: hidden; background-color: #FFF; border: 1px solid #cccccc; color: #5b5b5b; }
+#album_content ul li #memberbox_item #album_tab .member_sort { position: absolute; top: 10px; right: 218px; width: 72px; float: left; line-height: 0px; background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/dropdown_icon.png) no-repeat right center; background-size: 8px; height: 30px; overflow: hidden; background-color: #FFF; border: 1px solid #cccccc; color: #5b5b5b; }
 #album_content ul li #memberbox_item #album_tab .member_sort select { background-color: transparent; width: 100%; color: #5b5b5b; border: none; height: 30px; width: 100px; }
 #album_content ul li #memberbox_item #album_tab .member_sort select option { background-color: #FFF; }
 #album_content ul li #memberbox_item #album_tab .search_box { display: block; line-height: 0px; }
@@ -1637,12 +1601,12 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_content ul li #memberbox_item .album_list02 .tem_imgbox img.temimg { width: 100%; height: auto; background-color: #cccccc; }
 #album_content ul li #memberbox_item .album_list02 ul li img { width: 100%; max-height: 240px; }
 #album_content ul li #memberbox_item .album_list02 ul li .product_info { width: 100%; height: 60px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 5px; position: relative; overflow: hidden; }
-#album_content ul li #memberbox_item .album_list02 ul li .product_info .award_num { width: 52px; height: 37px; background-image: url("../images/award.png"); background-size: 100%; text-align: center; line-height: 37px; color: #FFF; position: absolute; right: 5px; top: 5px; }
+#album_content ul li #memberbox_item .album_list02 ul li .product_info .award_num { width: 52px; height: 37px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/award.png"); background-size: 100%; text-align: center; line-height: 37px; color: #FFF; position: absolute; right: 5px; top: 5px; }
 #album_content ul li #memberbox_item .album_list02 ul li .product_info p { text-align: left; font-size: 12px; color: #5b5b5b; line-height: 20px; width: 100%; white-space: nowrap; /*文字不換行*/ text-overflow: ellipsis; /*省略符號*/ max-width: 75%; overflow: hidden; }
 @media (max-width: 600px) { #album_content ul li #memberbox_item .album_list02 ul li .product_info p { max-width: 55%; } }
 #album_content ul li #memberbox_item .album_list02 ul li .product_info .point { width: 95px; height: 25px; position: absolute; right: 0px; top: 5px; }
 #album_content ul li #memberbox_item .album_list02 ul li .product_info .point p { font-size: 12px; color: #108199; width: auto; line-height: 21px; float: right; margin-right: 5px; padding: 2px 5px; }
-#album_content ul li #memberbox_item .album_list02 .black_box { background-image: url("../images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 100%; z-index: 2; display: none; }
+#album_content ul li #memberbox_item .album_list02 .black_box { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 100%; z-index: 2; display: none; }
 #album_content ul li #memberbox_item .album_list02 .black_box p { color: #FFF; font-size: 14px; width: 100%; text-align: center; height: 30px; line-height: 30px; position: absolute; top: 50%; margin-top: -15px; }
 #album_content ul li #memberbox_item .album_list02 .black_box p img { vertical-align: middle; margin-right: 10px; }
 #album_content ul li #memberbox_item .ear_info { width: 100%; padding: 10px 5%; }
@@ -1662,8 +1626,8 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_content ul li #memberbox_item .album_list ul li .product_info .point p { font-size: 12px; color: #108199; width: auto; line-height: 21px; float: right; margin-right: 5px; padding: 2px 5px; }
 #album_content ul li #memberbox_item .album_list ul li .product_info p { text-align: left; font-size: 12px; color: #5b5b5b; line-height: 20px; width: 100%; white-space: nowrap; /*文字不換行*/ text-overflow: ellipsis; /*省略符號*/ max-width: 85%; overflow: hidden; }
 @media (max-width: 1024px) { #album_content ul li #memberbox_item .album_list ul li .product_info p { max-width: 55%; } }
-#album_content ul li #memberbox_item .album_list .black_box { background-image: url("../images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 100%; z-index: 2; display: none; }
-#album_content ul li #memberbox_item .album_list .black_box .openinfo { width: 100%; line-height: 28px; height: 28px; background-image: url("../images/pen.png"); background-repeat: no-repeat; background-position: right center; padding: 0px 5px; position: absolute; top: 0; color: #FFF; font-size: 14px; text-align: left; }
+#album_content ul li #memberbox_item .album_list .black_box { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 100%; z-index: 2; display: none; }
+#album_content ul li #memberbox_item .album_list .black_box .openinfo { width: 100%; line-height: 28px; height: 28px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/pen.png"); background-repeat: no-repeat; background-position: right center; padding: 0px 5px; position: absolute; top: 0; color: #FFF; font-size: 14px; text-align: left; }
 #album_content ul li #memberbox_item .album_list .black_box p { color: #FFF; font-size: 14px; width: 100%; text-align: center; height: 30px; line-height: 30px; position: absolute; top: 50%; margin-top: -15px; }
 #album_content ul li #memberbox_item .album_list .black_box p.down { display: none; }
 @media (max-width: 1024px) { #album_content ul li #memberbox_item .album_list .black_box p.down { display: block; } }
@@ -1671,7 +1635,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_content ul li #memberbox_item #memset_info { width: 100%; min-height: 620px; }
 #album_content ul li #memberbox_item #memset_info ul { width: 100%; }
 #album_content ul li #memberbox_item #memset_info ul li { margin-bottom: 10px; }
-#album_content ul li #memberbox_item #memset_info ul li a { color: #00acc1; }
+#album_content ul li #memberbox_item #memset_info ul li a { color: #00b7b0; }
 #album_content ul li #memberbox_item #memset_info ul li p { color: #5b5b5b; line-height: 1.5em; font-size: 12px; margin-bottom: 10px; }
 #album_content ul li #memberbox_item #memset_info ul li p.by { color: #9d9d9d; }
 #album_content ul li #memberbox_item #memset_info ul li a.used { display: block; line-height: 36px; text-align: center; height: 36px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; color: #FFF; width: 30%; }
@@ -1695,11 +1659,11 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_content ul li #memberbox_item #memset_info ul li .tdtxt a.used { color: #FFF; }
 @media (max-width: 800px) { #album_content ul li #memberbox_item #memset_info ul li .tdtxt { float: none; width: 100%; } }
 #album_content ul li #memberbox_item #memset_info ul li .tdtxt .num { margin-bottom: 10px; }
-#album_content ul li #memberbox_item #memset_info ul li .tdtxt #set_facepic { width: 160px; height: 160px; background-color: #959595; background-image: url("../images/face_add.png"); background-repeat: no-repeat; background-position: center center; overflow: hidden; position: relative; }
+#album_content ul li #memberbox_item #memset_info ul li .tdtxt #set_facepic { width: 160px; height: 160px; background-color: #959595; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_add.png"); background-repeat: no-repeat; background-position: center center; overflow: hidden; position: relative; }
 #album_content ul li #memberbox_item #memset_info ul li .tdtxt #set_facepic img { max-width: inherit; width: 100%; height: auto; }
 #album_content ul li #memberbox_item #memset_info ul li .tdtxt #set_facepic img#uploadPreview1 { cursor: move; }
 #album_content ul li #memberbox_item #memset_info ul li .tdtxt #set_facepic .cropControls { height: 60px; }
-#album_content ul li #memberbox_item #memset_info ul li .tdtxt #set_facepic .cropControls i { display: block; float: left; margin: 0; cursor: pointer; background-image: url("../images/cropperIcons.png"); width: 30px; height: 30px; text-align: center; line-height: 30px; color: #FFF; font-size: 13px; font-weight: bold; font-style: normal; background-size: 300px 30px; }
+#album_content ul li #memberbox_item #memset_info ul li .tdtxt #set_facepic .cropControls i { display: block; float: left; margin: 0; cursor: pointer; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/cropperIcons.png"); width: 30px; height: 30px; text-align: center; line-height: 30px; color: #FFF; font-size: 13px; font-weight: bold; font-style: normal; background-size: 300px 30px; }
 #album_content ul li #memberbox_item #memset_info ul li .tdtxt #set_facepic .cropControls i.cropControlZoomMuchIn { background-position: 0px 0px; }
 #album_content ul li #memberbox_item #memset_info ul li .tdtxt #set_facepic .cropControls i.cropControlZoomIn { background-position: -30px 0px; }
 #album_content ul li #memberbox_item #memset_info ul li .tdtxt #set_facepic .cropControls i.cropControlZoomOut { background-position: -90px 0px; }
@@ -1725,7 +1689,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo p { position: absolute; width: 100%; display: block; text-align: center; top: 50%; color: #9d9d9d; line-height: 20px; }
 #album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo .cover_choose { position: absolute; width: 20px; height: 20px; top: 5px; right: 5px; }
 #album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo .cropControls { height: 60px; }
-#album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo .cropControls i { display: block; float: left; margin: 0; cursor: pointer; background-image: url("../images/cropperIcons.png"); width: 30px; height: 30px; text-align: center; line-height: 30px; color: #FFF; font-size: 13px; font-weight: bold; font-style: normal; background-size: 300px 30px; }
+#album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo .cropControls i { display: block; float: left; margin: 0; cursor: pointer; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/cropperIcons.png"); width: 30px; height: 30px; text-align: center; line-height: 30px; color: #FFF; font-size: 13px; font-weight: bold; font-style: normal; background-size: 300px 30px; }
 #album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo .cropControls i.cropControlZoomMuchIn { background-position: 0px 0px; }
 #album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo .cropControls i.cropControlZoomIn { background-position: -30px 0px; }
 #album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo .cropControls i.cropControlZoomOut { background-position: -90px 0px; }
@@ -1737,7 +1701,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo .cropControls i.cropControlAriay { display: none; }
 #album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo .cropControls i.cropControlRotateLeft { background-position: -240px 0px; }
 #album_content ul li #memberbox_item #memset_info ul li .cover_content .upload_photo .cropControls i.cropControlRotateRight { background-position: -270px 0px; }
-#album_content ul li #memberbox_item #memset_info ul li .cover_content .control_btn { width: 200px; height: 38px; display: block; background-color: #00acc1; text-align: center; line-height: 38px; color: #FFF; -moz-transition: all 0.3s; -o-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; }
+#album_content ul li #memberbox_item #memset_info ul li .cover_content .control_btn { width: 200px; height: 38px; display: block; background-color: #00b7b0; text-align: center; line-height: 38px; color: #FFF; -moz-transition: all 0.3s; -o-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; }
 #album_content ul li #memberbox_item #memset_info ul li .cover_content .control_btn:hover { background-color: #108199; }
 #album_content ul li #memberbox_item #memset_info ul li .cover_content .control_btn img { vertical-align: middle; width: 24px; height: auto; margin-right: 5px; }
 #album_content ul li #memberbox_item #memset_info ul li .float { float: left; display: inline-block; line-height: 20px; font-size: 12px; margin-right: 15px; }
@@ -1784,26 +1748,26 @@ background-image: linear-gradient(#17b1ad, #10859a);
 @media (max-width: 1024px) { #admin_mobile { display: block; } }
 #admin_mobile a.adminmo_btn { color: #108199; text-align: center; display: block; float: left; font-size: 14px; margin-top: 10px; width: 20%; height: 60px; background-position: center 0px; background-repeat: no-repeat; background-size: 30px; padding-top: 38px; }
 @media (max-width: 320px) { #admin_mobile a.adminmo_btn { background-size: 28px; font-size: 12px; padding-top: 40px; } }
-#admin_mobile a.adminmo_btn.p1 { background-image: url("../images/edit_icon01.png"); background-position: center 8px; }
-#admin_mobile a.adminmo_btn.p2 { background-image: url("../images/edit_icon02.png"); background-size: 25px; }
-#admin_mobile a.adminmo_btn.p3 { background-image: url("../images/edit_icon03.png"); }
-#admin_mobile a.adminmo_btn.p4 { background-image: url("../images/edit_icon04.png"); }
-#admin_mobile a.adminmo_btn.p5 { background-image: url("../images/edit_icon05.png"); background-position: center 5px; }
-#admin_mobile a.adminmo_btn.p6 { background-image: url("../images/edit_icon06.png"); background-position: center 0px; }
+#admin_mobile a.adminmo_btn.p1 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon01.png"); background-position: center 8px; }
+#admin_mobile a.adminmo_btn.p2 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon02.png"); background-size: 25px; }
+#admin_mobile a.adminmo_btn.p3 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon03.png"); }
+#admin_mobile a.adminmo_btn.p4 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon04.png"); }
+#admin_mobile a.adminmo_btn.p5 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon05.png"); background-position: center 5px; }
+#admin_mobile a.adminmo_btn.p6 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon06.png"); background-position: center 0px; }
 #admin_mobile a.adminmo_btn:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 
 #admin_mobile02 { position: fixed; bottom: 0px; width: 100%; background-color: #FFF; z-index: 99; display: none; border-top: 1px solid #cccccc; }
 @media (max-width: 1024px) { #admin_mobile02 { display: block; } }
 #admin_mobile02 a.adminmo_btn { color: #108199; text-align: center; display: block; float: left; font-size: 14px; margin-top: 10px; width: 33.3333333333%; height: 60px; background-position: center 0px; background-repeat: no-repeat; background-size: 30px; padding-top: 38px; }
 @media (max-width: 320px) { #admin_mobile02 a.adminmo_btn { background-size: 28px; font-size: 12px; padding-top: 40px; } }
-#admin_mobile02 a.adminmo_btn.p1 { background-image: url("../images/edit_icon01.png"); background-position: center 8px; }
-#admin_mobile02 a.adminmo_btn.p2 { background-image: url("../images/edit_icon02.png"); background-size: 25px; }
-#admin_mobile02 a.adminmo_btn.p3 { background-image: url("../images/edit_icon03.png"); }
-#admin_mobile02 a.adminmo_btn.p4 { background-image: url("../images/edit_icon04.png"); }
-#admin_mobile02 a.adminmo_btn.p5 { background-image: url("../images/edit_icon05.png"); background-position: center 5px; }
+#admin_mobile02 a.adminmo_btn.p1 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon01.png"); background-position: center 8px; }
+#admin_mobile02 a.adminmo_btn.p2 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon02.png"); background-size: 25px; }
+#admin_mobile02 a.adminmo_btn.p3 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon03.png"); }
+#admin_mobile02 a.adminmo_btn.p4 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon04.png"); }
+#admin_mobile02 a.adminmo_btn.p5 { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon05.png"); background-position: center 5px; }
 #admin_mobile02 a.adminmo_btn:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 
-.albumedit_down { float: left; margin-right: 2px; line-height: 0px; background: url(../images/dropdown_icon.png) no-repeat 90% center; background-size: 8px; height: 35px; overflow: hidden; background-color: #FFF; border: 1px solid #cccccc; color: #5b5b5b; }
+.albumedit_down { float: left; margin-right: 2px; line-height: 0px; background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/dropdown_icon.png) no-repeat 90% center; background-size: 8px; height: 35px; overflow: hidden; background-color: #FFF; border: 1px solid #cccccc; color: #5b5b5b; }
 .albumedit_down select { padding: 5px 8px; width: 130%; border: none; box-shadow: none; -webkit-appearance: none; background-color: transparent; color: #5b5b5b; border: none; height: 35px; }
 .albumedit_down select option { background-color: #FFF; }
 .albumedit_down select:focus { outline: none; }
@@ -1812,7 +1776,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .albumedit_down.music { width: 140px; }
 .albumedit_down.sex { width: 140px; }
 
-.time_down { display: inline-block; vertical-align: middle; width: 200px; margin-right: 10px; line-height: 0px; background: url(../images/dropdown_icon.png) no-repeat 90% center; background-size: 8px; height: 35px; overflow: hidden; background-color: #FFF; border: 1px solid #cccccc; color: #5b5b5b; margin-bottom: 15px; }
+.time_down { display: inline-block; vertical-align: middle; width: 200px; margin-right: 10px; line-height: 0px; background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/dropdown_icon.png) no-repeat 90% center; background-size: 8px; height: 35px; overflow: hidden; background-color: #FFF; border: 1px solid #cccccc; color: #5b5b5b; margin-bottom: 15px; }
 .time_down select { padding: 5px 8px; width: 130%; border: none; box-shadow: none; -webkit-appearance: none; background-color: transparent; color: #5b5b5b; border: none; height: 35px; }
 .time_down select option { background-color: #FFF; }
 .time_down select:focus { outline: none; }
@@ -1870,7 +1834,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #follow_content .follow_all .follow_else .favorite ul li .social-likes__button_line { background: #00b900; color: #FFF; padding: 0px; height: 23px; width: 100%; top: -2px; display: none; }
 @media (max-width: 1024px) { #follow_content .follow_all .follow_else .favorite ul li .social-likes__button_line { display: block; } }
 #follow_content .follow_all .follow_else .favorite ul li .social-likes__button_line:before { display: none; }
-#follow_content .follow_all .follow_else .favorite ul li .social-likes__icon_line { background: url(../images/line_icon.png) no-repeat; width: 21px; height: 20px; display: block; margin-left: 0px; left: 42%; }
+#follow_content .follow_all .follow_else .favorite ul li .social-likes__icon_line { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/line_icon.png) no-repeat; width: 21px; height: 20px; display: block; margin-left: 0px; left: 42%; }
 #follow_content .follow_all .follow_else .message { margin-top: 10px; text-align: center; }
 #follow_content .follow_all .follow_else .message a { line-height: 35px; color: #9d9d9d; }
 #follow_content .follow_all .follow_else .message a:hover { color: #108199; }
@@ -1878,7 +1842,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #act_content { width: 960px; position: relative; padding-top: 0px; }
 @media (max-width: 1024px) { #act_content { width: 100%; padding: 0px 10px; } }
 #act_content h2 { text-align: left; color: #108199; margin-bottom: 20px; font-size: 18px; background-image: none; }
-#act_content .album_select { width: 100%; height: 100%; background-image: url(../images/background02.png); z-index: 20; position: absolute; top: 0; left: 0; display: none; }
+#act_content .album_select { width: 100%; height: 100%; background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png); z-index: 20; position: absolute; top: 0; left: 0; display: none; }
 #act_content .album_select img { position: absolute; top: 50%; left: 50%; margin-left: -15px; margin-top: -10px; }
 #act_content #act_right { width: 30%; float: right; background-color: #FFF; position: absolute; padding: 2%; right: 0px; top: 20px; border: 1px solid #e8e8e8; }
 @media (max-width: 1024px) { #act_content #act_right { width: 100%; float: inherit; position: inherit; margin-bottom: 15px; } }
@@ -1899,13 +1863,13 @@ background-image: linear-gradient(#17b1ad, #10859a);
 @media (max-width: 319px) { #act_content #act_left .water_content { width: 160px; } }
 #act_content #act_left .water_content .item_box { width: 150px; float: left; margin-right: 10px; position: relative; }
 #act_content #act_left .water_content .item_box .item_info .info_name h3 { font-size: 14px; max-height: 25px; }
-#act_content #act_left .water_content .item_box .album_award { width: 34px; position: absolute; z-index: 10; top: 0px; left: 0px; background-image: url("../images/award_bg.png"); background-repeat: no-repeat; background-size: 100%; height: 39px; }
+#act_content #act_left .water_content .item_box .album_award { width: 34px; position: absolute; z-index: 10; top: 0px; left: 0px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/award_bg.png"); background-repeat: no-repeat; background-size: 100%; height: 39px; }
 #act_content #act_left .water_content .item_box .award_num { width: 100%; height: 100%; font-size: 16px; text-align: center; position: absolute; left: -5px; color: #FFF; z-index: 15; }
 #act_content #act_search { width: 100%; height: 30px; background-color: #FFF; position: relative; }
 @media (max-width: 1024px) { #act_content #act_search { width: 100%; } }
 #act_content #act_search .clear_box { width: 20px; height: 20px; position: absolute; right: 0px; top: 5px; }
-#act_content #act_search .clear_box i { color: #00acc1; font-size: 12px; }
-#act_content #act_search .big_item { width: 50px; background: url(../images/select_icon.png) no-repeat right center; height: 30px; overflow: hidden; position: absolute; left: 0px; background-color: #bfbfbf; z-index: 2; }
+#act_content #act_search .clear_box i { color: #00b7b0; font-size: 12px; }
+#act_content #act_search .big_item { width: 50px; background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/select_icon.png) no-repeat right center; height: 30px; overflow: hidden; position: absolute; left: 0px; background-color: #bfbfbf; z-index: 2; }
 #act_content #act_search .big_item select { background-color: #bfbfbf; width: 100%; color: #FFF; border: none; height: 30px; width: 78px; }
 #act_content #act_search .big_item select option { background-color: #11b2ad; }
 #act_content #act_search .actsearch_txt { width: 100%; height: 30px; line-height: 30px; border: 1px solid #9e9e9e; padding-left: 55px; position: absolute; color: #108199; }
@@ -1923,7 +1887,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #act_content .act_info ul li h3 { color: #108199; font-size: 18px; line-height: 24px; margin-bottom: 15px; height: 24px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 #act_content .act_info ul li p { width: 100%; height: 75px; line-height: 25px; overflow: hidden; font-size: 14px; color: #5b5b5b; }
 @media (max-width: 960px) { #act_content .act_info a.social-likes__widget_line { margin-left: .2em; } }
-@media (max-width: 960px) { #act_content .act_info span.social-likes__icon_line { background: url(../images/line_icon.png) no-repeat; width: 21px; height: 20px; display: block; margin-left: 0px; background-size: contain; } }
+@media (max-width: 960px) { #act_content .act_info span.social-likes__icon_line { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/line_icon.png) no-repeat; width: 21px; height: 20px; display: block; margin-left: 0px; background-size: contain; } }
 #act_content .act_else { width: 100%; }
 #act_content .act_else .eventtitle { font-size: 22px; line-height: 1.1em; }
 #act_content .act_else h3 { color: #108199; font-size: 18px; margin-bottom: 15px; word-break: break-all; }
@@ -1967,7 +1931,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #act_content .act_list02 .act_info ul li .social-likes__button_line { background: #00b900; color: #FFF; padding: 0px; height: 20px; top: -2px; display: none; }
 @media (max-width: 1024px) { #act_content .act_list02 .act_info ul li .social-likes__button_line { display: block; } }
 #act_content .act_list02 .act_info ul li .social-likes__button_line:before { display: none; }
-#act_content .act_list02 .act_info ul li .social-likes__icon_line { background: url(../images/line_icon.png) no-repeat; width: 21px; height: 20px; display: block; margin-left: 0px; }
+#act_content .act_list02 .act_info ul li .social-likes__icon_line { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/line_icon.png) no-repeat; width: 21px; height: 20px; display: block; margin-left: 0px; }
 #act_content .act_list02 .act_else { float: left; width: 25%; border-left: 1px solid #cccccc; padding-left: 20px; height: 100%; }
 @media (max-width: 1024px) { #act_content .act_list02 .act_else { float: none; width: 95%; border-left: none; padding: 0px 1%; margin: 15px auto 0px auto; min-height: 0px; } }
 #act_content .act_list02 .act_else ul { width: 100%; }
@@ -1999,19 +1963,19 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #act_content .album_download p.down_all { font-size: 20px; }
 #act_content .album_download p.down_all.green { color: #32bab6; }
 #act_content .album_list { width: 100%; background-color: #FFF; border: 1px solid #e8e8e8; position: relative; }
-#act_content .album_list .album_award { width: 100%; position: absolute; z-index: 10; top: 25px; background-image: url("../images/vote_award.png"); background-repeat: no-repeat; background-size: 100%; height: 17px; }
-#act_content .album_list .award_num { width: 52px; height: 37px; background-image: url("../images/award.png"); background-size: 100%; text-align: center; line-height: 37px; color: #FFF; position: absolute; right: 10px; top: -10px; z-index: 15; }
+#act_content .album_list .album_award { width: 100%; position: absolute; z-index: 10; top: 25px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/vote_award.png"); background-repeat: no-repeat; background-size: 100%; height: 17px; }
+#act_content .album_list .award_num { width: 52px; height: 37px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/award.png"); background-size: 100%; text-align: center; line-height: 37px; color: #FFF; position: absolute; right: 10px; top: -10px; z-index: 15; }
 #act_content .album_list:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #act_content .album_list ul li img { width: 100%; height: auto; }
 #act_content .album_list ul li .product_info { width: 100%; height: 90px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 5px; position: relative; overflow: hidden; }
 #act_content .album_list ul li .product_info p { text-align: left; font-size: 12px; color: #5b5b5b; line-height: 20px; width: 100%; white-space: nowrap; /*文字不換行*/ text-overflow: ellipsis; /*省略符號*/ max-width: 100%; overflow: hidden; }
 #act_content .album_list ul li .product_info p.num { color: #9d9d9d; margin-top: 10px; }
-#act_content .album_list ul li .product_info p.green { color: #00acc1; }
+#act_content .album_list ul li .product_info p.green { color: #00b7b0; }
 #act_content .album_list ul li .product_info p.green i { margin-right: 5px; }
-#act_content .album_list .black_box { background-image: url("../images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 100%; z-index: 2; display: none; }
+#act_content .album_list .black_box { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 100%; z-index: 2; display: none; }
 #act_content .album_list .black_box p { color: #FFF; font-size: 14px; width: 100%; text-align: center; height: 30px; line-height: 30px; position: absolute; top: 50%; margin-top: -15px; }
 #act_content .album_list .black_box p img { vertical-align: middle; margin-right: 10px; }
-#act_content .start_edit { display: block; position: absolute; bottom: 0px; width: 100%; line-height: 32px; text-align: center; background-color: #00acc1; color: #FFF; font-size: 14px; -moz-transition: all 0.3s; -o-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; }
+#act_content .start_edit { display: block; position: absolute; bottom: 0px; width: 100%; line-height: 32px; text-align: center; background-color: #00b7b0; color: #FFF; font-size: 14px; -moz-transition: all 0.3s; -o-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; }
 #act_content .start_edit:hover { background-color: #5b5b5b; }
 #act_content .start_edit img { width: 22px; vertical-align: middle; height: auto; margin-right: 5px; }
 @media (max-width: 1024px) { #act_content .start_edit span { display: none; } }
@@ -2050,7 +2014,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #act_content #tab-container #act_more_all p.line { background-color: #108199; }
 #act_content #tab-container #act_more_all span { line-height: 1.5em; }
 #act_content #tab-container #act_more_all img { max-width: 100%; max-height: auto; }
-#act_content #tab-container #act_more_all a { color: #00acc1; }
+#act_content #tab-container #act_more_all a { color: #00b7b0; }
 #act_content #tab-container #act_more_all .award_item { width: 100%; border: 1px solid #108199; padding: 10px 1%; }
 #act_content #tab-container #act_more_all .award_item .award_pic { width: 20%; float: left; }
 #act_content #tab-container #act_more_all .award_item .award_pic img { width: 100%; height: auto; }
@@ -2090,7 +2054,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #rescuit_in_apply ul { width: 100%; }
 #rescuit_in_apply ul li { margin-bottom: 20px; font-size: 14px; color: #9d9d9d; }
 #rescuit_in_apply ul li.textcenter { text-align: center; line-height: 20px; padding-top: 25px; }
-#rescuit_in_apply ul li h2 { line-height: 32px; text-align: left; color: #108199; background-image: url("../images/p_icon.png"); background-repeat: no-repeat; background-position: left center; padding-left: 30px; font-size: 16px; letter-spacing: 3px; }
+#rescuit_in_apply ul li h2 { line-height: 32px; text-align: left; color: #108199; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/p_icon.png"); background-repeat: no-repeat; background-position: left center; padding-left: 30px; font-size: 16px; letter-spacing: 3px; }
 #rescuit_in_apply ul li a { color: #108199; }
 #rescuit_in_apply ul li a.member_enter { width: 230px; height: 40px; line-height: 40px; display: block; color: #FFF; text-align: center; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
 @media (max-width: 1024px) { #rescuit_in_apply ul li a.member_enter { width: 80%; } }
@@ -2102,7 +2066,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #rescuit_in_apply ul li .choose_gift p span { color: #ee5b8d; font-size: 12px; margin-left: 5px; }
 #rescuit_in_apply ul li .choose_gift p input[type="radio"] { width: 20px; height: 20px; }
 #rescuit_in_apply ul li p { line-height: 2em; font-size: 16px; color: #9d9d9d; }
-#rescuit_in_apply ul li span { color: #00acc1; }
+#rescuit_in_apply ul li span { color: #00b7b0; }
 #rescuit_in_apply ul li img { margin-bottom: 10px; height: auto; }
 #rescuit_in_apply ul li img.line_or { width: 100%; max-width: 100%; height: auto; }
 #rescuit_in_apply ul li img.qa { width: 24px; height: auto; margin-left: 5px; vertical-align: middle; }
@@ -2127,15 +2091,15 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #rescuit_in_apply ul li .check_name { line-height: 20px; }
 #rescuit_in_apply ul li .country-list { width: 430px; }
 #rescuit_in_apply ul li .country-list li { text-align: left; font-size: 12px; margin-bottom: 5px; }
-#rescuit_in_apply ul li #set_facepic { width: 160px; height: 160px; -moz-border-radius: 160px; -webkit-border-radius: 160px; border-radius: 160px; background-color: #959595; background-image: url("../images/face_add.png"); background-repeat: no-repeat; background-position: center center; overflow: hidden; }
+#rescuit_in_apply ul li #set_facepic { width: 160px; height: 160px; -moz-border-radius: 160px; -webkit-border-radius: 160px; border-radius: 160px; background-color: #959595; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_add.png"); background-repeat: no-repeat; background-position: center center; overflow: hidden; }
 #rescuit_in_apply ul li #set_facepic img { max-width: inherit; width: 100%; height: auto; }
 #rescuit_in_apply ul li #set_facepic img#uploadPreview1 { cursor: move; }
 #rescuit_in_apply ul li #tab-container { width: 100%; }
 #rescuit_in_apply ul li #tab-container .etabs { width: 100%; margin-bottom: 15px; }
 #rescuit_in_apply ul li #tab-container .etabs li { float: left; display: inline-block; padding: 0px 10px; }
 #rescuit_in_apply ul li #tab-container .etabs li a { font-size: 20px; text-align: center; color: #5b5b5b; line-height: 32px; }
-#rescuit_in_apply ul li #tab-container .etabs li a:before { content: url("../images/select_no.png"); margin-right: 10px; }
-#rescuit_in_apply ul li #tab-container .etabs li.active a:before { content: url("../images/select.png"); }
+#rescuit_in_apply ul li #tab-container .etabs li a:before { content: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/select_no.png"); margin-right: 10px; }
+#rescuit_in_apply ul li #tab-container .etabs li.active a:before { content: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/select.png"); }
 #rescuit_in_apply ul li #tab-container .tab { display: none; }
 #rescuit_in_apply ul li #tab-container .tab.active { display: block; }
 #rescuit_in_apply ul li #tab-container .tab_content { margin-bottom: 20px; }
@@ -2163,7 +2127,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #rescuit_in ul { width: 100%; }
 #rescuit_in ul li { margin-bottom: 20px; font-size: 14px; color: #9d9d9d; }
 #rescuit_in ul li.textcenter { text-align: center; line-height: 20px; padding-top: 25px; }
-#rescuit_in ul li h2 { line-height: 32px; text-align: left; color: #108199; background-image: url("../images/p_icon.png"); background-repeat: no-repeat; background-position: left center; padding-left: 30px; font-size: 16px; letter-spacing: 3px; }
+#rescuit_in ul li h2 { line-height: 32px; text-align: left; color: #108199; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/p_icon.png"); background-repeat: no-repeat; background-position: left center; padding-left: 30px; font-size: 16px; letter-spacing: 3px; }
 #rescuit_in ul li a { color: #108199; }
 #rescuit_in ul li a.member_enter { width: 230px; height: 40px; line-height: 40px; display: block; color: #FFF; text-align: center; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
 @media (max-width: 1024px) { #rescuit_in ul li a.member_enter { width: 80%; } }
@@ -2175,7 +2139,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #rescuit_in ul li .choose_gift p span { color: #ee5b8d; font-size: 12px; margin-left: 5px; }
 #rescuit_in ul li .choose_gift p input[type="radio"] { width: 20px; height: 20px; }
 #rescuit_in ul li p { line-height: 2em; font-size: 16px; color: #9d9d9d; }
-#rescuit_in ul li span { color: #00acc1; }
+#rescuit_in ul li span { color: #00b7b0; }
 #rescuit_in ul li img { margin-bottom: 10px; height: auto; }
 #rescuit_in ul li img.line_or { width: 100%; max-width: 100%; height: auto; }
 #rescuit_in ul li img.qa { width: 24px; height: auto; margin-left: 5px; vertical-align: middle; }
@@ -2223,7 +2187,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #creatop_box .creatop_list { width: 29%; margin: 0px 2%; float: left; position: relative; }
 @media (max-width: 600px) { #creatop_box .creatop_list { width: 100%; margin: 0px; float: none; margin-bottom: 20px; } }
 #creatop_box .creatop_list:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
-#creatop_box .creatop_list .crea_award { width: 54px; height: 71px; background-image: url("../images/crea01.png"); background-repeat: no-repeat; overflow: hidden; position: absolute; left: -10px; top: -10px; }
+#creatop_box .creatop_list .crea_award { width: 54px; height: 71px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/crea01.png"); background-repeat: no-repeat; overflow: hidden; position: absolute; left: -10px; top: -10px; }
 #creatop_box .creatop_list .crea_award.p1 { background-position: 0 0; }
 #creatop_box .creatop_list .crea_award.p2 { background-position: -92px 0; }
 #creatop_box .creatop_list .crea_award.p3 { background-position: -186px 0; }
@@ -2274,7 +2238,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #crea_content #crea_in .crea_main_banner { height: 450px; position: relative; }
 #crea_content #crea_in .crea_main_banner img { margin: auto; display: block; }
 #crea_content #crea_in .crea_main_banner .banner-edit { position: absolute; right: 10px; top: 10px; }
-#crea_content #crea_in .crea_main_banner .banner-edit label { background-image: url("../images/icon-add.svg"); -moz-background-size: 28px auto; -webkit-background-size: 28px auto; -o-background-size: 28px auto; background-size: 28px auto; width: 28px; height: 28px; }
+#crea_content #crea_in .crea_main_banner .banner-edit label { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon-add.svg"); -moz-background-size: 28px auto; -webkit-background-size: 28px auto; -o-background-size: 28px auto; background-size: 28px auto; width: 28px; height: 28px; }
 #crea_content #crea_in .crea_main_banner p { font-size: 50px; line-height: 75px; color: #FFF; text-align: center; margin: 0 auto; width: 12em; position: relative; top: -300px; }
 #crea_content #crea_in .crea_main_banner .statistic-box { display: none; }
 #crea_content #crea_in .crea_main_banner textarea { font-size: 50px; line-height: 75px; margin: 0 auto; width: 12em; position: relative; top: -300px; opacity: 0.8; display: block; resize: none; }
@@ -2288,7 +2252,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #crea_content #crea_in #crea_header #crea_left div.buttons { position: absolute; top: 20%; }
 @media (max-width: 1024px) { #crea_content #crea_in #crea_header #crea_left div.buttons { position: inherit; text-align: center; } }
 #crea_content #crea_in #crea_header #crea_left a { width: auto; height: auto; border: 0; position: absolute; right: 15px; top: 80px; z-index: 2; line-height: 40px; text-align: center; display: block; }
-#crea_content #crea_in #crea_header #crea_left a.pin_button { color: #9d9d9d; margin: 0px 0px 10px 0px; background: url(../images/pin.png); background-image: url(../images/icon_pin.svg), none; background-size: 18px auto; background-repeat: no-repeat; background-position: 26% center; padding-left: 22px; }
+#crea_content #crea_in #crea_header #crea_left a.pin_button { color: #9d9d9d; margin: 0px 0px 10px 0px; background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/pin.png); background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_pin.svg), none; background-size: 18px auto; background-repeat: no-repeat; background-position: 26% center; padding-left: 22px; }
 @media (max-width: 1024px) { #crea_content #crea_in #crea_header #crea_left a.pin_button { margin: 10px; width: 90px; display: inline-block; } }
 #crea_content #crea_in #crea_header #crea_left a.pin_button:hover { background-color: #f6f6f6; }
 #crea_content #crea_in #crea_header #crea_left a.pin_button.active { background-image: none; border: #ee5b8d; background-color: #ee5b8d; color: #FFF; padding-left: 0px; }
@@ -2333,7 +2297,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #crea_content #crea_in #crea_header #crea_right ul li .icon_group_info .edit_social div input { border-radius: 0; height: 28px; }
 #crea_content #crea_in #crea_header #crea_right ul li .more { color: #108199; }
 #crea_content #crea_in #crea_header #crea_right ul li .more_open { color: #108199; display: inline-block; cursor: pointer; float: right; text-decoration: underline; }
-#crea_content #crea_in #crea_header #crea_right ul li a.icon { width: 30px; height: 30px; margin-right: 10px; display: block; float: left; background-image: url("../images/social_icon2.png"); background-repeat: no-repeat; }
+#crea_content #crea_in #crea_header #crea_right ul li a.icon { width: 30px; height: 30px; margin-right: 10px; display: block; float: left; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/social_icon2.png"); background-repeat: no-repeat; }
 #crea_content #crea_in #crea_header #crea_right ul li a.icon:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #crea_content #crea_in #crea_header #crea_right ul li a.icon.p1 { background-position: 0px 0px; }
 #crea_content #crea_in #crea_header #crea_right ul li a.icon.p2 { background-position: -45px 0px; }
@@ -2350,7 +2314,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #crea_content #crea_in #crea_header #crea_right ul li div.socialicon_group input[type="text"] { width: 80%; height: 25px; margin-bottom: 0px; margin-top: -20px; }
 #crea_content #crea_in #crea_header #crea_right .buttons-box { position: absolute; right: 0; top: 33px; }
 #crea_content #crea_in #crea_header #crea_right .buttons-box a { padding: 7px 0; border-radius: 5px; border: 1px solid #9d9d9d; color: #4d4d4d; display: inline-block; text-align: center; vertical-align: middle; width: 90px; margin-left: 10px; }
-#crea_content #crea_in #crea_header #crea_right .buttons-box a.attention { width: 170px; background-image: url(../images/assets-v6/icon-attention-d.svg); -moz-background-size: 25px auto; -webkit-background-size: 25px auto; -o-background-size: 25px auto; background-size: 25px auto; background-position: 35% center; background-repeat: no-repeat; padding-left: 15px; }
+#crea_content #crea_in #crea_header #crea_right .buttons-box a.attention { width: 170px; background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-attention-d.svg); -moz-background-size: 25px auto; -webkit-background-size: 25px auto; -o-background-size: 25px auto; background-size: 25px auto; background-position: 35% center; background-repeat: no-repeat; padding-left: 15px; }
 #crea_content #crea_in #crea_header #crea_right .buttons-box a.active { background-image: none; color: #FFF; background-color: #ee5b8d; border: 1px solid #ee5b8d; padding-left: 0; }
 #crea_content #crea_in #crea_header #crea_right .buttons-box a.share_button { padding: 7px 0 6px; }
 #crea_content #crea_in #crea_header #crea_right .buttons-box a.share_button img { width: 20px; vertical-align: middle; margin-right: 4px; }
@@ -2358,7 +2322,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #crea_content #crea_in #crea_header #crea_right .buttons-box a.edit-finish { color: #FFF; background: #00acc1; border-color: #00acc1; }
 #crea_content #crea_in #crea_header #crea_right .buttons-box select#mobileOptions { display: none; width: 50px; margin: 0px 0 0 13px; border-radius: 7px; }
 @media (max-width: 765px) { #crea_content #crea_in #crea_header #crea_right .buttons-box select#mobileOptions { display: inline-block; } }
-#crea_content #crea_in #crea_header #crea_edit { display: inline-block; padding-left: 30px; background-image: url("../images/edit_icon01.png"); background-repeat: no-repeat; background-position: 5px center; position: absolute; background-size: 19px; top: 0px; right: 10px; }
+#crea_content #crea_in #crea_header #crea_edit { display: inline-block; padding-left: 30px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/edit_icon01.png"); background-repeat: no-repeat; background-position: 5px center; position: absolute; background-size: 19px; top: 0px; right: 10px; }
 #crea_content #crea_in #crea_header #crea_edit:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 @media (max-width: 1024px) { #crea_content #crea_in #crea_header #crea_edit { display: block; width: 70px; height: 24px; background-size: 20px; padding: 0px; background-position: 35px center; margin-top: 10px; } }
 #crea_content #crea_in #crea_header #crea_edit p { color: #108199; font-size: 12px; }
@@ -2372,10 +2336,10 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #crea_content #crea_in .album_list:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #crea_content #crea_in .album_list ul li img { width: 100%; height: auto; }
 #crea_content #crea_in .album_list ul li .product_info { width: 100%; height: 60px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 5px; position: relative; overflow: hidden; }
-#crea_content #crea_in .album_list ul li .product_info .award_num { width: 52px; height: 37px; background-image: url("../images/award.png"); background-size: 100%; text-align: center; line-height: 37px; color: #FFF; position: absolute; right: 5px; top: 5px; }
+#crea_content #crea_in .album_list ul li .product_info .award_num { width: 52px; height: 37px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/award.png"); background-size: 100%; text-align: center; line-height: 37px; color: #FFF; position: absolute; right: 5px; top: 5px; }
 #crea_content #crea_in .album_list ul li .product_info p { text-align: left; font-size: 12px; color: #5b5b5b; line-height: 20px; width: 100%; white-space: nowrap; /*文字不換行*/ text-overflow: ellipsis; /*省略符號*/ max-width: 75%; overflow: hidden; }
 @media (max-width: 600px) { #crea_content #crea_in .album_list ul li .product_info p { max-width: 80%; } }
-#crea_content #crea_in .album_list .black_box { background-image: url("../images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 100%; z-index: 2; display: none; }
+#crea_content #crea_in .album_list .black_box { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 100%; z-index: 2; display: none; }
 #crea_content #crea_in .album_list .black_box p { color: #FFF; font-size: 14px; width: 100%; text-align: center; height: 30px; line-height: 30px; position: absolute; top: 50%; margin-top: -15px; }
 #crea_content #crea_in .album_list .black_box p img { vertical-align: middle; margin-right: 10px; }
 #crea_content #crea_in .act_album { float: left; width: 23%; margin: 0px 1% 20px 1%; position: relative; }
@@ -2448,13 +2412,13 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #point_content a.used:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #point_content .point_list { width: 220px; height: 110px; border: 1px solid #cccccc; margin: 10px 10px; float: left; position: relative; padding-top: 30px; cursor: pointer; }
 @media (max-width: 480px) { #point_content .point_list { float: none; margin: 10px auto; } }
-#point_content .point_list .point_count { width: 68px; height: 68px; background-image: url("../images/save.png"); background-repeat: no-repeat; overflow: hidden; position: absolute; top: 0px; left: 0px; }
+#point_content .point_list .point_count { width: 68px; height: 68px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/save.png"); background-repeat: no-repeat; overflow: hidden; position: absolute; top: 0px; left: 0px; }
 #point_content .point_list .point_count p { color: #FFF; display: block; text-align: left; -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); transform: rotate(-45deg); font-size: 10px; line-height: 48px; }
 #point_content .point_list ul { width: 100%; }
 #point_content .point_list ul li { text-align: center; margin-bottom: 15px; color: #9d9d9d; }
 #point_content .point_list ul li img { width: 20px; height: auto; vertical-align: middle; margin-right: 5px; }
 #point_content .point_list ul li span { color: #108199; font-size: 16px; }
-#point_content .point_list .choose { width: 100%; height: 100%; position: absolute; z-index: 20; top: 0px; left: 0px; background-image: url("../images/background02.png"); display: none; }
+#point_content .point_list .choose { width: 100%; height: 100%; position: absolute; z-index: 20; top: 0px; left: 0px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png"); display: none; }
 #point_content .point_list .choose img { position: absolute; top: 50%; left: 50%; margin-left: -15px; margin-top: -15px; }
 #point_content .point_list.active .choose { display: block; }
 
@@ -2494,7 +2458,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .set_box_in { width: 400px; height: auto; background-color: #FFF; z-index: 100001; position: relative; overflow: hidden; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; margin-top: 40px; }
 @media (max-width: 680px) { .set_box_in { width: 80%; } }
 
-.set_box_top { width: 100%; height: 42px; background-color: #00acc1; line-height: 42px; text-align: center; color: #FFF; position: relative; font-size: 18px; }
+.set_box_top { width: 100%; height: 42px; background-color: #00b7b0; line-height: 42px; text-align: center; color: #FFF; position: relative; font-size: 18px; }
 .set_box_top .close_box { width: 34px; height: 34px; position: absolute; right: 5px; font-size: 18px; }
 .set_box_top .close_box a { font-size: 18px; color: #FFF; }
 .set_box_top .close_box img { width: 100%; height: auto; }
@@ -2517,7 +2481,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .set_box_content ul li input#mobile-number { width: 100%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding-left: 44px; }
 .set_box_content ul li input.web_url { width: 20%; margin-left: 5px; }
 .set_box_content ul li textarea { width: 90%; max-width: 90%; max-height: 300px; border: 1px solid #cccccc; padding: 5px; color: #9d9d9d; }
-.set_box_content ul li a.used { display: block; line-height: 36px; text-align: center; height: 36px; background-color: #00acc1; color: #FFF; width: 90%; }
+.set_box_content ul li a.used { display: block; line-height: 36px; text-align: center; height: 36px; background-color: #00b7b0; color: #FFF; width: 90%; }
 .set_box_content ul li a.used:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 .set_box_content ul li a.phone_btn { color: #108199; text-decoration: underline; }
 .set_box_content ul li a.cancel { display: block; line-height: 36px; text-align: center; height: 36px; background-color: #9d9d9d; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; color: #FFF; width: 90%; }
@@ -2542,13 +2506,13 @@ background-image: linear-gradient(#17b1ad, #10859a);
 @media (max-width: 1024px) { .pop_al_out { width: 100%; height: 100%; left: 0px; top: 0px; margin-left: 0px; overflow-y: scroll; overflow-x: hidden; } }
 .pop_al_out .pop_al_in { width: 100%; height: auto; }
 @media (max-width: 1024px) { .pop_al_out .pop_al_in { width: 90%; margin-top: 20px; } }
-.pop_al_out #close_al { width: 36px; height: 36px; background-image: url("../images/close_btn02.png"); background-repeat: no-repeat; background-size: 100%; position: absolute; right: -36px; top: 20px; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+.pop_al_out #close_al { width: 36px; height: 36px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/close_btn02.png"); background-repeat: no-repeat; background-size: 100%; position: absolute; right: -36px; top: 20px; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
 .pop_al_out #close_al:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; }
 @media (max-width: 1024px) { .pop_al_out #close_al { right: 0px; position: fixed; } }
 .pop_al_out #pop_al_image { width: 410px; float: left; height: 615px; overflow: hidden; position: relative; }
 .pop_al_out #pop_al_image img { width: 100%; height: auto; }
 @media (max-width: 1024px) { .pop_al_out #pop_al_image { width: 100%; height: auto; float: none; } }
-.pop_al_out #pop_al_image .pop_image_right { width: 51px; height: 615px; background-image: url("../images/pop_al_right.png"); background-repeat: no-repeat; background-size: 100%; background-position: top right; position: absolute; right: 0; top: 0; }
+.pop_al_out #pop_al_image .pop_image_right { width: 51px; height: 615px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/pop_al_right.png"); background-repeat: no-repeat; background-size: 100%; background-position: top right; position: absolute; right: 0; top: 0; }
 @media (max-width: 1024px) { .pop_al_out #pop_al_image .pop_image_right { display: none; } }
 .pop_al_out #pop_al_info { width: 390px; height: 595px; float: left; margin-left: 10px; margin-top: 10px; background-color: #FFF; padding: 10px; }
 @media (max-width: 1024px) { .pop_al_out #pop_al_info { width: 100%; height: auto; float: none; margin-left: 0px; margin-top: 0px; } }
@@ -2561,7 +2525,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .pop_al_out .pop_al_top ul li .top_left .top_face img { width: 100%; height: auto; }
 @media (min-width: 601px) and (max-width: 1024px) { .pop_al_out .pop_al_top ul li .top_left .top_face { width: 80%; } }
 @media (max-width: 600px) { .pop_al_out .pop_al_top ul li .top_left .top_face { width: 80px; } }
-.pop_al_out .pop_al_top ul li .top_left a.pin { width: 80px; height: 25px; line-height: 25px; border: 1px solid #cccccc; text-align: center; display: block; color: #ee5b8d; background-image: url("../images/pin.png"); background-repeat: no-repeat; background-position: 8% center; }
+.pop_al_out .pop_al_top ul li .top_left a.pin { width: 80px; height: 25px; line-height: 25px; border: 1px solid #cccccc; text-align: center; display: block; color: #ee5b8d; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/pin.png"); background-repeat: no-repeat; background-position: 8% center; }
 .pop_al_out .pop_al_top ul li .top_left a.pin:hover { background-color: #f6f6f6; }
 @media (max-width: 1024px) { .pop_al_out .pop_al_top ul li .top_left a.pin { width: 80%; height: 32px; line-height: 32px; } }
 .pop_al_out .pop_al_top ul li .top_right { width: 290px; float: left; padding-left: 10px; padding-top: 10px; font-size: 12px; color: #9d9d9d; }
@@ -2572,14 +2536,14 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .pop_al_out .pop_al_top ul li .top_right li.title { width: 270px; line-height: 24px; height: 24px; overflow: hidden; font-size: 14px; }
 .pop_al_out .pop_al_top ul li .top_right li .feel { width: 15px; height: auto; margin-right: 5px; vertical-align: middle; }
 .pop_al_out .pop_al_top ul li .top_right li .name { width: 220px; height: 24px; overflow: hidden; padding-left: 5px; }
-.pop_al_out .pop_al_top ul li .top_right li.local_name { list-style-image: url("../images/location.png"); list-style-position: outside; margin-left: 20px; }
+.pop_al_out .pop_al_top ul li .top_right li.local_name { list-style-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/location.png"); list-style-position: outside; margin-left: 20px; }
 .pop_al_out .pop_al_top ul li .down { width: 40%; float: left; }
 .pop_al_out .pop_al_top ul li .down img { width: 70%; height: auto; max-width: 120px; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
 .pop_al_out .pop_al_top ul li .down img:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; }
 .pop_al_out .pop_al_top ul li .share { width: 60%; float: left; }
 .pop_al_out .pop_al_top ul li .share ul { width: auto; }
 .pop_al_out .pop_al_top ul li .share .social-likes_single-w { float: right; }
-.pop_al_out .pop_al_top ul li .share .social-likes__button_line { background: #00b900; color: #FFF; padding: 0px; height: 23px; width: 100%; top: -2px; display: none; background-image: url("../images/line_icon.png"); background-position: left center; background-repeat: no-repeat; }
+.pop_al_out .pop_al_top ul li .share .social-likes__button_line { background: #00b900; color: #FFF; padding: 0px; height: 23px; width: 100%; top: -2px; display: none; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/line_icon.png"); background-position: left center; background-repeat: no-repeat; }
 @media (max-width: 1024px) { .pop_al_out .pop_al_top ul li .share .social-likes__button_line { display: block; } }
 .pop_al_out .pop_al_top ul li .share .social-likes__button_line:before { display: none; }
 .pop_al_out .pop_al_bottom { width: 100%; height: 300px; overflow: hidden; }
@@ -2593,7 +2557,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .pop_al_out .pop_al_else ul li .message a:hover { color: #108199; }
 
 .see_more { width: 100%; margin-top: 20px; line-height: 42px; height: 42px; text-align: center; margin-bottom: 20px; border: 1px solid #cccccc; background-color: #FFF; color: #9d9d9d; font-size: 14px; -moz-transition: all 0.1s; -o-transition: all 0.1s; -webkit-transition: all 0.1s; transition: all 0.1s; }
-.see_more:hover { background-color: #00acc1; color: #FFF; border: 1px solid #00acc1; }
+.see_more:hover { background-color: #00b7b0; color: #FFF; border: 1px solid #00b7b0; }
 .see_more img { vertical-align: middle; margin-right: 10px; width: 20px; height: auto; }
 
 .see_end { width: 100%; margin-top: 20px; height: 42px; text-align: center; position: relative; }
@@ -2607,7 +2571,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 .jBox-container img.app { width: 40%; margin: 0px 5%; }
 .jBox-container a.social-likes__widget_line { color: #9d9d9d; font-size: 14px; display: inline-block; }
 .jBox-container a.social-likes__widget_line span.social-likes__button_line { width: 2em; background: #00b900; color: #FFF; padding: 0px; height: 26px; display: block; }
-.jBox-container a.social-likes__widget_line span.social-likes__button_line span.social-likes__icon_line { background: url(../images/line_icon.png) no-repeat; background-position-x: -2px; background-position-y: 3px; width: 17px; height: 20px; display: block; margin-left: 0px; }
+.jBox-container a.social-likes__widget_line span.social-likes__button_line span.social-likes__icon_line { background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/line_icon.png) no-repeat; background-position-x: -2px; background-position-y: 3px; width: 17px; height: 20px; display: block; margin-left: 0px; }
 .jBox-container .mobile_button { margin-left: 0px; left: 0; padding: 6px 5px; }
 
 .mobilehide { display: block; }
@@ -2635,10 +2599,10 @@ background-image: linear-gradient(#17b1ad, #10859a);
 
 .img_mode { position: absolute; top: 5px; left: 50%; margin-left: -15px; height: 30px; width: 30px; line-height: 30px; color: #FFF; background-position: center center; background-size: 100%; }
 @media (max-width: 410px) { .img_mode { position: relative; float: right; top: auto; left: auto; margin-top: 5px; margin-left: 0px; } }
-.img_mode.mod01 { background-image: url(../images/editor/iconc_01.png); }
-.img_mode.mod02 { background-image: url(../images/editor/iconc_02.png); }
-.img_mode.mod03 { background-image: url(../images/editor/iconc_03.png); }
-.img_mode.mod04 { background-image: url(../images/editor/iconc_04.png); }
+.img_mode.mod01 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/editor/iconc_01.png); }
+.img_mode.mod02 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/editor/iconc_02.png); }
+.img_mode.mod03 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/editor/iconc_03.png); }
+.img_mode.mod04 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/editor/iconc_04.png); }
 
 /*留言板*/
 #pinpinboard { margin: 0 auto; padding: 25px 5px 45px 5px; position: relative; }
@@ -2746,16 +2710,16 @@ a.uploadCroppieSave { color: #FFF; background: #00acc1; border-color: #00acc1; }
   #crea_content #crea_in .tab-container .etabs li a span { display: none; }
   #crea_content #crea_in .tab-container .etabs li { width: 20%; padding: 0; }
   #crea_content #crea_in .tab-container .etabs li a { width: 36px; height: 36px; display: block; margin: auto; }
-  #crea_content #crea_in .tab-container .etabs li a[name="tabAbout"] { background: url("../images/assets-v6/icon-profile-2.svg") center center no-repeat; }
-  #crea_content #crea_in .tab-container .etabs li.active a[name="tabAbout"] { background: url("../images/assets-v6/icon-profile-1.svg") center center no-repeat; }
-  #crea_content #crea_in .tab-container .etabs li a[name="tabMyAlbum"] { background: url("../images/assets-v6/icon-myworks-2.svg") center center no-repeat; }
-  #crea_content #crea_in .tab-container .etabs li.active a[name="tabMyAlbum"] { background: url("../images/assets-v6/icon-myworks-1.svg") center center no-repeat; }
-  #crea_content #crea_in .tab-container .etabs li a[name="tabMyCollect"] { background: url("../images/assets-v6/icon-heart-2.svg") center center no-repeat; }
-  #crea_content #crea_in .tab-container .etabs li.active a[name="tabMyCollect"] { background: url("../images/assets-v6/icon-heart-1.svg") center center no-repeat; }
-  #crea_content #crea_in .tab-container .etabs li a[name="tabCooperate"] { background: url("../images/assets-v6/icon-together-2.svg") center center no-repeat; }
-  #crea_content #crea_in .tab-container .etabs li.active a[name="tabCooperate"] { background: url("../images/assets-v6/icon-together-1.svg") center center no-repeat; }
-  #crea_content #crea_in .tab-container .etabs li a[name="tabPinpinboard"] { background: url("../images/assets-v6/icon-message-2.svg") center center no-repeat; }
-  #crea_content #crea_in .tab-container .etabs li.active a[name="tabPinpinboard"] { background: url("../images/assets-v6/icon-message-1.svg") center center no-repeat; }
+  #crea_content #crea_in .tab-container .etabs li a[name="tabAbout"] { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-profile-2.svg") center center no-repeat; }
+  #crea_content #crea_in .tab-container .etabs li.active a[name="tabAbout"] { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-profile-1.svg") center center no-repeat; }
+  #crea_content #crea_in .tab-container .etabs li a[name="tabMyAlbum"] { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-myworks-2.svg") center center no-repeat; }
+  #crea_content #crea_in .tab-container .etabs li.active a[name="tabMyAlbum"] { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-myworks-1.svg") center center no-repeat; }
+  #crea_content #crea_in .tab-container .etabs li a[name="tabMyCollect"] { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-heart-2.svg") center center no-repeat; }
+  #crea_content #crea_in .tab-container .etabs li.active a[name="tabMyCollect"] { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-heart-1.svg") center center no-repeat; }
+  #crea_content #crea_in .tab-container .etabs li a[name="tabCooperate"] { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-together-2.svg") center center no-repeat; }
+  #crea_content #crea_in .tab-container .etabs li.active a[name="tabCooperate"] { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-together-1.svg") center center no-repeat; }
+  #crea_content #crea_in .tab-container .etabs li a[name="tabPinpinboard"] { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-message-2.svg") center center no-repeat; }
+  #crea_content #crea_in .tab-container .etabs li.active a[name="tabPinpinboard"] { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-message-1.svg") center center no-repeat; }
   #crea_content #crea_in #crea_header #crea_right ul li .icon_group_info .edit_social { width: 48%; margin-left: 2%; }
   #crea_content #crea_in #crea_header #crea_right ul li .icon_group_info .edit_social:first-child { width: 48%; margin-right: 2%; margin-left: 0; }
   #crea_content #crea_in #crea_header #crea_right ul li .icon_group_info .edit_social label { text-align: center; }
@@ -2803,7 +2767,7 @@ a.uploadCroppieSave { color: #FFF; background: #00acc1; border-color: #00acc1; }
 #pg_content #act_left .pwater_content .item_boxp .info_name a:hover { color: #00acc1 !important; }
 #pg_content #act_left .pwater_content .item_boxp .info_name .trim_name { margin: 0 auto; padding-bottom: 5px; display: inline-block; width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 #pg_content #act_left .pwater_content .item_boxp .info_name p { color: #9d9d9d; font-size: 14px; }
-#pg_content #act_left .pwater_content .item_boxp .album_award { width: 34px; position: absolute; z-index: 10; top: 0px; left: 0px; background-image: url("../images/award_bg_pingirl.png"); background-repeat: no-repeat; background-size: 100%; height: 39px; }
+#pg_content #act_left .pwater_content .item_boxp .album_award { width: 34px; position: absolute; z-index: 10; top: 0px; left: 0px; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/award_bg_pingirl.png"); background-repeat: no-repeat; background-size: 100%; height: 39px; }
 #pg_content #act_left .pwater_content .item_boxp .album_award .award_num { width: 100%; height: 100%; font-size: 16px; text-align: center; position: absolute; left: -5px; color: #FFF; z-index: 15; }
 
 @media (max-width: 1024px) { #pg_content #row1 .col-sm-8 .apic { height: 472px; }
