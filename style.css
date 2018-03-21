@@ -1306,7 +1306,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 
 //#tem_content ul li #slide_pic .album_tags_gift-txt { position: absolute; top: 5px; left: 5px; z-index: 3; color: #fff; display:block; background:#FF5E68; padding:5px; padding-left: 26px; padding-right: 6px; }
 
-#tem_content ul li #slide_pic .album_tags_gift-txt { background: url("gift-01.svg")left center no-repeat #FF5E68;position: absolute; top: 5px; left: 5px; z-index: 3; color: #fff; display:block; padding:5px; padding-left: 26px; padding-right: 6px; }
+#tem_content ul li #slide_pic .album_tags_gift-txt { background: url("gift-01.svg")left center no-repeat #FF5E68;position: absolute; top: 5px; left: 5px; z-index: 3; color: #fff; display:block; padding:5px 31px 5px 11px; }
 
 
 
