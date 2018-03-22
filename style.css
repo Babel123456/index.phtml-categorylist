@@ -309,7 +309,7 @@ html a { text-decoration: none; }
 #banner #banner_content .fotorama .page .creator_box .color_box.color03 { background-image: url(../images/banner/creator_03.jpg); }
 #banner #banner_content .fotorama .page .creator_box .color_box.color04 { background-image: url(../images/banner/creator_04.jpg); }
 #banner #banner_content .fotorama .page .creator_box .color_box.color05 { background-image: url(../images/banner/creator_05.jpg); }
-#banner #banner_content .fotorama .page .creator_box .color_box.color06 { background-image: url(../images/banner/creator_06.jpg); }
+#banner #banner_content .fotorama .page .creator_box .color_box.color06 { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/banner/creator_06.jpg); }
 #banner #banner_content .fotorama .page .creator_box .color_box.color07 { background-image: url(../images/banner/creator_07.jpg); }
 #banner #banner_content .fotorama .page .creator_box .color_box.color08 { background-image: url(../images/banner/creator_08.jpg); }
 #banner #banner_content .fotorama .page .creator_box .color_box.color09 { background-image: url(../images/banner/creator_09.jpg); }
@@ -555,7 +555,7 @@ html a { text-decoration: none; }
 @media (min-width: 1024px) { #content ul#layout li .create_box .color10 { background-color: #fff; } }
 @media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color10 { border-left: 10px #8DE1F7 solid; } }
 @media (max-width: 767px) { #content ul#layout li .create_box .color10 { border-left: 10px #8DE1F7 solid; } }
-#content ul#layout li .black_box { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png);  background-repeat: repeat; position: absolute; width: 100%; height: 85%; z-index: 2; display: none; }
+#content ul#layout li .black_box { background-image: url("../images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 85%; z-index: 2; display: none; }
 #content ul#layout li .black_box p { color: #FFF; font-size: 14px; width: 100%; text-align: center; height: 260px; line-height: 30px; position: absolute; top: 13%; margin-top: -15px; }
 #content ul#layout li .black_box p img { vertical-align: middle; margin-right: 10px; }
 #content ul#layout li .create_list { width: 22.5%; margin: 15px 0%; display: inline-block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #FFF; padding: 2%; height: 400px; overflow: hidden; }
@@ -671,28 +671,8 @@ background-image: linear-gradient(#17b1ad, #10859a);
 @media (max-width: 1024px) { #content ul#layout li .commed { width: 960px; } }
 #content ul#layout li .product_list { width: 220px; margin: 15px 10px; float: left; background-color: #FFF; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #cccccc; position: relative; }
 @media (max-width: 1024px) { #content ul#layout li .product_list { width: 160px; } }
-
-#content ul#layout li .product_list .album_tags_gift img{
-  width:28px; height:28px; 
-  position: absolute; top:1px; left:1px;z-index:23;
-}
-
-#content ul#layout li .product_list .album_tags_gift_bg{
-    position: absolute; top:0px; left:0px;z-index: 22;
-	border-color: #FF5E68 transparent transparent transparent;
-    border-style: solid solid solid solid;
-    border-width: 50px 50px 0px 0px;
-    height: 0px;
-    width: 0px;
-}
-
-
-@media (max-width: 568px) { 
-#content ul#layout li .product_list .album_tags_gift img { width: 26px; height: 26px; left:0;}
-#content ul#layout li .product_list .album_tags_gift_bg { border-width: 45px 45px 0px 0px; }
- }
-
-
+#content ul#layout li .product_list .album_tags_gift img { width: 28px; height: 28px; position: absolute; top: 1px; left: 1px; z-index: 23; }
+#content ul#layout li .product_list .album_tags_gift .album_tags_gift_bg { position: absolute; top: 0px; left: 0px; z-index: 22; border-color: #FF5E68 transparent transparent transparent; border-style: solid solid solid solid; border-width: 50px 50px 0px 0px; height: 0px; width: 0px; }
 #content ul#layout li .product_list .product_pic { width: 100%; height: 330px; overflow: hidden; }
 @media (max-width: 1024px) { #content ul#layout li .product_list .product_pic { height: 240px; } }
 #content ul#layout li .product_list .product_pic img { width: 100%; height: 330px; }
@@ -756,11 +736,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow ul.dropdown-menu { min-width: 130px; left: -110px; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow ul.dropdown-menu li { margin-bottom: 3px; text-align: left; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow ul.dropdown-menu li.divider { margin: 5px auto; width: 80%; height: 2px; }
-
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .blackCover { 
-height: 98.5%; background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png); 
-background-repeat: repeat; position: absolute; width: 100%; z-index: 2; display: none; }
-
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .blackCover { height: 98.5%; background-image: url(../images/background02.png); background-repeat: repeat; position: absolute; width: 100%; z-index: 2; display: none; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic { height: 145px; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic img { -ms-transform: scale(1.3, 1.3); -webkit-transform: scale(1.3, 1.3); transform: scale(1.3, 1.3); position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 1; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info { display: block; padding: 5px 10px 0 10px; text-align: left; overflow: hidden; }
