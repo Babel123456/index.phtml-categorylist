@@ -555,7 +555,7 @@ html a { text-decoration: none; }
 @media (min-width: 1024px) { #content ul#layout li .create_box .color10 { background-color: #fff; } }
 @media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color10 { border-left: 10px #8DE1F7 solid; } }
 @media (max-width: 767px) { #content ul#layout li .create_box .color10 { border-left: 10px #8DE1F7 solid; } }
-#content ul#layout li .black_box { background-image: url("../images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 85%; z-index: 2; display: none; }
+#content ul#layout li .black_box { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png);  background-repeat: repeat; position: absolute; width: 100%; height: 85%; z-index: 2; display: none; }
 #content ul#layout li .black_box p { color: #FFF; font-size: 14px; width: 100%; text-align: center; height: 260px; line-height: 30px; position: absolute; top: 13%; margin-top: -15px; }
 #content ul#layout li .black_box p img { vertical-align: middle; margin-right: 10px; }
 #content ul#layout li .create_list { width: 22.5%; margin: 15px 0%; display: inline-block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #FFF; padding: 2%; height: 400px; overflow: hidden; }
@@ -671,6 +671,28 @@ background-image: linear-gradient(#17b1ad, #10859a);
 @media (max-width: 1024px) { #content ul#layout li .commed { width: 960px; } }
 #content ul#layout li .product_list { width: 220px; margin: 15px 10px; float: left; background-color: #FFF; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #cccccc; position: relative; }
 @media (max-width: 1024px) { #content ul#layout li .product_list { width: 160px; } }
+
+#content ul#layout li .product_list .album_tags_gift img{
+  width:28px; height:28px; 
+  position: absolute; top:1px; left:1px;z-index:23;
+}
+
+#content ul#layout li .product_list .album_tags_gift_bg{
+    position: absolute; top:0px; left:0px;z-index: 22;
+	border-color: #FF5E68 transparent transparent transparent;
+    border-style: solid solid solid solid;
+    border-width: 50px 50px 0px 0px;
+    height: 0px;
+    width: 0px;
+}
+
+
+@media (max-width: 568px) { 
+#content ul#layout li .product_list .album_tags_gift img { width: 26px; height: 26px; left:0;}
+#content ul#layout li .product_list .album_tags_gift_bg { border-width: 45px 45px 0px 0px; }
+ }
+
+
 #content ul#layout li .product_list .product_pic { width: 100%; height: 330px; overflow: hidden; }
 @media (max-width: 1024px) { #content ul#layout li .product_list .product_pic { height: 240px; } }
 #content ul#layout li .product_list .product_pic img { width: 100%; height: 330px; }
@@ -722,6 +744,11 @@ background-image: linear-gradient(#17b1ad, #10859a);
 @media (max-width: 1024px) { #content ul#layout.albumExplore .bookcase-container .tab_content .product_scroll { width: 1920px; } }
 @media (max-width: 1024px) { #content ul#layout.albumExplore .bookcase-container .tab_content { padding: 25px 0px; } }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem { width: 220px; margin: 15px 10px; float: left; background-color: #FFF; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #cccccc; position: relative; cursor: zoom-in; }
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .album_tags_gift img { width: 28px; height: 28px; position: absolute; top: 1px; left: 1px; z-index: 5; }
+@media (max-width: 568px) { #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .album_tags_gift img { width: 26px; height: 26px; left: 0; } }
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .album_tags_gift img:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .album_tags_gift .album_tags_gift_bg { position: absolute; top: 0px; left: 0px; z-index: 2; border-color: #FF5E68 transparent transparent transparent; border-style: solid solid solid solid; border-width: 50px 50px 0px 0px; height: 0px; width: 0px; }
+@media (max-width: 568px) { #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .album_tags_gift .album_tags_gift_bg { border-width: 45px 45px 0px 0px; } }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem { position: relative; overflow: hidden; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow { position: absolute; left: 90%; text-align: right; z-index: 3; padding-right: 6px; display: none; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow p.dropdown-sign { font-size: 16px; margin-top: 8px; color: #9D9D9D; cursor: pointer; }
@@ -729,62 +756,17 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow ul.dropdown-menu { min-width: 130px; left: -110px; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow ul.dropdown-menu li { margin-bottom: 3px; text-align: left; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .dropdown-arrow ul.dropdown-menu li.divider { margin: 5px auto; width: 80%; height: 2px; }
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .blackCover { height: 98.5%; background-image: url(../images/background02.png); background-repeat: repeat; position: absolute; width: 100%; z-index: 2; display: none; }
+
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .blackCover { 
+height: 98.5%; background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png); 
+background-repeat: repeat; position: absolute; width: 100%; z-index: 2; display: none; }
+
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic { height: 145px; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .albumItem .product_pic img { -ms-transform: scale(1.3, 1.3); -webkit-transform: scale(1.3, 1.3); transform: scale(1.3, 1.3); position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 1; }
-
-
-
-//#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .album_tags_gift  a{display:block;}
-
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .album_tags_gift img{
-  width:28px; height:28px; 
-  position: absolute; top:1px; left:1px;z-index:5;
-}
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .album_tags_gift img:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .album_tags_gift_bg{
-    position: absolute; top:0px; left:0px;z-index: 2;
-	border-color: #FF5E68 transparent transparent transparent;
-    border-style: solid solid solid solid;
-    border-width: 50px 50px 0px 0px;
-    height: 0px;
-    width: 0px;
-}
-
-@media (max-width: 568px) { 
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .album_tags_gift img { width: 26px; height: 26px; left:0;}
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .album_tags_gift_bg { border-width: 45px 45px 0px 0px; }
- }
-
-
-
-
-
-
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info { 
-display: block; 
-//padding: 10px 2px 10px 5px; 
-padding: 5px 10px 0 10px; 
-text-align: left; overflow: hidden; 
-}
-
-
-#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info p.title { 
-text-align: left; line-height: 25px; max-height: 50px; font-size: 18px; overflow: hidden; letter-spacing: 1px; cursor: default; 
-//width: 200px; 
-//text-overflow: ellipsis; 
-//white-space: nowrap; 
-//width: 100%;
-height: 50px;
-}
-
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info { display: block; padding: 5px 10px 0 10px; text-align: left; overflow: hidden; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .multi_ellipsis { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-height: 25px; height: 50px; }
-
+#content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info p.title { text-align: left; line-height: 25px; max-height: 50px; font-size: 18px; overflow: hidden; letter-spacing: 1px; cursor: default; height: 50px; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info p.title img { width: 20px; float: right; }
-
-
-
-
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info p.title a { color: #5b5b5b; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info p.title :hover { color: #00b7b0; }
 #content ul#layout.albumExplore .bookcase-container .tab_content div.albumExploreItem .product_info .info_user { width: 93%; margin-top: 5px; position: relative; padding-right: 15px; }
@@ -1226,33 +1208,12 @@ height: 50px;
 #tem_content .more_title { width: 100%; margin: 50px 0px 30px 0px; height: 2px; position: relative; background-color: #e8ebec; }
 #tem_content .more_title p { position: absolute; line-height: 24px; height: 24px; display: inline-block; border-bottom: 2px solid #9c9c9c; left: 0px; top: -24px; font-size: 16px; color: #3f4549; }
 #tem_content .seemore_content { width: 100%; }
-
-#tem_content .seemore_content .item_box { position:relative;background-color: #FFF; width: 23%; overflow: hidden; float: left; margin: 0 1%; margin-bottom: 10px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
-
-
-#tem_content .seemore_content .item_box .album_tags_gift  a{display:block;}
-
-#tem_content .seemore_content .item_box .album_tags_gift img{
-  width:28px; height:28px; 
-  position: absolute; top:1px; left:1px;z-index:5;
-}
-#tem_content .seemore_content .item_box .album_tags_gift img:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
-#tem_content .seemore_content .item_box .album_tags_gift_bg{
-    position: absolute; top:0px; left:0px;z-index: 2;
-	border-color: #FF5E68 transparent transparent transparent;
-    border-style: solid solid solid solid;
-    border-width: 50px 50px 0px 0px;
-    height: 0px;
-    width: 0px;
-}
-
-@media (max-width: 568px) { 
-#tem_content .seemore_content .item_box .album_tags_gift img { width: 26px; height: 26px; left:0;}
-#tem_content .seemore_content .item_box .album_tags_gift_bg { border-width: 45px 45px 0px 0px; }
- }
-
-
+#tem_content .seemore_content .item_box { position: relative; background-color: #FFF; width: 23%; overflow: hidden; float: left; margin: 0 1%; margin-bottom: 10px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
 @media (max-width: 640px) { #tem_content .seemore_content .item_box { width: 48%; } }
+#tem_content .seemore_content .item_box .album_tags_gift a { display: block; }
+#tem_content .seemore_content .item_box .album_tags_gift img { width: 28px; height: 28px; position: absolute; top: 1px; left: 1px; z-index: 5; }
+#tem_content .seemore_content .item_box .album_tags_gift img:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
+#tem_content .seemore_content .item_box .album_tags_gift .album_tags_gift_bg { position: absolute; top: 0px; left: 0px; z-index: 2; border-color: #FF5E68 transparent transparent transparent; border-style: solid solid solid solid; border-width: 50px 50px 0px 0px; height: 0px; width: 0px; }
 #tem_content .seemore_content .item_box .imgh { display: block; position: relative; width: 100%; padding-top: 66.66%; overflow: hidden; }
 #tem_content .seemore_content .item_box .imgh img { -ms-transform: scale(1.3, 1.3); -webkit-transform: scale(1.3, 1.3); transform: scale(1.3, 1.3); position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 1; cursor: -webkit-zoom-in; }
 @media (max-width: 640px) { #tem_content .seemore_content .item_box .imgh img { -ms-transform: scale(1.5, 1.5); -webkit-transform: scale(1.5, 1.5); transform: scale(1.5, 1.5); } }
@@ -1270,11 +1231,7 @@ height: 50px;
 #tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_act01 { background: url(../images/album_icon04.png); background-image: url(../images/icon_vote.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
 #tem_content .seemore_content .item_box .item_info .info_name .info_icon i.add_act02 { background: url(../images/album_icon05.png); background-image: url(../images/icon_activity.svg), none; background-repeat: no-repeat; background-size: 20px auto; }
 #tem_content .seemore_content .item_box .item_info .info_name h3 { width: 100%; line-height: 25px; max-height: 50px; font-size: 18px; overflow: hidden; height: 50px; }
-
 #tem_content .seemore_content .item_box .item_info .info_name h3 .multi_ellipsis { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-height: 25px; height: 50px; }
-
-
-
 #tem_content .seemore_content .item_box .item_info .info_name h3 a { color: #5b5b5b; letter-spacing: -1px; text-align: left; line-height: 25px; max-height: 50px; font-size: 16px; overflow: hidden; height: 50px; }
 #tem_content .seemore_content .item_box .item_info .info_name h3 a:hover { color: #00b7b0; }
 #tem_content .seemore_content .item_box .item_info .info_name .name_more { width: 100%; height: auto; max-height: 54px; line-height: 18px; font-size: 12px; text-align: justify; overflow: hidden; color: #9d9d9d; word-break: break-all; }
@@ -1375,7 +1332,7 @@ height: 50px;
 #tem_content ul li #slide_pic #album_tags img, #tem_content ul li #slide_pic #album_tags .pgtxt1 { margin: 0 1px; display: inline-block; background: rgba(0, 0, 0, 0.65); -moz-border-radius: 28px; -webkit-border-radius: 28px; border-radius: 28px; }
 #tem_content ul li #slide_pic #album_tags .pgtxt1 { vertical-align: top; }
 #tem_content ul li #slide_pic #album_tags .pgtxt { display: inline-block; line-height: 28px; color: #fff; padding: 0px 6px; }
-#tem_content ul li #slide_pic .album_tags_gift-txt { background: url(https://babel123456.github.io/index.phtml-categorylist/gift-01.svg) left center no-repeat #FF5E68; position: absolute; top: 5px; left: 5px; z-index: 3; display: block; color: #fff; padding: 5px 11px 5px 31px; }
+#tem_content ul li #slide_pic .album_tags_gift-txt { background: url("https://babel123456.github.io/index.phtml-categorylist/gift-01.svg") left center no-repeat #FF5E68; position: absolute; top: 5px; left: 5px; z-index: 3; display: block; color: #fff; padding: 5px 11px 5px 31px; }
 @media (max-width: 960px) { #tem_content ul li #slide_pic { width: 100%; float: none; margin-bottom: 15px; } }
 #tem_content ul li #slide_pic ul li { margin-bottom: 0px; }
 #tem_content ul li #slide_pic .temp_slide { width: 100%; position: relative; }
