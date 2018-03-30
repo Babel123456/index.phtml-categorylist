@@ -247,8 +247,8 @@ function mobile_notice() {
 				          -->
 						</div>
 						<div  id="album_tags" >						 
-						    <img alt="影片" title="影片" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/play-01.svg">
-						    <img  alt="聲音" title="聲音"  src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/speaker-01.svg">
+						    <img alt="影片" title="影片" src="images/play-01.svg">
+						    <img  alt="聲音" title="聲音"  src="images/speaker-01.svg">
 							<span class="pgtxt1" ><span class="pgtxt" alt="2頁" title="2頁">2頁</span></span>
 							
 				        </div>
@@ -734,6 +734,9 @@ function likes(id) {
 		}
 	});
 }
+
+
+
 
 function recommendedBuyAlbum() {
 	var myConfirm = new jBox('Confirm', {
@@ -1446,6 +1449,7 @@ function browseKit_album(url, param) {
 			
 			if (r.result == 1) {
 				for (var k0 in r.data.readable) {
+
 					subHtml = '';
 
 					if (r.data.readable[k0]['name']) subHtml += '<h4>' + r.data.readable[k0]['name'] + '</h4>';
@@ -1556,6 +1560,7 @@ function browseKit_album(url, param) {
 }
 
 function browseKit_v2(that, item, param) {
+
 	a_album_element.push(that);
 	var	indexId = ($('#mask02').data('indexId')) ? $('#mask02').data('indexId') : 0,
 		$lg = $(that).lightGallery({
@@ -1585,14 +1590,12 @@ function browseKit_v2(that, item, param) {
     			audioPlayer[0].play(); 
     		}, 700); 
     	}
-		
 		//加入抽獎影片圖示
 		$(".lg-thumb-item").css('position','relative');
 		for(i=0;i<item.length;i++){
 		    $(".lg-thumb-item:nth-child("+(i+1)+")").append(item[i].slotHtml);
 			$(".lg-thumb-item:nth-child("+(i+1)+")").append(item[i].videoHtml);
 		}
-		
 		
 	}).on('onAfterSlide.lg',function(e, p, i){
 	    $lg.data('lightGallery').modules.audio.build();
@@ -1622,6 +1625,17 @@ function browseKit_v2(that, item, param) {
 				audioPlayer.removeAttr('autoplay');
 			}
 		}, false);
+		
+		if(item[i].slotHtml!=null && item[i].slotHtml != ''){
+		  var slotConfirm = new jBox('Modal',{closeButton: 'title'});
+		  var slotContent = '',slotTitle='';
+		  slotContent += '<div class="content">';
+		  slotTitle += '<p class="keypoint" style="font-size:2em;text-align:center;margin-left:40px;">下載 App 即可抽獎！</p>'
+		   slotContent += '<a href="https://itunes.apple.com/tw/app/pinpinbox/id1057840696?l=en&mt=8" target="_blank" alt="iOS點我！" title="iOS點我！"><img src="ios.png" style="width:200px;height:auto;"></a>&emsp;';
+		  slotContent += '<a href="https://play.google.com/store/apps/details?id=com.pinpinbox.android&hl=zh_TW" target="_blank" alt="android點我！" title="android點我！"><img src="android.png" style="width:200px;height:auto;"></a>';
+		  slotContent += '</div>';
+          slotConfirm.setTitle(slotTitle).setContent(slotContent).open();
+		}
 		
 		if($('#JboxRecommendedBuyAlbum').length) RecommendedBuyAlbum.destroy();
 
