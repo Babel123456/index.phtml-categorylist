@@ -1210,20 +1210,7 @@ function browseKit_album(url, param) {
 			 "data":{
 			   "favorited":false,
 			   "readable":[
-			   {"name":"",
-									               "description":"",
-												   "image":"https:\/\/cdn.pinpinbox.com\/upload\/pinpinbox\/diy\/20170716\/596a6cbc58da0.jpg",
-												   "image_thumbnail":"https:\/\/cdn.pinpinbox.com\/upload\/pinpinbox\/diy\/20170716\/596a6cbc58da0_90x120.jpg",
-												   "width":752,
-												   "height":1002,
-												   "usefor":"image",
-												   "hyperlink":[],
-												   "audio_mode":"plural",
-												   "audio_loop":0,
-												   "audio_target":"https:\/\/cdn.pinpinbox.com\/upload\/pinpinbox\/diy\/20170716\/596a6df40bf79.mp3",
-												   "video_refer":"none",
-												   "video_target":"",
-												   "recommendedBuyAlbum":false},
+			   
 				{"name":"",
 				 "description":"",
 				 "image":"https:\/\/ppb.sharemomo.com\/upload\/pinpinbox\/diy\/20180315\/5aaa10ad578b6.jpg",
@@ -1451,7 +1438,7 @@ function browseKit_v2(that, item, param) {
 		},
     }).on('onAfterOpen.lg', function(e) {
     	if(item[0].audio.src != null) {
-            audioPlayer = $('#lg-audio'); 
+		    audioPlayer = $('#lg-audio'); 
     		audioPlayer.attr('controlsList', 'nodownload');
     		setTimeout(function(){ 
     			audioPlayer[0].play(); 
@@ -1470,16 +1457,16 @@ function browseKit_v2(that, item, param) {
 	}).on('onAfterSlide.lg',function(e, p, i){
 	    $lg.data('lightGallery').modules.audio.build();
         audioPlayer = $('#lg-audio'); _audipPlayer = document.getElementById("lg-audio");
+		audioPlayer.attr('controlsList', 'nodownload');
         switch(item[i].usefor) {
         	case 'video' : audioPlayer[0].pause(); break;
         	case 'audio' : if( _audipPlayer.hasAttribute("autoplay")) audioPlayer[0].play(); break;
         }
         if(item[i].audio.mode == 'singular') askAutoPlay = false;
-       
 		if(item[i].audio.src != null && askAutoPlay) { $('span#lg-audio-button').trigger('click') ; }
 
 		audioPlayer[0].addEventListener("play", function () {
-			audioPlayer.bind('contextmenu',function() { return false; }); 
+			audioPlayer.bind('contextmenu',function() { return false; });
 			audioPlayer.attr('controlsList', 'nodownload');
 			if(!_audipPlayer.hasAttribute("autoplay")) audioMaskHide();
 			askAutoPlay = false;
@@ -1497,12 +1484,17 @@ function browseKit_v2(that, item, param) {
             var slotConfirm = new jBox('Modal',{closeButton: 'title'});
             var slotContent = '',slotTitle='';
             slotTitle += '<p class="keypoint" style="font-size:2em;text-align:center;line-height:1.2em;">下載 App 即可抽獎！</p>'
+			slotContent += '<div class="content" style="text-align:center;" >';
+			
+			slotContent += '<span onclick="testagent();">testagent();</span>';
+			
+			
             slotContent += '<a href="https://itunes.apple.com/tw/app/id1057840696" target="_blank" alt="iOS點我！" title="iOS點我！" style="padding:3px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/ios.png" style="width:200px;height:auto;"></a>';
             slotContent += '<a href="https://play.google.com/store/apps/details?id=com.pinpinbox.android" target="_blank" alt="android點我！" title="android點我！" style="padding:3px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/android.png" style="width:200px;height:auto;"></a>';
-            slotConfirm.setTitle(slotTitle).setContent(slotContent).open();
+            slotContent += '</div>';
+			slotConfirm.setTitle(slotTitle).setContent(slotContent).open();
         }
         $('.jBox-title').css('padding-right','20px');
-        $('.jBox-content').css('text-align','center');
 		$('.jBox-overlay').css('background-color','rgba(255,255,255,0.3)');
 		if($('#JboxRecommendedBuyAlbum').length) RecommendedBuyAlbum.destroy();
 
@@ -1543,6 +1535,12 @@ function browseKitRefresh() {
 		$(v0).removeData('lightGallery');
 	});
 }
+
+
+function testagent(){
+alert("user platform:"+navigator.platform+", \nuser agent:"+navigator.userAgent);
+}
+
 
 function browseKit() {
 	//photoswipe
