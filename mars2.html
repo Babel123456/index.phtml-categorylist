@@ -1112,24 +1112,26 @@ function clickHandler(uri) {
 }
 
 function clickHandlerStr(uri) {
-
+    var isAndroid = false, isIOS = false, isMobile = false;
 	if(navigator.userAgent.match(/Android/i)){
 		alert('Is a Android!');
+		isAndroid = true;
 	}
 
 	if(navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) ){
 		alert('Is IOS!')
+		isIOS = true;
 	}
-
-
-
-
-
-
-    var isAndroid = false, isIOS = false, isMobile = false;
-	if(navigator.userAgent.match('Android')) isAndroid = true;
-	if(navigator.userAgent.match('iPad') || navigator.userAgent.match('iPhone') || navigator.userAgent.match('iPod')) isIOS = true;
     if(isAndroid || isIOS) isMobile = true;
+
+
+
+
+
+    
+	//if(navigator.userAgent.match('Android')) isAndroid = true;
+	//if(navigator.userAgent.match('iPad') || navigator.userAgent.match('iPhone') || navigator.userAgent.match('iPod')) isIOS = true;
+    
 
     //alert(navigator.userAgent.match('Android'));
      //alert('isAndroid:'+ isAndroid + ',isIOS:'+ isIOS + ',isMobile:'+ isMobile );
