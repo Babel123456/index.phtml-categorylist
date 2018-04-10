@@ -1108,7 +1108,7 @@ function _search() {
 
 function clickHandler(uri) {
     deeplink.open(uri);
-
+    alert('can you see??');
     return false;
 }
 
@@ -1486,17 +1486,16 @@ function browseKit_v2(that, item, param) {
             slotTitle += '<p class="keypoint" style="font-size:2em;text-align:center;line-height:1.2em;">下載 App 即可抽獎！</p>'
 			slotContent += '<div class="content" style="text-align:center;" >';
 			
-			slotContent += '<span onclick="testagent();">testagent();</span></br>';
+			slotContent +=  '<p style="margin-bottom:5px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="vertical-align:middle;display:inline-block;background:#FF5E68;width:20px;height:20px;border-radius:20px;margin-right:3px;">';
+			slotContent +=  '<span style="display:inline-block;color:#FF5E68;cursor: pointer;" data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="clickHandler(this.dataset.uri)" >登入App, 請點此開啟作品</p>';
 			
-			slotContent +=  '<a target="_blank" href="pinpinbox://index/album/content?album_id=5308">安裝完點作品連結</a>';
+			slotContent += '<a data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696" target="_blank" alt="iOS點我！" title="iOS點我！" style="padding:3px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/ios.png" style="width:200px;height:auto;"></a>';
+            slotContent += '<a data-uri="pinpinbox://index/album/content?album_id=5308" onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android" target="_blank" alt="android點我！" title="android點我！" style="padding:3px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/android.png" style="width:200px;height:auto;"></a>';
 			
-			slotContent +=  '<a id="apple_btn" data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="clickHandler(this.dataset.uri)" target="_blank" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a>';
-			slotContent +=  '<a data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="clickHandler(this.dataset.uri)" target="_blank" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a>';
-			
-			
-            slotContent += '<a href="https://itunes.apple.com/tw/app/id1057840696" target="_blank" alt="iOS點我！" title="iOS點我！" style="padding:3px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/ios.png" style="width:200px;height:auto;"></a>';
-            slotContent += '<a href="https://play.google.com/store/apps/details?id=com.pinpinbox.android" target="_blank" alt="android點我！" title="android點我！" style="padding:3px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/android.png" style="width:200px;height:auto;"></a>';
-            slotContent += '</div>';
+            //slotContent += '<a href="https://itunes.apple.com/tw/app/id1057840696" target="_blank" alt="iOS點我！" title="iOS點我！" style="padding:3px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/ios.png" style="width:200px;height:auto;"></a>';
+            //slotContent += '<a href="https://play.google.com/store/apps/details?id=com.pinpinbox.android" target="_blank" alt="android點我！" title="android點我！" style="padding:3px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/android.png" style="width:200px;height:auto;"></a>';
+            
+			slotContent += '</div>';
 			slotConfirm.setTitle(slotTitle).setContent(slotContent).open();
         }
         $('.jBox-title').css('padding-right','20px');
@@ -1540,12 +1539,6 @@ function browseKitRefresh() {
 		$(v0).removeData('lightGallery');
 	});
 }
-
-// Add for test user's agent & platform
-function testagent(){
-alert("user platform:"+navigator.platform+", \nuser agent:"+navigator.userAgent);
-}
-
 
 function browseKit() {
 	//photoswipe
