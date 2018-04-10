@@ -1111,7 +1111,7 @@ function clickHandler(uri) {
 	return false;
 }
 
-function clickHandlerStr(uri) {
+function clickHandlerStr() {
     var isAndroid = false, isIOS = false, isMobile = false;
 	if(navigator.userAgent.match(/Android/i)) isAndroid = true;
     if(navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) ) isIOS = true;
@@ -1493,12 +1493,12 @@ function browseKit_v2(that, item, param) {
             var slotContent = '',slotTitle='';
             slotTitle += '<p class="keypoint" style="font-size:2em;text-align:center;line-height:1.2em;">下載 App 即可抽獎！</p>'
 			slotContent += '<div class="content" style="text-align:center;" >';
-			if(clickHandlerStr('pinpinbox://index/album/content?album_id=5308')){
-				slotContent +=  '<p style="margin-bottom:5px;background:#FF5E68;color:#fff;border-radius:20px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="vertical-align:middle;display:inline-block;background:#FF5E68;width:20px;height:20px;border-radius:20px;margin-right:3px;">';
-				slotContent +=  '<span style="display:inline-block;cursor: pointer;" data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="clickHandler(this.dataset.uri);" >開啟App即可參加抽獎</p>';
+			if(clickHandlerStr()){
+				slotContent +=  '<p style="width:70%;margin:0 auto;background:#FF5E68;color:#fff;border-radius:30px;padding:8px 5px;cursor: pointer;" data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="clickHandler(this.dataset.uri);"  ><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="vertical-align:middle;display:inline-block;background:#FF5E68;width:30px;height:30px;border-radius:30px;margin-right:3px;">';
+				slotContent +=  '<span style="display:inline-block;font-size:20px;vertical-align:middle;" >立即開啟</span></p>';
 			}else{
-				slotContent += '<img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/ios.png" alt="iOS點我！" title="iOS點我！" style="cursor: pointer;padding:3px;width:200px;height:auto;" data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="if(!clickHandler(this.dataset.uri)){ window.open(\'https://itunes.apple.com/tw/app/id1057840696\');}">';
-				slotContent += '<img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/android.png"  alt="android點我！" title="android點我！" style="cursor: pointer;padding:3px;width:200px;height:auto;" data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="if(!clickHandler(this.dataset.uri)){ window.open(\'https://play.google.com/store/apps/details?id=com.pinpinbox.android\');}">';
+				slotContent += '<img src="https://cdn.pinpinbox.com/upload/admin/event/20171109/5a0413697b4a8.png" alt="iOS點我！" title="iOS點我！" style="cursor: pointer;padding:3px;width:200px;height:auto;" data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="if(!clickHandler(this.dataset.uri)){ window.open(\'https://itunes.apple.com/tw/app/id1057840696\');}">';
+				slotContent += '<img src="https://cdn.pinpinbox.com/upload/admin/event/20171109/5a040f5f457ad.png" alt="android點我！" title="android點我！" style="cursor: pointer;padding:3px;width:200px;height:auto;" data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="if(!clickHandler(this.dataset.uri)){ window.open(\'https://play.google.com/store/apps/details?id=com.pinpinbox.android\');}">';
 			}
             //slotContent += '<a href="https://itunes.apple.com/tw/app/id1057840696" target="_blank" alt="iOS點我！" title="iOS點我！" style="padding:3px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/ios.png" style="width:200px;height:auto;"></a>';
             //slotContent += '<a href="https://play.google.com/store/apps/details?id=com.pinpinbox.android" target="_blank" alt="android點我！" title="android點我！" style="padding:3px;"><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/android.png" style="width:200px;height:auto;"></a>';
