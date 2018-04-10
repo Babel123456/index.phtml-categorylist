@@ -1107,7 +1107,7 @@ function _search() {
 }
 
 function clickHandler(uri) {
-    alert(deeplink.open(uri));
+    alert('navigator.platform:'+navigator.platform+'/nnavigator.userAgent:'+navigator.userAgent);
     deeplink.open(uri);
     return false;
 }
