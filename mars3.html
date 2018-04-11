@@ -1111,13 +1111,11 @@ function clickHandler(uri) {
 	return false;
 }
 
-function clickHandlerStr() {
-    alert(navigator.userAgent);
-    var isAndroid, isIOS, isMobile, isWindows = false;
+function isMobile() {
+    var isAndroid, isIOS, isMobile = false;
 	if(navigator.userAgent.match(/Android/i)) isAndroid = true;
     if(navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) ) isIOS = true;
-    if(navigator.userAgent.match(/Windows/i)) isWindows = true;
-	if(!isWindows && (isAndroid || isIOS)) isMobile = true;
+    if(isAndroid || isIOS) isMobile = true;
 	
     return isMobile;
 }
@@ -1497,11 +1495,11 @@ function browseKit_v2(that, item, param) {
             var slotContent = '',slotTitle='';
             slotTitle += '<p class="keypoint" style="font-size:2em;text-align:center;line-height:1.2em;">下載 App 即可抽獎！</p>'
 			slotContent += '<div class="content" style="text-align:center;" >';
-			if(clickHandlerStr()){
+			if(isMobile()){
 				slotContent +=  '<p style="margin:0 auto;background:#FF5E68;color:#fff;border-radius:30px;padding:8px 5px;cursor: pointer;" data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="clickHandler(this.dataset.uri);"  ><img src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="vertical-align:middle;display:inline-block;background:#FF5E68;width:30px;height:30px;border-radius:30px;margin-right:3px;">';
 				slotContent +=  '<span style="display:inline-block;font-size:20px;vertical-align:middle;" >立即開啟</span></p>';
 			}else{
-			    slotContent += '<img src="https://babel123456.github.io/index.phtml-categorylist/qrcode.png" alt="" title="" style="cursor: pointer;padding:3px;width:200px;height:auto;" data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="clickHandler(this.dataset.uri);">';
+			    slotContent += '<img src="https://babel123456.github.io/index.phtml-categorylist/qrcode.png" alt="" title="" style="padding:3px;width:200px;height:auto;" data-uri="pinpinbox://index/album/content?album_id=5308"  onclick="clickHandler(this.dataset.uri);">';
 			}
 			slotContent += '</div>';
 			slotConfirm.setTitle(slotTitle).setContent(slotContent).open();
