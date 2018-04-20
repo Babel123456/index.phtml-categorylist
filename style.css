@@ -376,7 +376,7 @@ html a { text-decoration: none; }
 
 .mobile_banner2 #banner_content{ width: 960px !important; }
 @media (max-width: 1024px) { 
-.mobile_banner2 #banner_content { width: 100%  !important;}
+.mobile_banner2 #banner_content { width: 100%  !important; position:relative;overflow:hidden;}
 
 .mobile_banner2 #banner_content .fotorama .page .emb_movie { width: 530px !important;height:298px !important; }
 .mobile_banner2 #banner_content .fotorama .page .creator_box { margin:0;padding:0;width:100% !important;height:350px !important;overflow:hidden;position:relative;}
