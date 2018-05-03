@@ -1959,8 +1959,42 @@ $(function() {
         paginationSpeed : 1200,
         singleItem : true,
         stopOnHover : true,
-    })
-
+		afterInit : owl_moved,
+		afterMove : owl_moved
+    });
+	
+	function owl_moved() {
+	
+	  //var owl = ;
+	  var current = ($(".owl-carousel").data('owlCarousel') == null || $(".owl-carousel").data('owlCarousel') == 'undefined')? 0 : $(".owl-carousel").data('owlCarousel').currentItem;
+	  var alt = ($(".owl-carousel").find(".creator_box").eq(current).find("a").attr("href") == null || $(".owl-carousel").find(".creator_box").eq(current).find("a").attr("href") == 'undefined')? '': $(".owl-carousel").find(".creator_box").eq(current).find("a").attr("href");
+	  //var n = (alt != '')? alt.indexOf("autobuy"): -2;
+	  //alert("n:"+n);
+      //若有HREF有參數AUTOBUY時, 顯示按鈕 //alt.match('autobuy') != null ||
+	  //if( alt != '' && n > -1 ) {
+	  if( alt != '' && alt.match('autobuy') != null ) {
+	  //if( alt != 'undefined' || alt != null ) {
+	    //if(n > -1){
+		  //先檢查是否有此按鈕
+		  //if(!$("#banner_content").hasClass('autobuyBtn')){
+			if(!$(".autobuyBtn")[0]){
+		  //alert('1');
+			//$('#banner_content').append('<a href="'+alt+'" onclick=""><div class="autobuyBtn" style="padding:5px 10px;text-align:center;vertical-align:center;width:110px;height:30px;display:block;position:absolute;top: 88%;right:5%;color:#fff;font-size:16px;background:#F05E69;border-radius:25px;" >前往贊助</div></a>');
+		    $('#banner_content').append('<a href="'+alt+'" onclick=""><div class="autobuyBtn" style="margin-right:10px;margin-top:10px;margin-bottom:-2px;text-align:right;vertical-align:center;height:30px;display:block;" ><span style="padding:5px 10px;width:110px;color:#fff;font-size:18px;background:#F05E69;border-radius:25px;">'+$(".owl-carousel").find(".creator_box").eq(current).find("a").attr("title")+'</span></div></a>');
+		  }else{
+		    //有則顯示按鈕
+			//alert('2');
+			$(".owl-carousel").find(".creator_box").eq(current).find("a").attr("href",alt);
+			//$('#banner_content .autobuyBtn').show();
+			$('#banner_content .autobuyBtn').css("visibility", "visible");
+		  }
+		//}
+	  }else{
+	    //alert('3');
+	    //$('#banner_content .autobuyBtn').hide();
+		$('#banner_content .autobuyBtn').css("visibility", "hidden");
+	  }
+    }
 	var nicesx = $(".tab_content").niceScroll({
 		touchbehavior: true,
 		cursorcolor: "transparent",
@@ -1970,6 +2004,7 @@ $(function() {
 
 		});
 
+		
 //counter link
 $('#social_share').on('popup_closed.social-likes', function(event, service) {
     $(event.currentTarget).socialLikes({forceUpdate: true});
