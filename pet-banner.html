@@ -1968,19 +1968,15 @@ $(function() {
 	  //var owl = ;
 	  var current = ($(".owl-carousel").data('owlCarousel') == null || $(".owl-carousel").data('owlCarousel') == 'undefined')? 0 : $(".owl-carousel").data('owlCarousel').currentItem;
 	  var alt = ($(".owl-carousel").find(".creator_box").eq(current).find("a").attr("href") == null || $(".owl-carousel").find(".creator_box").eq(current).find("a").attr("href") == 'undefined')? '': $(".owl-carousel").find(".creator_box").eq(current).find("a").attr("href");
-	  //var n = (alt != '')? alt.indexOf("autobuy"): -2;
-	  //alert("n:"+n);
-      //若有HREF有參數AUTOBUY時, 顯示按鈕 //alt.match('autobuy') != null ||
-	  //if( alt != '' && n > -1 ) {
+	  //若有HREF有參數AUTOBUY時, 顯示按鈕 //alt.match('autobuy') != null ||
 	  if( alt != '' && alt.match('autobuy') != null ) {
-	  //if( alt != 'undefined' || alt != null ) {
-	    //if(n > -1){
-		  //先檢查是否有此按鈕
-		  //if(!$("#banner_content").hasClass('autobuyBtn')){
+	    //先檢查是否有此按鈕
+		
 			if(!$(".autobuyBtn")[0]){
 		  //alert('1');
-			//$('#banner_content').append('<a href="'+alt+'" onclick=""><div class="autobuyBtn" style="padding:5px 10px;text-align:center;vertical-align:center;width:110px;height:30px;display:block;position:absolute;top: 88%;right:5%;color:#fff;font-size:16px;background:#F05E69;border-radius:25px;" >前往贊助</div></a>');
-		    $('#banner_content').append('<a href="'+alt+'" onclick=""><div class="autobuyBtn" style="margin-right:10px;margin-top:10px;margin-bottom:-2px;text-align:right;vertical-align:center;height:30px;display:block;" ><span style="padding:5px 10px;width:110px;color:#fff;font-size:18px;background:#F05E69;border-radius:25px;">'+$(".owl-carousel").find(".creator_box").eq(current).find("a").attr("title")+'</span></div></a>');
+			//$('#banner_content').append('<div class="autobuyBtn" style="margin-right:10px;margin-top:8px;margin-bottom:-2px;text-align:right;vertical-align:center;height:30px;display:block;" ><a href="'+alt+'" onclick=""><span style="padding:5px 10px;width:110px;color:#fff;font-size:18px;background:#F05E69;border-radius:25px;">前往贊助</span></a></div>');
+			$('#banner_content').append('<div class="autobuyBtn" style="margin-right:10px;margin-top:8px;margin-bottom:-2px;text-align:right;vertical-align:center;display:block;" ><a href="'+alt+'" onclick=""><span style="padding:5px 10px;text-align:center;width:110px;color:#fff;font-size:18px;background:#F05E69;border-radius:25px;">前往贊助</span></a></div>');
+			//$('#banner_content').append('<div class="autobuyBtn" style="margin-right:10px;margin-top:8px;margin-bottom:-2px;text-align:right;vertical-align:center;height:30px;display:block;" ><a href="'+alt+'" onclick=""><span style="padding:5px 10px;width:110px;color:#fff;font-size:18px;background:#F05E69;border-radius:25px;">'+$(".owl-carousel").find(".creator_box").eq(current).find("a").attr("title")+'</span></a></div>');
 		  }else{
 		    //有則顯示按鈕
 			//alert('2');
