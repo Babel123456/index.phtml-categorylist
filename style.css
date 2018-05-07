@@ -425,22 +425,23 @@ html a { text-decoration: none; }
  .mobile_banner2 #banner_content .fotorama .page .emb_movie_wrapper { width: 80% !important;height:80% !important;}
  .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item {margin:0 -4px !important;width:78px !important;}
  .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face{width:75px !important;height: 75px !important;}
- .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name{transform: rotate(45deg);text-align:left;width:80%;}
+ .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name{transform: rotate(45deg);text-align:left;}
 }
 
 @media (max-width: 460px){
- .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item {margin:0 -6px !important;width:65px !important;}
- .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face{width:65px !important;height: 65px !important;border: 2px #fff solid;}
+ .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item {margin:0 -6px !important;width:62px !important;}
+ .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face{width:62px !important;height: 62px !important;border: 2px #fff solid;}
 
  }
 
 @media (max-width: 400px){
-  
+ .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name{width:80% !important;}
 }
 
 @media (max-width: 320px){
-  .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item {margin:0 -8px !important;width:60px !important;}
+ .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item {margin:0 -8px !important;width:60px !important;}
  .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face{width:60px !important;height: 60px !important;border: 2px #fff solid;}
+ .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name{width:75% !important;}
 }
 
 
