@@ -293,13 +293,22 @@ html a { text-decoration: none; }
 #banner #fullWidthBanner .bannerContent p { height: 25%; }
 #banner #fullWidthBanner .bannerContent a.btnLink { width: 200px; padding: 0; border: 0; border-radius: 5px; font-size: 16px; font-style: normal; font-stretch: normal; line-height: 2.85; letter-spacing: 1.6px; color: #ffffff; text-shadow: 0 0 0 #fff; height: 45px; background-color: #00acc1; background-image: none; }
 #banner #banner_content { width: 100%; position: relative; margin-bottom: 15px; }
+
+#banner #banner_content .autobuyBtn {margin-right:10px;margin-top:8px;margin-bottom:-2px;text-align:right;vertical-align:center;display:block;}
+#banner #banner_content .autobuyBtn span{padding:6px 14px;text-align:center;width:110px;color:#fff;font-size:18px;border-radius:25px;}
+
+
 #banner #banner_content .fotorama { width: 100%; }
 #banner #banner_content .fotorama .owl-theme .owl-controls { margin-top: 0px; }
 //#banner #banner_content .fotorama .owl-carousel .owl-wrapper-outer { background-color: #FFF; -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
 #banner #banner_content .fotorama .owl-carousel .owl-wrapper-outer {-moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
 #banner #banner_content .fotorama .page { width: 100%; position: relative; }
 #banner #banner_content .fotorama .page .emb_movie_wrapper { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 100%; height: 320px; overflow: hidden; }
-#banner #banner_content .fotorama .page .emb_movie { width: 540px; height: 100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 5; }
+
+//#banner #banner_content .fotorama .page .emb_movie { width: 540px; height: 100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 5; }
+//#banner #banner_content .fotorama .page .emb_movie { width: 560px; height: 100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 5; }
+#banner #banner_content .fotorama .page .emb_movie { width: 570px; height: 100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 5; }
+
 #banner #banner_content .fotorama .page.one_page { background-color: #77d9cc; }
 #banner #banner_content .fotorama .page .page_content { width: 960px; position: relative; }
 
@@ -375,7 +384,10 @@ html a { text-decoration: none; }
 
 @media (max-width: 1024px) { 
 .mobile_banner2 #banner_content { width: 100%  !important; position:relative;}
-.mobile_banner2 #banner_content .fotorama .page .emb_movie_wrapper { width: 70% !important;height:70% !important;}
+
+//.mobile_banner2 #banner_content .fotorama .page .emb_movie_wrapper { width: 68% !important;height:68% !important;}
+.mobile_banner2 #banner_content .fotorama .page .emb_movie_wrapper { width: 67.9% !important;height:67.9% !important;}
+
 .mobile_banner2 #banner_content .fotorama .page .emb_movie { width: 100% !important;height:100% !important; }
 .mobile_banner2 #banner_content .fotorama .page .creator_box { width:100% !important;height:auto !important;}
 .mobile_banner2 #banner_content .fotorama .page .creator_box  img  { position:relative !important;}
@@ -391,6 +403,9 @@ html a { text-decoration: none; }
 @media (max-width: 800px){
 .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item {margin:0 5px !important;}
 .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face{width:80px !important;height: 80px !important;}
+
+.mobile_banner2 #banner_content .fotorama .page .emb_movie_wrapper { width: 100% !important;height:100% !important;}
+
 }
 @media (max-width: 700px){
   .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item {margin:0 -1px !important;}
@@ -402,7 +417,7 @@ html a { text-decoration: none; }
  .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face{width:65px !important;height: 65px !important;}
 }
 @media (max-width: 500px){
- .mobile_banner2 #banner_content .fotorama .page .emb_movie_wrapper { width: 80% !important;height:80% !important;}
+ //.mobile_banner2 #banner_content .fotorama .page .emb_movie_wrapper { width: 80% !important;height:80% !important;}
  .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item {margin:0 -6px !important;width:78px !important;}
  .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face{width:75px !important;height: 75px !important;border: 2px #fff solid;}
  .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name{transform: rotate(45deg);text-align:left;}
@@ -424,9 +439,10 @@ html a { text-decoration: none; }
 //.mobile_banner { width: 100%; height: 350px; display: none; margin-bottom: 15px; }
 .mobile_banner { width: 100%;display: none; }
 //margin-bottom: 15px; 
-.mobile_banner img { width: 100%; height: 100%; vertical-align: bottom; }
+//.mobile_banner img { width: 100%; height: 100%; vertical-align: bottom; }
 
 .mobile_banner img { width: 100%; vertical-align: bottom; }
+
 .mobile_banner .owl-wrapper-outer { height: 100%;}
 
 @media (max-width: 1024px) { 
