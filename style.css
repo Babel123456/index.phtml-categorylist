@@ -293,12 +293,30 @@ html a { text-decoration: none; }
 #banner #fullWidthBanner .bannerContent p { height: 25%; }
 #banner #fullWidthBanner .bannerContent a.btnLink { width: 200px; padding: 0; border: 0; border-radius: 5px; font-size: 16px; font-style: normal; font-stretch: normal; line-height: 2.85; letter-spacing: 1.6px; color: #ffffff; text-shadow: 0 0 0 #fff; height: 45px; background-color: #00acc1; background-image: none; }
 #banner #banner_content { width: 100%; position: relative; margin-bottom: 15px; }
-#banner #banner_content .autobuyBtn { margin-right: 10px; margin-top: 8px; margin-bottom: -2px; text-align: right; vertical-align: center; display: block; }
+#banner #banner_content .autobuyBtn { margin-right: 10px; margin-top: 8px; margin-bottom: -2px; text-align: right; vertical-align: middle; display: block; }
 #banner #banner_content .autobuyBtn span { padding: 6px 14px; text-align: center; width: 110px; color: #fff; font-size: 18px; border-radius: 25px; }
 #banner #banner_content .fotorama { width: 100%; }
 #banner #banner_content .fotorama .owl-theme .owl-controls { margin-top: 0px; }
 #banner #banner_content .fotorama .owl-carousel .owl-wrapper-outer { -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
 #banner #banner_content .fotorama .page { width: 100%; position: relative; }
+#banner #banner_content .fotorama .page .page_img { position: relative; height: 100%; width: 100%; overflow: hidden; }
+#banner #banner_content .fotorama .page .page_desc { display: none; width: 100%; height: 20%; background: #fff; vertical-align: middle; overflow: hidden; }
+@media (max-width: 800px) { #banner #banner_content .fotorama .page .page_desc { display: table !important; padding: 0 2% 0 3.5%; margin: 0.6% 0 0.6% 0; } }
+@media (max-width: 400px) { #banner #banner_content .fotorama .page .page_desc { padding: 0 1% 0 1%; } }
+@media (max-width: 370px) { #banner #banner_content .fotorama .page .page_desc { font-size: 14px; } }
+@media (max-width: 350px) { #banner #banner_content .fotorama .page .page_desc { padding: 0 1.5% 0 2%; } }
+@media (max-width: 320px) { #banner #banner_content .fotorama .page .page_desc { padding: 0 1% 0 1%; } }
+@media (max-width: 800px) { #banner #banner_content .fotorama .page .page_desc span { display: table-cell; color: #878787; font-size: 16px; vertical-align: middle; } }
+@media (max-width: 800px) { #banner #banner_content .fotorama .page .page_desc span:nth-child(1) { width: 76%; line-height: 45px; } }
+@media (max-width: 400px) { #banner #banner_content .fotorama .page .page_desc span:nth-child(1) { width: 75%; letter-spacing: 0.5px; } }
+@media (max-width: 370px) { #banner #banner_content .fotorama .page .page_desc span:nth-child(1) { width: 76%; } }
+@media (max-width: 350px) { #banner #banner_content .fotorama .page .page_desc span:nth-child(1) { width: 80%; line-height: 25px; } }
+@media (max-width: 320px) { #banner #banner_content .fotorama .page .page_desc span:nth-child(1) { width: 70%; } }
+@media (max-width: 800px) { #banner #banner_content .fotorama .page .page_desc span:nth-child(2) { width: 14%; text-align: center; color: #fff; line-height: 20px; background: #F05E69; padding: 0px 6px; border-radius: 25px; } }
+@media (max-width: 600px) { #banner #banner_content .fotorama .page .page_desc span:nth-child(2) { width: 23%; } }
+@media (max-width: 370px) { #banner #banner_content .fotorama .page .page_desc span:nth-child(2) { width: 24%; padding: 0px 2px; } }
+@media (max-width: 350px) { #banner #banner_content .fotorama .page .page_desc span:nth-child(2) { width: 18%; padding: 2px 5px; } }
+@media (max-width: 320px) { #banner #banner_content .fotorama .page .page_desc span:nth-child(2) { width: 30%; padding: 3px 5px; } }
 #banner #banner_content .fotorama .page .emb_movie_wrapper { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 100%; height: 320px; overflow: hidden; }
 #banner #banner_content .fotorama .page .emb_movie { width: 570px; height: 100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 5; }
 #banner #banner_content .fotorama .page.one_page { background-color: #77d9cc; }
@@ -389,114 +407,9 @@ html a { text-decoration: none; }
 @media (max-width: 550px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face { width: 65px !important; height: 65px !important; } }
 @media (max-width: 500px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face { width: 75px !important; height: 75px !important; border: 2px #fff solid; } }
 @media (max-width: 500px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face { width: 62px !important; height: 62px !important; } }
-@media (max-width: 320px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face { width: 60px !important; height: 60px !important; } }
 @media (max-width: 1024px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face img { object-fit: cover; } }
 @media (max-width: 1024px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name { display: inline-block; } }
 @media (max-width: 500px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name { transform: rotate(45deg); text-align: left; } }
-@media (max-width: 400px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name { width: 80% !important; } }
-@media (max-width: 320px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name { width: 75% !important; } }
-
-
-@media (max-width: 800px){ 
-
-  .mobile_banner2 #banner_content .fotorama .page .emb_movie_wrapper { width: 100% !important;height:100% !important;}
-  .mobile_banner2 #banner_content .fotorama .page .emb_movie { width: 100% !important;height:86% !important;margin:initial !important; }
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([title=''])[title]::before{
-	  //width:100%;position:absolute;z-index:2;bottom:0;left:0;padding:0.5% 24% 1% 3%;text-align:left;height:14%;display:inline-block;
-	  width:100%;position:absolute;z-index:2;bottom:0;left:0;padding:1% 24% 1% 5%;text-align:left;height:14%;display:inline-block;
-	  //content: attr(title)'...';color:#878787;font-size:16px;
-	  content: attr(title);color:#878787;
-	  //line-height:25px;
-	  line-height:45px;
-	  background:rgba(255,255,255,1);
-      overflow:hidden;
-	  font-size:17px;
-  }
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([data-txt=''])[data-txt]::after{
-	  //width:16%;position:absolute;z-index:3;bottom:3%;right:2%;text-align:center;height:10%;display:inline-block;
-	  width:16%;position:absolute;z-index:3;bottom:2%;right:2.5%;text-align:center;height:10%;display:inline-block;
-	  content: attr(data-txt);
-	  color:#fff;font-size:16px;
-	  background:#F05E69;
-	  border-radius: 25px;
-	  line-height:2.5;
-      overflow:hidden;
-  }
-}
-
-@media (max-width: 700px){ 
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([title=''])[title]::before{
-      padding-top:0.5%;
-  }
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([data-txt=''])[data-txt]::after{
-	  line-height:2.3;
-  }
-}
-
-@media (max-width: 600px){
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([title=''])[title]::before{
-      //padding-top:0.2%;
-	  padding-top:0.18%;
-  }
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([data-txt=''])[data-txt]::after{
-	  width:16%;
-	  line-height:1.9;
-  }
-}
-
-@media (max-width: 500px){ 
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([title=''])[title]::before{
-	  //line-height:35px;
-	  line-height:30px;
-	  
-  }
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([data-txt=''])[data-txt]::after{
-	  width:21%;
-	  height:10.5%;
-	  line-height:1.4;
-	  bottom:1.8%;
-  }
-}
-
-@media (max-width: 400px){ 
-  .mobile_banner2 #banner_content .fotorama .page .emb_movie { width: 100% !important;height:82% !important;margin:initial !important; }
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([title=''])[title]::before{
-	  padding-left:2.5%;
-	  height:18%;
-	  line-height:36px;
-	  padding-right:20%;
-	  font-size:16px;
-  }
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([data-txt=''])[data-txt]::after{
-	  width:22.5%;
-	  height:13%;
-	  background:#F05E69;
-	  right:1.5%;
-	  line-height:1.7;
-	  bottom:2.1%;
-  }
-}
-
-@media (max-width: 320px){ 
-
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([title=''])[title]::before{
-	  padding-left:1%;
-	  height:18%;
-	  line-height:35px;
-	  padding-right:20%;
-	  font-size:15px;
-	  letter-spacing:0.8px;
-  }
-  .mobile_banner2 #banner_content .fotorama .page .creator_box a:not([data-txt=''])[data-txt]::after{
-	  height:12%;
-	  background:#F05E69;
-	  right:1%;
-	  //line-height:1.5;
-	  font-size:14px;
-	  letter-spacing:0.8px;
-  }
-}
-
 
 .mobile_banner { width: 100%; display: none; }
 .mobile_banner img { width: 100%; vertical-align: bottom; }
@@ -2433,10 +2346,6 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #crea_content #crea_in #crea_header #crea_left div.buttons { position: absolute; top: 20%; }
 @media (max-width: 1024px) { #crea_content #crea_in #crea_header #crea_left div.buttons { position: inherit; text-align: center; } }
 #crea_content #crea_in #crea_header #crea_left a { width: auto; height: auto; border: 0; position: absolute; right: 15px; top: 80px; z-index: 2; line-height: 40px; text-align: center; display: block; }
-#crea_content #crea_in #crea_header #crea_left a.pin_button { color: #9d9d9d; margin: 0px 0px 10px 0px; background: url(../images/pin.png); background-image: url(../images/icon_pin.svg), none; background-size: 18px auto; background-repeat: no-repeat; background-position: 26% center; padding-left: 22px; }
-@media (max-width: 1024px) { #crea_content #crea_in #crea_header #crea_left a.pin_button { margin: 10px; width: 90px; display: inline-block; } }
-#crea_content #crea_in #crea_header #crea_left a.pin_button:hover { background-color: #f6f6f6; }
-#crea_content #crea_in #crea_header #crea_left a.pin_button.active { background-image: none; border: #ee5b8d; background-color: #ee5b8d; color: #FFF; padding-left: 0px; }
 #crea_content #crea_in #crea_header #crea_left a.set_button { color: #ee5b8d; margin: 0px 0px 10px 0px; }
 @media (max-width: 1024px) { #crea_content #crea_in #crea_header #crea_left a.set_button { margin: 10px; width: 90px; display: inline-block; } }
 #crea_content #crea_in #crea_header #crea_left a.set_button:hover { background-color: #f6f6f6; }
@@ -2495,7 +2404,9 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #crea_content #crea_in #crea_header #crea_right ul li div.socialicon_group input[type="text"] { width: 80%; height: 25px; margin-bottom: 0px; margin-top: -20px; }
 #crea_content #crea_in #crea_header #crea_right .buttons-box { position: absolute; right: 0; top: 33px; }
 #crea_content #crea_in #crea_header #crea_right .buttons-box a { padding: 7px 0; border-radius: 5px; border: 1px solid #9d9d9d; color: #4d4d4d; display: inline-block; text-align: center; vertical-align: middle; width: 90px; margin-left: 10px; }
-#crea_content #crea_in #crea_header #crea_right .buttons-box a.attention { width: 170px; background-image: url(../images/assets-v6/icon-attention-d.svg); -moz-background-size: 25px auto; -webkit-background-size: 25px auto; -o-background-size: 25px auto; background-size: 25px auto; background-position: 35% center; background-repeat: no-repeat; padding-left: 15px; }
+//#crea_content #crea_in #crea_header #crea_right .buttons-box a.attention { width: 170px; background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-attention-d.svg); -moz-background-size: 25px auto; -webkit-background-size: 25px auto; -o-background-size: 25px auto; background-size: 25px auto; background-position: 35% center; background-repeat: no-repeat; padding-left: 15px; }
+#crea_content #crea_in #crea_header #crea_right .buttons-box a.attention { width: 170px; background-image: url(https://babel123456.github.io/index.phtml-categorylist/icon-attention-d.svg); -moz-background-size: 25px auto; -webkit-background-size: 25px auto; -o-background-size: 25px auto; background-size: 25px auto; background-position: 35% center; background-repeat: no-repeat; padding-left: 15px; }
+
 #crea_content #crea_in #crea_header #crea_right .buttons-box a.active { background-image: none; color: #FFF; background-color: #ee5b8d; border: 1px solid #ee5b8d; padding-left: 0; }
 #crea_content #crea_in #crea_header #crea_right .buttons-box a.share_button { padding: 7px 0 6px; }
 #crea_content #crea_in #crea_header #crea_right .buttons-box a.share_button img { width: 20px; vertical-align: middle; margin-right: 4px; }
