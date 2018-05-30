@@ -1469,11 +1469,30 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #tem_content ul li #temp_infobox ul li textarea { line-height: 25px; max-height: 125px; width: 100%; max-width: 100%; padding: 0px 5px; border: 1px solid #cccccc; color: #5b5b5b; }
 #tem_content ul li #temp_infobox ul li.edit_new { width: 100%; margin-bottom: 20px; position: relative; min-height: 20px; }
 #tem_content ul li #temp_infobox ul li.edit_new a { display: block; float: left; color: #9d9d9d; width: 20%; }
+/*
+#tem_content ul li #temp_infobox ul li.edit_new a[name="likes"] span{
+	 padding-left:25px;
+	 background-image: url(https://babel123456.github.io/index.phtml-categorylist/icon-attention-d.svg);  
+	 -moz-background-size: 25px auto; -webkit-background-size: 25px auto; -o-background-size: 25px auto; background-size: 25px auto; 
+	 background-position: left center; background-repeat: no-repeat; 
+}
+*/
+//#tem_content ul li #temp_infobox ul li.edit_new i[name="likes"]
+
 @media (max-width: 960px) { #tem_content ul li #temp_infobox ul li.edit_new a { font-size: 16px; } }
 #tem_content ul li #temp_infobox ul li.edit_new a img { width: 15px; height: auto; vertical-align: middle; margin-right: 5px; }
 #tem_content ul li #temp_infobox ul li.edit_new a i { font-size: 16px; margin-right: 5px; }
 @media (max-width: 960px) { #tem_content ul li #temp_infobox ul li.edit_new a i { font-size: 22px; } }
-#tem_content ul li #temp_infobox ul li.edit_new a i.likes { color: #108199; }
+
+//#tem_content ul li #temp_infobox ul li.edit_new a i.likes { color: #108199; }
+#tem_content ul li #temp_infobox ul li.edit_new a i.likes { 
+    color: #ee5b8d; 
+    -ms-transform: rotate(25deg); /* IE 9 */
+    -webkit-transform: rotate(25deg); /* Safari 3-8 */
+    transform: rotate(25deg);
+}
+
+
 #tem_content ul li #temp_else { width: 100%; overflow: hidden; }
 #tem_content ul li #temp_else #tempelse_in { max-width: 689px; }
 #tem_content ul li #temp_else #tempelse_in ul li { width: 114px; float: left; padding: 0 5px; }
