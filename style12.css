@@ -294,7 +294,6 @@ html a { text-decoration: none; }
 #banner #fullWidthBanner .bannerContent a.btnLink { width: 200px; padding: 0; border: 0; border-radius: 5px; font-size: 16px; font-style: normal; font-stretch: normal; line-height: 2.85; letter-spacing: 1.6px; color: #ffffff; text-shadow: 0 0 0 #fff; height: 45px; background-color: #00acc1; background-image: none; }
 #banner #banner_content { width: 100%; position: relative; margin-bottom: 15px; }
 
-//#banner #banner_content .autobuyBtn { margin-right: 10px; margin-top: 8px; margin-bottom: -2px; text-align: right; vertical-align: center; display: block; }
 
 
 #banner #banner_content .autobuyBtn { margin-right: 10px; margin-top: 8px; margin-bottom: -2px; text-align: right; vertical-align: middle; display: block; }
@@ -312,17 +311,16 @@ html a { text-decoration: none; }
 #banner #banner_content .fotorama .page .emb_movie { width: 570px; height: 100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 5; }
 #banner #banner_content .fotorama .page.one_page { background-color: #77d9cc; }
 #banner #banner_content .fotorama .page .page_content { width: 960px; position: relative; }
-//#banner #banner_content .fotorama .page .creator_box { width: 960px; height: 380px; position: relative; overflow: hidden; }
+
 
 #banner #banner_content .fotorama .page .creator_box { width: 960px; height: 380px; position: relative; }
 
 #banner #banner_content .fotorama .page .creator_box img { width: 100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
 
-//#banner #banner_content .fotorama .page .page_desc { display:none; width: 100%; height:40px; background:#fff; vertical-align: middle; overflow:hidden;}
-#banner #banner_content .fotorama .page .page_desc { display:none; width: 100%; height:20%; background:#fff; vertical-align: middle; overflow:hidden;}
+#banner #banner_content .fotorama .page .page_desc { display:none; width: 100%; background:#fff; vertical-align: middle; overflow:hidden;}
 
 
-//#banner #banner_content .fotorama .page .creator_box .page_desc_area{display:none;}
+
 
 
 #banner #banner_content .fotorama .page .creator_box .color_box { width: 100%; height: 190px; position: absolute; top: 0px; left: 0px; }
@@ -396,7 +394,6 @@ html a { text-decoration: none; }
 @media (max-width: 1024px) { .mobile_banner2 #banner_content .fotorama .page .creator_box { width: 100% !important; height: auto !important; } }
 @media (max-width: 1024px) { .mobile_banner2 #banner_content .fotorama .page .creator_box img { position: relative !important; } }
 
-//@media (max-width: 1024px) { .mobile_banner2 #banner_content .fotorama .page .creator_list { top: 50% !important; background: white; } }
 @media (max-width: 1024px) { .mobile_banner2 #banner_content .fotorama .page .creator_list { top: 60% !important; background: white; } }
 
 @media (max-width: 900px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item { margin: 0 10px !important; } }
@@ -422,36 +419,45 @@ html a { text-decoration: none; }
 @media (max-width: 1024px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name { display: inline-block; } }
 @media (max-width: 500px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name { transform: rotate(45deg); text-align: left; } }
 
-//@media (max-width: 400px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name { width: 80% !important; } }
 
-//@media (max-width: 340px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .face { width: 55px !important; height: 55px !important; } }
-
-//@media (max-width: 320px) { .mobile_banner2 #banner_content .fotorama .page .creator_list .creator_item .name { width: 75% !important; } }
 
 @media (max-width: 800px) {
-.mobile_banner2 #banner_content .fotorama .page .page_desc {display: table !important;padding: 0 2% 0 3.5%;margin: 0.6% 0 0.6% 0;}
+.mobile_banner2 #banner_content .fotorama .page .page_desc {display: table !important;padding: 0.2% 2% 0.2% 3.5%;margin: 0.8% 0 0.8% 0;height:40px;}
+//.mobile_banner2 #banner_content .fotorama .page .page_desc {display: table !important;padding: 1% 2% 1% 3.5%;margin: 0.6% 0 0.6% 0;}
+
 
 .mobile_banner2 #banner_content .fotorama .page .page_desc span{display: table-cell;color:#878787;font-size:16px;vertical-align:middle;}
 
-.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(1){width:76%;line-height:45px;
-//background: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/icon-attention-d.svg) no-repeat;
-}
+.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(1){width:76%;line-height:40px;}
 
 
-.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:14%;text-align:center;color:#fff;line-height:20px;background:#F05E69;padding:0px 6px;border-radius:25px;}  
+//.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:14%;text-align:center;color:#fff;line-height:20px;background:#F05E69;padding:0px 6px;border-radius:25px;}  
+.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:13%;text-align:center;color:#fff;line-height:20px;background:#F05E69;border-radius:25px;}  
+
 }
 
 @media (max-width: 600px) {
-.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:23%;}
+//.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:23%;}
+.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:17%;}
 }
+
+@media (max-width: 500px) {
+
+.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:19%;}
+}
+
 @media (max-width: 400px) {
-.mobile_banner2 #banner_content .fotorama .page .page_desc {padding: 0 1% 0 1%;}
+//.mobile_banner2 #banner_content .fotorama .page .page_desc {padding: 0 1% 0 1%;}
+.mobile_banner2 #banner_content .fotorama .page .page_desc {padding: 0.2% 1%;}
 .mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(1){width:75%;letter-spacing:0.5px;}
+
+.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:20%;}
 }
 @media (max-width: 370px) {
 .mobile_banner2 #banner_content .fotorama .page .page_desc {font-size:14px;}
 .mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(1){width:76%;}
-.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:24%;padding:0px 2px;}
+//.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:24%;padding:0px 2px;}
+.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:24%;}
 }
 
 
@@ -463,9 +469,12 @@ html a { text-decoration: none; }
 }
 
 @media (max-width: 320px) {
-	.mobile_banner2 #banner_content .fotorama .page .page_desc {padding: 0 1% 0 1%;}
+//	.mobile_banner2 #banner_content .fotorama .page .page_desc {padding: 0 1% 0 1%;}
+
 .mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(1){width:70%;}
-.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:30%;padding:3px 5px;}
+//.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:30%;padding:3px 5px;}
+
+.mobile_banner2 #banner_content .fotorama .page .page_desc span:nth-child(2){width:28%;}
 }
 
 
