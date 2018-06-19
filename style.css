@@ -720,7 +720,8 @@ background-size:100% 108%;
 }
 
 @media (max-width: 1024px) { #content ul#layout li .tab-container .tab_content {
-	padding: 30px 0 20px 0px;
+	//padding: 30px 0 20px 0px;
+	padding: 20px 0px;
 	//padding: 50px 0 20px 0px;
 	margin-bottom: 10px;
 	//background: url("https://babel123456.github.io/index.phtml-categorylist/paperbg.png") left top no-repeat;} }
@@ -794,8 +795,8 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #content ul#layout li .product_list { 
 //width: 220px; 
 margin: 15px 10px; float: left; background-color: #FFF; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; 
-//border: 1px solid #cccccc; 
-border: 1px solid #eee; 
+border: 1px solid #ccc; 
+//border: 1px solid #eee; 
 position: relative; 
 
 }
@@ -814,7 +815,7 @@ position: relative;
 .w5 .black_box p,.w6 .black_box p,.w7 .black_box p,.w8 .black_box p{line-height:25px !important;}
 
 
-@media (max-width: 1024px) { .w1,.w2,.w3,.w4,.w5,.w6,.w7,.w8 { width: 160px; height: 330px;} }
+@media (max-width: 1024px) { .w1,.w2,.w3,.w4,.w5,.w6,.w7,.w8 { width: 160px; height: 305px;} }
 .w5 .black_box p.album_name, .w6 .black_box p.album_name, .w7 .black_box p.album_name , .w8 .black_box p.album_name   { top: 40% !important;}
 
 @media (max-width: 1024px) {
