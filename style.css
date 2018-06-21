@@ -69,7 +69,7 @@ transform: rotate(25deg);
 #head_desk .head_top { width: 100%; border-bottom: 2px solid #00b7b0; }
 #head_desk .head_center { width: 960px; padding: 5px 0px; position: relative; }
 #head_desk .head_center .logo { float: left; margin-top: 3px; width: 200px; }
-#head_desk .head_center .logo a { background: url("../images/logo.png") no-repeat center center; display: block; background-size: 200px 40px; height: 40px; width: 100%; }
+#head_desk .head_center .logo a { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/logo.png") no-repeat center center; display: block; background-size: 200px 40px; height: 40px; width: 100%; }
 #head_desk .head_center .logo a:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #head_desk .head_center #head_lang { float: left; margin-left: 10px; margin-top: 13px; width: auto; }
 #head_desk .head_center #head_lang a:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; }
