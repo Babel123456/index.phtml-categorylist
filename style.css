@@ -48,16 +48,6 @@ body, html { width: 100%; }
 
 html a { text-decoration: none; }
 
-
-
-.rotate_pin{color: #108199;padding-right:2px;
-transform: rotate(25deg);
- }
- 
- .pincolor{color: #ee5b8d; }
-
-
-
 #main { width: 100%; padding-top: 70px; padding-bottom: 50px; }
 @media (max-width: 1024px) { #main { padding-top: 70px; } }
 
@@ -294,11 +284,16 @@ transform: rotate(25deg);
 
 @keyframes marquee { 0% { text-indent: 10em; }
   100% { text-indent: -40em; } }
+/* 首頁標題圖釘 */
+.rotate_pin { padding-right: 2px; transform: rotate(25deg); }
+
+.pincolor { color: #ee5b8d; }
+
 #banner { width: 100%; }
 #banner img { width: 100%; height: auto; vertical-align: bottom; }
 #banner #fullWidthBanner { width: 100%; background-size: cover; position: relative; margin-bottom: 3%; height: 380px; }
-#banner #fullWidthBanner.aboutBanner { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/assets-v5/aboutbanner.png); }
-#banner #fullWidthBanner.tutorialBanner { background-image: url(https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/assets-v6/tutorial.png); }
+#banner #fullWidthBanner.aboutBanner { background-image: url(../images/assets-v5/aboutbanner.png); }
+#banner #fullWidthBanner.tutorialBanner { background-image: url(../images/assets-v6/tutorial.png); }
 #banner #fullWidthBanner .bannerContent { width: 100%; height: 380px; font-size: 48px; letter-spacing: 5px; text-align: center; color: #ffffff; position: relative; line-height: 7; }
 #banner #fullWidthBanner .bannerContent p { height: 25%; }
 #banner #fullWidthBanner .bannerContent a.btnLink { width: 200px; padding: 0; border: 0; border-radius: 5px; font-size: 16px; font-style: normal; font-stretch: normal; line-height: 2.85; letter-spacing: 1.6px; color: #ffffff; text-shadow: 0 0 0 #fff; height: 45px; background-color: #00acc1; background-image: none; }
@@ -610,10 +605,7 @@ transform: rotate(25deg);
 #content ul#layout li #tutorialContentD .mobiledisplay02 .mtitle { font-size: 20px; }
 #content ul#layout li #tutorialContentD .mobiledisplay02 .msubTitle { font-size: 20px; }
 #content ul#layout li #tutorialContentD .mobiledisplay02 .highlight { color: #ee5b8d; font-size: 26px; font-weight: 500; font-style: normal; font-stretch: normal; padding: 0px 5px; }
-
-//#content ul#layout li .create_box { width: 100%; margin: 15px auto 40px auto; }
 #content ul#layout li .create_box { width: 100%; margin: 5px auto 40px auto; }
-
 #content ul#layout li .create_box a.createListItem:not(:last-child) { margin-right: 9px; }
 @media (min-width: 1024px) { #content ul#layout li .create_box .color01 { background-color: #fff; } }
 @media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color01 { border-left: 10px #ff6a59 solid; } }
@@ -657,11 +649,7 @@ transform: rotate(25deg);
 #content ul#layout li .black_box { background-image: url("../images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 85%; z-index: 2; display: none; }
 #content ul#layout li .black_box p { color: #FFF; font-size: 14px; width: 100%; text-align: center; height: 260px; line-height: 30px; position: absolute; top: 13%; margin-top: -15px; }
 #content ul#layout li .black_box p img { vertical-align: middle; margin-right: 10px; }
-
-
-//#content ul#layout li .create_list { width: 22.5%; margin: 15px 0%; display: inline-block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #FFF; padding: 2%; height: 400px; overflow: hidden; }
 #content ul#layout li .create_list { width: 22.5%; margin: 10px 0%; display: inline-block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #FFF; padding: 2%; height: 400px; overflow: hidden; }
-
 @media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_list { width: 45%; margin: 15px 2%; height: auto; } }
 @media (max-width: 767px) { #content ul#layout li .create_list { width: 100%; margin: 10px 0px; height: auto; } }
 #content ul#layout li .create_list:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); opacity: 0.8; }
@@ -708,24 +696,11 @@ transform: rotate(25deg);
 @media (max-width: 1024px) { #content ul#layout li .tab-container ul.etabs li { width: auto; letter-spacing: 0.2em; padding-left: 1.5%; } }
 #content ul#layout li .tab-container ul.etabs_index { top: -22px; }
 @media (max-width: 1024px) { #content ul#layout li .tab-container ul.etabs_index { padding-left: 5%; } }
-
-
-#content ul#layout li .tab-container .tab_content { width: 100%; padding: 0px 0px; 
-//margin: -20px auto; 
-margin: 0 auto; 
-overflow: hidden; }
-
-
-
+#content ul#layout li .tab-container .tab_content { width: 100%; padding: 0px 0px; margin: 0px auto; overflow: hidden; }
 #content ul#layout li .tab-container .tab_content .tab { display: none; }
 #content ul#layout li .tab-container .tab_content .tab.active { display: block; }
 #content ul#layout li .tab-container .tab_content .product_scroll { width: 960px; }
 @media (max-width: 1024px) { #content ul#layout li .tab-container .tab_content .product_scroll { width: 1920px; } }
-
-
-//@media (max-width: 1024px) { #content ul#layout li .tab-container .tab_content { padding: 25px 0px; } }
-
-
 #content ul#layout li .act_list { background-color: #FFF; border: 1px solid #e8e8e8; margin: 0px 0px; padding: 35px 19px; text-align: left; height: 210px; }
 @media (min-width: 570px) and (max-width: 1024px) { #content ul#layout li .act_list { padding: 10px 0px; height: 500px; } }
 @media (max-width: 569px) { #content ul#layout li .act_list { padding: 10px 0px; height: 525px; } }
@@ -807,15 +782,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
   #content ul#layout li .product_list .product_info p.user_name { text-align: right; } }
 #content ul#layout li .product_list:hover .black_box { display: block; }
 @media (max-width: 1024px) { #content ul#layout li .product_list:hover .black_box { display: none; } }
-
-
-//#content ul#layout li h2 { text-align: left; color: #108199; font-size: 16px; letter-spacing: 3px; }
-#content ul#layout li h2 { text-align: left; color: #108199; font-size: 16px; letter-spacing: 3px; 
-padding-top:5px;
-}
-
-
-
+#content ul#layout li h2 { text-align: left; color: #108199; font-size: 16px; letter-spacing: 3px; padding-top: 5px; }
 @media (max-width: 768px) { #content ul#layout li h2 { margin-top: 8%; } }
 #content ul#layout li.wid90 { width: 960px; }
 @media (max-width: 1024px) { #content ul#layout li.wid90 { width: 90%; margin-left: 6%; } }
@@ -893,18 +860,9 @@ padding-top:5px;
 @media (max-width: 1024px) { .fullWidthBanner { width: 100%; } }
 .fullWidthBanner.Banner1 { height: 1000px; }
 @media (max-width: 350px) { .fullWidthBanner.Banner1 { height: 450px; } }
-
-
-//.fullWidthBanner.Banner1 .title { width: 100%; height: 50px; font-family: PingFangTC; font-size: 3em; font-weight: 500; font-style: normal; font-stretch: normal; letter-spacing: 7.5px; text-align: center; color: #0f8399; position: static; margin-top: 40px; }
 .fullWidthBanner.Banner1 .title { width: 100%; height: 50px; font-family: PingFangTC; font-size: 3em; font-weight: 500; font-style: normal; font-stretch: normal; letter-spacing: 6px; text-align: center; color: #0f8399; position: static; margin-top: 40px; }
-@media (max-width: 360px){
-
-.fullWidthBanner.Banner1 .title { letter-spacing: 3px;  }
-
-}
-
-
 @media (max-width: 1240px) { .fullWidthBanner.Banner1 .title { font-size: 2em; } }
+@media (max-width: 360px) { .fullWidthBanner.Banner1 .title { letter-spacing: 3px; } }
 .fullWidthBanner.Banner1 .videoEmbed { position: static; width: 100%; margin-top: 20px; }
 .fullWidthBanner.Banner1 .videoEmbed div.videoframe { width: 100%; margin: 0 auto; text-align: center; }
 .fullWidthBanner.Banner1 .videoEmbed div.videoframe iframe { width: 100%; max-width: 810px; padding: 0 10px; }
@@ -915,12 +873,12 @@ padding-top:5px;
 .fullWidthBanner.Banner1 .tabs .tabBodyContainer { width: 52.5%; height: 375px; float: left; background-color: #61c8d5; -webkit-border-radius: 0 5px 5px 0; -moz-border-radius: 0 5px 5px 0; border-radius: 0 5px 5px 0; }
 .fullWidthBanner.Banner1 .tabs .tabItemContainer > li { list-style: none; text-align: center; }
 .fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a { float: left; width: 100%; height: 125px; padding: 30px 0 30px 0; font: 16px "微软雅黑", Arial, Helvetica, sans-serif; color: #808080; cursor: pointer; text-decoration: none; border: 1px solid transparent; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn01 { width: 103%; z-index: 1; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-01.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn02 { width: 103%; z-index: 1; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-02.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn03 { width: 103%; z-index: 1; background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-03.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn01-b { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-01-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn02-b { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-02-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
-.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn03-b { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-03-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn01 { width: 103%; z-index: 1; background-image: url("../images/assets-v5/about-ppb-left-menu-01.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn02 { width: 103%; z-index: 1; background-image: url("../images/assets-v5/about-ppb-left-menu-02.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn03 { width: 103%; z-index: 1; background-image: url("../images/assets-v5/about-ppb-left-menu-03.svg"); position: relative; -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100% 100%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn01-b { background-image: url("../images/assets-v5/about-ppb-left-menu-01-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn02-b { background-image: url("../images/assets-v5/about-ppb-left-menu-02-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
+.fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a.btn03-b { background-image: url("../images/assets-v5/about-ppb-left-menu-03-b.svg"); -moz-background-size: 100% 100%; -webkit-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 99% 101%; background-repeat: no-repeat; }
 .fullWidthBanner.Banner1 .tabs .tabItemContainer > li > a:hover { color: #333; }
 .fullWidthBanner.Banner1 .tabs .tabBodyItem { position: absolute; width: 52.5%; height: 375px; display: none; }
 .fullWidthBanner.Banner1 .tabs .tabBodyItem > p { font: 13px "微软雅黑", Arial, Helvetica, sans-serif; text-align: center; margin-top: 30px; }
@@ -1037,14 +995,7 @@ padding-top:5px;
 #item_box .controls { width: 100%; height: 42px; padding: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: url(../images/right.png) no-repeat 98% center; overflow: hidden; background-color: #FFF; background-size: 10px; border: 1px solid #cccccc; }
 #item_box .controls select { width: 120%; height: 32px; background-color: transparent; border: none; font-size: 16px; color: #9d9d9d; }
 
-
-
-//.water_content { width: 100%; margin-bottom: 30px; margin-top:-9px;}
-.water_content { width: 100%; margin-bottom: 30px; margin-top:-5px;}
-
-
-
-
+.water_content { width: 100%; margin-bottom: 30px; margin-top: -5px; }
 .water_content .item_box { background-color: #FFF; width: 225px; overflow: hidden; margin-bottom: 20px; margin-top: 13px; position: relative; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; -webkit-box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2; }
 @media (min-width: 335px) and (max-width: 374px) { .water_content .item_box { width: 160px; } }
 @media (max-width: 334px) { .water_content .item_box { width: 46%; } }
@@ -1495,7 +1446,7 @@ padding-top:5px;
 #tem_content ul li #slide_pic #location ul li.local_name { list-style-image: url("../images/location.png"); list-style-position: outside; margin-left: 20px; }
 #tem_content ul li #slide_pic #location ul li img { float: left; display: inline-block; margin-right: 1%; width: 10px; }
 #tem_content ul li #slide_pic #location ul li img.nomap { width: 100%; height: auto; }
-.#tem_content ul li #slide_pic #location ul li p { width: 100%; display: block; font-size: 12px; }
+#tem_content ul li #slide_pic #location ul li p { width: 100%; display: block; font-size: 12px; }
 #tem_content ul li #slide_pic #location ul li input.address { width: 80%; line-height: 24px; }
 @media (max-width: 960px) { #tem_content ul li #slide_pic #location ul li input.address { width: 25%; } }
 #tem_content ul li #slide_pic #location ul li #vvv { width: 100%; height: 0; padding-bottom: 56.25%; position: relative; }
@@ -1543,10 +1494,50 @@ padding-top:5px;
 #tem_content ul li #temp_infobox ul li p.editpoint input { width: 50%; }
 #tem_content ul li #temp_infobox ul li p.editpoint img { margin-top: -15px; }
 
+
+#tem_content ul li #temp_infobox ul li{position:relative;width:100%;}
 //#tem_content ul li #temp_infobox ul li .more_open { width: 100%; height: 19px; line-height: 19px; text-align: center; background-color: #f6f6f6; color: #808080; font-size: 22px; cursor: pointer; margin-top: 5px; padding-top: 0px; }
-#tem_content ul li #temp_infobox ul li .more_open { width: 100%; height: 19px; line-height: 19px; text-align: center; background-color: #f6f6f6; color: #808080; font-size: 22px; cursor: pointer; margin-top: 5px; padding-top: 0px; }
+#tem_content ul li #temp_infobox ul li .more_open { width: 100%; height: 22px; line-height: 22px; text-align: center; background-color: #f6f6f6; color: #808080; font-size: 14px; cursor: pointer; margin-top: 5px; padding-top: 0px; }
+/*
+#tem_content ul li #temp_infobox ul li .more_open {
+//display:inline-block;
+position: absolute;
+bottom:0;
+left:0;
+z-index:2;
+width: 100%; height: 22px; 
+line-height: 22px; 
+//transform:translateY(-50%);
+vertical-align:middle;
+text-align: center;color: #808080; 
+//font-size: 22px; 
+cursor: pointer; 
+//margin-top: 5px; padding-top: 0px; 
+//background-color: #f6f6f6;
+//transform: scale(2,2); 
+}
+#tem_content ul li #temp_infobox ul li .more_open:after{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:-1;
+  content: '_';
+  width:100%;
+  color: #f6f6f6;
+  background-color: #f6f6f6;
+  
+}
+*/
+//#tem_content ul li #temp_infobox ul li .more_open:contains("﹀"){background:#000;}
+//#tem_content ul li #temp_infobox ul li .more_open:not("﹀"){background:#000;}
+
 
 #tem_content ul li #temp_infobox ul li .more_open:hover { background-color: #00b7b0; color: #FFF; }
+//#tem_content ul li #temp_infobox ul li .more_open:after:hover { background-color: #00b7b0; color: #FFF; }
+
+
+
+
 #tem_content ul li #temp_infobox ul li .social-likes__button_line { background: #00b900; color: #FFF; padding: 0px; height: 26px; display: none; }
 @media (max-width: 1024px) { #tem_content ul li #temp_infobox ul li .social-likes__button_line { display: block; } }
 #tem_content ul li #temp_infobox ul li .social-likes__button_line:before { display: none; }
@@ -2837,12 +2828,7 @@ video::-webkit-media-controls-enclosure { overflow: hidden; }
 
 video::-webkit-media-controls-panel { width: calc(100% + 30px); /* Adjust as needed */ }
 
-
-@media (max-width: 1024px){
-.creativeFotorama{padding-top:11px;}
-}
-
-
+@media (max-width: 1024px) { .creativeFotorama { padding-top: 15px; } }
 .creativeFotorama .owl-wrapper-outer { box-shadow: none; }
 
 .popview_content { left: 25%; top: 2%; margin-left: 0px; margin-top: 0px; }
