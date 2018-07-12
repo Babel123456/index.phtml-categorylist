@@ -622,7 +622,9 @@ transform: rotate(25deg);
 @media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color02 { border-left: 10px #ffaa3f solid; } }
 @media (max-width: 767px) { #content ul#layout li .create_box .color02 { border-left: 10px #ffaa3f solid; } }
 @media (min-width: 1024px) { #content ul#layout li .create_box .color03 { background-color: #fff; } }
+
 @media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color03 { border-left: 10px #ffe69c solid; } }
+
 @media (max-width: 767px) { #content ul#layout li .create_box .color03 { border-left: 10px #ffe69c solid; } }
 @media (min-width: 1024px) { #content ul#layout li .create_box .color04 { background-color: #fff; } }
 @media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color04 { border-left: 10px #91d9cd solid; } }
@@ -645,15 +647,19 @@ transform: rotate(25deg);
 @media (min-width: 1024px) { #content ul#layout li .create_box .color10 { background-color: #fff; } }
 @media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color10 { border-left: 10px #8DE1F7 solid; } }
 @media (max-width: 767px) { #content ul#layout li .create_box .color10 { border-left: 10px #8DE1F7 solid; } }
-@media (min-width: 1024px) { #content ul#layout li .create_box .color11 { background-color: #fff; } }
-@media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color11 { border-left: 10px #8DE1F7 solid; } }
-@media (max-width: 767px) { #content ul#layout li .create_box .color11 { border-left: 10px #8DE1F7 solid; } }
-@media (min-width: 1024px) { #content ul#layout li .create_box .color12 { background-color: #fff; } }
-@media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color12 { border-left: 10px #FABD72 solid; } }
-@media (max-width: 767px) { #content ul#layout li .create_box .color12 { border-left: 10px #FABD72 solid; } }
-@media (min-width: 1024px) { #content ul#layout li .create_box .color13 { background-color: #fff; } }
-@media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color13 { border-left: 10px #E4A6CA solid; } }
-@media (max-width: 767px) { #content ul#layout li .create_box .color13 { border-left: 10px #E4A6CA solid; } }
+
+@media (min-width: 1024px) { #content ul#layout li .create_box .color011 { background-color: #fff; } }
+
+@media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color011 { border-left: 10px #8DE1F7 solid; } }
+
+@media (max-width: 767px) { #content ul#layout li .create_box .color011 { border-left: 10px #8DE1F7 solid; } }
+@media (min-width: 1024px) { #content ul#layout li .create_box .color012 { background-color: #fff; } }
+@media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color012 { border-left: 10px #FABD72 solid; } }
+@media (max-width: 767px) { #content ul#layout li .create_box .color012 { border-left: 10px #FABD72 solid; } }
+@media (min-width: 1024px) { #content ul#layout li .create_box .color013 { background-color: #fff; } }
+@media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color013 { border-left: 10px #E4A6CA solid; } }
+@media (max-width: 767px) { #content ul#layout li .create_box .color013 { border-left: 10px #E4A6CA solid; } }
+
 #content ul#layout li .black_box { background-image: url("../images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 85%; z-index: 2; display: none; }
 #content ul#layout li .black_box p { color: #FFF; font-size: 14px; width: 100%; text-align: center; height: 260px; line-height: 30px; position: absolute; top: 13%; margin-top: -15px; }
 #content ul#layout li .black_box p img { vertical-align: middle; margin-right: 10px; }
@@ -698,13 +704,13 @@ padding-left:20px;
 
 #content ul#layout li .create_list ul li div.create_info { 
 //height: 36px;
-height: 40px;
+height: 60px;
  overflow: hidden; text-overflow: ellipsis; 
 //white-space: nowrap; 
 }
 
 #content ul#layout li .create_list ul li div.create_info{
-  -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box; -webkit-line-clamp: 3;
       padding-left: 10px
 }
 
@@ -712,16 +718,43 @@ height: 40px;
 #content ul#layout li .create_list ul li .create_pic { width: 130px; height: 130px; overflow: hidden; margin-bottom: 5px; -moz-border-radius: 100px; -webkit-border-radius: 100px; border-radius: 100px; display: inline-block; }
 @media (max-width: 767px) { #content ul#layout li .create_list ul li .create_pic { width: 70px; height: 70px; } }
 #content ul#layout li .create_list ul li .create_pic img { width: 100%; height: 100%; }
-#content ul#layout li .create_list div.bg { position: relative; width: 125%; top: -9%; left: -13%; height: 36%; }
-@media (min-width: 1024px) { #content ul#layout li .create_list .color1 { background-color: #fca297; } }
-@media (min-width: 1024px) { #content ul#layout li .create_list .color2 { background-color: #ffca87; } }
+
+#content ul#layout li .create_list div.bg { position: relative; width: 125%; top: -9%; left: -13%; height: 36%;}
+
+
+//@media (min-width: 1024px) { #content ul#layout li .create_list .color1 { background-color: #fca297; } }
+@media (min-width: 1024px) { #content ul#layout li .create_list .color1 { background-color: #ff6a59; } }
+
+//@media (min-width: 1024px) { #content ul#layout li .create_list .color2 { background-color: #ffca87; } }
+@media (min-width: 1024px) { #content ul#layout li .create_list .color2 { background-color: #ffaa3f; } }
+
+//@media (min-width: 1024px) { #content ul#layout li .create_list .color3 { background-color: #ffe69c; } }
 @media (min-width: 1024px) { #content ul#layout li .create_list .color3 { background-color: #ffe69c; } }
-@media (min-width: 1024px) { #content ul#layout li .create_list .color4 { background-color: #fbc7c8; } }
-@media (min-width: 1024px) { #content ul#layout li .create_list .color5 { background-color: #d4c3e2; } }
-@media (min-width: 1024px) { #content ul#layout li .create_list .color6 { background-color: #edbce2; } }
-@media (min-width: 1024px) { #content ul#layout li .create_list .color7 { background-color: #91d9cd; } }
-@media (min-width: 1024px) { #content ul#layout li .create_list .color8 { background-color: #aec3ed; } }
-@media (min-width: 1024px) { #content ul#layout li .create_list .color9 { background-color: #ffca87; } }
+
+//@media (min-width: 1024px) { #content ul#layout li .create_list .color4 { background-color: #fbc7c8; } }
+@media (min-width: 1024px) { #content ul#layout li .create_list .color4 { background-color: #91d9cd; } }
+
+//@media (min-width: 1024px) { #content ul#layout li .create_list .color5 { background-color: #d4c3e2; } }
+@media (min-width: 1024px) { #content ul#layout li .create_list .color5 { background-color: #d4c3e3; } }
+
+
+//@media (min-width: 1024px) { #content ul#layout li .create_list .color6 { background-color: #edbce2; } }
+@media (min-width: 1024px) { #content ul#layout li .create_list .color6 { background-color: #f1d0ab; } }
+
+//@media (min-width: 1024px) { #content ul#layout li .create_list .color7 { background-color: #91d9cd; } }
+@media (min-width: 1024px) { #content ul#layout li .create_list .color7 { background-color: #c3e8a5; } }
+
+//@media (min-width: 1024px) { #content ul#layout li .create_list .color8 { background-color: #aec3ed; } }
+@media (min-width: 1024px) { #content ul#layout li .create_list .color8 { background-color: #aec3ee; } }
+
+//@media (min-width: 1024px) { #content ul#layout li .create_list .color9 { background-color: #ffca87; } }
+@media (min-width: 1024px) { #content ul#layout li .create_list .color9 { background-color: #fea6b2; } }
+
+@media (min-width: 1024px) { #content ul#layout li .create_list .color10 { background-color: #8DE1F7; } }
+@media (min-width: 1024px) { #content ul#layout li .create_list .color11 { background-color: #8DE1F7; } }
+@media (min-width: 1024px) { #content ul#layout li .create_list .color12 { background-color: #FABD72; } }
+@media (min-width: 1024px) { #content ul#layout li .create_list .color13 { background-color: #E4A6CA; } }
+
 #content ul#layout li .tab-container { width: 100%; position: relative; }
 #content ul#layout li .tab-container ul.etabs { position: absolute; width: 320px; height: 25px; top: -41px; z-index: 20; }
 @media (max-width: 1024px) { #content ul#layout li .tab-container ul.etabs { top: 0px; left: 0px; width: 100%; height: 40px; padding-left: 10%; } }
