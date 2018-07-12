@@ -579,7 +579,11 @@ function mobile_notice() {
 			</li>
 			<li><div class="line"></div></li>
 												<li class="wid90" style="margin:0 auto;"><h2><i name="likes" class="fa fa-thumb-tack fa-lg rotate_pin pincolor"></i>釘關注</h2></li>
-				<div class="creativeFotorama"><li class="wid90"><div class="create_box"><a class="createListItem" href="https://www.pinpinbox.com/Hannah">
+				
+				    <div class="creativeFotorama">
+					<li class="wid90">
+				        <div class="create_box">
+						    <a class="createListItem" href="https://www.pinpinbox.com/Hannah">
 									<div class="create_list color07">
 										<div class="bg color7"></div>
 										<ul>
@@ -590,12 +594,14 @@ function mobile_notice() {
 											</li>
 											<li class="create_descrip">
 												<p class="crea_name">楊花花</p>
-												<div class="create_info"><p>》保養》彩妝》旅遊》生活》外拍》 合作：mnc78917@gmail.com 你好！ 我是楊花花，一個腦動大開的購物狂少女</p>
-</div>
+												<div class="create_info">
+												    <p>》保養》彩妝》旅遊》生活》外拍》 合作：mnc78917@gmail.com 你好！ 我是楊花花，一個腦動大開的購物狂少女</p>
+												</div>
 											</li>
 										</ul>
 									</div>
-								</a><a class="createListItem" href="https://www.pinpinbox.com/victor">
+								</a>
+								<a class="createListItem" href="https://www.pinpinbox.com/victor">
 									<div class="create_list color05">
 										<div class="bg color5"></div>
 										<ul>
@@ -656,7 +662,9 @@ function mobile_notice() {
 											</li>
 										</ul>
 									</div>
-								</a></div></li><li class="wid90"><div class="create_box"><a class="createListItem" href="https://www.pinpinbox.com/taiwanli">
+								</a></div>
+								</li>
+								<li class="wid90"><div class="create_box"><a class="createListItem" href="https://www.pinpinbox.com/taiwanli">
 									<div class="create_list color05">
 										<div class="bg color5"></div>
 										<ul>
@@ -844,11 +852,14 @@ function mobile_notice() {
 											<li class="create_descrip">
 												<p class="crea_name">babel</p>
 												<div class="create_info"><p>十年無成之圖文四格~</p>
+
+<p><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="480" src="https://www.youtube.com/embed/bNVb3wS6b0o" width="854"></iframe>TESTTEST</p>
 </div>
 											</li>
 										</ul>
 									</div>
-								</a></div></li></div>			<li class="wid90" style="display: none;"><a href="https://www.pinpinbox.com/index/creative/" class="mo_more">more</a></li>
+								</a></div>	</li>	</div>	
+								<li class="wid90" style="display: none;"><a href="https://www.pinpinbox.com/index/creative/" class="mo_more">more</a></li>
 			<li><div class="line"></div></li>
 			<li class="wid90"><h2><i name="likes" class="fa fa-thumb-tack fa-lg rotate_pin pincolor"></i>釘推薦</h2></li>
 		</ul>
@@ -1024,6 +1035,7 @@ function mobile_notice() {
 
 <script>
 $(document).ready(function(e) {
+
 	SidebarTabHandler.Init();
 	$('.counter').counterUp({
         delay: 10,
@@ -1066,6 +1078,12 @@ $(document).ready(function(e) {
         if (!isDragging)
             location.href = $(this).attr('href');
     });
+	
+	//釘關注作者資訊只要文字
+	$( ".create_info" ).each(function() {
+	   var creStr = $( this ).text();
+	   $( this ).html("<p>"+creStr+"</p>");
+	});
 });
 
 $(document).on('click', '#alert_btn' , function(e){
