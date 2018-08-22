@@ -56,10 +56,10 @@ html a { text-decoration: none; }
 
 #head_desk { display: block; }
 @media (max-width: 1024px) { #head_desk { display: none; } }
-#head_desk .head_top { width: 100%; border-bottom: 2px solid #00b7b0; }
+#head_desk .head_top { width: 100%; border-bottom: 2px solid #00b7b0;}
 #head_desk .head_center { width: 960px; padding: 5px 0px; position: relative; }
 #head_desk .head_center .logo { float: left; margin-top: 3px; width: 200px; }
-#head_desk .head_center .logo a { background: url("../images/logo.png") no-repeat center center; display: block; background-size: 200px 40px; height: 40px; width: 100%; }
+#head_desk .head_center .logo a { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/logo.png") no-repeat center center; display: block; background-size: 200px 40px; height: 40px; width: 100%; }
 #head_desk .head_center .logo a:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #head_desk .head_center #head_lang { float: left; margin-left: 10px; margin-top: 13px; width: auto; }
 #head_desk .head_center #head_lang a:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; }
@@ -234,7 +234,10 @@ html a { text-decoration: none; }
 #nav_wrapper #scroller ul li a.drop:hover { background-image: url("../images/list_open.png"); }
 
 /*頁尾*/
-#footer { width: 100%; background-color: #6d6e72; padding: 1px 0px; position: fixed; bottom: 0px; z-index: 20; }
+#footer { width: 100%; background-color: #6d6e72; padding: 1px 0px; position: fixed; bottom: 0px; z-index: 24; }
+
+
+
 @media (max-width: 1024px) { #footer { display: none; } }
 #footer #footer_content { width: 960px; color: #FFF; }
 @media (max-width: 1024px) { #footer #footer_content { width: 90%; } }
@@ -646,7 +649,7 @@ html a { text-decoration: none; }
 @media (min-width: 1024px) { #content ul#layout li .create_box .color013 { background-color: #fff; } }
 @media (min-width: 768px) and (max-width: 1024px) { #content ul#layout li .create_box .color013 { border-left: 10px #E4A6CA solid; } }
 @media (max-width: 767px) { #content ul#layout li .create_box .color013 { border-left: 10px #E4A6CA solid; } }
-#content ul#layout li .black_box { background-image: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 85%; z-index: 2; display: none; }
+#content ul#layout li .black_box { background-image: url("../images/background02.png"); background-repeat: repeat; position: absolute; width: 100%; height: 85%; z-index: 2; display: none; }
 #content ul#layout li .black_box p { color: #FFF; font-size: 14px; width: 100%; text-align: center; height: 260px; line-height: 30px; position: absolute; top: 13%; margin-top: -15px; }
 #content ul#layout li .black_box p img { vertical-align: middle; margin-right: 10px; }
 #content ul#layout li .create_list { width: 22.5%; margin: 10px 0%; display: inline-block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #FFF; padding: 2%; height: 400px; overflow: hidden; }
@@ -686,24 +689,8 @@ html a { text-decoration: none; }
 @media (min-width: 1024px) { #content ul#layout li .create_list .color11 { background-color: #8DE1F7; } }
 @media (min-width: 1024px) { #content ul#layout li .create_list .color12 { background-color: #FABD72; } }
 @media (min-width: 1024px) { #content ul#layout li .create_list .color13 { background-color: #E4A6CA; } }
-#content ul#layout li .tab-container { width: 100%; position: relative;}
-
-//#content ul#layout li .tab-container ul.etabs { position: absolute; width: 320px; height: 25px; top: -41px; z-index: 20; }
-//@media (max-width: 1024px) { #content ul#layout li .tab-container ul.etabs { top: 0px; left: 0px; width: 100%; height: 40px; padding-left: 10%; } }
-//@media (max-width: 334px) { #content ul#layout li .tab-container ul.etabs { padding-left: 13%; } }
-
-//#content ul#layout li .tab-container ul.etabs li { letter-spacing: 0.2em; height: 25px; float: left; margin-bottom: 0px; overflow: hidden; padding-left: 3%; }
-//#content ul#layout li .tab-container ul.etabs li.active a { color: #2ab7b3; }
-//#content ul#layout li .tab-container ul.etabs li:nth-child(4) { display: inherit; }
-//@media (max-width: 1024px) { #content ul#layout li .tab-container ul.etabs li:nth-child(4) { display: none; } }
-//#content ul#layout li .tab-container ul.etabs li a { line-height: 25px; display: block; width: 100%; text-align: center; color: #9d9d9d; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 16px; }
-//#content ul#layout li .tab-container ul.etabs li a:hover { color: #108199; }
-//#content ul#layout li .tab-container ul.etabs li.liBread { width: 3em; }
-//@media (max-width: 1024px) { #content ul#layout li .tab-container ul.etabs li { width: auto; letter-spacing: 0.2em; padding-left: 1.5%; } }
-//#content ul#layout li .tab-container ul.etabs_index { top: -22px; }
-//@media (max-width: 1024px) { #content ul#layout li .tab-container ul.etabs_index { padding-left: 5%; } }
-
-#content ul#layout li .tab-container .tab_content { width: 100%; padding: 0px 0px; margin: 0px auto; overflow: hidden;}
+#content ul#layout li .tab-container { width: 100%; position: relative; }
+#content ul#layout li .tab-container .tab_content { width: 100%; padding: 0px 0px; margin: 15px auto 0 auto; overflow: hidden; }
 #content ul#layout li .tab-container .tab_content .tab { display: none; }
 #content ul#layout li .tab-container .tab_content .tab.active { display: block; }
 #content ul#layout li .tab-container .tab_content .product_scroll { width: 960px; }
@@ -766,68 +753,24 @@ background-image: linear-gradient(#17b1ad, #10859a);
   #content ul#layout li .commed div.template_list .product_info p.template_user_pic { width: 25%; text-align: right; color: white; display: inline; font-size: 14px; }
   #content ul#layout li .commed div.template_list .product_info p.template_user_pic a img { width: 40px; height: 40px; border-radius: 100%; margin-top: 6%; background-color: #fff; } }
 @media (max-width: 1024px) { #content ul#layout li .commed { width: 960px; } }
-
-#content ul#layout li .product_list { 
-//width: 220px; 
-width: 218px; 
-height:218px;
-margin: 15px 10px; float: left; background-color: #FFF; 
--moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; 
-//border: 1px solid #cccccc; 
-border: 1px solid #eee; 
-//-moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;
-position: relative; 
-overflow: hidden;
-}
-
-
-@media (max-width: 1024px) { #content ul#layout li .product_list { 
-//width: 160px;
-width: 158px;
-height: 218px;
-
- } }
+#content ul#layout li .product_list { width: 230px; height: 218px; margin: 2px; float: left; background-color: #FFF; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; border: 1px solid #eee; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; position: relative; overflow: hidden; }
+@media (max-width: 1024px) { #content ul#layout li .product_list { margin: 0px 10px; width: 158px; height: 218px; } }
 #content ul#layout li .product_list .album_tags_gift { cursor: default; }
 #content ul#layout li .product_list .album_tags_gift img { width: 28px; height: 28px; position: absolute; top: 1px; left: 1px; z-index: 23; }
 @media (max-width: 568px) { #content ul#layout li .product_list .album_tags_gift img { width: 26px; height: 26px; left: 0; } }
 #content ul#layout li .product_list .album_tags_gift .album_tags_gift_bg { position: absolute; top: 0px; left: 0px; z-index: 22; border-color: #FF5E68 transparent transparent transparent; border-style: solid solid solid solid; border-width: 50px 50px 0px 0px; height: 0px; width: 0px; }
 @media (max-width: 568px) { #content ul#layout li .product_list .album_tags_gift .album_tags_gift_bg { border-width: 45px 45px 0px 0px; } }
-#content ul#layout li .product_list .product_pic { width: 100%; 
-//height: 330px; 
-height: 218px; 
-
-overflow: hidden; }
-
-@media (max-width: 1024px) { #content ul#layout li .product_list .product_pic { height: 240px; } }
-#content ul#layout li .product_list .product_pic img { width: 100%; 
-//height: 330px; 
-height: 100%; 
-object-fit: cover; }
-@media (max-width: 1024px) { 
-#content ul#layout li .product_list .product_pic { height: 158px; }
-#content ul#layout li .product_list .product_pic img { 
-
-//height: 240px; 
-//height: 158px; 
-
-} }
+#content ul#layout li .product_list .product_pic { width: 100%; height: 218px; overflow: hidden; }
+@media (max-width: 1024px) { #content ul#layout li .product_list .product_pic { height: 158px; } }
+#content ul#layout li .product_list .product_pic img { width: 100%; height: 100%; object-fit: cover; }
 #content ul#layout li .product_list .black_box p.album_name { top: 45%; left: 3%; text-align: center; height: auto; z-index: 21; padding-right: 12px; }
 #content ul#layout li .product_list .black_box p.album_name a { color: white; }
 #content ul#layout li .product_list .black_box p.album_view { cursor: zoom-in; z-index: 20; top: 0; height: 100%; margin-top: 0; }
 #content ul#layout li .product_list .black_box p.album_view img { width: 15%; position: relative; top: 50%; }
-#content ul#layout li .product_list .black_box p.user_pic { position: absolute; width: 28%; text-align: right; 
-left: 73%; 
-//top: 89%; 
-top: 82%; 
-color: white; display: inline; font-size: 14px; height: auto; z-index: 21; }
+#content ul#layout li .product_list .black_box p.user_pic { position: absolute; width: 28%; text-align: right; left: 73%; top: 82%; color: white; display: inline; font-size: 14px; height: auto; z-index: 21; }
 #content ul#layout li .product_list .black_box p.user_pic a img { width: 45px; height: 45px; border-radius: 100%; padding: 3px; background-color: #fff; box-shadow: 4px 4px 4px rgba(51, 51, 102, 0.6), 4px 4px 6px rgba(51, 51, 102, 0.4), 6px 6px 12px rgba(51, 51, 102, 0.4); }
 #content ul#layout li .product_list .product_info { display: none; }
-
-@media (max-width: 1024px) { #content ul#layout li .product_list .product_info { 
-display: block; width: 100%; 
-height: 60px; 
--moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 5px; position: relative; overflow: hidden; }
-
+@media (max-width: 1024px) { #content ul#layout li .product_list .product_info { display: block; width: 100%; height: 60px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 5px; position: relative; overflow: hidden; }
   #content ul#layout li .product_list .product_info p { text-align: left; font-size: 1.4em; color: #5b5b5b; line-height: 20px; width: 100%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; margin-top: 4px; font-size: 1em; }
   #content ul#layout li .product_list .product_info p.user_name { text-align: right; } }
 #content ul#layout li .product_list:hover .black_box { display: block; }
@@ -908,7 +851,10 @@ height: 60px;
 /*首頁底部全幅Banner*/
 .fullWidthBanner { width: 100%; }
 @media (max-width: 1024px) { .fullWidthBanner { width: 100%; } }
-.fullWidthBanner.Banner1 { height: 1000px; }
+
+.fullWidthBanner.Banner1 { height: 600px; }
+
+
 @media (max-width: 350px) { .fullWidthBanner.Banner1 { height: 450px; } }
 .fullWidthBanner.Banner1 .title { width: 100%; height: 50px; font-family: PingFangTC; font-size: 3em; font-weight: 500; font-style: normal; font-stretch: normal; letter-spacing: 6px; text-align: center; color: #0f8399; position: static; margin-top: 40px; }
 @media (max-width: 1240px) { .fullWidthBanner.Banner1 .title { font-size: 2em; } }
@@ -981,13 +927,19 @@ height: 60px;
 #content_big .page_title { width: 100%; margin-bottom: 20px; color: #108199; display: none; }
 @media (max-width: 1024px) { #content_big .page_title { display: none; } }
 
-#tem_upload { width: 100%; position: relative; }
-#tem_upload ul { width: 100%; }
+
+ /* #tem_upload, 20180816搬去EDITOR.CSS   
+
+#tem_upload { width: 100%; position: relative;}
+#tem_upload ul { width: 100%;}
 #tem_upload ul li { margin-bottom: 15px; color: #9d9d9d; }
 #tem_upload ul li a.question { color: #108199; margin-left: 5px; }
 #tem_upload a.upload { width: 120px; position: absolute; right: 0px; top: -5px; height: 35px; line-height: 35px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; text-align: center; color: #FFF; display: block; }
 @media (max-width: 1024px) { #tem_upload a.upload { position: inherit; right: 0px; top: 0px; width: 100%; } }
 #tem_upload a.upload:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
+
+
+*/
 
 #right_btn { width: auto; position: fixed; right: 5%; z-index: 100; bottom: 80px; width: 52px; }
 @media (min-width: 751px) and (max-width: 940px) { #right_btn { width: 10%; } }
