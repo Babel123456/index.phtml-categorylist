@@ -875,7 +875,7 @@ overflow-x: auto;
 .menu03 #more_share_in .invited_item_list{ border-top: 1px solid #00b7b0;
   text-align:left;
   overflow:hidden;
-  //height:180px;
+  height:180px;
   width:100%;
   overflow-x: auto;
 }
