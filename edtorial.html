@@ -568,7 +568,9 @@ $('.vidoetips').on('click', function(){
 										</div>
 									</div>
 								</div>
-								<div class="search_box_clear" onclick="restore_result();" >回復上一次儲存</div>
+								<!--<div class="search_box_clear" onclick="restore_result();" >回復上一次儲存</div>-->
+								<!--<div class="search_box_clear" onclick="$('#searchkey').val('');$('.search_result').empty();" >清除搜尋結果</div>-->
+								<div class="search_qrcode" title="掃瞄QRCODE加入共同編輯"><i name="likes" class="fa fa-qrcode fa-2x" ></i></div>
 						    </div>
 						</li>
 						<li class="search_result">
@@ -589,48 +591,155 @@ $('.vidoetips').on('click', function(){
 										<li class="btn_uninvited" id="result_wnjsportart" onclick="add_invited_item('wnjsportart','Wei-Ning Jwo','https://cdn.pinpinbox.com/storage/zh_TW/user/4341/picture$39a6.jpg');" >邀請</li>
 									</ul>
 								</div>
-							</div>								
-						</li>
-						<li class="invited_item_list">
-						    <div class="invited_item" id="connie9131">
-							    <div class="delete_invited" onclick="delete_invited_item('connie9131','李路禕','https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg');" >X</div>
-								<div class="invited_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg" alt="李路禕"></div>
-								<div class="invited_info">
-									<ul>
-										<li class="invited_name">李路禕</li>
-										<li class="invited_time">加入時間:2015/05/18</li>
-										<li>
-										    <div class="dropdown">
-										        <select id="control_box_connie9131" >
-											        <option value="viceadmin">副管理</option>
-											        <option value="multiedit">共用</option>
-											        <option value="onlybrowse">瀏覽</option>
-											    </select>
-										    </div>
-										</li>
-									</ul>
-								</div>
 							</div>
 							
-							<div class="invited_item" id="ahodoodle">
-							    <div class="delete_invited" onclick="delete_invited_item('ahodoodle','阿賀','https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg');" >X</div>
-								<div class="invited_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg" alt="阿賀"></div>
-								<div class="invited_info">
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4321/picture$9c53.jpg" alt="Susan KE"></div>
+								<div class="result_info">
 									<ul>
-										<li class="invited_name">阿賀</li>
-										<li class="invited_time">加入時間：2018/08/21</li>
-										<li>
-										    <div class="dropdown">
-										        <select id="control_box_ahodoodle" >
-											        <option value="viceadmin">副管理</option>
-											        <option value="multiedit">共用</option>
-											        <option value="onlybrowse">瀏覽</option>
-											    </select>
-										    </div>
-										</li>
+										<li class="restult_name">Susan KE</li>
+										<li class="btn_uninvited" id="result_susan0607" onclick="add_invited_item('susan0607','Susan KE','https://cdn.pinpinbox.com/storage/zh_TW/user/4321/picture$9c53.jpg');" >邀請</li>
 									</ul>
 								</div>
 							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4309/picture$80e0.jpg" alt="Chia-yi Yen"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Chia-yi Yen</li>
+										<li class="btn_uninvited" id="result_chiayi1115" onclick="add_invited_item('chiayi1115','Chia-yi Yen','https://cdn.pinpinbox.com/storage/zh_TW/user/4309/picture$80e0.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4062/picture$2c08.jpg" alt="pano_会社"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">pano_会社</li>
+										<li class="btn_uninvited" id="result_panodenden" onclick="add_invited_item('panodenden','pano_会社','https://cdn.pinpinbox.com/storage/zh_TW/user/4062/picture$2c08.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4184/picture$1ae8.jpg" alt="Rita Chen"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Rita Chen</li>
+										<li class="btn_uninvited" id="result_4184" onclick="add_invited_item('4184','Rita Chen','https://cdn.pinpinbox.com/storage/zh_TW/user/4184/picture$1ae8.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4150/picture$0842.jpg" alt="柳柳"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">柳柳</li>
+										<li class="btn_uninvited" id="result_chienyun0704" onclick="add_invited_item('chienyun0704','柳柳','https://cdn.pinpinbox.com/storage/zh_TW/user/4150/picture$0842.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4126/picture$03c3.jpg" alt="CMC"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">CMC</li>
+										<li class="btn_uninvited" id="result_4126" onclick="add_invited_item('4126','CMC','https://cdn.pinpinbox.com/storage/zh_TW/user/4126/picture$03c3.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4056/picture$50fb.jpg" alt="Stewart Chang"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Stewart Chang</li>
+										<li class="btn_uninvited" id="result_stewartchang1104" onclick="add_invited_item('stewartchang1104','Stewart Chang','https://cdn.pinpinbox.com/storage/zh_TW/user/4056/picture$50fb.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4069/picture$ea13.jpg" alt="Ivy Chen"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Ivy Chen</li>
+										<li class="btn_uninvited" id="result_chen101211" onclick="add_invited_item('chen101211','Ivy Chen','https://cdn.pinpinbox.com/storage/zh_TW/user/4069/picture$ea13.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/458/picture$fe64.jpg" alt="Weiting Cheng"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Weiting Cheng</li>
+										<li class="btn_uninvited" id="result_458" onclick="add_invited_item('458','Weiting Cheng','https://cdn.pinpinbox.com/storage/zh_TW/user/458/picture$fe64.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/393/picture$d977.jpg" alt="Yves Chi"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Yves Chi</li>
+										<li class="btn_uninvited" id="result_yveschi" onclick="add_invited_item('yveschi','Yves Chi','https://cdn.pinpinbox.com/storage/zh_TW/user/393/picture$d977.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/30/picture$c6b4.jpg" alt="To.me.to 蕃茄梗"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">To.me.to 蕃茄梗</li>
+										<li class="btn_uninvited" id="result_awan" onclick="add_invited_item('awan','To.me.to 蕃茄梗','https://cdn.pinpinbox.com/storage/zh_TW/user/30/picture$c6b4.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>							
+						</li>
+						<li class="invited_item_list">
+						  
+						  
+						    
+							<div class= "product_scroll2">
+								<div class="invited_item" id="connie9131">
+									<div class="delete_invited" onclick="delete_invited_item('connie9131','李路禕','https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg');" >X</div>
+									<div class="invited_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg" alt="李路禕"></div>
+									<div class="invited_info">
+										<ul>
+											<li class="invited_name">李路禕</li>
+											<li class="invited_time">加入時間:2015/05/18</li>
+											<li>
+												<div class="dropdown">
+													<select id="control_box_connie9131" >
+														<option value="onlybrowse">瀏覽</option>
+														<option value="multiedit">共用</option>
+														<option value="viceadmin">副管理</option>
+													</select>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="invited_item" id="ahodoodle">
+									<div class="delete_invited" onclick="delete_invited_item('ahodoodle','阿賀','https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg');" >X</div>
+									<div class="invited_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg" alt="阿賀"></div>
+									<div class="invited_info">
+										<ul>
+											<li class="invited_name">阿賀</li>
+											<li class="invited_time">加入時間：2018/08/21</li>
+											<li>
+												<div class="dropdown">
+													<select id="control_box_ahodoodle" >
+														<option value="onlybrowse">瀏覽</option>
+														<option value="multiedit">共用</option>
+														<option value="viceadmin">副管理</option>
+													</select>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						  
+							
 						</li>
 					</ul>					
 				</div>
@@ -639,9 +748,34 @@ $('.vidoetips').on('click', function(){
 		</div>
 <!-- 共同編輯區塊結束 -->
 <script>
-/*
+$('.search_qrcode').on('click', function(){
+	var box = new jBox('Modal', {
+		closeButton: 'title',
+		delayOpen: 300,
+		maxWidth: 600,
+		minWidth: 100,
+	}).setContent('<div class="content"><p class="title"></p><p style="margin:5px 0px;"></p><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9244/album/14455/qrcode$0937.jpg"</div>').open();
+
+})
+
 $(function(){
+  
+   var nicesx2 = $(".invited_item_list").niceScroll({
+        touchbehavior: true,
+        enablemousewheel: false,
+        cursorcolor: "transparent",
+        cursoropacitymax: 0,
+        cursorwidth: 8
+    });
+    
+	
+	$(window).resize(function(){
+		$(".invited_item_list").getNiceScroll().resize();
+	});
+
+
 	//search: on + datalist
+	
 	$('input[name="searchkey"]').on({
 		keypress: function(e) { 
 			if (e.which == 13 || e.keyCode == 13) _search();
@@ -658,8 +792,13 @@ $(function(){
 			});
 		},
 	});
-}
-*/
+  }
+  
+  
+
+
+  
+)
 function _search() {
 
 	//var url = 'https://www.pinpinbox.com/index/creative/?rank_id=1';
@@ -723,66 +862,7 @@ function _search() {
 	//}
 }
 
-function restore_result(){
-  //回復上一次儲存資料
-  //先清空邀請區
-  $('.invited_item_list').empty();
-  var invite_str ="";
-  
-  //組邀請區塊
-    //invite_str  += '<div class="invited_item" id="'+item_id+'">';
-	invite_str += '<div class="invited_item" id="'+'connie9131'+'">';
-	//invite_str += '<div class="delete_invited" onclick="delete_invited_item(\''+item_id+'\',\''+item_name+'\',\''+item_src+'\');" >X</div>';
-	invite_str += '<div class="delete_invited" onclick="delete_invited_item(\''+'connie9131'+'\',\''+'李路禕'+'\',\''+'https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg'+'\');" >X</div>';
-	//invite_str += '<div class="invited_face"><img src="'+item_src+'" alt="'+item_name+'"></div>';
-	invite_str += '<div class="invited_face"><img src="'+'https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg'+'" alt="'+'李路禕'+'"></div>';
-	invite_str += '<div class="invited_info">';
-	invite_str += '<ul>';
-	//invite_str += '<li class="invited_name">'+item_name+'</li>';
-	invite_str += '<li class="invited_name">'+'李路禕'+'</li>';
-	invite_str += '<li class="invited_time">加入時間:'+ '2015/05/18' +'</li>';
-	invite_str += '<li>';
-	invite_str += '<div class="dropdown">';
-	//invite_str += '<select id="control_box_'+item_id+'" >';
-	invite_str += '<select id="control_box_'+'connie9131'+'" >';
-	invite_str += '<option value="viceadmin">副管理</option>';
-	invite_str += '<option value="multiedit">共用</option>';
-	invite_str += '<option value="onlybrowse">瀏覽</option>';
-	invite_str += '</select>';
-    invite_str += '</div>';  
-	invite_str += '</li>';
-	invite_str += '</ul>';
-	invite_str += '</div>';
-	invite_str += '</div>';
-  
-  
-  
- 	invite_str += '<div class="invited_item" id="'+'ahodoodle'+'">';
-	invite_str += '<div class="delete_invited" onclick="delete_invited_item(\''+'ahodoodle'+'\',\''+'阿賀'+'\',\''+'https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg'+'\');" >X</div>';
-	invite_str += '<div class="invited_face"><img src="'+'https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg'+'" alt="'+'阿賀'+'"></div>';
-	invite_str += '<div class="invited_info">';
-	invite_str += '<ul>';
-	invite_str += '<li class="invited_name">'+'阿賀'+'</li>';
-	invite_str += '<li class="invited_time">加入時間:'+ '2018/08/21' +'</li>';
-	invite_str += '<li>';
-	invite_str += '<div class="dropdown">';
-	invite_str += '<select id="control_box_'+'ahodoodle'+'" >';
-	invite_str += '<option value="viceadmin">副管理</option>';
-	invite_str += '<option value="multiedit">共用</option>';
-	invite_str += '<option value="onlybrowse">瀏覽</option>';
-	invite_str += '</select>';
-    invite_str += '</div>';  
-	invite_str += '</li>';
-	invite_str += '</ul>';
-	invite_str += '</div>';
-	invite_str += '</div>';
-  
-  
-  
-  
 
-  $('.invited_item_list').append(invite_str);
-}
 
 function add_invited_item(item_id,item_name,item_src){
   //先檢查是否有此ID邀請區塊
@@ -806,16 +886,17 @@ function add_invited_item(item_id,item_name,item_src){
 		invite_str += '<li>';
 		invite_str += '<div class="dropdown">';
 		invite_str += '<select id="control_box_'+item_id+'" >';
-		invite_str += '<option value="viceadmin">副管理</option>';
-		invite_str += '<option value="multiedit">共用</option>';
 		invite_str += '<option value="onlybrowse">瀏覽</option>';
+		invite_str += '<option value="multiedit">共用</option>';
+		invite_str += '<option value="viceadmin">副管理</option>';
 		invite_str += '</select>';
         invite_str += '</div>';  
 		invite_str += '</li>';
 		invite_str += '</ul>';
 		invite_str += '</div>';
 		invite_str += '</div>';
-	$('.invited_item_list').append(invite_str);
+	$('.invited_item_list .product_scroll2').append(invite_str);
+	$(".invited_item_list").getNiceScroll().resize();
   }
 }
 
@@ -840,8 +921,71 @@ function delete_invited_item(item_id,item_name,item_src){
         result_str +=  '</div>';
 		result_str +=  '</div>';
     $('.search_result').append(result_str);
+	$(".invited_item_list").getNiceScroll().resize();
     }
   }
+  
+  function restore_result(){
+  //回復上一次儲存資料
+  //先清空邀請區
+  $('.invited_item_list').empty();
+  var invite_str ="";
+  
+  //組邀請區塊
+    //invite_str  += '<div class="invited_item" id="'+item_id+'">';
+	invite_str += '<div class="invited_item" id="'+'connie9131'+'">';
+	//invite_str += '<div class="delete_invited" onclick="delete_invited_item(\''+item_id+'\',\''+item_name+'\',\''+item_src+'\');" >X</div>';
+	invite_str += '<div class="delete_invited" onclick="delete_invited_item(\''+'connie9131'+'\',\''+'李路禕'+'\',\''+'https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg'+'\');" >X</div>';
+	//invite_str += '<div class="invited_face"><img src="'+item_src+'" alt="'+item_name+'"></div>';
+	invite_str += '<div class="invited_face"><img src="'+'https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg'+'" alt="'+'李路禕'+'"></div>';
+	invite_str += '<div class="invited_info">';
+	invite_str += '<ul>';
+	//invite_str += '<li class="invited_name">'+item_name+'</li>';
+	invite_str += '<li class="invited_name">'+'李路禕'+'</li>';
+	invite_str += '<li class="invited_time">加入時間:'+ '2015/05/18' +'</li>';
+	invite_str += '<li>';
+	invite_str += '<div class="dropdown">';
+	//invite_str += '<select id="control_box_'+item_id+'" >';
+	invite_str += '<select id="control_box_'+'connie9131'+'" >';
+	invite_str += '<option value="onlybrowse">瀏覽</option>';
+	invite_str += '<option value="multiedit">共用</option>';
+	invite_str += '<option value="viceadmin">副管理</option>';
+	invite_str += '</select>';
+    invite_str += '</div>';  
+	invite_str += '</li>';
+	invite_str += '</ul>';
+	invite_str += '</div>';
+	invite_str += '</div>';
+  
+  
+  
+ 	invite_str += '<div class="invited_item" id="'+'ahodoodle'+'">';
+	invite_str += '<div class="delete_invited" onclick="delete_invited_item(\''+'ahodoodle'+'\',\''+'阿賀'+'\',\''+'https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg'+'\');" >X</div>';
+	invite_str += '<div class="invited_face"><img src="'+'https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg'+'" alt="'+'阿賀'+'"></div>';
+	invite_str += '<div class="invited_info">';
+	invite_str += '<ul>';
+	invite_str += '<li class="invited_name">'+'阿賀'+'</li>';
+	invite_str += '<li class="invited_time">加入時間:'+ '2018/08/21' +'</li>';
+	invite_str += '<li>';
+	invite_str += '<div class="dropdown">';
+	invite_str += '<select id="control_box_'+'ahodoodle'+'" >';
+	invite_str += '<option value="onlybrowse">瀏覽</option>';
+	invite_str += '<option value="multiedit">共用</option>';
+	invite_str += '<option value="viceadmin">副管理</option>';
+	invite_str += '</select>';
+    invite_str += '</div>';  
+	invite_str += '</li>';
+	invite_str += '</ul>';
+	invite_str += '</div>';
+	invite_str += '</div>';
+  
+  
+  
+  
+
+  $('.invited_item_list .product_scroll2').append(invite_str);
+  $(".invited_item_list").getNiceScroll().resize();
+}
 </script>
 <!-- 主要畫面開始 -->
 <div id="editor_content">

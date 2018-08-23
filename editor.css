@@ -293,7 +293,7 @@ padding: 10px 2%; }
 
 .menu03 { position: fixed; z-index: 1498; background-color: #FFF; 
 -moz-transition: all 0.3s; -o-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; 
--moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; left: 0; width: 70%; height: 100%; border-right: 2px solid #108199; display: none; 
+-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; left: 0; width: 60%; height: 100%; border-right: 2px solid #108199; display: none; 
 
 padding: 10px 2%; }
 
@@ -840,26 +840,61 @@ padding: 10px 2%; }
   
   .menu03 #more_share_in .search_top1{width:90%;margin:2px auto;}
   .menu03 .search_top .search_box_header, 
-.menu03 .search_top .search_box, .menu03 .search_top .search_box_clear {margin: 0 5px;}
+.menu03 .search_top .search_box, .menu03 .search_top .search_box_clear, .menu03 .search_top .search_qrcode {margin: 0 5px;}
   
   
   .search_box_header {display:block !important;}
   .search_box_clear{width:100px;margin-left:5px;}
   
-  .menu03 .invited_item_list .invited_item {width:20%;text-align:center;position:relative;float:left;margin:10px;}
+  .menu03 .invited_item_list .invited_item {
+	  //width:20%;
+  
+  text-align:center;position:relative;float:left;margin:10px;}
+  
+  .menu03  .search_result{height:600px !important;}
+  //.menu03 #more_share_in .invited_item_list{   height: 200px;}
  }
 
 
+ /*
+ 
+ .menu03 #more_share_in .invited_item_list{ border-top: 1px solid #00b7b0;
+text-align:left;
+height: 180px;
+//overflow-x: scroll;
+overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  overflow:hidden;
+}
+ 
+ */
 
 
 
 .menu03 #more_share_in .invited_item_list{ border-top: 1px solid #00b7b0;
-
-overflow-x:auto;overflow-y:hidden;
+  text-align:left;
+  overflow:hidden;
+  //height:180px;
+  width:100%;
+  overflow-x: auto;
 }
 
+.menu03 #more_share_in .invited_item_list .product_scroll2{
+  height:180px;
+  width:160%;
+}
+
+@media (max-width:950px){
+	.menu03 #more_share_in .search_top{ height:90px;}
+	.menu03 #more_share_in .invited_item_list .product_scroll2{width:200%;}
+	.menu03  .search_result .result_item{margin:25px !important;}
+}
+
+
 .menu03 .search_top .search_box_header, 
-.menu03 .search_top .search_box, .menu03 .search_top .search_box_clear {margin: 0 8px;height:34px;line-height:34px;display:inline-block;vertical-align:middle;}
+.menu03 .search_top .search_box, .menu03 .search_top .search_box_clear ,.menu03 .search_top .search_qrcode, .menu03 .search_top .search_qrcode i{
+	margin: 0 8px;height:34px;line-height:34px;display:inline-block;vertical-align:middle;}
 
 .search_box_header {color:#5b5b5b;font-size:18px;}
 
@@ -870,10 +905,30 @@ width: 120px;
 cursor: pointer;
 }
 
+.menu03 .search_top .search_qrcode{
+padding:0 2px;
+border-radius: 4px;
+text-align: center; color: #00b7b0; 
+//background-color: #fff; 
+font-size:14px;
+letter-spacing: 0.5px;
+//width: 200px;
+cursor: pointer;
+//border: 1px #00b7b0 solid;
+//border-radius: 50px;
+}
 
+.menu03 .search_top .search_qrcode:hover{
+//color: #fff; 
+//background-color: #00b7b0; 
+//border: 1px #fff solid;
+}
 
-.menu03  .search_result { clear:both;width: 100%; height: 600px;overflow-y: auto; overflow-x: hidden; }
-.menu03  .search_result .result_item{width:20%;text-align:center;position:relative;float:left;margin:20px;}
+.menu03  .search_result { clear:both;width: 100%; height: 660px;overflow-y: auto; overflow-x: hidden; }
+
+.menu03  .search_result .result_item{
+	//width:20%;
+text-align:center;position:relative;float:left;margin:20px;}
 .menu03  .result_face { margin:0 auto;width: 90px; height: 90px; -moz-border-radius: 90px; -webkit-border-radius: 90px; border-radius: 90px; overflow: hidden; }
 .menu03  .result_face img { width: 100%; height: auto; }
 
@@ -883,7 +938,13 @@ text-overflow: ellipsis; white-space: nowrap; width:100px;overflow: hidden;
 
 .menu03  .search_result .invited_face img { width: 100%; height:100%; }
 
-.menu03 .invited_item_list .invited_item {width:20%;text-align:center;position:relative;float:left;margin:15px;}
+.menu03 .invited_item_list .invited_item {
+	display: inline-block;
+	
+	//width:20%;
+	text-align:center;position:relative;
+	//float:left;
+	margin:15px;}
 .invited_time{
   display:inline-block;
   color:#9d9d9d;font-size:12px;
