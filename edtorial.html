@@ -766,7 +766,7 @@ $(function(){
    
    var nicesx1 = $(".search_result").niceScroll({
         touchbehavior: true,
-        enablemousewheel: false,
+        enablemousewheel: true,
         cursorcolor: "#c4c4c4",
         cursoropacitymax: 1,
         cursorwidth: 8
@@ -777,9 +777,10 @@ $(function(){
         enablemousewheel: false,
         cursorcolor: "#c4c4c4",
         cursoropacitymax: 1,
-        cursorwidth: 8
+        cursorwidth: 8,autohidemode:false
     });
 	
+	//邀請區塊寬度
 	$('.invited_item_list .product_scroll2').width($(".product_scroll2").find('.invited_item').length*170);
 	$(window).resize(function(){
 	    //alert($( window ).height());

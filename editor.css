@@ -40,15 +40,12 @@ border-radius: 4px;
 
 
  /* #tem_upload, 20180816從STYLE.CSS搬過來   */
+ @media (max-width: 1024px){
+ #editor_content #editor_wrap #tem_content { margin-top: 0px;}}
  
  
- #tem_upload { width: 100%; position: relative;}
-#tem_upload ul { width: 100%;}
-#tem_upload ul li { margin-bottom: 15px; color: #9d9d9d; }
-#tem_upload ul li a.question { color: #108199; margin-left: 5px; }
-#tem_upload a.upload { width: 120px; position: absolute; right: 0px; top: -5px; height: 35px; line-height: 35px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; text-align: center; color: #FFF; display: block; }
-@media (max-width: 1024px) { #tem_upload a.upload { position: inherit; right: 0px; top: 0px; width: 100%; } }
-#tem_upload a.upload:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
+ 
+ 
 
  
  
