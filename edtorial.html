@@ -769,7 +769,8 @@ $(function(){
         enablemousewheel: true,
         cursorcolor: "#c4c4c4",
         cursoropacitymax: 1,
-        cursorwidth: 8
+        cursorwidth: 8,
+		nativeparentscrolling: false
     });
    
    var nicesx2 = $(".invited_item_list").niceScroll({
@@ -777,8 +778,15 @@ $(function(){
         enablemousewheel: false,
         cursorcolor: "#c4c4c4",
         cursoropacitymax: 1,
-        cursorwidth: 8,autohidemode:false
+        cursorwidth: 8,
+		autohidemode:false,
+		nativeparentscrolling: false
     });
+	
+	$('.invited_item_list').on("mousewheel", function() {
+    return false;
+    });
+
 	
 	//邀請區塊寬度
 	$('.invited_item_list .product_scroll2').width($(".product_scroll2").find('.invited_item').length*170);

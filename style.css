@@ -932,13 +932,18 @@ background-image: linear-gradient(#17b1ad, #10859a);
 
 #tem_upload { width: 100%; position: relative;
 
-margin-left:10px;
+
 
 }
 
+
+ #editor_content #editor_wrap #tem_content #tem_upload {margin-left:10px;}
+
+
+
 @media (max-width: 1024px) { 
 
-#tem_upload { 
+ #editor_content #editor_wrap #tem_content { 
 
 margin-left:0px;
 

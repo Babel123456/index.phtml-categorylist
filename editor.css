@@ -907,7 +907,7 @@ overflow-x: auto;
 .menu03 #more_share_in .invited_item_list .product_scroll2{
    display:inline-block;
   vertical-align:middle;
-  height:180px;
+  //height:180px;
   //height: 180px;
   //width:160%;
   //background:red;
