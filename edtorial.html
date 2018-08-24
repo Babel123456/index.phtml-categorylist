@@ -527,7 +527,7 @@ src="https://www.facebook.com/tr?id=1010541995708559&ev=PageView&noscript=1"
 								</li>
 								<li>
 									<div class="text_left">描述</div>
-									<div class="text_right"><textarea class="media_info_description" id="" cols="20" rows="6" class="info03"></textarea></div>
+									<div class="text_right"><textarea class="media_info_description" id="" cols="20" rows="4" class="info03"></textarea></div>
 								</li>
 							</ul>
 							
@@ -574,6 +574,7 @@ $('.vidoetips').on('click', function(){
 						    </div>
 						</li>
 						<li class="search_result">
+						  <div class= "product_scroll1">
 							<div class="result_item">
 								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg" alt="李路禕"></div>
 								<div class="result_info">
@@ -691,7 +692,8 @@ $('.vidoetips').on('click', function(){
 										<li class="btn_uninvited" id="result_awan" onclick="add_invited_item('awan','To.me.to 蕃茄梗','https://cdn.pinpinbox.com/storage/zh_TW/user/30/picture$c6b4.jpg');" >邀請</li>
 									</ul>
 								</div>
-							</div>							
+							</div>		
+                         </div>						
 						</li>
 						<li class="invited_item_list">
 						  
@@ -760,16 +762,28 @@ $('.search_qrcode').on('click', function(){
 
 $(function(){
   
+   
+   
+   var nicesx1 = $(".search_result").niceScroll({
+        touchbehavior: true,
+        enablemousewheel: false,
+        cursorcolor: "#c4c4c4",
+        cursoropacitymax: 1,
+        cursorwidth: 8
+    });
+   
    var nicesx2 = $(".invited_item_list").niceScroll({
         touchbehavior: true,
         enablemousewheel: false,
-        cursorcolor: "transparent",
-        cursoropacitymax: 0,
+        cursorcolor: "#c4c4c4",
+        cursoropacitymax: 1,
         cursorwidth: 8
     });
-    
 	
+	$('.invited_item_list .product_scroll2').width($(".product_scroll2").find('.invited_item').length*170);
 	$(window).resize(function(){
+	    alert($( window ).height());
+	    $(".search_result").getNiceScroll().resize();
 		$(".invited_item_list").getNiceScroll().resize();
 	});
 
@@ -896,6 +910,7 @@ function add_invited_item(item_id,item_name,item_src){
 		invite_str += '</div>';
 		invite_str += '</div>';
 	$('.invited_item_list .product_scroll2').append(invite_str);
+	$('.invited_item_list .product_scroll2').width($('.invited_item_list .product_scroll2').width()+170);
 	$(".invited_item_list").getNiceScroll().resize();
   }
 }
@@ -903,6 +918,8 @@ function add_invited_item(item_id,item_name,item_src){
 function delete_invited_item(item_id,item_name,item_src){
   //先清除刪除的加入清單
   $('#'+item_id).remove();
+	$('.invited_item_list .product_scroll2').width($('.invited_item_list .product_scroll2').width()-170);
+  $(".invited_item_list").getNiceScroll().resize();
   //先搜尋是否已有, 若有, 則改BTN樣式CLASS
   if($('#result_'+item_id).length > 0){
     //換BTN樣式
@@ -921,7 +938,6 @@ function delete_invited_item(item_id,item_name,item_src){
         result_str +=  '</div>';
 		result_str +=  '</div>';
     $('.search_result').append(result_str);
-	$(".invited_item_list").getNiceScroll().resize();
     }
   }
   
@@ -978,11 +994,7 @@ function delete_invited_item(item_id,item_name,item_src){
 	invite_str += '</ul>';
 	invite_str += '</div>';
 	invite_str += '</div>';
-  
-  
-  
-  
-
+	
   $('.invited_item_list .product_scroll2').append(invite_str);
   $(".invited_item_list").getNiceScroll().resize();
 }
