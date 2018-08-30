@@ -73,14 +73,14 @@
   <!-- BANNER輪播區塊結束 -->
   <div class="main_content">
       <!-- 熱門推薦區塊開始 -->
-	  <div id="tab-container" class="tab-container">
+	  <div class="tab-container">
 	      <ul class="nav nav-pills" ><li class="active"><a data-toggle="tab" href="#tab0">熱門</a></li><li><a data-toggle="tab" href="#tab1">推薦</a></li></ul>
 		  <div class="tab_content">
 		      <!-- 熱門區塊開始 -->
 		      <div id="tab0" class="tab active">
 			     <div class="hit_story" >
 			         <a href="https://www.pinpinbox.com/andy729huiblog">
-					   <div class="story_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/cover$dc41.jpg"></div>
+					   <div class="story_img"><!--專區BANNER圖--><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/cover$dc41.jpg"></div>
 					   <div class="story_desc">以寫作奇幻小說為主，請大家多多支持！ 某些故事最新發佈時會免費開放， 請大家多多關注我呢！</div>
 					   <div class="story_info"><div>贊助次數：7882</div><div>瀏覽：54462</div></div>
 					 </a>
@@ -172,6 +172,43 @@
 			</div>
 	  </div>
 	  <!-- 熱門推薦區塊結束 -->
+	  <!-- 新加入區塊開始 -->
+	  <div>
+	    <div class="tab-container">
+	      <ul class="nav nav-pills" ><li class="active"><a data-toggle="tab" href="">新加入</a></li></ul>
+		  <div class="tab_content">
+		      <div class="tab active">
+			     <div class="new_star">
+			         <a href="https://www.pinpinbox.com/ccartist">
+					   <div class="star_img"><!--頭像BANNER圖--><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9233/picture$5e3c.jpg">
+					   <!--專區BANNER圖--><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9233/cover$375f.jpg"></div>
+					   <div class="star_name">C.C</div>
+					   <div class="story_desc">2018年的3月，創造了一隻水彩刺蝟，陪伴我走過人生低潮。讓我開始相信這個世界依然溫柔，我也想用我的圖畫去點亮每個人心中最溫柔的那塊。</div>
+					 </a>
+			     </div>
+				 <div class="new_star">
+			         <a href="https://www.pinpinbox.com/unseeablebeauty">
+					   <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9238/cover$de6a.jpg">
+					   <img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20180724/5b560d48a54e2.jpg">
+					   </div>
+					   <div class="star_name">倪子耘</div>
+					   <div class="story_desc">每周一與FB同步更新一章。作者與書籍相關訊息請參考：https://www.facebook.com/unseeablebeauty</div>
+					 </a>
+			     </div>
+				 <div class="new_star">
+			         <a href="https://www.pinpinbox.com/ringring0806">
+					   <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9143/picture$cf59.jpg">
+					   <img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9143/cover$5752.jpg">
+					   </div>
+					   <div class="star_name">RingRing 宋知恩</div>
+					   <div class="story_desc">Hi 我是 Ring Ring 這裡會介紹我喜歡的音樂與我的創作喔^_^ 工作邀約、合作請來信Email：2016ringrings@gmail.com</div>
+					 </a>
+			     </div>
+			  </div>
+		  </div>
+	    </div>
+	  </div>
+	  <!-- 新加入區塊結束 -->
   </div>
   
   
@@ -196,8 +233,8 @@ $(document).ready(function() {
   //$("#banner_carousel").owlCarousel();
    $(".banner_carousel1").owlCarousel({
         singleItem:true,
-        //lazyLoad: true,
-        autoPlay: false,
+        lazyLoad: true,
+        autoPlay: true,
         slideSpeed: 2000,
         pagination: false,
         navigation: false,
