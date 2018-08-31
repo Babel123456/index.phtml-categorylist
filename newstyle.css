@@ -363,12 +363,34 @@ margin-left: -0.2%;
    width: 85%;
    
 }
+
+/* 下方內容區塊內縮 */
+ .main_content2{
+   position: relative;
+   width: 90%;
+   overflow: hidden;
+   margin: auto;
+   padding-top: 3%;
+ }
+
+
+
 /*  熱門推薦區塊 */
 
-.main_content .tab-container .tab_content .tab { display: none; }
-.main_content .tab-container .tab_content .tab.active { display: block; }
+.main_content .tab-container .tab_content .tab,.main_content2 .tab-container .tab_content .tab { display: none; }
+.main_content .tab-container .tab_content .tab.active,.main_content2 .tab-container .tab_content .tab.active { display: block; }
 
-.main_content .tab-container ul li{
+.main_content2 .tab-container ul {
+	width: auto;
+	text-align: center;
+}
+
+.main_content2 .tab-container .nav-pills>li{
+	
+  float: none;
+}
+
+.main_content .tab-container ul li,.main_content2 .tab-container ul li{
 	display:inline-block;
     padding:1%;
 	font-size: 28px;
@@ -379,14 +401,14 @@ margin-left: -0.2%;
      color: #00acc1 !important;
 }
 
-.main_content .tab-container .nav-pills>li >a{ color: #d4d4d4 !important; }
+.main_content .tab-container .nav-pills>li >a,.main_content2 .tab-container .nav-pills>li >a{ color: #d4d4d4 !important; }
 
-.main_content .tab-container .nav-pills>li.active>a, .nav-pills>li.active>a:focus{
+.main_content .tab-container .nav-pills>li.active>a, .nav-pills>li.active>a:focus,.main_content2 .tab-container .nav-pills>li.active>a{
  color: #4D4D4D !important;
  background: none !important;
 }
 
-.main_content .tab-container .nav>li>a:focus, .nav>li>a:hover{
+.main_content .tab-container .nav>li>a:focus, .nav>li>a:hover,.main_content2 .tab-container .nav>li>a:focus{
   background: none !important;
 }
 
@@ -646,42 +668,50 @@ height: 75px;
   letter-spacing: 1.5px;
 }
  /* 分類區塊  */
- .cat_area{
-	 overflow: hidden;
+ .cat_areaw{
+   	 overflow: hidden;
 	 width: 20%;
-	 padding: 5% 0;
-     //height: 10vw;
-	 position:relative;
+	 position: relative;
 	 display: inline-block;
 	 text-align: center;
-	 margin: 2%;
+	 margin: 2.3%;
 	 border-radius: 6px;
 	 color: #fff;
 	 font-size: 20px;
 	 letter-spacing: 2px;
 	 vertical-align: middle;
-	 //box-shadow: 1px 1px 5px #d2d2d2, -1px 1px 5px #d2d2d2;
-	 //line-height: 100%;
-	 padding: 3%;
+	 //padding: 3%;
+ }
+ 
+ /* 維持正方形比例 */
+ .cat_area{
+	 display: inline-block;
+	 line-height: 60px;
+     width: 100%;
+	 padding-bottom: 100%;
+     position: relative;
+	 vertical-align: middle;
+	 margin: auto;
+	 
  }
  
  @media (max-width: 1000px){
-  .cat_area{ padding: 2.5%; 
-  
+.cat_areaw{ 
+     margin: 2.1%;
   }
- 
  }
  
   @media (max-width: 800px){
-  .cat_area{ padding: 3%; 
-  width: 28%;
+  .cat_areaw{ 
+     width: 28%;
   }
  
  }
  
    @media (max-width: 500px){
-  .cat_area{ padding: 8%; 
-  width: 40%;
+  .cat_areaw{
+	margin: 3%;
+   width: 40%;
   }
  
  }
@@ -691,41 +721,250 @@ height: 75px;
  
  .cat_area div{
 	margin: auto;
-  //margin-bottom: 2%;
+  //margin-bottom: 1%;
 }
  
  .cat_01{
 	 //display: inline-block;
    //margin: auto;
-   background: #c5e1a7;
+   //background: #c5e1a7;
+   position: absolute;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+	overflow: hidden;
+	
    
  }
-  .cat_01:hover,.cat_02:hover,.cat_03:hover,.cat_04:hover{
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; 
+ .cat_01,.cat_02,.cat_03,.cat_04,.cat_05,.cat_06,.cat_07,.cat_08{
+	
+	//border: 1px #d4d4d4 solid;
+	//box-shadow: 1px 1px 2px #d4d4d4, 1px 1px 2px #d4d4d4;
+	//background-image: url('paper-951491_1280.jpg') ;
+	
+	background-color: #dadada;
   }
-
+  .cat_01:hover,.cat_02:hover,.cat_03:hover,.cat_04:hover,.cat_05:hover,.cat_06:hover,.cat_07:hover,.cat_08:hover{
+	font-size:24px;border-radius:100%;
+  }
+  .cat_01:hover{
+	  background: #c5e1a7;
+	  background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180523/5b04de98da605.jpg') ;
+	 
+	  
+	  }
+  .cat_01:hover .cat_img img:nth-child(1),.cat_02:hover .cat_img img:nth-child(1),.cat_03:hover .cat_img img:nth-child(1),.cat_04:hover .cat_img img:nth-child(1),.cat_05:hover .cat_img img:nth-child(1),.cat_06:hover .cat_img img:nth-child(1),.cat_07:hover .cat_img img:nth-child(1),.cat_08:hover .cat_img img:nth-child(1){
+    display: none;
+  }
+  .cat_01:hover .cat_img img:nth-child(2),.cat_02:hover .cat_img img:nth-child(2),.cat_03:hover .cat_img img:nth-child(2),.cat_04:hover .cat_img img:nth-child(2),.cat_05:hover .cat_img img:nth-child(2),.cat_06:hover .cat_img img:nth-child(2),.cat_07:hover .cat_img img:nth-child(2),.cat_08:hover .cat_img img:nth-child(2){
+   // display: none;
+  }
+  
+  .cat_01:hover .cat_img img:nth-child(2){
+  }
+  
  .cat_02{
-   background: #f8c7c8;
+   
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+	overflow: hidden;
+	
+   
  }
  
+ .cat_02:hover{
+   background: #f8c7c8;
+   
+   background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180523/5b04de5932593.jpg');
+ }
  
   .cat_03{
-   background: #fce69e;
+  
+      position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+ }
+ 
+  .cat_03:hover{
+  background: #fce69e;
+  
+ background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180523/5b04de6f5fb4a.jpg');
  }
  
  
    .cat_04{
-   background: #bed8f9;
+   
+      position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
  }
+ 
+  .cat_04:hover{
+  background: #bed8f9;
+  
+  background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180709/5b4341d7bed9a.jpg');
+ }
+ 
+ .cat_05{
+  
+      position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+ }
+   .cat_05:hover{
+   background: #faca88;
+   
+   background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180615/5b233c7b8c5ae.jpg');
+ }
+ .cat_06{
+ 
+      position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+ }
+    .cat_06:hover{
+    background: #98d9ce;
+	
+	background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180523/5b04de09213a9.jpg');
+ }
+  
+ .cat_07{
+  
+      position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+ }
+ 
+   .cat_07:hover{
+    background: #eabbe1;
+	background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180615/5b233c8eb3e6a.jpg');
+ }
+ .cat_08{
+
+      position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+ }
+ 
+    .cat_08:hover{
+    background: #b1c3ec;
+	background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180621/5b2b1726e3b7e.jpg');
+ }
+ 
  .cat_area .cat_img{
 	 width: 68px;
 	 height: 68px;
-   
  }
  
+   .cat_area .cat_img img:nth-child(2){
+	   display: none;
+	   
+   }
+ 
   .cat_area .cat_img img{
+	  
+	  text-align: center;
   }
   
  .cat_area  .cat_name {
     color: #fff !important;
+  }
+  
+
+  
+ /* 輕鬆啟動創作募資計劃 */
+ .pin_plan{
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  //margin: 2%;
+  background: url('paper-951491_1280.jpg') 130% 130%;
+  //background: #60c7d4;
+  vertical-align: middle;
+  overflow: hidden;
+ }
+ .pin_plan .plan_video,  .pin_plan .plan_info{
+	 margin: 2% auto;
+	 //margin-bottom: 2%;
+   display: inline-block;
+   width:  45%;
+   vertical-align: middle;
+   
+ }
+ .plan_info {
+	 width: 100%;
+	 
+ font-size: 20px;
+ }
+ 
+  .plan_info > div{
+    display: inline-block;
+	line-height: 40px;
+	background: #fff;
+	margin: 5%;
+	padding:2%;
+	width: auto;
+  }
+  
+   .plan_info .plan_info_num{
+     font-size: 22px;
+	 font-weight: bold;
+   }
+  
+ 
+ .plan_video_wrap{
+    width: 100%;
+    padding-top: 56.25%; 
+    position: relative;
+ }
+ 
+ 
+  .plan_video_cnt{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+	width: 100%; height: 100%;
+}
+
+ .plan_video_cnt iframe{
+ width: 100%; height: 100%;
+ }
+ 
+  @media (max-width: 800px){
+  .pin_plan .plan_video,  .pin_plan .plan_info{
+  display: block;
+   width:  100%;
+   
+ }
+  }
+  
+  
+  @media (max-width: 1000px){
+	   .plan_info{
+	     font-size: 18px;
+	   }
+	   .plan_info .plan_info_num{
+	   font-size: 20px;
+	   }
+  
   }
