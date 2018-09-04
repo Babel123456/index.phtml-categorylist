@@ -17,27 +17,61 @@
 	  <div id="header_top">
 		<div class="header_logo"><a href="https://www.pinpinbox.com/">pinpinbox釘釘吧</a></div>
 		<div class="header_search">
-		  <input type="text" style="" placeholder="這是搜尋框">
+		  <div class="input-group">
+                <div class="input-group-btn search-panel">
+				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						<span id="search_concept">作品 </span><span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu search-menu" role="menu">
+					<li><a href="#contains">作品</a></li>
+					<li><a href="#its_equal">創作人</a></li>
+				  </ul>
+                </div>
+                <!--<input type="hidden" name="search_param" value="all" id="search_param">         -->
+                <input type="text" class="" name="searchkey" placeholder="">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+          </div>
 		  
 		</div>
 		<div class="header_menu"><a href="#">建立作品</a><a href="#">通知</a>		  
 		  <a href="#" class="login"><!--登入--><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/picture$2d70.jpg"></a>
 		  <div id="login_menu">
 		    <ul>
-			  <li><a href="#">連結1</a></li>
-			  <li><a href="#">連結2</a></li>
-			  <li><a href="#">連結3</a></li>
-			</ul>
+				  <li class="login_menu_cat">我的專區</li>
+					<!--<li><ul>-->
+					  <li><a href="#">關於我</a></li>
+					  <li><a href="#">我的作品</a></li>
+					  <li><a href="#">我的收藏</a></li>
+					  <li><a href="#">共用協作</a></li>
+					  <li><a href="#">留言板</a></li>
+					<!--</ul>
+				  </li>-->
+				 <li class="login_menu_cat">管理中心</li>
+					<!--<li><ul>-->
+					   <li><a href="#">積分管理</a></li>
+					   <li><a href="#">P點購買、消費查詢</a></li>
+					   <li><a href="#">會員資料</a></li>
+					<!--</ul>
+				  </li>-->
+				  <li class="login_menu_cat">系統</li>
+				    <!--<li><ul>-->
+					   <li><a href="#">回報問題</a></li>
+					   <li><a href="#">回報記錄</a></li>
+					<!--</ul>
+				  </li>-->
+				  <li class="sign_out"><a href="#">登出</a></li>
+				</ul>
 		  </div>
 		</div>
 		<div class="mobile_menu">
 		  <a href="#" class="mobile_img"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/menu02.png"></a>
-		  
 		</div>
 		<div id="login_menu2">
 			  <ul>
-				  <li>我的專區
-					  <ul>
+				  <li><span class="login_menu_cat">我的專區</span>
+					<ul>
 					  <li><a href="#">關於我</a></li>
 					  <li><a href="#">我的作品</a></li>
 					  <li><a href="#">我的收藏</a></li>
@@ -45,8 +79,19 @@
 					  <li><a href="#">留言板</a></li>
 					</ul>
 				  </li>
-				  <li><a href="#">管理中心</a></li>
-				  <li><a href="#">系統</a></li>
+				  <li><span class="login_menu_cat">管理中心</span>
+					<ul>
+					   <li><a href="#">積分管理</a></li>
+					   <li><a href="#">P點購買、消費查詢</a></li>
+					   <li><a href="#">會員資料</a></li>
+					</ul>
+				  </li>
+				  <li><span class="login_menu_cat">系統</span>
+				    <ul>
+					   <li><a href="#">回報問題</a></li>
+					   <li><a href="#">回報記錄</a></li>
+					</ul>
+				  </li>
 				  <li class="sign_out"><a href="#">登出</a></li>
 				</ul>
 		  </div>
@@ -58,16 +103,16 @@
     <div id="banner_carousel" >
 	    <div class="banner_carousel1 owl-carousel">
 	 		<a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1"><img alt="輕鬆起動創作募資計劃" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20180816/5b75426ecf9de.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20180816/5b75426ecf9de.jpg" /></a>
-			<a href="https://www.pinpinbox.com/index/user/point/"><img alt="來贊助創作者吧!" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20180816/5b753e64ee487.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20180816/5b753e64ee487.jpg" /> </a>
 			<a href="https://www.pinpinbox.com/buzhisuoyun"><img alt="本月主打星" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20180807/5b68ff3de7a15.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20180807/5b68ff3de7a15.jpg" /> </a>
 			<a href="https://www.pinpinbox.com/pinpinbox" target="_blank"><img alt="快閃抽獎" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20180706/5b3f41190c74c.jpg"  src="https://cdn.pinpinbox.com/upload/admin/ad/20180706/5b3f41190c74c.jpg"  /></a>
-	    </div>
+	        <a href="https://www.pinpinbox.com/index/user/point/"><img alt="來贊助創作者吧!" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20180816/5b753e64ee487.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20180816/5b753e64ee487.jpg" /> </a>
+		</div>
 	</div>
 	<div id="banner_catbtn">
-	  <div class="banner_catbtn1" onclick="carouselto(0);"><span>釘上你的創作計劃</span><img src="banner_catbtn1.jpg"></div>
-	  <div class="banner_catbtn2" onclick="carouselto(1);"><span>強打的創作人</span><img src="banner_catbtn2.jpg"></div>
-	  <div class="banner_catbtn3" onclick="carouselto(2);"><span>創作募集活動</span><img src="banner_catbtn3.jpg"></div>
-	  <div class="banner_catbtn4" onclick="carouselto(3);"><span>實質支持創作人</span><img src="banner_catbtn4.jpg"></div>
+	  <div class="banner_catbtn1" onclick="carouselto(0);"><span>釘上你的創作計劃</span><img src="banner_catbtn2.png"></div>
+	  <div class="banner_catbtn2" onclick="carouselto(1);"><span>強打的創作人</span><img src="banner_catbtn2.png"></div>
+	  <div class="banner_catbtn3" onclick="carouselto(2);"><span>創作募集活動</span><img src="banner_catbtn2.png"></div>
+	  <div class="banner_catbtn4" onclick="carouselto(3);"><span>實質支持創作人</span><img src="banner_catbtn2.png"></div>
 	</div>
   </div>
   <!-- BANNER輪播區塊結束 -->
@@ -320,9 +365,24 @@
      <!-- 輕鬆啟動創作募資計劃開始 -->
 	 <div class="tab-container">
 	     <ul class="nav nav-pills" ><li class="active"><a data-toggle="tab" href="">輕鬆啟動創作募資計劃</a></li></ul>
+		 
+		 
+		 <!-- 低門檻募資就醬EZ!4個STEP開始 -->
+			  
+		 <div class="tab_content">
+		      <div class="tab active">
+			    <div class="pin_plan_step">
+					 <div class="pin_plan_step1">STEP 1：贊助計劃</div>
+					 <div class="pin_plan_step2">STEP 2：創作作品</div>
+					 <div class="pin_plan_step3">STEP 3：發佈作品</div>
+					 <div class="pin_plan_step4">STEP 4：宣傳募資</div>
+				 </div>
+			  </div>
+		  </div>
+			  
+		  <!-- 低門檻募資就醬EZ!4個STEP結束 -->
 		  <div class="tab_content">
 		      <div class="tab active">
-			     
 				 <div class="pin_plan">
 				   <div class="plan_video">
 					   <div class="plan_video_wrap">
@@ -335,23 +395,73 @@
 				   <div><span>pinpinbox已經累積了</span><span class="plan_info_num">31778</span>次贊助</div>
 				   <div><span>pinpinbox已經累積了</span><span class="plan_info_num">151223</span>部作品</div>
 				   </div>
-				   <div>
-				   </div>
 				 </div>
-				 
 			  </div>
 		  </div>
-	   </div>
-	 
-	 
-	 
-	 
+	  </div>
   </div>
-  
-  
+  <!-- FOOTER區塊開始 -->
+  <div id="footer">
+    <div id="footer_area">
+		  <ul>
+			<li><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
+			<li><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" class="cicle_btn" style="z-index: 100">經營小幫手</a></li>
+			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/qanda/">Q&amp;A</a></li>
+			<li class="mobile_show" ><a href="https://www.pinpinbox.com/index/recruit/">企業合作</a></li>
+			
+			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/privacy/">條款與政策</a></li>
+			<li class="dropup">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下載APP<span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a id="apple_btn" data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
+					<li><a data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
+				</ul>							
+			</li>				
+			<li class="dropup footer_lang">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">語言<span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li ><a href="javascript:void(0)" >English</a></li>
+					<li ><a href="javascript:void(0)" >日本語</a></li>
+					<li ><a href="javascript:void(0)" >簡體中文</a></li>
+					<li ><a href="https://www.pinpinbox.com/index/?lang=zh_TW">繁體中文</a></li>
+				</ul>							
+			</li>
+			<li class="mobile_show mobile_footer_lang">
+			  <select>
+				<option>簡體中文</option>
+				<option selected>繁體中文</option>
+				<option>English</option>
+			  </select>
+			</li>
+			<li class="footer_copyright">© 2016 pinpinbox All Rights Reserved.</li>
+		  </ul>
+	</div>
+  </div>
+  <!-- FOOTER區塊結束 -->
+  <!-- 回上方箭頭與FB區塊開始  -->
+  <div id="right_btn">
+		<div id="scroll_top"  ><a href="javascript:void(0)"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_top.svg" ></a></div>
+		<div id="fb_link"><a href="https://www.facebook.com/pages/pinpinbox/872194489510640" target="_blank" title="造訪 pinpinbox粉絲團!"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_fb.svg" onerror="this.onerror=null; this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_fb.png'"></a></div>
+  </div>
+  <!-- 回上方箭頭與FB區塊結束 -->
 <script>
 
+
+
 $(document).ready(function() {
+  //回上方箭頭
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 495)  {          /* 要滑動到選單的距離 */
+       $('#scroll_top').addClass('topFixed');   /* 幫選單加上固定效果 */
+    } else {
+      $('#scroll_top').removeClass('topFixed'); /* 移除選單固定效果 */
+    }
+  });
+  $("#scroll_top").click(function(){
+		$("html,body").animate({scrollTop:0},900);
+		return false;
+	});
+
   //PC版選單切換
   $('a.login').click(function() {
     $('#login_menu').toggleClass("login_menu_down");
@@ -370,7 +480,7 @@ $(document).ready(function() {
    $(".banner_carousel1").owlCarousel({
         singleItem:true,
         lazyLoad: true,
-        autoPlay: true,
+        autoPlay: false,
         slideSpeed: 2000,
         pagination: false,
         navigation: false,
@@ -378,7 +488,7 @@ $(document).ready(function() {
 	    autoHeight: true,
     });
 	//由於第一頁白, 先跳至第二頁
-	carouselto(1);
+	carouselto(3);
 });
 
 //輪播跳頁
