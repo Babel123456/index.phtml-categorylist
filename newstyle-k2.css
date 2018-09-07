@@ -542,7 +542,7 @@ text-align: center;
 	}
 
 @media (max-width: 1024px){
-	#banner_catbtn{bottom: 12%;}
+	#banner_catbtn{bottom: 10%;}
 	#bannner #banner_carousel img{
 		
 		margin: auto;
