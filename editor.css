@@ -164,7 +164,7 @@ ul.typeahead { z-index: 1500; }
 
 #edit_control { width: 150px; height: 60px; position: absolute; right: 5%; top: 50px; }
 #edit_control ul li { display: inline-block; text-align: center; }
-#edit_control ul li a { -moz-transition: all 0.2s; -o-transition: all 0.2s; -webkit-transition: all 0.2s; transition: all 0.2s; }
+#edit_control ul li a { -moz-transition: all 0.2s; -o-transition: all 0.2s; -webkit-transition: all 0.2s; transition: all 0.2s;}
 #edit_control ul li a.con_icon01 { background-image: url("../images/control/con01.png"); }
 #edit_control ul li a.con_icon02 { background-image: url("../images/control/con02.png"); }
 #edit_control ul li a.con_icon03 { background-image: url("../images/control/con03.png"); }
