@@ -23,7 +23,7 @@
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/css/lightgallery-custom.min.css" rel="stylesheet" />
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/font-awesome/css/font-awesome.css" rel="stylesheet" />
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/mediaelement-2.22.0/mediaelementplayer.min.css" rel="stylesheet" />
-	<link type="text/css" href="editor.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap-diy/bootstrap.css" rel="stylesheet" />
+	<link type="text/css" href="./scss/css/editor.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap-diy/bootstrap.css" rel="stylesheet" />
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/jquery-ui.min.css" rel="stylesheet" />
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/croppic/css/croppic.css" rel="stylesheet" />
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
@@ -35,7 +35,7 @@
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-ui-datetimepicker/jquery-ui-timepicker-addon.min.css" rel="stylesheet" />
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap.min.css" rel="stylesheet" />
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/dropit.css" rel="stylesheet" />
-	<link type="text/css" href="style.css" rel="stylesheet" />
+	<link type="text/css" href="./scss/css/style.css" rel="stylesheet" />
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/css/jquery.fileupload-ui.css" rel="stylesheet" />    <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -98,7 +98,7 @@ src="https://www.facebook.com/tr?id=1010541995708559&ev=PageView&noscript=1"
 <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/mediaelement-2.22.0/mediaelement-and-player.min.js"></script>
 <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/croppic/js/croppic.min.js"></script>
-<script type="text/javascript" src="editor.min.js"></script>
+<script type="text/javascript" src="js/editor.min.js"></script>
 <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/js/jquery.fileupload.js"></script>
 <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/js/jquery.fileupload-process.js"></script>
 <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/js/jquery.fileupload-video.js"></script>
@@ -139,7 +139,6 @@ src="https://www.facebook.com/tr?id=1010541995708559&ev=PageView&noscript=1"
 							<ul>
 								<li><div class="member_nav">
 									<ul>
-										
 										<li style="color:#D0D0D0;">babel</li>
 										<li><div class=line></div></li>
 										<li><a href="https://www.pinpinbox.com/index/user/settings/">管理中心</a></li>										
@@ -148,7 +147,7 @@ src="https://www.facebook.com/tr?id=1010541995708559&ev=PageView&noscript=1"
 										<li><a href="https://www.pinpinbox.com/index/user/order/">消費查詢</a></li>
 										<li><div class=line></div></li>
 										<li><a href="https://www.pinpinbox.com/index/user/question/">回報問題</a></li>
-										<li><a href="https://www.pinpinbox.com/index/user/logout/">登出</a></li>									</ul>
+										<li><a href="https://www.pinpinbox.com/index/user/logout/">登出</a></li></ul>
 								</div></li>
 							</ul>
 						</li>	
@@ -579,7 +578,7 @@ $('.vidoetips').on('click', function(){
 								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg" alt="李路禕"></div>
 								<div class="result_info">
 									<ul>
-										<li class="restult_name">李路禕</li>
+										<li class="restult_name">李路禕123456</li>
 										<li class="btn_invited" id="result_connie9131" onclick="add_invited_item('connie9131','李路禕','https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg');" >已邀請</li>
 									</ul>
 								</div>
@@ -692,20 +691,26 @@ $('.vidoetips').on('click', function(){
 										<li class="btn_uninvited" id="result_awan" onclick="add_invited_item('awan','To.me.to 蕃茄梗','https://cdn.pinpinbox.com/storage/zh_TW/user/30/picture$c6b4.jpg');" >邀請</li>
 									</ul>
 								</div>
-							</div>		
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9375/picture$cb59.jpg" alt="刺刺"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">刺刺</li>
+										<li class="btn_uninvited" id="result_poorblackhead" onclick="add_invited_item('poorblackhead','刺刺','https://cdn.pinpinbox.com/storage/zh_TW/user/9375/picture$cb59.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>							
                          </div>						
 						</li>
 						<li class="invited_item_list">
-						  
-						  
-						    
 							<div class= "product_scroll2">
 								<div class="invited_item" id="connie9131">
 									<div class="delete_invited" onclick="delete_invited_item('connie9131','李路禕','https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg');" >X</div>
 									<div class="invited_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg" alt="李路禕"></div>
 									<div class="invited_info">
 										<ul>
-											<li class="invited_name">李路禕</li>
+											<li class="invited_name">李路禕123456</li>
 											<li class="invited_time">加入時間:2015/05/18</li>
 											<li>
 												<div class="dropdown">
@@ -725,7 +730,7 @@ $('.vidoetips').on('click', function(){
 									<div class="invited_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg" alt="阿賀"></div>
 									<div class="invited_info">
 										<ul>
-											<li class="invited_name">阿賀</li>
+											<li class="invited_name">阿賀123456789x</li>
 											<li class="invited_time">加入時間：2018/08/21</li>
 											<li>
 												<div class="dropdown">
@@ -770,7 +775,7 @@ $(function(){
         cursorcolor: "#c4c4c4",
         cursoropacitymax: 1,
         cursorwidth: 8,
-		nativeparentscrolling: false
+		autohidemode:true
     });
    
    var nicesx2 = $(".invited_item_list").niceScroll({
@@ -779,26 +784,27 @@ $(function(){
         cursorcolor: "#c4c4c4",
         cursoropacitymax: 1,
         cursorwidth: 8,
-		autohidemode:false,
-		nativeparentscrolling: false
+		autohidemode:true
     });
 	
-	$('.invited_item_list').on("mousewheel", function() {
-    return false;
-    });
+	
 
 	
 	//邀請區塊寬度
 	$('.invited_item_list .product_scroll2').width($(".product_scroll2").find('.invited_item').length*170);
+	
 	$(window).resize(function(){
 	    //alert($( window ).height());
 	    $(".search_result").getNiceScroll().resize();
 		$(".invited_item_list").getNiceScroll().resize();
 	});
 
-
-	//search: on + datalist
+    $('.invited_item_list').on("mousewheel", function() {
+    return false;
+    });
 	
+	//search: on + datalist
+	/*
 	$('input[name="searchkey"]').on({
 		keypress: function(e) { 
 			if (e.which == 13 || e.keyCode == 13) _search();
@@ -815,6 +821,7 @@ $(function(){
 			});
 		},
 	});
+	*/
   }
   
   
@@ -3932,7 +3939,6 @@ $(document).on('click', 'button.play_video', function(){
 		break;
 	}
 });
-
 </script>
 </body>
 </html>
