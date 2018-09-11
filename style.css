@@ -56,10 +56,10 @@ html a { text-decoration: none; }
 
 #head_desk { display: block; }
 @media (max-width: 1024px) { #head_desk { display: none; } }
-#head_desk .head_top { width: 100%; border-bottom: 2px solid #00b7b0;}
+#head_desk .head_top { width: 100%; border-bottom: 2px solid #00b7b0; }
 #head_desk .head_center { width: 960px; padding: 5px 0px; position: relative; }
 #head_desk .head_center .logo { float: left; margin-top: 3px; width: 200px; }
-#head_desk .head_center .logo a { background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/logo.png") no-repeat center center; display: block; background-size: 200px 40px; height: 40px; width: 100%; }
+#head_desk .head_center .logo a { background: url("../images/logo.png") no-repeat center center; display: block; background-size: 200px 40px; height: 40px; width: 100%; }
 #head_desk .head_center .logo a:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #head_desk .head_center #head_lang { float: left; margin-left: 10px; margin-top: 13px; width: auto; }
 #head_desk .head_center #head_lang a:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; }
@@ -235,9 +235,6 @@ html a { text-decoration: none; }
 
 /*頁尾*/
 #footer { width: 100%; background-color: #6d6e72; padding: 1px 0px; position: fixed; bottom: 0px; z-index: 24; }
-
-
-
 @media (max-width: 1024px) { #footer { display: none; } }
 #footer #footer_content { width: 960px; color: #FFF; }
 @media (max-width: 1024px) { #footer #footer_content { width: 90%; } }
@@ -851,10 +848,7 @@ background-image: linear-gradient(#17b1ad, #10859a);
 /*首頁底部全幅Banner*/
 .fullWidthBanner { width: 100%; }
 @media (max-width: 1024px) { .fullWidthBanner { width: 100%; } }
-
 .fullWidthBanner.Banner1 { height: 600px; }
-
-
 @media (max-width: 350px) { .fullWidthBanner.Banner1 { height: 450px; } }
 .fullWidthBanner.Banner1 .title { width: 100%; height: 50px; font-family: PingFangTC; font-size: 3em; font-weight: 500; font-style: normal; font-stretch: normal; letter-spacing: 6px; text-align: center; color: #0f8399; position: static; margin-top: 40px; }
 @media (max-width: 1240px) { .fullWidthBanner.Banner1 .title { font-size: 2em; } }
@@ -927,40 +921,13 @@ background-image: linear-gradient(#17b1ad, #10859a);
 #content_big .page_title { width: 100%; margin-bottom: 20px; color: #108199; display: none; }
 @media (max-width: 1024px) { #content_big .page_title { display: none; } }
 
-
-
-
-#tem_upload { width: 100%; position: relative;
-
-
-
-}
-
-
- #editor_content #editor_wrap #tem_content #tem_upload {margin-left:10px;}
-
-
-
-@media (max-width: 1024px) { 
-
- #editor_content #editor_wrap #tem_content { 
-
-margin-left:0px;
-
-}
-
- }
-
-
-#tem_upload ul { width: 100%;}
+#tem_upload { width: 100%; position: relative; }
+#tem_upload ul { width: 100%; }
 #tem_upload ul li { margin-bottom: 15px; color: #9d9d9d; }
 #tem_upload ul li a.question { color: #108199; margin-left: 5px; }
 #tem_upload a.upload { width: 120px; position: absolute; right: 0px; top: -5px; height: 35px; line-height: 35px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; text-align: center; color: #FFF; display: block; }
 @media (max-width: 1024px) { #tem_upload a.upload { position: inherit; right: 0px; top: 0px; width: 100%; } }
 #tem_upload a.upload:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
-
-
-
 
 #right_btn { width: auto; position: fixed; right: 5%; z-index: 100; bottom: 80px; width: 52px; }
 @media (min-width: 751px) and (max-width: 940px) { #right_btn { width: 10%; } }
