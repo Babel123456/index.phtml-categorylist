@@ -23,6 +23,7 @@ html{
 }
 
 body{
+  font-family: 'Noto Sans','Arial', 'cwTeXHei', '微軟正黑體' !important;
   color: #4D4D4D !important;
   background: #fff;
   margin:auto;
@@ -164,6 +165,12 @@ background-size: 200px 40px;
 }
 
 @media (max-width: 1024px){
+	
+	#header_top .pin_creator{
+		display: none;
+	}
+	
+	
 #header_top .header_search .search-menu{
 	top: 85%;
 	
@@ -354,14 +361,14 @@ margin-left: 0;
   margin-top:76px;
   width:100%;
   //width:80%;
-  //height: 100%;
-  height: 500px;
+  height: 100%;
+  //height: 500px;
   width: 1920px;
   //height:612px;
   overflow:hidden;
   //text-align: right;
-  margin: 64px auto 0 auto;
-  
+  //margin: 64px auto 0 auto;
+  margin: 76px auto 0 auto;
 }
 
 
@@ -376,7 +383,6 @@ margin-left: 0;
 @media (max-width: 1919px){
 	#bannner{
 		width:100%;
-	//margin-top:64px;
 	}
 	
 }
@@ -384,99 +390,82 @@ margin-left: 0;
 
 @media (max-width: 1024px){
 	#bannner{
-		//width:100%;
+		width:100%;
+		height: 100%;
 	margin-top:64px;
 	}
 	
 }
 
 @media (max-width: 800px){
-	#bannner{
-		width:100%;
-		height: 100%;
-	}
 	
+	#bannner{
+	margin-top:44px;
+	text-align: center;
+	
+	}
 }
 
-#bannner #banner_carousel, #bannner #banner_catbtn{
+#bannner #banner_carousel,#bannner #banner_catbtn{
   //display: inline-block;
   display: block;
 }
 
 #bannner #banner_carousel{
   position: relative;
+  //float: left;
   height: 500px;
   width: 100%;
+	overflow: hidden;
+	vertical-align:middle;
 }
 
-#bannner #banner_carousel{
-	//width:70%;
-	//width: 100%;
-	/*
-	position: absolute;
-	
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	margin: auto;
-	z-index:0;
-	*/
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	}
 
 #bannner #banner_carousel img{
-  //margin: auto;
-  /*
-  position: absolute;
-  width:100%;
-  height: 100%;
-  top:0;
-  left:0;
-  bottom:0;
-  right:0;
-  */
-  margin-top: -10%;
+  object-fit: cover;
+  width: 100%;
+  height: 500px;
+  display: block;
+  margin: auto;
 }
 
+
+
+
+@media (max-width: 1024px){
+	#bannner #banner_carousel{
+  height: 540px;
+	}
+	
+}
 
 .owl-carousel .owl-wrapper-outer {
   //box-shadow: none !important;
 }
 
 #bannner #banner_catbtn{
+//width: 30%;
 	position: absolute;
 	//width:29.5%;
-	
-	bottom: 5%;
-right: 2%;
+
+right:2%;
+//top:40%;
+bottom:8%;
 z-index:2;
-font-size: 22px;
-
-
-
+font-size: 20px;
+//width: 15%;
 }
 
 
-/*
-#banner #banner_carousel .fotorama { width: 100%; }
-#banner #banner_carousel .fotorama .owl-theme .owl-controls { display:none; }
-#banner #banner_carousel .fotorama .owl-carousel .owl-wrapper-outer {  }
-#banner #banner_carousel .fotorama .page { width: 100%; position: relative; }
-*/
-
-
-
-
-
 @media (max-width: 800px){
-	#bannner{
-	margin-top:44px;
-	text-align: center;
-	}
+	
+	
+	
+		
+	
+	
+	
+	
 	
 	
 	
@@ -486,9 +475,12 @@ font-size: 22px;
   width: 100%;
 }
 #bannner #banner_catbtn{
-  padding: 2%;
-  margin-left:0;
-}
+	  position: relative;
+	  width: 92%;
+	  margin: auto;
+	}
+  
+
 }
 
 .question_mark{
@@ -506,93 +498,119 @@ font-size: 22px;
 #banner_catbtn > div{
 	position: relative;
 	display: block;
-	line-height: 64px;
+	//line-height: 64px;
+	line-height: 58px;
   //font-size: 24px;
-  color: #4d4d4d ;
-text-align: center;
+  //color: #4d4d4d ;
+  color: #fff;
+//text-align: center;
+text-align: left;
   vertical-align: middle;
   cursor: pointer;
   overflow: hidden;
   letter-spacing:2px;
-  background: #fff;
-  border-radius: 50px;
-  width:250px;
-	height: 64px;
+  //background: #fff;
+  //border-radius: 50px;
+  //width:250px;
+	//height: 64px;
 	margin-bottom: 2%;
-	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7;
-	border: #d4d4d4 dashed 3px;
+	//border: #d4d4d4 dashed 3px;
+	text-shadow: #9d9d9d 0px 0px 5px;
+	padding-left:160px;
 }
 
-#banner_catbtn div:first-child{ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity:1; }
+#bannner .pin_creator1{
+  display:none;
+}
+
+.carousel_btn_on{
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity:1;
+	background: url(btn_arrow.svg) no-repeat center left;
+}
+@media (max-width: 1200px){
+	#banner_catbtn > div{
+		
+		padding-left:100px;
+	}
+	
+	.carousel_btn_on{
+	background: url(btn_arrow.svg);
+	background-position: center left;
+    background-repeat: no-repeat;
+    background-size: 30% 10%;
+  }
+	
+}
+
+.carousel_btn_off{
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity:0.7; 
+	border-image: none;
+	}
+	
+	
+	
+	
 
 #banner_catbtn > div:hover{
-	//border-left: 15px #69cedb solid;	
-/*
-	//background: #00acc1;
-	background: #69cedb;
-    border-left: 15px #00acc1 solid;	
-	//border-left: 15px rgba(76,10,22,0.5) solid;	
-	color: #fff;
-	-ms-transform: scale(1.1, 1.1); -webkit-transform: scale(1.1, 1.1); transform: scale(1.1, 1.1);
-	-moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s;
-    //margin-left: 20px;
-	border-bottom-right-radius: 50px 20px;
-	*/
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1;
 	}
 
 @media (max-width: 1024px){
-	#banner_catbtn{bottom: 10%;}
-	#bannner #banner_carousel img{
+	#bannner{
+		text-align:center;
+	}
+	
+	#bannner #banner_catbtn{
+	position: relative;
+	right:0;
+	//display:inline-block;
+	}
 		
-		margin: auto;
+	#bannner #banner_carousel img{
+		height: 540px;
+		//margin: auto;
+		//margin-left: -300px;
 	}
 	
 	#banner_catbtn > div{
-		font-size: 22px;
+		display: inline-block;
+		
+		width: auto;
+		  margin: 2% 2%;
+		 font-size:18px;
+		 //font-size:20px;
+		 color: #4d4d4d;
+		 padding-left:0;
+		 text-shadow:none;
+		 line-height: 48px;
+		}
+		
+		#banner_catbtn .pin_creator1{
+		  display: inline-block;
+		  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1;
+		}
+		
+		#banner_catbtn .pin_creator1 a{
+		 color: #ee5b8d !important;
+		 padding:2px 5px;
+		}
+		/*
+		#banner_catbtn .pin_creator1:hover{
+           border: 	 #ee5b8d 1px solid;	  
+		   border-radius: 25px;
+		}
+		*/
+	.carousel_btn_on{
+		background:none;
+		border-top: #4d4d4d 2px solid;
+		
 	}
-	#banner_catbtn > div:hover{
-		//border-bottom-right-radius: 50px 20px;
-	}
+	
 	
 }
 
-/*
-#banner_catbtn > div > span{
-	
-	position: absolute;
-	//top: 45%;
-	top: 42%;
-	left: 5%;
-	bottom: 0;
-	right: 0;
-	margin: auto;
-	z-index:10;
-	
-}
-*/
-/*
-#banner_catbtn > div > span:hover{
-	//border-left: 15px #69cedb solid;	
-	color: #00acc1;
-	//color: #fff;
-	//color: #000;
-	//-ms-transform: scale(1.1, 1.1); -webkit-transform: scale(1.1, 1.1); transform: scale(1.1, 1.1);
-	//-moz-transition: all 0.3s; -o-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s;
-	
-}
-*/
-#banner_catbtn > div:hover img{
-	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7;
-  //border-left: 20px #00acc1  solid;	
-}
-@media (max-width: 1024px){
-	
-	#banner_catbtn > div:hover img{
-	 //border-left: 10px #000 solid;		
-	}
-	
-}
+
+
 
 
 
@@ -602,27 +620,11 @@ text-align: center;
 	  height: 100%;
 	}
 	
-	#banner_catbtn{
-	  position: relative;
-	}
 	
-	#banner_catbtn > div{
-		display: inline-block;
-		//width: 38%;
-		width: 25%;
-		  margin: 2%;
-		 // border-left: none;
-		 //border-radius: 6px;
-		 //font-size:18px;
-		 font-size:20px;
-		}
-		#banner_catbtn > div:hover{
-			/*
-			//background: none;
-			border: 1px solid #69cedb;	
-			border-radius: 25px;
-			*/
-		}
+	
+	
+	
+		
 		
 		#banner_catbtn > div > span{
 			//top: 35%;
@@ -638,7 +640,8 @@ text-align: center;
 #banner_catbtn > div{
 	//width: 43%;
 	width: 46%;
-	margin: 1%;
+	//margin: 1%;
+	margin: 1.6%;
 		}
 }
 
@@ -774,21 +777,11 @@ text-align: center;
   }
 	
   .main_content .tab-container .hit_story{
-    width: 28%;
+    //width: 28%;
+	width: 29%;
   }
 }
-.main_content .tab-container .hit_story:hover{
-	-ms-transform: scale(1.1, 1.1); -webkit-transform: scale(1.1, 1.1); transform: scale(1.1, 1.1);
-	-moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s;
-}
 
-.main_content .tab-container .hit_story:hover img{
-  border-radius: 6px;
-  
-  -ms-transform: scale(1.2, 1.2); -webkit-transform: scale(1.2, 1.2); transform: scale(1.2, 1.2);
-	-moz-transition: all 0.8s; -o-transition: all 0.8s; -webkit-transition: all 0.8s; transition: all 0.8s;
-
-}
 
 .main_content .tab-container .hit_story div{
   //margin-bottom: 2%;
@@ -871,7 +864,8 @@ height: 75px;
   
   .main_content .tab-container .hit_story{
 	  
-	  margin: 2.2%;
+	  //margin: 2.2%;
+	  margin: 2.3%;
 	  
   }
   
@@ -946,29 +940,12 @@ height: 75px;
 }
 
 
-.attention_me{
-  position: relative;
-  background: #ee5b8d;  
-  //width: 192px;
-  //width: 18.75%;
-  width: 50%;
-  height: 40px;
-  color: #fff;
-  font-size: 18px;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 6px;
-  //margin-top: 2%;
-}
+
 
 
 @media (min-width: 801px){
 
-	.attention_me:hover{
-	  border: #ee5b8d 1px solid;
-	  background: #fff;
-	  color: #ee5b8d;
-	}
+	
 
 
 }
@@ -1073,21 +1050,7 @@ height: 75px;
   height: 100%;
 }
 
-.new_star .star_img img:nth-child(2){
-  display: none;
-  z-index:5;
-  position: absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  margin: auto;
-}
 
-.new_star .star_img:hover img:nth-child(2){
-  display: block;
-  -moz-transition: all 0.8s; -o-transition: all 0.8s; -webkit-transition: all 0.8s; transition: all 0.8s;
-}
 
 .new_star .story_desc{
   overflow: hidden; 
@@ -1157,9 +1120,7 @@ height: 75px;
 }
  
  .cat_01{
-	 //display: inline-block;
-   //margin: auto;
-   //background: #c5e1a7;
+	
    position: absolute;
 
     top: 0;
@@ -1172,30 +1133,11 @@ height: 75px;
  }
  .cat_01,.cat_02,.cat_03,.cat_04,.cat_05,.cat_06,.cat_07,.cat_08{
 	
-	//border: 1px #d4d4d4 solid;
-	//box-shadow: 1px 1px 2px #d4d4d4, 1px 1px 2px #d4d4d4;
-	//background-image: url('paper-951491_1280.jpg') ;
-	
+
 	background-color: #dadada;
   }
-  .cat_01:hover,.cat_02:hover,.cat_03:hover,.cat_04:hover,.cat_05:hover,.cat_06:hover,.cat_07:hover,.cat_08:hover{
-	font-size:24px;border-radius:100%;
-  }
-  .cat_01:hover{
-	  background: #c5e1a7;
-	  background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180523/5b04de98da605.jpg') ;
-	 
-	  
-	  }
-  .cat_01:hover .cat_img img:nth-child(1),.cat_02:hover .cat_img img:nth-child(1),.cat_03:hover .cat_img img:nth-child(1),.cat_04:hover .cat_img img:nth-child(1),.cat_05:hover .cat_img img:nth-child(1),.cat_06:hover .cat_img img:nth-child(1),.cat_07:hover .cat_img img:nth-child(1),.cat_08:hover .cat_img img:nth-child(1){
-    display: none;
-  }
-  .cat_01:hover .cat_img img:nth-child(2),.cat_02:hover .cat_img img:nth-child(2),.cat_03:hover .cat_img img:nth-child(2),.cat_04:hover .cat_img img:nth-child(2),.cat_05:hover .cat_img img:nth-child(2),.cat_06:hover .cat_img img:nth-child(2),.cat_07:hover .cat_img img:nth-child(2),.cat_08:hover .cat_img img:nth-child(2){
-   // display: none;
-  }
+ 
   
-  .cat_01:hover .cat_img img:nth-child(2){
-  }
   
  .cat_02{
    
@@ -1208,12 +1150,7 @@ height: 75px;
 	
    
  }
- 
- .cat_02:hover{
-   background: #f8c7c8;
-   
-   background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180523/5b04de5932593.jpg');
- }
+
  
   .cat_03{
   
@@ -1224,11 +1161,6 @@ height: 75px;
     right: 0;
  }
  
-  .cat_03:hover{
-  background: #fce69e;
-  
- background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180523/5b04de6f5fb4a.jpg');
- }
  
  
    .cat_04{
@@ -1240,11 +1172,6 @@ height: 75px;
     right: 0;
  }
  
-  .cat_04:hover{
-  background: #bed8f9;
-  
-  background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180709/5b4341d7bed9a.jpg');
- }
  
  .cat_05{
   
@@ -1254,11 +1181,6 @@ height: 75px;
     bottom: 0;
     right: 0;
  }
-   .cat_05:hover{
-   background: #faca88;
-   
-   background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180615/5b233c7b8c5ae.jpg');
- }
  .cat_06{
  
       position: absolute;
@@ -1267,12 +1189,7 @@ height: 75px;
     bottom: 0;
     right: 0;
  }
-    .cat_06:hover{
-    background: #98d9ce;
-	
-	background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180523/5b04de09213a9.jpg');
- }
-  
+    
  .cat_07{
   
       position: absolute;
@@ -1282,10 +1199,6 @@ height: 75px;
     right: 0;
  }
  
-   .cat_07:hover{
-    background: #eabbe1;
-	background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180615/5b233c8eb3e6a.jpg');
- }
  .cat_08{
 
       position: absolute;
@@ -1295,20 +1208,13 @@ height: 75px;
     right: 0;
  }
  
-    .cat_08:hover{
-    background: #b1c3ec;
-	background: url('https://cdn.pinpinbox.com/upload/admin/categoryarea_style/20180621/5b2b1726e3b7e.jpg');
- }
  
  .cat_area .cat_img{
 	 width: 68px;
 	 height: 68px;
  }
  
-   .cat_area .cat_img img:nth-child(2){
-	   display: none;
-	   
-   }
+  
  
   .cat_area .cat_img img{
 	  
@@ -1330,6 +1236,15 @@ height: 75px;
    margin: 2%;
    font-size: 18px;
 }
+
+ @media (max-width: 1024px){
+	 
+	 .pin_plan_step {
+		 margin: 2% 0;
+		 
+	 }
+ }
+
 
 .pin_plan_step div{
   display: inline-block;
