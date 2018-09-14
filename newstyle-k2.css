@@ -1266,18 +1266,20 @@ color: #9e9e9e;
    position: relative;
    width: 100%;
    text-align: center;
-   color: #fff;
+   //color: #fff;
    //margin: 2%;
-   margin: 2% auto;
+   margin: 2% auto 5% auto;
    font-size: 18px;
 }
 
  @media (max-width: 1024px){
 	 
 	 .pin_plan_step {
-	//	 margin: 2% 0;
+		 font-size: 16px;
+
 		 
 	 }
+	
  }
 
 
@@ -1286,16 +1288,51 @@ color: #9e9e9e;
   //width: 200px;
   //height: 200px;
   width: 20%;
-  line-height: 180px;
-  background: grey;
-  border-radius: 100%;
+  //line-height: 180px;
+  //background: grey;
+  //border-radius: 100%;
   margin: 1% 2% 1% 2%;
+  
+  vertical-align: middle;
+  letter-spacing: 1.5px;
+  line-height:25px;
+  text-align: left;
+  height:200px;
 }
+
+
+
+.pin_plan_step div span{
+  display:block;
+  line-height: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+.pin_plan_step div span:first-child{
+}
+
+
+.pin_plan_step div span:last-child{
+	text-align:left;
+	font-weight:500;
+}
+
+
+
+.pin_plan_step div img{
+  display: block;
+  margin: auto;
+  width: 120px;
+  height:120px;
+  //object-fit: cover;
+  margin-bottom: 30px;
+}
+
 
  @media (max-width: 800px){
 	 
 	 .pin_plan_step div{
-		 width: 30%;
+		 width: 35%;
 		 margin: 1% 2% 2% 2%;
 	 }
  }
@@ -1310,7 +1347,7 @@ color: #9e9e9e;
 		 //margin: 1% 2% 2% 2%;
 		 margin: 5% auto;
 		 //line-height: 150px;
-		 line-height: 100px;
+		// line-height: 100px;
 	 }
  }
 
@@ -1329,6 +1366,7 @@ background: #60c7d4;
   overflow: hidden;
   //letter-spacing:2px;
   letter-spacing:3px;
+  margin-top: 5%;
  }
  .pin_plan .plan_video,  .pin_plan .plan_info{
 	// margin: 2% auto;
