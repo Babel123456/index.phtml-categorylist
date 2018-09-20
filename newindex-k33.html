@@ -15,6 +15,8 @@
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/js/owl.carousel.min.js"></script>
   
+  
+  
   <!-- 表頭區塊開始 -->
   <div id="header">
   <!-- 手機版搜尋區塊開始 -->
@@ -141,7 +143,7 @@
 		      <div id="tab0" class="tab active align_center">
 			     <div class="hit_story" >
 			         <a href="https://www.pinpinbox.com/andy729huiblog">
-					   <div class="story_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/cover$dc41.jpg"></div>
+					   <div class="story_img"><!--專區BANNER圖--><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/cover$dc41.jpg"></div>
 					   <div class="story_desc">以寫作奇幻小說為主，請大家多多支持！ 某些故事最新發佈時會免費開放， 請大家多多關注我呢！</div>
 					   <div class="story_info"><div class="story_view">瀏覽：54462</div><div class="pin_count">贊助次數：<span class="pin_count_num">7882</span></div></div>
 					 </a>
@@ -357,7 +359,10 @@
      <!-- 輕鬆啟動創作募資計劃開始 -->
 	 <div class="tab-container">
 	     <ul class="nav nav-pills" ><li class="active"><!--<a data-toggle="tab" href="">-->創作價值　由你決定<!--</a>--></li></ul>
+		 
+		 
 		 <!-- 低門檻募資就醬EZ!4個STEP開始 -->
+			  
 		 <div class="tab_content">
 		      <div class="tab active">
 			    <div class="pin_plan_step">
@@ -366,20 +371,25 @@
 					    <span class="step_title">創作主導</span>   
 					    <span class="step_desc">完整保留你的創作核心主導權</span></div>
 					 <div class="pin_plan_step2">
+					 
 					     <div class="step_img"><img src="plan_step_02.svg"></div>
 					     <span class="step_title">創作頻道</span>    
 					     <span class="step_desc">免費創建專屬贊助頻道，無縫分享至社群平台</span></div>
 					 <div class="pin_plan_step3">
+					     
+					     
 						 <div class="step_img"><img src="plan_step_03.svg"></div>
 					     <span class="step_title">創作價值</span>
 						 <span class="step_desc">為作品設定P點，創造被動收入</span></div>
 					 <div class="pin_plan_step4">
+					 
 					     <div class="step_img"><img src="plan_step_04.svg"></div>
 					     <span class="step_title">超高分潤</span>    
 					     <span class="step_desc">提升粉絲的關注及觀看次數，自動提高分潤</span></div>
 				 </div>
 			  </div>
 		  </div>
+			  
 		  <!-- 低門檻募資就醬EZ!4個STEP結束 -->
 		  <div class="tab_content">
 		      <div class="tab active">
@@ -454,6 +464,8 @@
   <!-- 回上方箭頭與FB區塊結束 -->
 <script>
 
+
+
 $(document).ready(function() {
   //回上方箭頭
   $(window).scroll(function() {
@@ -495,15 +507,24 @@ $(document).ready(function() {
    $(".banner_carousel1").owlCarousel({
         singleItem:true,
         lazyLoad: true,
-        autoPlay: true,
+        autoPlay: false,
         slideSpeed: 2000,
         pagination: false,
         navigation: false,
 		stopOnHover: true,
+	    //autoHeight: true,
 		afterMove: carouselto1
     });
 	carouselto(0);
 	
+	//當視窗小於800時, 換成MOBILE輪播圖
+	/*
+	$(window).resize(function(){
+	    //alert($( window ).height());
+	    $(".search_result").getNiceScroll().resize();
+		$(".invited_item_list").getNiceScroll().resize();
+	});
+	*/
 });
 
 //輪播跳頁
@@ -521,5 +542,7 @@ function carouselto(x){
 }
 
 </script>
+
+
 </body>
 </html>
