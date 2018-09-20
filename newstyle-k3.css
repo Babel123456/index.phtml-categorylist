@@ -1539,6 +1539,7 @@ color: #9e9e9e;
    }
   .cat_areaw1 .cat_info{
 	  color: #9e9e9e;
+	  letter-spacing:20px;
 	  
   }
 
@@ -1587,7 +1588,7 @@ color: #9e9e9e;
   }
   
  .cat_area  .cat_name {
-    color: #fff !important;
+  //  color: #fff ;
   }
   
 
@@ -1833,7 +1834,8 @@ color: #9e9e9e;
    vertical-align: top;
    //color: #60c7d4; 
    //color: #fff;
-   text-align:left;
+   //text-align:left;
+   text-align:justify;
  }
   .pin_plan .plan_video{
   width:  50%;
@@ -2018,7 +2020,8 @@ color: #9e9e9e;
 		background: #00ACC1;
 		height: 272px;
 		text-align:center;
-		line-height:2.2;
+		//line-height:2.2;
+		line-height:2.6;
 		font-size: 32px;
 		color: #fff;
 		letter-spacing: 1.5px;
@@ -2027,8 +2030,9 @@ color: #9e9e9e;
 	 .plan_info_count{
 		 font-size:20px;
 		 height: 384px;
-		 line-height:2;
-		 padding-top: 32px;
+		 line-height:1.8;
+		 //padding-top: 32px;
+		 padding-top: 34px;
 	 } 
 	  
   }	
@@ -2079,7 +2083,7 @@ color: #9e9e9e;
   //background-color: #101010; 
   background-color: #555555; 
   //padding: 1px 0px; 
-  position: fixed; bottom: 0px; z-index: 24; 
+  //position: fixed; bottom: 0px; z-index: 24; 
   //vertical-align: middle;
   text-align: center;
 }
