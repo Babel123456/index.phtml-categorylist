@@ -1287,6 +1287,7 @@ display: -webkit-box;
 line-height: 25px;
 height: 75px;
  letter-spacing: 1.5px;
+ text-align:justify;
 }
 
 @media (max-width: 500px){
@@ -1517,6 +1518,7 @@ height: 75px;
   height: 75px;
   letter-spacing: 1.5px;
   text-align:left;
+  text-align:justify;
 }
 
 @media (max-width: 500px){
