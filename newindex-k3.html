@@ -16,7 +16,8 @@
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/js/owl.carousel.min.js"></script>
-  
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/waypoint/js/waypoint.js"></script>
   <!-- 表頭區塊開始 -->
   <div id="header">
   <!-- 手機版搜尋區塊開始 -->
@@ -452,8 +453,8 @@
   <div class="plan_info_count">
     <div class="plan_info_count_area">
       <div>我們做到了</div>
-	  <div><span class="plan_info_num">31449</span><span>累積贊助</span></div>
-	  <div><span class="plan_info_num">151223</span><span>發佈作品</span></div>
+	  <div><span class="plan_info_num counter">31449</span><span>累積贊助</span></div>
+	  <div><span class="plan_info_num counter">151223</span><span>發佈作品</span></div>
     </div>
   </div>
   <!-- FOOTER區塊開始 -->
@@ -505,6 +506,11 @@
 $(document).ready(function() {
   //判斷HOVER動作
   addhover();
+  //數字倒數
+  $('.counter').counterUp({
+      delay: 10,
+      time: 1000
+  });
   //回上方箭頭
   $(window).scroll(function() {
     if ($(this).scrollTop() > 495)  {          /* 要滑動到選單的距離 */
