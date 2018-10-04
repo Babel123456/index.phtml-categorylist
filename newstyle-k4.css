@@ -92,7 +92,7 @@ img { width: 100%; height: auto; }
 @media (max-width: 800px) { #header #header_top { height: 44px; line-height: 44px; text-align: right; width: 100%; } }
 #header #header_top.header_top_close { display: none; }
 #header #header_top > div { display: inline-block; }
-#header #header_top .header_logo { float: left; width: 170px; background: url("../../images/logo.svg") no-repeat center left; background-size: 210px 42px; margin-left: -2.2%; }
+#header #header_top .header_logo { float: left; width: 170px; background: url("logo.svg") no-repeat center left; background-size: 210px 42px; margin-left: -2.2%; }
 @media (max-width: 1200px) { #header #header_top .header_logo { margin-left: -3.2%; } }
 @media (max-width: 1024px) { #header #header_top .header_logo { margin-left: -4.5%; } }
 @media (max-width: 800px) { #header #header_top .header_logo { overflow: hidden; margin-left: 2.4%; width: 44px; height: 44px; line-height: 44px; background-size: 30px 31px !important; background: url("https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/m_logo.png") no-repeat center left; } }
@@ -213,7 +213,7 @@ img { width: 100%; height: auto; }
 @media (max-width: 500px) { #bannner #banner_catbtn > div { width: auto; margin: 2% 1%; } }
 #bannner #banner_catbtn > div:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
 
-.carousel_btn_on { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; background: url(../../images/btn_arrow.svg) no-repeat center left; }
+.carousel_btn_on { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; background: url(btn_arrow.svg) no-repeat center left; }
 @media (max-width: 1200px) { .carousel_btn_on { background-position: center left; background-repeat: no-repeat; background-size: 30% 10%; } }
 @media (max-width: 1024px) { .carousel_btn_on { background: none; border-top: 2px solid #4d4d4d; } }
 
@@ -272,7 +272,7 @@ img { width: 100%; height: auto; }
 @media (max-width: 500px) { #content .main_content .tab-container .hit_story div { margin-bottom: 3%; } }
 #content .main_content .tab-container .hit_story .story_img { margin-bottom: 16px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; overflow: hidden; width: 100%; height: 100%; color: #ffffff; font-size: 24px; }
 @media (max-width: 500px) { #content .main_content .tab-container .hit_story .story_img { overflow: auto; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; } }
-#content .main_content .tab-container .hit_story .story_img .creator_banner { background: url("../../images/grey-bg.png") 100% 100%; object-fit: cover; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; overflow: hidden; }
+#content .main_content .tab-container .hit_story .story_img .creator_banner { background: url("grey-bg.png") 100% 100%; object-fit: cover; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; overflow: hidden; }
 @media (max-width: 500px) { #content .main_content .tab-container .hit_story .story_img .creator_banner { -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; } }
 #content .main_content .tab-container .hit_story .story_img .creator_banner img { vertical-align: middle; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90); opacity: 0.9; }
 #content .main_content .tab-container .hit_story .creator_info { display: none; position: absolute; z-index: 2; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 100%; height: 64px; text-align: center; }
