@@ -10,7 +10,7 @@
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" />
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" />
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" />
-    <link type="text/css" href="newstyle-k4.css" rel="stylesheet" />
+    <link type="text/css" href="newstyle-k4" rel="stylesheet" />
 </head>
 <body>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-1.11.3.min.js"></script>
@@ -57,8 +57,10 @@
 		</div>
 		<div class="pin_creator"><a href="https://www.pinpinbox.com/index/user/point/">如何支持創作人？</a></div>
 		<!-- 電腦版選單開始 -->
-		<div class="header_menu"><a href="#">建立作品</a><a href="#">通知<span class="notifier_icon"></span></a>
+		<div class="header_menu"><a href="#">建立作品</a><!-- //20181005: 新加入區塊開始 --><a href="#" id="notifier">通知<span class="notifier_icon"></span></a><!-- //20181005: 新加入區塊結束 -->
 		  <a href="#" id="login"><!--登入--><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/picture$2d70.jpg"></a>
+		  <!-- //20181005: 刪除區塊開始 -->
+		  <!--
 		  <div id="login_menu">
 		    <ul>
 				  <li><span class="login_menu_cat">我的專區</span>
@@ -86,12 +88,16 @@
 				  <li class="sign_out"><a href="#">登出</a></li>
 				</ul>
 		  </div>
+		  -->
+		  <!-- //20181005: 刪除區塊結束 -->
 		</div>
 		<!-- 電腦版選單開始 -->
 		<!-- 手機版選單開始 -->
 		<div class="mobile_menu">
-		  <div class="mobile_img"><i class="fa fa-search"></i><i class="fa fa-bars"></i></div>
+		  <div class="mobile_img"><i class="fa fa-search"></i><!-- //20181005: 新加入區塊開始 --><i id="notifier_m" class="fa fa-bell"></i><!-- //20181005: 新加入區塊結束 --><!-- //20181005: 修改區塊開始 --><i id="login_m" class="fa fa-bars" ></i></div><!-- //20181005: 修改區塊結束 -->
 		</div>
+		<!-- //20181005: 刪除區塊開始 -->
+		<!--
 		<div id="login_menu2">
 			  <ul>
 				  <li><span class="login_menu_cat">我的專區</span>
@@ -119,15 +125,60 @@
 				  <li class="sign_out"><a href="#">登出</a></li>
 				</ul>
 		  </div>
+		  -->
+		  <!-- //20181005: 刪除區塊結束 -->
 		  <!-- 手機版選單結束 -->
 	  </div>
+	  <!-- //20181005: 新加入區塊開始 -->
+	  <div id="login_menu">
+	    <ul>
+		  <li><div>我的專區</div><div>
+		    <ul>
+			  <li><a href="#">關於我</a></li>
+			  <li><a href="#">我的作品</a></li>
+			  <li><a href="#">我的收藏</a></li>
+			  <li><a href="#">共用協作</a></li>
+			  <li><a href="#">留言板</a></li>
+			</ul></div></span>
+		  </li>
+		  <li><div>管理中心</div><div>
+			<ul>
+			   <li><a href="#">積分管理</a></li>
+			   <li><a href="#">P點購買、消費查詢</a></li>
+			   <li><a href="#">會員資料</a></li>
+			</ul></div>
+		  </li>
+		  <li><div>系統</div><div>
+		    <ul>
+			   <li><a href="#">回報問題</a></li>
+			   <li><a href="#">回報記錄</a></li>
+			</ul></div>
+		  </li>
+		</ul>
+		<a href="#"><div class="btn_new">登出</div></a>
+	  </div>
+	  <div id="login_menu2">
+		<ul>
+		  <li><a href="#">
+		      <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/44/picture$f673.jpg"></div>
+		      <div class="notifier_info"><span>李登輝邀請您共用作品!立即進入?</span><span>5小時之前</span></div></a></li>
+		  <li><a href="#">
+		      <div class="notifier_img_w"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/3874/cover$f078.jpg"></div>
+			  <div class="notifier_info"><span>Kevin發佈了新作品[ABCDE]</span><span>8小時之前</span></div></a></li>
+		  <li><a href="#">
+		      <div class="notifier_img_w"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/61/cover$e1cb.jpg"></div>
+			  <div class="notifier_info"><span>周潤發發佈了新作品[賭神Beta]</span><span>27年前</span></div></a></li>
+		</ul>
+		<a href="#"><div class="btn_new">更多</div></a>
+	  </div>
+	  <!-- //20181005: 新加入區塊結束 -->
   </div>
   <!-- 表頭區塊結束 -->
   <!-- BANNER輪播區塊開始 -->
   <div id="bannner">
     <div id="banner_carousel" >
 	    <div class="banner_carousel1 owl-carousel">
-	 		<a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1"><img alt="輕鬆起動創作募資計劃" class="lazyOwl" data-src="20180913-首頁BANNER_PC(1920X540).jpg" src="images/20180913-首頁BANNER_PC(1920X540).jpg" /></a>
+	 		<a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1"><img alt="輕鬆起動創作募資計劃" class="lazyOwl" data-src="20180913-首頁BANNER_PC(1920X540).jpg" src="20180913-首頁BANNER_PC(1920X540).jpg" /></a>
 			<a href="https://www.pinpinbox.com/buzhisuoyun"><img alt="本月主打星" class="lazyOwl" data-src="20180913-首頁BANNER2_PC(1920X540).jpg" src="20180913-首頁BANNER2_PC(1920X540).jpg" /> </a>
 			<a href="https://www.pinpinbox.com/pinpinbox" target="_blank"><img alt="近期活動" class="lazyOwl" data-src="20180913-首頁BANNER3_PC(1920X540).jpg"  src="20180913-首頁BANNER3_PC(1920X540).jpg"  /></a>
 		</div> 
@@ -527,15 +578,31 @@ $(document).ready(function() {
 		$("html,body").animate({scrollTop:0},900);
 		return false;
 	});
+
+
   //PC版選單切換
   $('a#login').click(function() {
     $('#login_menu').toggleClass("login_menu_down");
 	$('.search_menu').removeClass("search_menu_down");
+	//20181005: 新加入區塊開始
+	$('#login_menu2').removeClass("login_menu_down");
+	//20181005: 新加入區塊結束
   });
+  //20181005: 新加入區塊開始
+  $('a#notifier').click(function() {
+    $('#login_menu2').toggleClass("login_menu_down");
+	$('#login_menu').removeClass("login_menu_down");
+	$('.search_menu').removeClass("search_menu_down");
+  });
+  //20181005: 新加入區塊結束
+  
   //搜尋選單切換
   $('.search_btn').click(function() {
     $('.search_menu').toggleClass("search_menu_down");
 	$('#login_menu').removeClass("login_menu_down");
+	//20181005: 新加入區塊開始
+	$('#login_menu2').removeClass("login_menu_down");
+	//20181005: 新加入區塊結束
   });
   //MOBILE版搜尋切換
   $('.mobile_menu i:nth-child(1)').click(function() {
@@ -544,7 +611,7 @@ $(document).ready(function() {
   });
   //MOBILE版搜尋關閉
   $('.header_search_close').click(function(evt) {
-    // closemenu(evt);
+    closemenu(evt);
     $('#mobile_search').removeClass("search_box_open");
 	$('#header_top').removeClass("header_top_close");
 	$('.search_menu').removeClass("search_menu_down");
@@ -552,10 +619,18 @@ $(document).ready(function() {
   });
   
   //MOBILE版選單切換
-  $('.mobile_menu i:nth-child(2)').click(function() {
-    $('#login_menu2').toggleClass("login_menu_down");
-	
+  //20181005: 新加入與修改區塊開始
+  $('#notifier_m').click(function() {
+    $('#login_menu2').toggleClass("login_menu_down");	
   });
+  //20181005: 新加入與修改區塊結束
+  //20181005: 新加入區塊開始
+  $('#login_m').click(function() {
+    $('#login_menu').toggleClass("login_menu_down");
+  });
+  //20181005: 新加入區塊結束
+  
+  
   //當WIDNWOS RESIZE時, 關閉選單
   $( window ).resize(function(evt) {
       closemenu(evt);
@@ -580,16 +655,19 @@ $(document).ready(function() {
 });
 //關閉選有選單
 function closemenu(evt){
-    if($(evt.target).parents("#login").length==0 && $(evt.target).parents("#login_menu").length==0 && $("#login_menu").hasClass( "login_menu_down" )){
+    //20181005: 修改區塊開始
+	if($(evt.target).parents("#login").length==0 && $(evt.target).parents("#login_menu").length==0 && event.target.id != "login_menu"
+	  && event.target.id != "login_m" && $("#login_menu").hasClass( "login_menu_down" )){
 	   $('#login_menu').removeClass("login_menu_down");
 	}
-	if($(evt.target).parents(".mobile_img").length==0 && $(evt.target).parents("#login_menu2").length==0 && $("#login_menu2").hasClass( "login_menu_down" )){
-	   $('#login_menu2').removeClass("login_menu_down");
+	if(event.target.id != "notifier" && $(evt.target).parents("#notifier").length==0 && event.target.id != "login_menu2"  
+	  && $(evt.target).parents("#login_menu2").length==0 && event.target.id != "notifier_m" && $("#login_menu2").hasClass( "login_menu_down" )){
+	    $('#login_menu2').removeClass("login_menu_down");
 	}
-	
 	if($(evt.target).parents(".search_btn").length==0 && $(evt.target).parents(".search_menu").length==0 && $(".search_menu").hasClass( "search_menu_down" )){
 	   $('.search_menu').removeClass("search_menu_down");
 	}
+	//20181005: 修改區塊結束
 }
 
 //輪播跳頁

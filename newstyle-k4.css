@@ -34,6 +34,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* menu */
 /* width */
 /* screen */
+/* btn */
 /*
 @import "extend";
 @import "mixin";
@@ -55,7 +56,7 @@ img { width: 100%; height: auto; }
 .align_center { text-align: center; }
 
 /* 表頭設定 */
-#header { position: fixed; top: 0px; z-index: 999; width: 100%; text-align: center; height: 64px; line-height: 64px; background: #ffffff; border-bottom: 1px solid #e8e8e8; /* 手機搜尋區塊開始 */ /* 手機搜尋區塊結束 */ /* 電腦版搜尋區塊開始 */ /* 電腦版搜尋區塊結束 */ }
+#header { position: fixed; top: 0px; z-index: 999; width: 100%; text-align: center; height: 64px; line-height: 64px; background: #ffffff; border-bottom: 1px solid #e8e8e8; /* 手機搜尋區塊開始 */ /* 手機搜尋區塊結束 */ /* 電腦版搜尋區塊開始 */ /* 電腦版搜尋區塊結束 */ /* 通知選單開始 */ /* 登入選單樣式 */ /* 通知選單樣式  */ /* 通知選單結束 */ }
 @media (max-width: 800px) { #header { height: 44px; line-height: 44px; } }
 #header #mobile_search { display: none; height: 44px; line-height: 44px; }
 #header #mobile_search > div { display: inline-block; }
@@ -86,7 +87,9 @@ img { width: 100%; height: auto; }
 #header #mobile_search .header_search .search-menu a { font-size: 16px; font-weight: 500; }
 #header #mobile_search .header_search_close { float: right; font-size: 20px; }
 @media (max-width: 360px) { #header #mobile_search .header_search_close { margin-right: 5%; } }
-#header #header_top { position: relative; width: 92%; height: 44px; line-height: 44px; display: inline-block; font-weight: 500; text-align: right; }
+#header #header_top { position: relative; width: 92%; height: 44px; line-height: 44px; display: inline-block; font-weight: 500; text-align: right; 	/*
+	.login_menu_cat{ font-size: $font_size3; font-weight: $font_weight; //background: #e8e8e8; border-bottom: 2px solid $grey_color; }
+	*/ }
 @media (max-width: 1200px) { #header #header_top { width: 94%; } }
 @media (max-width: 1024px) { #header #header_top { width: 96%; } }
 @media (max-width: 800px) { #header #header_top { height: 44px; line-height: 44px; text-align: right; width: 100%; } }
@@ -117,20 +120,42 @@ img { width: 100%; height: auto; }
 @media (max-width: 1024px) { #header #header_top .header_menu a { margin-left: 10px; } }
 #header #header_top .header_menu #login { overflow: hidden; }
 #header #header_top .header_menu #login img { width: 42px; height: 42px; border-radius: 100px; }
-#header #header_top .header_menu #login_menu { display: none; width: 100%; height: 70vh; background: #ffffff; border: 1px solid #bbbbbb; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; text-align: center; letter-spacing: 2px; margin-top: -2px; }
-#header #header_top .header_menu #login_menu.login_menu_down { display: block; overflow-y: auto; position: absolute; margin-top: 8px; }
-#header #header_top .header_menu #login_menu ul li a { margin-left: 0; }
 #header #header_top .mobile_menu { float: none; display: none; text-align: right; margin-right: 2.8%; }
 @media (max-width: 800px) { #header #header_top .mobile_menu { display: inline-block; height: 44px; line-height: 44px; } }
 #header #header_top .mobile_menu i { margin-left: 16px; font-size: 20px; line-height: 44px; }
-#header #header_top #login_menu2 { display: none; font-size: 18px; padding: 2% 5%; width: 100%; height: 98vh; background: #ffffff; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; line-height: 42px; text-align: center; border: 1px solid #bbbbbb; margin-top: -48px; }
-#header #header_top #login_menu2.login_menu_down { display: block; overflow-y: auto; }
-#header #header_top #login_menu2 ul { margin-top: 22px; margin-bottom: 22px; }
-#header #header_top .sign_out { color: #4d4d4d; font-size: 18px; line-height: 48px; background: #d4d4d4; font-weight: 500; }
-#header #header_top .login_menu_cat { font-size: 18px; font-weight: 500; border-bottom: 2px solid #4d4d4d; }
+#header #login_menu { display: none; position: absolute; right: 0; width: 360px; background: #ffffff; border: 1px solid #d4d4d4; padding: 32px; height: 70vh; font-size: 18px; letter-spacing: 1.5px; }
+@media (max-width: 800px) { #header #login_menu { width: 100%; height: 100vh; } }
+#header #login_menu ul { width: 100%; }
+#header #login_menu ul li { text-align: left; border-bottom: 1px solid #d4d4d4; margin-bottom: 32px; }
+#header #login_menu ul li a { margin-left: 0; }
+#header #login_menu ul li > div { display: inline-block; width: 50%; }
+#header #login_menu ul li > div:first-child { vertical-align: top; }
+#header #login_menu ul li > div:last-child { font-weight: 500; }
+#header #login_menu ul li ul li { border-bottom: 0; margin-bottom: 0; }
+#header #login_menu ul li ul li:last-child { margin-bottom: 16px; }
+#header #login_menu ul li:last-child { border-bottom: 0; }
+#header #login_menu ul li:last-child ul li { margin-bottom: 0; }
+#header #login_menu.login_menu_down { display: block; position: absolute; right: 0; overflow-y: auto; }
+@media (max-width: 800px) { #header #login_menu.login_menu_down { margin-top: -1px; } }
+#header #login_menu2 { display: none; position: absolute; right: 0; width: 360px; background: #ffffff; border: 1px solid #d4d4d4; padding: 32px; text-align: left; letter-spacing: 1.5px; }
+@media (max-width: 800px) { #header #login_menu2 { width: 100%; } }
+#header #login_menu2 ul li { border-bottom: 1px solid #d4d4d4; margin-bottom: 16px; }
+#header #login_menu2 ul li a > div { display: inline-block; }
+#header #login_menu2 ul li a > div:nth-child(2) { margin-left: 16px; }
+#header #login_menu2 ul li a a { margin-left: 0; }
+#header #login_menu2 ul li a img { object-fit: cover; width: 100%; height: 100%; }
+#header #login_menu2 ul li a div:last-child span { display: block; line-height: 25px; }
+#header #login_menu2 ul li a div:last-child span:first-child { overflow: hidden; width: 220px; white-space: nowrap; text-overflow: ellipsis; }
+#header #login_menu2 ul li a div:last-child span:last-child { color: #d4d4d4; }
+#header #login_menu2 ul li:last-child { border-bottom: 0; }
+#header #login_menu2.login_menu_down { display: block; overflow-y: auto; position: absolute; }
+@media (max-width: 800px) { #header #login_menu2.login_menu_down { margin-top: -1px; } }
+#header #login_menu2 .notifier_img_c, #header #login_menu2 .notifier_img_w { overflow: hidden; width: 48px; height: 48px; }
+#header #login_menu2 .notifier_img_c { -moz-border-radius: 100%; -webkit-border-radius: 100%; border-radius: 100%; }
+#header #login_menu2 .notifier_img_w { -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
 
 /* 搜尋選單開始 */
-.search_menu { display: none; background: #ffffff; border: 1px solid #bbbbbb; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; text-align: center; letter-spacing: 2px; width: 118%; }
+.search_menu { display: none; background: #ffffff; border: 1px solid #d4d4d4; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; text-align: center; letter-spacing: 2px; width: 118%; }
 @media (max-width: 800px) { .search_menu { width: 120%; } }
 @media (max-width: 400px) { .search_menu { width: 110%; } }
 
@@ -177,6 +202,9 @@ img { width: 100%; height: auto; }
 .notifier_icon:before { content: ' '; }
 
 .notifier_icon { display: inline-block; margin-top: -24px; margin-left: 4px; width: 12px; height: 12px; background: #ee5b8d; -moz-border-radius: 100%; -webkit-border-radius: 100%; border-radius: 100%; vertical-align: middle; }
+
+.btn_new { display: block; width: 100%; font-size: 16px; height: 40px; line-height: 40px; text-align: center; background: #f2f2f2; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+@media (max-width: 800px) { .btn_new { font-size: 14px; height: 32px; line-height: 32px; } }
 
 /* 首頁區塊開始 */
 /* 輪播設定開始 */
