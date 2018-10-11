@@ -237,13 +237,15 @@ img { width: 100%; height: auto; }
 @media (max-width: 400px) { #bannner #banner_catbtn { font-size: 12px; } }
 #bannner #banner_catbtn > div { position: relative; display: block; line-height: 58px; color: #ffffff; text-align: left; cursor: pointer; overflow: hidden; letter-spacing: 4px; margin-bottom: 10%; text-shadow: #9d9d9d 0px 0px 5px; padding-left: 160px; }
 @media (max-width: 1200px) { #bannner #banner_catbtn > div { margin-bottom: 8%; padding-left: 100px; } }
-@media (max-width: 1024px) { #bannner #banner_catbtn > div { display: inline-block; width: auto; margin: 2% 1%; color: #4d4d4d; padding-left: 0; text-shadow: none; line-height: 48px; text-align: center; } }
+@media (max-width: 1024px) { #bannner #banner_catbtn > div { display: inline-block; width: auto; margin: 2% 1%; color: #d4d4d4; padding-left: 0; text-shadow: none; line-height: 48px; text-align: center; } }
 @media (max-width: 500px) { #bannner #banner_catbtn > div { width: auto; margin: 2% 1%; } }
 #bannner #banner_catbtn > div:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
 
 .carousel_btn_on { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; background: url(btn_arrow.svg) no-repeat center left; }
 @media (max-width: 1200px) { .carousel_btn_on { background-position: center left; background-repeat: no-repeat; background-size: 30% 10%; } }
-@media (max-width: 1024px) { .carousel_btn_on { background: none; border-top: 2px solid #4d4d4d; } }
+@media (max-width: 1024px) { .carousel_btn_on { background: none; border-top: 2px solid #4d4d4d; 
+color: #4d4d4d !important;
+} }
 
 .carousel_btn_off { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; border-image: none; }
 
@@ -278,7 +280,7 @@ img { width: 100%; height: auto; }
 @media (max-width: 500px) { #content .main_content { width: 100%; } }
 #content .main_content ul li { display: inline-block; padding: 0; font-size: 24px; margin: 64px 32px 32px 16px; letter-spacing: 4px; font-weight: 500; }
 #content .main_content .nav > li > a:focus { background: none !important; }
-#content .main_content .nav { margin-left: 0.5%; }
+#content .main_content .nav { margin-left: 0.6%; }
 #content .main_content .nav > li > a:hover { background: none !important; }
 #content .main_content .nav-pills > li a { padding: 10px 7px; }
 #content .main_content .nav-pills > li > a { color: #d4d4d4 !important; }
@@ -290,7 +292,12 @@ img { width: 100%; height: auto; }
 @media (max-width: 500px) { #content .main_content .tab-container .tab_content { text-align: center; } }
 #content .main_content .tab-container .tab_content .tab { display: none; text-align: center; }
 #content .main_content .tab-container .tab_content .tab.active { display: block; }
-#content .main_content .tab-container .hit_story { display: inline-block; height: 100%; width: 28.5%; margin: -1% 2% 1% 2%; overflow: hidden; font-size: 14px; line-height: 25px; text-align: justify; }
+#content .main_content .tab-container .hit_story { display: inline-block; height: 100%; //width: 28.5%;
+		//width: 29.6%;
+		width: 29.9%;
+		//margin: -1% 2% 1% 2%;
+		//margin: -1% 0.4% 2% 3%;
+		margin: -1% 0.1% 2% 3%; overflow: hidden; font-size: 14px; line-height: 25px; text-align: justify; }
 @media (max-width: 1024px) { #content .main_content .tab-container .hit_story { width: 28%; } }
 @media (max-width: 800px) { #content .main_content .tab-container .hit_story { margin: 2%; width: 45%; } }
 @media (max-width: 500px) { #content .main_content .tab-container .hit_story { margin: 0 2% 2% 2%; width: 100%; margin-left: 0; } }
