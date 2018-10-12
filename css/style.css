@@ -350,7 +350,7 @@ img { width: 100%; height: auto; }
 #content .nav-pills > .active > a, #content .nav-pills > .active > a:hover { color: #00acc1 !important; }
 #content .new_star { width: 29%; margin: 0 2%; display: inline-block; letter-spacing: 1.5px; }
 @media (max-width: 1024px) { #content .new_star { margin: 2% 1.5%; } }
-@media (max-width: 800px) { #content .new_star { width: 41.5%; margin: 2% 4%; } }
+@media (max-width: 800px) { #content .new_star { width: 40%; margin: 2% 4%; } }
 @media (max-width: 500px) { #content .new_star { width: 100%; display: block; margin: 4% auto; } }
 @media (max-width: 800px) { #content .new_star:not(:nth-child(-n+2)) { display: none; } }
 #content .new_star div { margin: 0 auto; margin-bottom: 7.2%; }
