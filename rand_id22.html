@@ -735,9 +735,6 @@ function likes(id) {
 	});
 }
 
-
-
-
 function recommendedBuyAlbum() {
 	var myConfirm = new jBox('Confirm', {
 		id : 'JboxRecommendedBuyAlbum',
@@ -1449,7 +1446,6 @@ function browseKit_album(url, param) {
 			
 			if (r.result == 1) {
 				for (var k0 in r.data.readable) {
-
 					subHtml = '';
 
 					if (r.data.readable[k0]['name']) subHtml += '<h4>' + r.data.readable[k0]['name'] + '</h4>';
@@ -1560,7 +1556,6 @@ function browseKit_album(url, param) {
 }
 
 function browseKit_v2(that, item, param) {
-
 	a_album_element.push(that);
 	var	indexId = ($('#mask02').data('indexId')) ? $('#mask02').data('indexId') : 0,
 		$lg = $(that).lightGallery({
@@ -1590,12 +1585,14 @@ function browseKit_v2(that, item, param) {
     			audioPlayer[0].play(); 
     		}, 700); 
     	}
+		
 		//加入抽獎影片圖示
 		$(".lg-thumb-item").css('position','relative');
 		for(i=0;i<item.length;i++){
 		    $(".lg-thumb-item:nth-child("+(i+1)+")").append(item[i].slotHtml);
 			$(".lg-thumb-item:nth-child("+(i+1)+")").append(item[i].videoHtml);
 		}
+		
 		
 	}).on('onAfterSlide.lg',function(e, p, i){
 	    $lg.data('lightGallery').modules.audio.build();
@@ -1625,21 +1622,6 @@ function browseKit_v2(that, item, param) {
 				audioPlayer.removeAttr('autoplay');
 			}
 		}, false);
-		
-		if(item[i].slotHtml!=null && item[i].slotHtml != ''){
-		  var slotConfirm = new jBox('Modal',{closeButton: 'title',delayOpen: 500});
-		  var slotContent = '',slotTitle='';
-		  //slotTitle += '<p class="keypoint" style="font-size:2em;text-align:center;margin-left:60px;line-height:1.2em;">下載 App 即可抽獎！</p>'
-		  slotTitle += '<p class="keypoint" style="font-size:2em;text-align:center;line-height:1.2em;">下載 App 即可抽獎！</p>'
-		  //slotContent += '<div class="content" >';
-		  slotContent += '<a href="https://itunes.apple.com/tw/app/pinpinbox/id1057840696?l=en&mt=8" target="_blank" alt="iOS點我！" title="iOS點我！" style="padding:3px;"><img src="ios.png" style="width:200px;height:auto;"></a>';
-		  slotContent += '<a href="https://play.google.com/store/apps/details?id=com.pinpinbox.android&hl=zh_TW" target="_blank" alt="android點我！" title="android點我！" style="padding:3px;"><img src="android.png" style="width:200px;height:auto;"></a>';
-		  //slotContent += '</div>';
-          slotConfirm.setTitle(slotTitle).setContent(slotContent).open();
-		}
-		  $('.jBox-title').css('padding-right','20px');
-		  $('.jBox-content').css('text-align','center');
-		  $('.jBox-overlay').css('background-color','rgba(255,255,255,0.3)');
 		
 		if($('#JboxRecommendedBuyAlbum').length) RecommendedBuyAlbum.destroy();
 
