@@ -1,511 +1,696 @@
 <!doctype html>
 <html lang="zh">
 <head>
-    <link rel="icon" type="image/vnd.microsoft.icon" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/favicon.ico"/>
-    <link rel="manifest" href="https://www.pinpinbox.com/manifest.json">
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
-	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap.min.css" rel="stylesheet" />
-	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/font-awesome/css/font-awesome.css" rel="stylesheet" />
-	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" />
-	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" />
-	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" />
-    <link type="text/css" href="newstyle-k3.css" rel="stylesheet" />
+  <link rel="icon" type="image/vnd.microsoft.icon" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/favicon.ico"/>
+  <link rel="manifest" href="https://www.pinpinbox.com/manifest.json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+  <meta name="keywords" content="pinpinbox,職人,贊助發佈平台,釘釘吧,微出版,創作分享,拼拼,經濟共享,販售作品,潛能盒子,釘釘,漫畫,旅遊,美食,原創,影片,直播,投稿活動,贊助,pinpin,金馬獎,新藝城,黃百鳴,泰迪羅賓,內容賺錢,麥若愚,眭澔平,創作人,寵物,抽獎,電影,內容贊助,贊助,打賞,掃描QR">
+  <meta name="description" content="pinpinbox-釘釘吧 是⼀個全新型態的創作⼈/斜扛青年之自媒體數位平台，只要將任何創作內容發表在 pinpinbox 作為「發佈⼯具」，可同步分享在社群媒體上，就能讓粉絲閱看，進⼀步對內容贊助支持，無形中亦替你的創作品增加了實質價值。 有別於⼀般社群媒體，在 pinpinbox 可以⾃自由整合「圖片、影片、音樂 (或錄音)、 文字、PDF」成⼀一本翻頁瀏覽的作品，因此十分適合作為「延伸內容」，例如: 在社群媒體放上Vlog，在 pinpinbox 則可嵌入影片，並新增圖解照片、⾏程表等。 若再「關閉預覽」部分內容，即可設定為VIP進階內容，也就是粉絲需要贊助或收藏作品後才可閱看完整作品，例如:私房景點推薦。">
+  <meta name="msvalidate.01" content="851F62F6F1B71365ECE1EFE9C1D56C73"/>
+  <meta name="apple-itunes-app" content="app-id=1057840696">
+  <meta property="og:url" content="www.pinpinbox.com/index/index">
+  <meta property="og:title" content="pinpinbox釘釘吧-內容創作人發佈平台">
+  <meta property="og:description" content="pinpinbox-釘釘吧 是⼀個全新型態的創作⼈/斜扛青年之自媒體數位平台，只要將任何創作內容發表在 pinpinbox 作為「發佈⼯具」，可同步分享在社群媒體上，就能讓粉絲閱看，進⼀步對內容贊助支持，無形中亦替你的創作品增加了實質價值。 有別於⼀般社群媒體，在 pinpinbox 可以⾃自由整合「圖片、影片、音樂 (或錄音)、 文字、PDF」成⼀一本翻頁瀏覽的作品，因此十分適合作為「延伸內容」，例如: 在社群媒體放上Vlog，在 pinpinbox 則可嵌入影片，並新增圖解照片、⾏程表等。 若再「關閉預覽」部分內容，即可設定為VIP進階內容，也就是粉絲需要贊助或收藏作品後才可閱看完整作品，例如:私房景點推薦。">
+  <meta property="og:image" content="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/kanban.png">
+  <title>pinpinbox釘釘吧-內容創作人發佈平台</title>
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" />
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" />
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" />
+  <link type="text/css" href="./css/style.css" rel="stylesheet" />
 </head>
 <body>
+<div id="main">
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/js/owl.carousel.min.js"></script>
-  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/waypoint/js/waypoint.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.zh-TW.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/browser-deeplink-master/browser-deeplink.min.js"></script>
+  </script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-cookie-master/src/jquery.cookie.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/Bootstrap-3-Typeahead-master/bootstrap3-typeahead-modify.min.js"></script>
   <!-- 表頭區塊開始 -->
   <div id="header">
-  <!-- 手機版搜尋區塊開始 -->
+    <!-- 手機版搜尋區塊開始 -->
     <div id="mobile_search">
-	  <div class="header_search">
-		  <div class="header_search_box">
-			  <i class="fa fa-search"></i>
-			  <input type="text" class="search_text" name="searchkey" placeholder="">
-			  <div class="search_btn"><span id="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
-			   <div class="search_menu">
-				      <ul>
-					    <li><a href="javascript:void(0)" data-searchtype="user">創作人</a></li>
-					    <li><a href="javascript:void(0)" data-searchtype="album">作品</a></li>
-				      </ul>
-				  </div>
-			  </div>
-		  </div>
-		</div>
-	  <div class="header_search_close"><i class="fa fa-times"></i></div>
+      <div class="header_search">
+	    <div class="header_search_box">
+		  <a href="javascript:void(0);" onclick="_search('mobile')"><i class="fa fa-search"></i></a>
+		  <input type="text" class="search_text" name="searchkey" id="mobile_searchkey" data-searchtype="user" data-device="mobile" autocomplete="off">
+		  <div class="search_btn"><span id="search_type" data-searchtype="user">創作人</span><i class="fa fa-caret-down"></i>
+		    <div class="search_menu">
+		      <ul>
+			    <li><a href="javascript:void(0)" class="searchtype" data-searchtype="user" data-device="mobile">創作人</a></li>
+			    <li><a href="javascript:void(0)" class="searchtype" data-searchtype="album" data-device="mobile">作品</a></li>
+		      </ul>
+		    </div>
+	      </div>
+	    </div>
+      </div>
+      <div class="header_search_close"><i class="fa fa-times"></i></div>
 	</div>
+	<!-- 手機版搜尋區塊結束 -->
 	<!-- 電腦版搜尋區塊開始 -->
-	  <div id="header_top">
-		<div class="header_logo"><a href="https://www.pinpinbox.com/">pinpinbox釘釘吧</a></div>
-		<div class="header_search">
-		  <div class="header_search_box">
-			  <i class="fa fa-search"></i>
-			  <input type="text" class="search_text" name="searchkey" placeholder="">
-			  <div class="search_btn"><span id="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
-			   <div class="search_menu">
-				      <ul>
-					    <li><a href="javascript:void(0)" data-searchtype="user">創作人</a></li>
-					    <li><a href="javascript:void(0)" data-searchtype="album">作品</a></li>
-				      </ul>
-				  </div>
-			  </div>
-		  </div>
-		</div>
-		<div class="pin_creator"><a href="https://www.pinpinbox.com/index/user/point/">如何支持創作人？</a></div>
-		<!-- 電腦版選單開始 -->
-		<div class="header_menu"><a href="#">建立作品</a><a href="#">通知</a>
-		  <a href="#" id="login"><!--登入--><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/picture$2d70.jpg"></a>
-		  <div id="login_menu">
-		    <ul>
-				  <li><span class="login_menu_cat">我的專區</span>
-					<ul>
-					  <li><a href="#">關於我</a></li>
-					  <li><a href="#">我的作品</a></li>
-					  <li><a href="#">我的收藏</a></li>
-					  <li><a href="#">共用協作</a></li>
-					  <li><a href="#">留言板</a></li>
-					</ul>
-				  </li>
-				  <li><span class="login_menu_cat">管理中心</span>
-					<ul>
-					   <li><a href="#">積分管理</a></li>
-					   <li><a href="#">P點購買、消費查詢</a></li>
-					   <li><a href="#">會員資料</a></li>
-					</ul>
-				  </li>
-				  <li><span class="login_menu_cat">系統</span>
-				    <ul>
-					   <li><a href="#">回報問題</a></li>
-					   <li><a href="#">回報記錄</a></li>
-					</ul>
-				  </li>
-				  <li class="sign_out"><a href="#">登出</a></li>
-				</ul>
-		  </div>
-		</div>
-		<!-- 電腦版選單開始 -->
-		<!-- 手機版選單開始 -->
-		<div class="mobile_menu">
-		  <div class="mobile_img"><i class="fa fa-search"></i><i class="fa fa-bars"></i></div>
-		</div>
-		<div id="login_menu2">
+	<div id="header_top">
+	  <div class="header_logo"><a href="https://www.pinpinbox.com/">pinpinbox釘釘吧</a></div>
+	  <div class="header_search">
+		<div class="header_search_box">
+		  <a href="javascript:void(0);" onclick="_search('desktop')"><i class="fa fa-search"></i></a>
+		  <input type="text" class="search_text" name="searchkey" id="desktop_searchkey" data-searchtype="user" data-device="desktop" autocomplete="off">
+		  <div class="search_btn"><span id="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
+			<div class="search_menu">
 			  <ul>
-				  <li><span class="login_menu_cat">我的專區</span>
-					<ul>
-					  <li><a href="#">關於我</a></li>
-					  <li><a href="#">我的作品</a></li>
-					  <li><a href="#">我的收藏</a></li>
-					  <li><a href="#">共用協作</a></li>
-					  <li><a href="#">留言板</a></li>
-					</ul>
-				  </li>
-				  <li><span class="login_menu_cat">管理中心</span>
-					<ul>
-					   <li><a href="#">積分管理</a></li>
-					   <li><a href="#">P點購買、消費查詢</a></li>
-					   <li><a href="#">會員資料</a></li>
-					</ul>
-				  </li>
-				  <li><span class="login_menu_cat">系統</span>
-				    <ul>
-					   <li><a href="#">回報問題</a></li>
-					   <li><a href="#">回報記錄</a></li>
-					</ul>
-				  </li>
-				  <li class="sign_out"><a href="#">登出</a></li>
-				</ul>
-		  </div>
-		  <!-- 手機版選單結束 -->
+				<li><a href="javascript:void(0)" class="searchtype" data-searchtype="user" data-device="desktop">創作人</a></li>
+                <li><a href="javascript:void(0)" class="searchtype" data-searchtype="album" data-device="desktop">作品</a></li>
+              </ul>
+			</div>
+	      </div>
+		</div>
 	  </div>
+	  <div class="pin_creator"><a href="https://www.pinpinbox.com/index/user/point/">立即購買Ｐ點贊助</a></div>
+	  <!-- 電腦版選單開始 -->
+	  <div class="header_menu">
+		<a href="javascript:void(0);" onclick="createAlbum();">建立作品</a>
+        <a href="javascript:void(0);" id="notifier">通知<span class="notifier_icon"></span></a>
+		<!--<a href="https://www.pinpinbox.com/index/user/login/">登入 | 註冊</a>-->
+		<a href="javascript:void(0);" id="login"><img onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'" src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg"></a>
+
+	  </div>
+	  <!-- 電腦版選單結束 -->
+	  <!-- 手機版選單開始 -->
+	  <div class="mobile_menu">
+		<div class="mobile_img">
+		  <i class="fa fa-search"></i>
+		  <i id="notifier_m" class="fa fa-bell"></i>
+		  <i id="login_m" class="fa fa-bars" ></i>
+		</div>
+	  </div>
+	  <!-- 手機版選單結束 -->
+	</div>
+	<!-- 電腦版搜尋區塊結束 -->
+	<div id="login_menu">
+	  <ul>
+	    <!--
+		<li>
+		  <div>Hi, 訪客</div>
+		    <div>
+			  <ul>
+		        <li><a href="https://www.pinpinbox.com/index/user/login/">登入</a></li>
+                <li><a href="https://www.pinpinbox.com/index/user/register/">註冊</a></li>
+		      </ul>
+			</div>
+		</li>
+		-->
+		<li>
+		  <div>babel</div>
+          <div>
+		    <ul>
+              <li><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4581&rank_id=1">關於我</a></li>
+              <li><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4581&rank_id=2">我的作品</a></li>
+              <li><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4581&rank_id=3">我的收藏</a></li>
+              <li><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4581&rank_id=4">群組作品</a></li>
+              <li><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4581&rank_id=5">留言板</a></li>
+            </ul>
+		  </div>
+		</li>
+		<li>
+		  <div>管理中心</div>
+		  <div>
+		    <ul>
+              <li><a href="https://www.pinpinbox.com/index/user/sale_album/">積分管理</a></li>
+              <li><a href="https://www.pinpinbox.com/index/user/point/">P點購買</a></li>
+              <li><a href="https://www.pinpinbox.com/index/user/settings/">會員資料</a></li>
+            </ul>
+		  </div>
+		</li>
+		<li>
+		  <div>系統</div>
+		  <div>
+		    <ul>
+              <li><a href="https://www.pinpinbox.com/index/user/question/">回報問題</a></li>
+              <li><a href="https://www.pinpinbox.com/index/user/question_record/">回報紀錄</a></li>
+            </ul>
+		  </div>
+		</li>
+	  </ul>
+	  <a href="https://www.pinpinbox.com/index/user/logout/"><div class="btn_new">登出</div></a>
+	</div>
+	<div id="notifier_menu">
+	  <ul class="noticeWarpper">
+	    <li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14822&amp;categoryarea_id=1">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>眭澔平發布了新作品!</span>
+              <span><time datetime="2018-10-17 11:54:13" class="timeago">2天之前</time></span>
+            </div>
+          </a>
+        </li>
+		<li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14777&amp;categoryarea_id=1">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>眭澔平發布了新作品!</span>
+              <span><time datetime="2018-10-03 11:51:39" class="timeago">16天之前</time></span>
+            </div>
+          </a>
+        </li>
+		<li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14527&amp;categoryarea_id=3">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>48號肥宅釘了[小巷浪浪貓] 一下!</span>
+              <span><time datetime="2018-09-28 17:51:30" class="timeago">21天之前</time></span>
+            </div>
+          </a>
+        </li>
+		<li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14527&amp;categoryarea_id=3">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>擅長變胖的60釘了[小巷浪浪貓] 一下!</span>
+              <span><time datetime="2018-09-27 23:04:15" class="timeago">22天之前</time></span>
+            </div>
+          </a>
+        </li>
+		<li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14769&amp;categoryarea_id=1">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>眭澔平發布了新作品!</span>
+              <span><time datetime="2018-09-26 12:01:46" class="timeago">23天之前</time></span>
+            </div>
+          </a>
+        </li>
+		<li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14674&amp;categoryarea_id=1">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>眭澔平發布了新作品!</span>
+              <span><time datetime="2018-09-19 11:53:36" class="timeago">大約1個月之前</time></span>
+            </div>
+          </a>
+        </li>
+	  </ul>
+	  <a href="https://www.pinpinbox.com/index/notifications/"><div class="btn_new">更多</div></a>
+    </div>
   </div>
   <!-- 表頭區塊結束 -->
   <!-- BANNER輪播區塊開始 -->
   <div id="bannner">
     <div id="banner_carousel" >
-	    <div class="banner_carousel1 owl-carousel">
-	 		<a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1"><img alt="輕鬆起動創作募資計劃" class="lazyOwl" data-src="20180913-首頁BANNER_PC(1920X540).jpg" src="20180913-首頁BANNER_PC(1920X540).jpg" /></a>
-			<a href="https://www.pinpinbox.com/buzhisuoyun"><img alt="本月主打星" class="lazyOwl" data-src="20180913-首頁BANNER2_PC(1920X540).jpg" src="20180913-首頁BANNER2_PC(1920X540).jpg" /> </a>
-			<a href="https://www.pinpinbox.com/pinpinbox" target="_blank"><img alt="近期活動" class="lazyOwl" data-src="20180913-首頁BANNER3_PC(1920X540).jpg"  src="20180913-首頁BANNER3_PC(1920X540).jpg"  /></a>
-		</div> 
+	  <div class="banner_carousel1 owl-carousel">
+		<a href="https://www.pinpinbox.com/index/album/content/?album_id=14632&categoryarea_id=1" target="_self"><img alt="光棍節活動BANNER" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181019/5bc9784a772f1.gif" src="https://cdn.pinpinbox.com/upload/admin/ad/20181019/5bc9784a772f1.gif" /></a>
+		<a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" target="_self"><img alt="" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf22ef155fa.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf22ef155fa.jpg" /></a>
+		<a href="https://www.pinpinbox.com/index/creative/content/?user_id=4039" target="_self"><img alt="" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf2581d4816.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf2581d4816.jpg" /></a>
+		<a href="https://www.pinpinbox.com/index/creative/content/?user_id=4581" target="_self"><img alt="" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf26ab857d4.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf26ab857d4.jpg" /></a>
+	  </div> 
 	</div>
 	<div id="banner_catbtn">
-	  <div class="banner_catbtn1" onclick="carouselto(0);"><span>釘上你的創作計劃</span></div>
-	  <div class="banner_catbtn2" onclick="carouselto(1);"><span>強打的創作人</span></div>
-	  <div class="banner_catbtn3" onclick="carouselto(2);"><span>創作募集活動</span></div>
+      <div class="banner_catbtn1" onclick="carouselto(0);"><span>單身貴族海上假期</span></div>
+	  <div class="banner_catbtn2" onclick="carouselto(1);"><span>釘上你的創作計劃</span></div>
+	  <div class="banner_catbtn3" onclick="carouselto(2);"><span>創作人主打 Miss Pink</span></div>
+	  <div class="banner_catbtn4" onclick="carouselto(3);"><span>創作人主打 Babel</span></div>
 	</div>
-	<!--於小版時顯示-->
-	<div class="pin_creator1" ><a href="https://www.pinpinbox.com/index/user/point/">如何支持創作人？</a></div>
   </div>
   <!-- BANNER輪播區塊結束 -->
-  <div class="main_content">
-      <!-- 熱門推薦區塊開始 -->
-	  <div class="tab-container">
-	      <ul class="nav nav-pills" ><li class="active"><a data-toggle="tab" href="#tab0">熱門</a></li><li><a data-toggle="tab" href="#tab1">推薦</a></li></ul>
-		  <div class="tab_content">
-		      <!-- 熱門區塊開始 -->
-		      <div id="tab0" class="tab active align_center">
-			     <div class="hit_story" >
-			         <a href="https://www.pinpinbox.com/andy729huiblog">
-					   <div class="story_img">
-					       <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/picture$2d70.jpg"></span><span>多媒體廢作人</span></div> 
-						   <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/cover$dc41.jpg"></div>
-					   </div>
-					   <div class="story_desc">以寫作奇幻小說為主，請大家多多支持！ 某些故事最新發佈時會免費開放， 請大家多多關注我呢！</div>
-					   <div class="story_info"><div class="story_view">瀏覽：54462</div><div class="pin_count">贊助次數：<span class="pin_count_num">7882</span></div></div>
-					 </a>
-			     </div>
-				 <div class="hit_story" >
-			         <a href="https://www.pinpinbox.com/chen101211">
-					   <div class="story_img">
-					     <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4069/picture$ea13.jpg"></span><span>Ivy Chen</span></div> 
-					     <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4069/cover$bf64.jpg"></div>
-					   </div>
-					   <div class="story_desc">我是一個在英國讀碩士 每到放假就衝出去的女生 LA20PF是在英國的郵遞區號 很喜歡這種一串字就能表達出歸屬感的感覺 來自台灣台中 我最愛的家鄉 也是我看世界的起點 未來會繼續分享自己旅程中的點滴</div>
-					   <div class="story_info"><div class="story_view">瀏覽：11700</span></div><div class="pin_count">贊助次數：<span class="pin_count_num">9000</div></div>
-					 </a>
-			     </div>
-				 <div class="hit_story" >
-			         <a href="https://www.pinpinbox.com/babel">
-					   <div class="story_img">
-					     <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg"></span><span>babel</span></div> 
-					     <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$b388.jpg"></div>
-						</div>
-					   <div class="story_desc">過了十年的米蟲生活, 畫下那懷念喜愛的米蟲日子~</div>
-					   <div class="story_info"><div class="story_view">瀏覽：10000</span></div><div class="pin_count">贊助次數：<span class="pin_count_num">1000</div></div>
-					 </a>
-			     </div>
-				 <div class="hit_story" >
-			         <a href="https://www.pinpinbox.com/misspink">
-					    <div class="story_img">
-						    <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4039/picture$54a2.jpg"></span><span>Miss.Pink</span></div> 
-						    <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4039/cover$9690.jpg"></div>
-						</div>
-					   <div class="story_desc">深深被文字力量吸引的人，喜歡被文字感動，也喜歡用文字感動人。如果你也喜歡文字，但覺得看很多字很辛苦，那就讓我念給你聽吧。故事分享：《What's in Sri Lanka》《夢幻海洋馬爾地夫》《純粹文字》《pretty easy》系列。</div>
-					   <div class="story_info"><div class="story_view">瀏覽：12000</div><div class="pin_count">贊助次數：<span class="pin_count_num">1700</span></div></div>
-					 </a>
-			     </div>
-				 <div class="hit_story" >
-			         <a href="https://www.pinpinbox.com/Hannah">
-					   <div class="story_img">
-						    <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4171/picture$c588.jpg"></span><span>楊花花</span></div> 
-						    <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4171/cover$fc7c.jpg"></div>
-					   </div>
-					   <div class="story_desc">》保養》彩妝》旅遊》生活》外拍》 合作：mnc78917@gmail.com 你好！ 我是楊花花，一個腦動大開的購物狂少女</div>
-					   <div class="story_info"><div class="story_view">瀏覽：2100</div><div class="pin_count">贊助次數：<span class="pin_count_num">2700</span></div></div>
-					 </a>
-			     </div>
-				 <div class="hit_story" >
-			         <a href="https://www.pinpinbox.com/ticklefeet">
-					   <div class="story_img">
-						    <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4023/picture$ce53.jpg"></span><span>腳癢の少女</span></div> 
-						    <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4023/cover$2de0.jpg"></div>
-					   </div>
-					   <div class="story_desc">∴腳癢の少女∵顧名思義，我們腳、很、癢、啦 ! ಠ_ಠ 止癢的辦法就是拖著行李箱出發啦 ! 常常都還沒想好，也沒什麼規劃就直接出發了 。最喜歡在旅途中與人相識，總覺得可以毫無顧慮的開口抓住這人與人相遇千萬分之一的機會，也喜歡比較一些國情跟文化的差異，不只是推薦美景美食，希望能像馬可波羅遊記那樣地紀實。 ∴腳癢の少女∵組成為『蘇菲』跟【你口】! (๑•̀ω•́)ノ ヾ(*´∀ ˋ*)ﾉ 兩人從真正的少女時期15歲的青春年華便發下宏願要環遊世界一周。至今已經過8年的淬煉(?)我們決定要好好地執行它了。蘇菲聽起來很女性，個性卻十足的大而化之，力量大、食量大、衣服也不用天天換洗 (威~沒有啦) 。你口相較之下淑女的許多，童顏的大臉也完美保持少女的形象，但卻時常粗魯的對待蘇菲(?)。</div>
-					   <div class="story_info"><div class="story_view">瀏覽：9542</div><div class="pin_count">贊助次數：<span class="pin_count_num">32150</span></div></div>
-					 </a>
-			     </div>
-			  </div>
-			  <!-- 熱門區塊結束 -->
-			  <!-- 推薦區塊開始 -->
-			  <div id="tab1" class="tab  align_center">
-			    <div class="hit_story" >
-			         <a href="hhttps://www.pinpinbox.com/darren960319">
-					   <div class="story_img">
-						    <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4018/picture$c066.jpg"></span><span>Darren</span></div> 
-						    <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4018/cover$8e76.jpg"></div>
-					   </div>
-					   <div class="story_desc">我是Darren，一個不滿社會現狀的90後，這社會需要被改變的事太多，所以我決定從自己開始。一次與印度的際遇，讓我開始對於台灣媒體感到憂慮、為台灣人感到可惜。世界很大，不只60吋電視那麼大。19 世紀知名探險家馮•洪堡曾說：「最可怕的世界觀是那些根本沒見過世界的人所抱有的觀念。」 恐懼是來自於我們的「不知道」，今年夏天我會回到印度完成兩年前的計畫，透過在當地生活及旅行的人，繼續讓大家的「知道」歸零，重新認識這個世界，認識印度。</div>
-					   <div class="story_info"><div class="story_view">瀏覽：13000</div><div class="pin_count">贊助次數：<span class="pin_count_num">2157</span></div></div>
-					 </a>
-			     </div>
-				 <div class="hit_story" >
-			         <a href="https://www.pinpinbox.com/taiwanli">
-					   <div class="story_img">
-						    <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4005/picture$cf74.jpg"></span><span>台灣莉</span></div> 
-						    <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4005/cover$6815.jpg"></div>
-					   </div>
-					   <div class="story_desc">22歲台灣女生 在日本停下來，用心看，仔細聽 記錄各個相遇的瞬間與喜怒哀樂 努力成為堅強又溫暖的大人 ALSO YOUTUBE→https://goo.gl/UIjKqb 日本にいる台湾人です！ Taiwanese in Japan :D</div>
-					   <div class="story_info"><div class="story_view">瀏覽：14200</div><div class="pin_count">贊助次數：<span class="pin_count_num">7400</span></div></div>
-					 </a>
-			     </div>
-				 <div class="hit_story" >
-			         <a href="https://www.pinpinbox.com/kasaki">
-					   <div class="story_img">
-						    <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4045/picture$ec13.jpg"></span><span>KASAKI 賀崎</span></div> 
-						    <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4045/cover$9fd6.jpg"></div>
-					   </div>
-					   <div class="story_desc">旅行/美食/攝影/繪畫「我想用我的聲音和旅行時在我相機中停下的畫面描繪出屬於吃貨們的浪漫。」再充實的旅行總要美食與攝影陪伴才叫完美。✔支持我的插畫作品☞ https://www.pixiv.net/member.php?id=4628729✔支持我的攝影以及關注我☞ https://www.instagram.com/_kasaki/?hl=zh-tw</div>
-					   <div class="story_info"><div class="story_view">瀏覽：7526</div><div class="pin_count">贊助次數：<span class="pin_count_num">5908</span></div></div>
-					 </a>
-			     </div>
-				 <div class="hit_story" >
-			         <a href="https://www.pinpinbox.com/alice83107">
-					   <div class="story_img">
-						    <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4016/picture$60eb.jpg"></span><span>許雁林</span></div> 
-						    <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4016/cover$3854.jpg"></div>
-					   </div>
-					   <div class="story_desc">我喜歡吃吃喝喝，旅遊踏青，喜歡文藝創作、插畫、兒童繪本。 作品是用photoshop畫的呦^^</div>
-					   <div class="story_info"><div class="story_view">瀏覽：147000</div><div class="pin_count">贊助次數：<span class="pin_count_num">500</span></div></div>
-					 </a>
-			     </div>
-				 <div class="hit_story" >
-			         <a href="https://www.pinpinbox.com/pileuplife">
-					   <div class="story_img">
-						    <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9211/picture$a2fd.jpg"></span><span>PileUp Life</span></div> 
-						    <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9211/cover$34c4.jpg"></div>
-					   </div>
-					   <div class="story_desc">層層生活是來自台灣的生活品牌，堅持產品從設計、打樣至生產皆源自於台灣。以模組化的概念將家具零件解構，強調賦予消費者設計權，令其能依照個人風格打造屬於自己的家具，日後還可依需求更換零件，賦予家具新面貌。</div>
-					   <div class="story_info"><div class="story_view">瀏覽：6180</div><div class="pin_count">贊助次數：<span class="pin_count_num">61800</span></div></div>
-					 </a>
-			     </div>
-				 
-				 <div class="hit_story" >
-			         <a href="https://www.pinpinbox.com/hphsu">
-					   <div class="story_img">
-						    <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg"></span><span>眭澔平</span></div> 
-						    <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/cover$25a6.jpg"></div>
-					   </div>
-					   <div class="story_desc">「我是『名腿』，不是名嘴！」作家&資深媒體工作者二十餘年自助遍遊紀錄世界五大洲一百九十國熱愛旅行、探險，擁有豐富的旅行經驗，常受邀於通告節目擔任評論工作，談論外星人、UFO、世界歷史、鬼魅奇幻傳說等話題。</div>
-					   <div class="story_info"><div class="story_view">瀏覽：954216</div><div class="pin_count">贊助次數：<span class="pin_count_num">12345</span></div></div>
-					 </a>
-			     </div>
-			  </div>
-			  <!-- 推薦區塊結束 -->
-			</div>
-	  </div>
-	  <!-- 熱門推薦區塊結束 -->
-	  <!-- 新加入區塊開始 -->
-	   <div class="tab-container">
-	     <ul class="nav nav-pills" ><li class="active"><!--<a data-toggle="tab" href="">-->新加入<!--</a>--></li></ul>
-		  <div class="tab_content">
-		      <div class="tab active  align_center">
-			     <div class="new_star">
-			         <a href="https://www.pinpinbox.com/ccartist">
-					   <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9233/picture$5e3c.jpg"></div>
-					   <div class="star_name">C.C</div>
-					   <div class="story_desc">2018年的3月，創造了一隻水彩刺蝟，陪伴我走過人生低潮。讓我開始相信這個世界依然溫柔，我也想用我的圖畫去點亮每個人心中最溫柔的那塊。</div>
-					 </a>
-			     </div>
-				 <div class="new_star">
-			         <a href="https://www.pinpinbox.com/unseeablebeauty">
-					   <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9238/cover$de6a.jpg"></div>
-					   <div class="star_name">倪子耘</div>
-					   <div class="story_desc">每周一與FB同步更新一章。作者與書籍相關訊息請參考</div>
-					 </a>
-			     </div>
-				 <div class="new_star">
-			         <a href="https://www.pinpinbox.com/ringring0806">
-					   <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9143/picture$cf59.jpg"></div>
-					   <div class="star_name">RingRing 宋知恩</div>
-					   <div class="story_desc">Hi 我是 Ring Ring 這裡會介紹我喜歡的音樂與我的創作喔^_^ 工作邀約、合作請來信Email：2016ringrings@gmail.com</div>
-					 </a>
-			     </div>
-			  </div>
-		  </div>
-	   </div>
-	  <!-- 新加入區塊結束 -->
-	  <!-- 分類區塊開始 -->
-	  <div class="tab-container">
-	     <ul class="nav nav-pills" ><li class="active"><!--<a data-toggle="tab" href="">-->分類<!--</a>--></li></ul>
-		  <div class="tab_content">
-		      <div class="tab active">
-			    <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=1">
-				     <div class="cat_info">
-					   <div class="cat_name">旅人</div>
-					 </div>
-					 <div class="cat_area">
-					   <div class="cat_01">
-						 <div class="cat_img"><img src="20180925.jpg"></div>
-						</div>
-					 </div></a>
-				 </div>
-				 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=4">
-				     <div class="cat_info">
-					   <div class="cat_name">美食</div>
-					 </div>
-					 <div class="cat_area">
-					   <div class="cat_01">
-						 <div class="cat_img"><img src="20180925.jpg"></div>
-						</div>
-					 </div></a>
-				 </div>
-				 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3">
-				     <div class="cat_info">
-					   <div class="cat_name">藝文</div>
-					 </div>
-					 <div class="cat_area">
-					   <div class="cat_01">
-						<div class="cat_img"><img src="20180925.jpg"></div>
-						</div>
-					 </div></a>
-				 </div>
-				 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=5">
-				     <div class="cat_info">
-					   <div class="cat_name">知識</div>
-					 </div>
-					 <div class="cat_area">
-					   <div class="cat_01">
-						 <div class="cat_img"><img src="20180925.jpg"></div>
-						</div>
-					 </div></a>
-				 </div>
-				 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=12">
-				     <div class="cat_info">
-					   <div class="cat_name">音樂</div>
-					 </div>
-					 <div class="cat_area">
-					   <div class="cat_01">
-						 <div class="cat_img"><img src="20180925.jpg"></div>
-						</div>
-					 </div></a>
-				 </div>
-				 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=7">
-				     <div class="cat_info">
-					   <div class="cat_name">時尚</div>
-					 </div>
-					 <div class="cat_area">
-					   <div class="cat_01">
-						 <div class="cat_img"><img src="20180925.jpg"></div>
-						</div>
-					 </div></a>
-				 </div>
-				 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=13">
-				     <div class="cat_info">
-					   <div class="cat_name">公益</div>
-					 </div>
-					 <div class="cat_area">
-					   <div class="cat_01">
-						<div class="cat_img"><img src="20180925.jpg"></div>
-						</div>
-					 </div></a>
-				 </div>
-				 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=13">
-				     <div class="cat_info">
-					   <div class="cat_name">分享</div>
-					 </div>
-					 <div class="cat_area">
-					   <div class="cat_01">
-						 <div class="cat_img"><img src="20180925.jpg"></div>
-						</div>
-					 </div></a>
-				 </div>
-			  </div>
-		  </div>
-	   </div>
-	  <!-- 分類區塊結束 -->
-  </div>
-  <div class="main_content2">
-     <!-- 輕鬆啟動創作募資計劃開始 -->
-	 <div class="tab-container">
-	     <ul class="nav nav-pills" ><li class="active"><!--<a data-toggle="tab" href="">-->創作價值　由你決定<!--</a>--></li></ul>
-		 <!-- 低門檻募資就醬EZ!4個STEP開始 -->
-		 <div class="tab_content">
-		      <div class="tab active">
-			    <div class="pin_plan_step">
-					 <div class="pin_plan_step1">
-					    <div class="step_img"><img src="planstep-01.jpg"></div>
-					    <div class="step_title">創作主導</div>   
-					    <div class="step_desc">完整保留你的創作核心主導權</div>
-					 </div>
-					 <div class="pin_plan_step2">
-					     <div class="step_img"><img src="planstep-02.jpg"></div>
-					     <div class="step_title">創作頻道</div>    
-					     <div class="step_desc">免費創建專屬贊助頻道，無縫分享至社群平台</div>
-					 </div>
-					 <div class="pin_plan_step3">
-						 <div class="step_img"><img src="planstep-03.jpg"></div>
-					     <div class="step_title">創作價值</div>
-						 <div class="step_desc">為作品設定P點，創造被動收入</div>
-					 </div>
-					 <div class="pin_plan_step4">
-					     <div class="step_img"><img src="planstep-04.jpg"></div>
-					     <div class="step_title">超高分潤</div>    
-					     <div class="step_desc">提升粉絲的關注及觀看次數，自動提高分潤</div>
-					  </div>
-				 </div>
-			  </div>
-		  </div>
-		  <!-- 低門檻募資就醬EZ!4個STEP結束 -->
-		  <div class="tab_content">
-		      <div class="tab active">
-				 <div class="pin_plan">
-				   <div class="plan_video">
-					   <div class="plan_video_wrap">
-							<div class="plan_video_cnt">
-								<iframe src="https://www.youtube.com/embed/R-6wgPWHWik" frameborder="0" allowfullscreen=""></iframe>		
-							</div>
-						</div>
-				   </div>
-				   <div class="plan_info">
-					   <div><span class="plan_info_title">【pinpinbox】創作人募資平台</span>
-							<span class="plan_info_desc">pinpinbox釘釘吧 是個「創作人及斜扛青年」發佈作品取得募資的平台。創作人將作品發表在pinpinbox釘釘吧，透過募資機制輕鬆創造被動收入。 pinpinbox釘釘吧 提供各種作品上傳形式「圖片、影片、音樂 (或錄音)、文字 、PDF檔」及社群分享無縫接軌、募資金流後台管理之完整功能。</span>
-					   </div>
-					 </div>
-				 </div>
-			  </div>
-		  </div>
-	  </div>
-  </div>
+  <!-- 主要內容區開始 -->
+  <div id="content">
+    <!-- 累計數字區塊開始 -->
   <div class="plan_info_count">
     <div class="plan_info_count_area">
-      <div>我們做到了</div>
-	  <div><span class="plan_info_num counter">31449</span><span>累積贊助</span></div>
-	  <div><span class="plan_info_num counter">151223</span><span>發佈作品</span></div>
+      <div><span>目前累積</span></div>
+      <div><span class="plan_info_num counter">151449</span><span>贊助次數</span></div>
+      <div><span class="plan_info_num counter">151223</span><span>發佈作品</span></div>
     </div>
   </div>
+  <!-- 累計數字區塊結束 -->
+  <div class="main_content">
+    <!-- 熱門推薦區塊開始 -->
+    <div class="tab-container">
+  	  <ul class="nav nav-pills" ><li class="active"><a data-toggle="tab" href="#tab0">推薦</a></li><li><a data-toggle="tab" href="#tab1">熱門</a></li></ul>
+  	  <div class="tab_content">
+  		  <!-- 推薦區塊開始 -->
+  		  <div id="tab0" class="tab active">
+            <div class="hit_story">
+              <a href="https://www.pinpinbox.com/ladybeans">
+                <div class="story_img">
+                  <div class="creator_info">
+                    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/18/picture$8696.jpg"></span><span>紅豆姐姐</span>
+                  </div>
+                  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/18/cover$709c_292x137.png"></div>
+                </div>
+                <div class="story_desc">提著手提箱，口袋裝著紅豆寶寶，紅豆姐姐用好聽好玩的故事陪伴小朋友在自然的世界裡長大，鼓勵所有小朋友一起保護我們的生存環境！</div>
+                <div class="story_info">
+                  <div class="story_view">瀏覽： <span class="pin_count_num">17473</span></div>
+                  <div class="pin_count">贊助次數：<span class="pin_count_num">5</span></div>
+                </div>
+              </a>
+            </div>
+			<div class="hit_story">
+              <a href="https://www.pinpinbox.com/index/creative/content/?user_id=3863">
+                <div class="story_img">
+                  <div class="creator_info">
+                    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/3863/picture$6aa0.jpg"></span><span>Happy哈比比</span>
+                  </div>
+                  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/3863/cover$c63c_292x137.jpg"></div>
+                </div>
+                <div class="story_desc">我們是Happy哈比比，希望以呆萌療癒的力量創造滿滿的幸福感～台灣原創IP品牌-串起世界之間的友誼，傳遞對世界每個角落的祝福。哈比比&amp;哈米尼愛吃、樂天、呆萌的模樣，讓每天的生活多采多姿，而我們將透過插畫、動畫並以逗趣可愛的角度把故事分享給大家，繼續帶領大家探索這個世界無奇不有的奧妙。云犬哈比比：有著蓬鬆軟綿綿的大肚子，個性有些害羞，被別人摸肚子時會露出充滿幸福的笑容。夢想：成為大家的守護者。Habibi:Habibi is shy, has a big fluffy belly, and likes belly rubs.&nbsp;Habibi dreams of becoming a guardian to all children.哈米尼：調皮機靈、愛吃，是旅程中不可或缺的開心果。夢想：吃遍好吃的食物Hamini:Hamini is witty and prankish and an indispensable delight on trips.Hamini dreams of eating everything.如有授權、活動、代言相關合作事宜請聯繫：note@hopingsasa.com 浩平＆莎莎Family</div>
+                <div class="story_info">
+                  <div class="story_view">瀏覽： <span class="pin_count_num">4001</span></div>
+                  <div class="pin_count">贊助次數：<span class="pin_count_num">1</span></div>
+                </div>
+              </a>
+            </div>
+			<div class="hit_story">
+              <a href="https://www.pinpinbox.com/welcheng">
+                <div class="story_img">
+                  <div class="creator_info">
+                    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4119/picture$7d29.jpg"></span><span>煒承Answer</span>
+                   </div>
+                   <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4119/cover$34e0_292x137.jpg"></div>
+                </div>
+                <div class="story_desc">熱愛旅遊運動的男孩，目標用雙腳到世界各地留下自己的足跡，用雙眼欣賞大自然偉大奧妙的傑作，藉由相片紀錄稍縱即逝的美好時刻</div>
+                <div class="story_info">
+                  <div class="story_view">瀏覽： <span class="pin_count_num">7379</span></div>
+                  <div class="pin_count">贊助次數：<span class="pin_count_num">1</span></div>
+                </div>
+              </a>
+            </div>
+			<div class="hit_story">
+              <a href="https://www.pinpinbox.com/babel">
+                <div class="story_img">
+                  <div class="creator_info">
+                    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg"></span><span>babel</span>
+                  </div>
+                  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$1273_292x137.jpg"></div>
+                </div>
+                <div class="story_desc">過了十年的米蟲生活, 畫下那懷念喜愛的米蟲日子~</div>
+                  <div class="story_info">
+                    <div class="story_view">瀏覽： <span class="pin_count_num">4523</span></div>
+                    <div class="pin_count">贊助次數：<span class="pin_count_num">8</span></div>
+                </div>
+              </a>
+            </div>
+			<div class="hit_story">
+              <a href="https://www.pinpinbox.com/pileuplife">
+                <div class="story_img">
+                  <div class="creator_info">
+                    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9211/picture$a2fd.jpg"></span><span>PileUp Life</span>
+                  </div>
+                  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9211/cover$34c4_292x137.jpg"></div>
+                </div>
+                <div class="story_desc">層層生活是來自台灣的生活品牌，堅持產品從設計、打樣至生產皆源自於台灣。以模組化的概念將家具零件解構，強調賦予消費者設計權，令其能依照個人風格打造屬於自己的家具，日後還可依需求更換零件，賦予家具新面貌。</div>
+                <div class="story_info">
+                  <div class="story_view">瀏覽： <span class="pin_count_num">1302</span></div>
+                  <div class="pin_count">贊助次數：<span class="pin_count_num">0</span></div>
+                </div>
+              </a>
+            </div>
+			<div class="hit_story">
+              <a href="https://www.pinpinbox.com/poorblackhead">
+                <div class="story_img">
+                  <div class="creator_info">
+                     <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9375/picture$cb59.jpg"></span><span>刺刺</span>
+                  </div>
+                  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9375/cover$17b2_292x137.jpg"></div>
+                </div>
+                <div class="story_desc">你好。我叫做刺刺，我是一個粉刺，我住在皮膚毛孔裡面，靠著宿主分泌的油脂維生。老實說...我...喜歡吃高熱量食物。我的夢想是成為一個痘痘。宿主對我恨之入骨，想盡各種方法想要把我殺了，像是用粉刺夾...宿主也會對我潑酸，像是杏仁酸、杜鵑花酸、外用A酸讓我毀容...融化我...然後我就死了。&nbsp;但是我馬上又會重生了！ :)</div>
+				<div class="story_info">
+                  <div class="story_view">瀏覽： <span class="pin_count_num">673</span></div>
+                  <div class="pin_count">贊助次數：<span class="pin_count_num">3</span></div>
+                </div>
+              </a>
+            </div>
+	      </div>
+  		  <!-- 推薦區塊結束 -->
+  		  <!-- 熱門區塊開始 -->
+  		  <div id="tab1" class="tab">
+			<div class="hit_story">
+              <a href="https://www.pinpinbox.com/ladybeans">
+                <div class="story_img">
+                  <div class="creator_info">
+                    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/18/picture$8696.jpg"></span><span>紅豆姐姐</span>
+                  </div>
+                  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/18/cover$709c_292x137.png"></div>
+                </div>
+                <div class="story_desc">提著手提箱，口袋裝著紅豆寶寶，紅豆姐姐用好聽好玩的故事陪伴小朋友在自然的世界裡長大，鼓勵所有小朋友一起保護我們的生存環境！</div>
+                <div class="story_info">
+                  <div class="story_view">瀏覽： <span class="pin_count_num">17473</span></div>
+                  <div class="pin_count">贊助次數：<span class="pin_count_num">5</span></div>
+                </div>
+              </a>
+            </div>
+			<div class="hit_story">
+              <a href="https://www.pinpinbox.com/letzcreate">
+                <div class="story_img">
+                  <div class="creator_info">
+                    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/174/picture$8c61.jpg"></span><span>愛藝享 Let's Create</span>
+                  </div>
+                  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/174/cover$b262_292x137.png"></div>
+                </div>
+                <div class="story_desc">愛藝享是藝術創作者的好夥伴，是為了藝術創作愛好者，建構的創作交流平台，一起努力讓創作者的好作品被更多的人，看見、認識、了解與分享。我們想好好的支持每一位在創作路上，拼命奮鬥的創作者，因為我們深深相信『專心創作是一件很偉大的事』。LET&rsquo;S CREATE is art creators&rsquo; great partner and a platform designed for art creators to share their creations. We work with art creators to enable their great creations to be seen, known, understood and shared by more people. We support art creators who put lots of effort into their creations because we believe that concentrating on one&rsquo;s own creation is a great thing.</div>
+				<div class="story_info">
+                  <div class="story_view">瀏覽： <span class="pin_count_num">10326</span></div>
+                  <div class="pin_count">贊助次數：<span class="pin_count_num">0</span></div>
+                </div>
+              </a>
+            </div>
+			<div class="hit_story">
+              <a href="https://www.pinpinbox.com/andy729huiblog">
+                <div class="story_img">
+                  <div class="creator_info">
+                    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/picture$2d70.jpg"></span><span>多媒體廢作人</span>
+                  </div>
+                  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/cover$dc41_292x137.png"></div>
+                </div>
+                <div class="story_desc">以寫作奇幻小說為主，請大家多多支持！ 某些故事最新發佈時會免費開放， 請大家多多關注我呢！</div>
+                <div class="story_info">
+                  <div class="story_view">瀏覽： <span class="pin_count_num">22085</span></div>
+                  <div class="pin_count">贊助次數：<span class="pin_count_num">162</span></div>
+                </div>
+              </a>
+            </div>
+			<div class="hit_story">
+              <a href="https://www.pinpinbox.com/babel">
+                <div class="story_img">
+                  <div class="creator_info">
+                    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg"></span><span>babel</span>
+                  </div>
+                  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$1273_292x137.jpg"></div>
+                </div>
+                <div class="story_desc">過了十年的米蟲生活, 畫下那懷念喜愛的米蟲日子~</div>
+                <div class="story_info">
+                  <div class="story_view">瀏覽： <span class="pin_count_num">4523</span></div>
+                  <div class="pin_count">贊助次數：<span class="pin_count_num">8</span></div>
+                </div>
+              </a>
+            </div>
+			<div class="hit_story">
+              <a href="https://www.pinpinbox.com/ahodoodle">
+                <div class="story_img">
+                  <div class="creator_info">
+                    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg"></span><span>阿賀</span>
+                  </div>
+                  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/6350/cover$4b19_292x137.png"></div>
+                </div>
+                <div class="story_desc">嗨，這是一個軍醫學生的塗鴉天地，我是阿賀，歡迎常來！如果喜歡我的插圖，歡迎贊助鼓勵 :D （插圖將比FB粉專早發布，內容也不一定相同）</div>
+				<div class="story_info">
+                  <div class="story_view">瀏覽： <span class="pin_count_num">7500</span></div>
+                  <div class="pin_count">贊助次數：<span class="pin_count_num">20</span></div>
+                </div>
+              </a>
+            </div>
+			<div class="hit_story">
+              <a href="https://www.pinpinbox.com/18Ranch">
+                <div class="story_img">
+                  <div class="creator_info">
+                    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9286/picture$b4b7.jpg"></span><span>十八養場</span>
+                  </div>
+                  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9286/cover$d08a_292x137.jpg"></div>
+                </div>
+                <div class="story_desc">「十八養場&mdash;吃紅茶長大的雞」✓ 對誠實偏執，世代並進傳承十八養場結合具有豐富飼養經驗的專家，調配養場的大小事；加入博士級研發團隊，謹慎利用知識管理，把關美味的品質，時時關心養場裡一切的健康與生活，並與台灣農民契作非基改玉米，支持本土優良農業。有感於飲食問題對於人體健康的重要性，激起我們對社會的責任心，欣然的就這麼把它扛在肩上了。世代並進傳承，因為要做最好的，我們不怕走的慢，有默契的相輔相成，著重對於誠實的偏執，真材實料的做事態度，傳承我們最驕傲的價值與態度。✓ 您是我們的家人，當然給您最好的要有好的品質，必先學會感同身受，十八養場從心為根本，替您親手過濾飲食，嚴格把關。從人道飼養、嚴謹的製程至安心販售，堅持踏實走好每一步，把您當家人一樣對待，給予無毒天然的食物來源，為您健康找到安心的所在，是我們本來就該做也會一直做的事。✓ 頂級非基改黃豆玉米，孕育十八養場紅玉雞我們在日月潭的養場，有著 5000 坪的獨立飼養空間，餵養雞隻的是創新調配無基改黃豆玉米的草本飼料，拌入台茶十八號紅茶，喝的是自有的埔里純淨山泉水，配以專業科技化的設備，專屬環境與獨家飲食配合的恰到好處，十八養場紅玉雞的成長一路無藥，且安心茁壯。➢ 產品購買網址：https://www.18ranch.com.tw/products</div>
+				<div class="story_info">
+                  <div class="story_view">瀏覽： <span class="pin_count_num">1503</span></div>
+                  <div class="pin_count">贊助次數：<span class="pin_count_num">0</span></div>
+                </div>
+              </a>
+            </div>
+		  </div>
+  		  <!-- 熱門區塊結束 -->
+  		</div>
+    </div>
+    <!-- 熱門推薦區塊結束 -->
+    <!-- 新加入區塊開始 -->
+    <div class="tab-container">
+  	  <ul class="nav nav-pills" ><li class="active"><!--<a data-toggle="tab" href="">-->新加入<!--</a>--></li></ul>
+  	  <div class="tab_content">
+  	    <div class="tab active">
+  		  <div class="new_star">
+            <a href="https://www.pinpinbox.com/poorblackhead">
+              <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9375/picture$cb59_300x300.jpg"></div>
+              <div class="star_name">刺刺</div>
+              <div class="story_desc">你好。我叫做刺刺，我是一個粉刺，我住在皮膚毛孔裡面，靠著宿主分泌的油脂維生。老實說...我...喜歡吃高熱量食物。我的夢想是成為一個痘痘。宿主對我恨之入骨，想盡各種方法想要把我殺了，像是用粉刺夾...宿主也會對我潑酸，像是杏仁酸、杜鵑花酸、外用A酸讓我毀容...融化我...然後我就死了。&nbsp;但是我馬上又會重生了！ :)</div>
+            </a>
+          </div>
+		  <div class="new_star">
+            <a href="https://www.pinpinbox.com/kimjo">
+              <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9300/picture$38a0_300x300.jpg"></div>
+              <div class="star_name">鄧永煇</div>
+              <div class="story_desc">你好~ 這裡是三歲小草的影片區~如果有有趣或是更實用的影片會放上來~同時也是三歲小草的影片庫~三歲小草 : https://www.facebook.com/3yboy/小草小花製作委員會 :http://jct.tw/3yboy/</div>
+            </a>
+          </div>
+		  <div class="new_star">
+            <a href="https://www.pinpinbox.com/18Ranch">
+              <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9286/picture$b4b7_300x300.jpg"></div>
+              <div class="star_name">十八養場</div>
+              <div class="story_desc">「十八養場&mdash;吃紅茶長大的雞」✓ 對誠實偏執，世代並進傳承十八養場結合具有豐富飼養經驗的專家，調配養場的大小事；加入博士級研發團隊，謹慎利用知識管理，把關美味的品質，時時關心養場裡一切的健康與生活，並與台灣農民契作非基改玉米，支持本土優良農業。有感於飲食問題對於人體健康的重要性，激起我們對社會的責任心，欣然的就這麼把它扛在肩上了。世代並進傳承，因為要做最好的，我們不怕走的慢，有默契的相輔相成，著重對於誠實的偏執，真材實料的做事態度，傳承我們最驕傲的價值與態度。✓ 您是我們的家人，當然給您最好的要有好的品質，必先學會感同身受，十八養場從心為根本，替您親手過濾飲食，嚴格把關。從人道飼養、嚴謹的製程至安心販售，堅持踏實走好每一步，把您當家人一樣對待，給予無毒天然的食物來源，為您健康找到安心的所在，是我們本來就該做也會一直做的事。✓ 頂級非基改黃豆玉米，孕育十八養場紅玉雞我們在日月潭的養場，有著 5000 坪的獨立飼養空間，餵養雞隻的是創新調配無基改黃豆玉米的草本飼料，拌入台茶十八號紅茶，喝的是自有的埔里純淨山泉水，配以專業科技化的設備，專屬環境與獨家飲食配合的恰到好處，十八養場紅玉雞的成長一路無藥，且安心茁壯。➢ 產品購買網址：https://www.18ranch.com.tw/products</div>
+			</a>
+          </div>   
+  	     </div>
+  	   </div>
+     </div>
+    <!-- 新加入區塊結束 -->
+    <!-- 分類區塊開始 -->
+    <div class="tab-container">
+  	 <ul class="nav nav-pills" ><li class="active"><!--<a data-toggle="tab" href="">-->分類<!--</a>--></li></ul>
+  	  <div class="tab_content">
+  	    <div class="tab active">
+  		  <div class="cat_areaw">
+		    <a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=1">
+              <div class="cat_info">
+                <div class="cat_name">旅人</div>
+              </div>
+              <div class="cat_area">
+                <div class="cat_01">
+                  <div class="cat_img"><img src="https://cdn.pinpinbox.com/upload/admin/categoryarea/20181011/5bbf23a40ba74.jpg"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+		  <div class="cat_areaw">
+		    <a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=4">
+              <div class="cat_info">
+                <div class="cat_name">美食</div>
+              </div>
+              <div class="cat_area">
+                <div class="cat_01">
+                  <div class="cat_img"><img src="https://cdn.pinpinbox.com/upload/admin/categoryarea/20181011/5bbf241ecf8fb.jpg"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+		  <div class="cat_areaw">
+		    <a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3">
+              <div class="cat_info">
+                <div class="cat_name">藝文</div>
+              </div>
+              <div class="cat_area">
+                <div class="cat_01">
+                  <div class="cat_img"><img src="https://cdn.pinpinbox.com/upload/admin/categoryarea/20181011/5bbf24559ce5b.jpg"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+		  <div class="cat_areaw">
+		    <a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=5">
+              <div class="cat_info">
+                <div class="cat_name">知識</div>
+              </div>
+              <div class="cat_area">
+                <div class="cat_01">
+                  <div class="cat_img"><img src="https://cdn.pinpinbox.com/upload/admin/categoryarea/20181011/5bbf2448dbb81.jpg"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+		  <div class="cat_areaw">
+		    <a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=12">
+              <div class="cat_info">
+                <div class="cat_name">音樂</div>
+              </div>
+              <div class="cat_area">
+                <div class="cat_01">
+                  <div class="cat_img"><img src="https://cdn.pinpinbox.com/upload/admin/categoryarea/20181011/5bbf2482b8dbf.jpg"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+		  <div class="cat_areaw">
+		    <a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=7">
+              <div class="cat_info">
+                <div class="cat_name">時尚</div>
+              </div>
+              <div class="cat_area">
+                <div class="cat_01">
+                   <div class="cat_img"><img src="https://cdn.pinpinbox.com/upload/admin/categoryarea/20181011/5bbf243c28d0d.jpg"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+	      <div class="cat_areaw">
+		    <a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=13">
+              <div class="cat_info">
+                <div class="cat_name">公益</div>
+              </div>
+              <div class="cat_area">
+                <div class="cat_01">
+                  <div class="cat_img"><img src="https://cdn.pinpinbox.com/upload/admin/categoryarea/20181011/5bbf247269958.jpg"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+		  <div class="cat_areaw">
+		    <a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=11">
+              <div class="cat_info">
+                <div class="cat_name">分享</div>
+              </div>
+              <div class="cat_area">
+                <div class="cat_01">
+                  <div class="cat_img"><img src="https://cdn.pinpinbox.com/upload/admin/categoryarea/20181011/5bbf242f0f931.jpg"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+  		</div>
+  	  </div>
+     </div>
+    <!-- 分類區塊結束 -->
+  </div>
+  <div class="main_content2">
+    <!-- 輕鬆啟動創作募資計劃開始 -->
+    <div class="tab-container">
+  	  <ul class="nav nav-pills" ><li class="active"><!--<a data-toggle="tab" href="">-->創作價值　由你決定<!--</a>--></li></ul>
+  	  <!-- 低門檻募資就醬EZ!4個STEP開始 -->
+  	  <div class="tab_content">
+  	    <div class="tab active">
+  		  <div class="pin_plan_step">
+  		    <div class="pin_plan_step1">
+  		      <div class="step_img"><img src="images/assets-v7/planstep-01.jpg"></div>
+  		      <div class="step_title">創作主導</div>   
+  			  <div class="step_desc">完整保留你的創作核心主導權</div>
+  		    </div>
+  		    <div class="pin_plan_step2">
+  			  <div class="step_img"><img src="images/assets-v7/planstep-02.jpg"></div>
+  		 	  <div class="step_title">創作頻道</div>    
+  			  <div class="step_desc">免費創建專屬贊助頻道</br>無縫分享至社群平台</div>
+  		    </div>
+  		    <div class="pin_plan_step3">
+  		      <div class="step_img"><img src="images/assets-v7/planstep-03.jpg"></div>
+  			  <div class="step_title">創作價值</div>
+  			  <div class="step_desc">為作品設定P點</br>創造被動收入</div>
+  		    </div>
+  		    <div class="pin_plan_step4">
+  		      <div class="step_img"><img src="images/assets-v7/planstep-04.jpg"></div>
+  			  <div class="step_title">超高分潤</div>    
+  			  <div class="step_desc">提升粉絲的關注及觀看次數</br>自動提高分潤</div>
+  		    </div>
+  		  </div>
+  	    </div>
+  	  </div>
+  	  <!-- 低門檻募資就醬EZ!4個STEP結束 -->
+  	  <div class="tab_content">
+  	    <div class="tab active">
+  	      <div class="pin_plan">
+  		    <div class="plan_video">
+  		      <div class="plan_video_wrap">
+  			    <div class="plan_video_cnt">
+  			      <iframe src="https://www.youtube.com/embed/R-6wgPWHWik" frameborder="0" allowfullscreen=""></iframe>		
+  			    </div>
+  			  </div>
+  		    </div>
+  		    <div class="plan_info">
+  		      <div>
+			    <span class="plan_info_title">【pinpinbox】創作人募資平台</span>
+  			    <span class="plan_info_desc">pinpinbox釘釘吧 是個「創作人及斜扛青年」發佈作品取得募資的平台。創作人將作品發表在pinpinbox釘釘吧，透過募資機制輕鬆創造被動收入。 pinpinbox釘釘吧 提供各種作品上傳形式「圖片、影片、音樂 (或錄音)、文字 、PDF檔」及社群分享無縫接軌、募資金流後台管理之完整功能。</span>
+  			  </div>
+  		    </div>
+  		  </div>
+  	    </div>
+  	  </div>
+    </div>
+  </div>
+  </div>
+  <!-- 主要內容區結束 -->
   <!-- FOOTER區塊開始 -->
   <div id="footer">
     <div id="footer_area">
-		  <ul>
-			<li><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
-			<li><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" class="cicle_btn" style="z-index: 100">經營小幫手</a></li>
-			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/qanda/">Q&amp;A</a></li>
-			<li class="mobile_show" ><a href="https://www.pinpinbox.com/index/recruit/">企業合作</a></li>
-			
-			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/privacy/">條款與政策</a></li>
-			<li class="dropup">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下載APP<span class="caret"></span></a>
-				<ul class="dropdown-menu" role="menu">
-					<li><a id="apple_btn" data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
-					<li><a data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
-				</ul>							
-			</li>				
-			<li class="dropup footer_lang">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">語言<span class="caret"></span></a>
-				<ul class="dropdown-menu" role="menu">
-					<li ><a href="javascript:void(0)" >English</a></li>
-					<li ><a href="javascript:void(0)" >日本語</a></li>
-					<li ><a href="javascript:void(0)" >簡體中文</a></li>
-					<li ><a href="https://www.pinpinbox.com/index/?lang=zh_TW">繁體中文</a></li>
-				</ul>							
-			</li>
-			<li class="mobile_show mobile_footer_lang">
-			  <select>
-				<option>簡體中文</option>
-				<option selected>繁體中文</option>
-				<option>English</option>
-			  </select>
-			</li>
-			<li class="footer_copyright">© 2016 pinpinbox All Rights Reserved.</li>
-		  </ul>
+	  <ul>
+	    <li><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
+	    <li><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" class="cicle_btn">經營小幫手</a></li>
+	    <li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/qanda/">Q&amp;A</a></li>
+	    <li class="mobile_show" ><a href="https://www.pinpinbox.com/index/recruit/">企業合作</a></li>
+	    <li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/privacy/">條款與政策</a></li>
+	    <li class="dropup">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下載APP<span class="caret"></span></a>
+		  <ul class="dropdown-menu" role="menu">
+			<li><a id="apple_btn" data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
+			<li><a data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
+		  </ul>							
+	    </li>				
+	    <li class="dropup footer_lang">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">語言<span class="caret"></span></a>
+		    <ul class="dropdown-menu" role="menu">
+			  <li ><a href="javascript:void(0)" >English</a></li>
+			  <li ><a href="javascript:void(0)" >日本語</a></li>
+			  <li ><a href="javascript:void(0)" >簡體中文</a></li>
+			  <li ><a href="https://www.pinpinbox.com/index/?lang=zh_TW">繁體中文</a></li>
+		  </ul>							
+	    </li>
+	    <li class="mobile_show mobile_footer_lang">
+	      <select>
+		    <option>簡體中文</option>
+		    <option selected>繁體中文</option>
+		    <option>English</option>
+	      </select>
+	    </li>
+	    <li class="footer_copyright">© 2018 pinpinbox All Rights Reserved.</li>
+	  </ul>
 	</div>
   </div>
   <!-- FOOTER區塊結束 -->
   <!-- 回上方箭頭與FB區塊開始  -->
   <div id="right_btn">
-		<div id="scroll_top"  ><a href="javascript:void(0)"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_top.svg" ></a></div>
-		<div id="p_link"><a href="https://www.pinpinbox.com/index/user/point/" target="_blank" title="P點購買"><img src="icon_p.svg" onerror="this.onerror=null; this.src='icon_p.svg'"></a></div>
+    <div id="scroll_top"><a href="javascript:void(0)"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_top.svg" ></a></div>
+	<div id="p_link"><a href="https://www.pinpinbox.com/index/user/point/" target="_blank" title="P點購買"><img src="images/assets-v7/icon_p.svg"></a></div>
   </div>
   <!-- 回上方箭頭與FB區塊結束 -->
 <script>
-
 $(document).ready(function() {
+  //時間之前
+  $('time.timeago').timeago();
   //判斷HOVER動作
   addhover();
+  //搜尋
+  //search: on + datalist
+  $('input[name="searchkey"]').on({
+  	keypress: function(e) {
+  		if (e.which == 13 || e.keyCode == 13) { _search(); }
+  	},
+  }).typeahead({
+  	afterSelect: function(){ _search(); },
+  	autoSelect: false,
+  	showHintOnFocus: true,
+  	source: function(query, process) {
+  	/*
+  	  $.post('https://www.pinpinbox.com/index/search/', {
+  		searchkey: query
+  	  }, function(r) {
+  		process($.parseJSON(r));
+  	  });
+  	*/
+  	},
+  });
+  // v2
+  $('a.searchtype').on('click', function(){
+    var device = $(this).data('device');
+    $('span.search_type').html($(this).html());
+    $('input#'+device+'_searchkey').data('searchtype' , $(this).data('searchtype'));
+  });
   //數字倒數
   $('.counter').counterUp({
       delay: 10,
@@ -520,18 +705,25 @@ $(document).ready(function() {
     }
   });
   $("#scroll_top").click(function(){
-		$("html,body").animate({scrollTop:0},900);
-		return false;
-	});
+	$("html,body").animate({scrollTop:0},900);
+	return false;
+  });
   //PC版選單切換
   $('a#login').click(function() {
     $('#login_menu').toggleClass("login_menu_down");
+	$('.search_menu').removeClass("search_menu_down");
+	$('#notifier_menu').removeClass("login_menu_down");
+  });
+  $('a#notifier').click(function() {
+    $('#notifier_menu').toggleClass("login_menu_down");
+	$('#login_menu').removeClass("login_menu_down");
 	$('.search_menu').removeClass("search_menu_down");
   });
   //搜尋選單切換
   $('.search_btn').click(function() {
     $('.search_menu').toggleClass("search_menu_down");
 	$('#login_menu').removeClass("login_menu_down");
+	$('#notifier_menu').removeClass("login_menu_down");
   });
   //MOBILE版搜尋切換
   $('.mobile_menu i:nth-child(1)').click(function() {
@@ -540,54 +732,54 @@ $(document).ready(function() {
   });
   //MOBILE版搜尋關閉
   $('.header_search_close').click(function(evt) {
-    // closemenu(evt);
+    closemenu(evt);
     $('#mobile_search').removeClass("search_box_open");
 	$('#header_top').removeClass("header_top_close");
 	$('.search_menu').removeClass("search_menu_down");
-  
   });
-  
   //MOBILE版選單切換
-  $('.mobile_menu i:nth-child(2)').click(function() {
-    $('#login_menu2').toggleClass("login_menu_down");
-	
+  $('#notifier_m').click(function() {
+    $('#notifier_menu').toggleClass("login_menu_down");	
+  });
+  $('#login_m').click(function() {
+    $('#login_menu').toggleClass("login_menu_down");
   });
   //當WIDNWOS RESIZE時, 關閉選單
   $( window ).resize(function(evt) {
-      closemenu(evt);
-	  addhover();
+    closemenu(evt);
+	addhover();
   });
   //輪播
    $(".banner_carousel1").owlCarousel({
-        singleItem:true,
-        lazyLoad: true,
-        autoPlay: false,
-        slideSpeed: 2000,
-        pagination: false,
-        navigation: false,
-		stopOnHover: true,
-		afterMove: carouselto1
+      singleItem:true,
+      lazyLoad: true,
+      autoPlay: 5000,
+      slideSpeed: 2000,
+      pagination: true,
+      navigation: false,
+	  stopOnHover: true,
+	  afterMove: carouselto1
     });
 	carouselto(0);
 	//按選單之外關閉選單
 	$('body').click(function(evt) {
-	    closemenu(evt);
-     });
+	  closemenu(evt);
+    });
 });
 //關閉選有選單
 function closemenu(evt){
-    if($(evt.target).parents("#login").length==0 && $(evt.target).parents("#login_menu").length==0 && $("#login_menu").hasClass( "login_menu_down" )){
-	   $('#login_menu').removeClass("login_menu_down");
-	}
-	if($(evt.target).parents(".mobile_img").length==0 && $(evt.target).parents("#login_menu2").length==0 && $("#login_menu2").hasClass( "login_menu_down" )){
-	   $('#login_menu2').removeClass("login_menu_down");
-	}
-	
-	if($(evt.target).parents(".search_btn").length==0 && $(evt.target).parents(".search_menu").length==0 && $(".search_menu").hasClass( "search_menu_down" )){
-	   $('.search_menu').removeClass("search_menu_down");
-	}
+  if(event.target.id!="login" && $(evt.target).parents("#login").length==0 && $(evt.target).parents("#login_menu").length==0 && event.target.id != "login_menu"
+    && event.target.id != "login_m" && $("#login_menu").hasClass( "login_menu_down" )){
+      $('#login_menu').removeClass("login_menu_down");
+  }
+  if(event.target.id != "notifier" && $(evt.target).parents("#notifier").length==0 && event.target.id != "notifier_menu"  
+    && $(evt.target).parents("#notifier_menu").length==0 && event.target.id != "notifier_m" && $("#notifier_menu").hasClass( "login_menu_down" )){
+      $('#notifier_menu').removeClass("login_menu_down");
+  }
+  if($(evt.target).parents(".search_btn").length==0 && $(evt.target).parents(".search_menu").length==0 && $(".search_menu").hasClass( "search_menu_down" )){
+    $('.search_menu').removeClass("search_menu_down");
+  }
 }
-
 //輪播跳頁
 function carouselto1(){
   var owl = $(".banner_carousel1").data('owlCarousel');
@@ -596,10 +788,10 @@ function carouselto1(){
 }
 //手動跳頁
 function carouselto(x){
-	var owl = $(".banner_carousel1").data('owlCarousel');
-	owl.goTo(x);
-	//BTN改樣式
-	$(".banner_catbtn"+ (x+1)).removeClass('carousel_btn_off').addClass('carousel_btn_on').siblings('div').addClass('carousel_btn_off').removeClass('carousel_btn_on');
+  var owl = $(".banner_carousel1").data('owlCarousel');
+  owl.goTo(x);
+  //BTN改樣式
+  $(".banner_catbtn"+ (x+1)).removeClass('carousel_btn_off').addClass('carousel_btn_on').siblings('div').addClass('carousel_btn_off').removeClass('carousel_btn_on');
 }
 //hover動作判斷
 function addhover(){
@@ -608,7 +800,73 @@ function addhover(){
   }else{
     $(".hit_story").removeClass('hit_story_hover');
   }
-} 
+}
+deeplink.setup({
+  iOS: {
+      appId: "1057840696",
+      appName: "pinpinbox",
+  },
+  android: {
+      appId: "com.pinpinbox.android",
+  }
+});
+function _search(device = null) {
+  if(device == null) { device = (isMobile()) ? 'mobile' : 'desktop' ; }
+  var searchtype = $('input#'+device+'_searchkey').data('searchtype');
+  switch (searchtype) {
+  	case 'album' :
+  	  var url = 'https://www.pinpinbox.com/index/album/?rank_id=0';
+  	break;
+  	case 'user' :
+  	  var url = 'https://www.pinpinbox.com/index/creative/?rank_id=0';
+  	break;
+  }
+  var searchkey = $('input#'+device+'_searchkey').val().trim();
+  //cookie
+  /*
+  var search = [], searched = $.cookie('search')? $.parseJSON($.cookie('search')) : [], array = [];
+  if (searchkey !== '') searched.unshift(searchkey);
+  for (var i = 0; i < searched.length; ++i) {
+    if (array.indexOf(searched[i]) < 0) {
+      array.push(searched[i]);
+      search.push(searched[i]);
+    }
+  }
+  if (search.length > 16) search.pop();
+  $.cookie('search', JSON.stringify(search), {path: '/'});
+  if(encodeURIComponent(searchkey).length == 0) {
+  	location.href = 'https://www.pinpinbox.com/index/album/explore/';
+  }else{
+  	location.href = url + '&searchtype=' + searchtype + '&searchkey=' + encodeURIComponent(searchkey);
+  }
+  */
+}
+function clickHandler(uri) {
+  deeplink.open(uri);
+  return false;
+}
+function createAlbum() {
+	$.post('https://www.pinpinbox.com/index/template/_taketemplate_v2/', {
+		template_id: 0,
+	}, function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 1:
+				_jBox(r, 'albumProcess');
+				break;
+			case 2:
+				_jBox(r, 'success_notext');
+				break;
+			case 3:
+				location.href = r.redirect;
+				break;
+			default:
+				_jBox(r, 'error');
+				break;
+		}
+	});
+}
 </script>
+</div><!-- #main -->
 </body>
 </html>
