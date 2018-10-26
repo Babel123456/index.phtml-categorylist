@@ -33,10 +33,11 @@
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/browser-deeplink-master/browser-deeplink.min.js"></script>
   </script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-cookie-master/src/jquery.cookie.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/Bootstrap-3-Typeahead-master/bootstrap3-typeahead-modify.min.js"></script>
-  <!-- //20181024 加入 -->
+  <!-- //20181026: 專區加入開始 -->
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/imagesloaded.pkgd.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/masonry/js/masonry.pkgd.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.infinitescroll.min.js"></script>
+  <!-- //20181026: 專區加入結束 -->
   <!-- 表頭區塊開始 -->
   <div id="header">
     <!-- 手機版搜尋區塊開始 -->
@@ -232,13 +233,28 @@
 	  <div class="creative_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4119/cover$34e0.jpg"></div>
 	  <div class="main_content">
 	    <div class="tab-container">
-  	    <ul class="nav nav-pills" >
-	      <li class="active"><a data-toggle="tab" href="#tab0">我的作品</a></li>
-		  <li><a data-toggle="tab" href="#tab1">收藏．贊助</a></li>
-		  <li><a data-toggle="tab" href="#tab2">群組作品</a></li>
-		  <li><a data-toggle="tab" href="#tab3">關於我</a></li>
-		  <li><a data-toggle="tab" href="#tab4">留言版</a></li>
-		</ul>
+		  <div class="tab_list_area" >
+		  <!-- 手機版列表選單開始 -->
+		  <div id="mobile_tab"><i class="fa fa-list-ul"></i>作品集</div>
+		  <!-- 手機版列表選單結束 -->
+  	      <ul class="nav nav-pills mobile_tab_menu" id="mobile_tab_menu" >
+	        <li class="active"><a data-toggle="tab" href="#tab0">我的作品</a></li>
+		    <li><a data-toggle="tab" href="#tab1">收藏．贊助</a></li>
+		    <li><a data-toggle="tab" href="#tab2">群組作品</a></li>
+		    <li><a data-toggle="tab" href="#tab3">關於我</a></li>
+		    <li><a data-toggle="tab" href="#tab4">留言版</a></li>
+		  </ul>
+		  <!-- 搜尋區塊開始 -->
+          <div id="content_search">
+		    <div class="content_search_open"><i class="fa fa-search"></i></div>
+	        <div class="content_search_box">
+	      	<a href="javascript:void(0);" onclick="_search('mobile')"><i class="fa fa-search"></i></a>
+	      	<input type="text" class="search_text" name="searchkey" id="mobile_searchkey" data-searchtype="album" data-device="mobile" autocomplete="off">
+	        </div>
+            <div class="content_search_close"><i class="fa fa-times"></i></div>
+	      </div>
+		</div>
+	    <!-- 搜尋區塊結束 -->
   	      <div class="tab_content">
   		    <!-- 我的作品區塊開始 -->
   		    <div id="tab0" class="tab active">
@@ -437,7 +453,22 @@
       	});
       });
 	//});
-	  
+	//手機版選單列表
+	$('#mobile_tab .fa').on('click', function(){
+	  $('.mobile_tab_menu').toggleClass("mobile_tab_down");
+    });
+	//搜尋區塊開始
+	$('.content_search_open').on('click', function(){
+	  $('.content_search_open').css("display", "none");
+	  $('.content_search_box').css("display", "inline-block");
+	  $('.content_search_close').css("display", "inline-block");
+    });
+	$('.content_search_close').on('click', function(){
+	  $('.content_search_open').css("display", "inline-block");
+	  $('.content_search_box').css("display", "none");
+	  $('.content_search_close').css("display", "none");
+    });
+	//搜尋區塊結束
   </script>
   <!-- FOOTER區塊開始 -->
   <div id="footer">
@@ -583,14 +614,30 @@ $(document).ready(function() {
 	  stopOnHover: true,
 	  afterMove: carouselto1
     });
-	if($('#elemId').length>0){
+	// 20181026: 修改有輪播才跑 開始
+	if($('.banner_carousel1').length>0){
 	  carouselto(0);
 	}
-	//按選單之外關閉選單
-	$('body').click(function(evt) {
-	  closemenu(evt);
-    });
+	// 20181026: 修改有輪播才跑 結束
+  //按選單之外關閉選單
+  $('body').click(function(evt) {
+	closemenu(evt);
+  });
 });
+//首頁輪播跳頁FUNCTION
+//輪播跳頁
+  function carouselto1(){
+    var owl = $(".banner_carousel1").data('owlCarousel');
+    var current = (owl == null || owl == 'undefined')? 0 : owl.currentItem;
+    carouselto(current);
+  }
+  //手動跳頁
+  function carouselto(x){
+    var owl = $(".banner_carousel1").data('owlCarousel');
+    owl.goTo(x);
+    //BTN改樣式
+    $(".banner_catbtn"+ (x+1)).removeClass('carousel_btn_off').addClass('carousel_btn_on').siblings('div').addClass('carousel_btn_off').removeClass('carousel_btn_on');
+  }
 //關閉選有選單
 function closemenu(evt){
   if(event.target.id!="login" && $(evt.target).parents("#login").length==0 && $(evt.target).parents("#login_menu").length==0 && event.target.id != "login_menu"
@@ -604,19 +651,11 @@ function closemenu(evt){
   if($(evt.target).parents(".search_btn").length==0 && $(evt.target).parents(".search_menu").length==0 && $(".search_menu").hasClass( "search_menu_down" )){
     $('.search_menu').removeClass("search_menu_down");
   }
-}
-//輪播跳頁
-function carouselto1(){
-  var owl = $(".banner_carousel1").data('owlCarousel');
-  var current = (owl == null || owl == 'undefined')? 0 : owl.currentItem;
-  carouselto(current);
-}
-//手動跳頁
-function carouselto(x){
-  var owl = $(".banner_carousel1").data('owlCarousel');
-  owl.goTo(x);
-  //BTN改樣式
-  $(".banner_catbtn"+ (x+1)).removeClass('carousel_btn_off').addClass('carousel_btn_on').siblings('div').addClass('carousel_btn_off').removeClass('carousel_btn_on');
+  // 20181026: 關閉左邊列表選單開始
+  if($(evt.target).parents("#mobile_tab").length==0 && event.target.id != "mobile_tab" && event.target.id != "mobile_tab_menu" ){
+    $('.mobile_tab_menu').removeClass("mobile_tab_down");
+  }
+  // 20181026: 關閉左邊列表選單結束
 }
 //hover動作判斷
 function addhover(){
@@ -671,25 +710,7 @@ function clickHandler(uri) {
   return false;
 }
 function createAlbum() {
-	$.post('https://www.pinpinbox.com/index/template/_taketemplate_v2/', {
-		template_id: 0,
-	}, function(r) {
-		r = $.parseJSON(r);
-		switch (r.result) {
-			case 1:
-				_jBox(r, 'albumProcess');
-				break;
-			case 2:
-				_jBox(r, 'success_notext');
-				break;
-			case 3:
-				location.href = r.redirect;
-				break;
-			default:
-				_jBox(r, 'error');
-				break;
-		}
-	});
+	//此處為暫代的假FUNCTION
 }
 </script>
 </div><!-- #main -->
