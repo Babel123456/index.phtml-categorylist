@@ -436,27 +436,25 @@ img { width: 100%; height: auto; }
 /* 表頭社群資訊區塊開始 */
 .creative_content_header { position: fixed; top: 64px; z-index: 20; width: 100%; text-align: right; height: 64px; background: #ffffff; border-bottom: 1px solid #e8e8e8; vertical-align: middle; }
 @media (max-width: 800px) { .creative_content_header { top: 44px; height: 44px; } }
-.creative_content_header .creative_info_area { display: table; margin: auto; height: 64px; width: 960px; }
+.creative_content_header .creative_info_area { display: flex; align-items: center; flex-direction: row; margin: auto; height: 64px; width: 960px; }
 @media (max-width: 1024px) { .creative_content_header .creative_info_area { width: 96%; } }
 @media (max-width: 800px) { .creative_content_header .creative_info_area { height: 44px; } }
-.creative_content_header .creative_info_area > div { display: table-cell; vertical-align: middle; }
-.creative_content_header .creative_info_area #creative_name { font-size: 22px; text-align: left; }
+.creative_content_header .creative_info_area > div { flex: -1 0 0; vertical-align: middle; }
+.creative_content_header .creative_info_area #creative_name { flex: 1 2 auto; font-size: 20px; text-align: left; }
 @media (max-width: 800px) { .creative_content_header .creative_info_area #creative_name { font-size: 14px; } }
 .creative_content_header .creative_info_area #creative_name > span { display: inline-block; vertical-align: middle; }
-.creative_content_header .creative_info_area #creative_name > span:last-child { margin-left: 16px; overflow: hidden; width: 110px; white-space: nowrap; text-overflow: ellipsis; }
-@media (max-width: 1024px) { .creative_content_header .creative_info_area #creative_name > span:last-child { margin-left: 6px; width: 140px; } }
-@media (max-width: 1000px) { .creative_content_header .creative_info_area #creative_name > span:last-child { width: 130px; } }
-@media (max-width: 960px) { .creative_content_header .creative_info_area #creative_name > span:last-child { width: 100px; } }
-@media (max-width: 900px) { .creative_content_header .creative_info_area #creative_name > span:last-child { width: 90px; } }
-@media (max-width: 800px) { .creative_content_header .creative_info_area #creative_name > span:last-child { margin-left: 8px; width: 200px; } }
-@media (max-width: 600px) { .creative_content_header .creative_info_area #creative_name > span:last-child { width: 140px; } }
-@media (max-width: 500px) { .creative_content_header .creative_info_area #creative_name > span:last-child { width: 110px; } }
-@media (max-width: 400px) { .creative_content_header .creative_info_area #creative_name > span:last-child { margin-left: 4px; width: 80px; } }
-@media (max-width: 320px) { .creative_content_header .creative_info_area #creative_name > span:last-child { margin-left: 2px; width: 50px; } }
+.creative_content_header .creative_info_area #creative_name > span:nth-child(2) { margin-left: 16px; flex: 1 2 auto; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+@media (max-width: 1024px) { .creative_content_header .creative_info_area #creative_name > span:nth-child(2) { margin-left: 6px; } }
+@media (max-width: 800px) { .creative_content_header .creative_info_area #creative_name > span:nth-child(2) { margin-left: 8px; } }
+@media (max-width: 400px) { .creative_content_header .creative_info_area #creative_name > span:nth-child(2) { margin-left: 4px; } }
+@media (max-width: 320px) { .creative_content_header .creative_info_area #creative_name > span:nth-child(2) { margin-left: 2px; } }
 .creative_content_header .creative_info_area #creative_name img { width: 56px; height: 56px; border-radius: 100%; }
 @media (max-width: 1024px) { .creative_content_header .creative_info_area #creative_name img { width: 48px; height: 48px; } }
 @media (max-width: 800px) { .creative_content_header .creative_info_area #creative_name img { width: 32px; height: 32px; } }
-.creative_content_header .creative_info_area #social_links { padding-left: 20px; }
+.creative_content_header .creative_info_area > div:nth-child(1) { display: flex; align-items: center; }
+.creative_content_header .creative_info_area > div:nth-child(1) span:nth-child(2) { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.creative_content_header .creative_info_area > div:nth-child(1) span:last-child { width: 32px; display: inline-block; }
+.creative_content_header .creative_info_area #social_links { margin-left: 20px; }
 @media (max-width: 800px) { .creative_content_header .creative_info_area #social_links { display: none; } }
 @media (max-width: 1024px) { .creative_content_header .creative_info_area #social_links { padding-left: 6px; } }
 .creative_content_header .creative_info_area #social_links img { width: 32px; height: 32px; border-radius: 100%; margin-left: 12px; }
@@ -466,9 +464,8 @@ img { width: 100%; height: auto; }
 .creative_content_header .creative_info_area #social_links img:first-child { margin-left: 0px; }
 .creative_content_header .creative_info_area #social_links2 { display: none; font-size: 16px; }
 @media (max-width: 800px) { .creative_content_header .creative_info_area #social_links2 { display: table-cell; padding-left: 2%; } }
-.creative_content_header .creative_info_area .attention_num { padding-left: 32px; width: 130px; }
-@media (max-width: 1024px) { .creative_content_header .creative_info_area .attention_num { padding-left: 16px; width: 120px; } }
-@media (max-width: 960px) { .creative_content_header .creative_info_area .attention_num { width: 110px; } }
+.creative_content_header .creative_info_area .attention_num { margin-left: 32px; }
+@media (max-width: 1024px) { .creative_content_header .creative_info_area .attention_num { margin-left: 16px; } }
 .creative_content_header .creative_info_area .edit_btn { width: 192px; padding-left: 32px; }
 @media (max-width: 1024px) { .creative_content_header .creative_info_area .edit_btn { width: 160px; padding-left: 16px; } }
 @media (max-width: 960px) { .creative_content_header .creative_info_area .edit_btn { width: 140px; } }
@@ -483,7 +480,7 @@ img { width: 100%; height: auto; }
 /* 創作人內容區塊開始 */
 .creative_content { position: relative; width: 960px; text-align: center; margin: 128px auto 64px auto; }
 @media (max-width: 1024px) { .creative_content { width: 96%; } }
-.creative_content .creative_title { position: relative; font-size: 18px; text-align: left; display: table; width: 100%; margin: auto; padding: 32px 0; }
+.creative_content .creative_title { position: relative; font-size: 18px; text-align: left; display: table; width: 100%; margin: auto; padding: 56px 0 64px 0; }
 @media (max-width: 1024px) { .creative_content .creative_title { padding: 26px 0 42px 0; width: 98%; } }
 @media (max-width: 800px) { .creative_content .creative_title { text-align: center; padding: 0px 0 32px 0; } }
 .creative_content .creative_title div { display: table-cell; text-align: center; vertical-align: middle; }
@@ -503,20 +500,19 @@ img { width: 100%; height: auto; }
 .creative_content .tab_list_area { position: relative; width: 960px; }
 @media (max-width: 1024px) { .creative_content .tab_list_area { width: 100%; } }
 .creative_content #mobile_tab { display: none; font-size: 20px; text-align: left; margin: 32px 0 16px 1%; }
-@media (max-width: 800px) { .creative_content #mobile_tab { display: block; max-width: 110px; } }
+@media (max-width: 800px) { .creative_content #mobile_tab { display: block; width: max-content; } }
 .creative_content #mobile_tab .fa { margin-right: 16px; }
 .creative_content .mobile_tab_menu { margin-left: 0 !important; }
-.creative_content .mobile_tab_menu li { margin: 84px 32px 32px -0.6% !important; }
-@media (max-width: 1024px) { .creative_content .mobile_tab_menu li { margin: 84px 12px 32px -0.6% !important; } }
-@media (max-width: 960px) { .creative_content .mobile_tab_menu li { margin: 84px 8px 32px -0.6% !important; } }
-@media (max-width: 800px) { .creative_content .mobile_tab_menu li { display: block; margin: 0 0 16px 0 !important; float: none; letter-spacing: 2px; font-size: 18px !important; } }
+.creative_content .mobile_tab_menu li { letter-spacing: 2px !important; margin: 96px 32px 32px 0 !important; }
+@media (max-width: 800px) { .creative_content .mobile_tab_menu li { display: block !important; margin: 0 0 16px 0 !important; float: none; letter-spacing: 2px; font-size: 18px !important; } }
+.creative_content .mobile_tab_menu li a { padding: 0 !important; }
 @media (max-width: 800px) { .creative_content .mobile_tab_menu li:last-child { margin: 0 !important; } }
-@media (max-width: 800px) { .creative_content .mobile_tab_menu { display: none; background: #ffffff; border: 1px solid #d4d4d4; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; width: 200px; margin: 0 !important; padding: 32px; } }
+@media (max-width: 800px) { .creative_content .mobile_tab_menu { display: none; background: #ffffff; border: 1px solid #d4d4d4; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; margin: 0 !important; padding: 32px; } }
 .creative_content .mobile_tab_down { position: absolute; z-index: 2; top: 25px; left: 0; display: block; }
 .creative_content .tab { position: relative; width: 960px; }
 @media (max-width: 1024px) { .creative_content .tab { width: 100%; } }
 @media (max-width: 800px) { .creative_content .tab { width: 98%; margin: auto; } }
-.creative_content #content_search { display: block; position: absolute; top: 57%; right: 3px; }
+.creative_content #content_search { display: block; position: absolute; top: 60%; right: 3px; }
 @media (max-width: 800px) { .creative_content #content_search { top: -28%; } }
 .creative_content #content_search > div { display: inline-block; }
 .creative_content #content_search > div:last-child { display: none; }
@@ -603,3 +599,17 @@ img { width: 100%; height: auto; }
 /* 創作人專區內容區塊結束 */
 /* --------------------------------------------------
 /* 創作人專區編輯資訊區塊開始 */
+.edit_tab { display: block; list-style: none; height: 64px; line-height: 64px; font-size: 16px; text-align: left; }
+@media (max-width: 800px) { .edit_tab { line-height: 44px; } }
+.edit_tab li { display: inline-block; width: 17.5%; margin-right: 16px; }
+.edit_tab li a { color: #d4d4d4; }
+.edit_tab li .btn_new { background: none; -moz-border-radius: 40px; -webkit-border-radius: 40px; border-radius: 40px; }
+.edit_tab li:nth-child(3) { display: none; }
+@media (max-width: 800px) { .edit_tab li:nth-child(3) { display: inline-block; } }
+.edit_tab li:nth-child(4) { width: 60%; float: right; text-align: right; margin-right: 0; }
+@media (max-width: 800px) { .edit_tab li:nth-child(4) { display: none; } }
+.edit_tab li:nth-child(4) a { color: #d4d4d4 !important; cursor: default; }
+.edit_tab li.active a { color: #4d4d4d; }
+.edit_tab li.active .btn_new { background: #f2f2f2; }
+
+/* 創作人專區編輯資訊區塊結束 */
