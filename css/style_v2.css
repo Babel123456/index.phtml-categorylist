@@ -45,6 +45,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 * { position: relative; vertical-align: middle; }
 *:focus { outline: none; }
 
+html { scroll-behavior: smooth; }
+
 a { color: #4d4d4d; text-decoration: none; }
 
 a:hover { color: #00acc1; }
@@ -468,7 +470,7 @@ textarea:-ms-input-placeholder { color: #9e9e9e; }
 @media (max-width: 800px) { #p_bannner { margin-top: 44px; } }
 #p_bannner > div { display: block; }
 @media (max-width: 800px) { #p_bannner > div { display: block; width: 100%; font-size: 18px; } }
-#p_bannner #p_banner_carousel { position: relative; margin-top: 64px; height: 500px; width: 100%; overflow: hidden; scroll-behavior: smooth; }
+#p_bannner #p_banner_carousel { position: relative; margin-top: 64px; height: 500px; width: 100%; overflow: hidden; }
 @media (max-width: 800px) { #p_bannner #p_banner_carousel { height: 460px; margin-top: 44px; } }
 @media (max-width: 600px) { #p_bannner #p_banner_carousel { height: 420px; } }
 @media (max-width: 500px) { #p_bannner #p_banner_carousel { height: 320px; } }
