@@ -2,2044 +2,692 @@
 <!doctype html>
 <html lang="zh">
 <head>
-        <link rel="icon" type="image/vnd.microsoft.icon" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/favicon.ico"/>
-    <link rel="manifest" href="http://dev.pinpin.com/manifest.json">
-    <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width ,initial-scale=1.0">
-    <meta name="keywords" content="pinpinbox">
-    <meta name="description" content="pinpinbox是一個全新型態的社群平台，以類似於電子書的相本呈現方式，讓平時喜愛自拍攝影、文創設計、分享生活的你，能夠有個便利的工具編輯上傳你的相本。pinpinbox還結合電子商務，除了純分享創作至雲端空間，更有機會創業！">
-    <meta name="msvalidate.01" content="851F62F6F1B71365ECE1EFE9C1D56C73"/>
-    <meta name="apple-itunes-app" content="app-id=1057840696">
-    <meta property="og:url" content="dev.pinpin.com/index/index">
-    <meta property="og:title" content="pinpinbox串流相本社群平台">
-    <meta property="og:description" content="pinpinbox是一個全新型態的社群平台，以類似於電子書的相本呈現方式，讓平時喜愛自拍攝影、文創設計、分享生活的你，能夠有個便利的工具編輯上傳你的相本。pinpinbox還結合電子商務，除了純分享創作至雲端空間，更有機會創業！">
-    <meta property="og:image" content="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/kanban.png">
-    <script src="https://api.dmcdn.net/all.js"></script>
-    <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
-    <title>pinpinbox串流相本社群平台</title>
-    <link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/css/bootstrap.min.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/css/bootstrap.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/css/fontello.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/css/font-awesome/css/font-awesome.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/js/jBox-0.4.8/jBox.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/css/lightgallery.min.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/css/lightgallery-custom.min.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/js/mediaelement-2.22.0/mediaelementplayer.min.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/js/jquery.magnific-popup/css/magnific-popup.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/js/social-likes/css/social-likes_flat.css" rel="stylesheet" /><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/css/dropit.css" rel="stylesheet" /><!--<link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/css/style.css" rel="stylesheet" />--><link type="text/css" href="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/css/jquery-ui.min.css" rel="stylesheet" />    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-     <link type="text/css" href="style.css" rel="stylesheet" />
-    </head>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/favicon.ico"/>
+    <link rel="manifest" href="https://www.pinpinbox.com/manifest.json">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap.min.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link type="text/css" href="./css/style_v2.css" rel="stylesheet" />
+</head>
 <body>
-<div id="fb-root"></div>
-<script>(function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.10&appId=1904970929730781";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-<div id="alert_box">
-	<div id="alert_bg"></div>
-	<div id="alert_in">
-		<div id="alert_top">
-			<div id="close_alert"><a href="#">X</a></div>
-			檢舉此作品		</div>
-		<div id="alert_content">
-			<ul class="step01">
-				<li><input type="radio" value="1" id="input_01" name="report" class="report_check"> <label id="input_01" onclick="$(this).prev('input').click();">色情內容</label></li><li><input type="radio" value="2" id="input_02" name="report" class="report_check"> <label id="input_02" onclick="$(this).prev('input').click();">暴力或令人厭惡的內容</label></li><li><input type="radio" value="3" id="input_03" name="report" class="report_check"> <label id="input_03" onclick="$(this).prev('input').click();">仇恨或惡意內容</label></li><li><input type="radio" value="4" id="input_04" value="04" name="report" class="report_check"> <label id="input_04" onclick="$(this).prev('input').click();">有害的危險行為</label></li><li class="hide" id="input04_li"><textarea id="input04_textarea" rows="5" placeholder="詳細描述"></textarea></li><li><input type="radio" value="5" id="input_05" name="report" class="report_check"> <label id="input_05" onclick="$(this).prev('input').click();">虐待兒童</label></li><li><input type="radio" value="6" id="input_06" name="report" class="report_check"> <label id="input_06" onclick="$(this).prev('input').click();">垃圾內容或內容與標題不符</label></li><li><input type="radio" value="7" id="input_07" name="report" class="report_check"> <label id="input_07" onclick="$(this).prev('input').click();">侵犯我的權利</label></li><li><input type="radio" value="8" id="input_08" name="report" class="report_check"> <label id="input_08" onclick="$(this).prev('input').click();">文字相關檢舉</label></li><li><input type="radio" value="9" id="input_09" name="report" class="report_check"> <label id="input_09" onclick="$(this).prev('input').click();">詐騙訊息</label></li>			<li><a href="#" class="used" id="next_step">提交</a></li>
-			</ul>
-			<ul class="step02">
-				<li>
-					<p>如果您確信有人在未獲授權的情況下，擅自在pinpinbox 上發佈您受版權保護的作品，這時可以提出侵犯版權通知。只有著作權人或其授權代理人可以提交這類要求。</p>
-					<p>如要向 pinpinbox 通報涉嫌侵權的，最簡單快速的做法就是填寫網路表單。建議使用桌機和筆電填寫這份表單；在行動裝置及平板電腦上操作會較為繁複。</p>
-				</li>
-				<li><a href="javascript:void(0)" id="alert_btn" class="used">提交申訴</a></li>
-				<li><a href="javascript:void(0)" class="cancel" >回上頁</a></li>
-				<li><p>如果您選擇提出侵權通知，要求我們移除相關內容，代表您採取了正式的法律程式。</p></li>
-				<li><p class="red">請勿提出不實聲明。濫用這項程式可能會導致您的帳戶遭到停權，您本人也可能因此需要承擔其他法律責任。</p></li>
-			</ul>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/bootstrap.min.js"></script>
+  <!-- 表頭區塊開始 -->
+  <div id="header">
+  <!-- 手機版搜尋區塊開始 -->
+    <div id="mobile_search">
+	  <div class="header_search">
+		  <div class="header_search_box">
+			  <i class="fa fa-search"></i>
+			  <input type="text" class="search_text" name="searchkey" placeholder="">
+			  <div class="search_btn"><span id="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
+			   <div class="search_menu">
+				      <ul>
+					    <li><a href="javascript:void(0)" data-searchtype="user">創作人</a></li>
+					    <li><a href="javascript:void(0)" data-searchtype="album">作品</a></li>
+				      </ul>
+				  </div>
+			  </div>
+		  </div>
 		</div>
+	  <div class="header_search_close"><i class="fa fa-times"></i></div>
 	</div>
-</div>
-<div id="main"><div id="header">
-	<!-- 電腦版使用導覽列 -->
-	<div id="head_desk">
-		<div class="head_top">
-			<div class="head_center">
-				<div class="logo"><a href="http://dev.pinpin.com/">pinpinbox</a></div>
-				<div class="top_search"  >
-					<div class="input-group">
-						<div class="input-group-btn">
-							<button type="button" id="header_searchtype_list" name="header_searchtype_list" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-searchtype="album">作品 <span class="caret"></span></button>
-							<ul class="dropdown-menu dropdown-menu-headerbar" role="menu">
-							  <li><a href="javascript:void(0)" data-searchtype="album">作品</a></li>							  
-							  <li><a href="javascript:void(0)" data-searchtype="user">創作人</a></li>
-							</ul>								
-						</div>
-						<!-- header PC search-->
-						<input type="text" class="form-control height30" id="searchkey_pc" name="searchkey" value="">
-						<div class="input-group-btn">
-							<button class="btn btn-default" type="button" onclick="_search()">
-								<i class="fa fa-search"></i>
-							</button>
-						</div>
-					</div>							
-				</div>
-				<div id="head_other">
-					<ul>
-						<li class="member_hide">
-														<a style="z-index: 99;" href="javascript:void(0);" class="member cicle_btn icon_user" data-iconfor="user" id="member_open">
-								<img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" height="149" width="149"  onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'">
-							</a>
-							<ul>
-								<li><div class="member_nav">
-									<ul>
-									
-										<li style="color:#D0D0D0;">人造人34號</li>
-										<li><div class=line></div></li>
-										<li><a href="http://dev.pinpin.com/index/user/settings/">管理中心</a></li>										
-										<li><a href="http://dev.pinpin.com/mars">我的專區</a></li>
-										<li><div class=line></div></li>
-										<li><a href="http://dev.pinpin.com/index/user/order/">消費查詢</a></li>
-										<!-- <li><a href="http://dev.pinpin.com/index/user/album/">我的收藏</a></li>-->
-										<li><div class=line></div></li>
-										<li><a href="http://dev.pinpin.com/index/user/question/">回報問題</a></li>
-										<li><a href="http://dev.pinpin.com/index/user/logout/">登出</a></li>									</ul>
-								</div></li>
-							</ul>
-						</li>											
-													<li class="notice_hide">
-								<a href="javascript:void(0)" class="cicle_btn" data-toggle="tooltip" data-placement="bottom" >
-                                    									<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/notice_a.svg" onerror="this.onerror=null; this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/notice_a.png'" >
-								</a>
-								<ul>
-									<li>
-										<div class="notice_nav">
-											<ul>
-												<li style="font-size:14px;">通知中心</li>
-												<li><div class="notice_line"></div></li>
-												<div class="noticeWarpper">
-												</div>
-												<li class="bottom">
-													<a style="color:white;font-size:14px;" href="http://dev.pinpin.com/index/notifications/"> 顯示全部 </a>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</li>
-												<li>
-							<a href="http://dev.pinpin.com/index/event/" class="cicle_btn icon_event" data-iconfor="event" data-toggle="tooltip" data-placement="bottom"  data-original-title="最新活動">
-								<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/event_a.svg" onerror="this.onerror=null; this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/event_a.png'" >
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)" onclick="createAlbum();" class="cicle_btn icon_diy" data-iconfor="diy" data-toggle="tooltip" data-placement="bottom"  data-original-title="建立作品">
-								<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/diy_b.svg" onerror="this.onerror=null; this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/diy_b.png'" >
-							</a>
-						</li>
-											</ul>
-				</div>
-			</div>
+	<!-- 電腦版搜尋區塊開始 -->
+	  <div id="header_top">
+		<div class="header_logo"><a href="https://www.pinpinbox.com/">pinpinbox釘釘吧</a></div>
+		<div class="header_search">
+		  <div class="header_search_box">
+			  <i class="fa fa-search"></i>
+			  <input type="text" class="search_text" name="searchkey" placeholder="">
+			  <div class="search_btn"><span id="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
+			   <div class="search_menu">
+				      <ul>
+					    <li><a href="javascript:void(0)" data-searchtype="user">創作人</a></li>
+					    <li><a href="javascript:void(0)" data-searchtype="album">作品</a></li>
+				      </ul>
+				  </div>
+			  </div>
+		  </div>
 		</div>
-	</div>
-
-	<!-- 手機板使用導覽列 -->
-	<div id="head_mobile">
-		<div id="head_nav02">
-			<div id="close_nav02"><a href="javascript:void(0);"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/close.png" height="83" width="82"  ></a></div>
+		<!-- 20181116: 改字與加"P好康"開始 -->
+		<div class="pin_creator"><a href="https://www.pinpinbox.com/index/user/point/" title="立即購買Ｐ點贊助">購買Ｐ點</a></div>
+		<div class="pin_gift btn_new btn_pink"><a href="#p_bannner" title="賺P點 抽好康 買好物">Ｐ好康</a></div>
+		<!-- 20181116: 改字與加"P好康"結束 -->
+		<!-- 電腦版選單開始 -->
+		<div class="header_menu">
+		  <a href="#">建立作品</a><a href="#" id="notifier">通知<span class="notifier_icon"></span></a>
+		  <a href="#" id="login">登入 | 註冊</a>
+		  
+		  
+		</div>
+		<!-- 電腦版選單開始 -->
+		<!-- 手機版選單開始 -->
+		<div class="mobile_menu">
+		  <div class="mobile_img"><i class="fa fa-search"></i><i id="notifier_m" class="fa fa-bell"></i><i id="login_m" class="fa fa-bars" ></i></div>
+		</div>
+		  <!-- 手機版選單結束 -->
+	  </div>
+	  <!-- //20181005: 新加入區塊開始 -->
+	  <div id="login_menu">
+	    <ul>
+		<!--
+		<li><div><ul>
+			  <li><a href="#">Hi, 訪客</a></li>
+			  <li><a href="#">登入</a></li>
+			  <li><a href="#">註冊</a></li>
+			</ul></div><div></div>
+		  </li>
+		  -->
+		  <li><div>我的專區</div><div>
+		    <ul>
+			  <li><a href="#">關於我</a></li>
+			  <li><a href="creative_content.php">我的作品</a></li>
+			  <li><a href="#">我的收藏</a></li>
+			  <li><a href="#">共用協作</a></li>
+			  <li><a href="#">留言板</a></li>
+			</ul></div>
+		  </li>
+		  <li><div>管理中心</div><div>
 			<ul>
-				<li><div id="login_no"><a href="javascript:void(0)"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" height="149" width="149"   onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'">人造人34號</a></div></li>				<li><div class="line"></div></li>
-				<li>
-					<div id="nav_wrapper">
-						<div id="scroller">
-							<ul>
-								<li><a href="http://dev.pinpin.com/mars">我的專區</a></li><li><a href="http://dev.pinpin.com/index/notifications/">通知中心</a></li><li><a href="http://dev.pinpin.com/index/user/sale_album/" >贊助管理</a></li>
-									<li>
-										<a href="javascript:void(0);" class="drop">管理中心
-											<ul>
-												<li><a href="http://dev.pinpin.com/index/user/settings/">會員資料</a></li>
-												
-												<!-- <li><a href="http://dev.pinpin.com/index/user/album/">我的收藏</a></li> -->
-												<li><a href="http://dev.pinpin.com/index/user/order/">消費查詢</a></li>
-											</ul>
-										</a>
-									</li>
-									
-									<li><a href="http://dev.pinpin.com/index/user/point/">購買P點</a></li>
-
-									<li><a href="http://dev.pinpin.com/index/user/question/">回報問題</a></li>
-									<li><div class="line"></div></li>
-
-									<li><a href="http://dev.pinpin.com/index/about/">關於我們</a></li>
-									<li><a href="http://dev.pinpin.com/index/album/explore/" >探索作品</a>
-										<ul>
-										</ul>	
-									</li>									
-									<li><a href="http://dev.pinpin.com/index/event/">最新活動</a></li>
-									<li><a target="_blank" href="https://www.facebook.com/pages/pinpinbox/872194489510640">Facebook粉絲專頁</a></li>
-									<li><div class="line"></div></li>
-									<li><a href="http://dev.pinpin.com/index/user/logout/">登出</a></li>							</ul>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div id="head_all">
-			<div id="head_in">
-				<div class="logo mobilehide02"><a href="http://dev.pinpin.com/"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/logo.png" height="84" width="79"></a></div>
-				<div class="logo mobilehidedispaly02"><a href="http://dev.pinpin.com/"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/m_logo.png" height="84" width="79"></a></div>
-				<div class="top_search">
-						<div class="input-group">
-							<div class="input-group-btn">
-								<button type="button" id="header_searchtype_list" name="header_searchtype_list" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-searchtype="album">作品 <span class="caret"></span></button>
-								<ul class="dropdown-menu dropdown-menu-headerbar" role="menu">
-								  <li><a href="javascript:void(0)" data-searchtype="album">作品</a></li>
-								  <li><a href="javascript:void(0)" data-searchtype="user">創作人</a></li>
-								</ul>								
-							</div>
-							<!-- header Mobile search-->
-							<input type="text" class="form-control" id="searchkey_m" name="searchkey" value="">
-							
-							<div class="input-group-btn"><button class="btn btn-default" type="button" onclick="_search()"><i class="fa fa-search"></i></button></div>
-						</div>
-				</div>					
-				
-				<div class="menu02">
-					<a href="javascript:;" id="menu2_open"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/menu02.png" height="177" width="174"  ></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="right_btn">
-		<div id="scroll_top"  ><a href="javascript:void(0)"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/icon_top.svg" height="53" width="52"  ></a></div>
-		<div id="fb_link"><a href="https://www.facebook.com/pages/pinpinbox/872194489510640" target="_blank" title="造訪 pinpinbox粉絲團!"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/icon_fb.svg" onerror="this.onerror=null; this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/icon_fb.png'"></a></div>
-</div>
-<script>
-
-//Mobile - notice
-function mobile_notice() {
-	var myConfirm = new jBox('Modal', {
-		cancelButton: '否',
-		confirmButton: '是',
-		confirm: function() {	
-			buyalbum();
-		},
-		onCloseComplete: function() {	
-			myConfirm.destroy();
-		}
-	}).setContent(
-		'<div class="content">' +
-		'<p class="keypoint"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/info.png">&nbsp;Coming Soon!Only a PC device is supported at present.</p>' +
-		// '<p><a data-uri="https://play.google.com/store/apps/details?id=com.pinpinbox.android" onclick="clickHandler(this.dataset.uri)" href="javascript:void(0)"><img class="app" src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/jbox_and.png"></a>'+
-		// '<a data-uri="https://itunes.apple.com/tw/app/id1057840696" onclick="clickHandler(this.dataset.uri)" href="javascript:void(0)"><img class="app" src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/jbox_ios.png"></a></p><br>' +
-		'</div>'
-	).open();
-}
-</script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-1.11.3.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/browser-deeplink-master/browser-deeplink.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.bxslider/jquery.bxslider.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/bootstrap.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.zh-TW.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/Bootstrap-3-Typeahead-master/bootstrap3-typeahead-modify.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-cookie-master/src/jquery.cookie.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/all.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.nicescroll.min.js"></script><script type="text/javascript" src="https://www.pinpinbox.com/js/jBox-0.4.8/jBox.min.js"></script><script type="text/javascript" src="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lightgallery-all-modify.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lg-audio.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lg-subhtml.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/lib/jquery.mousewheel.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/js/owl.carousel.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/mediaelement-2.22.0/mediaelement-and-player.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/waypoint/js/waypoint.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/social-likes/js/social-likes.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.magnific-popup/js/jquery.magnific-popup.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/imagesloaded.pkgd.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/masonry/js/masonry.pkgd.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.infinitescroll.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.countdown.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/autolink-min.js"></script><div id="banner" class="index_banner">
-	<div id="banner_content">
-		<div class="fotorama owl-carousel">
-	 		<div class="page">
-<div class="pageWarp"><a href="#" target="_blank"><img class="lazyOwl" data-src="http://dev.pinpin.com/upload/admin/ad/20170124/5886dca4f401e.png" height="380" src="http://dev.pinpin.com/upload/admin/ad/20170124/5886dca4f401e.png" width="1920" /></a>
-<p class="title"  >簡易出版 創作回饋</p>
-
-<p class="subTitle">培養興趣之餘還能賺外快！</p>
-
-<p class="bannerBtn"><input style="" onclick=" location.href = '#'; " type="button" value="立刻了解" /></p>
-</div>
-</div>
-		</div>
-	</div> 
-</div>
-
-<div class="mobile_banner owl-carousel" style="margin-bottom:15px;">
-	<div class="page"><img class="lazyOwl" data-src="http://dev.pinpin.com/upload/admin/ad/20170124/58870a51627ff.png" height="380" src="http://dev.pinpin.com/upload/admin/ad/20170124/58870a51627ff.png" width="375" />
-<p class="title">簡易出版</p>
-
-<p class="subTitle">創作回饋</p>
-
-<p class="lastTitle">培養興趣之餘還能賺外快！</p>
-
-<p class="bannerBtn"><input onclick=" location.href = '#'; " type="button" value="立刻了解" /></p>
-</div>
-</div>
-<!-- 內容頁開始 -->
-<div id="content">
-		<!--舊樣式 -->
-		<ul id="layout">
-            <li class="wid90">
-                <!--<div class="tab-container">-->
-				
-				
-                    <div class="categoryListwrapper">
-  <div class="categoryListArrows">
-    <span class="arrow-up" ><img  src="20171130-left.svg"></span>
-  </div>
-   <div class="categoryList"><div class= "product_scroll1">
-        <div class="icon">
-			<a title="首頁" href="https://www.pinpinbox.com/">
-				<img width="60" src="home.svg">首頁
-			</a>
-		</div><div class="icon">
-			<a title="拚星聞" href="https://www.pinpinbox.com/index/album/explore/">
-				<img width="60" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/explore_01_n.svg">拚星聞
-			</a>
-		</div><div class="icon">
-			<a title="拼旅遊" href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=1">
-				<img width="60" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/explore_02_n.svg">拼旅遊
-			</a>
-		</div><div class="icon">
-			<a title="拼美食" href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=4">
-				<img width="60" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/explore_05_n.svg">拼美食
-			</a>
-		</div><div class="icon">
-			<a title="拼藝文" href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3">
-				<img width="60" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/explore_04_n.svg">拼藝文
-			</a>
-		</div><div class="icon">
-			<a title="拼知識" href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=5">
-				<img width="60" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/explore_06_n.svg">拼知識
-			</a>
-		</div><div class="icon">
-			<a title="拼寵物" href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=6">
-				<img width="60" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/explore_07_n.svg">拼寵物
-			</a>
-		</div><div class="icon">
-			<a title="拼時尚" href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=7">
-				<img width="60" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/explore_08_n.svg">拼時尚
-			</a>
-		</div><div class="icon">
-			<a title="拼寶貝" href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=2">
-				<img width="60" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/explore_03_n.svg">拼寶貝
-			</a>
-		</div><div class="icon">
-			<a title="拼分享" href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=8">
-				<img width="60" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/explore_09_n.svg">拼分享
-			</a>
-		</div>		
-		</div>
-</div> 
-<div class="categoryListArrows">
-<span class="arrow-down" ><img src="20171130-right.svg"></span>
-</div>
-</div>
-
-					
-                <!--</div>-->
-            </li>
-            <li><div class="line"></div></li>
-            <li class="wid90 p_logo" ><br><span class="more"><a href="http://dev.pinpin.com/index/album/explore/"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/btn-more-n.svg"></a></span></li>
-			<li >
-				<div id="tab-container" class="tab-container">
-					<ul class='etabs etabs_index'>
-						<li class="active"><a href="#tab0">123</a></li><li class="liBread" style="display:block;">|</li><li><a href="#tab1">新進作品</a></li><li class="liBread" style="display:block;">|</li><li><a href="#tab2">第三個標籤</a></li>					</ul>
-					<div class="tab_content ">
-						<div id="tab0" class="tab active"><div class= "product_scroll"><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=26');">asb</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=26');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/sdvsdv?click=album_id_26"><img src="http://dev.pinpin.com/storage/zh_TW/user/35\picture$3a8c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=26');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170308/58bfdfdfb97a3.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=26');" href="http://dev.pinpin.com/index/album/content/?album_id=26&click=album_name">asb</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/sdvsdv?click=album_id_26">受邀者-副管理員</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=11');">0217</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=11');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/sdvsdv?click=album_id_11"><img src="http://dev.pinpin.com/storage/zh_TW/user/35\picture$3a8c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=11');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170504/590a9ef08d49c.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=11');" href="http://dev.pinpin.com/index/album/content/?album_id=11&click=album_name">0217</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/sdvsdv?click=album_id_11">受邀者-副管理員</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=38');">0505-音樂相本</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=38');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/sdvsdv?click=album_id_38"><img src="http://dev.pinpin.com/storage/zh_TW/user/35\picture$3a8c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=38');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170505/590c1c4a7fff6.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=38');" href="http://dev.pinpin.com/index/album/content/?album_id=38&click=album_name">0505-音樂相本</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/sdvsdv?click=album_id_38">受邀者-副管理員</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=7');">100p</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=7');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/mars?click=album_id_7"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=7');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170308/58bfdbdba1559.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=7');" href="http://dev.pinpin.com/index/album/content/?album_id=7&click=album_name">100p</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/mars?click=album_id_7">人造人34號</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=8');"></a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=8');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/mars?click=album_id_8"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=8');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170308/58bfdbde15105.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=8');" href="http://dev.pinpin.com/index/album/content/?album_id=8&click=album_name"></a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/mars?click=album_id_8">人造人34號</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=9');">沒２有朋友的大學生都這樣過生日！沒有２朋友的大學生都這樣過生日！</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=9');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/mars?click=album_id_9"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=9');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170308/58bfdbdfbadd8.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=9');" href="http://dev.pinpin.com/index/album/content/?album_id=9&click=album_name">沒２有朋友的大學生都這樣過生日！沒有２朋友的大學生都這樣過生日！</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/mars?click=album_id_9">人造人34號</a></p>
-												</div>
-											</div>	
-										</div></div></div><div id="tab1" class="tab"><div class= "product_scroll"><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=26');">asb</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=26');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/sdvsdv?click=album_id_26"><img src="http://dev.pinpin.com/storage/zh_TW/user/35\picture$3a8c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=26');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170308/58bfdfdfb97a3.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=26');" href="http://dev.pinpin.com/index/album/content/?album_id=26&click=album_name">asb</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/sdvsdv?click=album_id_26">受邀者-副管理員</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=3');">v3</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=3');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/mars?click=album_id_3"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=3');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170308/58bfdbd51c306.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=3');" href="http://dev.pinpin.com/index/album/content/?album_id=3&click=album_name">v3</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/mars?click=album_id_3">人造人34號</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=4');">鋼絲"外露釀爆'胎　專家：要定期注意胎況</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=4');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/mars?click=album_id_4"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=4');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170308/58bfdbd719620.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=4');" href="http://dev.pinpin.com/index/album/content/?album_id=4&click=album_name">鋼絲"外露釀爆'胎　專家：要定期注意胎況</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/mars?click=album_id_4">人造人34號</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=7');">100p</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=7');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/mars?click=album_id_7"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=7');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170308/58bfdbdba1559.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=7');" href="http://dev.pinpin.com/index/album/content/?album_id=7&click=album_name">100p</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/mars?click=album_id_7">人造人34號</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=8');"></a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=8');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/mars?click=album_id_8"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=8');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170308/58bfdbde15105.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=8');" href="http://dev.pinpin.com/index/album/content/?album_id=8&click=album_name"></a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/mars?click=album_id_8">人造人34號</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=9');">沒２有朋友的大學生都這樣過生日！沒有２朋友的大學生都這樣過生日！</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=9');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/mars?click=album_id_9"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=9');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170308/58bfdbdfbadd8.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=9');" href="http://dev.pinpin.com/index/album/content/?album_id=9&click=album_name">沒２有朋友的大學生都這樣過生日！沒有２朋友的大學生都這樣過生日！</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/mars?click=album_id_9">人造人34號</a></p>
-												</div>
-											</div>	
-										</div></div></div><div id="tab2" class="tab"><div class= "product_scroll"><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=58');">fb video test</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=58');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/mars?click=album_id_58"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=58');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170809/598a745dd4563.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=58');" href="http://dev.pinpin.com/index/album/content/?album_id=58&click=album_name">fb video test</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/mars?click=album_id_58">人造人34號</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=59');">FB影片測試</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=59');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/mars?click=album_id_59"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=59');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170809/598a7464d2016.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=59');" href="http://dev.pinpin.com/index/album/content/?album_id=59&click=album_name">FB影片測試</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/mars?click=album_id_59">人造人34號</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=56');">隱私權測試</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=56');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/mars?click=album_id_56"><img src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=56');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170809/598a74748b7bd.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=56');" href="http://dev.pinpin.com/index/album/content/?album_id=56&click=album_name">隱私權測試</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/mars?click=album_id_56">人造人34號</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=49');">201704</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=49');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/index/creative/content/?user_id=51&click=album_id_49"><img src="http://dev.pinpin.com/storage/zh_TW/user/51\picture$4e82.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=49');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170809/598a7484d0590.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=49');" href="http://dev.pinpin.com/index/album/content/?album_id=49&click=album_name">201704</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/index/creative/content/?user_id=51&click=album_id_49">測試達人</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=48');">201703</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=48');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/index/creative/content/?user_id=51&click=album_id_48"><img src="http://dev.pinpin.com/storage/zh_TW/user/51\picture$4e82.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=48');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170809/598a750fc3dca.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=48');" href="http://dev.pinpin.com/index/album/content/?album_id=48&click=album_name">201703</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/index/creative/content/?user_id=51&click=album_id_48">測試達人</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=47');">201702</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=47');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/index/creative/content/?user_id=51&click=album_id_47"><img src="http://dev.pinpin.com/storage/zh_TW/user/51\picture$4e82.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=47');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170809/598a7513c37c1.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=47');" href="http://dev.pinpin.com/index/album/content/?album_id=47&click=album_name">201702</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/index/creative/content/?user_id=51&click=album_id_47">測試達人</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=46');">201702</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=46');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/index/creative/content/?user_id=51&click=album_id_46"><img src="http://dev.pinpin.com/storage/zh_TW/user/51\picture$4e82.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=46');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170809/598a75182398a.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=46');" href="http://dev.pinpin.com/index/album/content/?album_id=46&click=album_name">201702</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/index/creative/content/?user_id=51&click=album_id_46">測試達人</a></p>
-												</div>
-											</div>	
-										</div><div>	
-											<div class="product_list">
-												<div class="black_box" style="height:100%;">
-													<p class="album_name"><a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=45');">201702</a></p>
-													<p class="album_view" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=45');"></p>
-													<p class="user_pic"><a href="http://dev.pinpin.com/index/creative/content/?user_id=51&click=album_id_45"><img src="http://dev.pinpin.com/storage/zh_TW/user/51\picture$4e82.jpg" onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'"></a></p>
-												</div>
-												<div class="product_pic">
-													<a href="javascript:void(0)" onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=45');"><img src="http://dev.pinpin.com/upload/admin/indexpopularity/20170809/598a751cb7394.png" height="330" width="220"> </a>
-												</div>
-												<div class="product_info">
-													<p><a onclick="popview('http://dev.pinpin.com/index/album/content/?album_id=45');" href="http://dev.pinpin.com/index/album/content/?album_id=45&click=album_name">201702</a></p>
-													<p class="user_name">by <a href="http://dev.pinpin.com/index/creative/content/?user_id=51&click=album_id_45">測試達人</a></p>
-												</div>
-											</div>	
-										</div></div></div>					</div>
-				</div>
-			</li>
-			<li class="wid90"><a href="http://dev.pinpin.com/index/album/explore/" class="mo_more">more</a></li>
-			<li><div class="line"></div></li>
-			<li class="wid90" style="margin-bottom:25px;"><h2>最新活動</h2><span class="more"><a href="http://dev.pinpin.com/index/event/"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/btn-more-n.svg"></a></span></li>			<div class="eventFotorama"><li class="wid90 eventItem" style="margin-bottom:0px;">
-										<div class="act_list">
-											<div class="act_pic"><a href="http://dev.pinpin.com/index/event/content/?event_id=6"><img src="http://dev.pinpin.com/upload/admin/event/20151216/56713fe1aa2b2_287x207.jpg"></a></div>
-											<div class="act_info">
-												<ul>
-													<li><a href="http://dev.pinpin.com/index/event/content/?event_id=6"><h3>聖誕快樂</h3></a></li>
-													<li>2016/01/07~2017/12/31</li>
-													<li><p>聖誕快樂</p></li>
-												</ul>
-											</div>
-											<div class="act_else">
-												<ul>
-													<li class="float_left">
-														<div id="time0" class="timeCounter">
-															<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/icon-countdown-r.png" height="27" width="27" class="clock">
-															<p class="date"><span class="day"></span><br>日</p>
-															<p class="date"><span class="hour"></span><br>小時</p>
-															<p class="date"><span class="minute"></span><br>分</p>
-															<p class="date"><span class="second"></span><br>秒</p>
-														</div>
-														<div id="famous">
-															<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/icon-popularity-r.png" height="28" width="27">人氣<span class="bigtxt">159</span>
-														</div>
-													</li>
-													<li class="float_right"><a href="http://dev.pinpin.com/index/event/content/?event_id=6" class="join"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/learn-event-btn.svg"></a></li>
-												</ul>
-											</div>
-										</div>				
-									</li><li class="wid90 eventItem" style="margin-bottom:0px;">
-										<div class="act_list">
-											<div class="act_pic"><a href="http://dev.pinpin.com/index/event/content/?event_id=15"><img src="http://dev.pinpin.com/upload/admin/event/20160831/57c69e8cb36f2_287x118.jpeg"></a></div>
-											<div class="act_info">
-												<ul>
-													<li><a href="http://dev.pinpin.com/index/event/content/?event_id=15"><h3>新版投票活動樣式測試</h3></a></li>
-													<li>2016/09/11~2017/12/31</li>
-													<li><p>新版投票活動樣式測試</p></li>
-												</ul>
-											</div>
-											<div class="act_else">
-												<ul>
-													<li class="float_left">
-														<div id="time1" class="timeCounter">
-															<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/icon-countdown-r.png" height="27" width="27" class="clock">
-															<p class="date"><span class="day"></span><br>日</p>
-															<p class="date"><span class="hour"></span><br>小時</p>
-															<p class="date"><span class="minute"></span><br>分</p>
-															<p class="date"><span class="second"></span><br>秒</p>
-														</div>
-														<div id="famous">
-															<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/icon-popularity-r.png" height="28" width="27">人氣<span class="bigtxt">12408</span>
-														</div>
-													</li>
-													<li class="float_right"><a href="http://dev.pinpin.com/index/event/content/?event_id=15" class="join"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/learn-event-btn.svg"></a></li>
-												</ul>
-											</div>
-										</div>				
-									</li></div>			<li><div class="line"></div></li>			<li class="wid90" style="margin:0 auto;"><h2>創作人推薦</h2></li>
-				<div class="creativeFotorama"><li class="wid90"><div class="create_box"><a class="createListItem" href="http://dev.pinpin.com/index/creative/content/?user_id=39">
-									<div class="create_list color0">
-										<div class="bg color"></div>
-										<ul>
-											<li class="pic_flow">
-												<div class="create_pic">
-													<img onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'" src="http://dev.pinpin.com/storage/zh_TW/user/39\picture$1927.jpg" height="101" width="101">
-												</div>
-											</li>
-											<li class="create_descrip">
-												<p class="crea_name"></p>
-												<p class="create_info"></p>
-											</li>
-										</ul>
-									</div>
-								</a><a class="createListItem" href="http://dev.pinpin.com/Zergs">
-									<div class="create_list color01">
-										<div class="bg color1"></div>
-										<ul>
-											<li class="pic_flow">
-												<div class="create_pic">
-													<img onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'" src="http://dev.pinpin.com/storage/zh_TW/user/33\picture$b099.jpg" height="101" width="101">
-												</div>
-											</li>
-											<li class="create_descrip">
-												<p class="crea_name">搗亂專家</p>
-												<p class="create_info">123</p>
-											</li>
-										</ul>
-									</div>
-								</a><a class="createListItem" href="http://dev.pinpin.com/sdvsdv">
-									<div class="create_list color01">
-										<div class="bg color1"></div>
-										<ul>
-											<li class="pic_flow">
-												<div class="create_pic">
-													<img onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'" src="http://dev.pinpin.com/storage/zh_TW/user/35\picture$3a8c.jpg" height="101" width="101">
-												</div>
-											</li>
-											<li class="create_descrip">
-												<p class="crea_name">受邀者-副管理員</p>
-												<p class="create_info">321</p>
-											</li>
-										</ul>
-									</div>
-								</a><a class="createListItem" href="http://dev.pinpin.com/Zergs">
-									<div class="create_list color01">
-										<div class="bg color1"></div>
-										<ul>
-											<li class="pic_flow">
-												<div class="create_pic">
-													<img onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'" src="http://dev.pinpin.com/storage/zh_TW/user/33\picture$b099.jpg" height="101" width="101">
-												</div>
-											</li>
-											<li class="create_descrip">
-												<p class="crea_name">搗亂專家</p>
-												<p class="create_info">123</p>
-											</li>
-										</ul>
-									</div>
-								</a></div></li><li class="wid90"><div class="create_box"><a class="createListItem" href="http://dev.pinpin.com/mars">
-									<div class="create_list color01">
-										<div class="bg color1"></div>
-										<ul>
-											<li class="pic_flow">
-												<div class="create_pic">
-													<img onerror="this.src='http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'" src="http://dev.pinpin.com/storage/zh_TW/user/34\picture$612c.jpg" height="101" width="101">
-												</div>
-											</li>
-											<li class="create_descrip">
-												<p class="crea_name">人造人34號</p>
-												<p class="create_info"><p>test</p>
-</p>
-											</li>
-										</ul>
-									</div>
-								</a></div></li></div>			<li class="wid90" style="display: none;"><a href="http://dev.pinpin.com/index/creative/" class="mo_more">more</a></li>
-			<li><div class="line"></div></li>
-			<li class="wid90"><h2>更多推薦</h2></li>
+			   <li><a href="#">積分管理</a></li>
+			   <li><a href="#">P點購買、消費查詢</a></li>
+			   <li><a href="#">會員資料</a></li>
+			</ul></div>
+		  </li>
+		  <li><div>系統</div><div>
+		    <ul>
+			   <li><a href="#">回報問題</a></li>
+			   <li><a href="#">回報記錄</a></li>
+			</ul></div>
+		  </li>
 		</ul>
+		<a href="#"><div class="btn_new">登出</div></a>
+	  </div>
+	  <div id="notifier_menu">
+		<ul class="noticeWarpper">
+		  <li><a href="#">
+		      <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/44/picture$f673.jpg"></div>
+		      <div class="notifier_info"><span>李登輝邀請您共用作品!立即進入?</span>
+			  <span><time datetime="2018-10-16 12:59:30" class="timeago"></time></span></div></a></li>
+		  <li><a href="#">
+		      <div class="notifier_img_w"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/3874/cover$f078.jpg"></div>
+			  <div class="notifier_info"><span>Kevin發佈了新作品[ABCDE]</span>
+			  <span><time datetime="2019-10-16 12:59:05" class="timeago"></time></span></div></a></li>
+		  <li><a href="#">
+		      <div class="notifier_img_w"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/61/cover$e1cb.jpg"></div>
+			  <div class="notifier_info"><span>周潤發發佈了新作品[賭神Beta]</span>
+			  <span><time datetime="2017-10-16 12:58:57" class="timeago"></time></span></div></a></li>
+		</ul>
+		<a href="#"><div class="btn_new">更多</div></a>
+	  </div>
+  </div>
+  <!-- 表頭區塊結束 -->
+  	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" />
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/waypoint/js/waypoint.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.zh-TW.js"></script>
 
-		<!-- 新樣式 -->
-		<div class="water_content " id="freewall">
-		<div class="index_item_box"><div class="ww mobilehide02"  >
-						<div class="origin">
-							<img src="http://dev.pinpin.com/upload/admin/indexelement/20160308/56de797506996_200x150.jpg"></a>
-						</div>
-						<div class="vary vary_single"><a href="http://dev.pinpin.com/index/album/?categoryarea_id=1"><img src="http://dev.pinpin.com/upload/admin/indexelement/20160321/56efbf57e2064_200x134.jpg"></a></div></div><div class="mobiledisplay02"><a href="http://dev.pinpin.com/index/album/?categoryarea_id=1" ><img class="mobile_wrap_img" src="http://dev.pinpin.com/upload/admin/indexelement/20160308/56de797506996_200x150.jpg"></a></div>
-					<div class="item_info">
-						<a href="http://dev.pinpin.com/index/album/?categoryarea_id=1">
-							<div class="info_user">
-								<div class="user_name">
-									<div class="info_name">
-										<div class="info_icon">
-											<p class="name_id">
-												<i class="index_icon" style="background-image:url(http://dev.pinpin.com/upload/admin/indexelement/20160314/56e68b3c1f190.png)"></i>
-												不如再讓我試試
-											</p>
-										</div>
-									</div>
-								</div>
+  <!-- BANNER輪播區塊開始 -->
+  <div id="bannner">
+    <div id="banner_carousel" >
+	    <div class="banner_carousel1 owl-carousel">
+		    <a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1"><img alt="輕鬆起動創作募資計劃" class="lazyOwl" data-src="https://ppb.sharemomo.com/upload/admin/ad/20181011/5bbeb539b8320.jpg" src="https://ppb.sharemomo.com/upload/admin/ad/20181011/5bbeb539b8320.jpg" /></a>
+			<a href="https://www.pinpinbox.com/buzhisuoyun"><img alt="本月主打星" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf26ab857d4.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf26ab857d4.jpg" /> </a>
+			<a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1"><img alt="輕鬆起動創作募資計劃" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf2581d4816.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf2581d4816.jpg" /></a>
+			<a href="https://www.pinpinbox.com/pinpinbox" target="_blank"><img alt="近期活動" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf26ab857d4.jpg"  src="https://cdn.pinpinbox.com/upload/admin/ad/20181011/5bbf26ab857d4.jpg"  /></a>
+		</div> 
+	</div>
+	<div id="banner_catbtn">
+	  <div class="banner_catbtn1" onclick="carouselto(0);"><span>釘上你的創作計劃</span></div>
+	  <div class="banner_catbtn2" onclick="carouselto(1);"><span>強打的創作人</span></div>
+	  <div class="banner_catbtn3" onclick="carouselto(2);"><span>BANNER標籤 長度測試一標籤 長度測試一</span></div>
+	  <div class="banner_catbtn4" onclick="carouselto(3);"><span>BANNER標籤 長度測試二</span></div>
+	</div>
+  </div>
+  <!-- BANNER輪播區塊結束 -->
+
+  <!-- 主要內容區開始 -->
+  <div id="content">
+	  <!-- 累計數字區塊開始 -->
+	  <div class="plan_info_count">
+		<div class="plan_info_count_area">
+		  <div><span>目前累積</span></div>
+		  <div><span class="plan_info_num counter">151449</span><span>贊助次數</span></div>
+		  <div><span class="plan_info_num counter">151223</span><span>發佈作品</span></div>
+		</div>
+	  </div>
+	  <!-- 累計數字區塊結束 -->
+	  <div class="main_content">
+		  <!-- 熱門推薦區塊開始 -->
+		  <div class="tab-container">
+			  <ul class="nav nav-pills" ><li class="active"><a data-toggle="tab" href="#tab0">熱門</a></li><li><a data-toggle="tab" href="#tab1">推薦</a></li></ul>
+			  <div class="tab_content">
+				  <!-- 熱門區塊開始 -->
+				  <!-- //20181011移除 align_center 開始 -->
+				  <div id="tab0" class="tab active">
+				  <!-- //20181011移除 align_center 結束 -->
+					 <div class="hit_story" >
+						 <a href="https://www.pinpinbox.com/andy729huiblog">
+						   <div class="story_img">
+							   <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/picture$2d70.jpg"></span><span>潛能盒子 channelbox</span></div> 
+							   <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/cover$dc41.jpg"></div>
+						   </div>
+						   <div class="story_desc">以寫作奇幻小說為主，請大家多多支持！ 某些故事最新發佈時會免費開放， 請大家多多關注我呢！</div>
+						   <div class="story_info"><div class="story_view">瀏覽：54462</div><div class="pin_count">贊助次數：<span class="pin_count_num">7882</span></div></div>
+						 </a>
+					 </div>
+					 <div class="hit_story" >
+						 <a href="https://www.pinpinbox.com/chen101211">
+						   <div class="story_img">
+							 <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4069/picture$ea13.jpg"></span><span>Ivy Chen</span></div> 
+							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4069/cover$bf64.jpg"></div>
+						   </div>
+						   <div class="story_desc">我是一個在英國讀碩士 每到放假就衝出去的女生 LA20PF是在英國的郵遞區號 很喜歡這種一串字就能表達出歸屬感的感覺 來自台灣台中 我最愛的家鄉 也是我看世界的起點 未來會繼續分享自己旅程中的點滴</div>
+						   <div class="story_info"><div class="story_view">瀏覽：11700</span></div><div class="pin_count">贊助次數：<span class="pin_count_num">9000</div></div>
+						 </a>
+					 </div>
+					 <div class="hit_story" >
+						 <a href="https://www.pinpinbox.com/babel">
+						   <div class="story_img">
+							 <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg"></span><span>babel</span></div> 
+							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$d3d4.jpg"></div>
 							</div>
-						</a>
-					</div>
-				</div><div class="index_item_box"><div class="ww mobilehide02"  >
-						<div class="origin">
-							<img src="http://dev.pinpin.com/upload/admin/indexelement/20160408/570731b8c5a72.gif"></a>
-						</div>
-						<div class="vary vary_single"><a href="http://dev.pinpin.com/index/album/?categoryarea_id=6"><img src="http://dev.pinpin.com/upload/admin/indexelement/20160408/57072d1cd6eda.gif"></a></div></div><div class="mobiledisplay02"><a href="http://dev.pinpin.com/index/album/?categoryarea_id=6" ><img class="mobile_wrap_img" src="http://dev.pinpin.com/upload/admin/indexelement/20160408/570731b8c5a72.gif"></a></div>
-					<div class="item_info">
-						<a href="http://dev.pinpin.com/index/album/?categoryarea_id=6">
-							<div class="info_user">
-								<div class="user_name">
-									<div class="info_name">
-										<div class="info_icon">
-											<p class="name_id">
-												<i class="index_icon" style="background-image:url(http://dev.pinpin.com/upload/admin/indexelement/20160314/56e68b3c1f190.png)"></i>
-												關鍵字專區 - 0129 模板
-											</p>
-										</div>
-									</div>
-								</div>
+						   <div class="story_desc">過了十年的米蟲生活, 畫下那懷念喜愛的米蟲日子~</div>
+						   <div class="story_info"><div class="story_view">瀏覽：10000</span></div><div class="pin_count">贊助次數：<span class="pin_count_num">1000</div></div>
+						 </a>
+					 </div>
+					 <div class="hit_story" >
+						 <a href="https://www.pinpinbox.com/misspink">
+							<div class="story_img">
+								<div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4039/picture$54a2.jpg"></span><span>Miss.Pink</span></div> 
+								<div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4039/cover$9690.jpg"></div>
 							</div>
-						</a>
-					</div>
-				</div><div class="index_item_box"><div class="ww mobilehide02"  >
-						<div class="origin">
-							<img src="http://dev.pinpin.com/upload/admin/indexelement/20160428/5721b0c2ebba4_200x133.jpg"></a>
-						</div>
-						<div class="vary vary_unuse"><a href="http://dev.pinpin.com/index/template"><img src="http://dev.pinpin.com/upload/admin/indexelement/20160428/5721b0c2ebba4_200x133.jpg"></a></div></div><div class="mobiledisplay02"><a href="http://dev.pinpin.com/index/template" ><img class="mobile_wrap_img" src="http://dev.pinpin.com/upload/admin/indexelement/20160428/5721b0c2ebba4_200x133.jpg"></a></div>
-					<div class="item_info">
-						<a href="http://dev.pinpin.com/index/template">
-							<div class="info_user">
-								<div class="user_name">
-									<div class="info_name">
-										<div class="info_icon">
-											<p class="name_id">
-												<i class="index_icon" style="background-image:url(http://dev.pinpin.com/upload/admin/indexelement/20160314/56e68b3c1f190.png)"></i>
-												開始建立
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+						   <div class="story_desc">深深被文字力量吸引的人，喜歡被文字感動，也喜歡用文字感動人。如果你也喜歡文字，但覺得看很多字很辛苦，那就讓我念給你聽吧。故事分享：《What's in Sri Lanka》《夢幻海洋馬爾地夫》《純粹文字》《pretty easy》系列。</div>
+						   <div class="story_info"><div class="story_view">瀏覽：12000</div><div class="pin_count">贊助次數：<span class="pin_count_num">1700</span></div></div>
+						 </a>
+					 </div>
+					 <div class="hit_story" >
+						 <a href="https://www.pinpinbox.com/Hannah">
+						   <div class="story_img">
+								<div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4171/picture$c588.jpg"></span><span>楊花花</span></div> 
+								<div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4171/cover$fc7c.jpg"></div>
+						   </div>
+						   <div class="story_desc">》保養》彩妝》旅遊》生活》外拍》 合作：mnc78917@gmail.com 你好！ 我是楊花花，一個腦動大開的購物狂少女</div>
+						   <div class="story_info"><div class="story_view">瀏覽：2100</div><div class="pin_count">贊助次數：<span class="pin_count_num">2700</span></div></div>
+						 </a>
+					 </div>
+					 <div class="hit_story" >
+						 <a href="https://www.pinpinbox.com/ticklefeet">
+						   <div class="story_img">
+								<div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4023/picture$ce53.jpg"></span><span>腳癢の少女</span></div> 
+								<div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4023/cover$2de0.jpg"></div>
+						   </div>
+						   <div class="story_desc">∴腳癢の少女∵顧名思義，我們腳、很、癢、啦 ! ಠ_ಠ 止癢的辦法就是拖著行李箱出發啦 ! 常常都還沒想好，也沒什麼規劃就直接出發了 。最喜歡在旅途中與人相識，總覺得可以毫無顧慮的開口抓住這人與人相遇千萬分之一的機會，也喜歡比較一些國情跟文化的差異，不只是推薦美景美食，希望能像馬可波羅遊記那樣地紀實。 ∴腳癢の少女∵組成為『蘇菲』跟【你口】! (๑•̀ω•́)ノ ヾ(*´∀ ˋ*)ﾉ 兩人從真正的少女時期15歲的青春年華便發下宏願要環遊世界一周。至今已經過8年的淬煉(?)我們決定要好好地執行它了。蘇菲聽起來很女性，個性卻十足的大而化之，力量大、食量大、衣服也不用天天換洗 (威~沒有啦) 。你口相較之下淑女的許多，童顏的大臉也完美保持少女的形象，但卻時常粗魯的對待蘇菲(?)。</div>
+						   <div class="story_info"><div class="story_view">瀏覽：9542</div><div class="pin_count">贊助次數：<span class="pin_count_num">32150</span></div></div>
+						 </a>
+					 </div>
+				  </div>
+				  <!-- 熱門區塊結束 -->
+				  <!-- 推薦區塊開始 -->
+				  <!-- //20181011移除 align_center 開始 -->
+				  <div id="tab1" class="tab">
+				  <!-- //20181011移除 align_center 結束 -->
+					<div class="hit_story" >
+						 <a href="hhttps://www.pinpinbox.com/darren960319">
+						   <div class="story_img">
+								<div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4018/picture$c066.jpg"></span><span>Darren</span></div> 
+								<div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4018/cover$8e76.jpg"></div>
+						   </div>
+						   <div class="story_desc">我是Darren，一個不滿社會現狀的90後，這社會需要被改變的事太多，所以我決定從自己開始。一次與印度的際遇，讓我開始對於台灣媒體感到憂慮、為台灣人感到可惜。世界很大，不只60吋電視那麼大。19 世紀知名探險家馮•洪堡曾說：「最可怕的世界觀是那些根本沒見過世界的人所抱有的觀念。」 恐懼是來自於我們的「不知道」，今年夏天我會回到印度完成兩年前的計畫，透過在當地生活及旅行的人，繼續讓大家的「知道」歸零，重新認識這個世界，認識印度。</div>
+						   <div class="story_info"><div class="story_view">瀏覽：13000</div><div class="pin_count">贊助次數：<span class="pin_count_num">2157</span></div></div>
+						 </a>
+					 </div>
+					 <div class="hit_story" >
+						 <a href="https://www.pinpinbox.com/taiwanli">
+						   <div class="story_img">
+								<div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4005/picture$cf74.jpg"></span><span>台灣莉</span></div> 
+								<div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4005/cover$6815.jpg"></div>
+						   </div>
+						   <div class="story_desc">22歲台灣女生 在日本停下來，用心看，仔細聽 記錄各個相遇的瞬間與喜怒哀樂 努力成為堅強又溫暖的大人 ALSO YOUTUBE→https://goo.gl/UIjKqb 日本にいる台湾人です！ Taiwanese in Japan :D</div>
+						   <div class="story_info"><div class="story_view">瀏覽：14200</div><div class="pin_count">贊助次數：<span class="pin_count_num">7400</span></div></div>
+						 </a>
+					 </div>
+					 <div class="hit_story" >
+						 <a href="https://www.pinpinbox.com/kasaki">
+						   <div class="story_img">
+								<div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4045/picture$ec13.jpg"></span><span>KASAKI 賀崎</span></div> 
+								<div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4045/cover$9fd6.jpg"></div>
+						   </div>
+						   <div class="story_desc">旅行/美食/攝影/繪畫「我想用我的聲音和旅行時在我相機中停下的畫面描繪出屬於吃貨們的浪漫。」再充實的旅行總要美食與攝影陪伴才叫完美。✔支持我的插畫作品☞ https://www.pixiv.net/member.php?id=4628729✔支持我的攝影以及關注我☞ https://www.instagram.com/_kasaki/?hl=zh-tw</div>
+						   <div class="story_info"><div class="story_view">瀏覽：7526</div><div class="pin_count">贊助次數：<span class="pin_count_num">5908</span></div></div>
+						 </a>
+					 </div>
+					 <div class="hit_story" >
+						 <a href="https://www.pinpinbox.com/alice83107">
+						   <div class="story_img">
+								<div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4016/picture$60eb.jpg"></span><span>許雁林</span></div> 
+								<div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4016/cover$3854.jpg"></div>
+						   </div>
+						   <div class="story_desc">我喜歡吃吃喝喝，旅遊踏青，喜歡文藝創作、插畫、兒童繪本。 作品是用photoshop畫的呦^^</div>
+						   <div class="story_info"><div class="story_view">瀏覽：147000</div><div class="pin_count">贊助次數：<span class="pin_count_num">500</span></div></div>
+						 </a>
+					 </div>
+					 <div class="hit_story" >
+						 <a href="https://www.pinpinbox.com/pileuplife">
+						   <div class="story_img">
+								<div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9211/picture$a2fd.jpg"></span><span>PileUp Life</span></div> 
+								<div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9211/cover$34c4.jpg"></div>
+						   </div>
+						   <div class="story_desc">層層生活是來自台灣的生活品牌，堅持產品從設計、打樣至生產皆源自於台灣。以模組化的概念將家具零件解構，強調賦予消費者設計權，令其能依照個人風格打造屬於自己的家具，日後還可依需求更換零件，賦予家具新面貌。</div>
+						   <div class="story_info"><div class="story_view">瀏覽：6180</div><div class="pin_count">贊助次數：<span class="pin_count_num">61800</span></div></div>
+						 </a>
+					 </div>
+					 
+					 <div class="hit_story" >
+						 <a href="https://www.pinpinbox.com/hphsu">
+						   <div class="story_img">
+								<div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg"></span><span>眭澔平</span></div> 
+								<div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/cover$25a6.jpg"></div>
+						   </div>
+						   <div class="story_desc">「我是『名腿』，不是名嘴！」作家&資深媒體工作者二十餘年自助遍遊紀錄世界五大洲一百九十國熱愛旅行、探險，擁有豐富的旅行經驗，常受邀於通告節目擔任評論工作，談論外星人、UFO、世界歷史、鬼魅奇幻傳說等話題。</div>
+						   <div class="story_info"><div class="story_view">瀏覽：954216</div><div class="pin_count">贊助次數：<span class="pin_count_num">12345</span></div></div>
+						 </a>
+					 </div>
+				  </div>
+				  <!-- 推薦區塊結束 -->
 				</div>
-						</div>		
-		<!-- <div class="end image"><p class="image"><img src="" ></p></div> -->
-		<div style="display:none;" class="end"><p>End</p></div>
-</div>
+		  </div>
+		  <!-- 熱門推薦區塊結束 -->
+		  <!-- 新加入區塊開始 -->
+		   <div class="tab-container">
+			 <ul class="nav nav-pills" ><li class="active"><!--<a data-toggle="tab" href="">-->新加入<!--</a>--></li></ul>
+			  <div class="tab_content">
+				  <!-- //20181011移除 align_center 開始 -->
+				  <div class="tab active">
+				  <!-- //20181011移除 align_center 結束 -->
+					 <div class="new_star">
+						 <a href="https://www.pinpinbox.com/ccartist">
+						   <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9233/picture$5e3c.jpg"></div>
+						   <div class="star_name">C.C</div>
+						   <div class="story_desc">2018年的3月，創造了一隻水彩刺蝟，陪伴我走過人生低潮。讓我開始相信這個世界依然溫柔，我也想用我的圖畫去點亮每個人心中最溫柔的那塊。</div>
+						 </a>
+					 </div>
+					 <div class="new_star">
+						 <a href="https://www.pinpinbox.com/unseeablebeauty">
+						   <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9238/cover$3d2f.jpg"></div>
+						   <div class="star_name">倪子耘</div>
+						   <div class="story_desc">每周一與FB同步更新一章。作者與書籍相關訊息請參考</div>
+						 </a>
+					 </div>
+					 <div class="new_star">
+						 <a href="https://www.pinpinbox.com/ringring0806">
+						   <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9143/picture$cf59.jpg"></div>
+						   <div class="star_name">RingRing 宋知恩</div>
+						   <div class="story_desc">Hi 我是 Ring Ring 這裡會介紹我喜歡的音樂與我的創作喔^_^ 工作邀約、合作請來信Email：2016ringrings@gmail.com</div>
+						 </a>
+					 </div>
+				  </div>
+			  </div>
+		   </div>
+		  <!-- 新加入區塊結束 -->
+		  <!-- 分類區塊開始 -->
+		  <div class="tab-container">
+			 <ul class="nav nav-pills" ><li class="active"><!--<a data-toggle="tab" href="">-->分類<!--</a>--></li></ul>
+			  <div class="tab_content">
+				  <div class="tab active">
+					<div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=1">
+						 <div class="cat_info">
+						   <div class="cat_name">旅人</div>
+						 </div>
+						 <div class="cat_area">
+						   <div class="cat_01">
+							 <div class="cat_img"><img src="images/assets-v7/cat_img01.jpg"></div>
+							</div>
+						 </div></a>
+					 </div>
+					 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=4">
+						 <div class="cat_info">
+						   <div class="cat_name">美食</div>
+						 </div>
+						 <div class="cat_area">
+						   <div class="cat_01">
+							 <div class="cat_img"><img src="images/assets-v7/cat_img02.jpg"></div>
+							</div>
+						 </div></a>
+					 </div>
+					 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3">
+						 <div class="cat_info">
+						   <div class="cat_name">藝文</div>
+						 </div>
+						 <div class="cat_area">
+						   <div class="cat_01">
+							<div class="cat_img"><img src="images/assets-v7/cat_img03.jpg"></div>
+							</div>
+						 </div></a>
+					 </div>
+					 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=5">
+						 <div class="cat_info">
+						   <div class="cat_name">知識</div>
+						 </div>
+						 <div class="cat_area">
+						   <div class="cat_01">
+							 <div class="cat_img"><img src="images/assets-v7/cat_img04.jpg"></div>
+							</div>
+						 </div></a>
+					 </div>
+					 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=12">
+						 <div class="cat_info">
+						   <div class="cat_name">音樂</div>
+						 </div>
+						 <div class="cat_area">
+						   <div class="cat_01">
+							 <div class="cat_img"><img src="images/assets-v7/cat_img05.jpg"></div>
+							</div>
+						 </div></a>
+					 </div>
+					 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=7">
+						 <div class="cat_info">
+						   <div class="cat_name">時尚</div>
+						 </div>
+						 <div class="cat_area">
+						   <div class="cat_01">
+							 <div class="cat_img"><img src="images/assets-v7/cat_img06.jpg"></div>
+							</div>
+						 </div></a>
+					 </div>
+					 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=13">
+						 <div class="cat_info">
+						   <div class="cat_name">公益</div>
+						 </div>
+						 <div class="cat_area">
+						   <div class="cat_01">
+							<div class="cat_img"><img src="images/assets-v7/cat_img07.jpg"></div>
+							</div>
+						 </div></a>
+					 </div>
+					 <div class="cat_areaw"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=13">
+						 <div class="cat_info">
+						   <div class="cat_name">分享</div>
+						 </div>
+						 <div class="cat_area">
+						   <div class="cat_01">
+							 <div class="cat_img"><img src="images/assets-v7/cat_img08.jpg"></div>
+							</div>
+						 </div></a>
+					 </div>
+				  </div>
+			  </div>
+		   </div>
+		  <!-- 分類區塊結束 -->
+	  </div>
+  
+  <!-- //20181116 P好康區塊開始 -->
+  <div id="p_bannner">
+    <div id="p_banner_carousel" >
+	    <div>
+		    <a href="https://www.pinpinbox.com/index/album/explore/" title="立即進入"><img alt="輕鬆起動創作募資計劃" class="lazyOwl" data-src="images/assets-v7/p好康圖.jpg" src="images/assets-v7/p好康圖.jpg" /></a>
+		</div>
+	</div>
+  </div>
+  
+  <!-- //20181116 P好康區塊開始 -->
+	  <div class="main_content2">
+		 <!-- 輕鬆啟動創作募資計劃開始 -->
+		 <div class="tab-container">
+			 <ul class="nav nav-pills" ><li class="active"><!--<a data-toggle="tab" href="">-->創作價值　由你決定<!--</a>--></li></ul>
+			 <!-- 低門檻募資就醬EZ!4個STEP開始 -->
+			 <div class="tab_content">
+				  <div class="tab active">
+					<div class="pin_plan_step">
+						 <div class="pin_plan_step1">
+							<div class="step_img"><img src="images/assets-v7/planstep-01.jpg"></div>
+							<div class="step_title">創作主導</div>   
+							<div class="step_desc">完整保留你的創作核心主導權</div>
+						 </div>
+						 <div class="pin_plan_step2">
+							 <div class="step_img"><img src="images/assets-v7/planstep-02.jpg"></div>
+							 <div class="step_title">創作頻道</div>    
+							 <div class="step_desc">免費創建專屬贊助頻道</br>無縫分享至社群平台</div>
+						 </div>
+						 <div class="pin_plan_step3">
+							 <div class="step_img"><img src="images/assets-v7/planstep-03.jpg"></div>
+							 <div class="step_title">創作價值</div>
+							 <div class="step_desc">為作品設定P點</br>創造被動收入</div>
+						 </div>
+						 <div class="pin_plan_step4">
+							 <div class="step_img"><img src="images/assets-v7/planstep-04.jpg"></div>
+							 <div class="step_title">超高分潤</div>    
+							 <div class="step_desc">提升粉絲的關注及觀看次數</br>自動提高分潤</div>
+						  </div>
+					 </div>
+				  </div>
+			  </div>
+			  <!-- 低門檻募資就醬EZ!4個STEP結束 -->
+			  <div class="tab_content">
+				  <div class="tab active">
+					 <div class="pin_plan">
+					   <div class="plan_video">
+						   <div class="plan_video_wrap">
+								<div class="plan_video_cnt">
+									<iframe src="https://www.youtube.com/embed/R-6wgPWHWik" frameborder="0" allowfullscreen=""></iframe>		
+								</div>
+							</div>
+					   </div>
+					   <div class="plan_info">
+						   <div><span class="plan_info_title">【pinpinbox】創作人募資平台</span>
+								<span class="plan_info_desc">pinpinbox釘釘吧 是個「創作人及斜扛青年」發佈作品取得募資的平台。創作人將作品發表在pinpinbox釘釘吧，透過募資機制輕鬆創造被動收入。 pinpinbox釘釘吧 提供各種作品上傳形式「圖片、影片、音樂 (或錄音)、文字 、PDF檔」及社群分享無縫接軌、募資金流後台管理之完整功能。</span>
+						   </div>
+						 </div>
+					 </div>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+  </div>
+  <!-- 主要內容區結束 -->
 
-<div class="fullWidthBanner Banner1">
-	<div class="title"> 關於pinpinbox </div>
 
-	<div class="videoEmbed">
-		<div class="videoframe">
-			<iframe height="450" src="https://www.youtube.com/embed/ir48gIwiEqw" frameborder="0" allowfullscreen></iframe>		</div>
-	</div>
-	
-	<div class="tabs">
-		<div id="TabMain">
-		    <div class="tabItemContainer">
-		        <li data-index="btn01"> <a class="tabItemCurrent btn01"></a> </li>
-		        <li data-index="btn02"> <a class="btn02-b" ></a> </li>
-		        <li data-index="btn03"> <a class="btn03-b" ></a> </li>
-		    </div>
-		    <div class="tabBodyContainer">
-		        <div class="tabBodyItem tabBodyCurrent">
-		        	<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-body-01.svg">
-		        </div>
-		        <div class="tabBodyItem">
-		        	<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-body-02.svg">
-		        </div>
-		        <div class="tabBodyItem">
-		        	<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-body-03.svg">
-		        </div>
-		    </div>
-		</div>
-	</div>
-	<div class="m_tabs">
-		<div class="layer">
-			<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-01-b.svg">
-			<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-02-b.svg">
-			<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/about-ppb-left-menu-03-b.svg">
-		</div>
-	</div>
-</div>
-<div class="fullWidthBanner Banner2">
-	<div class="content">
-		<div class="title">創意，是讓生活更美好的起點</div>
-		<div class="subTitle">和超過<span class="counter">10064</span>位創作者一起享受樂趣</div>
-		<div class="btnCreate"><a href="javascript:void(0)" onclick="createAlbum();"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/btn-start-creating.svg"></a></div>
-		<div class="btnExplode"><a href="http://dev.pinpin.com/index/album/explore/"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/btn-explore-the-work.svg"></a></div>
-	</div>
-	<div class="m_content">
-		<div class="title">創意</div>
-		<div class="title2">讓生活更美好</div>
-		<div class="subTitle">和超過<span class="counter">10064</span>位創作者一起享受樂趣</div>
-		<div class="btnCreate">
-			<a id="createBtn" href="javascript:void(0);" data-uri="pinpinbox://index/diy/content/?album_id=62&template_id=0&identity=admin" onclick="clickHandler(this.dataset.uri)" class="join">
-				<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/btn-start-creating.svg">
-			</a>
-		</div>
-		<div class="btnExplode"><a href="http://dev.pinpin.com/index/album/explore/"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/btn-explore-the-work.svg"></a></div>
-	</div>
-</div>
-<div style="display:none" id="show_photo"></div>
-<div class="m_footer">
-	<ul>
-		<li><a href="http://dev.pinpin.com/index/index/qanda/">Q&amp;A</a></li>
-		<li>
-			<select>
+
+<script>
+
+$(document).ready(function() {
+  //時間之前
+  $('time.timeago').timeago();
+  //判斷HOVER動作
+  addhover();
+  //數字倒數
+  $('.counter').counterUp({
+      delay: 10,
+      time: 1000
+  });
+  
+  //當WIDNWOS RESIZE時, 關閉選單
+  $( window ).resize(function(evt) {
+	  addhover();
+  });
+  //輪播
+   $(".banner_carousel1").owlCarousel({
+        singleItem:true,
+        lazyLoad: true,
+        autoPlay: false,
+        slideSpeed: 2000,
+        pagination: false,
+        navigation: false,
+		stopOnHover: true,
+		afterMove: carouselto1
+    });
+	carouselto(0);
+	//按選單之外關閉選單
+	$('body').click(function(evt) {
+	    closemenu(evt);
+     });
+});
+
+//輪播跳頁
+function carouselto1(){
+  var owl = $(".banner_carousel1").data('owlCarousel');
+  var current = (owl == null || owl == 'undefined')? 0 : owl.currentItem;
+  carouselto(current);
+}
+//手動跳頁
+function carouselto(x){
+	var owl = $(".banner_carousel1").data('owlCarousel');
+	owl.goTo(x);
+	//BTN改樣式
+	$(".banner_catbtn"+ (x+1)).removeClass('carousel_btn_off').addClass('carousel_btn_on').siblings('div').addClass('carousel_btn_off').removeClass('carousel_btn_on');
+}
+//hover動作判斷
+function addhover(){
+  if($( window ).width()> 801){
+    $(".hit_story").addClass('hit_story_hover');
+  }else{
+    $(".hit_story").removeClass('hit_story_hover');
+  }
+} 
+</script>
+
+
+  <!-- FOOTER區塊開始 -->
+  <div id="footer">
+    <div id="footer_area">
+		  <ul>
+			<li><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
+			<li><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" class="cicle_btn" style="z-index: 100">經營小幫手</a></li>
+			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/qanda/">Q&amp;A</a></li>
+			<li class="mobile_show" ><a href="https://www.pinpinbox.com/index/recruit/">企業合作</a></li>
+			
+			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/privacy/">條款與政策</a></li>
+			<li class="dropup">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下載APP<span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a id="apple_btn" data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
+					<li><a data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
+				</ul>							
+			</li>				
+			<li class="dropup footer_lang">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">語言<span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li ><a href="javascript:void(0)" >English</a></li>
+					<li ><a href="javascript:void(0)" >日本語</a></li>
+					<li ><a href="javascript:void(0)" >簡體中文</a></li>
+					<li ><a href="https://www.pinpinbox.com/index/?lang=zh_TW">繁體中文</a></li>
+				</ul>							
+			</li>
+			<li class="mobile_show mobile_footer_lang">
+			  <select>
 				<option>簡體中文</option>
-				<option>繁體中文</option>
+				<option selected>繁體中文</option>
 				<option>English</option>
-			</select>
-		</li>
-		<li><a href="http://dev.pinpin.com/index/index/privacy/">條款與政策</a></li>
-		<li></li>
-		<li><a href="http://dev.pinpin.com/index/recruit/">企業合作</a></li>
-	</ul>
-</div>
-
-<script>
-$(document).ready(function(e) {
-	SidebarTabHandler.Init();
-	$('.counter').counterUp({
-        delay: 10,
-        time: 1000
-    });
-
-	$('div.sample').hover(function() {
-		$(this).find('div.product_info').show();
-	}, function() {
-		$(this).find('div.product_info').hide();
-	});
-
-	var nicesx = $(".tab_content").niceScroll({
-		touchbehavior: true,
-		cursorcolor: "transparent",
-		cursoropacitymax: 0.6,
-		cursorwidth: 8
-	});
-	
-	var nicesx2 = $(".categoryList").niceScroll({
-		touchbehavior: true,
-		cursorcolor: "transparent",
-		cursoropacitymax: 0,
-		cursorwidth: 10
-	});
-
-	$(".categoryList").getNiceScroll().resize();
-	$('.arrow-up').on('click', function(){nicesx2.doScrollLeft(-300, 1.5);});
-	$('.arrow-down').on('click', function(){nicesx2.doScrollLeft(400, 1.5);});
-	
-});
-
-$(document).on('click', '#alert_btn' , function(e){
-	alert_submit($(this).data('album_id'));
-}).on('click', '.alert_btn' , function(e){
-	e.stopPropagation();
-	$('#alert_btn, #next_step').data('album_id', $(this).data('album_id'));
-	$('#alert_box').fadeIn();
-	$('input[name=report]').removeAttr('checked');
-	$('#input04_textarea').val('');
-	$('#input04_li').hide();
-}).on('click', '#close_alert' , function(e){
-	$('#alert_box').fadeOut('slow', function() {
-		$('.step02').hide();
-		$('.step01').show();
-	});	
-}).on('click', '#alert_bg' , function(e){
-	$('#alert_box').fadeOut(function() {
-		$('#close_alert').trigger('click');
-	});
-}).on('click', '.step02 .cancel' , function(e){
-	$('.step02').hide();
-	$('.step01').show();
-}).on('click', '#next_step' , function(e){
-	var obj = $('input[name=report]:checked');
-	if (obj.val() == 7) {
-		$('.step01').hide();
-		$('.step02').show();
-	} else {
-		alert_submit($(this).data('album_id'));
-	}
-});
-
-var SidebarTabHandler={
-	Init:function(){
-		$(".tabItemContainer>li").hover(function(){
-			_this = $(this).data('index');
-			$('.tabItemContainer li').each(function(k, v){
-				if($(v).data('index') == _this) {
-					$(v).children('a').addClass($(v).data('index')).removeClass($(v).data('index')+'-b');
-					$('div.tabBodyItem').eq(k).addClass('tabBodyCurrent');
-				} else {
-					$(v).children('a').addClass($(v).data('index')+'-b').removeClass($(v).data('index'));
-					$('div.tabBodyItem').eq(k).removeClass('tabBodyCurrent');
-				}
-			})
-		});
-	}
-}
-
-function countdown(time){
-	for (var i = time.length - 1; i >= 0; i--) {
-		$('#time'+i).countdown(time[i], function(event) {
-			$(this).find('span.day').html(event.strftime('%D'));
-			$(this).find('span.hour').html(event.strftime('%H'));
-			$(this).find('span.minute').html(event.strftime('%M'));
-			$(this).find('span.second').html(event.strftime('%S'));
-		});
-	}
-}
-
-function name_more_slice(obj) {var divH = $(obj).height(),$p = $("p", $(obj)).eq(0),str = $p.text();if ($p.outerHeight() > divH) {$p.text( str.slice(0, 70)+'...' );};}
-
-function show_template(i) {
-	var t_item = [];//browseKit item
-	$.post('http://dev.pinpin.com/index/index/show_template/', {
-		template_id: i,
-	}, function(r) {
-		r = $.parseJSON(r);
-		if (r.result == 1) {
-			var href, poster;
-			
-			for (var k0 in r.data.readable) {
-				href = r.data.readable[k0]['image'];
-				thumb = r.data.readable[k0]['image_thumbnail'];
-
-				t_item.push({
-			    	href: href,
-			        src: href,
-			        thumb: thumb,
-			    });
-
-			}
-
-			if (r.data.readable.length > 1) {
-				if (!r.data.favorited && r.data.readable.length < r.data.readable.page) {
-					href = 'http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/preview_end.jpg';
-					
-					t_item.push({
-				    	href: href,
-				        src: href,
-				        thumb: href,
-				    });
-				}
-			}
-
-			browseKit_v2(this, t_item);
-		} else if (r.result == 2) {
-			site_jBox(r);
-		} else {
-			site_jBox(r, 'error');
-		}
-	});
-}
-
-function owlCarousel(anchor, option) {
-	option.width = '100%';
-	option.lazyLoad = true;
-	option.autoPlay = 5000;
-	option.paginationSpeed = 1200;
-	option.singleItem = true;
-	option.stopOnHover = true;
-
-	$(anchor).owlCarousel(option);
-}
-
-$(function() { 
-	$('.ww').on('mouseover', function(e){
-		$(this).find('div.origin').hide().siblings('div.vary').show();
-		e.preventdefault;
-	});
-	$('.ww').on('mouseout', function(e){
-		$(this).find('div.vary').hide().siblings('div.origin').show();
-		e.preventdefault;
-	});
-	
-	$('span.more').hover(function(){
-		$(this).find('a').css('background-color', '#f6f6f6');
-		$(this).find('img').attr('src', 'http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/btn-more-h.svg');
-	}, function(){
-		$(this).find('a').css('background-color', '#f6f6f6');
-		$(this).find('img').attr('src', 'http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/assets-v5/btn-more-n.svg');
-	});
-
-	$('.page').css('display', 'block');
-	
-	$(".name_more").each(function(i) {name_more_slice($(this));});
-	
-	$('.bannerBtn input, .btnCreate, .btnExplode').hover(function(){
-		$(this).css('opacity', 0.8);
-	}, function(){
-		$(this).css('opacity', 1);
-	});
-
-	//ad-pc
-	var option = {ratio : '1920/400'}
-	owlCarousel('.fotorama', option);
-
-	//event
-	var option2 = {ratio : '960/210'}
-	owlCarousel('.eventFotorama', option2);	
-
-	//creative
-	var option3 = {ratio : '960/210'}
-	owlCarousel('.creativeFotorama', option3);
-	
-	//ad-mobile
-	if (innerWidth < 1024) {
-		var option4 = {autoHeight : true}
-		owlCarousel('.mobile_banner', option4);
-	}
-	
-	$(window).resize(function(){
-		var option4 = {autoHeight : true};
-		(innerWidth < 1024) ? owlCarousel('.mobile_banner', option4) : $('.mobile_banner').hide() ;
-	});
-});
-
-var timeList = [];timeList.push("2017-12-31 00:00:00");timeList.push("2017-12-31 10:54:20");countdown(timeList);
-deeplink.setup({
-	iOS: {
-		appName: "pinpinbox",
-		appId: "1057840696",
-	},
-	android: {
-		appId: "com.pinpinbox.android"
-	}
-});
-function clickHandler(uri) { deeplink.open(uri); return false;}
-
-</script><!-- Footer頁面開始 -->
-<div id="footer">
-	<div id="footer_content">
-		<div id="footer_nav">
-			<ul>
-				<li><a href="http://dev.pinpin.com/index/about/">關於我們</a></li>
-				<li><a href="http://dev.pinpin.com/index/tutorial/" class="cicle_btn" style="z-index: 100">經營小幫手</a></li>
-				<li><a href="http://dev.pinpin.com/index/recruit/">企業合作</a></li>
-				<li><a href="http://dev.pinpin.com/index/index/qanda/">Q&amp;A</a></li>
-				<li><a id="apple_btn" data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696"><!-- iOS --></a></li>
-				<li><a data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android"><!-- Android --></a></li>
-				<li><a href="http://dev.pinpin.com/index/index/privacy/">條款與政策</a></li>
-				<li><a href="http://dev.pinpin.com/index/index/terms/"></a></li>
-				<li><a href="http://dev.pinpin.com/index/index/copyright/"></a></li>
-				<li><a href="http://dev.pinpin.com/index/index/payment_terms/"></a></li>
-				<li class="dropup">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下載APP<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a id="apple_btn" data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
-						<li><a data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
-					</ul>							
-				</li>				
-				<li class="dropup">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">語言<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="javascript:void(0)"  style="color: #D0D0D0;">English</a></li><li><a href="javascript:void(0)"  style="color: #D0D0D0;">日本語</a></li><li><a href="javascript:void(0)"  style="color: #D0D0D0;">簡體中文</a></li><li><a href="http://dev.pinpin.com/index/?lang=zh_TW">繁體中文</a></li>					</ul>							
-				</li>				
-			</ul>
-		</div>
-		<div id="copyright">
-			<p class="social_link"><a href="#">繁體中文</a> / <a href="#">簡體中文</a> / <a href="#">English</a> / <a href="#">日本語</a></p>
-			<p class="social_link">
-				<a href="https://www.facebook.com/pages/pinpinbox/872194489510640" target="_blank"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/fb.png" height="127" width="127" ></a>
-				<a href="http://dev.pinpin.com/index/recruit/"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/mail.png"></a>
-				<a href="http://dev.pinpin.com/index/index/privacy/"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/law.png"></a>			
-			</p>
-			<p style="height:25px;">© 2016 pinpinbox All Rights Reserved.</p>
-		</div>
+			  </select>
+			</li>
+			<li class="footer_copyright">© 2018 pinpinbox All Rights Reserved.</li>
+		  </ul>
 	</div>
-</div>
-<script>
-deeplink.setup({
-    iOS: {
-        appId: "1057840696",
-        appName: "pinpinbox",
-    },
-    android: {
-        appId: "com.pinpinbox.android",
+  </div>
+  <!-- FOOTER區塊結束 -->
+
+  <!-- 回上方箭頭與FB區塊開始  -->
+  <div id="right_btn">
+		<div id="scroll_top"  ><a href="javascript:void(0)"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_top.svg" ></a></div>
+		<div id="p_link"><a href="https://www.pinpinbox.com/index/user/point/" target="_blank" title="P點購買"><img src="images/assets-v7/icon_p.svg" onerror="this.onerror=null; this.src='icon_p.svg'"></a></div>
+  </div>
+  <!-- 回上方箭頭與FB區塊結束 -->
+
+  <script>
+
+$(document).ready(function() {
+ 
+  //回上方箭頭
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 495)  {          /* 要滑動到選單的距離 */
+       $('#scroll_top').addClass('topFixed');   /* 幫選單加上固定效果 */
+    } else {
+      $('#scroll_top').removeClass('topFixed'); /* 移除選單固定效果 */
     }
+  });
+  $("#scroll_top").click(function(){
+		$("html,body").animate({scrollTop:0},900);
+		return false;
+	});
+
+
+  //PC版選單切換
+  $('a#login').click(function() {
+    $('#login_menu').toggleClass("login_menu_down");
+	$('.search_menu').removeClass("search_menu_down");
+	$('#notifier_menu').removeClass("login_menu_down");
+  });
+  
+  $('a#notifier').click(function() {
+    $('#notifier_menu').toggleClass("login_menu_down");
+	$('#login_menu').removeClass("login_menu_down");
+	$('.search_menu').removeClass("search_menu_down");
+  });
+  
+  
+  //搜尋選單切換
+  $('.search_btn').click(function() {
+    $('.search_menu').toggleClass("search_menu_down");
+	$('#login_menu').removeClass("login_menu_down");
+	$('#notifier_menu').removeClass("login_menu_down");
+  });
+  //MOBILE版搜尋切換
+  $('.mobile_menu i:nth-child(1)').click(function() {
+	$('#mobile_search').addClass("search_box_open");
+	$('#header_top').addClass("header_top_close");
+  });
+  //MOBILE版搜尋關閉
+  $('.header_search_close').click(function(evt) {
+    closemenu(evt);
+    $('#mobile_search').removeClass("search_box_open");
+	$('#header_top').removeClass("header_top_close");
+	$('.search_menu').removeClass("search_menu_down");
+  
+  });
+  
+  //MOBILE版選單切換
+  $('#notifier_m').click(function() {
+    $('#notifier_menu').toggleClass("login_menu_down");	
+  });
+  $('#login_m').click(function() {
+    $('#login_menu').toggleClass("login_menu_down");
+  });
+  
+  
+  //當WIDNWOS RESIZE時, 關閉選單
+  $( window ).resize(function(evt) {
+      closemenu(evt);
+	  // 20181108 加入表頭搜尋區塊開始
+	  $('.header_search_close').click();
+	  // 20181108 加入表頭搜尋區塊結束
+  });
+  
+	//按選單之外關閉選單
+	$('body').click(function(evt) {
+	    closemenu(evt);
+     });
 });
-
-
-$(function(){
-	//search: on + datalist
-	$('input[name="searchkey"]').on({
-		keypress: function(e) {
-			if (e.which == 13 || e.keyCode == 13) _search();
-		},
-	}).typeahead({
-		afterSelect: function(){_search();},
-		autoSelect: false,
-		showHintOnFocus: true,
-		source: function(query, process) {
-			$.post('http://dev.pinpin.com/index/search/', {
-				searchkey: query
-			}, function(r) {
-				process($.parseJSON(r));
-			});
-		},
-	});
-
-	//search: type
-	var headbar_searchtype = '';
-	switch(headbar_searchtype) {
-		case 'album' :
-			$('button[name="header_searchtype_list"]').html('作品 <span class="caret"></span>').data('searchtype', 'album');
-		break;
-		
-		case 'template':
-			$('button[name="header_searchtype_list"]').html('版型 <span class="caret"></span>').data('searchtype', 'template');
-		break;
-		
-		case 'user' :
-			$('button[name="header_searchtype_list"]').html('創作人 <span class="caret"></span>').data('searchtype', 'user');
-		break;
-		
-		default:
-		break;
+//關閉選有選單
+function closemenu(evt){
+    if(event.target.id!="login" && $(evt.target).parents("#login").length==0 && $(evt.target).parents("#login_menu").length==0 && event.target.id != "login_menu"
+    && event.target.id != "login_m" && $("#login_menu").hasClass( "login_menu_down" )){
+	   $('#login_menu').removeClass("login_menu_down");
 	}
-	
-	$('.dropdown-menu-headerbar>li>a').on('click', function() {
-		var str = $(this).html() + ' <span class="caret"></span>';
-		$('button[name="header_searchtype_list"]').html(str).data('searchtype', $(this).data('searchtype'));
-	});
-   
-    $('li.notice_hide').on('click', function(){
-    	if ($('div.notice_nav').hasClass('active')) {
-    		$('div.notice_nav').toggleClass('active');
-    	} else {
-    		$.post('http://dev.pinpin.com/index/index/getNotifications/', {
-    			data : 0,
-    		}, function(r) {
-    			r = $.parseJSON(r);
-    			switch (r.result) {
-    				case 1:
-    				    $('.notice_hide .pushqueue_hasunviewed').hide();
-
-    					$('.noticeWarpper').empty()
-						for (let [i, v] of r.data.entries()) {
-							$('.noticeWarpper').append(`<li class="list">
-									<a href="${v.target_url}">
-										<div class="notice_user_pic">
-											<img src="${v.trigger_user_pic}" onerror="this.src=\'http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/face_sample.png\'">
-										</div>
-										<div class="notice_msg">
-											<p class="msg_text">${v.message}</p>
-											<p class="msg_time"><time datetime="${v.time}" class="timeago"></time></p>
-										</div>
-									</a>
-								</li>`);
-							}
-						$('time.timeago').timeago();
-						$('div.notice_nav').toggleClass('active');
-					    break;
-    		
-    				default:
-    				    break;
-    			}
-    		});
-    	}
-    })
-	$('time.timeago').timeago();
-    $('body').on('click', function(){
-    	$('div.notice_nav').removeClass('active');
-    })
-});
-
-function _search() {
-	var searchtype = $('button[name="header_searchtype_list"]').data('searchtype');
-	switch (searchtype) {
-		case 'album' :
-			var url = 'http://dev.pinpin.com/index/album/?rank_id=0';
-		break;
-		
-		case 'template' :
-			var url = 'http://dev.pinpin.com/index/template/?rank_id=0';
-		break;
-		
-		case 'user' :
-			var url = 'http://dev.pinpin.com/index/creative/?rank_id=0';
-		break;
+	if(event.target.id != "notifier" && $(evt.target).parents("#notifier").length==0 && event.target.id != "notifier_menu"  
+	  && $(evt.target).parents("#notifier_menu").length==0 && event.target.id != "notifier_m" && $("#notifier_menu").hasClass( "login_menu_down" )){
+	    $('#notifier_menu').removeClass("login_menu_down");
 	}
-	
-		var searchkey = ($(window).width() < 1024) ? $('#searchkey_m').val().trim() : $('#searchkey_pc').val().trim();
-	
-	//cookie
-	var search = [], searched = $.cookie('search')? $.parseJSON($.cookie('search')) : [], array = [];
-	if (searchkey !== '') searched.unshift(searchkey);
-	for (var i = 0; i < searched.length; ++i) {
-	    if (array.indexOf(searched[i]) < 0) {
-	  	    array.push(searched[i]);
-	    	search.push(searched[i]);
-	    }
-	}
-	if (search.length > 16) search.pop();
-	$.cookie('search', JSON.stringify(search), {path: '/'});
-	
-	if(encodeURIComponent(searchkey).length == 0) {
-		location.href = 'http://dev.pinpin.com/index/album/explore/';
-	} else {
-		location.href = url + '&searchtype=' + searchtype + '&searchkey=' + encodeURIComponent(searchkey);
+	if($(evt.target).parents(".search_btn").length==0 && $(evt.target).parents(".search_menu").length==0 && $(".search_menu").hasClass( "search_menu_down" )){
+	   $('.search_menu').removeClass("search_menu_down");
 	}
 }
-
-function clickHandler(uri) {
-    deeplink.open(uri);
-    return false;
-}
-
-function ios_notice() {
-	var siteModal = new jBox('Modal', {
-		delayOpen: 200,
-		title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/info.png">',
-		maxWidth: 600,
-		minWidth: 100,
-	}).setContent('Coming Soon!').open();
-}
-</script></div>
-<script>
-$(function(){  $('[data-toggle="tooltip"]').tooltip(); });function popview(url) {
-	$('.jBox-wrapper').remove();
-	$.post(url, {
-		data : null,
-	}, function(r) {
-		content = $(r).find('#tem_content');
-		pinpinboard = $(r).find('#pinpinboard');
-		script = $(r).find('script[name="popview"]');
-
-		if(!$('#JboxPopview').length) {
-			var popview = new jBox('Modal', {
-				addClass : 'popview_content',
-				id : 'JboxPopview',
-				width: 1200,
-	            height: 1600,
-	            zIndex : 1000,
-				onCloseComplete: function() {
-			  		processAjaxData("http://dev.pinpin.com/index/");
-					popview.destroy();
-					browseKitRefresh();
-				},
-				onOpen : function(){
-			  		processAjaxData(url);
-					$('li.removeInPop').remove();
-					$('.jBox-content').append(pinpinboard);
-					$('.jBox-content').append(script);
-					
-					$('#pinpinboardAnchor').on('click', function(){
-						$('.jBox-content').animate({scrollTop:$('.comment_info_textarea').offset().top}, 10);
-					})
-					
-					window.onpopstate = function(event) { popview.close(); };
-				},
-			}).setContent(content).open();
-		}
-	});
-}
-/*
- * webpush
- */
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').then(function (registration) {
-    	registration.pushManager.subscribe({
-            userVisibleOnly: true
-        }).then(function (sub) {
-			$.post('http://dev.pinpin.com/index/serviceworker/register/', {token: sub.endpoint}, function (r) {
-				r = $.parseJSON(r);
-				if (r.result == 1) {
-					registration.update();
-				}
-			});
-        });
-    });
-}
-
-/*
- * facebook
- */
-window.fbAsyncInit = function() {
-	FB.init({
-		appId: '1904970929730781',
-		cookie: true,
-		version: 'v2.10'
-	});
-
-	Window.FB = FB;
-};
-
-logInWithFacebook = function() {
-	FB.login(function(response) {
-		if (response.authResponse) {
-			$('#login_facebook').hide().next('div').show();
-			$.post('http://dev.pinpin.com/index/user/login_facebook/', {accessToken: response.authResponse.accessToken}, function(r) {
-				r = $.parseJSON(r); 
-				if (r.result == 1) {
-					_jBox(r, 'success_notext');
-				} else {
-					_jBox(r, 'error');
-				}
-				$('#login_facebook').show().next('div').hide();
-			});
-		} else {
-			_jBox({message: '登入失敗'}, 'error');
-		}
-	}, {scope: 'public_profile,email,user_friends,user_birthday', auth_type: 'rerequest'});
-	
-	return false;
-};
-
-var askAutoPlay = true, 
-	a_album_element = [],	//browseKit element of album
-	a_album_item = [];		//browseKit item of album
-
-function browseKit_album(url, param) {
-	param.pageCalledByXHR = $('#pageCalledByXHR').length;
-	if (a_album_item.length == 0) {
-		$.post(url, param, function(r) {
-			r = $.parseJSON(r);
-			if (r.result == 1) {
-				for (var k0 in r.data.readable) {
-					subHtml = '';
-
-					if (r.data.readable[k0]['name']) subHtml += '<h4>' + r.data.readable[k0]['name'] + '</h4>';
-
-					if (r.data.readable[k0]['description']) subHtml += '<p>' + r.data.readable[k0]['description'] + '</p>';
-					
-					if (r.data.readable[k0]['hyperlink']) {
-						hyperlink = [];
-						r.data.readable[k0]['hyperlink'].forEach(function(v0){
-							hyperlink.push('<a target="_blank" href="' + v0.url + '">' + v0.text + '</a>');
-						});
-						subHtml += hyperlink.join('&emsp;');
-					}
-
-					o_audio = {loop: r.data.readable[k0].audio_loop, mode: r.data.readable[k0].audio_mode, src: r.data.readable[k0].audio_target};
-					
-					switch (r.data.readable[k0]['usefor']) {
-						case 'video':
-							href = r.data.readable[k0]['video_target'];
-							poster = r.data.readable[k0]['image'];
-							thumb = r.data.readable[k0]['image_thumbnail'];
-							platform = fetch_video_platform(href);
-							switch (r.data.readable[k0]['video_refer']) {									
-								case 'embed':
-									a_album_item.push({
-										audio: o_audio,
-								    	href: href,
-								        poster: poster,
-								        src: href,
-								        subHtml: subHtml,
-								        thumb: thumb,
-								        usefor: 'video',
-								        platform: platform,
-								        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
-								    });
-									break;
-
-								case 'file':
-									if ($('#video-' + k0).length == 0) {
-										$('body').append(
-												'<div class="lgVideoWrapper" style="display:none;" id="video-' + k0 + '">' +
-												'<video controlsList="nodownload" class="lg-video-object lg-html5" controls preload="none">' +
-											    '<source src="' + href + '" type="video/mp4">Your browser does not support HTML5 video.</video>' +
-											    '</div>'
-										);
-									} else {
-                                        $('#video-' + k0).find('source').attr('src', href);
-                                    }
-									
-									a_album_item.push({
-										audio: o_audio,
-								    	html: '#video-' + k0,
-								        poster: poster,
-								        subHtml: subHtml,
-								        thumb: thumb,
-								        usefor: 'video',
-								        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
-								    });
-									break;
-							}
-							break;
-
-						default:
-							href = r.data.readable[k0]['image'];
-							thumb = r.data.readable[k0]['image_thumbnail'];
-							a_album_item.push({
-						        audio: o_audio,
-						    	href: href,
-						        src: href,
-						        subHtml: subHtml,
-						        thumb: thumb,
-						        usefor: 'audio',
-						        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
-						    });
-							break;
-					}
-				}
-				browseKit_v2(this, a_album_item, param);
-			} else {
-				_jBox(r, 'error');
-			}
-		});
-	} else {
-		browseKit_v2(this, a_album_item, param);
-	}
-}
-
-function browseKit_v2(that, item, param) {
-	a_album_element.push(that);
-	var	indexId = ($('#mask02').data('indexId')) ? $('#mask02').data('indexId') : 0,
-		$lg = $(that).lightGallery({
-		loadYoutubeThumbnail: true,
-		youtubeThumbSize : 'hqdefault',
-        dynamic: true,
-        dynamicEl: item,
-        hash: false,
-		hideBarsDelay: 3000,
-		loop: false,
-		download: false,
-		index : indexId,
-		thumbWidth: 80,
-		youtubePlayerParams: {
-	        showinfo: 0,
-	        rel: 0,
-		},
-    }).on('onAfterOpen.lg', function(e) {
-    	if(item[0].audio.src != null) {
-    		audioPlayer = $('#lg-audio'); 
-    		audioPlayer.attr('controlsList', 'nodownload');
-    		setTimeout(function(){ 
-    			audioPlayer[0].play(); 
-    		}, 700); 
-    	}
-	}).on('onAfterSlide.lg',function(e, p, i){
-	    $lg.data('lightGallery').modules.audio.build();
-        audioPlayer = $('#lg-audio'); _audipPlayer = document.getElementById("lg-audio");
-        switch(item[i].usefor) {
-        	case 'video' : audioPlayer[0].pause(); break;
-        	case 'audio' : if( _audipPlayer.hasAttribute("autoplay")) audioPlayer[0].play(); break;
-        }
-        if(item[i].audio.mode == 'singular') askAutoPlay = false;
-       
-		if(item[i].audio.src != null && askAutoPlay) { $('span#lg-audio-button').trigger('click') ; }
-
-		audioPlayer[0].addEventListener("play", function () {
-			audioPlayer.bind('contextmenu',function() { return false; }); 
-			audioPlayer.attr('controlsList', 'nodownload');
-			if(!_audipPlayer.hasAttribute("autoplay")) audioMaskHide();
-			askAutoPlay = false;
-			audioPlayer.attr('autoplay', 'autoplay');
-		}, false);
-
-		audioPlayer[0].addEventListener("pause", function (e) {	
-			if(e.target.ended == false ) {
-				askAutoPlay = false;
-				audioPlayer.removeAttr('autoplay');
-			}
-		}, false);
-		
-		if($('#JboxRecommendedBuyAlbum').length) RecommendedBuyAlbum.destroy();
-
-		if(item[i].recommendedBuyAlbum ) recommendedBuyAlbum();
-					
-			setTimeout(function() {
-                if( window.DMplayerE ) { window.DMplayerE.pause(); }
-
-                if((item[i].platform) == 'facebook') {
-					$('div.lg-current .lg-video-cont').empty();
-					var element = `<div
-									id="fbVideo"
-									class="fb-video"
-									data-href="${item[i].src}"
-									data-width="500"
-									data-allowfullscreen="true"></div>`;
-					$('div.lg-current .lg-video-cont').append(element);
-					window.FB.XFBML.parse();
-                } else if ((item[i].platform) == 'dailymotion') {
-                    var videoStr2Array = (item[i].src).split('/'), element = `<div id="DMplayer"></div>`;
-                    $('div.lg-current .lg-video-cont').empty().append(element);
-                    DMplay(videoStr2Array[(((item[i].src).split('/')).length - 1)], 640, 400);
-                }
-
-			}, 200);
-    }).on('onAfterAppendSubHtml.lg',function(e){
-        $lg.data('lightGallery').modules.subhtml.build();
-    }).on('onCloseAfter.lg', function(e){
-            });
-
-    window.$lg = $lg;
-}
-
-function browseKitRefresh() {
-	a_album_item = [];
-	
-	$.each(a_album_element, function(k0, v0) {
-		$(v0).removeData('lightGallery');
-	});
-}
-
-function browseKit() {
-	//photoswipe
-	if ($('.pswp').length == 0) {
-		$('body').append(
-			'<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">'+
-				'<div class="pswp__bg"></div>'+
-				'<div class="pswp__scroll-wrap">'+
-					'<div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div>'+
-					'<div class="pswp__ui pswp__ui--hidden">'+
-			            '<div class="pswp__top-bar">'+
-			                '<div class="pswp__counter"></div>'+
-			                '<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>'+
-			                '<button class="pswp__button pswp__button--share" title="Share"></button>'+
-			                '<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>'+
-			                '<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>'+
-							'<button class="pswp__button play_video" style="background:none;"><i class="img_mode"></i></button>'+
-			                '<div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div>'+
-			            '</div>'+
-			            '<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div>'+
-			            '<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>'+
-			            '<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>'+
-			            '<div class="pswp__caption"><div class="pswp__caption__center"></div></div>'+
-			        '</div>'+
-			    '</div>'+
-			'</div>'
-		);
-	}
-	var items=[], img_icon=[], img_video_target=[], img_video_refer=[];
-	$('#show_photo img').each(function(k0, v0) {
-		var that1 = $(this);
-		var item = {
-			src: that1.prop('src'),
-			w: that1.prop('width'),
-			h: that1.prop('height'),
-		}
-		img_icon.push(that1.attr('data-usefor'));
-		img_video_refer.push(that1.attr('data-video_refer'));
-		img_video_target.push(that1.attr('data-video_target'));
-	    items.push(item);
-	});
-
-    var options = {loop: false};
-	var pswp = new PhotoSwipe(document.querySelectorAll('.pswp')[0], PhotoSwipeUI_Default, items, options);
-	pswp.init();
-	
-	pswp.listen('close', function() {
-		$('#show_photo').empty();
-	});
-
-	$('.pswp__button--arrow--left').on('click', function() {
-		if (items.length == pswp.getCurrentIndex() + 1) pswp.close();
-	});
-	$('.pswp__button--arrow--right').on('click', function() {
-		if (pswp.getCurrentIndex() == 0) pswp.close();
-	});
-	
-	var set_img_icon = function(index) {
-		var top_icon = '';
-		switch(img_icon[index]) {
-			case 'image' :
-				top_icon = '';
-			break;
-			case 'video' :
-				top_icon = 'mod02';
-			break;
-			case 'exchange' :
-				top_icon = 'mod03';
-			break;
-			case 'slot' :
-				top_icon = 'mod04';
-			break;
-			default :
-				top_icon = '';
-			break;
-		}
-		return top_icon;
-	}
-
-	pswp.listen('imageLoadComplete', function(index, item) {
-		$('i.img_mode').removeClass().addClass('img_mode '+set_img_icon(index)).data('video_target', img_video_target[index]).data('video_refer', img_video_refer[index]);
-	});
-
-	pswp.listen('afterChange', function() { 
-		$('i.img_mode').removeClass().addClass('img_mode '+set_img_icon(pswp.getCurrentIndex())).data('video_target', img_video_target[pswp.getCurrentIndex()]).data('video_refer', img_video_refer[pswp.getCurrentIndex()]);
-	});
-}
-
-function DMplay(id, w = 320, h = 200) {
-    if($('iframe#DMplayer').length > 0) $('iframe#DMplayer').remove();
-    DM.api('/videos', {
-        filters: 'buzz',
-        fields: 'id',
-    }, function () {
-        var player = DM.player(document.getElementById('DMplayer'), {
-            video: id,
-            width: w,
-            height: h,
-        });
-
-        window.DMplayerE = player;
-    });
-}
-
-function fetch_video_platform(url) {	
-	var returnType,
-		isHTML = RegExp.prototype.test.bind(/(<([^>]+)>)/i);
-	
-	if( typeof(url) != 'undefined' && !isHTML(url) ) {
-		if( (url.match('youtu.be') != null || url.match('youtube.com') != null) && !url.includes('embed') ) {
-			returnType = 'youtube';
-		}else if(url.match('vimeo') != null){
-			returnType = 'vimeo';
-		}else if(url.match('facebook') != null ) {
-			returnType = 'facebook';
-		}else if(url.match('dailymotion') != null ) {
-			returnType = 'dailymotion';
-		}else if(url.match('pinpinbox') != null){
-			returnType = 'pinpinbox';
-		}
-	}
-
-	return returnType;
-}
-
-function _jBox(r, c) {
-	var img = {
-		'error': 'http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/error.png',
-		'info': 'http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/info.png',
-		'success': 'http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/success.png',
-	};
-	
-	switch (c) {
-		case 'success':
-		case 'error':
-		case 'info':
-			var box = new jBox('Modal', {
-				closeButton: 'title',
-				delayOpen: 300,
-				maxWidth: 600,
-				minWidth: 100,
-				autoClose : r.timer || 0,
-				title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="' + img[c] + '">',
-				onCloseComplete: function() {
-					if(typeof( window.onbeforeunload) != 'undefined' ) window.onbeforeunload = null;
-					if (r.data && typeof(r.data.task) != 'undefined') { 
-						(typeof(r.data.task.message) != 'undefined' && r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : (r.redirect) ? location.href = r.redirect : null; 
-					} else {
-						if (r.redirect) location.href = r.redirect;
-					}			
-				},
-			}).setContent('<div class="content">' + r.message + '</div>').open();
-			break;
-
-		case 'success_notext':
-			if (typeof( window.onbeforeunload) != 'undefined' ) window.onbeforeunload = null;
-
-			if (r.data && typeof(r.data.task) != 'undefined') {
-				(typeof(r.data.task.message) != 'undefined' && r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : (r.redirect) ? (r.redirect=='createAlbum') ? createAlbum() : location.href = r.redirect : null; 
-			} else {
-				if (r.redirect) {
-					(r.redirect == 'createAlbum') ? createAlbum() : location.href = r.redirect;
-				}
-			}
-			break;
-
-		case 'map':
-			var box = new jBox('Modal', {
-				closeButton: 'title',
-				delayOpen: 300,
-				maxWidth: 600,
-				minWidth: 100,
-				title: '<i style="color:#ee5b8d;font-size:22px;" class="fa fa-map-marker" ></i>'+ r.data,
-			}).setContent('<div class="content">' + r.message + '</div>').open();
-			break;
-	
-		case 'albumProcess':
-			block_box = new jBox('Modal', {
-				offset: {y: -50},
-				position: {y: 'center'},
-				closeButton: 'title',
-				closeOnClick: false,
-				closeOnEsc: false,
-				delayOpen: 300,
-				zIndex: 1500,
-			}).setContent('<div class="content">正在儲存上次未完成的進度...<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/loading.gif"></div>').open();
-			
-			$.post('http://dev.pinpin.com/index/album/save_album_ajax/' , {
-				album_id : r.data,
-				template_id: '',
-				current_album_id: '',
-			}, function(r2) {
-				block_box.close();
-				r2 = $.parseJSON(r2);
-				switch (r2.result) {
-					case 0 : 
-						_jBox(r2, 'error');
-					break;
-					case 1 : 
-						location.href = r2.redirect;
-					break;
-					case 2 : 
-						_jBox(r2, 'success');
-					break;
-				}
-			});
-			break;
-
-		case 'block':
-			box = new jBox('Modal', {
-				offset: {y: -50},
-				position: {y: 'center'},
-				closeButton: 'title',
-				closeOnClick: false,
-				closeOnEsc: false,
-				delayOpen: 300,
-				zIndex: 1500,
-			}).setContent('<div class="content">處理中...<img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/loading.gif"></div>').open();
-			break;
-		
-		case 'blockCustomMsg':
-			box = new jBox('Modal', {
-				offset: {y: -50},
-				position: {y: 'center'},
-				closeButton: 'title',
-				closeOnClick: false,
-				closeOnEsc: false,
-				delayOpen: 800,
-				zIndex: 1500,
-			}).setContent('<div class="content">'+r.message+' <p style="text-align: center;"><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/loading.gif"></p><p style="text-align: center;">(請勿關閉視窗)</p></div>');
-			break;
-			
-		case 'login':
-			var message = r.message || '請先登入。',
-			box = new jBox('Modal', {
-				closeButton: 'title',
-				delayOpen: 300,
-				maxWidth: 600,
-				minWidth: 100,
-				onCloseComplete: function() {
-					if (r.redirect) location.href = r.redirect;
-				},
-				title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/info.png">',
-			}).setContent('<div class="content">' + message + '</div>').open();
-			break;
-
-		case 'processing':
-
-			var box = new jBox('Modal', {
-				closeOnClick: false,
-				closeButton: 'title',
-				width: 155,
-				height: 53,
-			}).setContent('<span style="padding-left:20px;font-weight:bold;color:#2299DD">處理中...</span><img src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/loading.gif">').open();
-			break;
-
-		case 'recommendedDownloadApp':
-						break;
-			
-		case 'recommendedUpgradeGrade':
-			var reDirectConfirm = new jBox('Confirm', {
-				cancelButton: '否',
-				confirmButton: '是',
-				closeButton: 'title',
-				closeOnClick: false,
-				closeOnEsc: false,
-				delayOpen: 300,
-				cancel: function() { location.href = r.redirect; },
-				confirm: function() {  location.href = 'http://dev.pinpin.com/index/user/grade/'; },
-				onCloseComplete: function() { reDirectConfirm.destroy(); }
-			}).setContent(r.message).open();
-			break;
-			
-		case 'taketemplate':
-			var box = new jBox('Confirm', {
-				cancelButton: '否',
-				confirmButton: '是',
-				confirm: function() {
-					$.post('http://dev.pinpin.com/index/template/_taketemplate/', {
-						template_id: r.data.template_id,
-						confirm: true,
-						join_event : r.data.join_event,
-					}, function(r) {
-						r = $.parseJSON(r);
-						switch (r.result) {
-							case 1:
-								_jBox(r, 'success');
-								break;
-							case 2:
-								_jBox(r, 'login');
-								break;
-							case 3:
-								_jBox(r, 'taketemplate');
-								break;
-							case 4:
-								_jBox(r, 'albumProcess');
-								break;
-							case 5:
-								location.href = r.redirect;
-								break;
-							default:
-								site_jBox(r, 'error');
-								break;
-						}
-					});
-				},
-				onCloseComplete: function() {	
-					box.destroy();
-				}
-			}).setContent(
-				'<div class="content">' +
-				'<p>您確定要收藏此版型嗎?</p><p>收藏條件：&nbsp;<span class="red">' + r.data.point + 'P</span></p>' +
-				'</div>'
-			).open();
-			break;
-
-		default:
-			alert('Unknown case of _jBox');
-			break;
-	}
-
-	return box;
-}
-
-function site_jBox(r, type) {
-	if (typeof(r.data) == 'undefined') {r.data = 'Modal'};
-	var a_img = {
-		'success': 'http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/success.png',
-		'error': 'http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/error.png',
-	},
-	img = a_img[type] || 'http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/info.png';
-	
-	var siteModal = new jBox(r.data, {
-		closeButton: 'title',
-		delayOpen: 200,
-		title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="' + img + '">',
-		onCloseComplete: function() {
-			if (r.redirect) location.href = r.redirect;
-		},
-		maxWidth: 600,
-		minWidth: 100,
-	}).setContent('<div class="content">' + r.message + '</div>').open();
-}
-
-function _TaskAlert(r, c) {
-	switch (c) {
-		case 'task' :
-			var url = (r.data.task.event_url) ? `<p style="text-align:right"><a href="${r.data.task.event_url}" target="_blank">活動連結</a></p>` : '' ;
-				str = `<div class="content">
-							<p style="text-align: center;">
-								<img width="80" height="80" style="vertical-align: middle;" src="http://dev.pinpin.com/static_file/pinpinbox/zh_TW/images/gift_2.png">
-							</p>
-							<p style="margin:10px;text-align:center" class="keypoint">${r.data.task.message}</p>
-							${url}
-						</div>`,
-				box = new jBox('Modal', {
-				closeButton: 'title',
-				delayOpen: 300,
-				maxWidth: 600,
-				minWidth: 300,
-				title: '<span style="color: #23afaf; font-size:1.4em;font-weight:bold ; display: inline-block;height: 100%;vertical-align: middle;"><h2>'+r.data.task.title+'</h2></span>',
-				onCloseComplete: function() {
-					if (r.redirect) location.href = r.redirect;
-				},
-			}).setContent(str).open();
-		break;
-	}
-}
-
-function audioMaskHide() {
-	$('.lg-audio-mask:first').hide();
-}
-
-function createAlbum() {
-	$.post('http://dev.pinpin.com/index/template/_taketemplate_v2/', {
-		template_id: 0,
-	}, function(r) {
-		r = $.parseJSON(r);
-		switch (r.result) {
-			case 1:
-				_jBox(r, 'albumProcess');
-				break;
-			case 2:
-				_jBox(r, 'success_notext');
-				break;
-			case 3:
-				location.href = r.redirect;
-				break;
-			default:
-				_jBox(r, 'error');
-				break;
-		}
-	});
-}
-
-function processAjaxData(urlPath){
-	window.history.pushState("","",urlPath);
-}
-
-$(document).on('click', '.lg-video-play', function(){
-	if($('video').length > 1) $('video').bind('contextmenu',function() { return false; });
-})
-
-//On photoswipe play video
-$(document).on('click', 'button.play_video', function(){
-	var video_modal = new jBox('Modal', {
-		closeOnClick: false,
-		closeButton: 'title',
-		title : '',
-		width: 'auto',
-		height: 520,
-		onCloseComplete : function () {
-			if($('video').length > 0 ) $('video').remove();
-			
-			if( typeof(video_file) != 'undefined' ) {
-				video_file.pause();
-			}else{
-				video_embed.pause() ;
-				$('div[id^="mep_"]').remove();
-			}
-		},
-	});		
-	var content;
-	
-	switch ($(this).find('i').data('video_refer')) {
-		case 'file':
-			content = '<video id="video_demo_file" controls loop muted preload="auto" width="640" height="480" data-mejsoptions=\'{"alwaysShowControls": true}\'><source class="mp4" type="video/mp4" src="" />很抱歉！您的瀏覽器不支援 HTML5 Video </video>';
-			video_modal.setContent(content).open();
-			var video_file = $("#video_demo_file")[0];
-			$("#video_demo_file source.mp4").attr('src', $(this).find('i').data('video_target'));
-			video_file.play();
-		break;
-		
-		case 'embed':
-			content = '<video style="margin-top:30px;" width="740" height="480" id="video_demo_embed"><source type="video/youtube" src="'+$(this).find('i').data('video_target')+'" /></video>';			
-			video_modal.setContent(content).open();
-			var video_embed = new MediaElementPlayer('#video_demo_embed', {enablePluginDebug: false, flashName: 'flashmediaelement-cdn.swf'});
-		break;
-		
-		default:
-			return false
-		break;
-	}
-});
 
 </script>
-</body>
+  
+  </body>
 </html>
