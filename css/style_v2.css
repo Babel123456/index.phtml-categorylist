@@ -53,7 +53,7 @@ a:hover { color: #00acc1; }
 
 a:focus { color: #4d4d4d; }
 
-body { font-family: Noto Sans TC, Noto Sans; font-size: 14px; color: #4d4d4d; background: #ffffff; letter-spacing: 1.5px; }
+body { font-family: Noto Sans TC, Noto Sans; font-size: 14px; color: #4d4d4d; background: #ffffff; letter-spacing: 1.5px; line-height: 25px; }
 
 img { width: 100%; height: auto; }
 
@@ -642,19 +642,28 @@ textarea:-ms-input-placeholder { color: #9e9e9e; }
 @media (max-width: 500px) { .message_board #message_leave > div:last-child span { width: 25%; } }
 .message_board #message_leave > div:last-child span:last-child { margin-left: 16px; }
 .message_board #message_leave > div:last-child .message_submit { color: #ffffff; background: #00acc1; }
-.message_board #message_list { wdith: 100%; }
-.message_board #message_list .message_item { display: table; margin-top: 32px; margin-bottom: 48px; }
-@media (max-width: 800px) { .message_board #message_list .message_item { margin-top: 16px; } }
-.message_board #message_list .message_item > div { display: table-cell; text-align: left; vertical-align: middle; }
+.message_board #message_list { width: 100%; }
+.message_board #message_list .message_item { display: flex; width: 100%; margin-top: 32px; margin-bottom: 48px; }
+@media (max-width: 800px) { .message_board #message_list .message_item { margin-top: 24px; margin-bottom: 24px; } }
+.message_board #message_list .message_item > div { flex: -1 0 0; text-align: left; vertical-align: middle; }
 .message_board #message_list .message_item > div:first-child { padding-right: 32px; vertical-align: top; }
 @media (max-width: 800px) { .message_board #message_list .message_item > div:first-child { padding-right: 16px; } }
 .message_board #message_list .message_item > div:first-child span:first-child img { width: 64px; height: 64px; -moz-border-radius: 100%; -webkit-border-radius: 100%; border-radius: 100%; }
-.message_board #message_list .message_item > div:last-child { font-size: 16px; text-align: justify; line-height: 25px; }
-.message_board #message_list .message_item > div:last-child div:first-child { margin-bottom: 16px; }
-.message_board #message_list .message_item > div:last-child div:first-child span { display: inline-block; }
-.message_board #message_list .message_item > div:last-child div:first-child span:last-child { margin-left: 16px; color: #d4d4d4; }
+.message_board #message_list .message_item > div:last-child { flex: 2; font-size: 16px; text-align: justify; line-height: 25px; }
+.message_board #message_list .message_item > div:last-child > div:first-child { margin-bottom: 16px; }
+@media (max-width: 800px) { .message_board #message_list .message_item > div:last-child > div:first-child { margin-bottom: 0px; } }
+.message_board #message_list .message_item > div:last-child > div:first-child span { display: inline-block; }
+.message_board #message_list .message_item > div:last-child > div:first-child span:last-child { margin-left: 16px; color: #d4d4d4; }
+.message_board #message_list .message_item > div:last-child > div:last-child { display: flex; align-items: flex-end; }
+.message_board #message_list .message_item > div:last-child > div:last-child > div { flex: -1 0 0; display: inline-block; }
+.message_board #message_list .message_item > div:last-child > div:last-child > div:first-child { flex: 2; }
+.message_board #message_list .message_item > div:last-child > div:last-child > div:first-child span { margin-left: 0; }
+.message_board #message_list .message_item > div:last-child > div:last-child > div:last-child { width: 32px; vertical-align: bottom; }
 
 .message_tag { color: #00acc1; text-decoration: underline; }
+
+.delete_box { display: block; width: 32px; height: 32px; line-height: 30px; font-size: 20px; text-align: center; color: #4d4d4d; background: #d4d4d4; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+@media (max-width: 800px) { .delete_box { width: 28px; height: 28px; line-height: 26px; } }
 
 /* 創作人專區內容區塊結束 */
 /* --------------------------------------------------
