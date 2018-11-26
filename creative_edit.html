@@ -51,15 +51,19 @@
 		  </div>
 		</div>
 		<!-- 20181116: 改字與加"P好康"開始 -->
-		<div class="pin_creator"><a href="https://www.pinpinbox.com/index/user/point/" title="立即購買Ｐ點贊助">購買Ｐ點</a></div>
-		<div class="pin_gift"><a href="index.php#p_bannner" title="賺P點 抽好康 買好物"><div class="btn_new btn_pink">Ｐ好康</div></a></div>
+		<div class="pin_creator">
+		  <!--<a href="https://www.pinpinbox.com/index/user/point/" title="立即購買Ｐ點贊助">購買Ｐ點</a>-->
+		  目前P點:41225&nbsp;&nbsp;<a href="https://www.pinpinbox.com/index/user/point/">購買</a>
+		</div>
+		<div class="pin_gift"><a href="index.html#p_bannner" title="賺P點 抽好康 買好物"><div class="btn_new btn_pink">Ｐ好康</div></a></div>
 		<!-- 20181116: 改字與加"P好康"結束 -->
 		<!-- 電腦版選單開始 -->
 		<div class="header_menu">
 		  <a href="#">建立作品</a><a href="#" id="notifier">通知<span class="notifier_icon"></span></a>
-		  <a href="#" id="login">登入 | 註冊</a>
-		  
-		  
+		  <!--<a href="#" id="login">登入 | 註冊</a>-->
+		  <a href="javascript:void(0);" id="login">
+            <img onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'" src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg">
+          </a>
 		</div>
 		<!-- 電腦版選單開始 -->
 		<!-- 手機版選單開始 -->
@@ -157,10 +161,10 @@
         </ul>
 	  </div>
 	</div>
-    <div class="creative_edit"><!-- class="creative_edit" -->
+    <div class="creative_edit">
 	  <!-- 個人區塊開始 -->
 	  <div id="tab01" class="tab-inner">
-	  <div id="creative_info"><!-- #creative_info -->
+	  <div id="creative_info">
          <div id="creative_head_info">
 		   <div id="crea_face">
              <img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20180426/5ae199a7dd67b.jpg">
@@ -172,13 +176,13 @@
 		   <div class="creative_info_email"><span>信箱</span><span class="sub_desc">不同於帳號</span><span><input type="text" name="user_email"></span></div>
 		   <div class="creative_short"><span>個人短網址</span><span><span>www.pinpinbox.com/</span>
 		   <span><input type="text" maxlength="32" placeholder="個人帳號(英文/數字)" name="user_creative_code" ></span></span></div>
-		   <div class="flex_column"><div><span>生日</span>
-		     <span class="input-daterange"><input type="text" name="user_birthday" value="1900-01-01" maxlength="10"></span>
-		   </div>
-		   <!--  姓別區塊開始  -->
-		   <div>
-		     <span>性別</span>
-			 <span class="user_gender menudrop" onclick="menudrop_down('user_gender');">
+		   <div class="flex_column">
+		     <div><span>生日</span>
+		       <span class="input-daterange"><input type="text" name="user_birthday" value="1900-01-01" maxlength="10" autocomplete="off"></span>
+		     </div>
+		     <!--  姓別區塊開始  -->
+		     <div><span>性別</span>
+			   <span class="user_gender menudrop" onclick="menudrop_down('user_gender');">
 			     <input type="text" id="user_gender" value="不透露" data-user_gender="none" readonly><i class="fa fa-caret-down"></i>
 			     <!-- 下拉選單區塊開始 -->
 			     <ul class="user_gender_menudrop">
@@ -187,12 +191,11 @@
 				   <li><a href="javascript:void(0)" data-user_gender="male" onclick="menudrop_set('user_gender','male','男性');">男性</a></li>
 			     </ul>
 				 <!-- 下拉選單區塊結束 -->
-			 </span>
+			   </span>
 		   </div>
 		   <!--  姓別區塊結束  -->
 		   <!--  婚姻區塊開始  -->
-		   <div>
-		     <span>婚姻</span>
+		   <div><span>婚姻</span>
 		     <span class="user_relationship menudrop" onclick="menudrop_down('user_relationship');">
 		       <input type="text" id="user_relationship" value="不透露" data-user_relationship="none" readonly><i class="fa fa-caret-down"></i>
 		       <!-- 下拉選單區塊開始 -->
@@ -432,7 +435,6 @@
       });
     }
   //});
-  //暫代function
   
   //專區編輯資訊結束
   $(document).ready(function() {
@@ -531,7 +533,7 @@
           });
 		}
     });
-	//上傳圖片
+	//上傳圖片(基本上只改一點樣式, 有些無法調)
 	function uploadAvatar(uploadType) {
 		/*
         var uploadAvatarHtml = `<div class="demo-wrap upload-demo">
@@ -559,6 +561,7 @@
 						    	<a class="uploadCroppieBtn uploadCroppieSave" id="saveCroppiie" href="javascript:void(0)">` + "編輯完成" + `</a>
 						    </div>`;
         */
+		//加入DIV與BTN樣式
 		var uploadAvatarHtml = 
 		`<div id="creative_head_img_upload">
 		   <div class="demo-wrap upload-demo">
@@ -590,11 +593,11 @@
 		if (uploadType == 'avatar') {
             jBoxtitle = '變更個人頭像';
             jBoxWidth = 380;
-            jBoxHeight = 450;
+            jBoxHeight = 450; //改短一點
         } else {
             jBoxtitle = '專區背景圖片';
             jBoxWidth = 1000;
-            jBoxHeight = 550;
+            jBoxHeight = 560; //改短一點
         }
 
         uploadView = new jBox('Modal', {
@@ -713,6 +716,14 @@
         });
     }
 
+	
+	//20181126: 做為下拉選單的輸入方框不做反應開始
+	$(function() {
+      $('input[readonly]').on('touchstart', function(ev) {
+        return false;
+      });
+    });
+	//20181126: 做為下拉選單的輸入方框不做反應結束
 
 </script>
 

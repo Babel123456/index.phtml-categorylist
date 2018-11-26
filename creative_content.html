@@ -51,15 +51,19 @@
 		  </div>
 		</div>
 		<!-- 20181116: 改字與加"P好康"開始 -->
-		<div class="pin_creator"><a href="https://www.pinpinbox.com/index/user/point/" title="立即購買Ｐ點贊助">購買Ｐ點</a></div>
-		<div class="pin_gift"><a href="index.php#p_bannner" title="賺P點 抽好康 買好物"><div class="btn_new btn_pink">Ｐ好康</div></a></div>
+		<div class="pin_creator">
+		  <!--<a href="https://www.pinpinbox.com/index/user/point/" title="立即購買Ｐ點贊助">購買Ｐ點</a>-->
+		  目前P點:41225&nbsp;&nbsp;<a href="https://www.pinpinbox.com/index/user/point/">購買</a>
+		</div>
+		<div class="pin_gift"><a href="index.html#p_bannner" title="賺P點 抽好康 買好物"><div class="btn_new btn_pink">Ｐ好康</div></a></div>
 		<!-- 20181116: 改字與加"P好康"結束 -->
 		<!-- 電腦版選單開始 -->
 		<div class="header_menu">
 		  <a href="#">建立作品</a><a href="#" id="notifier">通知<span class="notifier_icon"></span></a>
-		  <a href="#" id="login">登入 | 註冊</a>
-		  
-		  
+		  <!--<a href="#" id="login">登入 | 註冊</a>-->
+		  <a href="javascript:void(0);" id="login">
+            <img onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'" src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg">
+          </a>
 		</div>
 		<!-- 電腦版選單開始 -->
 		<!-- 手機版選單開始 -->
@@ -577,7 +581,24 @@
 });
 
 	//20181121: 留言TAG區塊結束
+	//20181126: 它頁連結至#TAB開始(只有一開始時執行一次)
 	
+	$(function(){
+	  book_tab();
+	});
+	
+	$(window).on('hashchange', function(e){
+      book_tab();
+    });
+	function book_tab(){
+	
+	  var url = window.location.href;
+	  var bookmark_tab = url.split('#');
+	   $("a[href=#"+bookmark_tab[1]+"]").click();
+	
+	}
+	
+	//20181126: 它頁連結至#TAB結束
 </script>
 
 
