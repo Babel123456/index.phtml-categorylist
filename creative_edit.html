@@ -183,7 +183,7 @@
 		     <!--  姓別區塊開始  -->
 		     <div><span>性別</span>
 			   <span class="user_gender menudrop" onclick="menudrop_down('user_gender');">
-			     <input type="text" id="user_gender" value="不透露" data-user_gender="none" readonly><i class="fa fa-caret-down"></i>
+			     <input type="text" id="user_gender" value="不透露" data-user_gender="none" readonly autocomplete="off" ><i class="fa fa-caret-down"></i>
 			     <!-- 下拉選單區塊開始 -->
 			     <ul class="user_gender_menudrop">
 			       <li><a href="javascript:void(0)" data-user_gender="none" onclick="menudrop_set('user_gender','none','不透露');">不透露</a></li>
@@ -197,7 +197,7 @@
 		   <!--  婚姻區塊開始  -->
 		   <div><span>婚姻</span>
 		     <span class="user_relationship menudrop" onclick="menudrop_down('user_relationship');">
-		       <input type="text" id="user_relationship" value="不透露" data-user_relationship="none" readonly><i class="fa fa-caret-down"></i>
+		       <input type="text" id="user_relationship" value="不透露" data-user_relationship="none" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
 		       <!-- 下拉選單區塊開始 -->
 		       <ul class="user_relationship_menudrop">
 		         <li><a href="javascript:void(0)" data-user_relationship="none" onclick="menudrop_set('user_relationship','none','不透露');">不透露</a></li>
@@ -212,7 +212,7 @@
 		   <!--  居住地區塊開始  -->
 		   <div class="flex_column">
 		     <div><span>居住地</span><span class="user_address_id_1st menudrop" onclick="menudrop_down('user_address_id_1st');">
-			      <input type="text" id="user_address_id_1st" value="--請選擇--" data-user_address_id_1st="0" readonly><i class="fa fa-caret-down"></i>
+			      <input type="text" id="user_address_id_1st" value="--請選擇--" data-user_address_id_1st="0" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
 				  <!-- 下拉選單區塊開始 -->
 		          <ul class="user_address_id_1st_menudrop">
 		            <li><a href="javascript:void(0)" data-user_address_id_1st="0" onclick="menudrop_set('user_address_id_1st','0','--請選擇--');">--請選擇--</a></li>
@@ -231,7 +231,7 @@
 			 </div>
 		     <div><!-- 排版用區塊 --><span></span><!-- 排版用區塊 -->
 			      <span class="user_address_id_2nd menudrop" onclick="menudrop_down('user_address_id_2nd');">
-			      <input type="text" id="user_address_id_2nd" value="--請選擇--" data-user_address_id_2nd="0" readonly><i class="fa fa-caret-down"></i>
+			      <input type="text" id="user_address_id_2nd" value="--請選擇--" data-user_address_id_2nd="0" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
 				  <!-- 下拉選單區塊開始 -->
 		          <ul class="user_address_id_2nd_menudrop">
 		            <!-- 依居住地下拉選單列出 -->
@@ -245,7 +245,7 @@
 		   <!--  興趣區塊開始  -->
 		   <div class="flex_column">
 		     <div><span>興趣</span><span class="hobby_0 menudrop" onclick="menudrop_down('hobby_0');">
-			      <input type="text" id="hobby_0" value="--請選擇--" data-hobby_0="0" onchange="check_hoppy(this.id,this.value);" readonly><i class="fa fa-caret-down"></i>
+			      <input type="text" id="hobby_0" value="--請選擇--" data-hobby_0="0" onchange="check_hoppy(this.id,this.value);" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
 				  <!-- 下拉選單區塊開始 -->
 		          <ul class="hobby_0_menudrop">
 					<li><a href="javascript:void(0)" data-hobby_0="0" onclick="menudrop_set('hobby_0','0','--請選擇--');">--請選擇--</a></li>
@@ -269,7 +269,7 @@
 				  </span></div>
 		     <div><!-- 排版用區塊 --><span></span><!-- 排版用區塊 -->
 			      <span class="hobby_1 menudrop" onclick="menudrop_down('hobby_1');">
-			      <input type="text" id="hobby_1" value="--請選擇--" data-hobby_1="0" readonly><i class="fa fa-caret-down"></i>
+			      <input type="text" id="hobby_1" value="--請選擇--" data-hobby_1="0" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
 				  <!-- 下拉選單區塊開始 -->
 		          <ul class="hobby_1_menudrop">
 					<li><a href="javascript:void(0)" data-hobby_1="0" onclick="menudrop_set('hobby_1','0','--請選擇--');">--請選擇--</a></li>
@@ -292,7 +292,7 @@
 		          <!-- 下拉選單區塊結束 -->
 				  </span></div>
 			 <div><span></span><span class="hobby_2 menudrop" onclick="menudrop_down('hobby_2');">
-			      <input type="text" id="hobby_2" value="--請選擇--" data-hobby_2="0" readonly><i class="fa fa-caret-down"></i>
+			      <input type="text" id="hobby_2" value="--請選擇--" data-hobby_2="0" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
 				  <!-- 下拉選單區塊開始 -->
 		          <ul class="hobby_2_menudrop">
 					<li><a href="javascript:void(0)" data-hobby_2="0" onclick="menudrop_set('hobby_2','0','--請選擇--');">--請選擇--</a></li>
@@ -327,7 +327,7 @@
 		   <div><span>變更手機號碼</span><span class="sub_desc">當前號碼 : ********8777</span></div>
 		   <div><span>要變更為</span>
 		        <span>
-		          <span><input type="text" id="mobile-number" placeholder="手機號碼" autocomplete="off"></span>
+		          <span><input type="text" id="mobile-number" placeholder="手機號碼"></span>
 			      <span><a href="javascript:void(0)" class="used" onclick="send_smspwd()"><div class="btn_new btn_main">寄送驗證碼</div></a></span>
 		        </span>
 		   </div>
@@ -410,7 +410,7 @@
 	  <!-- 關於我區塊結束 -->
 	<!-- 創作人內容編輯資訊區塊結束 -->
     </div>
-    <a href="creative_content.html"><div class="btn_new btn_back_creative">返回創作人專區</div></a>
+    <a href="creative_content.php"><div class="btn_new btn_back_creative">返回創作人專區</div></a>
   
   </div>
   <!-- 主要內容區結束 -->
