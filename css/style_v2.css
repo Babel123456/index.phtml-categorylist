@@ -876,9 +876,9 @@ textarea:-ms-input-placeholder { color: #9e9e9e; }
 .menudrop i { font-size: 20px; display: inline-block; }
 @media (max-width: 400px) { .menudrop i { margin-left: 8px; } }
 .menudrop input[type="text"] { vertical-align: top; display: inline-block; text-align: center; width: 84%; line-height: 32px; letter-spacing: 1.5px; border: none; background: none; }
-@media (max-width: 400px) { .menudrop input[type="text"] { width: 76%; } }
+@media (max-width: 400px) { .menudrop input[type="text"] { width: 77%; } }
 
-[class*="_menudrop"] { display: none; cursor: pointer; position: absolute; width: max-content; text-align: center; font-size: 16px; right: 0; z-index: 2; background: #ffffff; padding: 32px; border: 1px solid #d4d4d4; line-height: 20px; max-height: 216px; overflow-y: auto; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+[class*="_menudrop"] { display: none; cursor: pointer; position: absolute; width: max-content; max-width: fit-content; text-align: center; font-size: 16px; right: 0; z-index: 2; background: #ffffff; padding: 32px; border: 1px solid #d4d4d4; line-height: 20px; max-height: 216px; overflow-y: auto; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
 @media (max-width: 800px) { [class*="_menudrop"] { top: 32px; } }
 @media (max-width: 500px) { [class*="_menudrop"] { font-size: 14px; padding: 16px; } }
 [class*="_menudrop"] li { margin-bottom: 16px; }
