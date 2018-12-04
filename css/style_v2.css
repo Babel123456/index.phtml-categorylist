@@ -245,9 +245,9 @@ textarea:-ms-input-placeholder { color: #9e9e9e; }
 @media (max-width: 900px) { #footer .footer_copyright { display: none !important; } }
 
 /* 回上方箭頭與FB區塊 */
-#right_btn { position: fixed; right: 4%; z-index: 100; bottom: 80px; width: 52px; }
+#right_btn { position: fixed; right: 4%; z-index: 100; bottom: 80px; width: 52px; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 
-#scroll_top { display: none; width: 100%; height: auto; margin-bottom: 15px; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
+#scroll_top { display: none; width: 100%; height: auto; margin-bottom: 15px; }
 #scroll_top img { width: 100%; height: auto; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 #scroll_top img:hover { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 @media (max-width: 800px) { #scroll_top img:hover { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; } }
@@ -275,6 +275,9 @@ textarea:-ms-input-placeholder { color: #9e9e9e; }
 
 /* 標題 */
 [class*="_title"] { font-weight: 500; }
+
+/* 20181204: mars */
+label.error { color: #ee5b8d; font-size: 14px; }
 
 /* 首頁區塊開始 */
 /* 輪播設定開始 */
@@ -623,6 +626,7 @@ textarea:-ms-input-placeholder { color: #9e9e9e; }
 .creative_content .waterfall_content .content_box .lock_box span i { font-size: 28px; color: #ffffff; }
 @media (max-width: 800px) { .creative_content .waterfall_content .content_box .lock_box span i { font-size: 26px; } }
 @media (max-width: 400px) { .creative_content .waterfall_content .content_box .lock_box span i { font-size: 20px; } }
+.creative_content .waterfall_content .content_box .content_box_img { cursor: pointer; }
 .creative_content .waterfall_content .content_box .content_box_img img { width: 100%; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
 .creative_content .waterfall_content .content_box .content_box_info { position: relative; }
 .creative_content .waterfall_content .content_box .content_box_info > div { display: inline-block; }
@@ -890,9 +894,13 @@ textarea:-ms-input-placeholder { color: #9e9e9e; }
 /* 創作人專區編輯資訊專區區塊結束 */
 /* 創作人專區編輯資訊區塊結束 */
 /* 作品資訊頁開始 */
-.creative_area { background: #4d4d4d; position: relative; width: 100%; height: 100%; line-height: 25px; letter-spacing: 1.5px; margin: 64px auto 0 auto; padding: 32px; }
+.creative_area_popview { background: #4d4d4d; padding: 32px; }
+
+.creative_intro_area_popview { -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; border: 1px solid #bbbbbb; }
+
+.creative_area { position: relative; width: 100%; height: 100%; line-height: 25px; letter-spacing: 1.5px; margin: 64px auto 0 auto; }
 @media (max-width: 800px) { .creative_area { width: 96%; margin-top: 44px; padding: 0; padding: 16px 0 0 0; background: #ffffff; } }
-.creative_area .creative_intro_area { display: block; margin: auto; padding: 32px; width: 1024px; height: 960px; overflow: hidden; background: #ffffff; font-size: 18px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; border: 1px solid #bbbbbb; }
+.creative_area .creative_intro_area { display: block; margin: auto; padding: 32px; width: 1024px; height: 750px; background: #ffffff; font-size: 18px; }
 @media (max-width: 1200px) { .creative_area .creative_intro_area { width: 98%; height: 80vh; padding: 3%; } }
 @media (max-width: 800px) { .creative_area .creative_intro_area { width: 100%; height: auto; border: none; border-radius: 0; padding: 0; font-size: 16px; } }
 .creative_area .creative_intro_info, .creative_area .creative_intro_donate { float: right; width: 26%; margin-left: 3%; display: flex; align-items: center; }
@@ -961,16 +969,16 @@ textarea:-ms-input-placeholder { color: #9e9e9e; }
 .creative_area .creative_main .content_box_icon > div:first-child { flex: 2; }
 .creative_area .creative_main .content_box_icon i:first-child { margin-left: 4px; }
 .creative_area .creative_main .content_box_icon i:not(:first-child), .creative_area .creative_main .content_box_icon .fa-ellipsis-h { margin-left: 8px; }
-.creative_area .creative_main .content_box_name { font-size: 24px; margin-bottom: 16px; }
+.creative_area .creative_main .content_box_name { font-size: 24px; margin-bottom: 16px; line-height: 30px; }
 @media (max-width: 800px) { .creative_area .creative_main .content_box_name { font-size: 20px; margin-bottom: 8px; } }
 .creative_area .creative_main #creative_desc { word-wrap: break-word; }
-.creative_area .creative_main #creative_desc .btn_new { margin-top: 32px; margin-bottom: 32px; }
-.creative_area .creative_main #creative_desc .content_box_desc { overflow: hidden; word-wrap: break-word; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
+.creative_area .creative_main #creative_desc .btn_new { margin-bottom: 32px; }
+.creative_area .creative_main #creative_desc #content_box_desc { overflow: hidden; margin-bottom: 32px; word-wrap: break-word; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
 .creative_area .creative_main #creative_desc #creative_desc_more { display: none; }
 .creative_area .creative_main .message_board_box .message_reply_count { margin-bottom: 32px; }
 @media (max-width: 800px) { .creative_area .creative_main .message_board_box .message_reply_count { margin-bottom: 16px; } }
 .creative_area .see_more_block { display: flex; flex-direction: column; float: right; width: 26%; margin-left: 3%; }
-@media (max-width: 800px) { .creative_area .see_more_block { width: 100%; float: none; } }
+@media (max-width: 800px) { .creative_area .see_more_block { width: 100%; float: none; margin-left: 0; } }
 .creative_area .intro_see_more_area { position: relative; margin-top: 36px; flex-direction: column; }
 @media (max-width: 800px) { .creative_area .intro_see_more_area { display: none; } }
 .creative_area .intro_see_more_area .intro_title { width: 100%; margin-bottom: 16px; }
@@ -982,6 +990,7 @@ div{ position: absolute; //width: 142px; top: 0; bottom: 0; left: 0; right: 0; m
 .creative_area .intro_see_more_area .intro_see_more div:not(:last-child) { margin-right: 16px; }
 .creative_area .intro_see_more_area .intro_see_more div img { width: 100%; }
 .creative_area .social_links_box { display: flex; align-items: flex-start; }
+@media (max-width: 800px) { .creative_area .social_links_box { padding-top: 32px; margin-bottom: 32px; border-top: 1px solid #d4d4d4; } }
 .creative_area .social_links_box #social_links, .creative_area .social_links_box #social_links2 { flex: -1 0 0; }
 .creative_area .social_links_box #social_links { height: 32px; overflow: hidden; }
 .creative_area .social_links_box #social_links img { width: 32px; height: 32px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
@@ -1012,6 +1021,7 @@ div{ position: absolute; //width: 142px; top: 0; bottom: 0; left: 0; right: 0; m
 [class*="_menudrop"] li:last-child { margin-bottom: 0; }
 
 /* add by mars  */
+.jBox-container { border-radius: 6px !important; }
 .jBox-container .jBox-title img { width: 10%; }
 .jBox-container .title { font-size: 30px; color: #757575; }
 .jBox-container .content { color: #757575; font-size: 16px; line-height: 30px; }

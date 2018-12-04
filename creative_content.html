@@ -55,7 +55,7 @@
 		  <!--<a href="https://www.pinpinbox.com/index/user/point/" title="立即購買Ｐ點贊助">購買Ｐ點</a>-->
 		  目前P點:41225&nbsp;&nbsp;<a href="https://www.pinpinbox.com/index/user/point/">購買</a>
 		</div>
-		<div class="pin_gift"><a href="index.html#p_bannner" title="賺P點 抽好康 買好物"><div class="btn_new btn_pink">Ｐ好康</div></a></div>
+		<div class="pin_gift"><a href="index.php#p_bannner" title="賺P點 抽好康 買好物"><div class="btn_new btn_pink">Ｐ好康</div></a></div>
 		<!-- 20181116: 改字與加"P好康"結束 -->
 		<!-- 電腦版選單開始 -->
 		<div class="header_menu">
@@ -85,11 +85,11 @@
 		  -->
 		  <li><div>我的專區</div><div>
 		    <ul>
-			  <li><a href="creative_content.html#tab3">關於我</a></li>
-			  <li><a href="creative_content.html#tab0">我的作品</a></li>
-			  <li><a href="creative_content.html#tab1">我的收藏</a></li>
-			  <li><a href="creative_content.html#tab2">共用協作</a></li>
-			  <li><a href="creative_content.html#tab4">留言板</a></li>
+			  <li><a href="creative_content.php#tab3">關於我</a></li>
+			  <li><a href="creative_content.php#tab0">我的作品</a></li>
+			  <li><a href="creative_content.php#tab1">我的收藏</a></li>
+			  <li><a href="creative_content.php#tab2">共用協作</a></li>
+			  <li><a href="creative_content.php#tab4">留言板</a></li>
 			</ul></div>
 		  </li>
 		  <li><div>管理中心</div><div>
@@ -132,6 +132,10 @@
   <link type="text/css" href="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/jquery-textcomplete/media/stylesheets/textcomplete.css" rel="stylesheet" />
   <!-- //20181121: 加入FOR MESSAGE TAG結束 -->
 
+  <!-- //20181203: 加入FOR POPVIEW開始 -->
+  <link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/jBox.css" rel="stylesheet" />
+  <link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.css" rel="stylesheet" />
+  <!-- //20181203: 加入FOR POPVIEW結束 -->
   
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/waypoint/js/waypoint.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script>
@@ -145,6 +149,18 @@
   <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/jquery-textcomplete/jquery.textcomplete.js"></script>
   <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/jquery-textcomplete/jquery.overlay.js"></script>
   <!-- //20181121: 加入FOR MESSAGE TAG結束 -->
+  
+  <!-- //20181203: 加入FOR POPVIEW開始 -->
+  <script type="text/javascript" src="https://www.pinpinbox.com/js/jBox-0.4.8/jBox.min.js"></script>
+  <script type="text/javascript" src="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/autolink-min.js"></script>
+  <!-- //20181203: 加入FOR POPVIEW結束 -->
+  
+  <!-- //20181204: 加入FOR POPVIEW裡的FUN開始 -->
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.nicescroll.min.js"></script>
+  <!-- //20181204: 加入FOR POPVIEW結束 -->
+  
+  
   <!-- 主要內容區開始 -->
   <div id="content">
     <!-- 創作人內容區塊開始 -->
@@ -185,7 +201,7 @@
 	    <div id="social_links2" title="社群連結" ><i class="fa fa-link"></i></div>
 		<div class="attention_num">關注 : 54462</div>
 		<div class="edit_btn"><!-- 編輯 或 關注按鈕 -->
-		  <a href="creative_edit.html"><div class="btn_new">編輯</div></a>
+		  <a href="creative_edit.php"><div class="btn_new">編輯</div></a>
 		  <!--<a style="" name="buttonFollow" href="javascript:void(0)" onclick="follow();"><div class="btn_new btn_pink">取消關注</div></a>-->
 		</div>
 		<div class="social_links_close"><i class="fa fa-times"></i></div>
@@ -236,7 +252,12 @@
 				     <span><i class="fa fa-lock"></i></span>
 				   </div>
 				   <!-- 20181113 加入鎖頭圖示區塊結束 -->
-				   <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5534&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170814/59911dba7ba2f.jpg"></a></div>
+				   <!-- 20181203 加入POPUP FUN -->
+				   <div class="content_box_img" onclick="popview('http://localhost/creative_content.php');" >
+				     <!--<a href="https://www.pinpinbox.com/index/album/content/?album_id=5534&amp;click=name">-->
+					   <img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170814/59911dba7ba2f.jpg">
+					 <!--</a>-->
+				   </div>
 				   <div class="content_box_info">
 				     <div>
 				       <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i><i class="fa fa-gift"></i></div>
@@ -257,6 +278,64 @@
               </div>
 		    </div>
 			<!-- 我的作品區塊結束 -->
+			
+			<script>
+			<!-- //20181203: 加入FOR POPVIEW開始 -->
+			function processAjaxData(urlPath){
+	          window.history.pushState("","",urlPath);
+            }
+
+//POPVIEW
+	function popview(url) {
+	  
+	$('.jBox-wrapper').remove();
+	url = 'http://localhost/creative_intro.html';
+	$.post(url, {
+		data : null,
+	}, function(r) {
+		
+		content = $(r).find('.creative_area');
+		//pinpinboard = $(r).find('#pinpinboard');
+		script = $(r).filter('script[name="popview"]');
+		
+        
+		if(!$('#JboxPopview').length) {
+			var popview = new jBox('Modal', {
+				addClass : 'popview_content',
+				id : 'JboxPopview',
+				//width: 1200,
+	            //height: 1600,
+	            zIndex : 1000,
+				onCloseComplete: function() {
+			  		//processAjaxData("https://www.pinpinbox.com/papid?rank_id=1&");
+					//processAjaxData("http://localhost/creative_intro.html");
+					popview.destroy();
+					browseKitRefresh();
+				},
+				onOpen : function(){
+					
+                    //processAjaxData(url);
+                    //$('li.removeInPop').remove();
+					$('.removeInPop').remove(); //移除CLASS=removeInPop
+                    //$('.jBox-content').append(pinpinboard);
+                    $('.jBox-content').append(script);
+                    //$('#pinpinboardAnchor').on('click', function(){
+						//$('.jBox-content').animate({scrollTop:$('.comment_info_textarea').offset().top}, 10);
+					//})
+                    //$('.jBox-content .descrip').html( $('.jBox-content .descrip').html().autoLink({ target: "_blank" }) ) ;
+					$('.jBox-content .descrip').html( $('.jBox-content .descrip').html() ) ;
+					window.onpopstate = function(event) { popview.close(); };
+
+				},
+			}).setContent(content).open();
+		}//if(!$('#JboxPopview').length)
+	    
+	});
+}////POPVIEW
+			
+			
+			</script>
+			
 			<!-- 收藏．贊助區塊開始 -->
   		    <div id="tab1" class="tab">
 			  <div class="waterfall_content">
@@ -506,7 +585,7 @@
 	    menu_flag = false;
 	  }
 	  $(this).children(".content_box_menu").on('click', function(){
-	    return false;
+	    //return false;
 	  });
 	  $('.content_box_menu').removeClass("content_box_menu_down");
 	  if(menu_flag){
@@ -588,6 +667,7 @@
 	});
 	
 	$(window).on('hashchange', function(e){
+	  //同頁跳書籤
       book_tab();
     });
 	function book_tab(){
