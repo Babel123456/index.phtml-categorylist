@@ -137,6 +137,13 @@
   <link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.css" rel="stylesheet" />
   <!-- //20181203: 加入FOR POPVIEW結束 -->
   
+  <!-- //20181205: 加入進入觀看開始 -->
+  <link type="text/css" href="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/css/lightgallery.min.css" rel="stylesheet" />
+  <link type="text/css" href="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/css/lightgallery-custom.min.css" rel="stylesheet" />
+  <!-- //20181205: 加入進入觀看結束 -->
+  
+  
+  
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/waypoint/js/waypoint.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.js"></script>
@@ -160,6 +167,12 @@
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.nicescroll.min.js"></script>
   <!-- //20181204: 加入FOR POPVIEW結束 -->
   
+  <!-- //20181205: 加入進入觀看開始 -->
+  <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lightgallery-all-modify.min.js"></script>
+  <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lg-audio.min.js"></script>
+  <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lg-subhtml.min.js"></script>
+  
+  <!-- //20181205: 加入進入觀看結束 -->
   
   <!-- 主要內容區開始 -->
   <div id="content">
@@ -289,15 +302,13 @@
 	function popview(url) {
 	  
 	$('.jBox-wrapper').remove();
-	//url = 'http://localhost/creative_intro.html';
-	//url = 'https://babel123456.github.io/index.phtml-categorylist/creative_intro.html';
-	url = 'creative_intro.html';
+	url = 'http://localhost/album_content.html';
 	$.post(url, {
 		data : null,
 	}, function(r) {
 		
-		content = $(r).find('.creative_area');
-		//pinpinboard = $(r).find('#pinpinboard');
+		content = $(r).find('#album_content_area');
+		//pinpinboard = $(r).find('#album_content_pinpinboard');
 		script = $(r).filter('script[name="popview"]');
 		
         
@@ -310,7 +321,6 @@
 	            zIndex : 1000,
 				onCloseComplete: function() {
 			  		//processAjaxData("https://www.pinpinbox.com/papid?rank_id=1&");
-					//processAjaxData("http://localhost/creative_intro.html");
 					popview.destroy();
 					browseKitRefresh();
 				},
@@ -318,7 +328,7 @@
 					
                     //processAjaxData(url);
                     //$('li.removeInPop').remove();
-					$('.removeInPop').remove(); //移除CLASS=removeInPop
+					$('#removeInPop').remove(); //移除ID=removeInPop
                     //$('.jBox-content').append(pinpinboard);
                     $('.jBox-content').append(script);
                     //$('#pinpinboardAnchor').on('click', function(){
@@ -334,6 +344,17 @@
 	    
 	});
 }////POPVIEW
+			
+			
+			function browseKitRefresh() {
+	//a_album_item = [];
+	
+	//$.each(a_album_element, function(k0, v0) {
+		//$(v0).removeData('lightGallery');
+	//});
+}
+
+			<!-- //20181203: 加入FOR POPVIEW結束 -->
 			
 			
 			</script>
