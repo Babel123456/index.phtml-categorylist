@@ -905,11 +905,11 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 1200px) { .album_content_area .album_content_intro_area { width: 98%; padding: 3%; } }
 @media (max-width: 768px) { .album_content_area .album_content_intro_area { width: 100%; height: auto; border: none; border-radius: 0; padding: 0; font-size: 16px; } }
 @media (min-width: 768px) { .album_content_area .thr-div { position: absolute; right: 0; top: 156px; } }
-.album_content_area .album_content_donate_area { display: -webkit-flex; display: flex; flex-direction: column; }
+.album_content_area .album_content_donate_area { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-flex-direction: column; /* Safari 6.1+ */ flex-direction: column; }
 @media (max-width: 768px) { .album_content_area .album_content_donate_area { flex-direction: column-reverse; } }
-.album_content_area .album_content_donate { display: -webkit-flex; display: flex; flex-direction: column; margin-top: 16px; background: #ffffff; width: 100%; }
+.album_content_area .album_content_donate { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-flex-direction: column; /* Safari 6.1+ */ flex-direction: column; margin-top: 16px; background: #ffffff; width: 100%; }
 @media (max-width: 768px) { .album_content_area .album_content_donate { position: fixed; left: 0; bottom: 0; height: 48px; margin: 0; padding: 1% 2%; z-index: 2; border-top: 1px solid #d4d4d4; flex-direction: row-reverse; } }
-.album_content_area .album_content_donate .donate_btn, .album_content_area .album_content_donate .donate_desc, .album_content_area .album_content_donate .album_content_back { display: -webkit-flex; display: flex; flex-direction: row; align-items: center; }
+.album_content_area .album_content_donate .donate_btn, .album_content_area .album_content_donate .donate_desc, .album_content_area .album_content_donate .album_content_back { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-flex-direction: row; /* Safari 6.1+ */ flex-direction: row; align-items: center; }
 .album_content_area .album_content_donate .donate_btn > span, .album_content_area .album_content_donate .donate_desc > span, .album_content_area .album_content_donate .album_content_back > span { flex: -1 0 0; }
 .album_content_area .album_content_donate .donate_btn { width: 100%; }
 @media (max-width: 768px) { .album_content_area .album_content_donate .donate_btn { width: fit-content; } }

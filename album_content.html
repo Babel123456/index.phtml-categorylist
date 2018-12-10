@@ -272,7 +272,7 @@
 			      <div class="donate_btn">
 			        <!-- 若作品有設定贊助時顯示贊助按鈕 若沒有則顯示收藏按鈕 -->
 		            <span class="btn_new btn_main">贊助</span>
-		            <span class="btn_new btn_pink">收藏</span>
+		            <!--<span class="btn_new btn_pink">收藏</span>-->
 				    <span class="btn_new">投票</span>
 			      </div>
 			      <div class="donate_desc">
@@ -374,10 +374,10 @@
 	}
 	
 	//限本頁使用
-	$(window).load(function() {
+	//$(window).load(function() {
       desc_more_btn();
-	  console.log('document.load');
-     });
+	  //console.log('document.load');
+     //});
 	//當被POPUP顯示時
 	$(document).ajaxComplete(function( event, request, settings ) {
       desc_more_btn();
