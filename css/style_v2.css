@@ -230,7 +230,7 @@ textarea:-ms-input-placeholder { color: #9e9e9e; }
 @media (max-width: 800px) { #footer #footer_area { height: 96px; } }
 @media (max-width: 1200px) { #footer #footer_area { width: 96%; } }
 @media (max-width: 1024px) { #footer #footer_area { line-height: 42px; height: 42px; width: 98%; } }
-@media (max-width: 500px) { #footer #footer_area { height: 130px; line-height: 30px; } }
+@media (max-width: 500px) { #footer #footer_area { height: 200px; line-height: 30px; } }
 #footer #footer_area ul li { display: inline-block; margin-right: 2%; }
 @media (max-width: 800px) { #footer #footer_area ul li { display: block; } }
 #footer #footer_area ul li a { color: #fff !important; }
@@ -900,90 +900,97 @@ label.error { color: #ee5b8d; font-size: 14px; }
 /* 作品資訊頁開始 */
 .album_content_area { position: relative; width: 1024px; margin: 64px auto 0 auto; }
 @media (max-width: 1024px) { .album_content_area { width: 100%; } }
-@media (max-width: 800px) { .album_content_area { width: 96%; margin-top: 44px; padding: 0; background: #ffffff; } }
+@media (max-width: 768px) { .album_content_area { width: 96%; margin-top: 44px; padding: 0; background: #ffffff; } }
 .album_content_area .album_content_intro_area { display: block; margin: auto; padding: 32px; background: #ffffff; font-size: 18px; }
-@media (max-width: 1200px) { .album_content_area .album_content_intro_area { width: 98%; height: 80vh; padding: 3%; } }
-@media (max-width: 800px) { .album_content_area .album_content_intro_area { width: 100%; height: auto; border: none; border-radius: 0; padding: 0; font-size: 16px; } }
-@media (min-width: 768px) { .album_content_area .thrDiv { position: absolute; right: 0; top: 140px; } }
+@media (max-width: 1200px) { .album_content_area .album_content_intro_area { width: 98%; padding: 3%; } }
+@media (max-width: 768px) { .album_content_area .album_content_intro_area { width: 100%; height: auto; border: none; border-radius: 0; padding: 0; font-size: 16px; } }
+@media (min-width: 768px) { .album_content_area .thr-div { position: absolute; right: 0; top: 156px; } }
 .album_content_area .album_content_donate_area { display: -webkit-flex; display: flex; flex-direction: column; }
-@media (max-width: 767px) { .album_content_area .album_content_donate_area { flex-direction: column-reverse; } }
+@media (max-width: 768px) { .album_content_area .album_content_donate_area { flex-direction: column-reverse; } }
 .album_content_area .album_content_donate { display: -webkit-flex; display: flex; flex-direction: column; margin-top: 16px; background: #ffffff; width: 100%; }
-@media (max-width: 767px) { .album_content_area .album_content_donate { position: fixed; left: 0; bottom: 0; height: 48px; margin: 0; padding: 1% 2%; z-index: 2; border-top: 1px solid #d4d4d4; flex-direction: row-reverse; } }
+@media (max-width: 768px) { .album_content_area .album_content_donate { position: fixed; left: 0; bottom: 0; height: 48px; margin: 0; padding: 1% 2%; z-index: 2; border-top: 1px solid #d4d4d4; flex-direction: row-reverse; } }
 .album_content_area .album_content_donate .donate_btn, .album_content_area .album_content_donate .donate_desc, .album_content_area .album_content_donate .album_content_back { display: -webkit-flex; display: flex; flex-direction: row; align-items: center; }
 .album_content_area .album_content_donate .donate_btn > span, .album_content_area .album_content_donate .donate_desc > span, .album_content_area .album_content_donate .album_content_back > span { flex: -1 0 0; }
 .album_content_area .album_content_donate .donate_btn { width: 100%; }
-@media (max-width: 767px) { .album_content_area .album_content_donate .donate_btn { width: fit-content; } }
+@media (max-width: 768px) { .album_content_area .album_content_donate .donate_btn { width: fit-content; } }
 .album_content_area .album_content_donate .donate_btn > span { flex: 2; }
 .album_content_area .album_content_donate .donate_btn > span:not(:last-child) { margin-right: 16px; }
-@media (max-width: 767px) { .album_content_area .album_content_donate .donate_btn > span:not(:last-child) { margin-right: 8px; } }
+@media (max-width: 768px) { .album_content_area .album_content_donate .donate_btn > span:not(:last-child) { margin-right: 8px; } }
 .album_content_area .album_content_donate .donate_desc { flex: 2; width: 100%; margin-top: 4px; }
 @media (max-width: 1024px) { .album_content_area .album_content_donate .donate_desc { flex-flow: row wrap; } }
-@media (max-width: 767px) { .album_content_area .album_content_donate .donate_desc { margin-top: 0; margin-right: 8px; } }
+@media (max-width: 768px) { .album_content_area .album_content_donate .donate_desc { margin-top: 0; margin-right: 8px; } }
 .album_content_area .album_content_donate .donate_desc > span:first-child { margin-right: 24px; }
 @media (max-width: 1200px) { .album_content_area .album_content_donate .donate_desc > span:first-child { margin-right: 16px; } }
 @media (max-width: 1024px) { .album_content_area .album_content_donate .donate_desc > span:first-child { flex: 1 100%; } }
-@media (max-width: 767px) { .album_content_area .album_content_donate .donate_desc > span:first-child { margin-right: 8px; flex: 2; text-align: right; } }
-@media (max-width: 800px) { .album_content_area .album_content_intro_info { margin: 8px 0; } }
-.album_content_area .album_content_intro_info .album_content_creative_info { display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; padding-bottom: 16px; margin-bottom: 24px; border-bottom: 1px solid #d4d4d4; }
-@media (max-width: 767px) { .album_content_area .album_content_intro_info .album_content_creative_info { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; } }
-.album_content_area .album_content_intro_info .album_content_creative_info .album_content_creative_info_img { -webkit-flex: 2; flex: 2; }
-.album_content_area .album_content_intro_info .album_content_creative_info .album_content_creative_info_img img { width: 72px; height: 72px; -moz-border-radius: 72px; -webkit-border-radius: 72px; border-radius: 72px; }
-@media (max-width: 800px) { .album_content_area .album_content_intro_info .album_content_creative_info .album_content_creative_info_img img { width: 28px; height: 28px; -moz-border-radius: 28px; -webkit-border-radius: 28px; border-radius: 28px; } }
-.album_content_area .album_content_intro_info .album_content_creative_info .album_content_creative_info_name { width: 100%; }
-.album_content_area .album_content_intro_info .album_content_creative_info .album_content_creative_info_name span { display: block; margin-left: 16px; }
-@media (max-width: 800px) { .album_content_area .album_content_intro_info .album_content_creative_info .album_content_creative_info_name span { display: inline-block; margin-left: 8px; } }
-.album_content_area .album_content_intro_info .album_content_creative_info .album_content_creative_info_name span:last-child { margin-top: 8px; }
-@media (max-width: 800px) { .album_content_area .album_content_intro_info .album_content_creative_info .album_content_creative_info_name span:last-child { display: none; } }
-.album_content_area .album_content_intro_info .album_content_creative_info .album_content_creative_info_name span:first-child a { width: 100%; line-height: 25px; height: 25px; overflow: hidden; display: -webkit-box !important; -webkit-box-orient: vertical; -webkit-line-clamp: 1; text-overflow: ellipsis; -o-text-overflow: ellipsis; -ms-text-overflow: ellipsis; }
-.album_content_area .album_content_intro_info .album_content_creative_info_pin, .album_content_area .album_content_intro_info .album_content_creative_info_view { text-align: left; }
-@media (max-width: 767px) { .album_content_area .album_content_intro_info .album_content_creative_info_pin, .album_content_area .album_content_intro_info .album_content_creative_info_view { text-align: right; } }
-.album_content_area .album_content_intro_info .album_content_creative_info_pin i, .album_content_area .album_content_intro_info .album_content_creative_info_view i { margin-right: 8px; }
-@media (max-width: 767px) { .album_content_area .album_content_intro_info .album_content_creative_info_pin i, .album_content_area .album_content_intro_info .album_content_creative_info_view i { margin-right: 4px; } }
+@media (max-width: 768px) { .album_content_area .album_content_donate .donate_desc > span:first-child { margin-right: 8px; flex: 2; text-align: right; } }
+.album_content_area .album_content_intro_info { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-flex-direction: column; /* Safari 6.1+ */ flex-direction: column; }
+@media (max-width: 768px) { .album_content_area .album_content_intro_info { -webkit-flex-direction: row; flex-direction: row; margin: 8px 0; } }
+.album_content_area .album_content_intro_info .album_content_creative_info, .album_content_area .album_content_intro_info .album_content_creative_info_num { flex: -1 0 0; display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; }
+@media (max-width: 768px) { .album_content_area .album_content_intro_info .album_content_creative_info:not(:last-child), .album_content_area .album_content_intro_info .album_content_creative_info_num:not(:last-child) { margin-right: 32px; } }
+.album_content_area .album_content_intro_info .album_content_creative_info { flex: 2; padding-bottom: 32px; margin-bottom: 32px; border-bottom: 1px solid #d4d4d4; }
+@media (max-width: 768px) { .album_content_area .album_content_intro_info .album_content_creative_info { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; } }
+.album_content_area .album_content_intro_info .album_content_creative_info_num { width: 100%; margin-left: 2px; }
+@media (max-width: 768px) { .album_content_area .album_content_intro_info .album_content_creative_info_num { width: fit-content; } }
+.album_content_area .album_content_intro_info .album_content_creative_info_num div:not(:last-child) { margin-right: 32px; }
+.album_content_area .album_content_intro_info .album_content_creative_info_img img { width: 72px; height: 72px; -moz-border-radius: 72px; -webkit-border-radius: 72px; border-radius: 72px; }
+@media (max-width: 800px) { .album_content_area .album_content_intro_info .album_content_creative_info_img img { width: 28px; height: 28px; -moz-border-radius: 28px; -webkit-border-radius: 28px; border-radius: 28px; } }
+.album_content_area .album_content_intro_info .album_content_creative_info_name span { display: block; margin-left: 16px; }
+@media (max-width: 800px) { .album_content_area .album_content_intro_info .album_content_creative_info_name span { margin-left: 8px; } }
+.album_content_area .album_content_intro_info .album_content_creative_info_name span:last-child { margin-top: 8px; }
+@media (max-width: 800px) { .album_content_area .album_content_intro_info .album_content_creative_info_name span:last-child { display: none; } }
+.album_content_area .album_content_intro_info .album_content_creative_info_name span:first-child a { width: 100%; line-height: 25px; height: 25px; overflow: hidden; display: -webkit-box !important; -webkit-box-orient: vertical; -webkit-line-clamp: 1; text-overflow: ellipsis; -o-text-overflow: ellipsis; -ms-text-overflow: ellipsis; }
+.album_content_area .album_content_intro_info .album_content_creative_info_num i { margin-right: 8px; }
+@media (max-width: 800px) { .album_content_area .album_content_intro_info .album_content_creative_info_num i { margin-right: 4px; } }
 .album_content_area .album_content_donate .btn_new { width: 100%; }
-@media (max-width: 767px) { .album_content_area .album_content_donate .btn_new { width: 20vw; } }
-@media (max-width: 767px) { .album_content_area .album_content_donate .p_to_nt { display: none; } }
+@media (max-width: 768px) { .album_content_area .album_content_donate .btn_new { width: 20vw; } }
+@media (max-width: 768px) { .album_content_area .album_content_donate .p_to_nt { display: none; } }
 .album_content_area .album_content_donate .album_content_back { cursor: pointer; }
 .album_content_area .album_content_donate .album_content_back span { display: none; }
-@media (max-width: 767px) { .album_content_area .album_content_donate .album_content_back span { display: inline-block; margin-right: 8px; } }
+@media (max-width: 768px) { .album_content_area .album_content_donate .album_content_back span { display: inline-block; margin-right: 8px; } }
 .album_content_area .album_content_donate .album_content_back i { margin-top: 1px; font-size: 24px; }
-.album_content_area .album_content_main { overflow-y: auto; height: 100%; line-height: 25px; letter-spacing: 1.5px; }
-@media (max-width: 767px) { .album_content_area .album_content_main { width: 100%; padding-right: 0; margin-bottom: 48px; } }
-.album_content_area .album_content_main .content_box { margin-bottom: 32px; border-bottom: 1px solid #d4d4d4; }
-.album_content_area .album_content_main .content_box_img { position: relative; width: 100%; padding-top: 70.35%; overflow: hidden; cursor: pointer; border: 1px solid #d4d4d4; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
-.album_content_area .album_content_main .content_box_img .content_box_img_area { position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; }
-.album_content_area .album_content_main .content_box_img .content_box_img_area img { object-fit: cover; width: 100%; }
-.album_content_area .album_content_main .content_box_img .content_box_img_btn { position: absolute; right: 16px; bottom: 16px; }
-@media (max-width: 767px) { .album_content_area .album_content_main .content_box_img .content_box_img_btn { right: 8px; bottom: 8px; } }
-.album_content_area .album_content_main .content_box_img .btn_new { width: 112px; -moz-border-radius: 40px; -webkit-border-radius: 40px; border-radius: 40px; }
-@media (max-width: 800px) { .album_content_area .album_content_main .content_box_img .btn_new { width: 96px; } }
-.album_content_area .album_content_main .content_box_icon { margin-top: 8px; margin-bottom: 16px; }
-@media (max-width: 767px) { .album_content_area .album_content_main .content_box_icon { margin-bottom: 8px; } }
-.album_content_area .album_content_main .content_box_icon .row { width: 100%; }
-.album_content_area .album_content_main .content_box_icon i { font-size: 22px; margin-right: 6px; }
-@media (max-width: 767px) { .album_content_area .album_content_main .content_box_icon i { font-size: 16px; margin-right: 8px; } }
+.album_content_area .album_content_main { overflow-y: auto; height: 100%; line-height: 25px; letter-spacing: 1.5px; border-right: 1px solid #d4d4d4; padding-right: 32px; }
+@media (max-width: 768px) { .album_content_area .album_content_main { width: 100%; padding-right: 0; margin-bottom: 48px; border-right: 0; } }
+.album_content_area .album_content_main .album_content_box { margin-bottom: 32px; border-bottom: 1px solid #d4d4d4; }
+.album_content_area .album_content_main .album_content_box_img { position: relative; width: 100%; padding-top: 70.35%; overflow: hidden; cursor: pointer; border: 1px solid #d4d4d4; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+.album_content_area .album_content_main .album_content_box_img .album_content_box_img_area { position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; }
+.album_content_area .album_content_main .album_content_box_img .album_content_box_img_area img { object-fit: cover; width: 100%; }
+.album_content_area .album_content_main .album_content_box_img .album_content_box_img_btn { position: absolute; right: 16px; bottom: 16px; }
+@media (max-width: 768px) { .album_content_area .album_content_main .album_content_box_img .album_content_box_img_btn { right: 8px; bottom: 8px; } }
+.album_content_area .album_content_main .album_content_box_img .btn_new { width: 112px; -moz-border-radius: 40px; -webkit-border-radius: 40px; border-radius: 40px; }
+@media (max-width: 768px) { .album_content_area .album_content_main .album_content_box_img .btn_new { width: 96px; } }
+.album_content_area .album_content_main .album_content_box_icon { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; margin-top: 8px; margin-bottom: 18px; }
+@media (max-width: 768px) { .album_content_area .album_content_main .album_content_box_icon { margin-bottom: 8px; } }
+.album_content_area .album_content_main .album_content_box_icon .album_content_box_icons, .album_content_area .album_content_main .album_content_box_icon .album_content_box_pages, .album_content_area .album_content_main .album_content_box_icon .album_content_box_menu_btn { flex: -1 0 0; }
+.album_content_area .album_content_main .album_content_box_icon .album_content_box_icons { flex: 2; }
+.album_content_area .album_content_main .album_content_box_icon .album_content_box_pages { margin-right: 8px; }
+.album_content_area .album_content_main .album_content_box_icon i:first-child { margin-left: 4px; }
+.album_content_area .album_content_main .album_content_box_icon i:not(:first-child), .album_content_area .album_content_main .album_content_box_icon .fa-ellipsis-h { margin-left: 8px; }
+.album_content_area .album_content_main .album_content_box_icon i { font-size: 22px; }
+@media (max-width: 768px) { .album_content_area .album_content_main .album_content_box_icon i { font-size: 16px; } }
 .album_content_area .album_content_main .content_box_name { font-size: 24px; margin-bottom: 16px; line-height: 30px; }
-@media (max-width: 767px) { .album_content_area .album_content_main .content_box_name { font-size: 20px; margin-bottom: 8px; } }
+@media (max-width: 768px) { .album_content_area .album_content_main .content_box_name { font-size: 20px; margin-bottom: 8px; } }
 .album_content_area .album_content_main .album_content_desc { word-wrap: break-word; }
 .album_content_area .album_content_main .album_content_desc .btn_new { margin-bottom: 32px; }
 .album_content_area .album_content_main .album_content_desc .album_content_box_desc { overflow: hidden; margin-bottom: 32px; word-wrap: break-word; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
 .album_content_area .album_content_main .album_content_desc #album_content_desc_more { display: none; }
 .album_content_area .album_content_main .message_board_box .message_reply_count { margin-bottom: 32px; }
-@media (max-width: 767px) { .album_content_area .album_content_main .message_board_box .message_reply_count { margin-bottom: 16px; } }
+@media (max-width: 768px) { .album_content_area .album_content_main .message_board_box .message_reply_count { margin-bottom: 16px; } }
 .album_content_area .album_content_main .message_board_box .message_leave { border-bottom: 0; }
-@media (max-width: 767px) { .album_content_area .see_more_block { width: 100%; float: none; margin-left: 0; } }
+@media (max-width: 768px) { .album_content_area .see_more_block { width: 100%; margin-left: 0; } }
 .album_content_area .intro_see_more_area { position: relative; margin-top: 36px; }
-@media (max-width: 767px) { .album_content_area .intro_see_more_area { display: none; } }
+@media (max-width: 768px) { .album_content_area .intro_see_more_area { display: none; } }
 .album_content_area .intro_see_more_area .intro_title { width: 100%; margin-bottom: 16px; }
 .album_content_area .intro_see_more_area .intro_see_more .intro_see_more_img { position: relative; width: 100%; padding-top: 100%; /* 1:1 Aspect Ratio */ -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; overflow: hidden; margin-bottom: 16px; }
 .album_content_area .intro_see_more_area .intro_see_more .intro_see_more_img a { display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; }
 .album_content_area .intro_see_more_area .intro_see_more .intro_see_more_img a img { width: 100%; height: 100%; object-fit: cover; }
-.album_content_area .social_links_box { display: -webkit-flex; /* NEW */ display: flex; align-items: flex-start; padding-top: 32px; }
-@media (max-width: 767px) { .album_content_area .social_links_box { margin-bottom: 64px; border-top: 1px solid #d4d4d4; } }
+.album_content_area .social_links_box { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-box-align: flex-start; -moz-box-align: flex-start; -ms-flex-align: flex-start; -webkit-align-items: flex-start; align-items: flex-start; padding-top: 16px; }
+@media (max-width: 768px) { .album_content_area .social_links_box { margin-bottom: 64px; border-top: 1px solid #d4d4d4; } }
 .album_content_area .social_links_box .social_links, .album_content_area .social_links_box social_links2 { flex: -1 0 0; }
 .album_content_area .social_links_box .social_links { height: 32px; overflow: hidden; }
 .album_content_area .social_links_box .social_links img { width: 32px; height: 32px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
 .album_content_area .social_links_box .social_links img:not(:last-child) { margin-right: 8px; }
 .album_content_area .social_links_box .social_links { height: 32px; }
+.album_content_area .social_links_box .social_links a { display: inline-block; margin-bottom: 8px; }
 .album_content_area .social_links_box .social_links_height { height: 100% !important; }
 .album_content_area .social_links_box .social_links2 { margin-left: 8px; width: 32px; height: 32px; background: #f2f2f2; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; cursor: pointer; }
 .album_content_area .social_links_box .social_links2 i { display: block; font-size: 22px; margin: 7px 0 0 6px; width: 32px; height: 32px; }
@@ -993,7 +1000,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 800px) { .sub_desc { font-size: 14px; } }
 
 .donate_desc { font-size: 16px; color: #00acc1; line-height: 25px; letter-spacing: 1.5px; }
-@media (max-width: 767px) { .donate_desc { font-size: 14px; } }
+@media (max-width: 768px) { .donate_desc { font-size: 14px; } }
 
 .padding2px { padding-right: 2px; }
 
