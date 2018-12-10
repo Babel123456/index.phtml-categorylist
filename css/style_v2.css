@@ -897,12 +897,16 @@ label.error { color: #ee5b8d; font-size: 14px; }
 /* 上傳頭圖樣式結束 */
 /* 創作人專區編輯資訊專區區塊結束 */
 /* 創作人專區編輯資訊區塊結束 */
+.popview_content .jBox-content { overflow-y: hidden; }
+@media (max-width: 768px) { .popview_content .jBox-content { overflow-y: auto; } }
+.popview_content .jBox-content .album_content_area { margin: 32px auto; }
+
 /* 作品資訊頁開始 */
 .album_content_area { position: relative; width: 1024px; margin: 64px auto 0 auto; }
 @media (max-width: 1024px) { .album_content_area { width: 100%; } }
 @media (max-width: 768px) { .album_content_area { width: 96%; margin-top: 44px; padding: 0; background: #ffffff; } }
 .album_content_area .album_content_intro_area { display: block; margin: auto; padding: 32px; background: #ffffff; font-size: 18px; }
-@media (max-width: 1200px) { .album_content_area .album_content_intro_area { width: 98%; padding: 3%; } }
+@media (max-width: 1200px) { .album_content_area .album_content_intro_area { width: 98%; height: 80vh; padding: 3%; } }
 @media (max-width: 768px) { .album_content_area .album_content_intro_area { width: 100%; height: auto; border: none; border-radius: 0; padding: 0; font-size: 16px; } }
 @media (min-width: 768px) { .album_content_area .thr-div { position: absolute; right: 0; top: 156px; } }
 .album_content_area .album_content_donate_area { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-flex-direction: column; /* Safari 6.1+ */ flex-direction: column; }
@@ -948,10 +952,10 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .album_content_area .album_content_donate .album_content_back span { display: none; }
 @media (max-width: 768px) { .album_content_area .album_content_donate .album_content_back span { display: inline-block; margin-right: 8px; } }
 .album_content_area .album_content_donate .album_content_back i { margin-top: 1px; font-size: 24px; }
-.album_content_area .album_content_main { overflow-y: auto; height: 100%; line-height: 25px; letter-spacing: 1.5px; border-right: 1px solid #d4d4d4; padding-right: 32px; }
-@media (max-width: 768px) { .album_content_area .album_content_main { width: 100%; padding-right: 0; margin-bottom: 48px; border-right: 0; } }
+.album_content_area .album_content_main { overflow-y: auto; height: 100%; max-height: 86vh; line-height: 25px; letter-spacing: 1.5px; border-right: 1px solid #d4d4d4; padding-right: 32px; }
+@media (max-width: 768px) { .album_content_area .album_content_main { width: 100%; max-height: 100%; padding-right: 0; margin-bottom: 48px; border-right: 0; } }
 .album_content_area .album_content_main .album_content_box { margin-bottom: 32px; border-bottom: 1px solid #d4d4d4; }
-.album_content_area .album_content_main .album_content_box_img { position: relative; width: 100%; padding-top: 70.35%; overflow: hidden; cursor: pointer; border: 1px solid #d4d4d4; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+.album_content_area .album_content_main .album_content_box_img { position: relative; width: 100%; padding-top: 70.35%; overflow: hidden; border: 1px solid #d4d4d4; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
 .album_content_area .album_content_main .album_content_box_img .album_content_box_img_area { position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; }
 .album_content_area .album_content_main .album_content_box_img .album_content_box_img_area img { object-fit: cover; width: 100%; }
 .album_content_area .album_content_main .album_content_box_img .album_content_box_img_btn { position: absolute; right: 16px; bottom: 16px; }
@@ -963,6 +967,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .album_content_area .album_content_main .album_content_box_icon .album_content_box_icons, .album_content_area .album_content_main .album_content_box_icon .album_content_box_pages, .album_content_area .album_content_main .album_content_box_icon .album_content_box_menu_btn { flex: -1 0 0; }
 .album_content_area .album_content_main .album_content_box_icon .album_content_box_icons { flex: 2; }
 .album_content_area .album_content_main .album_content_box_icon .album_content_box_pages { margin-right: 8px; }
+.album_content_area .album_content_main .album_content_box_icon .album_content_box_menu_btn { cursor: pointer; }
 .album_content_area .album_content_main .album_content_box_icon i:first-child { margin-left: 4px; }
 .album_content_area .album_content_main .album_content_box_icon i:not(:first-child), .album_content_area .album_content_main .album_content_box_icon .fa-ellipsis-h { margin-left: 8px; }
 .album_content_area .album_content_main .album_content_box_icon i { font-size: 22px; }
@@ -984,10 +989,10 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .album_content_area .intro_see_more_area .intro_see_more .intro_see_more_img a { display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; }
 .album_content_area .intro_see_more_area .intro_see_more .intro_see_more_img a img { width: 100%; height: 100%; object-fit: cover; }
 .album_content_area .social_links_box { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-box-align: flex-start; -moz-box-align: flex-start; -ms-flex-align: flex-start; -webkit-align-items: flex-start; align-items: flex-start; padding-top: 16px; }
-@media (max-width: 768px) { .album_content_area .social_links_box { margin-bottom: 64px; border-top: 1px solid #d4d4d4; } }
+@media (max-width: 768px) { .album_content_area .social_links_box { margin-bottom: 32px; border-top: 1px solid #d4d4d4; } }
 .album_content_area .social_links_box .social_links, .album_content_area .social_links_box social_links2 { flex: -1 0 0; }
 .album_content_area .social_links_box .social_links { height: 32px; overflow: hidden; }
-.album_content_area .social_links_box .social_links img { width: 32px; height: 32px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+.album_content_area .social_links_box .social_links img { width: 32px; height: 32px; -moz-border-radius: 32px; -webkit-border-radius: 32px; border-radius: 32px; }
 .album_content_area .social_links_box .social_links img:not(:last-child) { margin-right: 8px; }
 .album_content_area .social_links_box .social_links { height: 32px; }
 .album_content_area .social_links_box .social_links a { display: inline-block; margin-bottom: 8px; }

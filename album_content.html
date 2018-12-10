@@ -356,6 +356,12 @@
 <script type="text/javascript" name="popview">
    
 	
+	$(document).ready(function() {
+      desc_more_btn();
+	  console.log('document.load');
+    });
+	
+	
   
 	//社群按鈕
 	$('#album_content_social_links_box').on('click', '#album_content_social_links2', function() {
@@ -366,7 +372,7 @@
 	function desc_more_btn(){
       if($('#album_content_box_desc').height()>100){
 	    $('#album_content_desc_more').addClass('show_block');
-	    $('#album_content_box_desc').css('cursor','pointer');
+	    //$('#album_content_box_desc').css('cursor','pointer');
 	    $('#album_content_box_desc').on('click', function(){
           //$('#album_content_desc_more').click();
 	    });
@@ -375,7 +381,7 @@
 	
 	//限本頁使用
 	//$(window).load(function() {
-      desc_more_btn();
+      //desc_more_btn();
 	  //console.log('document.load');
      //});
 	//當被POPUP顯示時
