@@ -356,10 +356,10 @@
 <script type="text/javascript" name="popview">
    
 	
-	$(document).ready(function() {
-      desc_more_btn();
-	  console.log('document.load');
-    });
+	//$(document).ready(function() {
+      //desc_more_btn();
+	  //console.log('document.load');
+    //});
 	
 	
   
@@ -371,7 +371,7 @@
 	//若作品介紹超過4行, 則出現按鈕
 	function desc_more_btn(){
 	  alert($('#album_content_box_desc').height());
-      if($('#album_content_box_desc').height()>100){
+      if($('#album_content_box_desc').height()>98){
 	    $('#album_content_desc_more').addClass('show_block');
 	    //$('#album_content_box_desc').css('cursor','pointer');
 	    $('#album_content_box_desc').on('click', function(){
@@ -381,10 +381,10 @@
 	}
 	
 	//限本頁使用
-	//$(window).load(function() {
-      //desc_more_btn();
-	  //console.log('document.load');
-     //});
+	$(window).load(function() {
+      desc_more_btn();
+	  console.log('document.load');
+    });
 	//當被POPUP顯示時
 	$(document).ajaxComplete(function( event, request, settings ) {
       desc_more_btn();
