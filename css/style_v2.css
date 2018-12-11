@@ -1009,10 +1009,12 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 768px) { .donate_desc { font-size: 14px; } }
 
 /* 下拉選單 與JS配合使用 */
-.custom-select { position: relative; height: 40px; line-height: 40px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; background: #f2f2f2; padding: 0 3px 0 4px; -webkit-user-select: none; /* Chrome all / Safari all */ -moz-user-select: none; /* Firefox all */ -ms-user-select: none; /* IE 10+ */ user-select: none; /* Likely future */ text-align: center; /*style the arrow inside the select element:*/ /*point the arrow upwards when the select box is open (active):*/ /*style the items (options), including the selected item:*/ /*style items (options):*/ /*hide the items when the select box is closed:*/ }
-@media (max-width: 800px) { .custom-select { height: 32px; line-height: 32px; } }
+.custom-select { position: relative; height: 40px; line-height: 40px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; background: #f2f2f2; padding: 0 3px 0 10px; -webkit-user-select: none; /* Chrome all / Safari all */ -moz-user-select: none; /* Firefox all */ -ms-user-select: none; /* IE 10+ */ user-select: none; /* Likely future */ text-align: center; /*style the arrow inside the select element:*/ /*point the arrow upwards when the select box is open (active):*/ /*style the items (options), including the selected item:*/ /*style items (options):*/ /*hide the items when the select box is closed:*/ }
+@media (max-width: 400px) { .custom-select { height: 32px; line-height: 32px; } }
+@media (max-width: 400px) { .custom-select { padding: 0 3px 0 4px; text-align: left; } }
 .custom-select > select { display: none; /*hide original SELECT element:*/ }
 .custom-select .select-selected:after { position: absolute; content: ""; top: 16px; right: 10px; width: 0; height: 0; border: 6px solid transparent; border-color: #4d4d4d transparent transparent transparent; }
+@media (max-width: 500px) { .custom-select .select-selected:after { right: 2px; } }
 .custom-select .select-items div, .custom-select .select-selected { cursor: pointer; user-select: none; }
 .custom-select .select-items { position: absolute; background-color: #ffffff; top: 100%; right: 0; z-index: 99; padding: 32px; border: 1px solid #d4d4d4; line-height: 20px; max-height: 216px; overflow-y: auto; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
 @media (max-width: 800px) { .custom-select .select-items { padding: 16px; } }
