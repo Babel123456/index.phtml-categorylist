@@ -55,7 +55,7 @@
 		  <!--<a href="https://www.pinpinbox.com/index/user/point/" title="立即購買Ｐ點贊助">購買Ｐ點</a>-->
 		  目前P點:41225&nbsp;&nbsp;<a href="https://www.pinpinbox.com/index/user/point/">購買</a>
 		</div>
-		<div class="pin_gift"><a href="index.html#p_bannner" title="賺P點 抽好康 買好物"><div class="btn_new btn_pink">Ｐ好康</div></a></div>
+		<div class="pin_gift"><a href="index.php#p_bannner" title="賺P點 抽好康 買好物"><div class="btn_new btn_pink">Ｐ好康</div></a></div>
 		<!-- 20181116: 改字與加"P好康"結束 -->
 		<!-- 電腦版選單開始 -->
 		<div class="header_menu">
@@ -85,11 +85,11 @@
 		  -->
 		  <li><div>我的專區</div><div>
 		    <ul>
-			  <li><a href="creative_content.html#tab3">關於我</a></li>
-			  <li><a href="creative_content.html#tab0">我的作品</a></li>
-			  <li><a href="creative_content.html#tab1">我的收藏</a></li>
-			  <li><a href="creative_content.html#tab2">共用協作</a></li>
-			  <li><a href="creative_content.html#tab4">留言板</a></li>
+			  <li><a href="creative_content.php#tab3">關於我</a></li>
+			  <li><a href="creative_content.php#tab0">我的作品</a></li>
+			  <li><a href="creative_content.php#tab1">我的收藏</a></li>
+			  <li><a href="creative_content.php#tab2">共用協作</a></li>
+			  <li><a href="creative_content.php#tab4">留言板</a></li>
 			</ul></div>
 		  </li>
 		  <li><div>管理中心</div><div>
@@ -182,138 +182,141 @@
 		     </div>
 		     <!--  姓別區塊開始  -->
 		     <div><span>性別</span>
-			   <span class="user_gender menudrop" onclick="menudrop_down('user_gender');">
-			     <input type="text" id="user_gender" value="不透露" data-user_gender="none" readonly autocomplete="off" ><i class="fa fa-caret-down"></i>
-			     <!-- 下拉選單區塊開始 -->
-			     <ul class="user_gender_menudrop">
-			       <li><a href="javascript:void(0)" data-user_gender="none" onclick="menudrop_set('user_gender','none','不透露');">不透露</a></li>
-				   <li><a href="javascript:void(0)" data-user_gender="female" onclick="menudrop_set('user_gender','female','女性');">女性</a></li>
-				   <li><a href="javascript:void(0)" data-user_gender="male" onclick="menudrop_set('user_gender','male','男性');">男性</a></li>
-			     </ul>
-				 <!-- 下拉選單區塊結束 -->
-			   </span>
-		   </div>
+			      <!-- //20181211: 修改下拉選單開始 -->
+			      <span class="custom-select">
+				    <select id="user_gender">
+                      <option value="none">不透露</option>
+                      <option value="female">女性</option>
+                      <option value="male">男性</option>
+                    </select>
+			      </span>
+				  <!-- //20181211: 修改下拉選單結束 -->
+		     </div>
 		   <!--  姓別區塊結束  -->
 		   <!--  婚姻區塊開始  -->
 		   <div><span>婚姻</span>
-		     <span class="user_relationship menudrop" onclick="menudrop_down('user_relationship');">
-		       <input type="text" id="user_relationship" value="不透露" data-user_relationship="none" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
-		       <!-- 下拉選單區塊開始 -->
-		       <ul class="user_relationship_menudrop">
-		         <li><a href="javascript:void(0)" data-user_relationship="none" onclick="menudrop_set('user_relationship','none','不透露');">不透露</a></li>
-		   	     <li><a href="javascript:void(0)" data-user_relationship="single"  onclick="menudrop_set('user_relationship','single','未婚');">未婚</a></li>
-		   	     <li><a href="javascript:void(0)" data-user_relationship="married"  onclick="menudrop_set('user_relationship','married','已婚');">已婚</a></li>
-		       </ul>
-		       <!-- 下拉選單區塊結束 -->
-		     </span>
+		        <!-- //20181211: 修改下拉選單開始 -->
+			    <span class="custom-select">
+				  <select id="user_relationship">
+                    <option value="none">不透露</option>
+                    <option value="single">未婚</option>
+                    <option value="married">已婚</option>
+                  </select>
+			    </span>
+				<!-- //20181211: 修改下拉選單結束 -->
 		   </div>
 		   <!--  婚姻區塊結束  -->
 		   </div>
 		   <!--  居住地區塊開始  -->
 		   <div class="flex_column">
-		     <div><span>居住地</span><span class="user_address_id_1st menudrop" onclick="menudrop_down('user_address_id_1st');">
-			      <input type="text" id="user_address_id_1st" value="--請選擇--" data-user_address_id_1st="0" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
-				  <!-- 下拉選單區塊開始 -->
-		          <ul class="user_address_id_1st_menudrop">
-		            <li><a href="javascript:void(0)" data-user_address_id_1st="0" onclick="menudrop_set('user_address_id_1st','0','--請選擇--');">--請選擇--</a></li>
-		   	        <li><a href="javascript:void(0)" data-user_address_id_1st="1" onclick="menudrop_set('user_address_id_1st','1','台灣地區');">台灣地區</a></li>
-					<li><a href="javascript:void(0)" data-user_address_id_1st="2" onclick="menudrop_set('user_address_id_1st','2','港澳地區');">港澳地區</a></li>
-		            <li><a href="javascript:void(0)" data-user_address_id_1st="3" onclick="menudrop_set('user_address_id_1st','3','中國地區');">中國地區</a></li>
-					<li><a href="javascript:void(0)" data-user_address_id_1st="4" onclick="menudrop_set('user_address_id_1st','4','亞洲地區');">亞洲地區</a></li>
-					<li><a href="javascript:void(0)" data-user_address_id_1st="5" onclick="menudrop_set('user_address_id_1st','5','歐洲地區');">歐洲地區</a></li>
-				    <li><a href="javascript:void(0)" data-user_address_id_1st="6" onclick="menudrop_set('user_address_id_1st','6','非洲地區');">非洲地區</a></li>
-					<li><a href="javascript:void(0)" data-user_address_id_1st="7" onclick="menudrop_set('user_address_id_1st','7','北美洲地區');">北美洲地區</a></li>
-					<li><a href="javascript:void(0)" data-user_address_id_1st="8" onclick="menudrop_set('user_address_id_1st','8','中南美地區');">中南美地區</a></li>
-					<li><a href="javascript:void(0)" data-user_address_id_1st="9" onclick="menudrop_set('user_address_id_1st','9','大洋洲地區');">大洋洲地區</a></li>
-				  </ul>
-		          <!-- 下拉選單區塊結束 -->
-				  </span>
+		     <div><span>居住地</span>
+			      <!-- //20181211: 修改下拉選單開始 -->
+			      <span class="custom-select">
+				    <select id="user_address_id_1st">
+                      <option value="0">請選擇</option>
+                      <option value="1">台灣地區</option>
+                      <option value="2">港澳地區</option>
+					  <option value="3">中國地區</option>
+					  <option value="4">亞洲地區</option>
+					  <option value="5">歐洲地區</option>
+					  <option value="6">非洲地區</option>
+					  <option value="7">北美洲地區</option>
+					  <option value="8">中南美地區</option>
+					  <option value="9">大洋洲地區</option>
+                    </select>
+			      </span>
+				  <!-- //20181211: 修改下拉選單結束 -->
 			 </div>
 		     <div><!-- 排版用區塊 --><span></span><!-- 排版用區塊 -->
-			      <span class="user_address_id_2nd menudrop" onclick="menudrop_down('user_address_id_2nd');">
-			      <input type="text" id="user_address_id_2nd" value="--請選擇--" data-user_address_id_2nd="0" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
-				  <!-- 下拉選單區塊開始 -->
-		          <ul class="user_address_id_2nd_menudrop">
-		            <!-- 依居住地下拉選單列出 -->
-					<li><a href="javascript:void(0)" data-user_address_id_2nd="0" onclick="menudrop_set('user_address_id_2nd','0','--請選擇--');">--請選擇--</a></li>
-		          </ul>
-		          <!-- 下拉選單區塊結束 -->
-				  </span></div>
+			      <!-- //20181211: 修改下拉選單開始 -->
+			      <span class="custom-select">
+				    <select id="user_address_id_2nd">
+					  <option value="0">請選擇</option>
+                      <option value="10">台北市</option>
+                      <option value="11">新北市</option>
+                      <option value="12">基隆市</option>
+					  <option value="13">桃園市</option>
+                    </select>
+			      </span>
+				  <!-- //20181211: 修改下拉選單結束 -->
+			 </div>
 			 <!-- 排版用區塊 --><div></div><!-- 排版用區塊 -->
 		   </div>
 		   <!--  居住地區塊結束  -->
 		   <!--  興趣區塊開始  -->
 		   <div class="flex_column">
-		     <div><span>興趣</span><span class="hobby_0 menudrop" onclick="menudrop_down('hobby_0');">
-			      <input type="text" id="hobby_0" value="--請選擇--" data-hobby_0="0" onchange="check_hoppy(this.id,this.value);" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
-				  <!-- 下拉選單區塊開始 -->
-		          <ul class="hobby_0_menudrop">
-					<li><a href="javascript:void(0)" data-hobby_0="0" onclick="menudrop_set('hobby_0','0','--請選擇--');">--請選擇--</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="1" onclick="menudrop_set('hobby_0','1','四處旅遊');">四處旅遊</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="2" onclick="menudrop_set('hobby_0','2','四處旅遊');">就愛攝影</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="3" onclick="menudrop_set('hobby_0','3','美食享受');">美食享受</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="4" onclick="menudrop_set('hobby_0','4','養身保健');">養身保健</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="8" onclick="menudrop_set('hobby_0','8','時尚潮流');">時尚潮流</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="9" onclick="menudrop_set('hobby_0','9','開運占術');">開運占術</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="10" onclick="menudrop_set('hobby_0','10','社交技巧');">社交技巧</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="12" onclick="menudrop_set('hobby_0','12','心靈成長');">心靈成長</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="14" onclick="menudrop_set('hobby_0','14','藝術創作');">藝術創作</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="17" onclick="menudrop_set('hobby_0','17','生活美學');">生活美學</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="18" onclick="menudrop_set('hobby_0','18','文學欣賞');">文學欣賞</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="19" onclick="menudrop_set('hobby_0','19','語言學習');">語言學習</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="20" onclick="menudrop_set('hobby_0','20','音樂創作');">音樂創作</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="21" onclick="menudrop_set('hobby_0','21','藝文娛樂');">藝文娛樂</a></li>
-					<li><a href="javascript:void(0)" data-hobby_0="22" onclick="menudrop_set('hobby_0','22','公益活動');">公益活動</a></li>
-				  </ul>
-		          <!-- 下拉選單區塊結束 -->
-				  </span></div>
+		     <div><span>興趣</span>
+			      <!-- //20181211: 修改下拉選單開始 -->
+			      <span class="custom-select">
+				    <select id="hobby_0">
+					  <option value="0">請選擇</option>
+                      <option value="1">四處旅遊</option>
+                      <option value="2">就愛攝影</option>
+                      <option value="3">美食享受</option>
+					  <option value="4">養身保健</option>
+					  <option value="8">時尚潮流</option>
+                      <option value="9">開運占術</option>
+                      <option value="10">社交技巧</option>
+                      <option value="12">心靈成長</option>
+					  <option value="14">藝術創作</option>
+					  <option value="17">生活美學</option>
+                      <option value="18">文學欣賞</option>
+                      <option value="19">語言學習</option>
+                      <option value="20">音樂創作</option>
+					  <option value="21">藝文娛樂</option>
+					  <option value="22">公益活動</option>
+                    </select>
+			      </span>
+				  <!-- //20181211: 修改下拉選單結束 -->
+		     </div>
 		     <div><!-- 排版用區塊 --><span></span><!-- 排版用區塊 -->
-			      <span class="hobby_1 menudrop" onclick="menudrop_down('hobby_1');">
-			      <input type="text" id="hobby_1" value="--請選擇--" data-hobby_1="0" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
-				  <!-- 下拉選單區塊開始 -->
-		          <ul class="hobby_1_menudrop">
-					<li><a href="javascript:void(0)" data-hobby_1="0" onclick="menudrop_set('hobby_1','0','--請選擇--');">--請選擇--</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="1" onclick="menudrop_set('hobby_1','1','四處旅遊');">四處旅遊</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="2" onclick="menudrop_set('hobby_1','2','四處旅遊');">就愛攝影</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="3" onclick="menudrop_set('hobby_1','3','美食享受');">美食享受</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="4" onclick="menudrop_set('hobby_1','4','養身保健');">養身保健</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="8" onclick="menudrop_set('hobby_1','8','時尚潮流');">時尚潮流</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="9" onclick="menudrop_set('hobby_1','9','開運占術');">開運占術</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="10" onclick="menudrop_set('hobby_1','10','社交技巧');">社交技巧</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="12" onclick="menudrop_set('hobby_1','12','心靈成長');">心靈成長</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="14" onclick="menudrop_set('hobby_1','14','藝術創作');">藝術創作</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="17" onclick="menudrop_set('hobby_1','17','生活美學');">生活美學</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="18" onclick="menudrop_set('hobby_1','18','文學欣賞');">文學欣賞</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="19" onclick="menudrop_set('hobby_1','19','語言學習');">語言學習</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="20" onclick="menudrop_set('hobby_1','20','音樂創作');">音樂創作</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="21" onclick="menudrop_set('hobby_1','21','藝文娛樂');">藝文娛樂</a></li>
-					<li><a href="javascript:void(0)" data-hobby_1="22" onclick="menudrop_set('hobby_1','22','公益活動');">公益活動</a></li>
-				  </ul>
-		          <!-- 下拉選單區塊結束 -->
-				  </span></div>
-			 <div><span></span><span class="hobby_2 menudrop" onclick="menudrop_down('hobby_2');">
-			      <input type="text" id="hobby_2" value="--請選擇--" data-hobby_2="0" readonly autocomplete="off"><i class="fa fa-caret-down"></i>
-				  <!-- 下拉選單區塊開始 -->
-		          <ul class="hobby_2_menudrop">
-					<li><a href="javascript:void(0)" data-hobby_2="0" onclick="menudrop_set('hobby_2','0','--請選擇--');">--請選擇--</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="1" onclick="menudrop_set('hobby_2','1','四處旅遊');">四處旅遊</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="2" onclick="menudrop_set('hobby_2','2','四處旅遊');">就愛攝影</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="3" onclick="menudrop_set('hobby_2','3','美食享受');">美食享受</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="4" onclick="menudrop_set('hobby_2','4','養身保健');">養身保健</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="8" onclick="menudrop_set('hobby_2','8','時尚潮流');">時尚潮流</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="9" onclick="menudrop_set('hobby_2','9','開運占術');">開運占術</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="10" onclick="menudrop_set('hobby_2','10','社交技巧');">社交技巧</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="12" onclick="menudrop_set('hobby_2','12','心靈成長');">心靈成長</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="14" onclick="menudrop_set('hobby_2','14','藝術創作');">藝術創作</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="17" onclick="menudrop_set('hobby_2','17','生活美學');">生活美學</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="18" onclick="menudrop_set('hobby_2','18','文學欣賞');">文學欣賞</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="19" onclick="menudrop_set('hobby_2','19','語言學習');">語言學習</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="20" onclick="menudrop_set('hobby_2','20','音樂創作');">音樂創作</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="21" onclick="menudrop_set('hobby_2','21','藝文娛樂');">藝文娛樂</a></li>
-					<li><a href="javascript:void(0)" data-hobby_2="22" onclick="menudrop_set('hobby_2','22','公益活動');">公益活動</a></li>
-				  </ul>
-		          <!-- 下拉選單區塊結束 -->
-				  </span></div>
+			      <!-- //20181211: 修改下拉選單開始 -->
+			      <span class="custom-select">
+				    <select id="hobby_1">
+					  <option value="0">請選擇</option>
+                      <option value="1">四處旅遊</option>
+                      <option value="2">就愛攝影</option>
+                      <option value="3">美食享受</option>
+					  <option value="4">養身保健</option>
+					  <option value="8">時尚潮流</option>
+                      <option value="9">開運占術</option>
+                      <option value="10">社交技巧</option>
+                      <option value="12">心靈成長</option>
+					  <option value="14">藝術創作</option>
+					  <option value="17">生活美學</option>
+                      <option value="18">文學欣賞</option>
+                      <option value="19">語言學習</option>
+                      <option value="20">音樂創作</option>
+					  <option value="21">藝文娛樂</option>
+					  <option value="22">公益活動</option>
+                    </select>
+			      </span>
+				  <!-- //20181211: 修改下拉選單結束 -->
+			 </div>
+			 <div><span></span>
+			     <!-- //20181211: 修改下拉選單開始 -->
+			      <span class="custom-select">
+				    <select id="hobby_2">
+					  <option value="0">請選擇</option>
+                      <option value="1">四處旅遊</option>
+                      <option value="2">就愛攝影</option>
+                      <option value="3">美食享受</option>
+					  <option value="4">養身保健</option>
+					  <option value="8">時尚潮流</option>
+                      <option value="9">開運占術</option>
+                      <option value="10">社交技巧</option>
+                      <option value="12">心靈成長</option>
+					  <option value="14">藝術創作</option>
+					  <option value="17">生活美學</option>
+                      <option value="18">文學欣賞</option>
+                      <option value="19">語言學習</option>
+                      <option value="20">音樂創作</option>
+					  <option value="21">藝文娛樂</option>
+					  <option value="22">公益活動</option>
+                    </select>
+			      </span>
+				  <!-- //20181211: 修改下拉選單結束 -->
+		     </div>
 		   </div>
 		   <!--  興趣區塊結束  -->
 		 </div><!-- creative_info_edit -->
@@ -360,7 +363,7 @@
       <div id="tab02" class="tab-inner">
 	    <!-- 上方BANNER圖區塊開始  -->
         <div id="creative_banner">
-		  <div><div><img id="CreatorCover" src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$d3d4.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/pre-banner.png'"></div></div>
+		  <div><div><img id="CreatorCover" src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$7672.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/pre-banner.png'"></div></div>
 		  <div>
 		    <div><span>專區名稱</span><span>			
 			     <!--
@@ -416,6 +419,14 @@
   <!-- 主要內容區結束 -->
 <script>
 
+function test_select(elementId){
+  var e = document.getElementById(elementId);
+  var value = e.options[e.selectedIndex].value;
+  alert(value);
+}
+
+
+
   //專區編輯資訊開始
   //$(function(){
 	//專區編輯表頭tab切換
@@ -453,6 +464,9 @@
     $("#mobile-number").intlTelInput({defaultCountry: 'auto'});//電話國碼
 	
   });
+  
+  //20181211: 移除開始
+  /*
     
 	//顯示下拉選單
 	function menudrop_down(e){
@@ -497,7 +511,13 @@
 	
 	
 	}
+	*/
+	//20181211: 移除結束
 	
+	
+	
+	//20181211: 移除開始
+	/*
 	//按選單之外關閉選單
 	$('body').click(function(evt) {
 	  //menudrop_up(event.target.id,(!event.target.parentNode.className)? '':event.target.parentNode.className);
@@ -505,9 +525,21 @@
       //menudrop_up(event.target.id,(event.target.parentNode.className[0].length>0)? event.target.parentNode.className:'');
 	  
 	});
+	*/
+	//20181211: 移除結束
+	
+	
+	
     //當WIDNWOS RESIZE時, 關閉選單
     $( window ).resize(function(evt) {
-      menudrop_up('close','');
+		
+      //20181211: 移除開始
+	  /*
+	  menudrop_up('close','');
+	  */
+	  //20181211: 移除結束
+	  
+	  
 	  //若小版的關於我是打開的
 	  if($( window ).width()> 801){
 	    if($('ul.edit_tab li:nth-child(3)[class="active"]').length>0){
@@ -717,6 +749,8 @@
     }
 
 	
+	//20181211: 移除開始
+	/*
 	//20181126: 做為下拉選單的輸入方框不做反應開始
 	$(function() {
       $('input[readonly]').on('touchstart', function(ev) {
@@ -724,7 +758,100 @@
       });
     });
 	//20181126: 做為下拉選單的輸入方框不做反應結束
+	*/
+	//20181211: 移除結束
+	
+	
+	
+	
 
+	//20181211: 重製作下拉選單開始
+	$(document).ready(function() {
+      custom_select();
+    });
+	
+function custom_select(){
+  var x, i, j, selElmnt, a, b, c;
+  /*look for any elements with the class "custom-select":*/
+  x = document.getElementsByClassName("custom-select");
+  for (i = 0; i < x.length; i++) {
+    selElmnt = x[i].getElementsByTagName("select")[0];
+    /*for each element, create a new DIV that will act as the selected item:*/
+    a = document.createElement("DIV");
+    a.setAttribute("class", "select-selected");
+    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    x[i].appendChild(a);
+    /*for each element, create a new DIV that will contain the option list:*/
+    b = document.createElement("DIV");
+    b.setAttribute("class", "select-items select-hide");
+    for (j = 0; j < selElmnt.length; j++) {
+      /*for each option in the original select element,
+      create a new DIV that will act as an option item:*/
+      c = document.createElement("DIV");
+      c.innerHTML = selElmnt.options[j].innerHTML;
+      c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < s.length; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            for (k = 0; k < y.length; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+      });
+      b.appendChild(c);
+    }
+    x[i].appendChild(b);
+    a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+  }
+}
+
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+
+	
+		//20181211: 重製作下拉選單結束
+	
+	
+	
+	
 </script>
 
 

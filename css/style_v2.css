@@ -519,7 +519,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 /* 表頭社群資訊區塊開始 */
 .creative_content_header { position: fixed; top: 64px; z-index: 20; width: 100%; text-align: right; height: 64px; background: #ffffff; border-bottom: 1px solid #e8e8e8; vertical-align: middle; }
 @media (max-width: 800px) { .creative_content_header { top: 44px; height: 44px; } }
-.creative_content_header .creative_info_area { display: flex; align-items: center; flex-direction: row; margin: auto; height: 64px; width: 960px; }
+.creative_content_header .creative_info_area { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-flex-direction: row; /* Safari 6.1+ */ flex-direction: row; margin: auto; height: 64px; width: 960px; }
 @media (max-width: 1024px) { .creative_content_header .creative_info_area { width: 96%; } }
 @media (max-width: 800px) { .creative_content_header .creative_info_area { height: 44px; } }
 .creative_content_header .creative_info_area > div { flex: -1 0 0; vertical-align: middle; }
@@ -534,7 +534,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .creative_content_header .creative_info_area #creative_name img { width: 56px; height: 56px; border-radius: 100%; }
 @media (max-width: 1024px) { .creative_content_header .creative_info_area #creative_name img { width: 48px; height: 48px; } }
 @media (max-width: 800px) { .creative_content_header .creative_info_area #creative_name img { width: 32px; height: 32px; } }
-.creative_content_header .creative_info_area > div:nth-child(1) { display: flex; align-items: center; }
+.creative_content_header .creative_info_area > div:nth-child(1) { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; }
 .creative_content_header .creative_info_area > div:nth-child(1) span:nth-child(2) { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .creative_content_header .creative_info_area > div:nth-child(1) span:last-child { width: 32px; display: inline-block; }
 .creative_content_header .creative_info_area #social_links, .creative_content_header .creative_info_area .social_links { margin-left: 20px; }
@@ -675,7 +675,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .message_board #message_leave > div:last-child span:last-child, .message_board .message_leave > div:last-child span:last-child { margin-left: 16px; }
 .message_board #message_leave > div:last-child .message_submit, .message_board .message_leave > div:last-child .message_submit { color: #ffffff; background: #00acc1; }
 .message_board #message_list, .message_board .message_list { width: 100%; }
-.message_board #message_list .message_item, .message_board .message_list .message_item { display: flex; width: 100%; margin-top: 32px; margin-bottom: 48px; }
+.message_board #message_list .message_item, .message_board .message_list .message_item { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; width: 100%; margin-top: 32px; margin-bottom: 48px; }
 @media (max-width: 800px) { .message_board #message_list .message_item, .message_board .message_list .message_item { margin-top: 24px; margin-bottom: 24px; } }
 .message_board #message_list .message_item > div, .message_board .message_list .message_item > div { flex: -1 0 0; text-align: left; vertical-align: middle; }
 .message_board #message_list .message_item > div:first-child, .message_board .message_list .message_item > div:first-child { padding-right: 32px; vertical-align: top; }
@@ -686,7 +686,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 800px) { .message_board #message_list .message_item > div:last-child > div:first-child, .message_board .message_list .message_item > div:last-child > div:first-child { margin-bottom: 0px; } }
 .message_board #message_list .message_item > div:last-child > div:first-child > span, .message_board .message_list .message_item > div:last-child > div:first-child > span { display: inline-block; }
 .message_board #message_list .message_item > div:last-child > div:first-child > span:last-child, .message_board .message_list .message_item > div:last-child > div:first-child > span:last-child { margin-left: 16px; color: #d4d4d4; }
-.message_board #message_list .message_item > div:last-child > div:last-child, .message_board .message_list .message_item > div:last-child > div:last-child { display: flex; align-items: flex-end; }
+.message_board #message_list .message_item > div:last-child > div:last-child, .message_board .message_list .message_item > div:last-child > div:last-child { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-box-align: flex-end; -moz-box-align: flex-end; -ms-flex-align: flex-end; -webkit-align-items: flex-end; align-items: flex-end; }
 .message_board #message_list .message_item > div:last-child > div:last-child > div, .message_board .message_list .message_item > div:last-child > div:last-child > div { flex: -1 0 0; display: inline-block; }
 .message_board #message_list .message_item > div:last-child > div:last-child > div:first-child, .message_board .message_list .message_item > div:last-child > div:last-child > div:first-child { flex: 2; }
 .message_board #message_list .message_item > div:last-child > div:last-child > div:first-child span, .message_board .message_list .message_item > div:last-child > div:last-child > div:first-child span { margin-left: 0; }
@@ -718,7 +718,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .creative_edit .tab-inner { position: relative; vertical-align: top; }
 
 /* 創作人專區編輯資訊表頭開始 */
-.edit_tab { position: relative; display: flex; align-items: center; flex-direction: row; width: 100%; list-style: none; height: 64px; line-height: 64px; font-size: 16px; }
+.edit_tab { position: relative; display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-flex-direction: row; /* Safari 6.1+ */ flex-direction: row; width: 100%; list-style: none; height: 64px; line-height: 64px; font-size: 16px; }
 @media (max-width: 800px) { .edit_tab { line-height: 44px; } }
 .edit_tab li { flex: -1 0 0; width: 17.5%; margin-right: 16px; }
 .edit_tab li a { color: #d4d4d4; }
@@ -761,7 +761,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 800px) { #creative_info_edit > div { font-size: 16px; margin: 0 0 16px 0; } }
 #creative_info_edit > div span { margin-bottom: 8px; display: block; }
 #creative_info_edit > div > span:first-child { font-weight: 500; }
-#creative_info_edit .flex_column { display: flex; align-items: flex-end; }
+#creative_info_edit .flex_column { display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* Safari */ display: flex; -webkit-box-align: flex-end; -moz-box-align: flex-end; -ms-flex-align: flex-end; -webkit-align-items: flex-end; align-items: flex-end; }
 #creative_info_edit .flex_column > div { flex: 1 0 0; margin-right: 32px; }
 @media (max-width: 500px) { #creative_info_edit .flex_column > div { margin-right: 16px; } }
 #creative_info_edit .flex_column > div:last-child { margin-right: 0; }
@@ -897,6 +897,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 /* 上傳頭圖樣式結束 */
 /* 創作人專區編輯資訊專區區塊結束 */
 /* 創作人專區編輯資訊區塊結束 */
+.popview_content { top: 30px; }
 .popview_content .jBox-content { overflow-y: hidden; }
 @media (max-width: 768px) { .popview_content .jBox-content { overflow-y: auto; } }
 .popview_content .jBox-content .album_content_area { margin: 32px auto; }
@@ -952,7 +953,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .album_content_area .album_content_donate .album_content_back span { display: none; }
 @media (max-width: 768px) { .album_content_area .album_content_donate .album_content_back span { display: inline-block; margin-right: 8px; } }
 .album_content_area .album_content_donate .album_content_back i { margin-top: 1px; font-size: 24px; }
-.album_content_area .album_content_main { overflow-y: auto; height: 100%; max-height: 86vh; line-height: 25px; letter-spacing: 1.5px; border-right: 1px solid #d4d4d4; padding-right: 32px; }
+.album_content_area .album_content_main { overflow-y: auto; height: 100%; max-height: 82vh; line-height: 25px; letter-spacing: 1.5px; border-right: 1px solid #d4d4d4; padding-right: 32px; }
 @media (max-width: 768px) { .album_content_area .album_content_main { width: 100%; max-height: 100%; padding-right: 0; margin-bottom: 48px; border-right: 0; } }
 .album_content_area .album_content_main .album_content_box { margin-bottom: 32px; border-bottom: 1px solid #d4d4d4; }
 .album_content_area .album_content_main .album_content_box_img { position: relative; width: 100%; padding-top: 70.35%; overflow: hidden; border: 1px solid #d4d4d4; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
@@ -1007,21 +1008,17 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .donate_desc { font-size: 16px; color: #00acc1; line-height: 25px; letter-spacing: 1.5px; }
 @media (max-width: 768px) { .donate_desc { font-size: 14px; } }
 
-.padding2px { padding-right: 2px; }
-
-/* 下拉選單 */
-.menudrop { position: relative; height: 40px; line-height: 40px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; background: #f2f2f2; padding: 0 3px 0 4px; -webkit-user-select: none; /* Chrome all / Safari all */ -moz-user-select: none; /* Firefox all */ -ms-user-select: none; /* IE 10+ */ user-select: none; /* Likely future */ }
-@media (max-width: 800px) { .menudrop { height: 32px; line-height: 32px; } }
-.menudrop i { font-size: 20px; display: inline-block; }
-@media (max-width: 400px) { .menudrop i { margin-left: 8px; } }
-.menudrop input[type="text"] { vertical-align: top; display: inline-block; text-align: center; width: 84%; line-height: 32px; letter-spacing: 1.5px; border: none; background: none; }
-@media (max-width: 400px) { .menudrop input[type="text"] { width: 77%; } }
-
-[class*="_menudrop"] { display: none; cursor: pointer; position: absolute; width: max-content; text-align: center; font-size: 16px; right: 0; z-index: 2; background: #ffffff; padding: 32px; border: 1px solid #d4d4d4; line-height: 20px; max-height: 216px; overflow-y: auto; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
-@media (max-width: 800px) { [class*="_menudrop"] { top: 32px; } }
-@media (max-width: 500px) { [class*="_menudrop"] { font-size: 14px; padding: 16px; } }
-[class*="_menudrop"] li { margin-bottom: 16px; }
-[class*="_menudrop"] li:last-child { margin-bottom: 0; }
+/* 下拉選單 與JS配合使用 */
+.custom-select { position: relative; height: 40px; line-height: 40px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; background: #f2f2f2; padding: 0 3px 0 4px; -webkit-user-select: none; /* Chrome all / Safari all */ -moz-user-select: none; /* Firefox all */ -ms-user-select: none; /* IE 10+ */ user-select: none; /* Likely future */ text-align: center; /*style the arrow inside the select element:*/ /*point the arrow upwards when the select box is open (active):*/ /*style the items (options), including the selected item:*/ /*style items (options):*/ /*hide the items when the select box is closed:*/ }
+@media (max-width: 800px) { .custom-select { height: 32px; line-height: 32px; } }
+.custom-select > select { display: none; /*hide original SELECT element:*/ }
+.custom-select .select-selected:after { position: absolute; content: ""; top: 16px; right: 10px; width: 0; height: 0; border: 6px solid transparent; border-color: #4d4d4d transparent transparent transparent; }
+.custom-select .select-items div, .custom-select .select-selected { cursor: pointer; user-select: none; }
+.custom-select .select-items { position: absolute; background-color: #ffffff; top: 100%; right: 0; z-index: 99; padding: 32px; border: 1px solid #d4d4d4; line-height: 20px; max-height: 216px; overflow-y: auto; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+@media (max-width: 800px) { .custom-select .select-items { padding: 16px; } }
+.custom-select .select-items > div:not(:last-child) { margin-bottom: 16px; }
+.custom-select .select-hide { display: none; }
+.custom-select .select-items div:hover, .custom-select .same-as-selected { background: none; color: #00acc1; }
 
 /* add by mars  */
 .jBox-container { border-radius: 6px !important; }
@@ -1048,3 +1045,5 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .datepicker .month:nth-last-child(-n+2) { line-height: 24px; }
 .datepicker table tr td.day:hover, .datepicker table tr td.day.focused { background: #f2f2f2 !important; }
 .datepicker table tr td.old, .datepicker table tr td.new { color: #9e9e9e !important; }
+
+.padding2px { padding-right: 2px; }
