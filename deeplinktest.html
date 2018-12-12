@@ -1,0 +1,103 @@
+
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta name="apple-itunes-app" content="app-id=1057840696">
+  <meta property="og:url" content="https://www.pinpinbox.com/index/album/content/?album_id=15460&amp;categoryarea_id=11">
+  <meta property="og:title" content="【快閃抽獎】潤肌精美白產品送給你！ | pinpinbox釘釘吧-內容創作人發佈平台">
+  <meta property="og:description" content="【快閃抽獎】x 潤肌精 免！費！抽！ 潤肌精植淬白系列【美白乳液】 先保濕再美白，讓肌膚明天比今天更加白皙透亮 下載pinpinbox的APP， 用APP觀看此作品並加入收藏就可直接免費抽獎喔。 不知道怎麼抽獎怎麼辦？ 請參考pinpinbox小老師： https://www.pinpinbox.com/index/album/content/?autoplay=1&amp;album_id=8937 更多《潤肌精》介紹： http://www.kose.com.tw/junkisei_prime/ 抽獎時間： 12/10(一) ~12/31(一) 數量有限，千萬別錯過！ 注意事項： 1. 得獎者請於「立即兌換」中留下確切的聯絡方式，以供寄送獎品。 2. 本活動僅限於設籍於台灣、金門、澎湖、馬祖地區者參加，配送地址以中獎人所填資料之地址為準，主辦單位不負贈品無法送達之責任。 3. 抽獎次數限每個帳戶壹次。 4.此活動贈品請自付運費(郵局/全家)或至104台北市中山區南京東路三段61號4樓領取 ※有任何疑問歡迎於pinpinbox粉絲團詢問。 pinpinbox將不定期推出快閃抽獎活動 想隨時掌握資訊，請關注官方粉絲團喔！">
+  <meta property="og:image" content="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181211/5c0f35892ee08.jpg">
+  <!--
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/browser-deeplink-master/browser-deeplink.min.js"></script>
+  -->
+</head>
+<body>
+<span data-uri="pinpinbox://index/album/content/?album_id=15460" onclick="clickHandler(this.dataset.uri);">
+<img src="https://cdn.pinpinbox.com/storage/zh_TW/user/1/album/15460/adjust_app_qrcode$c56c.jpg" style="padding:3px;width:180px;height:auto;">
+</span>
+
+<script>
+!function(n,e){
+"function"==typeof define&&define.amd?define("deeplink",e(n)):"object"==typeof exports?module.exports=e(n):n.deeplink=e(n)
+}(window||this,function(n){
+  "use strict";
+  if(n.document&&n.navigator){
+    var e,t={},a={iOS:{},android:{},androidDisabled:!1,fallback:!0,fallbackToWeb:!1,delay:1e3,delta:500},
+	    r=function(n,e){
+		  var t={};
+		  for(var a in n)
+		    t[a]=n[a];
+		  for(var a in e)
+		    t[a]=e[a];
+		return t},
+		o=function(){
+		    var n="itms-apps://itunes.apple.com/app/",
+		        e=t.iOS.appName,
+			    a=t.iOS.appId;
+		    alert('i:'+ (a&&e?n+e+"/id"+a+"?mt=8":null) );
+		    return a&&e?n+e+"/id"+a+"?mt=8":null
+		  },
+		i=function(){
+		    var n="market://details?id=",
+		    e=t.android.appId;
+			alert('i:'+e?n+e:null);
+			return e?n+e:null
+		  },
+		d=function(){
+		  var n={ios:t.iOS.storeUrl||o(),android:t.android.storeUrl||i()};
+		     return n[t.platform]},
+		l=function(){
+		  var n={ios:t.iOS.fallbackWebUrl||location.href,android:t.android.fallbackWebUrl||location.href};
+		return n[t.platform]},
+		f=function(){
+		  return navigator.userAgent.match("Android")},
+		u=function(){
+		  return navigator.userAgent.match("iPad")||navigator.userAgent.match("iPhone")||navigator.userAgent.match("iPod")},
+		c=function(){return f()||u()},
+		p=function(n){
+		  return function(){
+		       var e=t.fallbackToWeb?l():d(),
+			       a=t.delay+t.delta;
+				   "string"==typeof e&&Date.now()-n<a&&(window.location.href=e)}
+		  },
+		s=function(n){t=r(a,n),f()&&(t.platform="android"),u()&&(t.platform="ios")},
+		m=function(n){
+		  if(!c())return!1;
+		  if(!f()||!t.androidDisabled){
+			if(f()&&!navigator.userAgent.match(/Firefox/)){
+			  var a=n.match(/([^:]+):\/\/(.+)$/i);
+				  n="intent://"+a[2]+"#Intent;scheme="+a[1],n+=";package="+t.android.appId+";end"
+		    }(t.fallback||t.fallbackToWeb)&&(e=setTimeout(p(Date.now()),t.delay));
+			var r=document.createElement("iframe");
+			return r.onload=function(){
+			                  clearTimeout(e),
+							  r.parentNode.removeChild(r),
+							  window.location.href=n
+							},
+				   r.src=n,
+				   r.setAttribute("style","display:none;"),
+				   document.body.appendChild(r),!0
+		  }
+		};
+		return{setup:s,open:m}
+  }
+});
+</script>
+<script>
+deeplink.setup({
+    iOS: {
+        appId: "1057840696",
+        appName: "pinpinbox",
+    },
+    android: {
+        appId: "com.pinpinbox.android",
+    }
+});
+function clickHandler(uri) {
+  console.log('clickHandler:'+uri);
+  deeplink.open(uri);
+  return false;
+}
+</script>
+</body>
+</html>
