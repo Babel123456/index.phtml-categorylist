@@ -46,12 +46,15 @@
 		     return n[t.platform]},
 		l=function(){
 		  var n={ios:t.iOS.fallbackWebUrl||location.href,android:t.android.fallbackWebUrl||location.href};
-		return n[t.platform]},
+		  return n[t.platform]},
 		f=function(){
 		  return navigator.userAgent.match("Android")},
 		u=function(){
 		  return navigator.userAgent.match("iPad")||navigator.userAgent.match("iPhone")||navigator.userAgent.match("iPod")},
-		c=function(){return f()||u()},
+		c=function(){
+		  alert(f()+','+u();
+		  return f()||u()
+		  },
 		p=function(n){
 		  return function(){
 		       var e=t.fallbackToWeb?l():d(),
@@ -92,7 +95,6 @@ deeplink.setup({
     }
 });
 function clickHandler(uri) {
-  console.log('clickHandler:'+uri);
   deeplink.open(uri);
   return false;
 }
