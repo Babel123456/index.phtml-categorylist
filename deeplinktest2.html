@@ -38,10 +38,10 @@
   </div>
   <div class="jBox-content" style="width: auto; height: auto;">
     <div class="content" style="text-align:center;">
-	  <span data-uri="pinpinbox://index/album/content/?album_id=15460" onclick="clickHandler(this.dataset.uri);">
+	  <a href="#" onclick="clickHandler('pinpinbox://index/album/content/?album_id=15460');">
 	    <img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="position:absolute;z-index:5;top:38.8%;left:44.8%;vertical-align:middle;display:block;background:#FF5E68;width:40px;height:40px;border-radius:40px;">
 		<img src="https://cdn.pinpinbox.com/storage/zh_TW/user/1/album/15460/adjust_app_qrcode$c56c.jpg" style="padding:3px;width:180px;height:auto;">
-	  </span>
+	  </a>
 	</div>
   </div>
 </div>
@@ -125,7 +125,6 @@ function isMobile() {
     return 'and:'+isAndroid + ',ios:' + isIOS;
     //return isMobile;
 }
-
 deeplink.setup({
     iOS: {
         appId: "1057840696",
