@@ -115,8 +115,8 @@
 </script>
 <script>
 var str = isMobile();
-alert(navigator.userAgent);
-alert(str);
+document.write(navigator.userAgent);
+document.write(str);
 function isMobile() {
     var isAndroid, isIOS, isMobile = false;
     if(navigator.userAgent.match(/Android/i)) isAndroid = true;
