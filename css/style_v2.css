@@ -919,7 +919,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 960px) { .album_content_area .album_content_intro_info .album_content_creative_info:not(:last-child), .album_content_area .album_content_intro_info .album_content_creative_info_num:not(:last-child) { margin-right: 16px; } }
 .album_content_area .album_content_intro_info .album_content_creative_info { -webkit-flex: 2; -moz-flex: 2; -ms-flex: 2; flex: 2; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid #d4d4d4; }
 @media (max-width: 768px) { .album_content_area .album_content_intro_info .album_content_creative_info { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; } }
-.album_content_area .album_content_intro_info .album_content_creative_info_num { width: 100%; margin-left: 2px; }
+.album_content_area .album_content_intro_info .album_content_creative_info_num { -webkit-flex: 0 1 auto; -moz-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; width: 100%; margin-left: 2px; }
 @media (max-width: 768px) { .album_content_area .album_content_intro_info .album_content_creative_info_num { width: fit-content; justify-content: flex-end; } }
 .album_content_area .album_content_intro_info .album_content_creative_info_num > div:not(:last-child) { margin-right: 32px; }
 .album_content_area .album_content_intro_info .album_content_creative_info_img img { vertical-align: middle; width: 72px; height: 72px; -moz-border-radius: 72px; -webkit-border-radius: 72px; border-radius: 72px; }
