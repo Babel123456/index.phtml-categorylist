@@ -175,7 +175,7 @@
 		   <div><span>暱稱</span><span><input type="text" name="username" placeholder="請輸入你的暱稱" ></span></div>
 		   <div class="creative_info_email"><span>信箱</span><span class="sub_desc">不同於帳號</span><span><input type="text" name="user_email"></span></div>
 		   <div class="creative_short"><span>個人短網址</span><span><span>www.pinpinbox.com/</span>
-		   <span><input type="text" maxlength="32" placeholder="個人帳號(英文/數字)" name="user_creative_code" ></span></span></div>
+		        <span><input type="text" maxlength="32" placeholder="個人帳號(英文/數字)" name="user_creative_code" ></span></span></div>
 		   <div class="flex_column">
 		     <div><span>生日</span>
 		       <span class="input-daterange"><input type="text" name="user_birthday" value="1900-01-01" maxlength="10" autocomplete="off"></span>
@@ -342,16 +342,16 @@
 		   <div id="creative_password">
 		     <div><span>變更密碼</span></div>
 		     <div><span>當前密碼</span>
-		       <span><input type="password" name="old_pass" placeholder="輸入原密碼"></span>
+		          <span><input type="password" name="old_pass" placeholder="輸入原密碼"></span>
 		     </div>
 		     <div><span>新密碼</span><span class="sub_desc">最少八位英數字</span>
-		       <span><input type="password" name="new_pass" placeholder="輸入新密碼"></span>
+		          <span><input type="password" name="new_pass" placeholder="輸入新密碼"></span>
 		     </div>
 		     <div><span>再確認一次新密碼</span>
-			   <span>
-		         <span><input type="password" name="new_pass_check" placeholder="再次輸入新密碼"></span>
-			     <span><a href="javascript:void(0)" onclick="$('#js_user_password').trigger('click')"><div class="btn_new btn_main">送出</div></a></span>
-		       </span>
+			      <span>
+		            <span><input type="password" name="new_pass_check" placeholder="再次輸入新密碼"></span>
+			        <span><a href="javascript:void(0)" onclick="$('#js_user_password').trigger('click')"><div class="btn_new btn_main">送出</div></a></span>
+		          </span>
 			 </div>
 			 <input style="display:none;" id="js_user_password" type="submit" value="">
 		   </div>
@@ -370,7 +370,8 @@
 				 <textarea name="creative_name" onkeydown="return checkCols();" maxlength="22" placeholder="請輸入專區名稱"></textarea>
 			     -->
 				 <input type="text" name="creative_name" onkeydown="return checkCols();" maxlength="22" placeholder="請輸入專區名稱(最長22個字)">
-				 </span></div>
+				 </span>
+		    </div>
 			<div><a name="buttonSave" href="javascript:void(0)" name="uploadCreatorCover" onclick="uploadAvatar('CreatorCover');"><div class="btn_new btn_main">上傳背景圖</div></a></div>
 		  </div>
 		</div>
@@ -405,7 +406,6 @@
 		  <div>關於我</div>
 		  <div>
 			<textarea id="aboutCreator" name="aboutCreator"><p>我的老婆是米蟲, 輕鬆生活四格小品~</p></textarea>
-
 		  </div>
 		  <div><a href="javascript:void(0)" onclick="saveAboutEdit();" ><div class="btn_new btn_main">編輯完成</div></a></div>
 		</div>
@@ -420,7 +420,7 @@
 <script>
 
 function test_select(elementId){
-  var e = document.getElementById(elementId);
+  var e = document.getElementById('hobby_2').value;
   var value = e.options[e.selectedIndex].value;
   alert(value);
 }

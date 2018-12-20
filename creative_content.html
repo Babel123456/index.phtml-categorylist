@@ -142,8 +142,6 @@
   <link type="text/css" href="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/css/lightgallery-custom.min.css" rel="stylesheet" />
   <!-- //20181205: 加入進入觀看結束 -->
   
-  
-  
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/waypoint/js/waypoint.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.js"></script>
@@ -171,7 +169,6 @@
   <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lightgallery-all-modify.min.js"></script>
   <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lg-audio.min.js"></script>
   <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lg-subhtml.min.js"></script>
-  
   <!-- //20181205: 加入進入觀看結束 -->
   
   <!-- 主要內容區開始 -->
@@ -218,8 +215,8 @@
 		  <!--<a style="" name="buttonFollow" href="javascript:void(0)" onclick="follow();"><div class="btn_new btn_pink">取消關注</div></a>-->
 		</div>
 		<div class="social_links_close"><i class="fa fa-times"></i></div>
-	  </div>
-	</div>
+	  </div><!--.creative_info_area -->
+	</div><!-- .creative_content_header -->
     <div class="creative_content">
 	  <div class="creative_title">
 	    <div><span>绘画&摄影&萌宠</span></div>
@@ -291,74 +288,6 @@
               </div>
 		    </div>
 			<!-- 我的作品區塊結束 -->
-			
-			<script>
-			<!-- //20181203: 加入FOR POPVIEW開始 -->
-			function processAjaxData(urlPath){
-	          window.history.pushState("","",urlPath);
-            }
-
-//POPVIEW
-	function popview(url) {
-	  
-	$('.jBox-wrapper').remove();
-	url = 'http://localhost/album_content.html';
-	$.post(url, {
-		data : null,
-	}, function(r) {
-		
-		content = $(r).find('#album_content_area');
-		//pinpinboard = $(r).find('#album_content_pinpinboard');
-		script = $(r).filter('script[name="popview"]');
-		
-        
-		if(!$('#JboxPopview').length) {
-			var popview = new jBox('Modal', {
-				addClass : 'popview_content',
-				id : 'JboxPopview',
-				//width: 1200,
-	            //height: 1600,
-	            zIndex : 1000,
-				onCloseComplete: function() {
-			  		//processAjaxData("https://www.pinpinbox.com/papid?rank_id=1&");
-					popview.destroy();
-					browseKitRefresh();
-				},
-				onOpen : function(){
-					
-                    //processAjaxData(url);
-                    //$('li.removeInPop').remove();
-					$('#removeInPop').remove(); //移除ID=removeInPop
-                    //$('.jBox-content').append(pinpinboard);
-                    $('.jBox-content').append(script);
-                    //$('#pinpinboardAnchor').on('click', function(){
-						//$('.jBox-content').animate({scrollTop:$('.comment_info_textarea').offset().top}, 10);
-					//})
-                    //$('.jBox-content .descrip').html( $('.jBox-content .descrip').html().autoLink({ target: "_blank" }) ) ;
-					$('.jBox-content .descrip').html( $('.jBox-content .descrip').html() ) ;
-					window.onpopstate = function(event) { popview.close(); };
-
-				},
-			}).setContent(content).open();
-		}//if(!$('#JboxPopview').length)
-	    
-	});
-}////POPVIEW
-			
-			
-			function browseKitRefresh() {
-	//a_album_item = [];
-	
-	//$.each(a_album_element, function(k0, v0) {
-		//$(v0).removeData('lightGallery');
-	//});
-}
-
-			<!-- //20181203: 加入FOR POPVIEW結束 -->
-			
-			
-			</script>
-			
 			<!-- 收藏．贊助區塊開始 -->
   		    <div id="tab1" class="tab">
 			  <div class="waterfall_content">
@@ -703,6 +632,75 @@
 	
 	//20181126: 它頁連結至#TAB結束
 </script>
+
+<script>
+			<!-- //20181203: 加入FOR POPVIEW開始 -->
+			function processAjaxData(urlPath){
+	          window.history.pushState("","",urlPath);
+            }
+
+//POPVIEW
+	function popview(url) {
+	  
+	$('.jBox-wrapper').remove();
+	url = 'http://localhost/album_content.php';
+	$.post(url, {
+		data : null,
+	}, function(r) {
+		
+		content = $(r).find('#album_content_area');
+		//pinpinboard = $(r).find('#album_content_pinpinboard');
+		script = $(r).filter('script[name="popview"]');
+		
+        
+		if(!$('#JboxPopview').length) {
+			var popview = new jBox('Modal', {
+				addClass : 'popview_content',
+				id : 'JboxPopview',
+				//width: 1200,
+	            //height: 1600,
+				//height: 820,
+	            zIndex : 1000,
+				target: $('body'), //20181214: Add for position 
+				onCloseComplete: function() {
+			  		//processAjaxData("https://www.pinpinbox.com/papid?rank_id=1&");
+					popview.destroy();
+					browseKitRefresh();
+				},
+				onOpen : function(){
+                  //processAjaxData(url);
+                  //$('li.removeInPop').remove();
+					$('#removeInPop').remove(); //移除ID=removeInPop
+                  //$('.jBox-content').append(pinpinboard);
+                  $('.jBox-content').append(script);
+                  //$('#pinpinboardAnchor').on('click', function(){
+						//$('.jBox-content').animate({scrollTop:$('.comment_info_textarea').offset().top}, 10);
+					//})
+                  //$('.jBox-content .descrip').html( $('.jBox-content .descrip').html().autoLink({ target: "_blank" }) ) ;
+					$('.jBox-content .descrip').html( $('.jBox-content .descrip').html() ) ;
+					window.onpopstate = function(event) { popview.close();};
+				
+				},
+			}).setContent(content).open();
+		}//if(!$('#JboxPopview').length)
+		//$(window).trigger('resize');	
+	});
+}////POPVIEW
+			
+			
+			function browseKitRefresh() {
+	//a_album_item = [];
+	
+	//$.each(a_album_element, function(k0, v0) {
+		//$(v0).removeData('lightGallery');
+	//});
+}
+
+			<!-- //20181203: 加入FOR POPVIEW結束 -->
+			
+			
+			</script>
+
 
 
   <!-- FOOTER區塊開始 -->
