@@ -969,7 +969,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 500px) { .album_content_area .album_content_main .album_content_desc .btn_new { margin-bottom: 24px; } }
 .album_content_area .album_content_main .album_content_desc .album_content_box_desc { overflow: hidden; margin-bottom: 32px; word-wrap: break-word; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
 .album_content_area .album_content_main .album_content_desc #album_content_desc_more { display: none; }
-.album_content_area .album_content_main .message_board_box .message_reply_count { letter-spacing: 1.5px; line-height: 25px; margin-bottom: 32px; }
+.album_content_area .album_content_main .message_board_box .message_reply_count { margin-bottom: 32px; letter-spacing: 1.5px; line-height: 25px; }
 @media (max-width: 768px) { .album_content_area .album_content_main .message_board_box .message_reply_count { margin-bottom: 16px; } }
 .album_content_area .album_content_main .message_board_box .message_leave { border-bottom: 0; }
 @media (max-width: 768px) { .album_content_area .album_content_main .message_board_box .message_leave { padding-bottom: 0; } }
