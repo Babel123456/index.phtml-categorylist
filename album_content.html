@@ -414,7 +414,7 @@
 
 
 <script type="text/javascript" name="popview">
-    alert('viewport:'+$(window).height()+','+$('#album_content_box_desc').height());
+    //alert('viewport:'+$(window).height()+','+$('#album_content_box_desc').height());
 	//頁面載入時, 判斷更多按鈕是否出現
 	$(document).ready(function() {
       desc_more_btn();
@@ -444,8 +444,8 @@
 	  
 	//若作品介紹超過4行, 則出現按鈕
 	function desc_more_btn(){
-		alert('test');
-      if($('#album_content_box_desc').height()>98){
+		
+      if($('#album_content_box_desc').height()>96){
 	    $('#album_content_desc_more').addClass('show_block');
 	    //$('#album_content_box_desc').css('cursor','pointer');
 	    $('#album_content_box_desc').on('click', function(){
