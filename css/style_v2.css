@@ -705,7 +705,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 
 .creative_edit { position: relative; width: 960px; text-align: center; margin: 0 auto 64px auto; margin-top: -64px; }
 @media (max-width: 1024px) { .creative_edit { width: 96%; } }
-@media (max-width: 768px) { .creative_edit { margin-top: -44px; } }
+@media (max-width: 768px) { .creative_edit { margin-top: -44px; width: 94%; } }
 .creative_edit .tab-inner { position: relative; vertical-align: top; }
 
 /* 創作人專區編輯資訊表頭開始 */
@@ -791,18 +791,19 @@ label.error { color: #ee5b8d; font-size: 14px; }
 #creative_phone > div:first-child > span, #creative_password > div:first-child > span { display: inline-block; }
 #creative_phone > div > span:first-child, #creative_password > div > span:first-child { font-weight: 500; }
 
-#creative_phone > div:nth-child(n+2) span:nth-child(n+2) { display: inline-block; margin-right: 16px; vertical-align: middle; }
+#creative_phone > div:nth-child(n+2) span:nth-child(n+2) { display: inline-block; vertical-align: middle; }
 @media (max-width: 768px) { #creative_phone > div:nth-child(n+2) span:nth-child(n+2) { vertical-align: top; } }
 #creative_phone > div:nth-child(2) > span:nth-child(2) { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-flex-direction: ""; -moz-flex-direction: ""; -ms-flex-direction: ""; flex-direction: ""; }
 @media (max-width: 768px) { #creative_phone > div:nth-child(2) > span:nth-child(2) { -webkit-flex-flow: row wrap; -moz-flex-flow: row wrap; -ms-flex-flow: row wrap; flex-flow: row wrap; } }
-#creative_phone > div:nth-child(2) > span:nth-child(2) > span { -webkit-flex: -1 0 0; -moz-flex: -1 0 0; -ms-flex: -1 0 0; flex: -1 0 0; display: inline-block; margin-right: 16px; }
-@media (max-width: 768px) { #creative_phone > div:nth-child(2) > span:nth-child(2) > span { margin-right: 0; } }
+#creative_phone > div:nth-child(2) > span:nth-child(2) > span { -webkit-flex: -1 0 0; -moz-flex: -1 0 0; -ms-flex: -1 0 0; flex: -1 0 0; display: inline-block; }
+#creative_phone > div:nth-child(2) > span:nth-child(2) > span:last-child { margin-left: 16px; }
+@media (max-width: 768px) { #creative_phone > div:nth-child(2) > span:nth-child(2) > span:last-child { margin-left: 0; } }
 #creative_phone > div:nth-child(2) > span:nth-child(2) > span:nth-child(1) { -webkit-flex: 2; -moz-flex: 2; -ms-flex: 2; flex: 2; }
 #creative_phone > div:nth-child(2) > span:nth-child(2) > span:nth-child(2) { width: 240px; margin-right: 0; }
 @media (max-width: 768px) { #creative_phone > div:nth-child(2) > span:nth-child(2) > span:nth-child(2) { display: block; width: 100%; } }
 @media (max-width: 768px) { #creative_phone > div:last-child > span:nth-child(2) { display: inline-block; } }
 @media (max-width: 500px) { #creative_phone > div:last-child > span:nth-child(2) { width: 170px; } }
-#creative_phone > div:last-child span:last-child { width: 240px; margin-right: 0; }
+#creative_phone > div:last-child span:last-child { width: 240px; margin-right: 0; margin-left: 16px; }
 @media (max-width: 768px) { #creative_phone > div:last-child span:last-child { width: 136px; } }
 #creative_phone ul { font-size: 16px; }
 @media (max-width: 768px) { #creative_phone ul { font-size: 14px; } }
