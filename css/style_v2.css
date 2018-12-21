@@ -877,13 +877,14 @@ label.error { color: #ee5b8d; font-size: 14px; }
 /* 創作人專區編輯資訊區塊結束 */
 .popview_content { position: relative; top: 50px !important; margin: auto; }
 @media (max-width: 1024px) { .popview_content { width: 96%; } }
-@media (max-width: 768px) { .popview_content { top: 40px !important; } }
-@media (max-width: 400px) { .popview_content { width: 94%; } }
+@media (max-width: 768px) { .popview_content { top: 0 !important; width: 100%; height: 100%; } }
 .popview_content .jBox-container { overflow: hidden; }
+@media (max-width: 768px) { .popview_content .jBox-container { border-radius: 0 !important; } }
 .popview_content .jBox-content { overflow-y: hidden; padding: 0 !important; }
-@media (max-width: 768px) { .popview_content .jBox-content { overflow-y: auto; } }
+@media (max-width: 768px) { .popview_content .jBox-content { width: 100% !important; overflow-y: auto; } }
 .popview_content .jBox-content .album_content_area { margin: auto; }
 .popview_content .jBox-content .album_content_area .album_content_intro_area { height: 100%; }
+@media (max-width: 768px) { .popview_content .jBox-content .album_content_area .album_content_intro_area .album_content_back { display: inline-block; } }
 
 /* 作品資訊頁開始 */
 .album_content_area { position: relative; width: 1024px; margin: 64px auto 0 auto; }
