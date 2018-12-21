@@ -826,7 +826,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 /* 創作人專區編輯資訊個人區塊結束 */
 /* 創作人專區編輯資訊專區區塊開始 */
 #creative_banner { width: 100%; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-flex-direction: row; -moz-flex-direction: row; -ms-flex-direction: row; flex-direction: row; text-align: left; margin-bottom: 32px; }
-@media (max-width: 768px) { #creative_banner { -webkit-flex-flow: row wrap; -moz-flex-flow: row wrap; -ms-flex-flow: row wrap; flex-flow: row wrap; margin-bottom: 16px; } }
+@media (max-width: 768px) { #creative_banner { -webkit-flex-flow: column; -moz-flex-flow: column; -ms-flex-flow: column; flex-flow: column; margin-bottom: 16px; } }
 #creative_banner > div:first-child { width: 300px; margin-right: 32px; }
 @media (max-width: 768px) { #creative_banner > div:first-child { width: 100%; margin-right: 0; } }
 #creative_banner > div:first-child > div { position: relative; width: 100%; padding-top: 46.875%; overflow: hidden; border: 1px solid #d4d4d4; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
