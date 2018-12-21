@@ -1028,7 +1028,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .custom-select .select-selected.select-arrow-active:after { border-color: transparent transparent #4d4d4d transparent; top: 7px; }
 .custom-select .select-items div, .custom-select .select-selected { cursor: pointer; user-select: none; }
 .custom-select .select-items { position: absolute; background-color: #ffffff; top: 100%; right: 0; z-index: 99; padding: 32px; border: 1px solid #d4d4d4; line-height: 20px; max-height: 216px; overflow-y: auto; text-indent: 0; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
-@media (max-width: 768px) { .custom-select .select-items { padding: 16px; } }
+@media (max-width: 500px) { .custom-select .select-items { padding: 16px; } }
 .custom-select .select-items > div:not(:last-child) { margin-bottom: 16px; }
 .custom-select .select-hide { display: none; }
 .custom-select .select-items div:hover, .custom-select .same-as-selected { background: none; color: #00acc1; }
