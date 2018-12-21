@@ -86,7 +86,9 @@
 		  -->
 		  <li><div>我的專區</div><div>
 		    <ul>
-			  <li><a href="creative_content.php#tab3">關於我</a></li>
+			  <!-- //20181221: #0002269, 關於我 改成 我的專區頻道-->
+			  <li><a href="creative_content.php#tab3">我的專區頻道</a></li>
+			  <!-- -->
 			  <li><a href="creative_content.php#tab0">我的作品</a></li>
 			  <li><a href="creative_content.php#tab1">我的收藏</a></li>
 			  <li><a href="creative_content.php#tab2">共用協作</a></li>
@@ -204,13 +206,12 @@
 		            <span class="p_to_nt">(600TWD)</span>
 		            <!-- 若有贊助條件則顯示區塊結束 -->
 		          </div>
-		          <!--
-	              <div class="album_content_back">
+		          
+	              <div class="album_content_back" onclick="$('.jBox-closeButton').click();">
 		            <span><i class="fa fa-angle-left"></i></span>
 		            <span>返回</span>
 		          </div>
-		          -->
-	            </div><!-- .album_content_donate -->
+		          	            </div><!-- .album_content_donate -->
 		        <!-- 你可能會想看區塊開始  -->
 		        <div id="removeInPop" class="intro_see_more_area">
 		          <div class="intro_title">你可能會想看</div>
@@ -413,7 +414,7 @@
 
 
 <script type="text/javascript" name="popview">
-   
+    alert('viewport:'+$(window).height()+','+$('#album_content_box_desc').height());
 	//頁面載入時, 判斷更多按鈕是否出現
 	$(document).ready(function() {
       desc_more_btn();
@@ -443,6 +444,7 @@
 	  
 	//若作品介紹超過4行, 則出現按鈕
 	function desc_more_btn(){
+		alert('test');
       if($('#album_content_box_desc').height()>98){
 	    $('#album_content_desc_more').addClass('show_block');
 	    //$('#album_content_box_desc').css('cursor','pointer');
@@ -1079,8 +1081,10 @@ function recommendedBuyAlbum() {
   <div id="footer">
     <div id="footer_area">
 		  <ul>
-			<li><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
-			<li><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" class="cicle_btn" style="z-index: 100">經營小幫手</a></li>
+		    <!-- //20181221: 加入class="mobile_show"開始 -->
+			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
+			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" class="cicle_btn" style="z-index: 100">經營小幫手</a></li>
+			<!-- //20181221: 加入class="mobile_show"結束 -->
 			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/qanda/">Q&amp;A</a></li>
 			<li class="mobile_show" ><a href="https://www.pinpinbox.com/index/recruit/">企業合作</a></li>
 			
