@@ -444,10 +444,9 @@
 	  
 	//若作品介紹超過4行, 則出現按鈕
 	function desc_more_btn(){
-	  alert($('#album_content_box_desc').height());
-      if($('#album_content_box_desc').height()>96){
-		alert($('#album_content_box_desc').height());
-	    $('#album_content_desc_more').addClass('show_block');
+	  //alert($('#album_content_box_desc').height());
+      if($('#album_content_box_desc').height()>=95){
+		$('#album_content_desc_more').addClass('show_block');
 	    //$('#album_content_box_desc').css('cursor','pointer');
 	    $('#album_content_box_desc').on('click', function(){
           //$('#album_content_desc_more').click();
