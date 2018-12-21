@@ -798,7 +798,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 #creative_phone > div:nth-child(2) > span:nth-child(2) > span:last-child { margin-left: 16px; }
 @media (max-width: 768px) { #creative_phone > div:nth-child(2) > span:nth-child(2) > span:last-child { margin-left: 0; } }
 #creative_phone > div:nth-child(2) > span:nth-child(2) > span:nth-child(1) { -webkit-flex: 2; -moz-flex: 2; -ms-flex: 2; flex: 2; }
-@media (max-width: 768px) { #creative_phone > div:nth-child(2) > span:nth-child(2) > span:nth-child(1) { -webkit-flex: 2 0 auto; -moz-flex: 2 0 auto; -ms-flex: 2 0 auto; flex: 2 0 auto; width: 100%; } }
+@media (max-width: 768px) { #creative_phone > div:nth-child(2) > span:nth-child(2) > span:nth-child(1) { width: 100%; } }
 #creative_phone > div:nth-child(2) > span:nth-child(2) > span:nth-child(2) { width: 240px; margin-right: 0; }
 @media (max-width: 768px) { #creative_phone > div:nth-child(2) > span:nth-child(2) > span:nth-child(2) { display: block; width: 100%; } }
 @media (max-width: 768px) { #creative_phone > div:last-child > span:nth-child(2) { display: inline-block; } }
@@ -813,13 +813,15 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 768px) { #creative_password > div:nth-child(4n+2) > span:last-child, #creative_password > div:nth-child(4n+3) > span:last-child { margin-right: 0; } }
 #creative_password > div:nth-child(3) > span:nth-child(-n+2) { display: inline-block; }
 #creative_password > div:nth-child(4) > span:last-child { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-flex-direction: ""; -moz-flex-direction: ""; -ms-flex-direction: ""; flex-direction: ""; }
-@media (max-width: 768px) { #creative_password > div:nth-child(4) > span:last-child { -webkit-flex-flow: row wrap; -moz-flex-flow: row wrap; -ms-flex-flow: row wrap; flex-flow: row wrap; } }
+@media (max-width: 768px) { #creative_password > div:nth-child(4) > span:last-child { -webkit-flex-flow: column; -moz-flex-flow: column; -ms-flex-flow: column; flex-flow: column; } }
 #creative_password > div:nth-child(4) > span:last-child > span:first-child { -webkit-flex: 2; -moz-flex: 2; -ms-flex: 2; flex: 2; }
+@media (max-width: 768px) { #creative_password > div:nth-child(4) > span:last-child > span:first-child { width: 100%; } }
 #creative_password > div:nth-child(4) > span:last-child > span:last-child { width: 240px; margin-left: 16px; }
 @media (max-width: 768px) { #creative_password > div:nth-child(4) > span:last-child > span:last-child { display: block; margin-left: 0; margin-top: 16px; width: 100%; } }
 
 /* 變更手機號碼區塊 */
 .intl-tel-input .flag-dropdown { left: 0 !important; }
+.intl-tel-input .country-list { -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
 
 /* 創作人專區編輯資訊個人區塊結束 */
 /* 創作人專區編輯資訊專區區塊開始 */
