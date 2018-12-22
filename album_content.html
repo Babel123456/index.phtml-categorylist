@@ -166,18 +166,12 @@
     <div id="album_content_area" class="album_content_area">
 	
 	  <div class="album_content_intro_area">
-		<!--
-		<div class="container-fluid">
-		  <div class="row">
-		  -->
-            <!--<div class="col-xs-12 col-sm-4 col-sm-push-8 fir-div" >-->
-	        <!--</div> -->
-	        <!-- 社群, 查看更多, 贊助/關注/投票按鈕區塊開始 -->
-	        <!--<div class="col-xs-12 col-sm-4 col-sm-push-8 thr-div">-->
-			<div class="right_area">
+	  
+		   <!-- 社群, 查看更多, 贊助/關注/投票按鈕區塊開始 -->
+			<div class="album_content_right_area">
+			
 	          <div class="album_content_donate_area">
-			  
-			    <!-- 1. 作者資訊區塊開始 -->
+			    <!-- 作者資訊區塊開始 -->
 	            <div class="album_content_intro_info">
 			 	  <div class="album_content_creative_info">
 				    <div class="album_content_creative_info_img"><a href="https://www.pinpinbox.com/papid" title="小愉兒社會福利基金會小愉兒社會福利基金會小愉兒社會福利基金會"><img onerror="this.src='https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181108/5be3e59eb0174.jpg'" src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181108/5be3e59eb0174.jpg"></a></div>
@@ -188,16 +182,13 @@
 				    <div class="album_content_creative_info_view"><i class="fa fa-eye"></i>788446</div>
 				  </div>
                 </div><!-- .album_content_intro_info -->
-			    <!--1. 作者資訊區塊結束 -->
-			  
-			  
+			    <!-- 作者資訊區塊結束 -->
 		        <!-- 贊助/關注/投票按鈕 -->
                 <div class="album_content_donate">
 			      <div class="donate_btn">
 			        <!-- 若作品有設定贊助時顯示贊助按鈕 若沒有則顯示收藏按鈕 -->
 		            <span class="btn_new btn_main">贊助</span>
 		            <!--<span class="btn_new btn_pink">收藏</span>-->
-				    <span class="btn_new">投票</span>
 			      </div>
 			      <div class="donate_desc">
 		            <!-- 若有贊助條件則顯示區塊開始 -->
@@ -206,19 +197,28 @@
 		            <span class="p_to_nt">(600TWD)</span>
 		            <!-- 若有贊助條件則顯示區塊結束 -->
 		          </div>
-		          
 	              <div class="album_content_back" onclick="$('.jBox-closeButton').click();">
 		            <span><i class="fa fa-angle-left"></i></span>
 		            <span>返回</span>
 		          </div>
-		          	            </div><!-- .album_content_donate -->
+		        </div><!-- .album_content_donate -->
+				
+				<!-- 投票區塊(大版)開始  -->
+				<div class="activity_vote">
+				  <div class="activity_vote_desc">作品正在參加活動</div>
+				  <div class="activity_vote_area">
+					<span class="activity_vote_title">我的創意我的傳藝我的創意我的傳藝</span>
+					<span class="btn_new btn_main">投票</span>
+				  </div>
+				</div>
+				<!-- 投票區塊(大版)結束 -->
+				
 		        <!-- 你可能會想看區塊開始  -->
 		        <div id="removeInPop" class="intro_see_more_area">
 		          <div class="intro_title">你可能會想看</div>
 		          <div class="intro_see_more">
 		            <!-- 最多4個, 改成可以很多20181218 -->
-			        <!--<div class="row">-->
-			        <div class="intro_see_more_box"><!-- col-xs-6 padding2px -->
+			        <div class="intro_see_more_box">
 					  <a href="https://www.pinpinbox.com/index/album/content/?album_id=15124&categoryarea_id=13&click=cover" title="【公益募資】認購$60手工餅乾｜愉你同在，送愛到育幼院｜小愉兒 x pinpinbox">
   				        <div class="intro_see_more_img">
 						  <div class="intro_see_more_img_position"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181112/5be915bbdf0b0.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/origin.jpg'"></div>
@@ -266,22 +266,19 @@
 				        <div class="intro_see_more_name">小愉兒聖誕公益活動形象影片 | pinpinbox</div>
 					  </a>
 					</div>
-		            <!--</div>-->
 		          </div>
 		        </div><!-- 你可能會想看區塊結束  -->
 		        <!-- 社群按鈕 -->
 				
 		      </div><!-- .album_content_donate_area -->
 	          <!-- 社群, 查看更多, 贊助/關注/投票按鈕區塊結束 -->
-			</div><!-- .right_area -->
-            <!--</div> .column -->
+			</div><!-- .album_content_right_area -->
 		
 		
-		    <!-- 2. 作品資訊區塊開始 -->
-	        <!--<div class="col-xs-12 col-sm-8 col-sm-pull-4 sec-div">-->
-			<div class="left_area">
+		    <!-- 作品資訊區塊開始 -->
+			<div class="album_content_left_area">
 	          <div id="album_content_main" class="album_content_main">
-		        <div class="album_content_box"><!--album_content_box-->
+		        <div class="album_content_box">
 			      <div class="album_content_box_img">
 			        <div class="album_content_box_img_area"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181108/5be3e59eb0174.jpg" 
 			            alt="【公益募資】認購$60手工餅乾｜愉你同在，送愛到育幼院｜小愉兒 x pinpinbox" 
@@ -318,6 +315,17 @@
                     </div><!-- .album_content_desc -->
 			      </div><!-- .content_box_info -->
 	            </div><!-- .album_content_box -->
+				
+				<!-- 投票區塊(小版)開始  -->
+				<div class="activity_vote">
+				  <div class="activity_vote_desc">作品正在參加活動</div>
+				  <div class="activity_vote_area">
+					<span class="activity_vote_title">我的創意我的傳藝我的創意我的傳藝</span>
+					<span class="btn_new btn_main">投票</span>
+				  </div>
+				</div>
+				<!-- 投票區塊(小版)結束 -->
+				
 		        <!-- 留言區塊開始 -->
 		        <div class="message_board_box">
 		          <div class="message_reply_count">572则回复</div>
@@ -370,11 +378,6 @@
 			      <a href="#" title="分享至twitter" target="_blank">
 		            <img src="images/assets-v7/social_twitter_square.png" >
 		          </a>
-				  <!--
-			      <a href="#" title="分享至LinkedIn" target="_blank">
-		            <img src="images/assets-v7/social_in_square.png" >
-		          </a>
-				  -->
 			      <a href="https://www.instagram.com/_ccartist/" title="分享至instagram" target="_blank">
 		            <img src="images/assets-v7/social_ig_square.png">
 		          </a>
@@ -394,17 +397,14 @@
 	            <div id="album_content_social_links2" class="social_links2" title="複製作品網址" ><i class="fa fa-link"></i></div>
 		      </div>
 		      <!-- 社群區塊結束  -->
+			  
 			  <div id="snackbar">
-		  <span>已複製到剪貼簿</span>
-		  <span><input id="page_url" type="text" value="https://www.pinpinbox.com/index/album/content/?album_id=15124&click=name"></span>
-		</div>
-			</div><!-- .left_area -->
+		        <span>已複製到剪貼簿</span>
+		        <span><input id="page_url" type="text" value="https://www.pinpinbox.com/index/album/content/?album_id=15124&click=name"></span>
+		      </div>
+			  
+			</div><!-- .album_content_left_area -->
 	        <!--</div> 2. 作品資訊區塊結束 -->
-		
-		
-		
-		  <!--</div> .row -->
-        <!--</div> .container-fluid -->
 		
 	  </div><!-- .album_content_intro_area -->
 	</div><!-- .album_content_area -->
@@ -412,23 +412,28 @@
   <!-- 主要內容區結束 -->
 
 
-
 <script type="text/javascript" name="popview">
-    //alert('viewport:'+$(window).height()+','+$('#album_content_box_desc').height());
-	//頁面載入時, 判斷更多按鈕是否出現
+    //若作品介紹超過4行, 則出現按鈕
+	function desc_more_btn(){
+      if($('#album_content_box_desc').height()>=95){
+		$('#album_content_desc_more').addClass('show_block');
+	  }
+	}
+
+    //頁面載入時, 判斷更多按鈕是否出現
 	$(document).ready(function() {
       desc_more_btn();
-	  console.log('document.load');
     });
 	
+	//當被POPUP顯示時, 判斷更多按鈕是否出現
+	$(document).ajaxComplete(function( event, request, settings ) {
+      desc_more_btn();
+	}); 
 	
-  
 	//複製作品網址按鈕
 	$('#album_content_social_links_box').on('click', '#album_content_social_links2', function() {
-	  //$('#album_content_social_links').toggleClass("social_links_height");
 	  snackbar_show() ;
 	});
-	
 	
 	//彈出網址已複製訊息
 	function snackbar_show(){
@@ -441,32 +446,9 @@
       copy_url.select();
       document.execCommand("copy");
 	}
-	  
-	//若作品介紹超過4行, 則出現按鈕
-	function desc_more_btn(){
-	  //alert($('#album_content_box_desc').height());
-      if($('#album_content_box_desc').height()>=95){
-		$('#album_content_desc_more').addClass('show_block');
-	    //$('#album_content_box_desc').css('cursor','pointer');
-	    $('#album_content_box_desc').on('click', function(){
-          //$('#album_content_desc_more').click();
-	    });
-	  }
-	}
-	
-	//限本頁使用
-	//$(window).load(function() {
-      //desc_more_btn();
-	  //console.log('document.load');
-     //});
-	//當被POPUP顯示時, 判斷更多按鈕是否出現
-	$(document).ajaxComplete(function( event, request, settings ) {
-      desc_more_btn();
-	  console.log('document.ajaxComplete');
-	}); 	
 	
 	//左半作品資訊區塊加NICESCROLL
-	var left_area = $(".left_area").niceScroll({
+	var left_area = $(".album_content_left_area").niceScroll({
         touchbehavior: true,
         enablemousewheel: true,
         cursorcolor: "transparent",
@@ -474,7 +456,7 @@
         cursorwidth: 10,
 		autohidemode:false
     });
-	
+		
 	//判斷是否是點擊照片, 或拖曳NICESCROLL區塊
 	var isDragging=false, startingPos=[0,0];
     $(".album_content_box_img_area").mousedown(function (evt) {
@@ -492,7 +474,7 @@
 	});
     
 	//右半贊助作品區塊加NICESCROLL
-	var right_area = $(".right_area").niceScroll({
+	var right_area = $(".album_content_right_area").niceScroll({
         touchbehavior: true,
         enablemousewheel: true,
         cursorcolor: "transparent",
@@ -517,53 +499,44 @@
 		}
     });
 	
- //});
- 
- //作品資訊顯示更多
- $('#album_content_desc_more').on('click', function(){
-    $('#album_content_box_desc').toggleClass('show_block');
-	if($('#album_content_desc_more').html()=='更多'){
-	  $('#album_content_desc_more').html('收回');
-	}else{
-	  $('#album_content_desc_more').html('更多');
+	//是否按下滑鼠右鍵
+	function right_click(evt){
+	  var isRightMB;
+      evt = evt || window.event;
+      if ("which" in evt)  // Gecko (Firefox), WebKit (Safari/Chrome) & Opera
+        isRightMB = evt.which == 3; 
+      else if ("button" in evt)  // IE, Opera 
+        isRightMB = evt.button == 2; 
+      return isRightMB;
 	}
- });
+	
+   //作品資訊顯示更多
+   $('#album_content_desc_more').on('click', function(){
+     $('#album_content_box_desc').toggleClass('show_block');
+	 if($('#album_content_desc_more').html()=='更多'){
+	   $('#album_content_desc_more').html('收回');
+	 }else{
+	   $('#album_content_desc_more').html('更多');
+	 }
+   });
  
-
- 
-//按選單之外關閉選單
-      $('body').click(function(evt) {
-    	closemenu_creative_content(evt);
-      });
-	  
-	  //是否按下滑鼠右鍵
-	  function right_click(evt){
-	    var isRightMB;
-        evt = evt || window.event;
-        if ("which" in evt)  // Gecko (Firefox), WebKit (Safari/Chrome) & Opera
-          isRightMB = evt.which == 3; 
-        else if ("button" in evt)  // IE, Opera 
-          isRightMB = evt.button == 2; 
-        return isRightMB;
-	  }
-	  
-	  
- 
- $('.album_content_box_menu_btn').on('click', function(){
+   //按選單之外關閉選單
+   $('body').click(function(evt) {
+     closemenu_creative_content(evt);
+   });
+	
+   $('.album_content_box_menu_btn').on('click', function(){
 	 $('.content_box_menu').toggleClass("content_box_menu_down");
- });
+   });
  
  
- 
- //關閉選有選單
+   //關閉選有選單
     function closemenu_creative_content(evt){
       if($(evt.target).parents(".album_content_box_menu_btn").length==0 && event.target.id != "content_box_menu"){
         $('.content_box_menu').removeClass("content_box_menu_down");
       }
     }
 	
-	
-
 	
 	//20181121: 留言TAG區塊開始
 	
