@@ -813,7 +813,7 @@ function custom_select(){
      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
 	
 	//查看是否已有仿製下拉選單
-	if(!$('#'+selElmnt.id).siblings('.select-selected').length)
+	if(!$('#'+selElmnt.id).siblings('.select-selected').length){
       x[i].appendChild(a);
 	}
 	
