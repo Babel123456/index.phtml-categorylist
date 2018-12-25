@@ -153,11 +153,11 @@ deeplink.setup({
 });
 function clickHandler(uri) {
   //20181225: 判斷是否為MOBILE&SAFARI
- if( isMobile() && isSafari()){
-   window.location.href = uri;
- }else{
+ //if( isMobile() && isSafari()){
+ //  window.location.href = uri;
+ //}else{
    deeplink.open(uri);
- }
+ //}
   return false;
 }
 </script>
