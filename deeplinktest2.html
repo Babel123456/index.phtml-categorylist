@@ -133,11 +133,12 @@ function isMobile(){
 //20181225: 判斷是否為MOBILE&SAFARI開始
 function isSafari(){
   var isChrome = false, isFirefox = false, isSafari = false;
-  if(navigator.userAgent.match(/CriOS/i)) isChrome = true;
+  if(navigator.userAgent.match(/CriOS/i) || navigator.userAgent.match(/Chrome/i)) isChrome = true;
   if(navigator.userAgent.match(/FxiOS/i)) isChrome = true;
   if(!(isChrome || isFirefox)){
     isSafari = true;
   }
+  document.write('isSafari: '+isSafari);
   return isSafari;
 }
 //20181225: 判斷是否為MOBILE&SAFARI結束
@@ -152,11 +153,11 @@ deeplink.setup({
 });
 function clickHandler(uri) {
   //20181225: 判斷是否為MOBILE&SAFARI
-  if( isMobile() && isSafari()){
-    window.location.href = uri;
-  }else{
-    deeplink.open(uri);
-  }
+ if( isMobile() && isSafari()){
+   window.location.href = uri;
+ }else{
+   deeplink.open(uri);
+ }
   return false;
 }
 </script>
