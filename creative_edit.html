@@ -214,7 +214,9 @@
 		     <div><span>居住地</span>
 			      <!-- //20181211: 修改下拉選單開始 -->
 			      <span class="custom-select">
-				    <select id="user_address_id_1st" onchange="addr2();">
+				    <!-- //20181225: 修改下拉選單ONCHANGE開始 -->
+				    <select id="user_address_id_1st" onchange="addr2_list();">
+					<!-- //20181225: 修改下拉選單ONCHANGE開始 -->
                       <option value="0">請選擇</option>
                       <option value="1">台灣地區</option>
                       <option value="2">港澳地區</option>
@@ -229,42 +231,15 @@
 			      </span>
 				  <!-- //20181211: 修改下拉選單結束 -->
 			 </div>
-			 
-			 <script>
-			  //test for show addr2's option list
-			  function addr2(){
-				$('#user_address_id_2nd ~ .select-selected').remove();  
-			    $('#user_address_id_2nd ~ .select-items').remove();
-				//動態給值
-				if($('#user_address_id_1st').prop('selectedIndex')=='1'){ //台灣
-				  console.log($('#user_address_id_1st').prop('selectedIndex'));
-				  var items = {option1:{value:'10',text:'台北市',selected: false},option2:{value:'11',text:'新北市',selected: false},
-				               option3:{value:'12',text:'基隆市',selected: false},option4:{value:'13',text:'桃園市',selected: false}};
-				  $.each(items, function (i, item) {
-					$('#user_address_id_2nd').append($('<option>', { 
-				      value: item.value,
-					  text : item.text 
-					}));
-				  });
-				}else{
-				  $("#user_address_id_2nd option:not([value='0'])").remove();
-				}
-				custom_select(); //再執行一次仿製下拉選單
-			  }
-			 </script>
-			 
-			 
 		     <div><!-- 排版用區塊 --><span></span><!-- 排版用區塊 -->
 			      <!-- //20181211: 修改下拉選單開始 -->
 			      <span class="custom-select">
-				    <select id="user_address_id_2nd" onchange="console.log($('#user_address_id_2nd').prop('selectedIndex'));">
+				    <select id="user_address_id_2nd">
 					  <option value="0">請選擇</option>
-					  <!-- //20181203: 動態給值
                       <option value="10">台北市</option>
                       <option value="11">新北市</option>
                       <option value="12">基隆市</option>
 					  <option value="13">桃園市</option>
-					  -->
                     </select>
 			      </span>
 				  <!-- //20181211: 修改下拉選單結束 -->
@@ -277,7 +252,9 @@
 		     <div><span>興趣</span>
 			      <!-- //20181211: 修改下拉選單開始 -->
 			      <span class="custom-select">
-				    <select id="hobby_0">
+				    <!-- //20181225: 修改下拉選單ONCHANGE開始 -->
+				    <select id="hobby_0" onchange="hobby123_list();">
+					<!-- //20181225: 修改下拉選單ONCHANGE開始 -->
 					  <option value="0">請選擇</option>
                       <option value="1">四處旅遊</option>
                       <option value="2">就愛攝影</option>
@@ -300,8 +277,10 @@
 		     </div>
 		     <div><!-- 排版用區塊 --><span></span><!-- 排版用區塊 -->
 			      <!-- //20181211: 修改下拉選單開始 -->
-			      <span class="custom-select">
-				    <select id="hobby_1">
+			      <span class="custom-select" onchange="hobby123_list();">
+				    <!-- //20181225: 修改下拉選單ONCHANGE開始 -->
+				    <select id="hobby_1" onchange="hobby123_list();">
+					<!-- //20181225: 修改下拉選單ONCHANGE開始 -->
 					  <option value="0">請選擇</option>
                       <option value="1">四處旅遊</option>
                       <option value="2">就愛攝影</option>
@@ -325,7 +304,9 @@
 			 <div><span></span>
 			     <!-- //20181211: 修改下拉選單開始 -->
 			      <span class="custom-select">
-				    <select id="hobby_2">
+				    <!-- //20181225: 修改下拉選單ONCHANGE開始 -->
+				    <select id="hobby_2" onchange="hobby123_list();">
+					<!-- //20181225: 修改下拉選單ONCHANGE開始 -->
 					  <option value="0">請選擇</option>
                       <option value="1">四處旅遊</option>
                       <option value="2">就愛攝影</option>
@@ -348,6 +329,7 @@
 		     </div>
 		   </div>
 		   <!--  興趣區塊結束  -->
+		   
 		 </div><!-- creative_info_edit -->
 		 <div id="epaper_option">
 		   <div><div>留言板</div><div><span><input type="radio" name="discuss" value="open" checked="true"> 開啟</span><span><input type="radio" name="discuss" value="close"> 關閉</span></div></div>
@@ -447,13 +429,13 @@
   </div>
   <!-- 主要內容區結束 -->
 <script>
-
+/*
 function test_select(elementId){
   var e = document.getElementById('hobby_2').value;
   var value = e.options[e.selectedIndex].value;
   alert(value);
 }
-
+*/
 
 
   //專區編輯資訊開始
@@ -799,8 +781,8 @@ function test_select(elementId){
       custom_select();
     });
 	
+//20181225: 修改區塊開始
 function custom_select(){
-  
   var x, i, j, selElmnt, a, b, c;
   /*look for any elements with the class "custom-select":*/
   x = document.getElementsByClassName("custom-select");  //包住SELECT元件的SPAN區塊
@@ -816,7 +798,6 @@ function custom_select(){
 	if(!$('#'+selElmnt.id).siblings('.select-selected').length){
       x[i].appendChild(a);
 	}
-	
 	if(!$('#'+selElmnt.id).siblings('.select-items').length){
 		
 	  /*for each element, create a new DIV that will contain the option list:*/
@@ -826,19 +807,28 @@ function custom_select(){
         /*for each option in the original select element,
         create a new DIV that will act as an option item:*/
         c = document.createElement("DIV"); //仿每一筆下拉選單值OPTION
-        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.innerHTML = selElmnt.options[j].innerHTML; //仿選單的顯示值等於被選的SELECT顯示值
+		
+		//只給興趣的仿下拉選單項目ID值同SELECT下拉選單值
+		if(selElmnt.id == 'hobby_0' || selElmnt.id == 'hobby_1' || selElmnt.id =='hobby_2'){
+		  if(j>0){
+		    c.setAttribute("id", selElmnt.id+"_"+selElmnt.options[j].value); //第一筆請選擇不理會它
+		  }
+		}
+		var tempClassName = selElmnt.options[j].value; //給仿下拉選單CLASS NAME同SELECT下拉選單值
         c.addEventListener("click", function(e) {
-          /*when an item is clicked, update the original select box,
+        //console.log(tempClassName);        
+		/*when an item is clicked, update the original select box,
           and the selected item:*/
           var y, i, k, s, h;
-          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-          h = this.parentNode.previousSibling;
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0]; //select物件
+          h = this.parentNode.previousSibling; //顯示被選項目值		 
           for (i = 0; i < s.length; i++) {
             if (s.options[i].innerHTML == this.innerHTML) {
-              s.selectedIndex = i;
+              s.selectedIndex = i;  //透過被選項目值更改SELECT被選值
 			  $('#'+s.id).change(); //若原SELECT物件有設ONCHANGE時, 執行FUNCTION
               h.innerHTML = this.innerHTML;
-              y = this.parentNode.getElementsByClassName("same-as-selected");
+			  y = this.parentNode.getElementsByClassName("same-as-selected"); //仿製下拉選單先前被選的項目
               for (k = 0; k < y.length; k++) {
                 y[k].removeAttribute("class"); //之前被選的OPTION
               }
@@ -851,9 +841,7 @@ function custom_select(){
         b.appendChild(c);
       }
       x[i].appendChild(b);
-	
 	}
-    
     //if(!$('#'+selElmnt.id).siblings('.select-selected').length){
       a.addEventListener("click", function(e) {
         /*when the select box is clicked, close any other select boxes,
@@ -865,7 +853,11 @@ function custom_select(){
       });
 	//}
   }// for
-}
+  
+  //特殊處理部份  
+  addr2_list();	//當頁面載入時先關閉城市選單
+}//custom_select()
+//20181225: 修改區塊結束
 
 function closeAllSelect(elmnt) {
   /*a function that will close all select boxes in the document,
@@ -890,11 +882,38 @@ function closeAllSelect(elmnt) {
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 
-	
-		//20181211: 重製作下拉選單結束
-	
-	
-	
+
+  //20181211: 重製作下拉選單結束
+
+		
+  //20181225: 下拉清單特殊處理FUNCTION區塊開始
+  //依居住地顯示城市選項清單
+  function addr2_list(){
+	if($('#user_address_id_1st').prop('selectedIndex')=='1'){ //台灣
+	  $('#user_address_id_2nd ~ .select-items > div').css('display','block');
+	  $('#user_address_id_2nd ~ .select-items > div:first-child').css('margin-bottom','16px');
+	}else{
+	  $('#user_address_id_2nd').prop('selectedIndex',0); //城市歸0;
+	  $('#user_address_id_2nd ~ .select-selected').html('請選擇');
+	  $('#user_address_id_2nd ~ .select-items > div:not(:first-child)').css('display','none');
+	  $('#user_address_id_2nd ~ .select-items > div:first-child').css('margin-bottom','0');
+	}
+  }	
+  //三個興選項值不重覆
+  function hobby123_list(){
+	var hobby_0 = $('#hobby_0').val(), 
+	    hobby_1 = $('#hobby_1').val(), 
+		hobby_2 = $('#hobby_2').val();
+	$('[id^="hobby_"] ~ .select-items > div:not(:first-child)').css('display','block'); //興趣選項先全顯示
+	//關閉其他2個興趣的相同選項
+	$('#hobby_1 ~ .select-items #hobby_1_'+hobby_0).css('display','none'); //與興趣1同的選項不顯示
+	$('#hobby_2 ~ .select-items #hobby_2_'+hobby_0).css('display','none'); //與興趣1同的選項不顯示
+	$('#hobby_0 ~ .select-items #hobby_0_'+hobby_1).css('display','none'); //與興趣2同的選項不顯示
+	$('#hobby_2 ~ .select-items #hobby_2_'+hobby_1).css('display','none'); //與興趣2同的選項不顯示
+	$('#hobby_0 ~ .select-items #hobby_0_'+hobby_2).css('display','none'); //與興趣3同的選項不顯示
+	$('#hobby_1 ~ .select-items #hobby_1_'+hobby_2).css('display','none'); //與興趣3同的選項不顯示
+  }   
+  //20181225: 下拉清單特殊處理FUNCTION區塊結束
 	
 </script>
 
