@@ -808,7 +808,7 @@ function custom_select(){
         create a new DIV that will act as an option item:*/
         c = document.createElement("DIV"); //仿每一筆下拉選單值OPTION
         c.innerHTML = selElmnt.options[j].innerHTML; //仿選單的顯示值等於被選的SELECT顯示值
-		
+		c.setAttribute('onclick','void(0);');
 		//只給興趣的仿下拉選單項目ID值同SELECT下拉選單值
 		if(selElmnt.id == 'hobby_0' || selElmnt.id == 'hobby_1' || selElmnt.id =='hobby_2'){
 		  if(j>0){
@@ -860,7 +860,6 @@ function custom_select(){
 //20181225: 修改區塊結束
 
 function closeAllSelect(elmnt) {
-  alert('safari:test for document click');
   /*a function that will close all select boxes in the document,
   except the current select box:*/
   var x, y, i, arrNo = [];
