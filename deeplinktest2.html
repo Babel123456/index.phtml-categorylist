@@ -155,8 +155,8 @@ function clickHandler(uri) {
   //20181225: 判斷是否為MOBILE&SAFARI
  if( isMobile() && isSafari()){
    //window.location.href = uri;
-   setTimeout(function () { window.location = uri; }, 25);
-   window.location = "itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8";
+   setTimeout(function () { window.location = "itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8"; }, 25);
+   window.location = uri;
  }else{
    deeplink.open(uri);
  }
