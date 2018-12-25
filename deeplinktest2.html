@@ -106,7 +106,8 @@
 		return r.onload=function(){
 		                  clearTimeout(e),
 						  r.parentNode.removeChild(r),
-						  window.location.href=n
+						  window.location.href=n,
+						  alert("n: "+o());
 						},
 			   r.src=n,
 			   r.setAttribute("style","display:none;"),
@@ -138,7 +139,6 @@ function isSafari(){
   if(!(isChrome || isFirefox)){
     isSafari = true;
   }
-  document.write('isSafari: '+isSafari);
   return isSafari;
 }
 //20181225: 判斷是否為MOBILE&SAFARI結束
@@ -153,11 +153,13 @@ deeplink.setup({
 });
 function clickHandler(uri) {
   //20181225: 判斷是否為MOBILE&SAFARI
- //if( isMobile() && isSafari()){
- //  window.location.href = uri;
- //}else{
+ if( isMobile() && isSafari()){
+   //window.location.href = uri;
+   setTimeout(function () { window.location = uri; }, 25);
+   window.location = "itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8";
+ }else{
    deeplink.open(uri);
- //}
+ }
   return false;
 }
 </script>
