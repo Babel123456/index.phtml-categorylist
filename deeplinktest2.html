@@ -41,10 +41,12 @@
   <div style="text-align: center;"><h1><a href="pinpinbox://index/album/content/?album_id=15460">testXXX</a></h1></div>
   -->  
   <div class="content" style="text-align:center;">
+      <!--//20181226: 將<SPAN>改為<A>區塊開始, 測看SPAN與A的不同-->
 	  <span data-uri="pinpinbox://index/album/content/?album_id=15460" style="cursor:pointer;" onclick="clickHandler(this.dataset.uri);">
 	    <img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="position:absolute;z-index:5;top:38.8%;left:44.8%;vertical-align:middle;display:block;background:#FF5E68;width:40px;height:40px;border-radius:40px;">
 		<img src="https://cdn.pinpinbox.com/storage/zh_TW/user/1/album/15460/adjust_app_qrcode$c56c.jpg" style="padding:3px;width:180px;height:auto;">
 	  </span>
+	  <!--//20181226: 將<SPAN>改為<A>區塊結束-->
 	</div>
   </div>
   
@@ -106,8 +108,7 @@
 		return r.onload=function(){
 		                  clearTimeout(e),
 						  r.parentNode.removeChild(r),
-						  window.location.href=n,
-						  alert("n: "+o());
+						  window.location.href=n
 						},
 			   r.src=n,
 			   r.setAttribute("style","display:none;"),
@@ -153,10 +154,23 @@ deeplink.setup({
 });
 function clickHandler(uri) {
   //20181225: 判斷是否為MOBILE&SAFARI
- if( isMobile() && isSafari()){
-   //window.location.href = uri;
-   setTimeout(function () { window.location = "itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8"; }, 25);
-   window.location = uri;
+ if(isMobile() && isSafari()){
+   var r=document.createElement("iframe");
+       r.onload=function(){
+		                  clearTimeout(e),
+						  
+						  setTimeout(function () { 
+						    r.parentNode.removeChild(r),
+						    window.location.href="itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8";
+						  },25);
+						},
+			   //r.src=n,
+			   r.src = uri;
+			   r.setAttribute("style","display:none;"),
+			   document.body.appendChild(r);
+   
+   //setTimeout(function () { window.location = "itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8"; }, 25);
+   //window.location = uri;
  }else{
    deeplink.open(uri);
  }
