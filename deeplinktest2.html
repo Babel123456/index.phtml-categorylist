@@ -4,10 +4,10 @@
 <head>
     
         
-                <link rel="icon" type="image/vnd.microsoft.icon" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/favicon.ico"/>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/favicon.ico"/>
     <link rel="manifest" href="https://www.pinpinbox.com/manifest.json">
     <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
     <meta name="keywords" content="【快閃抽獎】潤肌精美白產品送給你！,pinpinbox,職人,贊助發佈平台,釘釘吧,微出版,創作分享,拼拼,經濟共享,販售作品,潛能盒子,釘釘,漫畫,旅遊,美食,原創,影片,直播,投稿活動,贊助,pinpin,金馬獎,新藝城,黃百鳴,泰迪羅賓,內容賺錢,麥若愚,眭澔平,創作人,寵物,抽獎,電影,內容贊助,贊助,打賞,掃描QR">
     <meta name="description" content="【快閃抽獎】x 潤肌精 免！費！抽！ 潤肌精植淬白系列【美白乳液】 先保濕再美白，讓肌膚明天比今天更加白皙透亮 下載pinpinbox的APP， 用APP觀看此作品並加入收藏就可直接免費抽獎喔。 不知道怎麼抽獎怎麼辦？ 請參考pinpinbox小老師： https://www.pinpinbox.com/index/album/content/?autoplay=1&amp;album_id=8937 更多《潤肌精》介紹： http://www.kose.com.tw/junkisei_prime/ 抽獎時間： 12/10(一) ~12/31(一) 數量有限，千萬別錯過！ 注意事項： 1. 得獎者請於「立即兌換」中留下確切的聯絡方式，以供寄送獎品。 2. 本活動僅限於設籍於台灣、金門、澎湖、馬祖地區者參加，配送地址以中獎人所填資料之地址為準，主辦單位不負贈品無法送達之責任。 3. 抽獎次數限每個帳戶壹次。 4.此活動贈品請自付運費(郵局/全家)或至104台北市中山區南京東路三段61號4樓領取 ※有任何疑問歡迎於pinpinbox粉絲團詢問。 pinpinbox將不定期推出快閃抽獎活動 想隨時掌握資訊，請關注官方粉絲團喔！">
     <meta name="msvalidate.01" content="851F62F6F1B71365ECE1EFE9C1D56C73"/>
@@ -30,7 +30,7 @@
 <div class="jBox-container" >
   <div class="jBox-title">
     <div><p class="keypoint" style="margin-right:-20px;font-size:2em;text-align:center;line-height:1.2em;">
-	     下載ＡＰＰ即可兌換／抽獎7</p>
+	     下載ＡＰＰ即可兌換／抽獎8</p>
 	</div>
 	<div class="jBox-closeButton jBox-noDrag">
 	  <svg viewBox="0 0 24 24"><path d="M22.2,4c0,0,0.5,0.6,0,1.1l-6.8,6.8l6.9,6.9c0.5,0.5,0,1.1,0,1.1L20,22.3c0,0-0.6,0.5-1.1,0L12,15.4l-6.9,6.9c-0.5,0.5-1.1,0-1.1,0L1.7,20c0,0-0.5-0.6,0-1.1L8.6,12L1.7,5.1C1.2,4.6,1.7,4,1.7,4L4,1.7c0,0,0.6-0.5,1.1,0L12,8.5l6.8-6.8c0.5-0.5,1.1,0,1.1,0L22.2,4z"></path></svg>
@@ -154,7 +154,8 @@ deeplink.setup({
 });
 function clickHandler(uri) {
   //20181225: 判斷是否為MOBILE&SAFARI
- //if(isMobile() && isSafari()){
+ if(isMobile() && isSafari()){
+ /*
    var r=document.createElement("iframe");
    
   
@@ -165,15 +166,17 @@ function clickHandler(uri) {
 						    },25);
 						  };
 			   //r.src=n,
+			   //r.src = uri;
 			   r.src = uri;
-			   r.setAttribute("style","display:none;"),
+			   //r.setAttribute("style","display:none;"),
 			   document.body.appendChild(r);
-  
+  */
    //setTimeout(function () { window.location = "itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8"; }, 25);
-   //window.location = uri;
- //}else{
-  // deeplink.open(uri);
- //}
+   setTimeout(function () { window.location = "itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8"; }, 10);
+   window.location = uri;
+ }else{
+  deeplink.open(uri);
+ }
   return false;
 }
 </script>
