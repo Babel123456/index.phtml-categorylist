@@ -30,7 +30,7 @@
 <div class="jBox-container" >
   <div class="jBox-title">
     <div><p class="keypoint" style="margin-right:-20px;font-size:2em;text-align:center;line-height:1.2em;">
-	     下載ＡＰＰ即可兌換／抽獎6</p>
+	     下載ＡＰＰ即可兌換／抽獎7</p>
 	</div>
 	<div class="jBox-closeButton jBox-noDrag">
 	  <svg viewBox="0 0 24 24"><path d="M22.2,4c0,0,0.5,0.6,0,1.1l-6.8,6.8l6.9,6.9c0.5,0.5,0,1.1,0,1.1L20,22.3c0,0-0.6,0.5-1.1,0L12,15.4l-6.9,6.9c-0.5,0.5-1.1,0-1.1,0L1.7,20c0,0-0.5-0.6,0-1.1L8.6,12L1.7,5.1C1.2,4.6,1.7,4,1.7,4L4,1.7c0,0,0.6-0.5,1.1,0L12,8.5l6.8-6.8c0.5-0.5,1.1,0,1.1,0L22.2,4z"></path></svg>
@@ -42,10 +42,10 @@
      -->  
      <div class="content" style="text-align:center;">
       <!--//20181226: 將<SPAN>改為<A>區塊開始, 測看SPAN與A的不同-->
-	  <span data-uri="pinpinbox://index/album/content/?album_id=15460" style="cursor:pointer;" onclick="clickHandler(this.dataset.uri);">
+	  <a data-uri="pinpinbox://index/album/content/?album_id=15460" style="cursor:pointer;" onclick="clickHandler(this.dataset.uri);">
 	    <img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="position:absolute;z-index:5;top:38.8%;left:44.8%;vertical-align:middle;display:block;background:#FF5E68;width:40px;height:40px;border-radius:40px;">
 		<img src="https://cdn.pinpinbox.com/storage/zh_TW/user/1/album/15460/adjust_app_qrcode$c56c.jpg" style="padding:3px;width:180px;height:auto;">
-	  </span>
+	  </a>
 	  <!--//20181226: 將<SPAN>改為<A>區塊結束-->
 	</div>
   </div>
@@ -154,39 +154,26 @@ deeplink.setup({
 });
 function clickHandler(uri) {
   //20181225: 判斷是否為MOBILE&SAFARI
- if(isMobile() && isSafari()){
+ //if(isMobile() && isSafari()){
    var r=document.createElement("iframe");
-   jQuery.ajax({
-     type: 'GET',
-     url: uri,
-     success: function() {
-      r.src = uri;
-	  //r.setAttribute("style","display:none;"),
-	  document.body.appendChild(r);
-     },
-	 error: function() {
-       r.parentNode.removeChild(r),
-	   window.location="itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8";            
-     }
-	 
-  });
-   /*
+   
+  
        r.onload=function(){
-						  setTimeout(function () { 
-						    r.parentNode.removeChild(r),
-						    window.location="itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8";
-						  },25);
-						};
+						    setTimeout(function () { 
+						      r.parentNode.removeChild(r),
+						      window.location="itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8";
+						    },25);
+						  };
 			   //r.src=n,
 			   r.src = uri;
-			   //r.setAttribute("style","display:none;"),
+			   r.setAttribute("style","display:none;"),
 			   document.body.appendChild(r);
-   */
+  
    //setTimeout(function () { window.location = "itms-apps://itunes.apple.com/app/pinpinbox/id1057840696?mt-8"; }, 25);
    //window.location = uri;
- }else{
-   deeplink.open(uri);
- }
+ //}else{
+  // deeplink.open(uri);
+ //}
   return false;
 }
 </script>
