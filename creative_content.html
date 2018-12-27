@@ -178,12 +178,14 @@
     <!-- 創作人內容區塊開始 -->
 	<div class="creative_content_header">
 	  <div class="creative_info_area">
+	  
 	    <!-- //20181227: 暫時改TITLE區塊開始 -->
 		<div id="creative_name" >
 		  <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4119/picture$7d29.jpg" title="點我分享"></span>
 		  <span title="煒承Answer煒承Answer">煒承Answer煒承Answer</span>
 		</div>
 		<!-- //20181227: 暫時改TITLE區塊結束 -->
+		
 		<!-- //20181227: 加入分享區塊開始 -->
 		<!-- 社群區塊開始  -->
 		<div id="creative_content_social_links_box" class="social_links_box">
@@ -281,7 +283,7 @@
 		      <div class="content_search_open"><i class="fa fa-search"></i></div>
 	          <div class="content_search_box">
 	      	    <a href="javascript:void(0);" onclick="_search('mobile')"><i class="fa fa-search"></i></a>
-	      	      <input type="text" class="search_text" name="searchkey" id="mobile_searchkey" data-searchtype="album" data-device="mobile" autocomplete="off">
+	      	    <input type="text" class="search_text" name="searchkey" id="mobile_searchkey" data-searchtype="album" data-device="mobile" autocomplete="off">
 	          </div>
               <div class="content_search_close"><i class="fa fa-times"></i></div>
 	        </div>
@@ -292,63 +294,9 @@
   		    <!-- 我的作品區塊開始 -->
   		    <div id="tab0" class="tab active">
               <div class="waterfall_content">
-                
-				 <div class="content_box">
-				   <!-- 20181113 加入鎖頭圖示區塊開始 -->
-				   <div class="lock_box">
-				     <span><i class="fa fa-lock"></i></span>
-				   </div>
-				   <!-- 20181113 加入鎖頭圖示區塊結束 -->
-				   <!-- 20181203 加入POPUP FUNCTION -->
-				   <div class="content_box_img" onclick="popview('http://localhost/creative_content.php');" >
-				     <!--<a href="https://www.pinpinbox.com/index/album/content/?album_id=5534&amp;click=name">-->
-					   <img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170814/59911dba7ba2f.jpg">
-					 <!--</a>-->
-				   </div>
-				   <div class="content_box_info">
-				     <div>
-				       <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i><i class="fa fa-gift"></i></div>
-					   <div class="content_box_name" data-album_id="5534" title="扇形車站"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5534&amp;click=name">扇形車站</a></div>
-				     </div>
-				     <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
-					   <div class="content_box_menu">
-					     <ul>
-					       <li><a href="javascript:void(0)" onclick="share('album',5534, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/5534/qrcode$f90a.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170814/59911dba7ba2f_330x248.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=5534&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
-						   <li data-albumid="5534"><a onclick="buyalbum(5534);" href="javascript:void(0)">收藏</a></li>
-						   <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="5534">檢舉</a></li>
-					     </ul>
-					   </div>
-				     </div>
-				   </div>
-			     </div>
-				 
-				 <div class="content_box">
-				   <!-- 20181113 加入鎖頭圖示區塊開始 -->
-				   <div class="lock_box">
-				     <span><i class="fa fa-lock"></i></span>
-				   </div>
-				   <!-- 20181113 加入鎖頭圖示區塊結束 -->
-				   <!-- 20181203 加入POPUP FUNCTION -->
-				   <div class="content_box_img" onclick="popview('http://localhost/creative_content.php');" >
-					 <img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181128/5bfdbf7f49ea0.jpg">
-				   </div>
-				   <div class="content_box_info">
-				     <div>
-				       <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i><i class="fa fa-gift"></i></div>
-					   <div class="content_box_name" data-album_id="5534" title="扇形車站"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5534&amp;click=name">扇形車站</a></div>
-				     </div>
-				     <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
-					   <div class="content_box_menu">
-					     <ul>
-					       <li><a href="javascript:void(0)" onclick="share('album',5534, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/5534/qrcode$f90a.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170814/59911dba7ba2f_330x248.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=5534&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
-						   <li data-albumid="5534"><a onclick="buyalbum(5534);" href="javascript:void(0)">收藏</a></li>
-						   <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="5534">檢舉</a></li>
-					     </ul>
-					   </div>
-				     </div>
-				   </div>
-			     </div>
-				
+			    <!-- 20181227 若沒有內容就加個P與CLASSR區塊開始 -->
+                  <p class="no_content">沒有任何作品可以顯示</p>
+				<!-- 20181227 若沒有內容就加個P與CLASSR區塊結束 -->
               </div>
 		    </div>
 			<!-- 我的作品區塊結束 -->
@@ -356,24 +304,9 @@
   		    <div id="tab1" class="tab">
 			  <div class="waterfall_content">
 				 
-				 <div class="content_box">
-				   <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4902&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170620/5948e3a4cd819.jpg"></a></div>
-				   <div class="content_box_info">
-				     <div>
-				       <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i></div>
-					   <div class="content_box_name" data-album_id="4902" title="三峽老街"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4902&amp;click=name">三峽老街</a></div>
-				     </div>
-				     <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
-					   <div class="content_box_menu">
-					     <ul>
-					       <li><a href="javascript:void(0)" onclick="share('album',4902, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/4902/qrcode$1375.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170620/5948e3a4cd819_330x248.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=4902&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
-						   <li data-albumid="4902"><a onclick="buyalbum(4902);" href="javascript:void(0)">收藏</a></li>
-						   <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="4902">檢舉</a></li>
-						 </ul>
-					   </div>
-				     </div>
-				   </div>
-				 </div>
+				  <!-- 20181227 若沒有內容就加個P與CLASSR區塊開始 -->
+                  <p class="no_content">沒有任何作品可以顯示</p>
+				  <!-- 20181227 若沒有內容就加個P與CLASSR區塊結束 -->
 				
               </div>
 		    </div>
@@ -382,90 +315,35 @@
   		    <div id="tab2" class="tab">
 			  <div class="waterfall_content">				 
 				 
-				 <div class="content_box">
-				   <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4460&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170501/5907367e7322c.jpg"></a></div>
-				   <div class="content_box_info">
-					 <div>
-				       <div class="content_box_icon"></div>
-					   <div class="content_box_name" data-album_id="4460" title="合歡山之旅"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4460&amp;click=name">合歡山之旅</a></div>
-				     </div>
-				     <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
-					   <div class="content_box_menu">
-					     <ul>
-					       <li><a href="javascript:void(0)" onclick="share('album',4460, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/4460/qrcode$0cab.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170501/5907367e7322c_330x248.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=4460&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
-						   <li data-albumid="4460"><a onclick="buyalbum(4460);" href="javascript:void(0)">收藏</a></li>
-						   <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="4460">檢舉</a></li>
-						 </ul>
-					   </div>
-				     </div>
-				   </div>
-				 </div>
+				  <!-- 20181227 若沒有內容就加個P與CLASSR區塊開始 -->
+                  <p class="no_content">沒有任何作品可以顯示</p>
+				  <!-- 20181227 若沒有內容就加個P與CLASSR區塊結束 -->
 				
               </div>
 		    </div>
 			<!-- 群組作品區塊結束 -->
 			<!-- 關於我區塊開始 -->
   		    <div id="tab3" class="tab">
-			  <div class="aboutme">熱愛旅遊運動的男孩，目標用雙腳到世界各地留下自己的足跡，用雙眼欣賞大自然偉大奧妙的傑作，藉由相片紀錄稍縱即逝的美好時刻	</div>
+			  <!--<div class="aboutme">尚未填寫介紹	</div>-->
+			   <!-- 20181227 若沒有內容就加個P與CLASSR區塊開始 -->
+                  <p class="no_content">沒有任何作品可以顯示</p>
+				<!-- 20181227 若沒有內容就加個P與CLASSR區塊結束 -->
 		    </div>
 			<!-- 關於我區塊結束 -->
 
 			<!-- 留言板區塊開始 -->
   		    <div id="tab4" class="tab">
-			  <div class="message_board">
-				<div id="message_leave">
-				  <!--//20181121: 新增<div id="pinpinboard">區塊開始-->
+			  
+			  <!--//20181121: 新增<div id="pinpinboard">區塊開始-->
 				  <div id="pinpinboard">
-				    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg"></span>
-					<span><textarea id="user_comment" rows="4" maxlength="300" placeholder="有什麼想表達的嗎?"></textarea></span>
+				    <!--
+					<p style="color: #cdccc2">此用戶關閉了留言版功能</p>
+					-->
+					 <!-- 20181227 若沒有內容就加個P與CLASSR區塊開始 -->
+                  <p class="no_content">沒有任何作品可以顯示</p>
+				<!-- 20181227 若沒有內容就加個P與CLASSR區塊結束 -->
 				  </div>
 				  <!--//20181121: 新增<div id="pinpinboard">區塊結束-->
-				  <div><span class="btn_new">清除</span><span class="btn_new message_submit" onclick="addCommtent('user', '4376');" >送出</span></div>
-				</div>
-				<div id="message_list">
-				  <div class="message_item">
-				    <div>
-				      <span><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.svg"></span>
-				    </div>
-				    <div>
-				      <div><span><a href="javascript:void(0);" onclick="addTag('8989', '陈天')"> 陈天</a></span><span><time datetime="2018/05/28 03:05:33" class="timeago">21天之前</time></span></div>
-					  <!-- //20181121: 加DIV區塊去包留言與刪除開始 -->
-					  <div>
-					    <div class="comment_reply_text">眭老师您好翻越千山万水，我都要看你节目我是内地粉丝翻墙，看你节目网络不稳定</div>
-					    <div><span class="delete_box"><i class="fa fa-times"></i></span></div>
-					  </div>
-					  <!-- //20181121: 加DIV區塊去包留言與刪除結束 -->
-					</div>
-				  </div>
-				  <div class="message_item">
-				    <div>
-				      <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg"></span>
-				    </div>
-				    <div>
-				      <div><span><a href="javascript:void(0);" onclick="addTag('4376', '眭澔平')"> 眭澔平</a></span><span><time datetime="999/05/17 10:05:26" class="timeago">21天之前</time></span></div>
-					  <!-- //20181119: 加DIV區塊去包留言與刪除開始 -->
-					  <div>
-					    <div class="comment_reply_text"><span><a class="message_tag" target="_blank" href="https://www.pinpinbox.com/index/creative/content/?user_id=4563">June Wu</a></span> 謝謝！每週都會有新影片。2018/10/17
-澔平持續深入非洲，探索中非俾格米人最原始部落，參與世人未曾知曉的團圓祭典，傾聽花開的聲音。</div>
-                        <div><span class="delete_box"><i class="fa fa-times"></i></span></div>
-					  </div><!-- //20181119: 加DIV區塊去包留言與刪除結束 -->
-				    </div>
-				  </div>
-				  <div class="message_item">
-				    <div>
-				      <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9202/picture$e34e.jpg"></span>
-				    </div>
-				    <div>
-				      <div class="comment_reply_text"><span><a href="javascript:void(0);" onclick="addTag('15079', '二允兄弟')"> 二允兄弟</a></span><span><time datetime="99/05/17 10:05:26" class="timeago">21天之前</time></span></div>
-					  <!-- //20181119: 加DIV區塊去包留言與刪除開始 -->
-					  <div>
-					    <div>萌唱童團『WinBrorthers二允兄弟』是台灣的原創故事品牌。創作者允媽是位資深的視覺設計師，擁有兩個可愛又調皮的小男孩，在工作又要兼顧小孩成長的期間啟發了靈感，於2007年創作了 『二允兄弟』 童趣故事，聰明挑食的大允和好奇愛吃的小允，總是精力充沛地上演兄弟打架爭贏又和好的戲碼！二允兄弟最愛唱歌、跳舞、遊戲，常有鬼靈精怪的點子，水滴鼠、花滴鼠、蛋仔龍、蛋仔12生肖..都是他們的勝利麻吉！來自蛋仔星球的蛋仔龍，與二允兄弟聯手尋找蛋仔星球上沒有吃過的美食，共同拯救其他蛋仔星，並不斷地發生奇幻冒險和打架爭贏的童趣故事！</div>
-                        <div><span class="delete_box"><i class="fa fa-times"></i></span></div>
-					  </div><!-- //20181119: 加DIV區塊去包留言與刪除結束 -->
-				    </div>
-				  </div>
-				</div><!-- #message_list -->
-			  </div>
 			  
 		    </div>
 			<!-- 留言板區塊結束 -->
