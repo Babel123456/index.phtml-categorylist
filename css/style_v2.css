@@ -272,6 +272,8 @@ textarea:-ms-input-placeholder { color: #9e9e9e; }
 
 .btn_main { color: #fff; background: #00acc1; }
 
+.btn_attention { color: #d4d4d4; background: #ffffff; border: 1px solid #d4d4d4; }
+
 .btn_dark_opacity { color: #fff; background: #4d4d4d; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75); opacity: 0.75; }
 
 /* 標題-粗體 */
