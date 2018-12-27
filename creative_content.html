@@ -178,11 +178,12 @@
     <!-- 創作人內容區塊開始 -->
 	<div class="creative_content_header">
 	  <div class="creative_info_area">
-		<div id="creative_name" title="煒承Answer煒承Answer">
-		  <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4119/picture$7d29.jpg" ></span>
-		  <span>煒承Answer煒承Answer</span>
+	    <!-- //20181227: 暫時改TITLE區塊開始 -->
+		<div id="creative_name" >
+		  <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4119/picture$7d29.jpg" title="點我分享"></span>
+		  <span title="煒承Answer煒承Answer">煒承Answer煒承Answer</span>
 		</div>
-		
+		<!-- //20181227: 暫時改TITLE區塊結束 -->
 		<!-- //20181227: 加入分享區塊開始 -->
 		<!-- 社群區塊開始  -->
 		<div id="creative_content_social_links_box" class="social_links_box">
@@ -209,36 +210,7 @@
 		   <span><input id="creative_content_page_url" type="text" value="https://www.pinpinbox.com/123.html"></span>
 		</div>
 		<!-- //20181227: 加入分享區塊結束 -->
-		
-		<script>
-		
-		//複製作品網址按鈕
-	    $('#creative_content_social_links_box').on('click', '#creative_content_social_links2', function() {
-	      creative_content_snackbar_show() ;
-	    });
-	    
-	    //彈出網址已複製訊息
-	    function creative_content_snackbar_show(){
-	      //顯示訊息
-	      var x = document.getElementById("creative_content_snackbar");
-	      x.className = "show";
-	      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-	      //拷貝網址
-	      var copy_url = document.getElementById("creative_content_page_url");
-          copy_url.select();
-          document.execCommand("copy");
-	    }
-	    	
-	    $('#creative_name').on('click', function(){
-	      $('#creative_content_social_links_box').toggleClass("show_block");
-        });
-		
-		
-		</script>
-		
-		
-		
-		
+				
 		<div id="social_links">
 		  <a href="https://babel-lab.github.io/RWD-Portfolio/index.htm" title="web" target="_blank">
 		    <img src="images/assets-v7/social_home.png">
@@ -797,6 +769,28 @@
 
 			<!-- //20181203: 加入FOR POPVIEW結束 -->
 			
+		//20181227: 專區分享區塊開始
+		//複製作品網址按鈕
+	    $('#creative_content_social_links_box').on('click', '#creative_content_social_links2', function() {
+	      creative_content_snackbar_show() ;
+	    });
+	    
+	    //彈出網址已複製訊息
+	    function creative_content_snackbar_show(){
+	      //顯示訊息
+	      var x = document.getElementById("creative_content_snackbar");
+	      x.className = "show";
+	      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+	      //拷貝網址
+	      var copy_url = document.getElementById("creative_content_page_url");
+          copy_url.select();
+          document.execCommand("copy");
+	    }
+	    	
+	    $('#creative_name').on('click', function(){
+	      $('#creative_content_social_links_box').toggleClass("show_block");
+        });
+		//20181227: 專區分享區塊結束
 			
 			</script>
 
