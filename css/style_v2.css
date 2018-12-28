@@ -905,10 +905,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 768px) { .popview_content .jBox-content { width: 100% !important; overflow-y: auto; } }
 .popview_content .jBox-content .album_content_area { margin: auto; }
 .popview_content .jBox-content .album_content_area .album_content_intro_area { height: 100%; }
-.popview_content .jBox-content .album_content_area .album_content_intro_area .album_content_left_area { height: 90vh; }
 .popview_content .jBox-content .album_content_area .album_content_intro_area .album_content_left_area .message_board .message_leave .pinpinboard > span:first-child img, .popview_content .jBox-content .album_content_area .album_content_intro_area .album_content_left_area .message_board .message_list .message_item > div:first-child > span:first-child img { width: 48px; height: 48px; }
-.popview_content .jBox-content .album_content_area .album_content_intro_area .album_content_right_area { height: 76vh; }
-@media (max-width: 1024px) { .popview_content .jBox-content .album_content_area .album_content_intro_area .album_content_right_area { height: 74vh; } }
 @media (max-width: 768px) { .popview_content .jBox-content .album_content_area .album_content_intro_area .album_content_back > span { display: inline-block; margin-right: 8px; } }
 
 /* 作品資訊頁開始 */
