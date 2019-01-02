@@ -1067,7 +1067,7 @@ function mobile_notice() {
 <script>
 
 $(document).on('click', '#alert_btn' , function(e){
-	alert_submit($(this).data('album_id'));
+	//alert_submit($(this).data('album_id'));
 }).on('click', '.alert_btn' , function(e){
 	e.stopPropagation();
 	$('#alert_btn, #next_step').data('album_id', $(this).data('album_id'));
