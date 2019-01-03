@@ -55,7 +55,7 @@
 		  <!--<a href="https://www.pinpinbox.com/index/user/point/" title="立即購買Ｐ點贊助">購買Ｐ點</a>-->
 		  目前P點:41225&nbsp;&nbsp;<a href="https://www.pinpinbox.com/index/user/point/">購買</a>
 		</div>
-		<div class="pin_gift"><a href="index.html#p_bannner" title="賺P點 抽好康 買好物"><div class="btn_new btn_pink">Ｐ好康</div></a></div>
+		<div class="pin_gift"><a href="index.php#p_bannner" title="賺P點 抽好康 買好物"><div class="btn_new btn_pink">Ｐ好康</div></a></div>
 		<!-- 20181116: 改字與加"P好康"結束 -->
 		<!-- 電腦版選單開始 -->
 		<div class="header_menu">
@@ -85,11 +85,13 @@
 		  -->
 		  <li><div>我的專區</div><div>
 		    <ul>
-			  <li><a href="creative_content.html#tab3">關於我</a></li>
-			  <li><a href="creative_content.html#tab0">我的作品</a></li>
-			  <li><a href="creative_content.html#tab1">我的收藏</a></li>
-			  <li><a href="creative_content.html#tab2">共用協作</a></li>
-			  <li><a href="creative_content.html#tab4">留言板</a></li>
+			  <!-- //20181221: #0002269, 關於我 改成 我的專區頻道-->
+			  <li><a href="creative_content.php#tab3">我的專區頻道</a></li>
+			  <!-- -->
+			  <li><a href="creative_content.php#tab0">我的作品</a></li>
+			  <li><a href="creative_content.php#tab1">我的收藏</a></li>
+			  <li><a href="creative_content.php#tab2">共用協作</a></li>
+			  <li><a href="creative_content.php#tab4">留言板</a></li>
 			</ul></div>
 		  </li>
 		  <li><div>管理中心</div><div>
@@ -198,8 +200,8 @@
 					 <div class="hit_story" >
 						 <a href="https://www.pinpinbox.com/babel">
 						   <div class="story_img">
-							 <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg"></span><span>babel</span></div> 
-							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$d3d4.jpg"></div>
+							 <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$3a34.jpg"></span><span>babel</span></div> 
+							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$626c.jpg"></div>
 							</div>
 						   <div class="story_desc">過了十年的米蟲生活, 畫下那懷念喜愛的米蟲日子~</div>
 						   <div class="story_info"><div class="story_view">瀏覽：10000</span></div><div class="pin_count">贊助次數：<span class="pin_count_num">1000</div></div>
@@ -318,21 +320,30 @@
 						 <a href="https://www.pinpinbox.com/ccartist">
 						   <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9233/picture$5e3c.jpg"></div>
 						   <div class="star_name">C.C</div>
+						   <!--
 						   <div class="story_desc">2018年的3月，創造了一隻水彩刺蝟，陪伴我走過人生低潮。讓我開始相信這個世界依然溫柔，我也想用我的圖畫去點亮每個人心中最溫柔的那塊。</div>
+						   -->
+						   <div class="story_desc">2018年的3月</div>
 						 </a>
 					 </div>
 					 <div class="new_star">
 						 <a href="https://www.pinpinbox.com/unseeablebeauty">
-						   <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9238/cover$3d2f.jpg"></div>
+						   <div class="star_img"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181227/5c24b13e8af47.jpg"></div>
 						   <div class="star_name">倪子耘</div>
-						   <div class="story_desc">每周一與FB同步更新一章。作者與書籍相關訊息請參考</div>
+						   <!--<div class="story_desc">每周一與FB同步更新一章。作者與書籍相關訊息請參考</div>
+						   
+						   -->
+						   <div class="story_desc">每周</div>
 						 </a>
 					 </div>
 					 <div class="new_star">
 						 <a href="https://www.pinpinbox.com/ringring0806">
 						   <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9143/picture$cf59.jpg"></div>
 						   <div class="star_name">RingRing 宋知恩</div>
-						   <div class="story_desc">Hi 我是 Ring Ring 這裡會介紹我喜歡的音樂與我的創作喔^_^ 工作邀約、合作請來信Email：2016ringrings@gmail.com</div>
+						   <!--<div class="story_desc">Hi 我是 Ring Ring 這裡會介紹我喜歡的音樂與我的創作喔^_^ 工作邀約、合作請來信Email：2016ringrings@gmail.com</div>
+						   
+						   -->
+						   <div class="story_desc">Hi 我是</div>
 						 </a>
 					 </div>
 				  </div>
@@ -559,8 +570,10 @@ function addhover(){
   <div id="footer">
     <div id="footer_area">
 		  <ul>
-			<li><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
-			<li><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" class="cicle_btn" style="z-index: 100">經營小幫手</a></li>
+		    <!-- //20181221: 加入class="mobile_show"開始 -->
+			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
+			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" class="cicle_btn" style="z-index: 100">經營小幫手</a></li>
+			<!-- //20181221: 加入class="mobile_show"結束 -->
 			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/qanda/">Q&amp;A</a></li>
 			<li class="mobile_show" ><a href="https://www.pinpinbox.com/index/recruit/">企業合作</a></li>
 			
