@@ -920,7 +920,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 /* 創作人專區編輯資訊區塊結束 */
 .popview_content { position: relative; top: 50px !important; margin: auto; }
 @media (max-width: 1024px) { .popview_content { width: 96%; } }
-@media (max-width: 768px) { .popview_content { top: 0 !important; width: 100%; height: 100% !important; } }
+@media (max-width: 768px) { .popview_content { top: 0 !important; width: 100%; height: 100vh !important; } }
 .popview_content .jBox-container { overflow: hidden; }
 @media (max-width: 768px) { .popview_content .jBox-container { border-radius: 0 !important; } }
 .popview_content .jBox-content { overflow-y: hidden; padding: 0 !important; }
