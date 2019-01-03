@@ -924,7 +924,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .popview_content .jBox-container { overflow: hidden; }
 @media (max-width: 768px) { .popview_content .jBox-container { border-radius: 0 !important; } }
 .popview_content .jBox-content { overflow-y: hidden; padding: 0 !important; }
-@media (max-width: 768px) { .popview_content .jBox-content { width: 100% !important; height: 100vh !important; } }
+@media (max-width: 768px) { .popview_content .jBox-content { width: 100% !important; height: 100vh !important; overflow-y: auto; } }
 .popview_content .jBox-content .album_content_area { margin: auto; }
 .popview_content .jBox-content .album_content_area .album_content_intro_area { height: 100%; }
 .popview_content .jBox-content .album_content_area .album_content_intro_area .album_content_left_area .message_board .message_leave .pinpinboard > span:first-child img, .popview_content .jBox-content .album_content_area .album_content_intro_area .album_content_left_area .message_board .message_list .message_item > div:first-child > span:first-child img { width: 48px; height: 48px; }
