@@ -229,7 +229,7 @@
 		      <p>如果您確信有人在未獲授權的情況下，擅自在pinpinbox 上發佈您受版權保護的作品，這時可以提出侵犯版權通知。只有著作權人或其授權代理人可以提交這類要求。</p>
 		      <p>如要向 pinpinbox 通報涉嫌侵權的，最簡單快速的做法就是填寫網路表單。建議使用桌機和筆電填寫這份表單；在行動裝置及平板電腦上操作會較為繁複。</p>
 		      <p>如果您選擇提出侵權通知，要求我們移除相關內容，代表您採取了正式的法律程式。</p>
-		      <p class="red">請勿提出不實聲明。濫用這項程式可能會導致您的帳戶遭到停權，您本人也可能因此需要承擔其他法律責任。</p>
+		      <p class="red">請勿提出不實聲明，當送出此項檢舉即表示您已閱讀、瞭解並同意上述說明。濫用這項程式可能會導致您的帳戶遭到停權，您本人也可能因此需要承擔其他法律責任。</p>
 			
 			</div>
 		  </div>
@@ -267,9 +267,6 @@ $('div[id^=alert_radio_items]').click(function(evt) {
   }
   var chk_val = $('input[name=report]:checked').val();
   //依RADIO選項顯示其描述內容, 目前只有4, 7
-  if(chk_val==4){
-    $('div[id=alert_desc_items04]').show();
-  }
   if(chk_val==7){
     $('div[id=alert_desc_items07]').show();
   }
@@ -908,8 +905,9 @@ function alert_submit(id) {
 		
 	  $('.mobile_tab_menu').toggleClass("mobile_tab_down");
     });
+	
 	// 20190104: 加入選單判斷開始
-	if($( window ).width() < 769){
+	if($( window ).width() <= 768){
 	  $('.mobile_tab_menu').on('click', function(){
 	   $('.mobile_tab_menu').toggleClass("mobile_tab_down");
      });
