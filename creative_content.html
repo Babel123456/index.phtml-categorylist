@@ -908,6 +908,16 @@ function alert_submit(id) {
 		
 	  $('.mobile_tab_menu').toggleClass("mobile_tab_down");
     });
+	// 20190104: 加入選單判斷開始
+	if($( window ).width() < 769){
+	  $('.mobile_tab_menu').on('click', function(){
+	   $('.mobile_tab_menu').toggleClass("mobile_tab_down");
+     });
+	}
+	// 20190104: 加入選單判斷結束
+	
+	
+	
 	//搜尋區塊開始
 	$('.content_search_open').on('click', function(){
 	  $('.content_search_open').addClass('hide').removeClass('show_tablecell');
