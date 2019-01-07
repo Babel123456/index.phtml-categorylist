@@ -288,7 +288,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 #alert_box_new #alert_top_new #alert_top_title { -webkit-flex: 2; -moz-flex: 2; -ms-flex: 2; flex: 2; }
 #alert_box_new #alert_top_new #alert_close_btn { cursor: pointer; width: 24px; -webkit-flex: 0 1 0; -moz-flex: 0 1 0; -ms-flex: 0 1 0; flex: 0 1 0; }
 #alert_box_new #alert_content_new { margin-top: 32px; font-size: 18px; }
-@media (max-width: 768px) { #alert_box_new #alert_content_new { height: 80vh; } }
+@media (max-width: 768px) { #alert_box_new #alert_content_new { height: 88vh; } }
 @media (max-width: 500px) { #alert_box_new #alert_content_new { font-size: 14px; } }
 #alert_box_new #alert_content_new #alert_items { line-height: 25px; height: 480px; overflow: auto; }
 @media (max-width: 768px) { #alert_box_new #alert_content_new #alert_items { height: 80%; } }
