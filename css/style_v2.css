@@ -288,7 +288,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 #alert_box_new #alert_top_new #alert_top_title { -webkit-flex: 2; -moz-flex: 2; -ms-flex: 2; flex: 2; }
 #alert_box_new #alert_top_new #alert_close_btn { cursor: pointer; width: 24px; -webkit-flex: 0 1 0; -moz-flex: 0 1 0; -ms-flex: 0 1 0; flex: 0 1 0; }
 #alert_box_new #alert_content_new { margin-top: 32px; font-size: 18px; }
-@media (max-width: 768px) { #alert_box_new #alert_content_new { height: 80%; } }
+@media (max-width: 768px) { #alert_box_new #alert_content_new { height: 80vh; } }
 @media (max-width: 500px) { #alert_box_new #alert_content_new { font-size: 14px; } }
 #alert_box_new #alert_content_new #alert_items { line-height: 25px; height: 480px; overflow: auto; }
 @media (max-width: 768px) { #alert_box_new #alert_content_new #alert_items { height: 80%; } }
@@ -296,6 +296,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 #alert_box_new #alert_content_new #alert_items div[id^='alert_desc_items'] { display: none; margin-top: 8px; margin-left: 32px; }
 #alert_box_new #alert_content_new #alert_items label { margin-left: 6px; }
 #alert_box_new #alert_content_new #alert_items textarea { letter-spacing: 1.5px; }
+@media (max-width: 500px) { #alert_box_new #alert_content_new #alert_items textarea { font-size: 14px; } }
 #alert_box_new #alert_content_new #alert_items #alert_desc_items07 { color: #9e9e9e; }
 #alert_box_new #alert_content_new #alert_desc_btn { text-align: center; }
 #alert_box_new #alert_content_new #alert_desc_btn .btn_new { margin-top: 32px; width: 240px; }
@@ -1017,7 +1018,6 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .album_content_area .album_content_main .album_content_box_icon .album_content_box_icons { -webkit-flex: 2; -moz-flex: 2; -ms-flex: 2; flex: 2; }
 .album_content_area .album_content_main .album_content_box_icon .album_content_box_pages { margin-right: 8px; }
 .album_content_area .album_content_main .album_content_box_icon .album_content_box_menu_btn { cursor: pointer; }
-.album_content_area .album_content_main .album_content_box_icon .album_content_box_menu_btn .dropdown_menu { left: unset; right: 0; }
 .album_content_area .album_content_main .album_content_box_icon i:first-child { margin-left: 4px; }
 .album_content_area .album_content_main .album_content_box_icon i:not(:first-child), .album_content_area .album_content_main .album_content_box_icon .fa-ellipsis-h { margin-left: 8px; }
 .album_content_area .album_content_main .album_content_box_icon i { font-size: 22px; }
