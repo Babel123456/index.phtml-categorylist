@@ -655,36 +655,36 @@ http://bethany.org.tw/
 					<div class="pin_plan_step">
 					  <div class="pin_plan_step1">
 					    <div class="step_img">
-					      <!-- //20190107: 換圖檔與加DIV開始 -->
+					      <!-- //20190107: 換圖檔(附檔名)與加DIV開始 -->
 					      <div class="step_img_area"><img src="images/assets-v7/planstep-01.png"></div>
-					      <!-- //20190107: 換圖檔與加DIV結束 -->
+					      <!-- //20190107: 換圖檔(附檔名)與加DIV結束 -->
 						</div>
 					    <div class="step_title">創作主導</div>   
 					    <div class="step_desc">完整保留你的創作核心主導權</div>
 					  </div>
 					  <div class="pin_plan_step2">
 					    <div class="step_img">
-					      <!-- //20190107: 換圖檔開始 -->
+					      <!-- //20190107: 換圖檔(附檔名)開始 -->
 					      <div class="step_img_area"><img src="images/assets-v7/planstep-02.png"></div>
-					      <!-- //20190107: 換圖檔結束 -->
+					      <!-- //20190107: 換圖檔(附檔名)結束 -->
 						</div>
 					    <div class="step_title">創作頻道</div>    
 					    <div class="step_desc">免費創建專屬贊助頻道</br>無縫分享至社群平台</div>
 					  </div>
 					  <div class="pin_plan_step3">
 					    <div class="step_img">
-					      <!-- //20190107: 換圖檔開始 -->
+					      <!-- //20190107: 換圖檔(附檔名)開始 -->
 					      <div class="step_img_area"><img src="images/assets-v7/planstep-03.png"></div>
-					      <!-- //20190107: 換圖檔結束 -->
+					      <!-- //20190107: 換圖檔(附檔名)結束 -->
 						</div>
 					    <div class="step_title">創作價值</div>
 					    <div class="step_desc">為作品設定P點</br>創造被動收入</div>
 					  </div>
 					  <div class="pin_plan_step4">
 					    <div class="step_img">
-					      <!-- //20190107: 換圖檔開始 -->
+					      <!-- //20190107: 換圖檔(附檔名)開始 -->
 					      <div class="step_img_area"><img src="images/assets-v7/planstep-04.png"></div>
-					      <!-- //20190107: 換圖檔結束 -->
+					      <!-- //20190107: 換圖檔(附檔名)結束 -->
 						</div>
 					    <div class="step_title">超高分潤</div>    
 					    <div class="step_desc">提升粉絲的關注及觀看次數</br>自動提高分潤</div>
@@ -897,7 +897,6 @@ $(document).ready(function() {
   });
   //MOBILE版搜尋關閉
   $('.header_search_close').click(function(evt) {
-    
 	// 20190104 移除關閉選單區塊開始
 	//closemenu(evt);
     // 20190104 移除關閉選單區塊結束
@@ -935,9 +934,11 @@ $(document).ready(function() {
 	//closemenu(evt);
     // 20190104 移除關閉選單區塊結束
 	  	  
+	  // 20190111 會在手機上影響輸入(輸入塊把視窗往上調), 關閉視窗改變偵測區塊開始
 	  // 20181108 加入表頭搜尋區塊開始
-	  $('.header_search_close').click();
+	  //$('.header_search_close').click();
 	  // 20181108 加入表頭搜尋區塊結束
+	  // 20190111 會在手機上影響輸入(輸入塊把視窗往上調), 關閉視窗改變偵測區塊結束
   });
   
 	//按選單之外關閉選單
