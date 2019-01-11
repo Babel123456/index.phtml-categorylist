@@ -19,8 +19,15 @@
     <div id="mobile_search">
 	  <div class="header_search">
 		  <div class="header_search_box">
-			  <i class="fa fa-search"></i>
-			  <input type="text" class="search_text" name="searchkey" placeholder="">
+		      <!-- 20190109 加入<a>與MARS v2同步開始 -->
+			  <a href="javascript:void(0);" onclick="_search('mobile')"><i class="fa fa-search"></i></a>
+			  <!-- 20190109 加入<a>與MARS v2同步結束 -->
+			  <!-- 20190109 加入id, data-searchtype與MARS v2同步開始 -->
+			  <input type="text" class="search_text" name="searchkey" id="mobile_searchkey" data-searchtype="user" data-device="mobile" autocomplete="off">
+              <!-- 20190109 加入id, data-searchtype與MARS v2同步結束 -->
+			  
+			  <!-- 20190109 移掉選單區塊, 改用BOOTSTRAP選單開始 -->
+			  <!--
 			  <div class="search_btn"><span id="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
 			   <div class="search_menu">
 				      <ul>
@@ -29,6 +36,29 @@
 				      </ul>
 				  </div>
 			  </div>
+			  -->
+			  
+			  <div class="search_btn">
+			    <!-- 20190109 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS開始 -->
+			    <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				  <span class="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
+				</div>
+				<!-- 20190109 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS結束 -->
+				<!-- 20190109 置換BOOTSTRAP CLASS開始 -->
+			    <!--<div class="search_menu">-->
+			    <div class="dropdown-menu dropdown_menu" role="menu">
+				<!-- 20190109 置換BOOTSTRAP CLASS結束 -->
+				  <ul>
+				    <!-- 20190109 在<a>加入class="searchtype", data-...與MARS v2同步開始 -->
+					<li><a href="javascript:void(0)"  class="searchtype" data-searchtype="user" data-device="mobile">創作人</a></li>
+			        <li><a href="javascript:void(0)"  class="searchtype" data-searchtype="album" data-device="mobile">作品</a></li>
+					<!-- 20190109 在<a>加入class="searchtype"與MARS v2同步結束 -->
+			      </ul>
+				</div>
+			  </div>
+			  
+			  <!-- 20190109 移掉選單區塊, 改用BOOTSTRAP選單結束 -->
+			  
 		  </div>
 		</div>
 	  <div class="header_search_close"><i class="fa fa-times"></i></div>
@@ -38,9 +68,16 @@
 		<div class="header_logo"><a href="https://www.pinpinbox.com/">pinpinbox釘釘吧</a></div>
 		<div class="header_search">
 		  <div class="header_search_box">
-			  <i class="fa fa-search"></i>
-			  <input type="text" class="search_text" name="searchkey" placeholder="">
-			  <div class="search_btn"><span id="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
+			  <!-- 20190109 加入<a>與MARS v2同步開始 -->
+			  <a href="javascript:void(0);" onclick="_search('desktop')"><i class="fa fa-search"></i></a>
+			  <!-- 20190109 加入<a>與MARS v2同步結束 -->
+			  <!-- 20190109 加入id, data-searchtype與MARS v2同步開始 -->
+			  <input type="text" class="search_text" name="searchkey" id="desktop_searchkey" data-searchtype="user" data-device="desktop" autocomplete="off">
+              <!-- 20190109 加入id, data-searchtype與MARS v2同步結束 -->
+			  
+			  <!-- 20190109 移掉選單區塊, 改用BOOTSTRAP選單開始 -->
+			  <!--
+			  <div class="search_btn"><span class="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
 			   <div class="search_menu">
 				      <ul>
 					    <li><a href="javascript:void(0)" data-searchtype="user">創作人</a></li>
@@ -48,6 +85,28 @@
 				      </ul>
 				  </div>
 			  </div>
+			  -->
+			  
+			  <div class="search_btn">
+			    <!-- 20190109 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS開始 -->
+			    <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				  <span class="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
+				</div>
+				<!-- 20190109 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS結束 -->
+				<!-- 20190109 置換BOOTSTRAP CLASS開始 -->
+			    <!--<div class="search_menu">-->
+			    <div class="dropdown-menu dropdown_menu" role="menu">
+				<!-- 20190109 置換BOOTSTRAP CLASS結束 -->
+				  <ul>
+				    <!-- 20190109 在<a>加入class="searchtype", data-...與MARS v2同步開始 -->
+					<li><a href="javascript:void(0)"  class="searchtype" data-searchtype="user" data-device="desktop">創作人</a></li>
+			        <li><a href="javascript:void(0)"  class="searchtype" data-searchtype="album" data-device="desktop">作品</a></li>
+					<!-- 20190109 在<a>加入class="searchtype"與MARS v2同步結束 -->
+			      </ul>
+				</div>
+			  </div>
+			  
+			  <!-- 20190109 移掉選單區塊, 改用BOOTSTRAP選單結束 -->
 		  </div>
 		</div>
 		<!-- 20181116: 改字與加"P好康"開始 -->
@@ -142,9 +201,9 @@
 	  </div>
   </div>
   <!-- 表頭區塊結束 -->
-  	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" />
-	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" />
-	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" />
+    <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" />
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" />
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" />
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/waypoint/js/waypoint.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script>
@@ -155,36 +214,105 @@
   <div id="bannner">
     <div id="banner_carousel" >
 	    <div class="banner_carousel1 owl-carousel">
-		    <a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1"><img alt="時尚微電影投票" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20190104/5c2f33b3da3d5.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20190104/5c2f33b3da3d5.jpg" /></a>
-			<a href="https://www.pinpinbox.com/buzhisuoyun"><img alt="小愉兒" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181226/5c2359b28c748.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20181226/5c2359b28c748.jpg" /> </a>
-			<a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1"><img alt="輕鬆起動創作募資計劃" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181225/5c21e2f95b7c9.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20181225/5c21e2f95b7c9.jpg" /></a>
-			<a href="https://www.pinpinbox.com/pinpinbox" target="_blank"><img alt="快閃抽獎" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20190104/5c2f34770c31b.jpg"  src="https://cdn.pinpinbox.com/upload/admin/ad/20190104/5c2f34770c31b.jpg"  /></a>
-		</div> 
+		    <a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1">
+			  <img alt="貞手作" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20190108/5c34803b92a7b.gif" src="https://cdn.pinpinbox.com/upload/admin/ad/20190108/5c34803b92a7b.gif" />
+			  <!-- //20190110 加入顯示文字開始 -->
+			  <span class="carousel_item_title">挺你的時尚</span>
+			  <!-- //20190110 加入顯示文字結束 -->
+			</a>
+			<a href="https://www.pinpinbox.com/buzhisuoyun">
+			  <img alt="小愉兒" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181226/5c2359b28c748.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20181226/5c2359b28c748.jpg" />
+			  <!-- //20190110 加入顯示文字開始 -->
+			  <span class="carousel_item_title">2019愉你同在　http:www.pinpinbox.com.tw春節公益活動</span>
+			  <!-- //20190110 加入顯示文字結束 -->
+			</a>
+			<a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1">
+			  <img alt="輕鬆起動創作募資計劃" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181225/5c21e2f95b7c9.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20181225/5c21e2f95b7c9.jpg" />
+			  <!-- //20190110 加入顯示文字開始 -->
+			  <span class="carousel_item_title">釘上你的創作計劃 長度測試一標籤 長度測試一</span>
+			  <!-- //20190110 加入顯示文字結束 -->
+			</a>
+			<a href="https://www.pinpinbox.com/pinpinbox" target="_blank">
+			  <img alt="快閃抽獎" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20190104/5c2f34770c31b.jpg"  src="https://cdn.pinpinbox.com/upload/admin/ad/20190104/5c2f34770c31b.jpg"  />
+			  <!-- //20190110 加入顯示文字開始 -->
+			  <span class="carousel_item_title">创作人主打 Miss Pink</span>
+			  <!-- //20190110 加入顯示文字結束 -->
+			</a>
+		</div>
+		<!-- //20190110 加入小版顯示按鈕開始 -->
+		<div class="owl-buttons">
+		  <div class="owl-prev"><i class="fa fa-chevron-left"></i></div>
+		  <div class="owl-next"><i class="fa fa-chevron-right"></i></div>
+		</div>
+		<!-- //20190110 加入小版顯示按鈕結束 -->
 	</div>
 	<div id="banner_catbtn">
-	  <div class="banner_catbtn1" onclick="carouselto(0);"><span>挺你的時尚美學 ─ 網路票選</span></div>
-	  <div class="banner_catbtn2" onclick="carouselto(1);"><span>2019愉你同在　春節公益活動</span></div>
-	  <div class="banner_catbtn3" onclick="carouselto(2);"><span>釘上你的創作計劃 長度測試一標籤 長度測試一</span></div>
-	  <div class="banner_catbtn4" onclick="carouselto(3);"><span>好康報你知!!! BANNER標籤 長度測試二</span></div>
-	</div>
+	  <!--<div class="banner_catbtn_carousel owl-carousel">-->
+	    <div class="banner_catbtn1" onclick="carouselto(0);">
+	      <!-- //20190109 加入DIV區塊好排版開始 -->
+	      <div class="banner_catbtn_area"><span>挺你的時尚</span></div>
+		  <!-- //20190109 加入DIV區塊好排版結束 -->
+	    </div>
+	    <div class="banner_catbtn2" onclick="carouselto(1);">
+	      <!-- //20190109 加入DIV區塊好排版開始 -->
+	      <div class="banner_catbtn_area"><span>2019愉你同在　http:www.pinpinbox.com.tw春節公益活動</span></div>
+	      <!-- //20190109 加入DIV區塊好排版結束 -->
+	    </div>
+	    <div class="banner_catbtn3" onclick="carouselto(2);">
+	      <!-- //20190109 加入DIV區塊好排版開始 -->
+	      <div class="banner_catbtn_area"><span>釘上你的創作計劃 長度測試一標籤 長度測試一</span></div>
+	      <!-- //20190109 加入DIV區塊好排版結束 -->
+	    </div>
+	    <div class="banner_catbtn4" onclick="carouselto(3);">
+	      <!-- //20190109 加入DIV區塊好排版開始 -->
+	      <div class="banner_catbtn_area"><span>创作人主打 Miss Pink</span></div>
+		  <!-- //20190109 加入DIV區塊好排版結束 -->
+	    </div>
+	  </div>
+	<!--</div>-->
   </div>
   <!-- BANNER輪播區塊結束 -->
 
-  <!-- 主要內容區開始 -->
-  <div id="content">
+  <!-- //20190110 移至CONTENT區塊外開始 -->
 	  <!-- 累計數字區塊開始 -->
 	  <div class="plan_info_count">
 		<div class="plan_info_count_area">
-		  <div><span>目前累積</span></div>
-		  <div><span class="plan_info_num counter">151449</span><span>贊助次數</span></div>
-		  <div><span class="plan_info_num counter">151223</span><span>發佈作品</span></div>
+		  <!-- //20190110 調整顯示資訊區塊開始 -->
+		  <div class="pin_num"><div class="pin_num_area"><span class="plan_info_num counter">89851</span><span>贊助次數</span></div></div>
+		  <div class="work_num"><div class="work_num_area"><span class="plan_info_num counter">48952</span><span>發佈作品</span></div></div>
+		  <div class="creator_num"><div class="creator_num_area"><span class="plan_info_num counter">48952</span><span>創作人</span></div></div>
+		  <!-- //20190110 調整顯示資訊區塊結束 -->
 		</div>
 	  </div>
+	  <!-- //20190110 移至CONTENT區塊外結束 -->
+
+  <!-- 主要內容區開始 -->
+  <div id="content">
+      <!-- //20190110 移至CONTENT區塊外開始 -->
+	  <!-- 累計數字區塊開始 -->
+	  <!--
+	  <div class="plan_info_count">
+		<div class="plan_info_count_area">
+		  <div class="pin_num"><span class="plan_info_num counter">89851</span><span>贊助次數</span></div>
+		  <div class="work_num"><span class="plan_info_num counter">48952</span><span>發佈作品</span></div>
+		  <div class="creator_num"><span class="plan_info_num counter">48952</span><span>創作人</span></div>
+		</div>
+	  </div>
+	  -->
+	  <!-- //20190110 移至CONTENT區塊外結束 -->
 	  <!-- 累計數字區塊結束 -->
 	  <div class="main_content">
 		  <!-- 熱門推薦區塊開始 -->
 		  <div class="tab-container">
+		  
+		      <!-- //20190111 調整專籤區塊開始 -->
+			  <!--
 			  <ul class="nav nav-pills" ><li class="active"><a data-toggle="tab" href="#tab0">熱門</a></li><li><a data-toggle="tab" href="#tab1">推薦</a></li></ul>
+			  -->
+			  <ul class="nav nav-pills nav_tab" ><li class="active">專區精選</li>
+			                             <li class="nav_sub_tab"><ul><li class="active"><a data-toggle="tab" href="#tab0">熱門</a></li><li><a data-toggle="tab" href="#tab1">推薦</a></li></ul></li></ul>
+			  
+			  <!-- //20190111 調整專籤區塊結束 -->
 			  <div class="tab_content">
 				  <!-- 熱門區塊開始 -->
 				  <!-- //20181011移除 align_center 開始 -->
@@ -214,7 +342,7 @@
 						 <a href="https://www.pinpinbox.com/babel">
 						   <div class="story_img">
 							 <div class="creator_info"><span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$3a34.jpg"></span><span>babel</span></div> 
-							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$626c.jpg"></div>
+							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$4880.jpg"></div>
 							</div>
 						   <div class="story_desc">過了十年的米蟲生活, 畫下那懷念喜愛的米蟲日子~</div>
 						   <div class="story_info"><div class="story_view">瀏覽：10000</span></div><div class="pin_count">贊助次數：<span class="pin_count_num">1000</div></div>
@@ -567,6 +695,9 @@ http://bethany.org.tw/
 			  <!-- 低門檻募資就醬EZ!4個STEP結束 -->
 			  <div class="tab_content">
 				  <div class="tab active">
+				     <!-- //20190111: 將標題移到上面去開始 -->
+				       <div class="plan_info_title">【pinpinbox】創作人募資平台</div>
+					   <!-- //20190111: 將標題移到上面去結束-->
 					 <div class="pin_plan">
 					   <div class="plan_video">
 						   <div class="plan_video_wrap">
@@ -576,7 +707,10 @@ http://bethany.org.tw/
 							</div>
 					   </div>
 					   <div class="plan_info">
-						   <div><span class="plan_info_title">【pinpinbox】創作人募資平台</span>
+						   <div>
+						        <!-- //20190111: 將標題移到上面去開始 -->
+								<!--<span class="plan_info_title">【pinpinbox】創作人募資平台</span>-->
+								<!-- //20190111: 將標題移到上面去結束-->
 								<span class="plan_info_desc">pinpinbox釘釘吧 是個「創作人及斜扛青年」發佈作品取得募資的平台。創作人將作品發表在pinpinbox釘釘吧，透過募資機制輕鬆創造被動收入。 pinpinbox釘釘吧 提供各種作品上傳形式「圖片、影片、音樂 (或錄音)、文字 、PDF檔」及社群分享無縫接軌、募資金流後台管理之完整功能。</span>
 						   </div>
 						 </div>
@@ -607,8 +741,13 @@ $(document).ready(function() {
   $( window ).resize(function(evt) {
 	  addhover();
   });
+  
   //輪播
-   $(".banner_carousel1").owlCarousel({
+  // 20190110 將輸播指定到一個變數開始
+  //$(".banner_carousel1").owlCarousel({
+   var owl1 = $(".banner_carousel1");
+   owl1.owlCarousel({
+   // 20190110 將輸播指定到一個變數結束
         singleItem:true,
         lazyLoad: true,
         autoPlay: false,
@@ -619,6 +758,16 @@ $(document).ready(function() {
 		afterMove: carouselto1
     });
 	carouselto(0);
+	
+	// 20190110 小版輪播前往按鈕開始
+	$('.owl-prev').click(function() {
+      owl1.trigger('owl.prev',[300]);
+    })
+    $('.owl-next').click(function() {
+      owl1.trigger('owl.next',[300]);
+    })
+	// 20190110 小版輪播前往按鈕結束
+	
 	//按選單之外關閉選單
 	$('body').click(function(evt) {
 	    //closemenu(evt);
@@ -631,6 +780,7 @@ function carouselto1(){
   var current = (owl == null || owl == 'undefined')? 0 : owl.currentItem;
   carouselto(current);
 }
+
 //手動跳頁
 function carouselto(x){
 	var owl = $(".banner_carousel1").data('owlCarousel');
@@ -640,12 +790,17 @@ function carouselto(x){
 }
 //hover動作判斷
 function addhover(){
-  if($( window ).width()> 801){
+  // 20190110 改視窗值為768, 符合BOOTSTRAP的版開始
+  //if($( window ).width()> 801){
+  if($( window ).width()> 768){
+  // 20190110 改視窗值為768, 符合BOOTSTRAP的版結束  
     $(".hit_story").addClass('hit_story_hover');
   }else{
     $(".hit_story").removeClass('hit_story_hover');
   }
 } 
+
+
 </script>
 
 
@@ -755,10 +910,21 @@ $(document).ready(function() {
   
   //MOBILE版選單切換
   $('#notifier_m').click(function() {
-    $('#notifier_menu').toggleClass("login_menu_down");	
+	
+	// 20190109 修改寫法開始(註: 因打開了登入選單)
+    $('#notifier_menu').toggleClass("login_menu_down");
+	$('#login_menu').removeClass("login_menu_down");	
+	// 20190109 修改寫法結束
+	
   });
   $('#login_m').click(function() {
+    
+	// 20190109 修改寫法開始(註: 因打開了通知選單)
     $('#login_menu').toggleClass("login_menu_down");
+	$('#notifier_menu').removeClass("login_menu_down");	
+	// 20190109 修改寫法結束
+	
+	
   });
   
   
@@ -801,6 +967,19 @@ function closemenu(evt){
 }
 */
 // 20190104 移除關閉選單區塊結束
+
+// 20190109 加上MARS FUNCTION, 讓搜尋選單切換字開始
+  // MARS v2
+    $('a.searchtype').on('click', function(){
+        var device = $(this).data('device');
+        $('span.search_type').html($(this).html());
+        $('input#'+device+'_searchkey').data('searchtype' , $(this).data('searchtype'));
+    });
+    //暫代FUNCTION
+	function _search(device = null) {
+    
+	}
+// 20190109 加上MARS FUNCTION, 讓搜尋選單切換字結束
 
 </script>
   
