@@ -910,18 +910,18 @@ $(document).ready(function() {
   //MOBILE版選單切換
   $('#notifier_m').click(function() {
 	
-	// 20190109 修改寫法開始(註: 因打開了登入選單)
+	// 20190114 修改寫法開始(註: 因打開了登入選單)
     $('#notifier_menu').toggleClass("login_menu_down");
 	$('#login_menu').removeClass("login_menu_down");	
-	// 20190109 修改寫法結束
+	// 20190114 修改寫法結束
 	
   });
   $('#login_m').click(function() {
     
-	// 20190109 修改寫法開始(註: 因打開了通知選單)
+	// 20190114 修改寫法開始(註: 因打開了通知選單)
     $('#login_menu').toggleClass("login_menu_down");
 	$('#notifier_menu').removeClass("login_menu_down");	
-	// 20190109 修改寫法結束
+	// 20190114 修改寫法結束
 	
 	
   });
@@ -935,9 +935,9 @@ $(document).ready(function() {
     // 20190104 移除關閉選單區塊結束
 	  	  
 	  // 20190111 會在手機上影響輸入(輸入塊把視窗往上調), 關閉視窗改變偵測區塊開始
-	  // 20181108 加入表頭搜尋區塊開始
+	  // 20191114 加入表頭搜尋區塊開始
 	  //$('.header_search_close').click();
-	  // 20181108 加入表頭搜尋區塊結束
+	  // 20191114 加入表頭搜尋區塊結束
 	  // 20190111 會在手機上影響輸入(輸入塊把視窗往上調), 關閉視窗改變偵測區塊結束
   });
   
@@ -969,7 +969,7 @@ function closemenu(evt){
 */
 // 20190104 移除關閉選單區塊結束
 
-// 20190109 加上MARS FUNCTION, 讓搜尋選單切換字開始
+// 20190114 加上MARS FUNCTION, 讓搜尋選單切換字開始
   // MARS v2
     $('a.searchtype').on('click', function(){
         var device = $(this).data('device');
@@ -980,7 +980,7 @@ function closemenu(evt){
 	function _search(device = null) {
     
 	}
-// 20190109 加上MARS FUNCTION, 讓搜尋選單切換字結束
+// 20190114 加上MARS FUNCTION, 讓搜尋選單切換字結束
 
 </script>
   

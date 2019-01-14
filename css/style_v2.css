@@ -315,55 +315,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 #bannner #banner_carousel, #bannner #banner_catbtn { display: block; }
 @media (max-width: 768px) { #bannner #banner_carousel, #bannner #banner_catbtn { display: block; width: 100%; font-size: 18px; } }
 #bannner .owl-carousel .owl-wrapper-outer { box-shadow: none; }
-#bannner #banner_carousel { position: relative; height: 500px; width: 100%; 	/*
-	.owl-theme{
-	  .owl-controls{ //輪播箭頭控制項區塊
-	    position: absolute;
-		margin-top: -44px;
-		width: $width;
-		height: 44px;
-		line-height: 32px;
-		z-index: -2;
-		@include breakpoint(max-width $screen_width7){
-	      margin-top: -32px;
-		  height: 32px;
-	      line-height: 18px;
-	    }
-		.owl-buttons{
-		  line-height: 44px;
-		  @include breakpoint(max-width $screen_width7){
-		    line-height: 32px;
-		  }
-		  div{
-		    font-size: 18px;
-			color: $grey_color;
-			background: none;
-			opacity: 1;
-			//line-height: 32px;
-			position: absolute;
-			top:0;
-			bottom: 0; 			display: inline-block; 		margin: 0;
-			padding: 0;
-			@include breakpoint(max-width $screen_width7){
-			  font-size: 16px;
-			}
-		  }
-		  .owl-prev{
-			left: 0; 
-		  }
-		  .owl-next{ 
-		    right: 0; 
-		  }
-		  .owl-prev, .owl-next{
-		    width: 24px;
-			background: $sub_color;
-		    @include breakpoint(max-width $screen_width7){ width: 18px;
-			}
-		  }
-		}
-	  }//.owl-controls
-	}//.owl-theme
-	*/ }
+#bannner #banner_carousel { position: relative; height: 500px; width: 100%; }
 @media (max-width: 1024px) { #bannner #banner_carousel { height: 540px; } }
 @media (max-width: 768px) { #bannner #banner_carousel { height: 460px; } }
 @media (max-width: 600px) { #bannner #banner_carousel { height: 420px; } }
@@ -394,16 +346,6 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 1024px) { #bannner #banner_catbtn > div { color: #4d4d4d; background: none; box-shadow: none; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; } }
 #bannner #banner_catbtn > div .banner_catbtn_area { position: relative; height: 56px; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; justify-content: center; margin: auto; }
 #bannner #banner_catbtn > div .banner_catbtn_area > span { -webkit-flex: -1 0 0; -moz-flex: -1 0 0; -ms-flex: -1 0 0; flex: -1 0 0; overflow: hidden; line-height: 24px; max-height: 48px; word-break: break-word; text-align: center; }
-@media (max-width: 1024px) { #bannner #banner_catbtn > div {     /*
-	display: inline-block;
-	color: $grey_color2;
-	padding-left:0;
-	text-shadow:none;
-	line-height: $line_height6;
-	text-align: center;
-	vertical-align: top;
-	padding-top: 4px;
-	*/ } }
 
 .carousel_btn_on { color: #ffffff !important; background: #4d4d4d !important; }
 @media (max-width: 1024px) { .carousel_btn_on { color: #4d4d4d !important; background: none !important; } }
@@ -537,15 +479,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 #content .cat_areaw .cat_area .cat_01 { position: absolute; display: block; top: 0; left: 0; right: 0; bottom: 0; margin: auto; overflow: hidden; }
 #content .cat_areaw .cat_area .cat_img { width: 100%; height: 100%; }
 #content .cat_areaw .cat_area .cat_img img { object-fit: cover; width: 100%; height: 100%; text-align: center; }
-#content .pin_plan_step { text-align: center; font-size: 18px; margin: 76px auto 0 auto; 	/* div{ @include breakpoint(max-width $screen_width3){ } 	  @include breakpoint(max-width $screen_width768){ 	      margin: 1% 5% 1% 8%; } 	  @include breakpoint(max-width $screen_width7){ display:block;
-	    width: 68%; 	    margin: 1% auto 2% auto; }
-	  @include breakpoint(max-width $screen_width8){
-		width: 78%;
-	  }
-	  @include breakpoint(max-width $screen_width6){ margin: 1% 2%; }
-	  @include breakpoint(max-width $screen_width7){ margin: 1% auto; } 	   }
-	*/ 	/* .pin_plan_step1{ &>div{ 	    display:block; text-align: center; //margin: 3% auto; 	  } } .pin_plan_step2{ &>div{ 	    display:block; text-align: center; margin: 3% auto; 	  } } .pin_plan_step3{ &>div{ 	    display:block; text-align: center; margin: 3% auto; 	  } } .pin_plan_step4{ &>div{ 	    display:block; text-align: center; margin: 3% auto; 	  } }
-	*/ }
+#content .pin_plan_step { text-align: center; font-size: 18px; margin: 76px auto 0 auto; }
 @media (max-width: 1400px) { #content .pin_plan_step { width: 80%; } }
 @media (max-width: 960px) { #content .pin_plan_step { margin: 64px auto 0 auto; width: 100%; } }
 @media (max-width: 500px) { #content .pin_plan_step { margin: 32px auto 0 auto; } }
@@ -560,7 +494,6 @@ label.error { color: #ee5b8d; font-size: 14px; }
 #content .pin_plan_step .step_img { margin: auto; width: 240px; height: 240px; }
 #content .pin_plan_step .step_img img { width: 100%; height: auto; }
 #content .plan_info_title { display: block; font-size: 42px; letter-spacing: 1.2px; color: #0f8399; margin-top: 196px; margin-bottom: 96px; }
-@media (max-width: 1400px) { #content .plan_info_title { margin-top: 124px; } }
 @media (max-width: 768px) { #content .plan_info_title { margin-top: 96px; margin-bottom: 64px; text-align: center; font-size: 34px; } }
 @media (max-width: 500px) { #content .plan_info_title { font-size: 26px; margin-top: 32px; margin-bottom: 16px; } }
 @media (max-width: 400px) { #content .plan_info_title { font-size: 22px; } }
@@ -575,7 +508,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 #content .pin_plan .plan_info { display: inline-block; width: 45%; vertical-align: top; text-align: justify; font-size: 24px; color: #0f8399; line-height: 48px; }
 @media (max-width: 1400px) { #content .pin_plan .plan_info { font-size: 22px; line-height: 44px; } }
 @media (max-width: 768px) { #content .pin_plan .plan_info { display: block; width: 100%; margin-bottom: 32px; font-size: 18px; line-height: 36px; margin-top: 16px; } }
-#content .pin_plan .plan_info > div { display: inline-block; padding: 0 0 0 9.6%; width: auto; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+#content .pin_plan .plan_info > div { margin-top: -10px; display: inline-block; padding: 0 0 0 9.6%; width: auto; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
 @media (max-width: 768px) { #content .pin_plan .plan_info > div { padding: 0 2.5%; margin: auto; } }
 @media (max-width: 500px) { #content .pin_plan .plan_info > div { padding: 2% 5%; } }
 #content .plan_video_wrap { position: relative; width: 100%; padding-top: 56.25%; }
