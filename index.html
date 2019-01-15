@@ -1009,6 +1009,13 @@ function closemenu(evt){
 	}
 // 20190114 加上MARS FUNCTION, 讓搜尋選單切換字結束
 
+
+// 20190115 HEADER在首頁時, 移除底線區塊開始
+  if($('#banner_catbtn').length>0){  //有輪播時不要底線
+    $('#header').css('border','none');
+  }
+
+// 20190115 HEADER在首頁時, 移除底線區塊結束
 // 20190115 在HEADER加上SCROLL時, 出現底線區塊開始
   window.onscroll = function() {header_sticky()};
   var header = document.getElementById("header");
