@@ -240,7 +240,7 @@ textarea:-ms-input-placeholder { color: #9e9e9e; }
 @media (max-width: 960px) { #footer .footer_copyright { display: none !important; } }
 
 /* 回上方箭頭與FB區塊 */
-#right_btn { position: fixed; right: 4%; z-index: 100; top: 80vh; width: 52px; }
+#right_btn { position: fixed; right: 4%; z-index: 100; top: 70vh; width: 52px; }
 
 #scroll_top { display: none; width: 100%; height: auto; margin-bottom: 15px; }
 #scroll_top img { width: 100%; height: auto; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity*100); filter: alpha(opacity=70); opacity: 0.7; }
@@ -1047,10 +1047,8 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .album_content_area .social_links_box .social_links_box_area { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: flex-start; -moz-box-align: flex-start; -ms-flex-align: flex-start; -webkit-align-items: flex-start; align-items: flex-start; -webkit-flex-direction: ""; -moz-flex-direction: ""; -ms-flex-direction: ""; flex-direction: ""; height: 32px; line-height: 32px; vertical-align: middle; }
 .album_content_area .social_links_box .social_links, .album_content_area .social_links_box social_links2 { -webkit-flex: -1 0 0; -moz-flex: -1 0 0; -ms-flex: -1 0 0; flex: -1 0 0; }
 .album_content_area .social_links_box .social_links > a { position: relative; display: inline-block; vertical-align: top; margin-right: 6px; margin-left: -4px; width: 32px; height: 32px; line-height: 32px; text-align: center; overflow: hidden; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
-.album_content_area .social_links_box .social_links > a:hover { transform: translateY(-4px); }
 .album_content_area .social_links_box .social_links2 { margin-left: 4px; width: 32px; height: 32px; background: #f2f2f2; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; cursor: pointer; }
 .album_content_area .social_links_box .social_links2 i { display: block; margin-top: 7px; text-indent: 5px; -moz-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); -o-transform: scale(-1, 1); -ms-transform: scale(-1, 1); transform: scale(-1, 1); font-size: 22px; width: 32px; height: 32px; }
-.album_content_area .social_links_box .social_links2:hover { transform: translateY(-4px); }
 
 /* 作品資訊頁結束 */
 #snackbar, #creative_content_snackbar { letter-spacing: 1.5px; line-height: 25px; visibility: hidden; /* Hidden by default. Visible on click */ min-width: 250px; /* Set a default minimum width */ margin-left: -125px; /* Divide value of min-width by 2 */ background-color: #4d4d4d; /* Black background color */ color: #fff; /* White text color */ text-align: center; /* Centered text */ -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; /* Rounded borders */ padding: 16px; /* Padding */ position: fixed; /* Sit on top of the screen */ z-index: 1; /* Add a z-index if needed */ left: 50%; /* Center the snackbar */ bottom: 100px; /* 30px from the bottom */ }
