@@ -495,7 +495,7 @@ function alert_submit(id) {
 					   <!--<a href="https://www.pinpinbox.com/index/album/content_v2/?album_id=15896&amp;categoryarea_id=3&amp;click=cover" title="蛋蛋俠要成功" target="_blank">-->                       
 					   <div class="intro_see_more_img">
 					   
-					     <!-- //20190117: 更改class name開始-->
+					     <!-- //20190117: 更改class name, "_position -> _area"開始-->
                          <div class="intro_see_more_img_area">
 						 <!-- //20190117: 更改class name結束-->
 						 
@@ -838,8 +838,11 @@ function alert_submit(id) {
         }
     }).mouseup(function (evt) {
 		if(!right_click(evt)){
-		  if (!isDragging)
-		    window.location.href = $(this).data('href');
+		  if (!isDragging){
+		    //20190117: 更多連結區塊開始
+			window.location.href = $(this).data('href');
+			//20190117: 更多連結區塊結束
+		  }
 		}
     });
 	
@@ -1402,7 +1405,10 @@ function recommendedBuyAlbum() {
 	
 	// 20190117 #2319:作品釘一下二態變化(nameh與class:likes->pin_likes)區塊開始
 	function likes(id) {
-		console.log('pin_likes');
+	    //先用這一行代替動作切換
+	    $('i[name="pin_likes"]').toggleClass('pin_likes');
+		
+		//MARS的FUNCTION
         //$.post('https://www.pinpinbox.com/index/album/likes/', {
            // album_id: id,
         //}, function (r) {
@@ -1410,11 +1416,11 @@ function recommendedBuyAlbum() {
           //  switch (r.result) {
            //     case 1:
            //         if (r.data) {
-                        $('i[name="pin_likes"]').addClass('pin_likes').next('span').html(parseInt($('i[name="pin_likes"]').next('span').html()) + 1);
-                        $('i[name="pin_likes"]').animate({fontSize: "1.2em"}, {
-                            queue: false,
-                            duration: 80,
-                        }).animate({fontSize: "1.5em"}, 50);
+            //            $('i[name="pin_likes"]').addClass('pin_likes').next('span').html(parseInt($('i[name="pin_likes"]').next('span').html()) + 1);
+             //           $('i[name="pin_likes"]').animate({fontSize: "1.2em"}, {
+             //               queue: false,
+             //              duration: 80,
+             //          }).animate({fontSize: "1.5em"}, 50);
 
             //        } else {
 
