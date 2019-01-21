@@ -9,6 +9,11 @@
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap.min.css" rel="stylesheet" />
 	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link type="text/css" href="./css/style_v2.css" rel="stylesheet" />
+
+    <!-- 20190121 加入原有的DEEPLINK FUNCTION開始 -->
+	<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/browser-deeplink-master/browser-deeplink.min.js"></script>
+	<!-- 20190121 加入原有的DEEPLINK FUNCTION結束 -->
+
 </head>
 <body>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-1.11.3.min.js"></script>
@@ -19,14 +24,14 @@
     <div id="mobile_search">
 	  <div class="header_search">
 		  <div class="header_search_box">
-		      <!-- 20190109 加入<a>與MARS v2同步開始 -->
+		      <!-- 20190114 加入<a>與MARS v2同步開始 -->
 			  <a href="javascript:void(0);" onclick="_search('mobile')"><i class="fa fa-search"></i></a>
-			  <!-- 20190109 加入<a>與MARS v2同步結束 -->
-			  <!-- 20190109 加入id, data-searchtype與MARS v2同步開始 -->
+			  <!-- 20190114 加入<a>與MARS v2同步結束 -->
+			  <!-- 20190114 加入id, data-searchtype與MARS v2同步開始 -->
 			  <input type="text" class="search_text" name="searchkey" id="mobile_searchkey" data-searchtype="user" data-device="mobile" autocomplete="off">
-              <!-- 20190109 加入id, data-searchtype與MARS v2同步結束 -->
+              <!-- 20190114 加入id, data-searchtype與MARS v2同步結束 -->
 			  
-			  <!-- 20190109 移掉選單區塊, 改用BOOTSTRAP選單開始 -->
+			  <!-- 20190114 移掉選單區塊, 改用BOOTSTRAP選單開始 -->
 			  <!--
 			  <div class="search_btn"><span id="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
 			   <div class="search_menu">
@@ -39,25 +44,25 @@
 			  -->
 			  
 			  <div class="search_btn">
-			    <!-- 20190109 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS開始 -->
+			    <!-- 20190114 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS開始 -->
 			    <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 				  <span class="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
 				</div>
-				<!-- 20190109 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS結束 -->
-				<!-- 20190109 置換BOOTSTRAP CLASS開始 -->
+				<!-- 20190114 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS結束 -->
+				<!-- 20190114 置換BOOTSTRAP CLASS開始 -->
 			    <!--<div class="search_menu">-->
 			    <div class="dropdown-menu dropdown_menu" role="menu">
-				<!-- 20190109 置換BOOTSTRAP CLASS結束 -->
+				<!-- 20190114 置換BOOTSTRAP CLASS結束 -->
 				  <ul>
-				    <!-- 20190109 在<a>加入class="searchtype", data-...與MARS v2同步開始 -->
+				    <!-- 20190114 在<a>加入class="searchtype", data-...與MARS v2同步開始 -->
 					<li><a href="javascript:void(0)"  class="searchtype" data-searchtype="user" data-device="mobile">創作人</a></li>
 			        <li><a href="javascript:void(0)"  class="searchtype" data-searchtype="album" data-device="mobile">作品</a></li>
-					<!-- 20190109 在<a>加入class="searchtype"與MARS v2同步結束 -->
+					<!-- 20190114 在<a>加入class="searchtype"與MARS v2同步結束 -->
 			      </ul>
 				</div>
 			  </div>
 			  
-			  <!-- 20190109 移掉選單區塊, 改用BOOTSTRAP選單結束 -->
+			  <!-- 20190114 移掉選單區塊, 改用BOOTSTRAP選單結束 -->
 			  
 		  </div>
 		</div>
@@ -68,14 +73,14 @@
 		<div class="header_logo"><a href="https://www.pinpinbox.com/">pinpinbox釘釘吧</a></div>
 		<div class="header_search">
 		  <div class="header_search_box">
-			  <!-- 20190109 加入<a>與MARS v2同步開始 -->
+			  <!-- 20190114 加入<a>與MARS v2同步開始 -->
 			  <a href="javascript:void(0);" onclick="_search('desktop')"><i class="fa fa-search"></i></a>
-			  <!-- 20190109 加入<a>與MARS v2同步結束 -->
-			  <!-- 20190109 加入id, data-searchtype與MARS v2同步開始 -->
+			  <!-- 20190114 加入<a>與MARS v2同步結束 -->
+			  <!-- 20190114 加入id, data-searchtype與MARS v2同步開始 -->
 			  <input type="text" class="search_text" name="searchkey" id="desktop_searchkey" data-searchtype="user" data-device="desktop" autocomplete="off">
-              <!-- 20190109 加入id, data-searchtype與MARS v2同步結束 -->
+              <!-- 20190114 加入id, data-searchtype與MARS v2同步結束 -->
 			  
-			  <!-- 20190109 移掉選單區塊, 改用BOOTSTRAP選單開始 -->
+			  <!-- 20190114 移掉選單區塊, 改用BOOTSTRAP選單開始 -->
 			  <!--
 			  <div class="search_btn"><span class="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
 			   <div class="search_menu">
@@ -88,38 +93,38 @@
 			  -->
 			  
 			  <div class="search_btn">
-			    <!-- 20190109 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS開始 -->
+			    <!-- 20190114 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS開始 -->
 			    <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 				  <span class="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
 				</div>
-				<!-- 20190109 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS結束 -->
-				<!-- 20190109 置換BOOTSTRAP CLASS開始 -->
+				<!-- 20190114 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS結束 -->
+				<!-- 20190114 置換BOOTSTRAP CLASS開始 -->
 			    <!--<div class="search_menu">-->
 			    <div class="dropdown-menu dropdown_menu" role="menu">
-				<!-- 20190109 置換BOOTSTRAP CLASS結束 -->
+				<!-- 20190114 置換BOOTSTRAP CLASS結束 -->
 				  <ul>
-				    <!-- 20190109 在<a>加入class="searchtype", data-...與MARS v2同步開始 -->
+				    <!-- 20190114 在<a>加入class="searchtype", data-...與MARS v2同步開始 -->
 					<li><a href="javascript:void(0)"  class="searchtype" data-searchtype="user" data-device="desktop">創作人</a></li>
 			        <li><a href="javascript:void(0)"  class="searchtype" data-searchtype="album" data-device="desktop">作品</a></li>
-					<!-- 20190109 在<a>加入class="searchtype"與MARS v2同步結束 -->
+					<!-- 20190114 在<a>加入class="searchtype"與MARS v2同步結束 -->
 			      </ul>
 				</div>
 			  </div>
 			  
-			  <!-- 20190109 移掉選單區塊, 改用BOOTSTRAP選單結束 -->
+			  <!-- 20190114 移掉選單區塊, 改用BOOTSTRAP選單結束 -->
 		  </div>
 		</div>
 		<!-- 20181116: 改字與加"P好康"開始 -->
-		<!-- //20190108: 將目P點與購買移至頭圖右邊開始 -->
+		<!-- //20190114: 將目P點與購買移至頭圖右邊開始 -->
 		<!--<div class="pin_creator">-->
 		  <!--<a href="https://www.pinpinbox.com/index/user/point/" title="立即購買Ｐ點贊助">購買Ｐ點</a>-->
 		  <!--目前P點:41225&nbsp;&nbsp;<a href="https://www.pinpinbox.com/index/user/point/">購買</a>
 		</div>-->
-		<!-- //20190108: 將目P點與購買移至頭圖右邊結束 -->
+		<!-- //20190114: 將目P點與購買移至頭圖右邊結束 -->
 		<div class="pin_gift">
-		  <!-- //20190108: 改樣式名稱開始 -->
+		  <!-- //20190114: 改樣式名稱開始 -->
 		  <div class="pin_gift_style"><a href="index.php#p_bannner" title="賺P點 抽好康 買好物">Ｐ好康</a></div>
-		  <!-- //20190108: 改樣式名稱結束 -->
+		  <!-- //20190114: 改樣式名稱結束 -->
 		  </div>
 		<!-- 20181116: 改字與加"P好康"結束 -->
 		<!-- 電腦版選單開始 -->
@@ -130,13 +135,13 @@
             <img onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'" src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg">
           </a>
 		</div>
-		<!-- //20190108: 將目P點與購買移至頭圖右邊與加入DIV區塊開始 -->
+		<!-- //20190114: 將目P點與購買移至頭圖右邊與加入DIV區塊開始 -->
 		<div class="pin_creator">
 		  <!--<a href="https://www.pinpinbox.com/index/user/point/" title="立即購買Ｐ點贊助">購買Ｐ點</a>-->
-		  <div class="current_point">目前P點：41225</div>
+		  <!--<div class="current_point">目前P點：41225</div>-->
 		  <div class="buy_point"><a href="https://www.pinpinbox.com/index/user/point/">購買P點</a></div>
 		</div>
-		<!-- //20190108: 將目P點與購買移至頭圖右邊與加入DIV區塊結束 -->
+		<!-- //20190114: 將目P點與購買移至頭圖右邊與加入DIV區塊結束 -->
 		<!-- 電腦版選單開始 -->
 		<!-- 手機版選單開始 -->
 		<div class="mobile_menu">
@@ -200,8 +205,7 @@
 		<a href="#"><div class="btn_new">更多</div></a>
 	  </div>
   </div>
-  <!-- 表頭區塊結束 -->
-    <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" />
+  <!-- 表頭區塊結束 -->  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" />
   <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" />
   <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" />
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/js/owl.carousel.min.js"></script>
@@ -219,17 +223,15 @@
 	       <div class="banner_catbtn_area"><span>2019愉你同在</span></div>
 	     </div>
 	     <div class="banner_catbtn2" onclick="carouselto(1);">
-	       <div class="banner_catbtn_area"><span>挺你的時尚挺你的時尚挺你的時十六</span></div>
+	       <div class="banner_catbtn_area"><span>創作主打星 貞手作kathy's handmade</span></div>
 	     </div>
 	     <div class="banner_catbtn3" onclick="carouselto(2);">
-	       <div class="banner_catbtn_area"><span>挺你的時尚挺你的時尚挺你的時十六</span></div>
+	       <div class="banner_catbtn_area"><span>挺你的時尚美學 ─ 網路票選</span></div>
 	     </div>
 	     <div class="banner_catbtn4" onclick="carouselto(3);">
-	       <div class="banner_catbtn_area"><span>挺你的時尚挺你的時尚挺你的時十六</span></div>
+	       <div class="banner_catbtn_area"><span>快閃抽獎　好康報你知!!!</span></div>
 	     </div>
-		 <div class="banner_catbtn5" onclick="carouselto(4);">
-	       <div class="banner_catbtn_area"><span>挺你的時尚挺你的時尚挺你的時十六</span></div>
-	     </div>
+		 
 	  </div>
 	  <!-- //20190115 移到最圖片上方結束	  -->
 	    <div class="banner_carousel1 owl-carousel">
@@ -829,13 +831,35 @@ function addhover(){
 			<li class="mobile_show" ><a href="https://www.pinpinbox.com/index/recruit/">企業合作</a></li>
 			
 			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/privacy/">條款與政策</a></li>
+			
+			<!-- //20190116: 加入class="mobile_show"與置換成BOOTSTRAP選單開始 -->
+			<!--
 			<li class="dropup">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下載APP<span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
 					<li><a id="apple_btn" data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
 					<li><a data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
-				</ul>							
-			</li>				
+				</ul>	
+			</li>
+            -->
+
+           <li class="app_load mobile_show">
+		     <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+			   <span>下載APP <i class="fa fa-caret-down"></i>
+			 </div>
+		   
+		     <div class="dropdown-menu dropdown_menu" role="menu">
+			   <ul>
+				 <li><a id="apple_btn" data-url="pinpinbox://index/" target="_blank" onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
+				 <li><a data-url="pinpinbox://index/" target="_blank" onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
+			   </ul>
+			 </div>
+			</li>
+			
+			<!-- //20190116: li加入class="mobile_show"與置換成BOOTSTRAP選單結束 -->
+			
+			<!-- //20190116: 加入class="mobile_show"與置換成BOOTSTRAP選單開始 -->
+			<!--
 			<li class="dropup footer_lang">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">語言<span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
@@ -845,13 +869,44 @@ function addhover(){
 					<li ><a href="https://www.pinpinbox.com/index/?lang=zh_TW">繁體中文</a></li>
 				</ul>							
 			</li>
+			-->
+			
+			<li class="footer_lang">
+			  <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+			    <span>語言 <i class="fa fa-caret-down"></i>
+			  </div>
+			  <div class="dropdown-menu dropdown_menu" role="menu">
+			    <ul>
+				  <li><a href="javascript:void(0)" >English</a></li>
+				  <li><a href="javascript:void(0)" >日本語</a></li>
+				  <li><a href="javascript:void(0)" >簡體中文</a></li>
+				  <li><a href="https://www.pinpinbox.com/index/?lang=zh_TW">繁體中文</a></li>
+			    </ul>
+			  </div>					
+			</li>
+			
+			<!-- //20190116: li加入class="mobile_show"與置換成BOOTSTRAP選單結束 -->
+			
 			<li class="mobile_show mobile_footer_lang">
+			  <!-- //20190118: 下拉選單改用BOOTSTRAP開始 -->
+			  <!--
 			  <select>
 				<option>簡體中文</option>
 				<option selected>繁體中文</option>
 				<option>English</option>
 			  </select>
+			  -->
+			  <span class="custom-select">
+				<select id="lang_type">
+				  <option value="0">簡體中文</option>
+				  <option value="1" selected>繁體中文</option>
+				  <option value="2">English</option>
+			    </select>
+			  </span>
+			  
+			  <!-- //20190118: 下拉選單改用BOOTSTRAP結束 -->
 			</li>
+			
 			<li class="footer_copyright">© 2018 pinpinbox All Rights Reserved.</li>
 		  </ul>
 	</div>
@@ -1029,6 +1084,129 @@ function closemenu(evt){
   }
 
 // 20190115 在HEADER加上SCROLL時, 出現底線區塊結束
+
+
+
+
+//20190118: 重製作下拉選單開始
+	$(document).ready(function() {
+      custom_select();
+    });
+
+
+function custom_select(){
+  var x, i, j, selElmnt, a, b, c;
+  /*look for any elements with the class "custom-select":*/
+  x = document.getElementsByClassName("custom-select");  //包住SELECT元件的SPAN區塊
+  for (i = 0; i < x.length; i++) {
+    selElmnt = x[i].getElementsByTagName("select")[0];
+	
+	 /*for each element, create a new DIV that will act as the selected item:*/
+     a = document.createElement("DIV");
+     a.setAttribute("class", "select-selected"); //顯示被選的項目文字, 蓋在SELECT元件上
+     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+	
+	//查看是否已有仿製下拉選單
+	if(!$('#'+selElmnt.id).siblings('.select-selected').length){
+      x[i].appendChild(a);
+	}
+	if(!$('#'+selElmnt.id).siblings('.select-items').length){
+		
+	  /*for each element, create a new DIV that will contain the option list:*/
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide"); //仿下拉選單
+      for (j = 0; j < selElmnt.length; j++) {
+        /*for each option in the original select element,
+        create a new DIV that will act as an option item:*/
+        c = document.createElement("DIV"); //仿每一筆下拉選單值OPTION
+        c.innerHTML = selElmnt.options[j].innerHTML; //仿選單的顯示值等於被選的SELECT顯示值
+		//特殊處理部份: 專區編輯頁面開始
+		//只給興趣的仿下拉選單項目ID值同SELECT下拉選單值
+		if(selElmnt.id == 'hobby_0' || selElmnt.id == 'hobby_1' || selElmnt.id =='hobby_2'){
+		  if(j>0){
+		    c.setAttribute("id", selElmnt.id+"_"+selElmnt.options[j].value); //第一筆請選擇不理會它
+		  }
+		}
+		//特殊處理部份: 專區編輯頁面結束
+		var tempClassName = selElmnt.options[j].value; //給仿下拉選單CLASS NAME同SELECT下拉選單值
+        c.addEventListener("click", function(e) {
+        //console.log(tempClassName);        
+		/*when an item is clicked, update the original select box,
+          and the selected item:*/
+          var y, i, k, s, h;
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0]; //select物件
+          h = this.parentNode.previousSibling; //顯示被選項目值		 
+          for (i = 0; i < s.length; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
+              s.selectedIndex = i;  //透過被選項目值更改SELECT被選值
+			  $('#'+s.id).change(); //若原SELECT物件有設ONCHANGE時, 執行FUNCTION
+              h.innerHTML = this.innerHTML;
+			  y = this.parentNode.getElementsByClassName("same-as-selected"); //仿製下拉選單先前被選的項目
+              for (k = 0; k < y.length; k++) {
+                y[k].removeAttribute("class"); //之前被選的OPTION
+              }
+              this.setAttribute("class", "same-as-selected");  //新被選的OPTION
+              break;
+            }
+          }
+          h.click();
+        });
+        b.appendChild(c);
+      }
+      x[i].appendChild(b);
+	}
+    //if(!$('#'+selElmnt.id).siblings('.select-selected').length){
+      a.addEventListener("click", function(e) {
+        /*when the select box is clicked, close any other select boxes,
+        and open/close the current select box:*/
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        this.classList.toggle("select-arrow-active");
+      });
+	//}
+  }// for
+  
+  //特殊處理部份: 專區編輯頁面開始
+  if($('#user_address_id_1st').length>0){
+    addr2_list();	//當頁面載入時先關閉城市選單
+  }
+  //特殊處理部份: 專區編輯頁面結束
+}//custom_select()
+
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+
+
+  //20190118: 重製作下拉選單結束
+
+  //20190121: 加入原有的DEEPLINK FUNCTION開始
+  function clickHandler(uri) {
+    deeplink.open(uri);
+
+    return false;
+}
+//20190121: 加入原有的DEEPLINK FUNCTION開始
 
 
 </script>
