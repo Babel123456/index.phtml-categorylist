@@ -691,7 +691,11 @@ http://bethany.org.tw/
 	  <div class="main_content2">
 		 <!-- 輕鬆啟動創作募資計劃開始 -->
 		 <div class="tab-container">
-			 <ul class="nav nav-pills" ><li class="active"><!--<a data-toggle="tab" href="">-->創作價值　由你決定<!--</a>--></li></ul>
+			 <ul class="nav nav-pills" >
+			   <!-- //20190122: 移除創作價值後空格區塊開始 -->
+			   <li class="active"><!--<a data-toggle="tab" href="">-->創作價值由你決定<!--</a>--></li>
+			   <!-- //20190122: 移除創作價值後空格區塊結束 -->
+			 </ul>
 			 <!-- 低門檻募資就醬EZ!4個STEP開始 -->
 			 <div class="tab_content">
 				  <div class="tab active">
@@ -860,7 +864,7 @@ function addhover(){
 			
 			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/privacy/">條款與政策</a></li>
 			
-			<!-- //20190116: 加入class="mobile_show"與置換成BOOTSTRAP選單開始 -->
+			<!-- //20190121: 加入class="mobile_show"與置換成BOOTSTRAP選單開始 -->
 			<!--
 			<li class="dropup">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下載APP<span class="caret"></span></a>
@@ -884,9 +888,9 @@ function addhover(){
 			 </div>
 			</li>
 			
-			<!-- //20190116: li加入class="mobile_show"與置換成BOOTSTRAP選單結束 -->
+			<!-- //20190121: li加入class="mobile_show"與置換成BOOTSTRAP選單結束 -->
 			
-			<!-- //20190116: 加入class="mobile_show"與置換成BOOTSTRAP選單開始 -->
+			<!-- //20190121: 加入class="mobile_show"與置換成BOOTSTRAP選單開始 -->
 			<!--
 			<li class="dropup footer_lang">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">語言<span class="caret"></span></a>
@@ -913,10 +917,10 @@ function addhover(){
 			  </div>					
 			</li>
 			
-			<!-- //20190116: li加入class="mobile_show"與置換成BOOTSTRAP選單結束 -->
+			<!-- //20190121: li加入class="mobile_show"與置換成BOOTSTRAP選單結束 -->
 			
 			<li class="mobile_show mobile_footer_lang">
-			  <!-- //20190118: 下拉選單改用BOOTSTRAP開始 -->
+			  <!-- //20190121: 下拉選單改用BOOTSTRAP開始 -->
 			  <!--
 			  <select>
 				<option>簡體中文</option>
@@ -925,14 +929,17 @@ function addhover(){
 			  </select>
 			  -->
 			  <span class="custom-select">
-				<select id="lang_type">
-				  <option value="0">簡體中文</option>
-				  <option value="1" selected>繁體中文</option>
-				  <option value="2">English</option>
+				<select id="lang_type" onchange="to_href();">
+				
+				  <!-- //20190122: 更改OPTION值為連結開始 --> 
+				  <option value="https://www.pinpinbox.com/index/?lang=ch">簡體中文</option>
+				  <option value="https://www.pinpinbox.com/index/?lang=zh_TW" selected>繁體中文</option>
+				  <option value="https://www.pinpinbox.com/index/?lang=en">English</option>
+				  <!-- //20190122: 更改OPTION值為連結結束 --> 
+				  
 			    </select>
 			  </span>
-			  
-			  <!-- //20190118: 下拉選單改用BOOTSTRAP結束 -->
+			  <!-- //20190121: 下拉選單改用BOOTSTRAP結束 -->
 			</li>
 			
 			<li class="footer_copyright">© 2018 pinpinbox All Rights Reserved.</li>
@@ -1116,7 +1123,7 @@ function closemenu(evt){
 
 
 
-//20190118: 重製作下拉選單開始
+//20190121: 重製作下拉選單開始
 	$(document).ready(function() {
       custom_select();
     });
@@ -1226,7 +1233,7 @@ then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 
 
-  //20190118: 重製作下拉選單結束
+  //20190121: 重製作下拉選單結束
 
   //20190121: 加入原有的DEEPLINK FUNCTION開始
   function clickHandler(uri) {
@@ -1236,7 +1243,13 @@ document.addEventListener("click", closeAllSelect);
 }
 //20190121: 加入原有的DEEPLINK FUNCTION開始
 
-
+//20190122: 依使用者所選語系跳轉頁面開始
+function to_href(){
+  var lang_type = document.getElementById("lang_type");
+  var lang_type_url = lang_type.options[lang_type.selectedIndex].value;
+  location.href = lang_type_url;
+}
+//20190122: 依使用者所選語系跳轉頁面結束
 </script>
   
   </body>
