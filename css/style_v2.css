@@ -44,7 +44,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 @import "index";
 */
 /* _all.scss */
-@font-face { font-family: Gen Jyuu GothicL Regular; src: url(../font/GenJyuuGothicL-Regular.ttf); }
+@font-face { font-family: Gen Jyuu GothicL Regular; src: local("Gen Jyuu GothicL Regular"), local("GenJyuuGothicL-Regular"), url(../font/GenJyuuGothicL-Regular.ttf); }
 *:focus { outline: none; }
 
 html { scroll-behavior: smooth; }
