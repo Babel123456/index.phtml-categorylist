@@ -44,6 +44,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 @import "index";
 */
 /* _all.scss */
+@font-face { font-family: Gen Jyuu GothicL Regular; src: url(../font/GenJyuuGothicL-Regular.ttf); }
 *:focus { outline: none; }
 
 html { scroll-behavior: smooth; }
@@ -54,7 +55,7 @@ a:hover { color: #00acc1; }
 
 a:focus { color: #4d4d4d; }
 
-body { font-family: Noto Sans TC, Noto Sans; font-size: 16px; color: #4d4d4d; background: #ffffff; letter-spacing: 1.5px; }
+body { font-family: Noto Sans TC, Noto Sans; font-family: Gen Jyuu GothicL Regular; font-size: 16px; color: #4d4d4d; background: #ffffff; letter-spacing: 1.5px; }
 @media (max-width: 768px) { body { font-size: 14px; } }
 
 /* 表單設定 */
@@ -526,7 +527,9 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 768px) { #content .pin_plan .plan_video { display: block; width: 100%; } }
 @media (max-width: 500px) { #content .pin_plan .plan_video { margin: 0 auto; } }
 #content .pin_plan .plan_info { display: inline-block; width: 45%; vertical-align: top; text-align: justify; font-size: 24px; color: #0f8399; line-height: 48px; }
-@media (max-width: 1400px) { #content .pin_plan .plan_info { font-size: 22px; line-height: 44px; } }
+@media (max-width: 1400px) { #content .pin_plan .plan_info { font-size: 20px; line-height: 40px; } }
+@media (max-width: 1024px) { #content .pin_plan .plan_info { font-size: 20px; line-height: 40px; } }
+@media (max-width: 960px) { #content .pin_plan .plan_info { font-size: 18px; line-height: 36px; } }
 @media (max-width: 768px) { #content .pin_plan .plan_info { display: block; width: 100%; margin-bottom: 32px; font-size: 18px; line-height: 36px; margin-top: 16px; } }
 #content .pin_plan .plan_info > div { margin-top: -4px; display: inline-block; padding: 0 0 0 9.6%; width: auto; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
 @media (max-width: 768px) { #content .pin_plan .plan_info > div { padding: 0 2.5%; margin: auto; } }
