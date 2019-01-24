@@ -693,7 +693,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .creative_content .waterfall_content .content_box .content_box_info .fa { font-size: 16px; margin-left: 6px; color: #4d4d4d; }
 .creative_content .waterfall_content .content_box .content_box_icon { text-align: left; margin: 8px 0; color: #4d4d4d; }
 .creative_content .waterfall_content .content_box .content_box_menu_btn { position: absolute; display: inline-block; cursor: pointer; top: 0px; right: 0; }
-.creative_content .waterfall_content .content_box .content_box_name { font-size: 16px; font-weight: normal; overflow: hidden; -o-text-overflow: ellipsis; /* required for Opera */ -ms-text-overflow: ellipsis; /* required for IE8, allegedly */ text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-height: 32px; background: lavender; max-height: 96px; text-align: justify; color: #4d4d4d; }
+.creative_content .waterfall_content .content_box .content_box_name { font-size: 16px; font-weight: normal; overflow: hidden; -o-text-overflow: ellipsis; /* required for Opera */ -ms-text-overflow: ellipsis; /* required for IE8, allegedly */ text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-height: 32px; background: lavenderblush; max-height: 96px; text-align: justify; color: #4d4d4d; }
 .creative_content .waterfall_content .content_box .content_box_name:hover { color: #00acc1; }
 .creative_content .waterfall_content .content_box .btn_new { margin-top: 32px; }
 .creative_content .waterfall_content .content_box:first-child { margin-left: 0; }
