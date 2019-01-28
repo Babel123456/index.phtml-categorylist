@@ -473,7 +473,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 960px) { #content .new_star_area .new_star .star_img { width: 220px; height: 220px; } }
 @media (max-width: 500px) { #content .new_star_area .new_star .star_img { width: 280px; height: 280px; } }
 #content .new_star_area .new_star .star_img img { object-fit: cover; width: 100%; height: 100%; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity*100); filter: alpha(opacity=90); opacity: 0.9; }
-#content .new_star_area .new_star .star_name { width: 100%; overflow: hidden; white-space: nowrap; /* 讓firefox在一行時有... */ -o-text-overflow: ellipsis; /* required for Opera */ -ms-text-overflow: ellipsis; /* required for IE8, allegedly */ text-overflow: ellipsis; word-wrap: break-word; text-align: center; font-size: 28px; line-height: 46.8px; height: 46.8px; }
+#content .new_star_area .new_star .star_name { width: 100%; overflow: hidden; white-space: nowrap; /* 讓firefox在一行時有... */ -o-text-overflow: ellipsis; /* required for Opera */ -ms-text-overflow: ellipsis; /* required for IE8, allegedly */ text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; word-wrap: break-word; text-align: center; font-size: 28px; line-height: 46.8px; height: 46.8px; }
 #content .new_star_area .new_star .star_desc { width: 98%; font-size: 16px; word-break: break-word; overflow: hidden; -o-text-overflow: ellipsis; /* required for Opera */ -ms-text-overflow: ellipsis; /* required for IE8, allegedly */ text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-height: 32px; height: 96px; text-align: left; text-align: justify; margin: auto; }
 @media (max-width: 500px) { #content .new_star_area .new_star .star_desc { margin-bottom: 48px; } }
 #content .cat_areaw { position: relative; display: inline-block; overflow: hidden; width: 204px; text-align: center; margin: 0 2.3% 3.2% 2.3%; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; font-size: 18px; font-weight: 700; letter-spacing: 2px; vertical-align: middle; background: #ffffff; box-shadow: 0px 8px 24px 0px #e3e3e3; color: #9e9e9e; /* 維持正方形比例 */ }
@@ -527,7 +527,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 768px) { #content .pin_plan .plan_video { display: block; width: 100%; } }
 @media (max-width: 500px) { #content .pin_plan .plan_video { margin: 0 auto; } }
 #content .pin_plan .plan_info { display: inline-block; width: 45%; vertical-align: top; text-align: justify; font-size: 24px; color: #0f8399; line-height: 48px; }
-@media (max-width: 1400px) { #content .pin_plan .plan_info { font-size: 20px; line-height: 40px; } }
+@media (max-width: 1400px) { #content .pin_plan .plan_info { font-size: 20px; line-height: 40px; line-height: 39.6px; line-height: 44px; } }
 @media (max-width: 1024px) { #content .pin_plan .plan_info { font-size: 20px; line-height: 40px; } }
 @media (max-width: 960px) { #content .pin_plan .plan_info { font-size: 18px; line-height: 36px; } }
 @media (max-width: 768px) { #content .pin_plan .plan_info { display: block; width: 100%; margin-bottom: 32px; font-size: 18px; line-height: 36px; margin-top: 16px; } }
@@ -775,9 +775,9 @@ label.error { color: #ee5b8d; font-size: 14px; }
 #creative_info, #creative_banner { position: relative; padding-top: 172px; }
 @media (max-width: 768px) { #creative_info, #creative_banner { padding-top: 104px; } }
 
-.creative_edit { position: relative; width: 960px; text-align: center; margin: 0 auto 64px auto; margin-top: -64px; }
+.creative_edit { position: relative; width: 960px; text-align: center; margin: 0 auto; margin-top: -64px; margin-bottom: 192px; }
 @media (max-width: 1024px) { .creative_edit { width: 96%; } }
-@media (max-width: 768px) { .creative_edit { margin-top: -44px; width: 94%; } }
+@media (max-width: 768px) { .creative_edit { margin-top: -44px; margin-bottom: 64px; width: 94%; } }
 .creative_edit .tab-inner { position: relative; vertical-align: top; }
 
 /* 創作人專區編輯資訊表頭開始 */
@@ -848,8 +848,10 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .btn_edit_complete .btn_new { width: 240px; }
 @media (max-width: 768px) { .btn_edit_complete .btn_new { width: 100%; } }
 
-.btn_back_creative { width: 100%; height: 96px; line-height: 96px; font-size: 24px; border-radius: 0; }
-@media (max-width: 768px) { .btn_back_creative { text-align: 18px; } }
+.btn_back_creative_area { position: fixed; bottom: 0; z-index: 90; width: 100%; }
+
+.btn_back_creative { font-size: 24px; border-radius: 0; height: 96px; line-height: 96px; }
+@media (max-width: 768px) { .btn_back_creative { height: 48px; line-height: 48px; font-size: 18px; } }
 
 /* 變更電話區塊, 密碼區塊共同設定 */
 #creative_phone, #creative_password { clear: both; display: block; width: 100%; border-top: 1px solid #d4d4d4; padding-top: 32px; text-align: left; font-size: 18px; }
@@ -884,12 +886,12 @@ label.error { color: #ee5b8d; font-size: 14px; }
 #creative_password > div:nth-child(4n+2) > span:last-child, #creative_password > div:nth-child(4n+3) > span:last-child { margin-right: 256px; }
 @media (max-width: 768px) { #creative_password > div:nth-child(4n+2) > span:last-child, #creative_password > div:nth-child(4n+3) > span:last-child { margin-right: 0; } }
 #creative_password > div:nth-child(3) > span:nth-child(-n+2) { display: inline-block; }
-#creative_password > div:nth-child(4) > span:last-child { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-flex-direction: ""; -moz-flex-direction: ""; -ms-flex-direction: ""; flex-direction: ""; }
+#creative_password > div:nth-child(4) > span:last-child { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-flex-direction: ""; -moz-flex-direction: ""; -ms-flex-direction: ""; flex-direction: ""; margin-bottom: 0; }
 @media (max-width: 768px) { #creative_password > div:nth-child(4) > span:last-child { -webkit-flex-flow: column; -moz-flex-flow: column; -ms-flex-flow: column; flex-flow: column; } }
-#creative_password > div:nth-child(4) > span:last-child > span:first-child { -webkit-flex: 2; -moz-flex: 2; -ms-flex: 2; flex: 2; }
+#creative_password > div:nth-child(4) > span:last-child > span:first-child { -webkit-flex: 2; -moz-flex: 2; -ms-flex: 2; flex: 2; margin-bottom: 0; }
 @media (max-width: 768px) { #creative_password > div:nth-child(4) > span:last-child > span:first-child { width: 100%; } }
-#creative_password > div:nth-child(4) > span:last-child > span:last-child { width: 240px; margin-left: 16px; }
-@media (max-width: 768px) { #creative_password > div:nth-child(4) > span:last-child > span:last-child { display: block; margin-left: 0; margin-top: 16px; width: 100%; } }
+#creative_password > div:nth-child(4) > span:last-child > span:last-child { width: 240px; margin-left: 16px; margin-bottom: 0; }
+@media (max-width: 768px) { #creative_password > div:nth-child(4) > span:last-child > span:last-child { display: block; margin-left: 0; margin-top: 16px; margin-bottom: 0; width: 100%; } }
 
 /* 變更手機號碼區塊 */
 .intl-tel-input .flag-dropdown { left: 0 !important; }
@@ -1075,7 +1077,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .album_content_area .intro_see_more_area .intro_see_more_box .intro_see_more_img { position: relative; width: 100%; padding-top: 100%; /* 1:1 Aspect Ratio */ -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; overflow: hidden; margin-bottom: 8px; background: url("../images/assets-v7/grey-bg.png") 100% 100%; }
 .album_content_area .intro_see_more_area .intro_see_more_box .intro_see_more_img .intro_see_more_img_area { display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; }
 .album_content_area .intro_see_more_area .intro_see_more_box .intro_see_more_img .intro_see_more_img_area img { width: 100%; height: 100%; object-fit: cover; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity*100); filter: alpha(opacity=90); opacity: 0.9; }
-.album_content_area .intro_see_more_area .intro_see_more_box .intro_see_more_name { position: relative; font-size: 14px; line-height: 20px; height: 40px; font-weight: normal; overflow: hidden; -o-text-overflow: ellipsis; /* required for Opera */ -ms-text-overflow: ellipsis; /* required for IE8, allegedly */ text-overflow: ellipsis; word-wrap: break-word; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.album_content_area .intro_see_more_area .intro_see_more_box .intro_see_more_name { position: relative; font-size: 14px; line-height: 20px; height: 40px; font-weight: normal; text-align: justify; overflow: hidden; -o-text-overflow: ellipsis; /* required for Opera */ -ms-text-overflow: ellipsis; /* required for IE8, allegedly */ text-overflow: ellipsis; word-wrap: break-word; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .album_content_area .intro_see_more_area .intro_see_more_box:nth-child(odd) { margin-right: 16px; }
 .album_content_area .social_links_box { width: 28%; position: absolute; bottom: 0; right: 33px; padding-top: 32px; padding-bottom: 24px; }
 @media (max-width: 768px) { .album_content_area .social_links_box { position: relative; bottom: 0; right: 0; margin: auto; width: 100%; padding-top: 0; margin-top: 24px; margin-bottom: 64px; border-top: none; } }

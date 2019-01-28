@@ -500,8 +500,9 @@
 	  <!-- 關於我區塊結束 -->
 	<!-- 創作人內容編輯資訊區塊結束 -->
     </div>
-    <a href="creative_content.php"><div class="btn_new btn_back_creative">返回創作人專區</div></a>
-  
+	<div id="btn_back_creative_area" class="btn_back_creative_area">
+      <a href="creative_content.php"><div class="btn_new btn_back_creative">返回創作人專區</div></a>
+	</div>
   </div>
   <!-- 主要內容區結束 -->
 <script>
@@ -998,6 +999,13 @@ document.addEventListener("click", closeAllSelect);
   }   
   //20181225: 下拉清單特殊處理FUNCTION區塊結束
 	
+  //20190128: 此頁移除FOOTER, 讓"返回創作人專區"常駐在下方開始
+  
+    $(document).ready(function() {
+      $('body #footer').addClass('hide');
+    });
+      
+  //20190128: 此頁移除FOOTER, 讓"返回創作人專區"常駐在下方結束
 </script>
 
 
@@ -1079,13 +1087,17 @@ document.addEventListener("click", closeAllSelect);
 			  </select>
 			  -->
 			  <span class="custom-select">
-				<select id="lang_type">
-				  <option value="0">簡體中文</option>
-				  <option value="1" selected>繁體中文</option>
-				  <option value="2">English</option>
+
+			    <!-- //20190122: 加上ONCHANGE與更改OPTION值為連結開始 -->
+				<select id="lang_type" onchange="to_href();">
+				   
+				  <option value="https://www.pinpinbox.com/index/?lang=ch">簡體中文</option>
+				  <option value="https://www.pinpinbox.com/index/?lang=zh_TW" selected>繁體中文</option>
+				  <option value="https://www.pinpinbox.com/index/?lang=en">English</option>
+				  
 			    </select>
+				<!-- //20190122: 加上ONCHANGE與更改OPTION值為連結結束 -->
 			  </span>
-			  
 			  <!-- //20190121: 下拉選單改用BOOTSTRAP結束 -->
 			</li>
 			
@@ -1390,7 +1402,13 @@ document.addEventListener("click", closeAllSelect);
 }
 //20190121: 加入原有的DEEPLINK FUNCTION開始
 
-
+//20190122: 依使用者所選語系跳轉頁面開始
+function to_href(){
+  var lang_type = document.getElementById("lang_type");
+  var lang_type_url = lang_type.options[lang_type.selectedIndex].value;
+  location.href = lang_type_url;
+}
+//20190122: 依使用者所選語系跳轉頁面結束
 </script>
   
   </body>
