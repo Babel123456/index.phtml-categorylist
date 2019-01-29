@@ -448,8 +448,28 @@
 		   
 		 </div><!-- creative_info_edit -->
 		 <div id="epaper_option">
-		   <div><div>留言板</div><div><span><input type="radio" name="discuss" value="open" checked="true"> 開啟</span><span><input type="radio" name="discuss" value="close"> 關閉</span></div></div>
-		   <div><div>訂閱電子報</div><div><span><input type="radio" name="newsletter" value="open" checked="true"> 開啟</span><span><input type="radio" name="newsletter" value="close"> 關閉</span></div></div>
+		   <div><div>留言板</div><div><span>
+		   <!-- //20190129: radio加id, 加label標籤開始 -->
+		   <input type="radio" id="discuss_01" name="discuss" value="open" checked="true">
+		   <label for="discuss_01">開啟</label>
+		   <!-- //20190129: radio加id, 加label標籤結束 -->
+		   </span><span>
+		   <!-- //20190129: radio加id, 加label標籤開始 -->
+		   <input type="radio" id="discuss_02"  name="discuss" value="close">
+		   <label for="discuss_02">關閉</label>
+		   <!-- //20190129: radio加id, 加label標籤結束 -->
+		   </span></div></div>
+		   <div><div>訂閱電子報</div><div><span>
+		   <!-- //20190129: radio加id, 加label標籤開始 -->
+		   <input type="radio" id="newsletter_01" name="newsletter" value="open" checked="true">
+		   <label for="newsletter_01">開啟</label>
+		   <!-- //20190129: radio加id, 加label標籤結束 -->
+		   </span><span>
+		   <!-- //20190129: radio加id, 加label標籤開始 -->
+		   <input type="radio" id="newsletter_02" name="newsletter" value="close">
+		   <label for="newsletter_02">關閉</label>
+		   <!-- //20190129: radio加id, 加label標籤結束 -->
+		   </span></div></div>
 		 </div>
 		 <div class="btn_edit_complete"><div class="btn_new btn_main" >編輯完成</div></div>
 		 <!-- 變更手機號碼區塊開始 -->
@@ -999,13 +1019,13 @@ document.addEventListener("click", closeAllSelect);
   }   
   //20181225: 下拉清單特殊處理FUNCTION區塊結束
 	
-  //20190128: 此頁移除FOOTER, 讓"返回創作人專區"常駐在下方開始
+  //20190129: 此頁移除FOOTER, 讓"返回創作人專區"常駐在下方開始
   
     $(document).ready(function() {
       $('body #footer').addClass('hide');
     });
       
-  //20190128: 此頁移除FOOTER, 讓"返回創作人專區"常駐在下方結束
+  //20190129: 此頁移除FOOTER, 讓"返回創作人專區"常駐在下方結束
 </script>
 
 
