@@ -59,7 +59,7 @@ body { font-family: Noto Sans TC, Noto Sans; font-size: 16px; color: #4d4d4d; ba
 @media (max-width: 768px) { body { font-size: 14px; } }
 
 /* 表單設定 */
-input[type="radio"] { width: 18px; height: 18px; margin-top: -2px; vertical-align: sub; }
+input[type="radio"] { width: 18px; height: 18px; margin-top: -2px; vertical-align: middle; }
 
 input[type="text"], input[type="password"] { width: 100%; border: none; height: 40px; line-height: 40px; padding: 0 16px; font-size: 16px; letter-spacing: 1.5px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; border-radius: 6px !important; background: #f2f2f2; }
 @media (max-width: 768px) { input[type="text"], input[type="password"] { padding: 0 6px; height: 32px; line-height: 32px; } }
