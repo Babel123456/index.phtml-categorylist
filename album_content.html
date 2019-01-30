@@ -219,8 +219,10 @@
   <link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.css" rel="stylesheet" />
   <!-- 進入觀看結束 -->
   
+  <!-- //20190130: 移除滑動開始 -->
   <!-- 左半區塊滑動 -->
-  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.nicescroll.min.js"></script>
+  <!--<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.nicescroll.min.js"></script>-->
+  <!-- //20190130: 移除滑動結束 -->
   
   <!-- 加入FOR MESSAGE TAG開始 -->
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-textcomplete/jquery.textcomplete.js"></script>
@@ -461,7 +463,10 @@ function alert_submit(id) {
                 <div class="album_content_donate">
 			      <div class="donate_btn">
 			        <!-- 若作品有設定贊助時顯示贊助按鈕 若沒有則顯示收藏按鈕 -->
-		            <span class="btn_new btn_main">贊助</span>
+					<!-- //20190130: 贊助後變"已贊助", 收藏後變"已收藏"區塊開始 -->
+		            <!--<span class="btn_new btn_main">贊助</span>-->
+					<span class="btn_new btn_attention">已贊助</span>
+					<!-- //20190130: 贊助後變"已贊助", 收藏後變"已收藏"區塊結束 -->
 		            <!--<span class="btn_new btn_pink">收藏</span>-->
 			      </div>
 			      <div class="donate_desc">
@@ -693,38 +698,45 @@ function alert_submit(id) {
 		      </div><!-- #album_content_main -->
 			  
 			  <!-- 社群區塊開始  -->
-		      <div id="album_content_social_links_box" class="social_links_box">
-			    <!-- //20181227: 加入分享開始 -->
-				<div class="social_links_title">分享</div>
-				<!-- //20181227: 加入分享結束 -->
-				<!-- //20181227: 改社群架構開始 -->
+			  <!-- //20190130: 加個DIV區塊排位置開始 -->
+			  <div class="social_links_box_area">
+			    <div class="social_links_box_area1">
+			    <!-- //20190130: 加個DIV區塊排位置結束 -->
+		        <div id="album_content_social_links_box" class="social_links_box">
+			      <!-- //20181227: 加入分享開始 -->
+				  <div class="social_links_title">分享</div>
+				  <!-- //20181227: 加入分享結束 -->
+				  <!-- //20181227: 改社群架構開始 -->
 				
-				<div class="social_links_box_area">
+				  <!-- //20190130: 改class name開始 -->
+				  <div class="social_links_box_icons">
+				  <!-- //20190130: 改class name結束 -->
 				
-		          <div id="album_content_social_links" class="social_links">
+		            <div id="album_content_social_links" class="social_links">
 				
-                  <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                  <div class="addthis_inline_share_toolbox"></div>
-            
-		          <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c234e41206c2da6"></script>
-
-				  <!-- //20181227: 加入QRCODE區塊開始 -->
-			      <a href="href="https://cdn.pinpinbox.com/storage/zh_TW/user/3876/album/15124/qrcode$d2f5.jpg" title="顯示QRcode" target="_blank">
-		            
-					<!-- //20190117: 將PNG檔換成SVG區塊開始 -->
-					<img src="images/assets-v7/qr_square.svg" >
-					<!-- //20190117: 將PNG檔換成SVG區塊結束 -->
+                      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+					  
+                      <!-- //20190130: div與a區塊間無空格開始 -->
+					  <div class="addthis_inline_share_toolbox"></div><!-- Go to www.addthis.com/dashboard to customize your tools --><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c234e41206c2da6"></script><!-- //20181227: 加入QRCODE區塊開始 --><a href="href="https://cdn.pinpinbox.com/storage/zh_TW/user/3876/album/15124/qrcode$d2f5.jpg" title="顯示QRcode" target="_blank">
+		              <!-- //20190130: div與a區塊間無空格結束 -->
+					  
+					    <!-- //20190117: 將PNG檔換成SVG區塊開始 -->
+					    <img src="images/assets-v7/qr_square.svg" >
+					    <!-- //20190117: 將PNG檔換成SVG區塊結束 -->
 					
-		          </a>
-		          <!-- //20181227: 加入QRCODE區塊結束 -->
+		              </a>
+		              <!-- //20181227: 加入QRCODE區塊結束 -->
 				  
-		        </div>
-	            <div id="album_content_social_links2" class="social_links2" title="複製作品網址" ><i class="fa fa-link"></i></div>
-		        </div>
+		            </div>
+	                <div id="album_content_social_links2" class="social_links2" title="複製作品網址" ><i class="fa fa-link"></i></div>
+		          </div>
 				
 			    <!-- //20181227: 改社群架構結束 -->
-			  </div><!-- .social_links_box -->
+			    </div><!-- .social_links_box -->
+			  <!-- //20190130: 加個DIV區塊排位置開始 -->
+			    </div>
+			  </div>
+			  <!-- //20190130: 加個DIV區塊排位置結束 -->
 		      <!-- 社群區塊結束  -->
 			  
 			  <div id="snackbar">
@@ -748,6 +760,7 @@ function alert_submit(id) {
 <script type="text/javascript" name="popview">
     //若作品介紹超過4行, 則出現按鈕
 	function desc_more_btn(){
+	  alert($('#album_content_box_desc').height());
       if($('#album_content_box_desc').height()>=95){
 		$('#album_content_desc_more').addClass('show_block');
 	  }
@@ -780,8 +793,10 @@ function alert_submit(id) {
       document.execCommand("copy");
 	}
 	
+	//20190130: 移除滑動JS區塊開始
 	//20190117: 改成MARS寫法區塊開始
 	// 初始化 nicescroll
+	/*
         $('.album_content_right_area, .album_content_left_area').niceScroll({
             touchbehavior: true,
             enablemousewheel: true,
@@ -792,7 +807,7 @@ function alert_submit(id) {
         });
 
         $('#album_content_box_desc').html($('#album_content_box_desc').html().autoLink({target: "_blank"}));
-
+    */
 	/*
 	//左半作品資訊區塊加NICESCROLL
 	var left_area = $(".album_content_left_area").niceScroll({
@@ -814,7 +829,7 @@ function alert_submit(id) {
     });
 	*/
     //20190117: 改成MARS寫法區塊結束
-	
+	/*
 	//判斷是否是點擊照片, 或拖曳NICESCROLL區塊
 	var isDragging=false, startingPos=[0,0];
     $(".album_content_box_img_area").mousedown(function (evt) {
@@ -854,8 +869,9 @@ function alert_submit(id) {
 		  }
 		}
     });
-	
+	*/
 	//是否按下滑鼠右鍵
+	/*
 	function right_click(evt){
 	  var isRightMB;
       evt = evt || window.event;
@@ -865,15 +881,21 @@ function alert_submit(id) {
         isRightMB = evt.button == 2; 
       return isRightMB;
 	}
+	*/
+	
+	//20190130: 移除滑動JS區塊結束
 	
    //作品資訊顯示更多
    $('#album_content_desc_more').on('click', function(){
      $('#album_content_box_desc').toggleClass('show_block');
-	 if($('#album_content_desc_more').html()=='更多'){
-	   $('#album_content_desc_more').html('收回');
-	 }else{
-	   $('#album_content_desc_more').html('更多');
-	 }
+	 //20190130: 當更多展開後移除收合按鈕區塊開始
+	 $('#album_content_desc_more').removeClass('show_block');
+	 //if($('#album_content_desc_more').html()=='更多'){
+	   //$('#album_content_desc_more').html('收回');
+	 //}else{
+	   //$('#album_content_desc_more').html('更多');
+	 //}
+	 //20190130: 當更多展開後移除收合按鈕區塊結束
    });
  
    //按選單之外關閉選單
