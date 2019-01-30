@@ -55,7 +55,7 @@ a:hover { color: #00acc1; }
 
 a:focus { color: #4d4d4d; }
 
-body { font-family: Noto Sans TC, Noto Sans; font-family: Gen Jyuu GothicL Regular; font-size: 16px; color: #4d4d4d; background: #ffffff; letter-spacing: 1.5px; /* SCROLL BAR */ }
+body { font-family: Noto Sans TC, Noto Sans; font-family: Gen Jyuu GothicL Regular; font-size: 16px; color: #4d4d4d; background: #ffffff; letter-spacing: 1.5px; scrollbar-width: none; /* SCROLL BAR */ }
 @media (max-width: 768px) { body { font-size: 14px; } }
 body ::-webkit-scrollbar { width: 1px; }
 body ::-webkit-scrollbar-track { background: transparent; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
@@ -974,8 +974,8 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .album_content_area .album_content_intro_area { position: relative; width: 100%; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: ""; -moz-box-align: ""; -ms-flex-align: ""; -webkit-align-items: ""; align-items: ""; -webkit-flex-direction: row-reverse; -moz-flex-direction: row-reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse; margin: auto; padding: 0; background: #ffffff; font-size: 18px; height: 86.2vh; overflow: hidden; }
 @media (max-width: 1024px) { .album_content_area .album_content_intro_area { height: 88.6vh; } }
 @media (max-width: 768px) { .album_content_area .album_content_intro_area { width: 94%; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: ""; -moz-box-align: ""; -ms-flex-align: ""; -webkit-align-items: ""; align-items: ""; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; height: 100%; border: none; border-radius: 0; padding: 0; font-size: 16px; } }
-.album_content_area .album_content_right_area { position: relative; -webkit-flex: 1; -moz-flex: 1; -ms-flex: 1; flex: 1; width: 28%; height: 71.4vh; overflow: auto; padding: 32px 0; padding-right: 32px; border-bottom: 1px solid #d4d4d4; }
-@media (max-width: 1024px) { .album_content_area .album_content_right_area { height: 73.6vh; } }
+.album_content_area .album_content_right_area { position: relative; scrollbar-width: none; -webkit-flex: 1; -moz-flex: 1; -ms-flex: 1; flex: 1; width: 28%; height: 71.4vh; overflow: auto; padding: 32px 0; padding-right: 32px; border-bottom: 1px solid #d4d4d4; }
+@media (max-width: 1024px) { .album_content_area .album_content_right_area { height: 73vh; } }
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) { .album_content_area .album_content_right_area { height: 58vh; } }
 @media (max-width: 768px) { .album_content_area .album_content_right_area { padding-right: 0; height: 100%; width: 100%; padding: 0; border-bottom: none; } }
 .album_content_area .album_content_donate_area { margin-left: 32px; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: ""; -moz-box-align: ""; -ms-flex-align: ""; -webkit-align-items: ""; align-items: ""; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
@@ -1030,7 +1030,7 @@ label.error { color: #ee5b8d; font-size: 14px; }
 .album_content_area .album_content_donate .album_content_back { cursor: pointer; }
 .album_content_area .album_content_donate .album_content_back > span { display: none; }
 .album_content_area .album_content_donate .album_content_back > span i { margin-top: 1px; font-size: 24px; }
-.album_content_area .album_content_left_area { -webkit-flex: 2; -moz-flex: 2; -ms-flex: 2; flex: 2; height: 86vh; overflow: auto; padding-left: 32px; border-right: 1px solid #d4d4d4; }
+.album_content_area .album_content_left_area { scrollbar-width: none; -webkit-flex: 2; -moz-flex: 2; -ms-flex: 2; flex: 2; height: 86vh; overflow: auto; padding-left: 32px; border-right: 1px solid #d4d4d4; }
 @media (max-width: 1024px) { .album_content_area .album_content_left_area { height: 88.4vh; } }
 @media (max-width: 768px) { .album_content_area .album_content_left_area { padding-left: 0; height: 100%; width: 100%; border-right: 0; } }
 .album_content_area .album_content_main { width: 100%; position: relative; line-height: 25px; padding-right: 32px; margin-top: 32px; }

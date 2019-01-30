@@ -761,7 +761,10 @@ function alert_submit(id) {
     //若作品介紹超過4行, 則出現按鈕
 	function desc_more_btn(){
 	  alert($('#album_content_box_desc').height());
-      if($('#album_content_box_desc').height()>=95){
+	  //20190130: 多於4行出現更多按鈕區塊開始
+      //if($('#album_content_box_desc').height()>=95){
+	  if($('#album_content_box_desc').height()>=100){
+	  //20190130: 多於4行出現更多按鈕區塊結束
 		$('#album_content_desc_more').addClass('show_block');
 	  }
 	}
