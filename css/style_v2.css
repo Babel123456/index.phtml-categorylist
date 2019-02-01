@@ -973,8 +973,8 @@ label.error { color: #ee5b8d; font-size: 14px; }
 @media (max-width: 768px) { .album_content_area { margin-top: 44px; } }
 .album_content_area .album_content_intro_area { position: relative; width: 100%; margin: auto; padding: 0; background: #ffffff; font-size: 18px; height: 86.2vh; overflow: hidden; }
 @media (max-width: 1024px) { .album_content_area .album_content_intro_area { height: 88.6vh; } }
-@media (max-width: 768px) { .album_content_area .album_content_intro_area { width: 94%; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: ""; -moz-box-align: ""; -ms-flex-align: ""; -webkit-align-items: ""; align-items: ""; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; height: 100%; border: none; border-radius: 0; padding: 0; font-size: 16px; } }
-.album_content_area .album_content_donate_area { margin-left: 32px; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: ""; -moz-box-align: ""; -ms-flex-align: ""; -webkit-align-items: ""; align-items: ""; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
+@media (max-width: 768px) { .album_content_area .album_content_intro_area { width: 94%; height: 100%; border: none; border-radius: 0; padding: 0; font-size: 16px; } }
+.album_content_area .album_content_donate_area { margin-left: 32px; width: 94%; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: ""; -moz-box-align: ""; -ms-flex-align: ""; -webkit-align-items: ""; align-items: ""; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
 @media (max-width: 768px) { .album_content_area .album_content_donate_area { margin-top: 0; width: 100%; margin-left: 0; } }
 .album_content_area .album_content_donate_area > div:not(:last-child) { border-bottom: 1px solid #d4d4d4; }
 .album_content_area .album_content_donate_area .activity_vote { padding: 32px 0; }
