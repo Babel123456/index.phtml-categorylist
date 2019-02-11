@@ -219,10 +219,10 @@
   <link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.css" rel="stylesheet" />
   <!-- 進入觀看結束 -->
   
-  <!-- //20190131: 移除滑動開始 -->
+  
   <!-- 左半區塊滑動 -->
-  <!--<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.nicescroll.min.js"></script>-->
-  <!-- //20190131: 移除滑動結束 -->
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.nicescroll.min.js"></script>
+  
   
   <!-- 加入FOR MESSAGE TAG開始 -->
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-textcomplete/jquery.textcomplete.js"></script>
@@ -941,10 +941,9 @@ function alert_submit(id) {
       document.execCommand("copy");
 	}
 	
-	//20190131: 移除滑動JS區塊開始
 	//20190117: 改成MARS寫法區塊開始
 	// 初始化 nicescroll
-	/*
+	
         $('.album_content_right_area, .album_content_left_area').niceScroll({
             touchbehavior: true,
             enablemousewheel: true,
@@ -955,7 +954,7 @@ function alert_submit(id) {
         });
 
         $('#album_content_box_desc').html($('#album_content_box_desc').html().autoLink({target: "_blank"}));
-    */
+    
 	/*
 	//左半作品資訊區塊加NICESCROLL
 	var left_area = $(".album_content_left_area").niceScroll({
@@ -977,7 +976,7 @@ function alert_submit(id) {
     });
 	*/
     //20190117: 改成MARS寫法區塊結束
-	/*
+	
 	//判斷是否是點擊照片, 或拖曳NICESCROLL區塊
 	var isDragging=false, startingPos=[0,0];
     $(".album_content_box_img_area").mousedown(function (evt) {
@@ -1017,9 +1016,9 @@ function alert_submit(id) {
 		  }
 		}
     });
-	*/
+	
 	//是否按下滑鼠右鍵
-	/*
+	
 	function right_click(evt){
 	  var isRightMB;
       evt = evt || window.event;
@@ -1029,7 +1028,7 @@ function alert_submit(id) {
         isRightMB = evt.button == 2; 
       return isRightMB;
 	}
-	*/
+	
 	
 	//20190131: 移除滑動JS區塊結束
 	
