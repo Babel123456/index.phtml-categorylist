@@ -650,7 +650,13 @@ function alert_submit(id) {
 				    <!-- //20190131: 新增創作人標題區塊開始 -->
 				    <div class="album_content_creative_info_title_area">
 					  <div class="album_content_creative_info_title">創作人</div>
-					  <div class="album_content_creative_info_btn"><span class="btn_new">更多他/她的作品</span></div>
+					  <div class="album_content_creative_info_btn">
+					    <!-- //20190211: 加入專區連結區塊開始 -->
+					    <a href="https://www.pinpinbox.com/index/creative/content/?user_id=11324" >
+					      <span class="btn_new">更多他/她的作品</span>
+						</a>
+						<!-- //20190211: 加入專區連結區塊結束 -->
+			        </div>
 					</div>
 					<!-- //20190131: 新增創作人標題區塊結束 -->
 				  
@@ -943,7 +949,8 @@ function alert_submit(id) {
 	
 	//20190117: 改成MARS寫法區塊開始
 	// 初始化 nicescroll
-	
+	//20190211: 關閉NICESCROLL使用MOUSE WHEEL區塊開始
+	/*
         $('.album_content_right_area, .album_content_left_area').niceScroll({
             touchbehavior: true,
             enablemousewheel: true,
@@ -952,7 +959,8 @@ function alert_submit(id) {
             cursorwidth: 10,
             autohidemode:false
         });
-
+    */
+    //20190211: 關閉NICESCROLL使用MOUSE WHEEL區塊結束
         $('#album_content_box_desc').html($('#album_content_box_desc').html().autoLink({target: "_blank"}));
     
 	/*
@@ -978,6 +986,8 @@ function alert_submit(id) {
     //20190117: 改成MARS寫法區塊結束
 	
 	//判斷是否是點擊照片, 或拖曳NICESCROLL區塊
+	//20190211: 關閉NICESCROLL使用MOUSE WHEEL區塊開始
+	/*
 	var isDragging=false, startingPos=[0,0];
     $(".album_content_box_img_area").mousedown(function (evt) {
         isDragging = false;
@@ -1029,7 +1039,8 @@ function alert_submit(id) {
       return isRightMB;
 	}
 	
-	
+	*/
+	//20190211: 關閉NICESCROLL使用MOUSE WHEEL區塊開始
 	//20190131: 移除滑動JS區塊結束
 	
    //作品資訊顯示更多
