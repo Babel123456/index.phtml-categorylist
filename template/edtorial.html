@@ -1,0 +1,3944 @@
+
+<!doctype html>
+<html lang="zh">
+<head>
+        <link rel="icon" type="image/vnd.microsoft.icon" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/favicon.ico"/>
+    <link rel="manifest" href="https://www.pinpinbox.com/manifest.json">
+    <meta charset="utf-8">
+        <meta name="viewport" content="">
+    <meta name="keywords" content="建立作品,pinpinbox,職人,贊助發佈平台,釘釘吧,微出版,創作分享,拼拼,經濟共享,販售作品,潛能盒子,釘釘,漫畫,旅遊,美食,原創,影片,直播,投稿活動,贊助,pinpin,金馬獎,新藝城,黃百鳴,泰迪羅賓,內容賺錢,麥若愚,眭澔平,創作人,寵物,抽獎,電影,內容贊助,贊助,打賞,掃描QR">
+    <meta name="description" content="pinpinbox-釘釘吧 是⼀個全新型態的創作⼈/斜扛青年之自媒體數位平台，只要將任何創作內容發表在 pinpinbox 作為「發佈⼯具」，可同步分享在社群媒體上，就能讓粉絲閱看，進⼀步對內容贊助支持，無形中亦替你的創作品增加了實質價值。 有別於⼀般社群媒體，在 pinpinbox 可以⾃自由整合「圖片、影片、音樂 (或錄音)、 文字、PDF」成⼀一本翻頁瀏覽的作品，因此十分適合作為「延伸內容」，例如: 在社群媒體放上Vlog，在 pinpinbox 則可嵌入影片，並新增圖解照片、⾏程表等。 若再「關閉預覽」部分內容，即可設定為VIP進階內容，也就是粉絲需要贊助或收藏作品後才可閱看完整作品，例如:私房景點推薦。">
+    <meta name="msvalidate.01" content="851F62F6F1B71365ECE1EFE9C1D56C73"/>
+    <meta name="apple-itunes-app" content="app-id=1057840696">
+    <meta property="og:url" content="www.pinpinbox.com/diy/index">
+    <meta property="og:title" content="pinpinbox釘釘吧-內容創作人發佈平台 | 建立作品">
+    <meta property="og:description" content="pinpinbox-釘釘吧 是⼀個全新型態的創作⼈/斜扛青年之自媒體數位平台，只要將任何創作內容發表在 pinpinbox 作為「發佈⼯具」，可同步分享在社群媒體上，就能讓粉絲閱看，進⼀步對內容贊助支持，無形中亦替你的創作品增加了實質價值。 有別於⼀般社群媒體，在 pinpinbox 可以⾃自由整合「圖片、影片、音樂 (或錄音)、 文字、PDF」成⼀一本翻頁瀏覽的作品，因此十分適合作為「延伸內容」，例如: 在社群媒體放上Vlog，在 pinpinbox 則可嵌入影片，並新增圖解照片、⾏程表等。 若再「關閉預覽」部分內容，即可設定為VIP進階內容，也就是粉絲需要贊助或收藏作品後才可閱看完整作品，例如:私房景點推薦。">
+    <meta property="og:image" content="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/kanban.png">
+    <script src="https://api.dmcdn.net/all.js"></script>
+    <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <title>pinpinbox釘釘吧-內容創作人發佈平台 | 建立作品</title>
+    <link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/jBox.css" rel="stylesheet" />
+	<link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/css/lightgallery.min.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/css/lightgallery-custom.min.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/mediaelement-2.22.0/mediaelementplayer.min.css" rel="stylesheet" />
+	<link type="text/css" href="./scss/css/editor.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap-diy/bootstrap.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/jquery-ui.min.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/croppic/css/croppic.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/pace/css/templates/pace-theme-loading-bar.tmpl.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/pace/css/themes/blue/pace-theme-loading-bar.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/trip/css/trip.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/css/jquery.fileupload.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-ui-datetimepicker/jquery-ui-0308.min.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-ui-datetimepicker/jquery-ui-timepicker-addon.min.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap.min.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/dropit.css" rel="stylesheet" />
+	<link type="text/css" href="./scss/css/style.css" rel="stylesheet" />
+	<link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/css/jquery.fileupload-ui.css" rel="stylesheet" />    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/zh_TW/fbevents.js');
+fbq('init', '1010541995708559', {
+em: 'insert_email_variable,'
+});
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1010541995708559&ev=PageView&noscript=1"
+/></noscript><script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:598622,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script></head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-58524918-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script><div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.10&appId=472973216191275";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<div id="main">
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/browser-deeplink-master/browser-deeplink.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.bxslider/jquery.bxslider.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/all.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="https://www.pinpinbox.com/js/jBox-0.4.8/jBox.min.js"></script>
+<script type="text/javascript" src="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lightgallery-all-modify.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lg-audio.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/dist/js/lg-subhtml.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/lightGallery-master/lib/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/mediaelement-2.22.0/mediaelement-and-player.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/croppic/js/croppic.min.js"></script>
+<script type="text/javascript" src="js/editor.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/js/jquery.fileupload-process.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/js/jquery.fileupload-video.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/js/jquery.fileupload-audio.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/pace/js/pace.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/trip/js/trip.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.easytabs.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/addclear.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-ui-datetimepicker/jquery-ui-0308.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-ui-datetimepicker/jquery-ui-timepicker-addon.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-ui-datetimepicker/jquery-ui-timepicker-zh-TW.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/angular.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/load-image.all.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/canvas-to-blob.min.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/js/jquery.fileupload-image.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/js/jquery.fileupload-validate.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.fileupload/js/jquery.fileupload-angular.js"></script>
+<script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/app.js"></script><!-- header區塊開始 -->
+<style type="text/css">
+#main {
+	padding-top: 0px;
+}
+</style>
+<div id="header">
+<!-- 電腦版使用導覽列 -->
+	<div id="head_desk">
+		<div class="head_top">
+			<div class="head_center">
+				<div class="logo"><a href="https://www.pinpinbox.com/index/">logo</a></div>
+				<div id="head_other">
+					<ul>
+						<li class="member_hide">
+							<a href="javascript:;" class="member" id="member_open">
+							  <img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$4bde.jpg" height="149" width="149" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'">
+							  </a>
+							<ul>
+								<li><div class="member_nav">
+									<ul>
+										<li style="color:#D0D0D0;">babel</li>
+										<li><div class=line></div></li>
+										<li><a href="https://www.pinpinbox.com/index/user/settings/">管理中心</a></li>										
+										<li><a href="https://www.pinpinbox.com/babel">我的專區</a></li>
+										<li><div class=line></div></li>
+										<li><a href="https://www.pinpinbox.com/index/user/order/">消費查詢</a></li>
+										<li><div class=line></div></li>
+										<li><a href="https://www.pinpinbox.com/index/user/question/">回報問題</a></li>
+										<li><a href="https://www.pinpinbox.com/index/user/logout/">登出</a></li></ul>
+								</div></li>
+							</ul>
+						</li>	
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- header區塊結束 -->
+
+<!-- 相本-進階設定區塊開始 -->
+<div id="more_setting_box" class="album_setting">
+	<div class="mask common" id="set_close" data-act="set_close"></div>
+	<div id="more_set_in">		
+		<div id="more_enter"><a onclick="$('#album_enter').trigger('click');" href="javascript:void(0)" >儲存</a></div>
+		<header>相本進階設定</header>
+		<div id="more_tab">
+			<ul class="etabs">
+				<li class="active"><a href="#top_p2">音效設定</a></li>
+				<li ><a href="#top_p3">翻頁設定 </a></li>
+			</ul>
+			<form id="album_form_enter" action="javascript:void(0)" novalidate>
+				<!--音效設定開始-->
+				<div id="top_p2" class="tabs">
+					<div id="music_setting">
+						<ul>
+							<li>
+								<label><input type="radio" name="audio_mode" value="none" class="triggermusic01 common" data-act="triggermusic01" data-rel="nomusic" />無音樂</label>
+							</li>
+							<li class="line"></li>
+							<li>
+								<label><input type="radio" name="audio_mode" value="singular" class="triggermusic01 common" data-act="triggermusic01" data-rel="musicsingle" />單首播放</label>
+							</li>
+							<li class="music_content musicsingle">
+								<ul>
+									<li>
+										<label><input type="radio" name="singular_mode" value="system" class="triggersingle common" data-act="triggersingle" data-rel="single01">使用預設音樂</label>
+									</li>
+									<!-- 系統音樂開始 -->
+									<li class="music_content02 single01">
+										<div class="musicdown">
+											<select name="singular" class="music_album">
+												<option data-audio_id="2" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/2.mp3">鋼琴演奏-午後慢活</option><option data-audio_id="3" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/3.mp3">輕鬆小品-悠揚長笛</option><option data-audio_id="4" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/4.mp3">輕鬆小品-甜蜜琴韻</option><option data-audio_id="5" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/5.mp3">能量抒發-獨自旅遊</option><option data-audio_id="6" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/6.mp3">輕鬆小品-微醺爵士</option><option data-audio_id="12" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/12.mp3">節慶系列-聖誕12 Days of Christmas</option><option data-audio_id="13" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/13.mp3">輕鬆小品-烏克莉莉 Ukulele</option><option data-audio_id="14" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/14.mp3">輕鬆小品-花園系列 Cute</option><option data-audio_id="15" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/15.mp3">輕鬆小品-陽光揮灑 Little idea</option><option data-audio_id="16" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/16.mp3">鋼琴演奏-溫柔情懷 Memories</option><option data-audio_id="17" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/17.mp3">激勵鼓舞-好的開始 A New Beginning</option><option data-audio_id="18" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/18.mp3">鋼琴演奏-憂傷系列 Gray day</option><option data-audio_id="19" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/19.mp3">吉他演奏-靜心漫步 andy blackwood</option><option data-audio_id="20" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/20.mp3">音籟世界-悠遊幻想 Dan_Falvey-Swansong</option><option data-audio_id="21" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/21.mp3">能量抒發-海洋眺望 Evgeny Teilor-Oceans</option><option data-audio_id="22" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/22.mp3">沙發音樂-時尚慢活 FullCasual dnb</option><option data-audio_id="23" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/23.mp3">冥想星空-深情 Groire_Lourme-Memories</option><option data-audio_id="24" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/24.mp3">冥想星空-難忘 Groire_Lourme-You</option><option data-audio_id="25" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/25.mp3">沙發音樂-抒情微光 Keffy Kay-To The Light</option><option data-audio_id="26" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/26.mp3">沙發音樂-抽離飄移 Ghost Horses</option><option data-audio_id="27" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/27.mp3">冥想星空-異國風 duduk drone</option><option data-audio_id="28" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/28.mp3">沙發音樂-舞光倒影 Summer at Nigh</option><option data-audio_id="29" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/29.mp3">動感浪潮 Sheet Like a This</option><option data-audio_id="30" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/30.mp3">動感浪潮-溫暖女聲 GYAKO-Summer Love</option><option data-audio_id="31" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/31.mp3">動感浪潮-傾心女聲 Kellee Maize-In Tune</option><option data-audio_id="32" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/32.mp3">沙發音樂-迷幻沉拍 Kellee_Maize-In Tune 2</option><option data-audio_id="33" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/33.mp3">沙發音樂-夜晚奇想 Pokki DJ-Energy</option><option data-audio_id="34" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/34.mp3">沙發音樂-新的起點 Pokki DJ-Stardust</option><option data-audio_id="35" value="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/audio/35.mp3">沙發音樂-煥發旅程</option>											</select>
+										</div>
+										<label><input type="checkbox" name="system_repeat" class="repeat" value="singular_repeat" >重複播放</label>
+										<div style="clear:both;"></div><br>
+										<div class="film_content">
+											<div id="singular_audio_area">
+												<audio controls id="audio_demo_singular_system">
+													<source src="" type="audio/mpeg">Your browser does not support the audio element.
+												</audio> 
+											</div>
+										</div>
+									</li>
+									<!-- 系統音樂結束 -->
+									<li>
+										<label><input type="radio" name="singular_mode" value="file" class="triggersingle common" data-act="triggersingle" data-rel="single02">自行上傳</label>											
+									</li>
+									<!-- 上傳音樂開始 -->
+									<li class="music_content02 single02">
+										<div class="music_upload">
+											<div class="inputname music01" name="audio_name_singular" onclick="$('#singular_fileupload').trigger('click');" data-output_name="">選擇音樂...</div>
+											<div class="upload" onclick="$('#singular_fileupload').trigger('click');"></div>
+										</div>
+										<label><input type="checkbox"  name="file_repeat" class="repeat" value="singular_repeat" >重複播放</label>
+										<div style="clear:both;"></div>
+										<div class="film_content">
+											<input id="singular_fileupload" class="fileupload common" style="display:none;" type="file" name="files[]" data-url="file_upload" data-photo_type="audio" data-num="singular" data-act="fileupload" multiple accept="audio/mp3" />
+											<div id="audio_area">
+												<audio controls id="audio_demo_singular">
+													<source src="" type="audio/mpeg">Your browser does not support the audio element.
+												</audio> 
+											</div>
+										</div>
+									</li>
+									<!-- 上傳音樂結束 -->
+								</ul>
+							</li>
+							<li class="line"></li>
+							<li>
+								<label><input type="radio" name="audio_mode" value="plural" class="triggermusic01 common" data-act="triggermusic01" data-rel="musicmulti" />設定多首</label>
+							</li>	
+							<li class="music_content musicmulti">
+								<div id="musicmulti_box"></div>
+							</li>
+						</ul>
+					</div>	
+				</div>
+				<!--音效設定結束-->
+				<!--自動翻頁開始-->
+				<div id="top_p3" class="tabs">
+					<div id="tips">※翻頁效果僅呈現於APP</div>
+					<div id="page_turn"></div>
+				</div>		
+				<!--自動翻頁結束-->
+				<input type="submit" id="album_enter" style="display:none;">
+			</form>
+		</div>
+	</div>	
+</div>
+<!-- 相本-進階設定區塊結束 -->
+
+<!-- 相片-進階設定區塊開始 -->
+<div id="more_setting_box" class="photo_setting">
+    <div class="mask common" id="set_close" data-act="set_close"></div>
+    <div id="more_set_in">
+        <div id="more_enter"> <a onclick="$('#form_submit').trigger('click');" href="javascript:void(0)">儲存</a> </div>
+        <header><span name="photo_setting_num" ></span> 進階設定</header>
+        <div id="more_tab">
+            <ul class="etabs">
+                <li class="active"><a href="#top_p1">模式設定</a></li>
+            </ul>
+            <!--模式設定開始-->
+            <div id="top_p1" class="tabs active">
+                <form id="photo_form_enter" action="javascript:void(0)">
+                    <h3>選擇模式</h3>
+                    <div id="type_tab">
+                        <ul class="etabs02">
+                            <li name="image"><a href="#type_p1" class="ty01">圖片</a></li>
+                            <li name="video"><a href="#type_p2" class="ty02">影片</a></li>
+							                        </ul>
+                        <div class="out_content">
+                            <div class="info_box">
+                                <h3>資訊設定</h3>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="text_left">地點</div>
+                                    <div class="text_right"><input type="text" class="info_loaction" placeholder="地點" maxlength="64"></div>
+                                </li>
+                                <li>
+                                    <div class="text_left">URL 1</div>
+                                    <div class="text_right">
+                                        <input type="text" class="info_url1_name" placeholder="連結名稱" maxlength="32">
+                                        <input type="url" class="info_url1" placeholder="http://">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text_left">URL 2</div>
+                                    <div class="text_right">
+                                        <input type="text" class="info_url2_name" placeholder="連結名稱" maxlength="32">
+                                        <input type="url" class="info_url2" placeholder="http://" >
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text_left">描述</div>
+                                    <div class="text_right"><textarea class="info_description" cols="30" rows="3" class="info03"></textarea></div>
+                                </li>
+                            </ul>
+                            <div class="line"></div>
+                        </div>
+                        <div class="tab_content">
+                            <!--模式設定-圖片開始-->
+                            <div id="type_p1" class="type_tabs active"></div>
+                            <!--模式設定-圖片結束-->
+                            <!--模式設定-影片開始-->
+                            <div id="type_p2" class="type_tabs">
+                                <h3>影片設定</h3>
+                                <ul>
+                                    <li>
+                                        <label class="film_label">
+                                            <input type="radio" name="group1" class="triggervideo common video_url" data-rel="video_url" data-act="triggervideo" />
+											URL                                        </label>
+                                        <label class="film_label">
+                                            <input type="radio" name="group1" class="triggervideo common video_upload" data-rel="video_upload" data-act="triggervideo"/>
+											上傳影片                                        </label>
+                                        <span class="fbVideoTips"> 如何嵌入Facebook影片?<a href="javascript:void(0)" class="vidoetips">
+										<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/question.png" height="20" width="20"></a>
+										</span>
+                                    </li>
+                                    <li class="video_url film_content">
+                                        <div style="height:30px;">
+                                            <div class="text_left">輸入網址</div>
+                                            <div class="text_right">
+											  <input id="video_url" type="url"  placeholder="支援 Youtube / Vimeo / Facebook / Dailymotion 影片" style="margin-bottom:5px;width:380px;">
+											  <div id="video_area1" ></div></div>
+                                        </div>
+                                    </li>
+                                    <li class="video_upload film_content">
+                                        <div class="text_left">
+                                            <input type="button" class="video_upload_btn" onclick="$('#fileupload').trigger('click');" value="選取檔案">
+                                            <input type="button" class="video_upload_btn" onclick="$('#fileupload_replace_cover').trigger('click');" value="選擇封面" style="margin-top:5px;" name="UploadCoverBtn">
+                                        </div>
+                                        <div class="text_right" name="video_filename"></div>
+                                        <div>
+                                            <input id="fileupload" class="fileupload common" style="display:none;" type="file" name="files[]" data-url="file_upload" data-photo_type="video" data-num="0" data-act="fileupload" data-mediavideo="video" multiple accept="video/mp4" />
+                                            <input id="fileupload_replace_cover" class="fileupload common" style="display:none;" type="file" name="files[]" data-url="file_upload" data-photo_type="video_cover"  data-act="fileupload" data-mediavideo="video" accept="image/jpeg,image/png"/>
+                                        </div>
+                                        <br>
+                                        <div id="video_area2">
+                                            <video id="video_demo_file" controls loop muted preload="auto" width="320" height="240" data-mejsoptions='{"alwaysShowControls": true}'>
+                                                <source class="mp4" type="video/mp4" src="" />
+												很抱歉！您的瀏覽器不支援 HTML5 Video                                             </video>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--模式設定-影片結束-->
+                            <!--模式設定-兌換券開始-->
+                            <div id="type_p3" class="type_tabs">
+                                <div class="info_box">
+                                    <h3>兌換券設定</h3>
+                                    <span>※發佈作品後即無法修改！建議圖片尺寸 668x1002 pixels</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div style="width:23%" class="text_left">項目</div>
+                                        <div style="width:77%" class="text_right">
+                                            <div id="exchange_layer">
+                                                <div class="laybar_left">
+                                                    <ul>
+                                                        <li>
+                                                            <div  data-tag="photousefor-name">
+                                                                名稱: <input type="text" name="exchange_name" maxlength="32" class="laybar_text">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div data-tag="photousefor-amount">
+                                                                數量: <input step="1" type="number" max="65535" min="1" class="info_exchange_amount" placeholder="1 ~ 65535">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div data-tag="photousefor-exchange_starttime">
+                                                                <p>開始時間: <input type="text" name="exchange_starttime" class="datepicker" style="width:60%;"></p>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div data-tag="photousefor-exchange_endtime">
+                                                                <p>結束時間: <input type="text" name="exchange_endtime" class="datepicker" style="width:60%;"></p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="laybar_right">
+                                                    <div class="right_upload" data-tag="photousefor-exchangeImageBtn">
+                                                        <img id="exchange_image_upload" class="common" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/laybar_up.png" data-act="exchange_image_upload">
+                                                    </div>
+                                                    <input style="display:none;" class="exchange_fileupload common" type="file" name="files[]" data-photo_type="exchange" data-num="0" data-act="fileupload" accept="image/png,image/jpeg,image/jpg">													</div>
+                                                <div>
+                                                    <img id="exchange_image_show" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/transparent.png">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="text_left">描述</div>
+                                        <div class="text_right" data-tag="photousefor-description"><textarea cols="30" rows="3"></textarea></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--模式設定-兌換券結束-->
+                            <!--模式設定-拉霸開始-->
+                            <div id="type_p4" class="type_tabs">
+                                <div class="info_box">
+                                    <h3>拉霸抽獎設定</h3>
+                                    <a href="javascript:void(0)" class="common" data-act="add_slot_item">
+                                        <img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/editor/add_class.png" height="15" width="15">
+                                    </a>
+                                    <span>※發佈作品後即無法修改！建議圖片尺寸 668x1002 pixels</span>
+                                </div>
+                                <ul style="width:98%;">
+                                    <li>
+                                        <div style="width:23%" class="text_left">項目</div>
+                                        <div style="width:77%" class="text_right"><div id="laybar_box"></div></div>
+                                    </li>
+                                    <li>
+                                        <div class="text_left">開始時間:</div>
+                                        <div class="text_right" data-tag="photousefor-slot-starttime">
+                                            <input type="text" name="slot_starttime" class="datepicker" style="width:25%;">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="text_left">結束時間:</div>
+                                        <div class="text_right" data-tag="photousefor-slot-endtime">
+                                            <input type="text" name="slot_endtime" class="datepicker" style="width:25%;">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="text_left">描述</div>
+                                        <div class="text_right" data-tag="photousefor-description"><textarea cols="30" rows="2"></textarea></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--模式設定-拉霸結束-->
+                        </div>
+                    </div>
+                    <input type="submit" id="form_submit" style="display:none;">
+                </form>
+            </div>
+            <!--模式設定結束-->
+        </div>
+    </div>
+</div><!-- 相片-進階設定區塊結束 -->
+
+<!-- 影片上傳設定區塊開始 -->
+<div id="media_upload_box" class="media_upload">
+	<div class="mask common" id="media_close" data-act="set_close"></div>
+	<div id="media_set_in">
+		<div id="media_enter"><a onclick="$('#media_upload_enter').trigger('submit');" href="javascript:void(0)">確定</a></div>
+		<header>新增一頁影片</header>
+		<div id="media_more_tab">
+			<div id="media_top_p1" class="tabs active">
+				<form id="media_upload_enter" action="javascript:void(0)">
+					<div id="media_type_tab">
+					
+					
+						<div class="tab_content ">
+								<div id="" class="type_tabs">
+									<h3>影片設定</h3>
+									<ul>
+										<li>
+											<label class="film_label">
+												<input type="radio" name="add_media_group" class="triggervideo common r_media_embed" data-rel="media_embed" data-act="triggervideo" />
+												URL</label>
+											<label class="film_label">
+												<input type="radio" name="add_media_group" class="triggervideo common r_media_upload" data-rel="media_upload" data-act="triggervideo"/>
+												上傳影片										</label>
+											<span class="fbVideoTips"> 如何嵌入Facebook影片?<a href="javascript:void(0)" class="vidoetips">
+											  <img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/question.png" height="20" width="20"></a>
+											</span>
+										</li>
+										<li class="media_embed film_content">
+											<div style="height:30px;">
+												<div class="text_left">輸入網址</div>
+												<div class="text_right">
+													<input id="add_media_url" type="url" placeholder="支援 Youtube / Vimeo / Facebook / Dailymotion 影片" style="margin-bottom:5px;width:360px;">
+													<div id="add_media_area"></div>
+												</div>
+											</div>
+										</li>
+										<li class="media_upload film_content">
+											<div class="text_left">
+												<input type="button" class="media_upload_btn" onclick="$('#fileupload_add_media').trigger('click');" value="選取檔案"><br>
+												<input type="button" class="media_upload_btn" onclick="$('#fileupload_add_cover').trigger('click');" value="選擇封面" style="display:none;margin-top:5px;" name="UploadCoverBtn">
+											</div>
+											<div class="text_right" name="media_filename"></div>
+											<div>
+												<input id="fileupload_add_media" class="fileupload common" style="display:none;" type="file" name="files[]" data-url="file_upload" data-photo_type="video" data-num="0" data-act="fileupload" data-mediavideo="media" multiple accept="video/mp4" />
+												<input id="fileupload_add_cover" class="fileupload common" style="display:none;" type="file" name="files[]" data-url="file_upload" data-photo_type="video_cover" data-num="0" data-act="fileupload" data-mediavideo="media" accept="image/jpeg,image/png"/>
+											</div>
+											<br>
+											<div id="add_media_area">
+												<video id="media_demo_file" controls  loop muted preload="auto" width="320" height="240" data-mejsoptions='{"alwaysShowControls": true}'>
+													<source class="mp4" type="video/mp4" src="" />
+													很抱歉！您的瀏覽器不支援 HTML5 Video  
+												</video> 
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+					<div class="line"></div>
+						<div class="out_content">
+							<div class="media_info_box">
+								<h3>資訊設定</h3>
+							</div>
+							<ul>
+								<li>
+									<div class="text_left">地點</div>
+									<div class="text_right"><input type="text" class="media_info_loaction" placeholder="地點" maxlength="64"></div>
+								</li>
+								<li>
+									<div class="text_left">URL 1</div>
+									<div class="text_right">
+										<input type="text" class="media1_InfoUrlName" placeholder="連結名稱" maxlength="32">
+										<input type="url" class="media1_InfoUrl" placeholder="http://">
+									</div>
+								</li>
+								<li>
+									<div class="text_left">URL 2</div>
+									<div class="text_right">
+										<input type="text" class="media2_InfoUrlName" placeholder="連結名稱" maxlength="32">
+										<input type="url" class="media2_InfoUrl" placeholder="http://">
+									</div>
+								</li>
+								<li>
+									<div class="text_left">描述</div>
+									<div class="text_right"><textarea class="media_info_description" id="" cols="20" rows="4" class="info03"></textarea></div>
+								</li>
+							</ul>
+							
+						</div>
+						
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$('.vidoetips').on('click', function(){
+	var box = new jBox('Modal', {
+		closeButton: 'title',
+		delayOpen: 300,
+		maxWidth: 600,
+		minWidth: 100,
+	}).setContent('<div class="content"><p class="title">如何嵌入Facebook影片?</p><p style="margin:5px 0px;">右鍵點選影片畫面>>選取「顯示影片網址」>> 複製網址 </p></div>').open();
+
+})
+</script><!-- 影片上傳設定區塊結束 -->
+
+<!-- 共同編輯區塊開始 20180820 -->
+		<div class="menu03">
+			<div id="more_share_in">
+					<ul>
+						<li class="search_top">
+						    <div class="search_top1">
+								<div class="search_box_header">搜尋共同編輯創作者</div>
+								<div class="search_box">
+									<div class="input-group">
+										<input type="text" class="form-control" id="searchkey" name="searchkey" value="c">
+										<div class="input-group-btn">
+											<button class="btn btn-default" type="button" onclick="_search()">
+												<i class="fa fa-search"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+								<!--<div class="search_box_clear" onclick="restore_result();" >回復上一次儲存</div>-->
+								<!--<div class="search_box_clear" onclick="$('#searchkey').val('');$('.search_result').empty();" >清除搜尋結果</div>-->
+								<div class="search_qrcode" title="掃瞄QRCODE加入共同編輯"><i name="likes" class="fa fa-qrcode fa-2x" ></i></div>
+						    </div>
+						</li>
+						<li class="search_result">
+						  <div class= "product_scroll1">
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg" alt="李路禕"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">李路禕123456</li>
+										<li class="btn_invited" id="result_connie9131" onclick="add_invited_item('connie9131','李路禕','https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg');" >已邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4341/picture$39a6.jpg" alt="Wei-Ning Jwo"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Wei-Ning Jwo</li>
+										<li class="btn_uninvited" id="result_wnjsportart" onclick="add_invited_item('wnjsportart','Wei-Ning Jwo','https://cdn.pinpinbox.com/storage/zh_TW/user/4341/picture$39a6.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4321/picture$9c53.jpg" alt="Susan KE"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Susan KE</li>
+										<li class="btn_uninvited" id="result_susan0607" onclick="add_invited_item('susan0607','Susan KE','https://cdn.pinpinbox.com/storage/zh_TW/user/4321/picture$9c53.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4309/picture$80e0.jpg" alt="Chia-yi Yen"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Chia-yi Yen</li>
+										<li class="btn_uninvited" id="result_chiayi1115" onclick="add_invited_item('chiayi1115','Chia-yi Yen','https://cdn.pinpinbox.com/storage/zh_TW/user/4309/picture$80e0.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4062/picture$2c08.jpg" alt="pano_会社"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">pano_会社</li>
+										<li class="btn_uninvited" id="result_panodenden" onclick="add_invited_item('panodenden','pano_会社','https://cdn.pinpinbox.com/storage/zh_TW/user/4062/picture$2c08.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4184/picture$1ae8.jpg" alt="Rita Chen"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Rita Chen</li>
+										<li class="btn_uninvited" id="result_4184" onclick="add_invited_item('4184','Rita Chen','https://cdn.pinpinbox.com/storage/zh_TW/user/4184/picture$1ae8.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4150/picture$0842.jpg" alt="柳柳"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">柳柳</li>
+										<li class="btn_uninvited" id="result_chienyun0704" onclick="add_invited_item('chienyun0704','柳柳','https://cdn.pinpinbox.com/storage/zh_TW/user/4150/picture$0842.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4126/picture$03c3.jpg" alt="CMC"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">CMC</li>
+										<li class="btn_uninvited" id="result_4126" onclick="add_invited_item('4126','CMC','https://cdn.pinpinbox.com/storage/zh_TW/user/4126/picture$03c3.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4056/picture$50fb.jpg" alt="Stewart Chang"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Stewart Chang</li>
+										<li class="btn_uninvited" id="result_stewartchang1104" onclick="add_invited_item('stewartchang1104','Stewart Chang','https://cdn.pinpinbox.com/storage/zh_TW/user/4056/picture$50fb.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4069/picture$ea13.jpg" alt="Ivy Chen"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Ivy Chen</li>
+										<li class="btn_uninvited" id="result_chen101211" onclick="add_invited_item('chen101211','Ivy Chen','https://cdn.pinpinbox.com/storage/zh_TW/user/4069/picture$ea13.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/458/picture$fe64.jpg" alt="Weiting Cheng"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Weiting Cheng</li>
+										<li class="btn_uninvited" id="result_458" onclick="add_invited_item('458','Weiting Cheng','https://cdn.pinpinbox.com/storage/zh_TW/user/458/picture$fe64.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/393/picture$d977.jpg" alt="Yves Chi"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">Yves Chi</li>
+										<li class="btn_uninvited" id="result_yveschi" onclick="add_invited_item('yveschi','Yves Chi','https://cdn.pinpinbox.com/storage/zh_TW/user/393/picture$d977.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/30/picture$c6b4.jpg" alt="To.me.to 蕃茄梗"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">To.me.to 蕃茄梗</li>
+										<li class="btn_uninvited" id="result_awan" onclick="add_invited_item('awan','To.me.to 蕃茄梗','https://cdn.pinpinbox.com/storage/zh_TW/user/30/picture$c6b4.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>
+							<div class="result_item">
+								<div class="result_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9375/picture$cb59.jpg" alt="刺刺"></div>
+								<div class="result_info">
+									<ul>
+										<li class="restult_name">刺刺</li>
+										<li class="btn_uninvited" id="result_poorblackhead" onclick="add_invited_item('poorblackhead','刺刺','https://cdn.pinpinbox.com/storage/zh_TW/user/9375/picture$cb59.jpg');" >邀請</li>
+									</ul>
+								</div>
+							</div>							
+                         </div>						
+						</li>
+						<li class="invited_item_list">
+							<div class= "product_scroll2">
+								<div class="invited_item" id="connie9131">
+									<div class="delete_invited" onclick="delete_invited_item('connie9131','李路禕','https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg');" >X</div>
+									<div class="invited_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg" alt="李路禕"></div>
+									<div class="invited_info">
+										<ul>
+											<li class="invited_name">李路禕123456</li>
+											<li class="invited_time">加入時間:2015/05/18</li>
+											<li>
+												<div class="dropdown">
+													<select id="control_box_connie9131" >
+														<option value="onlybrowse">瀏覽</option>
+														<option value="multiedit">共用</option>
+														<option value="viceadmin">副管理</option>
+													</select>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="invited_item" id="ahodoodle">
+									<div class="delete_invited" onclick="delete_invited_item('ahodoodle','阿賀','https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg');" >X</div>
+									<div class="invited_face"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg" alt="阿賀"></div>
+									<div class="invited_info">
+										<ul>
+											<li class="invited_name">阿賀123456789x</li>
+											<li class="invited_time">加入時間：2018/08/21</li>
+											<li>
+												<div class="dropdown">
+													<select id="control_box_ahodoodle" >
+														<option value="onlybrowse">瀏覽</option>
+														<option value="multiedit">共用</option>
+														<option value="viceadmin">副管理</option>
+													</select>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						  
+							
+						</li>
+					</ul>					
+				</div>
+
+			<!--</div>-->
+		</div>
+<!-- 共同編輯區塊結束 -->
+<script>
+$('.search_qrcode').on('click', function(){
+	var box = new jBox('Modal', {
+		closeButton: 'title',
+		delayOpen: 300,
+		maxWidth: 600,
+		minWidth: 100,
+	}).setContent('<div class="content"><p class="title"></p><p style="margin:5px 0px;"></p><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9244/album/14455/qrcode$0937.jpg"</div>').open();
+
+})
+
+$(function(){
+  
+   
+   
+   var nicesx1 = $(".search_result").niceScroll({
+        touchbehavior: true,
+        enablemousewheel: true,
+        cursorcolor: "#c4c4c4",
+        cursoropacitymax: 1,
+        cursorwidth: 8,
+		autohidemode:true
+    });
+   
+   var nicesx2 = $(".invited_item_list").niceScroll({
+        touchbehavior: true,
+        enablemousewheel: false,
+        cursorcolor: "#c4c4c4",
+        cursoropacitymax: 1,
+        cursorwidth: 8,
+		autohidemode:true
+    });
+	
+	
+
+	
+	//邀請區塊寬度
+	$('.invited_item_list .product_scroll2').width($(".product_scroll2").find('.invited_item').length*170);
+	
+	$(window).resize(function(){
+	    //alert($( window ).height());
+	    $(".search_result").getNiceScroll().resize();
+		$(".invited_item_list").getNiceScroll().resize();
+	});
+
+    $('.invited_item_list').on("mousewheel", function() {
+    return false;
+    });
+	
+	//search: on + datalist
+	/*
+	$('input[name="searchkey"]').on({
+		keypress: function(e) { 
+			if (e.which == 13 || e.keyCode == 13) _search();
+		},
+	}).typeahead({
+		afterSelect: function(){_search();},
+		autoSelect: false,
+		showHintOnFocus: true,
+		source: function(query, process) {
+			$.post('https://www.pinpinbox.com/index/search/', {
+				searchkey: query
+			}, function(r) {
+				process($.parseJSON(r));
+			});
+		},
+	});
+	*/
+  }
+  
+  
+
+
+  
+)
+function _search() {
+
+	//var url = 'https://www.pinpinbox.com/index/creative/?rank_id=1';
+	
+	var searchkey = $('#searchkey').val().trim();
+	/*
+	//cookie
+	var search = [], searched = $.cookie('search')? $.parseJSON($.cookie('search')) : [], array = [];
+	if (searchkey !== '') searched.unshift(searchkey);
+	for (var i = 0; i < searched.length; ++i) {
+	    if (array.indexOf(searched[i]) < 0) {
+	  	    array.push(searched[i]);
+	    	search.push(searched[i]);
+	    }
+	}
+	if (search.length > 16) search.pop();
+	$.cookie('search', JSON.stringify(search), {path: '/'});	
+	*/
+	
+	//清除搜尋結果區塊
+	$('.search_result').empty();
+	var result_str = "";
+	
+	//if(encodeURIComponent(searchkey).length > 0) {
+		
+		
+		
+		//組出搜尋結果字區塊
+	    result_str  += '<div class="result_item">';
+	    //result_str += '<div class="result_face"><img src="'+item_src+'" alt="'+item_name +'"></div>';
+		result_str += '<div class="result_face"><img src="'+'https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg'+'" alt="'+'李路禕' +'"></div>';
+		result_str +=  '<div class="result_info">';
+	    result_str +=  '<ul>';
+		//result_str +=  '<li class="restult_name">'+item_name+'</li>';
+		result_str +=  '<li class="restult_name">'+'李路禕' +'</li>';
+	    //result_str +=  '<li class="'+($('#'+item_id).length == 0 ? 'btn_uninvited':'btn_invited')+'" id="result_'+ item_id +'" onclick="add_invited_item(\''+item_id+'\',\''+item_name+'\',\''+item_src+'\');" >邀請</li>';
+	    result_str +=  '<li class="'+($('#'+'connie9131').length == 0 ? 'btn_uninvited':'btn_invited')+'" id="result_'+ 'connie9131' +'" onclick="add_invited_item(\''+'connie9131'+'\',\''+'李路禕'+'\',\''+'https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg'+'\');" >';
+		//result_str +=  ($('#'+item_id).length == 0 ? '邀請':'已邀請')+'</li>';
+		result_str +=  ($('#'+'connie9131').length == 0 ? '邀請':'已邀請')+'</li>';
+		result_str +=  '</ul>';
+        result_str +=  '</div>';
+		result_str +=  '</div>';
+	
+	
+		result_str += '<div class="result_item">';
+	    result_str += '<div class="result_face"><img src="'+'https://cdn.pinpinbox.com/storage/zh_TW/user/4341/picture$39a6.jpg'+'" alt="'+'Wei-Ning Jwo' +'"></div>';
+		result_str +=  '<div class="result_info">';
+	    result_str +=  '<ul>';
+		result_str +=  '<li class="restult_name">'+'Wei-Ning Jwo'+'</li>';
+	    result_str +=  '<li class="'+($('#'+'wnjsportart').length == 0 ? 'btn_uninvited':'btn_invited')+'" id="result_'+'wnjsportart' +'" onclick="add_invited_item(\''+'wnjsportart'+'\',\''+'Wei-Ning Jwo'+'\',\''+'https://cdn.pinpinbox.com/storage/zh_TW/user/4341/picture$39a6.jpg'+'\');" >';
+		result_str +=  ($('#'+'wnjsportart').length == 0 ? '邀請':'已邀請')+'</li>';
+		result_str +=  '</ul>';
+        result_str +=  '</div>';
+		result_str +=  '</div>'
+	
+	
+	    $('.search_result').append(result_str);		
+		
+	//}else{
+	//   result_str = "無此創作人資料...";
+	//}
+}
+
+
+
+function add_invited_item(item_id,item_name,item_src){
+  //先檢查是否有此ID邀請區塊
+  if($('#'+item_id).length == 0){
+    //換BTN樣式
+    $($('#result_'+item_id)).removeClass("btn_uninvited");
+	$($('#result_'+item_id)).addClass("btn_invited");
+	$($('#result_'+item_id)).text("已邀請");
+	//TODAY
+	var currentdate = new Date(); 
+    var today = currentdate.getFullYear() + "/" + (( (currentdate.getMonth()+1).toString().length < 2)? "0" + (currentdate.getMonth()+1) :currentdate.getMonth()+1)  + "/" +  (( ( currentdate.getDate()).length < 2)? "0" +  currentdate.getDate() : currentdate.getDate()) ;
+	//加入ID邀請區塊
+	var invite_str  = '<div class="invited_item" id="'+item_id+'">';
+	
+	    invite_str += '<div class="delete_invited" onclick="delete_invited_item(\''+item_id+'\',\''+item_name+'\',\''+item_src+'\');" >X</div>';
+	    invite_str += '<div class="invited_face"><img src="'+item_src+'" alt="'+item_name+'"></div>';
+	    invite_str += '<div class="invited_info">';
+	    invite_str += '<ul>';
+	    invite_str += '<li class="invited_name">'+item_name+'</li>';
+	    invite_str += '<li class="invited_time">加入時間:'+ today +'</li>';
+		invite_str += '<li>';
+		invite_str += '<div class="dropdown">';
+		invite_str += '<select id="control_box_'+item_id+'" >';
+		invite_str += '<option value="onlybrowse">瀏覽</option>';
+		invite_str += '<option value="multiedit">共用</option>';
+		invite_str += '<option value="viceadmin">副管理</option>';
+		invite_str += '</select>';
+        invite_str += '</div>';  
+		invite_str += '</li>';
+		invite_str += '</ul>';
+		invite_str += '</div>';
+		invite_str += '</div>';
+	$('.invited_item_list .product_scroll2').append(invite_str);
+	$('.invited_item_list .product_scroll2').width($('.invited_item_list .product_scroll2').width()+170);
+	$(".invited_item_list").getNiceScroll().resize();
+  }
+}
+
+function delete_invited_item(item_id,item_name,item_src){
+  //先清除刪除的加入清單
+  $('#'+item_id).remove();
+	$('.invited_item_list .product_scroll2').width($('.invited_item_list .product_scroll2').width()-170);
+  $(".invited_item_list").getNiceScroll().resize();
+  //先搜尋是否已有, 若有, 則改BTN樣式CLASS
+  if($('#result_'+item_id).length > 0){
+    //換BTN樣式
+    $($('#result_'+item_id)).removeClass("btn_invited");
+	$($('#result_'+item_id)).addClass("btn_uninvited");
+	$($('#result_'+item_id)).text("邀請");
+  }else{
+    //若無, APPEN字串再將清除的清單加到搜尋下方, 組字串
+	var result_str  = '<div class="result_item">';
+	    result_str += '<div class="result_face"><img src="'+item_src+'" alt="'+item_name +'"></div>';
+		result_str +=  '<div class="result_info">';
+	    result_str +=  '<ul>';
+		result_str +=  '<li class="restult_name">'+item_name+'</li>';
+	    result_str +=  '<li class="btn_uninvited" id="result_'+ item_id +'" onclick="add_invited_item(\''+item_id+'\',\''+item_name+'\',\''+item_src+'\');" >邀請</li>';
+	    result_str +=  '</ul>';
+        result_str +=  '</div>';
+		result_str +=  '</div>';
+    $('.search_result').append(result_str);
+    }
+  }
+  
+  function restore_result(){
+  //回復上一次儲存資料
+  //先清空邀請區
+  $('.invited_item_list').empty();
+  var invite_str ="";
+  
+  //組邀請區塊
+    //invite_str  += '<div class="invited_item" id="'+item_id+'">';
+	invite_str += '<div class="invited_item" id="'+'connie9131'+'">';
+	//invite_str += '<div class="delete_invited" onclick="delete_invited_item(\''+item_id+'\',\''+item_name+'\',\''+item_src+'\');" >X</div>';
+	invite_str += '<div class="delete_invited" onclick="delete_invited_item(\''+'connie9131'+'\',\''+'李路禕'+'\',\''+'https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg'+'\');" >X</div>';
+	//invite_str += '<div class="invited_face"><img src="'+item_src+'" alt="'+item_name+'"></div>';
+	invite_str += '<div class="invited_face"><img src="'+'https://cdn.pinpinbox.com/storage/zh_TW/user/4272/picture$5ada.jpg'+'" alt="'+'李路禕'+'"></div>';
+	invite_str += '<div class="invited_info">';
+	invite_str += '<ul>';
+	//invite_str += '<li class="invited_name">'+item_name+'</li>';
+	invite_str += '<li class="invited_name">'+'李路禕'+'</li>';
+	invite_str += '<li class="invited_time">加入時間:'+ '2015/05/18' +'</li>';
+	invite_str += '<li>';
+	invite_str += '<div class="dropdown">';
+	//invite_str += '<select id="control_box_'+item_id+'" >';
+	invite_str += '<select id="control_box_'+'connie9131'+'" >';
+	invite_str += '<option value="onlybrowse">瀏覽</option>';
+	invite_str += '<option value="multiedit">共用</option>';
+	invite_str += '<option value="viceadmin">副管理</option>';
+	invite_str += '</select>';
+    invite_str += '</div>';  
+	invite_str += '</li>';
+	invite_str += '</ul>';
+	invite_str += '</div>';
+	invite_str += '</div>';
+  
+  
+  
+ 	invite_str += '<div class="invited_item" id="'+'ahodoodle'+'">';
+	invite_str += '<div class="delete_invited" onclick="delete_invited_item(\''+'ahodoodle'+'\',\''+'阿賀'+'\',\''+'https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg'+'\');" >X</div>';
+	invite_str += '<div class="invited_face"><img src="'+'https://cdn.pinpinbox.com/storage/zh_TW/user/6350/picture$f208.jpg'+'" alt="'+'阿賀'+'"></div>';
+	invite_str += '<div class="invited_info">';
+	invite_str += '<ul>';
+	invite_str += '<li class="invited_name">'+'阿賀'+'</li>';
+	invite_str += '<li class="invited_time">加入時間:'+ '2018/08/21' +'</li>';
+	invite_str += '<li>';
+	invite_str += '<div class="dropdown">';
+	invite_str += '<select id="control_box_'+'ahodoodle'+'" >';
+	invite_str += '<option value="onlybrowse">瀏覽</option>';
+	invite_str += '<option value="multiedit">共用</option>';
+	invite_str += '<option value="viceadmin">副管理</option>';
+	invite_str += '</select>';
+    invite_str += '</div>';  
+	invite_str += '</li>';
+	invite_str += '</ul>';
+	invite_str += '</div>';
+	invite_str += '</div>';
+	
+  $('.invited_item_list .product_scroll2').append(invite_str);
+  $(".invited_item_list").getNiceScroll().resize();
+}
+</script>
+<!-- 主要畫面開始 -->
+<div id="editor_content">
+	<div id="editor_info" >
+		<h2>建立作品</h2>
+		<span>支援圖片、影片、音檔、PDF；單件最大可達10MB 影片最大可達12MB</span>
+	</div>
+	<div id="editor_wrap">
+		<div id="edit_control">
+		
+			<ul>
+				<li><a href="javascript:void(0)" style="font-size: 14px;" class="con_icon06">共同編輯</a></li><!--<i class="fa fa-users fa-lg multi-editor" ></i><br>-->
+				<!--^% 活動版本註解 <li><a href="javascript:void(0)" class="con_icon06 common" data-act="con_icon06"></a></li> -->
+				<li><a href="javascript:void(0)" style="font-size: 14px;" class="con_icon02 preivewlists">查看作品</a></li>
+							</ul>
+		</div>
+		<div id="edit_home">
+			<ul>
+				<li>
+					<a style="padding-top:10px;font-size:14px;" href="https://www.pinpinbox.com/index/template/" ><i class="fa fa-sign-out fa-lg rotate_180" style="font-size:24px;margin-bottom: 8px;"></i><br>離開</a>
+				</li>
+			</ul>
+		</div>
+		<div id="editpage" class="editpage"><span class="edit_num1">1</span> / <span class="edit_num2">22</span></div>
+		<div id="tem_content" style="padding:3px 150px;">
+		    <div id="tem_upload">
+						<ul>
+							<li>
+								<!-- The file upload form used as target for the file upload widget -->
+								<form id="fileupload_fastupload" action="javascript:void(0)" method="POST" enctype="multipart/form-data" name="uploadform" data-ng-app="demo" data-ng-controller="DemoFileUploadController" data-file-upload="options" data-ng-class="{'fileupload-processing': processing() || loadingFiles}">
+									<!-- Redirect browsers with JavaScript disabled to the origin page -->
+									<noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
+									<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+									<div class="row fileupload-buttonbar">
+										<div >
+											<span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}" style="background-color:#00acc1;border-color: #00acc1;" onclick="show_media_view()">
+												<i class="glyphicon glyphicon-plus"></i>
+												<span>上傳影片</span>												
+											</span>
+											<!-- The fileinput-button span is used to style the file input field as button -->
+											<span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}" style="background-color:#00acc1;border-color: #00acc1;">
+												<i class="glyphicon glyphicon-plus"></i>
+												<span>上傳圖檔或PDF</span>
+												<input type="file" name="files[]" multiple ng-disabled="disabled" accept="image/gif, image/jpeg, image/jpg, image/png, application/pdf">
+											</span>
+
+											<!-- -->
+											<button type="button" id="before_upload" class="btn btn-primary start" onclick="before_fileupload()">
+												<i class="glyphicon glyphicon-upload"></i>
+												<span>開始上傳檔案</span>
+											</button>
+
+											<button type="button" id="uploadstart" class="btn btn-primary start" data-ng-click="submit()" style="display:none;">
+												<i class="glyphicon glyphicon-upload"></i>
+												<span>開始上傳檔案</span>
+											</button>
+											<!-- The global file processing state -->
+											<span class="fileupload-process"></span>
+										</div>
+										<div class="progress" style="display:none; width:40%;">
+											<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70"	aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:#17b1ad;">
+												<span class="sr-only" style="color:white;"></span>
+											</div>
+										</div>
+									</div>
+									<!-- The table listing the files available for upload/download -->
+									<table class="table table-striped files ng-cloak">
+										<tr data-ng-repeat="file in queue" data-ng-class="{'processing': file.$processing()}" state="pretreat">
+											<td data-ng-switch data-on="!!file.thumbnailUrl">
+												<div class="preview" data-ng-switch-when="true">
+													<a data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery><img data-ng-src="{{file.thumbnailUrl}}"></a>
+												</div>
+												<div class="preview" data-filesType="{{file.type}}"  data-ng-switch-default data-file-upload-preview="file"></div>
+											</td>
+											<td>
+												<p class="name" data-ng-switch data-on="!!file.url">
+													<span data-ng-switch-when="true" data-ng-switch data-on="!!file.thumbnailUrl">
+														<a data-ng-switch-when="true" title="{{file.name}}" data-gallery>{{file.name}}</a>
+														<a data-ng-switch-default data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}">{{file.name}}</a>
+													</span>
+													<span data-ng-switch-default>{{file.name}}</span>
+												</p>
+												<strong data-ng-show="file.error" style="color:red;" class="error text-danger">{{file.error}}</strong>
+												<strong class="success" style="color:#17b1ad;font-weight:bold;"></strong>
+											</td>
+											<td>
+												<p class="size">{{file.size | formatFileSize}}</p>
+											</td>
+											<td>
+												<button type="button" class="btn btn-warning cancel common" data-ng-click="file.$cancel()" data-ng-hide="!file.$cancel" data-act="cancelfile">
+													<i class="glyphicon glyphicon-ban-circle"></i>
+													<span>取消上傳</span>
+												</button>
+												<button data-ng-controller="FileDestroyController" type="button" class="btn btn-danger destroy" data-ng-click="file.$destroy()" data-ng-hide="!file.$destroy">
+													<i class="glyphicon glyphicon-trash"></i>
+													<span>Delete</span>
+												</button>
+											</td>
+										</tr>
+									</table>
+								</form>
+							</li>
+						</ul>
+					</div>
+				</div>
+								</div>
+	</div>
+</div>
+<!-- 主要畫面結束 -->
+
+<!-- 版型選擇區塊開始 -->
+<div class="menu slide-menu-bottom">	</div>
+<!-- 版型選擇區塊結束 -->
+
+
+
+<!-- 已完成相片列表開始 -->
+<div class="menu02 slide-menu-up ">
+	<div class="menu_info">
+		<a href="javascript:void(0)" class="select">作品頁面</a>
+		<a href="javascript:void(0)" onclick="save_album()" class="save start">發佈作品</a>
+		<a href="javascript:void(0)" onclick="load_album_setting(this)" class="common music_open" data-act="album_setting"></a>
+		<span><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/object.png" height="20" width="20">用滑鼠按住拖曳圖片可更改作品順序！</span>
+		<span style="margin: 0px 1.5%;"> <input style="height:20%;margin:0 0.5%" name="previewPageType" value="all" type="radio" checked>預覽全開</span>
+		<span> <input style="height:20%;margin:0 0.5%" name="previewPageType" value="part" type="radio" >前
+		<input style="height:35%; width:3%;" name="previewPageNum" type="number" value="1" min="0" max="200">頁可供預覽</span>
+	</div>
+	<div class="menu_list" id="album_list">
+	    <div class="menu_item">
+			<a onclick="$('#mask02').trigger('click');" href="javascript:void(0)">
+				<div class="menu_add">
+					<p class="editpage">
+						<span>1</span> / <span>22</span>
+					</p>
+				</div>	
+			</a>
+		</div>
+	</div>
+</div>
+<!-- 已完成相片列表結束 -->
+
+<div tag="true" id="aviary"></div>
+<div id="mask" class="maskclose"></div>
+<div id="mask02" class="maskclose"></div>
+<script src="https://dme0ih8comzn4.cloudfront.net/js/feather.js"></script>
+
+<script type="text/javascript">
+var photoChangeSettings = false,
+	photoExchange = false,
+	filesQueue=0, maxUploadFiles = 50,
+	checkedBoxList =[],
+	$_obj0 = $('#type_p3 div[data-tag="photousefor-amount"]'),
+	$_obj1 = $('#type_p3 div[data-tag="photousefor-description"]'),
+	$_obj2 = $('#type_p4 div[data-tag="photousefor-description"]'),
+	$_obj3 = $('#type_p3 div[data-tag="photousefor-name"]'),
+	$_obj4 = $('#type_p3 div[data-tag="photousefor-exchangeImageBtn"]');
+
+var video_file = $("#video_demo_file")[0],audio = new Audio(),croppicAct,croppicResponse,
+croppicJudge = function(r) {
+	switch (r.result) {
+		case 1:
+			break;
+		case 2:
+			_jBox(r, 'login');
+			break;
+		case 3:
+			_jBox(r, 'albumProcess');
+			break;
+		default:
+			_jBox(r, 'error');
+			break;
+	}
+};
+
+var croppicContainerEyecandyOptions = {
+	uploadUrl: 'https://www.pinpinbox.com/index/diy/img_save_to_file/?album_id=14332',
+	cropUrl: 'https://www.pinpinbox.com/index/diy/img_crop_to_file/?album_id=14332',
+	rotateFactor: 10,
+	rotateControls: true,
+	onError: function(data) {
+		croppicResponse = $.parseJSON(data);
+	
+		//有 error 的情況下，upload 會跑到這裡就停止，但 crop 不會，為使 jBox 不打結因此處理
+		if (croppicAct == 'upload') {
+			croppicJudge(croppicResponse);
+			croppicResponse = null;
+		}
+	},
+	onAfterImgCrop:	function() {
+		//因為在有 error 的情況下，crop 仍會跑到這裡，為使 jBox 不打結因此處理
+		if (croppicResponse) {
+			croppicJudge(croppicResponse);
+			croppicResponse = null;
+			return;
+		}
+		$('#' + this.id).find('div.cropControls>i.cropControlUpload').css('display', 'none');
+		$('#' + this.id).find('div.cropControls>i.cropControlRemoveCroppedImage').data('imgUrl', this.croppedImg[0].src);
+		
+		make_tooltip('.cropControls .cropControlRemoveCroppedImage', '重置');
+	
+		var upload_count = $('.croppedImg').length, //已上傳
+			empty_count = $('.crop_upload').length;	//需上傳
+		
+		if (upload_count == empty_count) {
+			$('#ctr-btn').removeClass('con_icon03').addClass('con_icon05').html('確認此頁');
+		}
+	},
+	onAfterImgUpload: function() {
+		make_tooltip('.cropControls .cropControlZoomMuchIn', '放大+');
+		make_tooltip('.cropControls .cropControlZoomIn', '放大');
+		make_tooltip('.cropControls .cropControlZoomOut', '縮小');
+		make_tooltip('.cropControls .cropControlZoomMuchOut', '縮小+');
+		make_tooltip('.cropControls .cropControlRotateLeft', '向左旋轉');
+		make_tooltip('.cropControls .cropControlRotateRight', '向右旋轉');
+		make_tooltip('.cropControls .cropControlReset', '重置');
+		$('.cropImgWrapper').css('opacity', '0');
+		$('.con_icon03').addClass('active');
+		$('.cropControlsCrop').each(function(k, v){
+			var controlcrop = $(this);
+			controlcrop.attr('id', controlcrop.parent('div').attr('id'));
+		});
+
+		//reset 
+		$('.cropControlReset').on('click' , function(){
+			var obj = $('div#'+$(this).parent('div').attr('id'));
+			obj.find('img').remove();
+			obj.find('i.cropControlRemoveCroppedImage').remove();
+			$('.jBox-Tooltip').css('display', 'none');
+			make_tooltip('.cropControls .cropControlUpload', '上傳圖檔');
+		});
+	},
+	onBeforeImgCrop: function() {
+		croppicAct = 'crop';
+	},
+	onBeforeImgUpload: function() {
+		croppicAct = 'upload';
+	},
+	onReset: function() {
+		$.post('https://www.pinpinbox.com/index/diy/img_reset/', {
+			album_id: '14332',
+			imgUrl: this.imgUrl,
+		}, function(r) {
+			r = $.parseJSON(r);
+			switch (r.result) {
+				case 1:
+					break;
+				case 2:
+					_jBox(r, 'login');
+					break;
+				case 3:
+					_jBox(r, 'albumProcess');
+					break;
+				default:
+					_jBox(r, 'error');
+					break;
+			}
+		});
+		$('.con_icon03').removeClass('active');
+	},
+	imgEyecandy: true,				
+	loaderHtml: '<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div>',
+};
+
+window.onbeforeunload = function() { 
+	$.post('https://www.pinpinbox.com/index/diy/onBeforeUnLoadSave/', {
+		album_id : 14332,
+	}, function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 1:
+				return true;
+				break;
+			default : break;
+		}
+	});
+}
+
+var upload_data = [];
+$(function(){
+		initAviary();
+
+	$(document).on('input', '#photo_form_enter', function(){
+	    photoChangeSettings = true;
+	}).on('input', '#type_p4 input[type="number"]', function(){slotPossibilityReflesh();});
+	
+	//搜尋框增加按鈕清除內容
+	$(".share_search").addClear();
+	$('li.video_upload.film_content').on('mouseout', function(){video_demo_file.pause();});
+	$("#more_tab").easytabs({animate: true,animationSpeed: 80,updateHash: false,});
+	$('.etabs02 a').on('click', function(e) {
+		var currentAttrValue = $(this).attr('href'), usefor =  $(this).parent('li').attr('name');
+        datepickerInitial();
+		if (currentAttrValue == '#type_p4' && $('#more_enter a').data('usefor') != 'slot') {
+            $.post('https://www.pinpinbox.com/index/diy/slot_point/', {
+                album_id: '14332',
+                photo_id: $('#more_enter a').data('photo_id'),
+            }, function (r) {
+                r = $.parseJSON(r);
+                if (r.data) {
+                    $('#type_tab ' + currentAttrValue).fadeIn().siblings().hide();
+                    $(this).parent('li').addClass('active').siblings().removeClass('active');
+                    $('#more_enter').children('a').data('usefor_save', usefor);
+                    e.preventDefault();
+                } else {
+                    _jBox({message: 'P點不足'}, 'error');
+                    $('.etabs02').children('li[name=' + $('#more_enter a').data('usefor') + ']').removeClass('active').children('a').trigger('click');
+                }
+            });
+        } else {
+            $('#type_tab ' + currentAttrValue).fadeIn().siblings().hide();
+            $(this).parent('li').addClass('active').siblings().removeClass('active');
+            $('#more_enter').children('a').data('usefor_save', usefor);
+            e.preventDefault();
+        }
+    });
+
+	$('#album_list').sortable({
+		cursor: "move",
+		opacity: 0.8,
+		items: '.menu_item:not(:last)',
+		containment: 'parent',
+		helper : 'clone',
+		create : function( event, ui) {	},
+		update: function(event, ui) {
+			var o_photo = [];
+			$('.menu_item').each(function(k0, v0) {
+				$(v0).find('.file-num').text('p' + (k0 + 1));
+				if(k0 == 0) {
+					$(v0).find('.previewCbox').data('cbox', 'locked').prop("checked", true);
+				}else {
+					$(v0).find('.previewCbox').data('cbox', 'unlocked');
+				}
+
+				o_photo[k0] = {
+						photo_id: $(v0).find('img.depot').data('photo_id'),
+						sequence: k0,
+				};
+				
+				$(v0).find('img.thumbnail').attr('onclick', 'browseKit_diy('+k0+')');
+			});
+			
+			$.post('https://www.pinpinbox.com/index/diy/sorted/', {
+				album_id: '14332',
+				photo: o_photo,
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 1:
+						break;
+					case 2:
+						_jBox(r, 'login');
+						break;
+					case 3:
+						_jBox(r, 'albumProcess');
+						break;
+					default:
+						_jBox(r, 'error');
+						break;
+				}
+			});
+		},
+	});
+
+	$('input[name="audio_mode"][value="none"]').trigger('click');		
+	$('#editor_wrap').css({'height':'auto', 'min-height':'798px'});
+
+	/**	
+	 * 螢幕大小不同會造成視窗顯示不完整, 故依照取得的解析度調整載入影片的視窗大小
+	 */
+	var _width = screen.width, _height = screen.height, _screen, _MediaElementPlayerSize = {'width':320, 'height':240};
+	if(_width>1600) {
+		// > 22吋桌上螢幕
+		_screen = 'large';
+	} else if (_width = 1366) {
+		// > 15吋筆電螢幕
+		_screen = 'laptop';
+	};
+
+	switch(_screen) {
+		case 'large' : break;
+		case 'laptop' :
+			_MediaElementPlayerSize = {'width':320, 'height':200};
+			break;
+		default :
+			break;
+	}
+	$('#media_demo_file, #video_demo_file').attr(_MediaElementPlayerSize);
+
+	$('#fileupload_fastupload')
+		.bind('fileuploadadd', function (e, data) {})
+		.bind('fileuploadchange', function (e, data) {
+			filesQueue += data.files.length;
+			if(filesQueue > 50) { $('#before_upload').find('span').html('待上傳數量 : '+filesQueue); }
+	});
+
+});
+
+function datepickerInitial() {
+    var dateFormat = "yy-mm-dd";
+    $('.datepicker').datetimepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        dateFormat: dateFormat
+    })
+}
+
+function before_fileupload() {
+	var obj = $('#before_upload'), failFileName = [], fileNameStr='', album_left = 0,
+		block_box =  _jBox({'message':'<p>準備上傳檔案中...</p>'} , 'blockCustomMsg');
+	//檢查數量 & 錯誤訊息
+	obj.queue('before_upload', function(next) {
+		block_box.open();
+		
+		$('strong.text-danger').each(function(k, v){
+			if($(this).html().length > 0) {
+				_thisFileName = $(this).siblings('p.name').find('span').html();
+				failFileName.push(_thisFileName);
+			}
+		})
+
+		if(failFileName.length > 0) {
+			for (var i = failFileName.length - 1; i >= 0; i--) {
+				fileNameStr += '<p>'+failFileName[i]+'</p>';
+			}
+			tips_box = _jBox({'message':'檔案大小超過上限：'+fileNameStr} , 'error');
+			obj.clearQueue('before_upload');
+			block_box.close();
+		} else {
+			$.post('https://www.pinpinbox.com/index/diy/current_photo_num/' , {
+				album_id : '14332',
+			}, function(r) {
+				r = $.parseJSON(r);
+				var upload_count = $('table.files').find('tr').length , pdfFilescount = $('div[data-filesType="application/pdf"]').length;
+				if(upload_count > r.data.album_limit) {
+					var m = {'message': '相片數量超過上限<br>剩餘可用:'+r.data.album_limit+'<br>目前上傳:'+upload_count };
+					_jBox(m,'info');
+					block_box.close();
+					obj.clearQueue('before_upload');
+				}else if(upload_count > maxUploadFiles) {
+					block_box.close();
+					var m = {'message': '相片數量超過上限<br>上傳上限:'+maxUploadFiles+'<br>目前上傳:'+upload_count };
+					_jBox(m,'info');
+					obj.clearQueue('before_upload');
+				}else{
+					album_left = r.data.album_left;
+					delayExecute(
+						function() {
+							return ($('div[data-file-upload-preview="file"').find('canvas').length+pdfFilescount) == $('tr.ng-scope[state="pretreat"]').length;
+						}, 
+						function() {
+							next();
+						}
+					);
+				}
+			});
+		}
+	});
+
+	//檢查是否存在其他process相本,若有的話則直接儲存
+	obj.queue('before_upload', function(next){
+		$.post('https://www.pinpinbox.com/index/diy/save_album_ajax/' , {
+			album_id: '14332',
+		}, function(r) {
+			r = $.parseJSON(r);
+			switch (r.result) {
+				case 0 : 
+					_jBox(r, 'error');
+				break;
+				case 1 : 
+					_jBox(r, 'success');
+				break;
+				case 2 : 
+					next();
+				break;
+			}
+		});
+	});
+
+	//上傳相片
+	obj.queue('before_upload', function(next){
+		//快速建立
+		block_box.setContent('<div class="content"><p>正在上傳檔案...</p><p style="text-align: center;"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/loading.gif"></p><p style="text-align: center;">(請勿關閉視窗)</p></div>');
+		$('#fileupload_fastupload').fileupload({
+			dataType: 'json',
+			url: 'https://www.pinpinbox.com/index/diy/upload/?album_id=14332',
+			sequentialUploads : true,
+			start: function(e, data) {  upload_data =[]; },
+			submit: function(e, data) { if (!$('tr.ng-scope[state="pretreat"]').length) return false; },
+			success: function(result, textStatus, jqXHR) { },
+			error: function(jqXHR, textStatus, errorThrown) { 
+				block_box.close();
+				var m = {'message': '檔案上傳失敗, 請重新上傳', 'redirect': 'https://www.pinpinbox.com/index/diy/?album_id=14332' };
+				_jBox(m,'error');
+			},
+			progressall: function(e, data) {
+				var progressall = parseInt(data.loaded / data.total * 100, 10);
+				$('.progress').slideDown();
+				$('.progress>.progress-bar').css('width', progressall + '%');
+				$('.sr-only').text(progressall + '%');
+				if (progressall == 100) {
+					setTimeout(function() {
+						$('.progress').slideUp();
+						$('.progress>.progress-bar').css('width','0%');
+						$('.sr-only').text('0%');
+					}, 2000);
+				}
+			},
+			done: function(e, data) {
+				if(data.result.result > 2 ) window.onbeforeunload = null;
+				switch (data.result.result) {
+					case 0:
+						_jBox(data.result, 'error');
+						break;
+					case 1:
+						upload_data.push(data.result.data);
+
+						$('tr.ng-scope[state="pretreat"]').each(function() {
+							$(this).attr('state', 'success').find('strong.success').text('上傳成功。').end().find('button.cancel').hide();
+						});
+						if ( $('table.files').find('tr').length == upload_data.length ) {
+							var countUploadData = [].concat.apply([], upload_data);
+							if (album_left < countUploadData.length) {
+								_jBox({
+									'message' : '<p>可用相片剩餘數量不足, 請重新上傳</p>',
+									'redirect':'https://www.pinpinbox.com/index/diy/?album_id=14332'
+								}, 'error');
+								window.onbeforeunload = null;
+							} else {
+								next();
+							}
+						}
+						break;
+					case 2:
+						_jBox(data.result, 'login');
+						break;
+					case 3:
+						_jBox(data.result, 'error');
+						break; 
+					case 4:
+						_jBox(data.result, 'error');
+						break;
+					case 5:
+						_jBox(data.result, 'error');
+						break;
+				}
+			},
+		});
+		$('#uploadstart').trigger('click');	
+	});
+
+	//儲存相本
+	obj.queue('before_upload', function() {
+		if (upload_data.length == 0) {
+			block_box.close();
+			_jBox({'message': '您必須先上傳圖檔。'}, 'info');
+		} else if(upload_data.length > 22) {
+			block_box.close();
+			_jBox({'message': '相片數量超過上限'}, 'info');
+		}else {
+			var CboxId = [], photoData = [].concat.apply([], upload_data);
+			$('.previewCbox').each(function(k, v){
+				if($(v).prop('checked')) CboxId.push($(v).data('photo_id'));
+			})
+
+			$.ajax({
+				url: 'https://www.pinpinbox.com/index/diy/save_upload/?album_id=14332',
+				type: 'POST',
+				data: ({
+					album_data: JSON.stringify(photoData),
+					album_id : '14332',
+					preview_id : CboxId,
+					current_num : $('div.menu_item').length,
+														}),
+			}).done(function(r) {
+				r = $.parseJSON(r);
+
+				switch (r.result) {
+					case 1:
+						block_box.close();
+						upload_data = [];
+						window.onbeforeunload = null;
+						_jBox(r, 'success_notext');
+						break;
+					case 2:
+						_jBox(r, 'login');
+						break;
+					case 3:
+						_jBox(r, 'albumProcess');
+						break;
+					default:
+						_jBox(r, 'error');
+						break;
+				}
+			});	
+		}	
+	})
+
+	if($('table.files').find('tr').length > 0 ){
+		obj.dequeue("before_upload");
+	}
+}
+
+function browseKit_diy(key) {
+	$('#mask02').data('indexId', key);
+	browseKit_album('https://www.pinpinbox.com/index/album/show_photo/', {album_id:'14332'});
+}
+
+function clean_setting(type) {
+	for (key in type) {
+		switch(type[key]) {
+			case 'add_media':
+				$('div#media_type_tab').find(':text').val('');
+				$('.media_info_description').val('');
+				$('#add_media_url').val('');
+				$('#add_media_area').empty();
+				$('#media_demo_file').attr('src', '');
+				$('div[name="media_filename"]').html('');
+				$('.media1_InfoUrlName,.media1_InfoUrl,.media2_InfoUrlName,.media2_InfoUrl').val('');
+			break;
+
+			case 'video':
+				$('div[name="video_filename"]').html('').data('output_name', '');
+				$("#video_demo_file source,#video_demo_file").attr('src','');
+				$(':input#video_url').val('');
+			break;
+			
+			case 'exchange':
+			    $_obj0.html('數量: <input step="1" type="number" max="65535" min="1" class="info_exchange_amount" placeholder="1 ~ 65535">');
+				$_obj1.html('<textarea cols="30" rows="3"></textarea>');
+				$_obj3.html('名稱: <input type="text" name="exchange_name" maxlength="32" class="laybar_text">');
+				$_obj4.html('<img id="exchange_image_upload" class="common" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/laybar_up.png" data-act="exchange_image_upload">');
+
+                $('#type_p3 div[data-tag="photousefor-exchange_starttime"]').html('<p>開始時間: <input type="text" name="exchange_starttime" class="datepicker" style="width:60%;"></p>');
+                $('#type_p3 div[data-tag="photousefor-exchange_endtime"]').html('<p>結束時間: <input type="text" name="exchange_endtime" class="datepicker" style="width:60%;"></p>');
+                $('img#exchange_image_show').attr({'src': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/transparent.png', 'name':''});
+				$('#type_p3').data('photousefor_id', '');
+			break;
+
+			case 'slot' :
+				$('.laybar_list').remove();
+				$_obj2.html('<textarea cols="30" rows="2"></textarea>');
+                $('#type_p4 div[data-tag="photousefor-slot-starttime"]').html('<input type="text" name="slot_starttime" class="datepicker" style="width:25%;">');
+                $('#type_p4 div[data-tag="photousefor-slot-endtime"]').html('<input type="text" name="slot_endtime" class="datepicker" style="width:25%;">');
+
+                break;
+		}
+	}
+}
+
+//crop & combine on one-button
+function croppic() {
+	$('#ctr-btn').attr('alt', 'true');
+	//frame num
+	var frame_num = $('.temp').length;			
+	//upload num
+	var upload_num = $('.cropControls i.cropControlCrop').length;
+	//corped
+	var croppic_num = $('.croppedImg').length;
+
+	if (upload_num > 0) {
+		$('.cropControls i.cropControlCrop').each(function() {
+			$(this).trigger('click');
+		});
+	} else if (frame_num == croppic_num) {
+		image_combine();
+	} else {
+		_jBox({message: '您的圖像尚未裁切或是沒有足夠數量的圖像。'}, 'info');
+		$('#ctr-btn').attr('alt', 'false');
+	}
+}
+
+//刪除 
+function del(obj) {
+	var setPreview = getPreviewCheck();
+	var	deleteConfirm = new jBox('Confirm', {
+		cancelButton: '否',
+		confirmButton: '是',
+		cancel: function() {
+			deleteConfirm.destroy();
+		},
+		confirm: function() { 
+			$.post('https://www.pinpinbox.com/index/diy/delete/', {
+				album_id: '14332',
+				photo_id: $(obj).next('img').data('photo_id'),
+				setPreview : JSON.stringify(setPreview),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 1:
+						refreshPhoto(r.data);
+												break;
+					case 2:
+						_jBox(r, 'login');
+						break;
+					case 3:
+						_jBox(r, 'albumProcess');
+						break;
+					default:
+						_jBox(r, 'error');
+						break;
+				}
+			});
+		},
+		onCloseComplete: function() {
+			deleteConfirm.destroy();
+		}
+	}).setContent(
+		'<div class="message content">刪除後無法還原，確定要刪除嗎?</div>'
+	).open();
+};
+
+function delayExecute(check, proc, chkInterval) {
+    var x = chkInterval || 1000;
+    var checkFunc = window.setInterval(function () {
+        if (check()) {
+            window.clearInterval(checkFunc);
+            proc();
+        }
+    }, x);
+}
+
+function getPreviewCheck () {
+	var PreviewCheck = [];
+	$('.previewCbox').each(function(k, v){
+		if($(v).prop('checked')) {
+			PreviewCheck.push( $(v).parents('li').siblings('li.edit_img').children('img').data('tag') );
+		}
+	})
+	return PreviewCheck;
+}
+
+//tooltip
+function make_tooltip(target, text) {$(target).attr('title', text).jBox('Tooltip', {offset: {x: -30,y: 5}});}
+
+//儲存相本
+function save_album() {
+    var item = $('.menu_item') , previewPageValidate = true;
+
+    if( $('input[name="previewPageType"]:checked').val() == 'all' ) {
+        previewPageNum = (item.length-1);
+    } else {
+        previewPageNum = Number.parseInt($('input[name="previewPageNum"]').val());
+
+        if (previewPageNum > item.length) {
+            _jBox({message: '預覽頁數數量超過相片數量.'}, 'error');
+            $('input[name="previewPageNum"]').val(item.length-1);
+            previewPageValidate = false;
+        }  else if (previewPageNum < 1 || previewPageNum == '') {
+            _jBox({message: '至少需要輸入一頁提供預覽.'}, 'error');
+            $('input[name="previewPageNum"]').val(1);
+            previewPageValidate = false;
+        }
+    }
+
+    if(!previewPageValidate) return;
+
+    if (item.length == 0) {
+        _jBox({message: '您沒有製作相片。'}, 'error');
+    } else {
+		function save_album_request () {
+			var preview_id = [];
+
+            for (var n = 0; n <= (previewPageNum-1); ++n) {
+                preview_id.push($('.edit_img').eq(n).children('img').data('photo_id'));
+            }
+
+			Pace.track(function() {
+				$.ajax({
+					url: 'https://www.pinpinbox.com/index/diy/save_album/',
+					type: 'POST',
+					data: {
+						album_id: '14332',
+						preview_id : preview_id,
+                        preview_page_num : previewPageNum,
+                        preview_type : $('input[name="previewPageType"]:checked').val(),
+
+																	},
+					beforeSend: function(xhr) {
+						Block_modal = _jBox(null, 'block');
+					}
+				}).done(function(r) {
+					Block_modal.close();
+					window.onbeforeunload = null;
+					r = $.parseJSON(r);
+					switch (r.result) {
+						case 1:
+							_jBox(r, 'success_notext');
+							break;
+						case 2:
+							_jBox(r, 'login');
+							break;
+						case 3:
+							_jBox(r, 'albumProcess');
+							break;
+						default:
+							_jBox(r, 'error');
+							break;
+					}
+				});
+			});
+		}
+
+		/*slot pay*/
+		$.post('https://www.pinpinbox.com/index/diy/slot_unpaid/', {
+			album_id : '14332',
+			sign : '5ae0c40c38cbf8f329931874f549a4f1',
+		},function(r){
+			r = $.parseJSON(r);
+			switch(r.result) {
+				case 1:
+					if(r.data > 0) {
+						var amount = r.data * 0,
+							myConfirm = new jBox('Confirm', {
+							cancelButton: '否',
+							confirmButton: '是',
+							confirm: function() {
+								$.post('https://www.pinpinbox.com/index/diy/slot_buy/' , {
+									album_id : '14332',
+									sign : '5ae0c40c38cbf8f329931874f549a4f1',
+								},function(r){
+									r = $.parseJSON(r);
+									if(r.result == 1){
+										save_album_request();
+									}else{
+										_jBox(r, 'error');
+									}
+								});
+							},
+							onCloseComplete: function() {
+								myConfirm.destroy();
+							}
+						}).setContent(
+							'<div class="content">' +
+								'<p>剩餘P點：0p</p>' +
+								'<p>Slot數量：'+r.data+'張</p>' +
+								'<p>共需花費：<span class="red">'+amount+'p</span></p>' +
+							'</div>'
+						).open();
+					} else {
+						save_album_request();
+					}
+				break;
+
+				case 3:
+					_jBox(r, 'albumProcess');
+					break;
+			}
+		});
+	}
+};
+
+//replace farem
+function set_frame(id) {
+	$('#temp_2').children().remove();
+	if (typeof cropContainerEyecandy != "undefined") cropContainerEyecandy.destroy();
+	$.post('https://www.pinpinbox.com/index/diy/set_frame/', {
+		frame_id : id,
+		success_item : $('.menu_item').length,
+		album_id : '14332',
+	}, function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 1:
+				$('.frame_title').text(r.data['title']);
+				
+				//set frame into div#temp_2
+				$('#temp_2').append(r.data['layout']);
+
+				//1.建立Croppic 2.監聽Error message response 3.image格式篩選
+				$('.temp').each(function(k, v){
+					var cropContainerEyecandy = new Croppic('cropContainer' + k, croppicContainerEyecandyOptions);					
+					var monitor = $('#cropContainer'+k);
+					monitor.find('form>input[type=file]').attr('accept','image/jpeg, image/jpg, image/png');
+				});
+		
+				//replade Editing img number
+				$('.editpage').find('span').eq(0).text($('.menu_item').length);
+				
+				//tooltip
+				make_tooltip('.cropControls .cropControlUpload', '上傳圖檔');
+				
+				//close mask & back to edit area
+				if ($('#mask').hasClass('maskopen')) {
+					$('.menu').removeClass('slide-menu-up');
+					$('#mask').addClass('maskclose');
+					$('#mask').removeClass('maskopen');
+					$('.menu').addClass('slide-menu-bottom', 1000, 'easeOutQuint'); 
+				}
+
+				$('#ctr-btn').attr('alt', 'false').removeClass('con_icon05 active').addClass('con_icon03').html('裁切此頁');;
+				$('li#frame' + id).addClass('active').siblings('li').removeClass('active');
+				break;
+			case 2:
+				_jBox(r, 'login');
+				break;
+			case 3:
+				_jBox(r, 'albumProcess');
+				break;
+			default:
+				_jBox(r, 'error');
+				if (r.data == 'over') $('.editpage').find('span').eq(0).text($('.menu_item').length);
+				break;
+		}
+	});	
+}
+
+//all crop success then to do combine
+function image_combine() {
+	
+	var setPreview = getPreviewCheck();
+	//已上傳
+	var croppic_count = $('.croppedImg').length;
+	//需上傳
+	var empty_count = $('.crop_upload').length;	
+	
+	if (croppic_count < empty_count) {
+		//上傳不足縷空數
+		_jBox({message: '您的圖像數量不足夠做合併。'}, 'info');
+	} else if (croppic_count = empty_count) {
+		var success_item = $('.menu_item').length;	
+		var foreground = [];
+		
+		//逐一取得縷空格內圖片及位置
+		$('.croppedImg').each(function() {
+			//[url, top, left]
+			var str = {
+				url: $(this).attr('src'),
+				top: $(this).parents('.temp').css('top'),
+				left: $(this).parents('.temp').css('left'),
+			};
+			foreground.push(str);
+		});
+		
+		Pace.track(function() {
+			$.ajax({
+				url: 'https://www.pinpinbox.com/index/diy/image_combine/',
+				type: 'POST',
+				data: ({
+					album_id: '14332',
+					background: $('.tem_style').find('img').attr('alt'),
+					foreground: JSON.stringify(foreground),
+					success_item: success_item,
+					setPreview : JSON.stringify(setPreview),
+				}),
+				beforeSend: function(xhr) {
+					box0 = _jBox(null, 'processing');
+				}
+			}).done(function(r) {
+				r = $.parseJSON(r);
+				box0.close();
+				switch (r.result) {
+					case 1:
+					case 4:
+						refreshPhoto(r.data);
+						set_frame();
+
+						// 進階編輯
+						if (r.result == 1 && $('#aviary').attr('tag') == 'true') {
+							var editConfirm = new jBox('Confirm', {
+								cancelButton: '否',
+								confirmButton: '是',
+								cancel: function() {
+									if ($('input[name=auto_aviary]').prop("checked")){$('#aviary').attr('tag', 'false');}
+									$('.con_icon02').trigger('click');
+									editConfirm.destroy();
+								},
+								confirm: function() {
+									if ($('input[name=auto_aviary]').prop("checked")){$('#aviary').attr('tag', 'false');}
+									editConfirm.destroy();
+									aviary_edit($('img.depot[data-photo_id="'+r.data.photo[r.data.photo.length-1]['photo_id']+'"]').attr('id'));
+								},
+								onCloseComplete: function() {
+									$('.con_icon02').trigger('click');
+									editConfirm.destroy();
+								}
+							}).setContent(
+								'<div class="message content">特效編輯?</div><div style="font-size:12px"><input type="checkbox" id="auto_aviary" name="auto_aviary"><label for="auto_aviary">這個工作階段不再提示</label></div>'
+							).open();
+						}
+						$('#ctr-btn').removeClass('con_icon05 active').addClass('con_icon03').html('裁切此頁');
+						break;
+					case 2:
+						_jBox(r, 'login');
+						break;
+					case 3:
+						_jBox(r, 'albumProcess');
+						break;
+					default:
+						_jBox(r, 'error');
+						break;
+				}
+			});
+		});
+	} else if (empty_count == '') {
+		_jBox({message: '相片數量超過作品上限'}, 'error');					
+	}
+}
+
+function refreshPhoto(obj) {
+	var html = '', CboxDefault= '';
+	for (var k0 in obj.photo) {
+		html +=
+			'<div class="menu_item">' +
+				'<ul id="links" style="min-height:215px;">' +
+					'<li><span class="file-num">p' + (parseInt(k0, 10) + 1) + '</span><span class="type"><img onerror="this.src=\'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_empty.png\'" src="'+obj.photo[k0]['icon']+'"></span><span class="music">'+obj.photo[k0]['music_image_thumbnail']+'</span><span class="description">'+obj.photo[k0]['description_image_thumbnail']+'</span></li>' +
+					'<li title="建立者:'+obj.photo[k0]['user_name']+'"><img class="thumbnail" src="' + obj.photo[k0]['image_url_thumbnail'] + '" onclick="browseKit_diy(' + k0 + ')"></li>' +
+					'<li class="edit_img">' +
+						'<a class="e1" href="javascript:void(0)" title="進階編輯" name="aviaryPhotoId_' + obj.photo[k0]['photo_id'] + '" onclick="'+obj.photo[k0]['aviary_edit_onclick']+'(\'edit_' + (parseInt(k0, 10) + 1) + '\')" title="edit"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/avi_icon.png"></a>' +
+						'<a href="javascript:void(0)" title="新增資訊" onclick="'+obj.photo[k0]['photo_setting_onclick']+'(this)" class="e2 more_setting"></a>' +
+						'<a class="e3" href="javascript:void(0)" title="刪除" onclick="'+obj.photo[k0]['delete_onclick']+'(this)" title="delete"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/del_icon.png"></a>' +
+						'<img id="edit_' + (parseInt(k0, 10) + 1) + '" class="depot"  data-width="668" data-height="1002" data-usefor="'+obj.photo[k0]['usefor']+'" data-tag="' + obj.photo[k0]['image'] + '" data-photo_id="' + obj.photo[k0]['photo_id'] + '" style="display:none;" src="' + obj.photo[k0]['image_url'] + '">' +
+					'</li>' +
+				'</ul>' +
+			'</div>';
+	}
+
+	$('#album_list').html(html);
+	var editpage = '<div class="menu_item"><a onclick="$(\'#mask02\').trigger(\'click\');" href="javascript:void(0)"><div class="menu_add"><p class="editpage">'+($('.menu_item').length + 1)+'</span> / <span>'+obj.album_limit+'</span></p></div></a><div class="allSelectbtn"></div></div>';
+	$('#album_list').append(editpage);
+
+	$('.editpage').children('span.edit_num1').text($('.menu_item').length).children('span.edit_num2').text(obj.album_limit);
+	for (var i = 0; i < checkedBoxList.length; i++) {
+		$('input[data-photo_id="'+checkedBoxList[i]+'"]').attr('checked', 'checked');
+	}
+
+	browseKitRefresh();
+}
+
+function photo_setting(obj) {
+	$('span[name="photo_setting_num"]').html($(obj).parents('ul').find('span.file-num').html());
+	$.post('https://www.pinpinbox.com/index/diy/photo_setting/', {
+		album_id: 14332,
+		photo_id: $(obj).siblings('img').data('photo_id'),
+		sign: '5ae0c40c38cbf8f329931874f549a4f1',
+	}, function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 1:
+				$('#more_enter a').data({'usefor': r.data.usefor, 'photo_id': r.data.photo_id});
+				$('.etabs02>li[name='+r.data.usefor+']').children('a').trigger('click');$('.etabs02>li').show();
+				$('.out_content .info_loaction').val(r.data.location); $('.out_content .info_description').val(r.data.description);
+				$('.out_content .info_url1').val(r.data.url1); $('.out_content .info_url1_name').val(r.data.url1_name); 
+				$('.out_content .info_url2').val(r.data.url2); $('.out_content .info_url2_name').val(r.data.url2_name); 
+				$('[data-act="add_slot_item"]').show();$("#video_area1").empty();
+				$('.etabs02>li[name="video"]').hide();
+				var text_readonly='', upload_type = 'file', delete_style = '', video_platform;
+				
+				switch (r.data.usefor) {
+					case 'video' : 
+						$('.etabs02>li[name="video"]').show().siblings('li').hide(); 
+						if (r.data.video_refer == 'embed') {
+							
+							video_platform = fetch_video_platform(r.data.video_target);
+							if (typeof video_platform != 'undefined') {
+								switch (video_platform) {
+									case 'youtube':
+									case 'vimeo':
+										if($('#video_demo_embed').length > 0 || $('#fbVideo').length > 0){ $('#video_area1').empty();}
+										$("#video_area1").append('<video style="margin-top:30px;" width="320" height="200" id="video_demo_embed"><source type="video/'+video_platform+'" src="'+r.data.video_target+'" /></video>');
+										video_embed = new MediaElementPlayer('#video_demo_embed', {enablePluginDebug: false, flashName: 'flashmediaelement-cdn.swf'});
+									break;
+
+									case 'facebook':
+										var video_url = r.data.video_target,
+											element = `<div  
+														id="fbVideo"
+														class="fb-video" 
+														data-href="${video_url}" 
+														data-width="500" 
+														data-allowfullscreen="true"></div>`;
+										$('#video_area1').empty().append(element);
+										window.FB.XFBML.parse();
+									break;
+								}
+
+								$(':input[name="group1"].video_url').click();
+								$(':input#video_url').val(r.data.video_target);
+							}
+
+						} else {
+							$(':input[name="group1"].video_upload').click();
+							$("#video_demo_file source.mp4, #video_demo_file").attr('src', 'https://cdn.pinpinbox.com/upload/' + r.data.video_target);
+							$('div[name="video_filename"]').data('output_name', r.data.video_target);
+							$('#video_demo_file').attr('poster', r.data.imageUrl).data('poster', r.data.image);
+						}
+					break;
+					
+					case 'exchange' :
+						$('.etabs02 li[name="exchange"]').siblings('li').hide();
+						$('#type_p3').data('photousefor_id', r.data.photousefor.photousefor_id);
+						$('img#exchange_image_show').attr({'src' : 'https://cdn.pinpinbox.com/upload/' +r.data.photousefor.image, 'name': r.data.photousefor.image});
+						
+						if (r.data.photo.exchange) {
+						    photoExchange = true;
+                            $_obj0.html('數量 :' + r.data.photousefor.amount);
+                            $_obj3.html('名稱 :' + r.data.photousefor.name);
+							$_obj1.html(r.data.photousefor.description);
+							$_obj4.html('');
+                            $('#type_p3 div[data-tag="photousefor-exchange_starttime"]').html('開始時間 : '+r.data.photousefor.starttime);
+                            $('#type_p3 div[data-tag="photousefor-exchange_endtime"]').html('結束時間 : '+r.data.photousefor.endtime);
+						} else {
+							photoExchange = false;
+							$_obj3.find('input').val(r.data.photousefor.name);
+							$_obj0.find('input').val(r.data.photousefor.amount);
+							$("input[name='exchange_starttime']").val(r.data.photousefor.starttime);
+							$("input[name='exchange_endtime']").val(r.data.photousefor.endtime);
+							$_obj1.find('textarea').val(r.data.photousefor.description);
+						}
+					break;
+
+					case 'image':
+						break;
+					
+					case 'slot' :
+						$('.etabs02 li[name="slot"]').siblings('li').hide();
+						
+						var num0 = 0;
+						for (k0 in r.data.photousefor) {
+							$('#laybar_box').append(
+								'<div class="laybar_list">' + 
+									'<div class="laybar_left">' +
+										'<ul>' +
+											'<li><h4>' + (num0 + 1) + '</h4><a href="javascript:void(0)" class="laybar_delete common" data-act="laybar_delete"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/editor/delete.png" height="14" width="14"></a></li>' +
+											'<li data-tag="slot-name-' + num0 + '">名稱: <input type="text" name="slot_name_' + num0 + '" maxlength="32" class="laybar_text"></li>' +
+											'<li data-tag="slot-amount-' + num0 + '">數量: <span><input type="number" min="1" max="65535" name="slot_amount_' + num0 + '" placeholder="1 ~ 65535" class="laybar_text"></span></li>' +
+                                            '<li data-tag="slot-uselessAward-' + num0 + '"><p>空獎項: <input type="checkbox" name="slot-uselessAward-' + num0 + '" style="width:10%;"></p></li>'+
+											'<li data-tag="slot-possibility">機率: <span>0</span>%</li>' +
+										'</ul>' +
+									'</div>' +
+									'<div id="slot_' + num0 + '" class="laybar_right">' +
+										'<div class="right_upload">'+
+											'<img id="slot_img_' + num0 + '" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/laybar_up02.png" height="49" width="32">'+
+											'<input class="fileupload common" type="file" name="files[]" data-photo_type="slot" data-num="' + num0 + '" data-act="fileupload" accept="image/png,image/jpeg,image/jpg">'+
+										'</div>'+
+									'</div>'+
+								'</div>');
+							++num0;
+						}
+						
+						if (r.data.photo.exchange) {
+						    photoExchange = true;
+                            $("input[name='slot_starttime']").replaceWith(r.data.photousefor[0].starttime);
+                            $("input[name='slot_endtime']").replaceWith(r.data.photousefor[0].endtime);
+							$('#type_p4 a[data-act="add_slot_item"]').hide();
+							$('.laybar_delete, .right_upload').remove();
+
+                            for (k0 in r.data.photousefor) {
+                                $('.laybar_list').eq(k0).data('photousefor_id', r.data.photousefor[k0].photousefor_id);
+                                $('li[data-tag="slot-name-' + k0 + '"] input').replaceWith(r.data.photousefor[k0].name);
+                                $('li[data-tag="slot-amount-' + k0 + '"] span').text(r.data.photousefor[k0].amount);
+                                var uselessAward = (r.data.photousefor[k0].useless_award) ? '&radic;' : 'x';
+                                $('input[name="slot-uselessAward-' + k0 + '"]').replaceWith(uselessAward);
+                                $('#slot_' + k0).prepend('<div class="right_img"><img src="https://cdn.pinpinbox.com/upload/' + r.data.photousefor[k0].image + '" name="' + r.data.photousefor[k0].image + '"></div>');
+                            }
+
+							$_obj2.html(r.data.photousefor[0].description);
+						} else {
+							photoExchange = false;
+                            $("input[name='slot_starttime']").val(r.data.photousefor[0].starttime);
+                            $("input[name='slot_endtime']").val(r.data.photousefor[0].endtime);
+                            for (k0 in r.data.photousefor) {
+                                $('.laybar_list').eq(k0).data('photousefor_id', r.data.photousefor[k0].photousefor_id);
+                                $('li[data-tag="slot-name-' + k0 + '"] input').val(r.data.photousefor[k0].name);
+                                $('li[data-tag="slot-amount-' + k0 + '"] input').val(r.data.photousefor[k0].amount);
+                                if (r.data.photousefor[k0].useless_award) $('input[name="slot-uselessAward-' + k0 + '"]').prop('checked', true);
+                                $('#slot_' + k0).prepend('<div class="right_img"><img src="https://cdn.pinpinbox.com/upload/' + r.data.photousefor[k0].image + '" name="' + r.data.photousefor[k0].image + '"></div>');
+                            }
+							
+							$_obj2.find('textarea').val(r.data.photousefor[0].description);
+						}
+
+						slotPossibilityReflesh();
+					break;
+				}
+				break;
+			case 2:
+				_jBox(r, 'login');
+				break;
+			case 3:
+				_jBox(r, 'albumProcess');
+				break;
+			default:
+				_jBox(r, 'error');
+				break;
+		}
+	});
+	
+	$('.photo_setting').fadeIn();
+}
+
+function load_album_setting() {
+	$('#page_turn').empty();$('#musicmulti_box').empty();
+	$.post('https://www.pinpinbox.com/index/diy/load_album_setting/', {
+		album_id : 14332,
+	},function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 0:
+				_jBox(r, 'error');
+				break;
+			case 1:
+				for (var i=0, len = r.data.turn.length; i<len ; i++){
+					$('#page_turn').append(r.data.turn[i]);
+					$('#musicmulti_box').append(r.data.audio[i]);
+				}
+				break;
+		}
+	});
+}
+
+function show_media_view(){
+	$('input[name="add_media_group"]:first').trigger('click');
+	$('#media_upload_box').fadeIn();
+}
+
+function slotPossibilityReflesh() {
+	var $tmp0 = $('#type_p4 li[data-tag^="slot-amount"] span'),
+		num0 = 0,
+		sum0 = 0;
+	$.each($tmp0, function(k0, v0){
+		sum0 += parseInt(($(v0).find('input[type="number"]').length? $(v0).find('input[type="number"]').val() : $(v0).text()) || 0, 10);
+	});
+	$.each($tmp0, function(k0, v0){
+		if (sum0 !== 0) {
+			num0 = (parseInt(($(v0).find('input[type="number"]').length? $(v0).find('input[type="number"]').val() : $(v0).text()) || 0, 10) / sum0 * 100).toFixed(1);
+			if (num0 >= 100.0) {
+				num0 = 100;
+			} else if (num0 <= 0.0) {
+				num0 = 0;
+			}
+		}
+		$(v0).parent().siblings('li[data-tag="slot-possibility"]').find('span').text(num0);
+	});
+}
+
+function no_right(obj) { _jBox({message: '您無法進行此操作'}, 'error'); }
+
+//驗證輸入數字
+function numcheck(obj){	var re = /^[0-9]+$/;if (!re.test(obj.value)){$(obj).val('');}}
+
+//上傳影片相片(新增)
+$('#media_upload_enter').on('submit', function() {
+	var	message = null, data = {
+		usefor : 'video',
+		location : $('.media_info_loaction').val(),
+		url1 : $('.media1_InfoUrl').val(),
+		url1_name : $('.media1_InfoUrlName').val(),
+		url2 : $('.media2_InfoUrl').val(),
+		url2_name : $('.media2_InfoUrlName').val(),
+		description : $('.media_info_description').val(),
+		refer : ($(':radio[name="add_media_group"]:checked').data('rel') == 'media_embed' ) ? 'embed' : 'file' ,
+	}, video_platform, setPreview = getPreviewCheck();
+
+	data['value'] = (data['refer'] == 'embed') ? $('#add_media_url').val() : $('div[name="media_filename"]').data('output_name');
+	video_platform = fetch_video_platform(data['value']);
+	data['poster'] = (data['refer'] == 'file') ? $('#media_demo_file').data('poster') : null;
+
+	if(typeof video_platform == 'undefined') {
+		message = '您的影片連結未填寫或是不支援此影片連結';
+		_jBox({'message': message}, 'error');
+	}
+
+	if(message == null) {
+		data = JSON.stringify(data);
+		checkedBoxList=[];
+		$('.previewCbox').each(function(k, v){
+			if($(v).prop('checked')) checkedBoxList.push($(v).data('photo_id'));
+		});
+		var process_box = _jBox({'message':''}, 'processing');
+		$.post('https://www.pinpinbox.com/index/diy/add_media_photo/', {
+			album_id : 14332,
+			upload_type : '0',
+			data : data,
+			video_platform : video_platform,
+			setPreview : JSON.stringify(setPreview),
+		},function(r) {
+			r = $.parseJSON(r);
+			process_box.close();
+			clean_setting({'add_media':'add_media'});
+			switch (r.result) {
+				case 0:
+					_jBox(r, 'error');
+					break;
+				case 1:
+					_jBox(r, 'success_notext');
+					refreshPhoto(r.data);
+					photoChangeSettings = false;
+					(data['refer'] == 'embed') ? $('#add_media_url').val('') : $('div[name="media_filename"]').data('output_name', '');
+					$('div#media_close, .preivewlists').trigger('click');
+                    $('#media_demo_file').attr('poster', '').data('poster', '');
+                    $('#media_demo_file').load();
+                    $('input[name="UploadCoverBtn"]').hide();
+					break;
+			}
+		});
+	}
+});
+
+//儲存相片模式
+$('#photo_form_enter').on('submit', function() {
+	var verify = true, message, clean_type = ['video', 'exchange', 'slot'],
+		usefor = $('#more_enter a').data('usefor_save'),
+		type_tab = $('li[name="'+usefor+'"] a').attr('href'),
+		data = {
+			usefor : usefor,
+			location : $('.info_loaction').val(),
+			url1 : $('.info_url1').val(),
+			url1_name : $('.info_url1_name').val(),
+			url2 : $('.info_url2').val(),
+			url2_name : $('.info_url2_name').val(),
+			description : $('.info_description').val(),
+		},video_platform;
+
+	//不同模式填入不同資料
+	switch (usefor) {
+		case 'video':
+			var video_type = $(':radio[name="group1"]:checked').data('rel');
+			data['value'] = (video_type == 'video_url') ? $(type_tab).find('input#video_url').val() : $(type_tab).find('div[name="video_filename"]').data('output_name');
+			data['refer'] = (video_type == 'video_url') ? 'embed' : 'file';
+            data['poster'] = (data['refer'] == 'file') ? $('#video_demo_file').data('poster') : null;
+
+            video_platform = fetch_video_platform(data['value']);
+			if (typeof video_platform == 'undefined' ||  video_platform == 'undefined') {
+				verify = false ;
+				message = '您的影片連結未填寫或是不支援此影片連結';
+			}
+		break;
+
+		case 'exchange':
+			if (!photoExchange) {
+				var amount = parseInt($('input.info_exchange_amount').val(), 10) || 0,
+				    name = $('input[name="exchange_name"]').val(),
+				    img = $('#exchange_image_show').attr('name'),
+                    starttime = $("[name='exchange_starttime']").val() || null,
+                    endtime = $("[name='exchange_endtime']").val() || null;
+
+				if(starttime > endtime ) {
+                    verify = false ;
+                    message = '有效日期設定錯誤, 請重新設定';
+                }
+
+				if (amount === 0) {
+					verify = false;
+					message = '數量需大於 0';
+				}
+
+				if(img == null|| img == '' || img == 'undefined') {
+					verify = false;
+					message = '需上傳兌換券圖片';
+				}
+
+				data.photousefor = {
+					photousefor_id: $('#type_p3').data('photousefor_id'),
+					description: $_obj1.find('textarea').val(),
+					amount: amount,
+					image : img,
+					name : name,
+                    starttime : starttime,
+                    endtime : endtime,
+				};
+			}
+		break;
+
+		case 'slot':
+			if (!photoExchange) {
+				var slot_item = $('div.laybar_list'),
+                    starttime = $("[name='slot_starttime']").val() || null,
+                    endtime = $("[name='slot_endtime']").val() || null;
+
+				if (slot_item.length == 0) {
+					verify = false ;
+					message = '至少須設定一個獎項';
+				} else if(starttime > endtime ) {
+                    verify = false ;
+                    message = '有效日期設定錯誤, 請重新設定';
+                }
+
+				data.photousefor = [];
+
+				$(slot_item).each(function(k, v) {
+					var flag = $(v).find('h4').text(),
+						img = $(this).find('div.right_img').children('img').attr('name'),
+						name =  $(this).find(':input[name^="slot_name_"]').val(),
+						amount = $(this).find(':input[name^="slot_amount_"]').val(),
+                        useless_award = ($(this).find(':input[name^="slot-uselessAward"]').prop('checked')) ? 1 : 0,
+                        repeat = data.photousefor.some(function(value, index, array){return value['name'] == name ? true : false;});//檢查名稱重複
+
+					if (repeat) {
+						message = '重複的獎項名稱';
+						verify = false;
+						return false;
+					} else if (typeof name == 'undefined' || name.length === 0 ) {
+						message = flag + ' - 名稱需填寫';
+						verify = false;
+						return false;
+					} else if (typeof amount === 'undefined' || amount == 0) {
+						message = flag + ' - 數量需填寫';
+						verify = false;
+						return false;
+					} else if (typeof img === 'undefined') {
+						message = flag + ' - 圖示需上傳';
+						verify = false;
+						return false;
+					} else {
+						data.photousefor.push({
+							photousefor_id: $(v).data('photousefor_id'),
+							name: name,
+							image: img,
+							description: $_obj2.find('textarea').val(),
+							amount: amount,
+                            starttime : starttime,
+                            endtime : endtime,
+                            useless_award : useless_award,
+						});
+					}
+				});
+			}
+		break;
+	}
+
+	if (verify) {
+		for(key in clean_type) {
+			if(clean_type[key] == usefor) {
+				clean_type.splice(key, 1);
+			}
+		}
+		
+		data = JSON.stringify(data);
+		var process_box = _jBox({'message':'test'}, 'processing'), photo_id = $('#more_enter a').data('photo_id'), descriptionIcon = '';
+		$.post('https://www.pinpinbox.com/index/diy/save_photo_setting/', {
+			album_id : 14332,
+			photo_id : photo_id,
+			data : data,
+			video_platform : video_platform,
+		}, function(r) {
+			r = $.parseJSON(r);
+			process_box.close();
+			
+			switch (r.result) {
+				case 0:
+					_jBox(r, 'error');
+					break;
+					
+				case 1:
+					photoChangeSettings = false;
+					photoExchange = false;
+					
+					_jBox(r, 'success_notext');
+					clean_setting(clean_type);
+					$('div#set_close').trigger('click');
+					img = $('img[data-photo_id="'+r.data.photo_id+'"]').parents('ul#links').find('li>span.type>img').attr('src', 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_'+usefor+'.png');
+					$('img[data-photo_id="'+r.data.photo_id+'"]').attr('data-usefor', usefor);
+					if($('.info_description').val() != '') descriptionIcon = '<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/editor/images/editor/icon_text.png" height="11" width="11">';
+					$('img[data-photo_id='+r.data.photo_id+']').parents().siblings('li:first').find('span.description').html('').append(descriptionIcon);
+					if (usefor =='video') { $('img[data-photo_id="'+r.data.photo_id+'"]').parents('ul').find('li').eq(1).children('img').attr('src', r.data.image); }
+					
+					browseKitRefresh();
+					break;
+					
+				case 2:
+					_jBox(r, 'login');
+					break;
+					
+				case 3:
+					_jBox(r, 'albumProcess');
+					break;
+			}
+		});
+	} else {
+		_jBox({message: message}, 'error');
+	}
+});
+
+//儲存相本模式
+$('#album_form_enter').on('submit', function() {
+	var data = {'audio':'', 'turn':''}, audio = [], turn = [], audioIconId = [];
+	
+	//set audio
+	var audio_mode = $('input[name="audio_mode"]:checked').val();
+	audio = {'mode' : audio_mode,'data' : [],};
+	
+	if(audio_mode == 'singular') {
+		var singular_mode = $('input[name="singular_mode"]:checked').val(), singular=[];
+		singular = {'mode' : singular_mode,'data' : {'value' : '',	'repeat' : '',},};
+		singular['data']['value'] = (singular_mode == 'system') ? $('select.music_album option:selected').data('audio_id') : $('div[name="audio_name_singular"]').data('output_name');
+		singular['data']['repeat'] = ( $('input[name="'+singular_mode+'_repeat"]').prop('checked')) ? 'true' : 'false' ;
+		audio['data'] = singular; 
+	}
+	
+	if(audio_mode == 'plural') {
+		$('div.audio_list').each(function(k, v){
+			var photo_audio_mode = $('input[name="photo_audio_mode_'+(k+1)+'"]:checked').val();
+			plural = {'photo_id' : $(v).data('photo_id'), 'mode' : photo_audio_mode,'data' : {'value' : '',	'repeat' : '',},};
+			
+			_audioIconId = (photo_audio_mode == 'none') ? {'photo_id':$(v).data('photo_id') , 'icon':''} : {'photo_id':$(v).data('photo_id') , 'icon':'<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon05.png" height="11" width="11">'} ;
+			audioIconId.push(_audioIconId);
+
+			if(photo_audio_mode == 'system') {
+				plural['data']['value'] = $('select[name="plural_'+(k+1)+'"] option:selected').data('audio_id')
+				plural['data']['repeat'] = ( $('input[name="'+photo_audio_mode+'_repeat_'+(k+1)+'"]').prop('checked')) ? 'true' : 'false' ;
+			}else{
+				plural['data']['value'] = $('div[name="audio_name_'+(k+1)+'"]').data('output_name');
+				plural['data']['repeat'] = ( $('input[name="file_repeat_'+(k+1)+'"]').prop('checked')) ? 'true' : 'false' ;
+			}
+			audio['data'].push( plural ); 
+		});
+	}
+	data['audio']= audio;
+
+	//set turn
+	$('div.turn_list').each(function(k, v){
+		var obj = $(this), tmp = [],
+		duration = ( obj.find("input[name^='group']:checked").val() == 'manual' ) ? 0 : obj.find("input[name^='text']").val() ;
+		tmp = {
+			'photo_id' : obj.data('photo_id'),
+			'duration' : duration,
+		}
+		turn.push(tmp);
+	});
+	
+	data['turn']= turn;
+	
+	data = JSON.stringify(data);
+	$.post('https://www.pinpinbox.com/index/diy/save_album_setting/', {
+		album_id : 14332,
+		data : data,
+	},function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 0:
+				_jBox(r, 'error');
+				break;
+			case 1:
+				_jBox(r, 'success_notext');
+				audioIconId.forEach(function(r) {
+					$('img[data-photo_id='+r.photo_id+']').parents().siblings('li:first').find('span.music').html('').append(r.icon);
+				});
+				photoChangeSettings = false;
+				$('#set_close').trigger('click');
+				break;
+		}
+	});
+});
+
+//change 事件控制
+$(document).on('change', 'input[name^="group"]', function(e) {
+	($(this).val() == 'manual') ? $(this).parents('li').siblings('li.autocontent').hide() : $(this).parents('li').siblings('li.autocontent').show();	
+}).on('change', 'input[name^="photo_audio_mode_"]' ,function() {
+	switch( $(this).val() ){
+		case 'none' : 
+			$(this).parents('li').siblings('li.file_content, li.system_content').hide();
+		break;
+		
+		case 'system' : 
+			$(this).parents('li').siblings('li.file_content').hide().siblings('li.system_content').show();	
+		
+		break;
+		
+		case 'file' : 
+			$(this).parents('li').siblings('li.system_content').hide().siblings('li.file_content').show();	
+		break;
+	}
+}).on('change', 'input[name="audio_mode"]' ,function() {
+	audio.pause();
+}).on('change', '.music' ,function() {
+	var file = $(this).val();
+	//playing the song
+	if(audio) {
+		audio.pause();
+		audio = null;
+	}
+	audio = new Audio(file);
+	audio.addEventListener('canplaythrough', function() {
+		$('.loading').hide();
+	}, false);
+	audio.addEventListener('ended', function() { 
+		audio.pause();
+		audio = null
+	}, false);
+	audio.play();
+}).on('change', '.music_album' ,function() {
+	var file = $(this).val();
+	$('div#singular_audio_area').empty().append('<audio controls id="audio_demo_singular_system"><source src="'+file+'" type="audio/mpeg">Your browser does not support the audio element.</audio>');
+}).on('change', '#add_media_url', function(e){
+	var video_url = $(this).val();
+	
+	if(video_url.length > 0) {	
+		var video_platform = fetch_video_platform(video_url),
+			media_embed;
+		
+		if(typeof video_platform != 'undefined') {
+			
+			switch (video_platform) {
+				case 'dailymotion' :
+					var videoStr2Array = video_url.split('/'),
+						videoID = videoStr2Array[(videoStr2Array.length-1)],
+						element = `<div id="DMplayer"></div>`;
+					$('#add_media_area').empty().append(element);
+					DMplay(videoID);
+					break;
+
+				case 'youtube':
+				case 'vimeo':
+					if($('#add_media_demo_player').length > 0 || $('#fbVideo').length > 0){ $('#add_media_area').empty();}
+					$("#add_media_area").append('<video style="margin-top:30px;" width="320" height="200" id="add_media_demo_player"><source type="video/'+video_platform+'" src="'+$(this).val()+'" /></video>');
+					media_embed = new MediaElementPlayer('#add_media_demo_player', {enablePluginDebug: false, flashName: 'flashmediaelement-cdn.swf'});
+					break;
+
+				case 'facebook':
+					var element = `<div  
+									id="fbVideo"
+									class="fb-video" 
+									data-href="${video_url}" 
+									data-width="500" 
+									data-allowfullscreen="true"></div>`;
+					$('#add_media_area').empty().append(element);
+					window.FB.XFBML.parse();
+					break;
+			}
+
+		} else {
+			var r ={
+				message : '網址格式不正確, 請重新輸入。',
+			};
+			_jBox(r, 'error');
+		}
+	}
+}).on('change', '#video_url', function(e){
+	var video_url = $(this).val();
+	console.log(video_url);
+	if(video_url.length > 0) {
+		var video_platform = fetch_video_platform(video_url), 
+			video_embed;
+		
+		if(typeof video_platform != 'undefined') {
+			switch (video_platform) {
+				case 'dailymotion' :
+					var videoStr2Array = video_url.split('/'),
+						videoID = videoStr2Array[(videoStr2Array.length-1)],
+						lement = `<div id="DMplayer"></div>`;
+					$('#video_area1').empty().append(element);
+					DMplay(videoID);
+					break;
+
+				case 'youtube':
+				case 'vimeo':
+					if($('#video_demo_embed').length > 0 || $('#fbVideo').length > 0){ $('#video_area1').empty();}
+					$("#video_area1").append('<video style="margin-top:30px;" width="320" height="200" id="video_demo_embed"><source type="video/'+video_platform+'" src="'+$(this).val()+'" /></video>');
+					video_embed = new MediaElementPlayer('#video_demo_embed', {enablePluginDebug: false, flashName: 'flashmediaelement-cdn.swf'});
+					break;
+				case 'facebook':
+					var element = `<div  
+									id="fbVideo"
+									class="fb-video" 
+									data-href="${video_url}" 
+									data-width="500" 
+									data-allowfullscreen="true"></div>`;
+					$('#video_area1').empty().append(element);
+					window.FB.XFBML.parse();
+					break;
+			}
+		} else {
+			var r ={
+				message : '網址格式不正確, 請重新輸入。',
+			};
+			_jBox(r, 'error');
+		}
+	}
+}).on('change', '.info_url1, .info_url2', function(e){
+	var value = $(this).val(),search_url_keys = 'http|https',
+		strRegex = '^((https|http):\/\/)?'
+	+ '(((([0-9]|1[0-9]{2}|[1-9][0-9]|2[0-4][0-9]|25[0-5])[.]{1}){3}([0-9]|1[0-9]{2}|[1-9][0-9]|2[0-4][0-9]|25[0-5]))' // IP URL
+	+ '|'
+	+ '([0-9a-zA-Z\u4E00-\u9FA5\uF900-\uFA2D-]+[.]{1})+[a-zA-Z-]+)' // DOMAIN URL
+	+ '(:[0-9]{1,4})?',
+		url_validate = new RegExp(strRegex), r = [];
+	if(value.length > 0) {
+		if(!url_validate.test(value)) {
+			//驗證失敗
+			r.message = '無效的連結網址,請重新輸入';
+			_jBox(r, 'info');
+			$(this).focus().val('');
+		}else{
+			if(value.search(search_url_keys) != 0) {
+				$(this).val('http://'+value);
+			}
+		}
+	}
+}).on('change', 'input[name="previewPageType"]', function(e) {
+    if($(this).val() == 'all') {
+        $('input[name="previewPageNum"]').val('');
+    } else {
+        $('input[name="previewPageNum"]').focus();
+    }
+});
+
+//click 事件控制
+$(document).on('click', '.common', function(e) {
+	var obj = $(this), act = $(obj).data('act'),
+		btnUpload = $('#before_upload');
+	switch (act) {
+		//開啟相本進階編輯
+		case 'album_setting': $('.album_setting').fadeIn(); break;
+		
+		//關閉進階編輯
+		case 'set_close':
+			e.stopPropagation();
+
+			var fn0 = function(){
+				$('.album_setting, .media_upload, .photo_setting').fadeOut().promise().done(function(){
+				     clean_setting(['video', 'exchange', 'slot']);
+				     photoChangeSettings = false;
+				     photoExchange = false;
+				});
+			}
+
+			if (photoChangeSettings) {
+				var box = new jBox('Confirm', {
+					cancelButton: '否',
+					confirmButton: '是',
+					confirm: fn0,
+					onCloseComplete: function(){
+						box.destroy();
+					}
+				}).setContent(
+					'<div class="content">' +
+					'<p>您所做的變更沒有儲存，是否要離開？</p>' +
+					'</div>'
+				).open();
+			} else {
+				fn0();
+			}
+			break;
+			
+		//開啟共用
+		case 'con_icon06': $('#share_box').fadeIn(); break;	
+		//共用-邀請更多人
+		case 'search_member': e.stopPropagation(); $('#more_share_in').fadeOut(); $('#more_share_search').fadeIn(); break;
+		//共用-回上層
+		case 'before_step': e.stopPropagation(); $('#more_share_in').fadeIn(); $('#more_share_search').fadeOut(); break;
+		//共用-關閉
+		case 'sharelist_close': case 'share_close': e.stopPropagation(); $('#more_share_in').fadeIn(); $('#more_share_search').fadeOut(); $('#share_box').fadeOut(); break;
+		//影片選單
+		case 'triggervideo' : $('.film_content').hide(); $('.' + $(this).data('rel')).show(); break;
+		//音樂單選框控制
+		case 'triggermusic01' : $('.music_content').hide(); $('.' + $(this).data('rel')).show(); break;
+		case 'triggersingle' : $('.music_content02').hide(); $('.' + $(this).data('rel')).show(); break;
+
+		case 'exchange_image_upload' : $('.exchange_fileupload').trigger('click'); break;
+
+		//新增slot item
+		case 'add_slot_item':
+			var $tmp0 = $('div.laybar_list'),
+				num0 = $tmp0.length;
+			if (num0 >= 20) {
+				_jBox({'message': '達到獎項上限'}, 'error');
+			} else {
+				var num1 = 0;
+				$.each($tmp0, function(k0, v0){
+					num1 = Math.max(num1, $(v0).find('.fileupload').data('num'));
+				});
+				++num1;
+					
+				$('#laybar_box').append(
+					'<div class="laybar_list">' + 
+						'<div class="laybar_left">' +
+							'<ul>' +
+								'<li><h4>' + (num0 + 1) + '</h4><a href="javascript:void(0)" class="laybar_delete common" data-act="laybar_delete"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/editor/delete.png" height="14" width="14"></a></li>' +
+								'<li data-tag="slot-name-' + num1 + '">名稱: <input type="text" name="slot_name_' + num1 + '" maxlength="32" class="laybar_text"></li>' +
+								'<li data-tag="slot-amount-' + num1 + '">數量: <span><input type="number" min="1" max="65535" name="slot_amount_' + num1 + '" placeholder="1 ~ 65535" class="laybar_text"></span></li>' +
+                                '<li data-tag="slot-uselessAward-' + num1 + '"><p>空獎項: <input type="checkbox" name="slot-uselessAward-' + num1 + '" style="width:10%;"></p></li>'+
+                                '<li data-tag="slot-possibility">機率: <span>0</span>%</li>' +
+							'</ul>' +
+						'</div>' +
+						'<div id="slot_' + num1 + '" class="laybar_right">' +
+							'<div class="right_upload">'+
+								'<img id="slot_img_' + num1 + '" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/laybar_up.png" height="49" width="32">'+
+								'<input class="fileupload common" type="file" name="files[]" data-photo_type="slot" data-num="' + num1 + '" data-act="fileupload" accept="image/png,image/jpeg,image/jpg">'+
+							'</div>'+
+						'</div>'+
+					'</div>');
+			}
+		break;
+		
+		//刪除slot_item
+		case 'laybar_delete':
+			var unit0 = obj.parents('.laybar_list'),
+				param0 = {
+					album_id: '14332',
+					photo_id: $('#more_enter a').data('photo_id'),
+					image: unit0.find('div.right_img img').attr('name'),
+					timestamp: new Date().getTime(),
+				};
+			
+			$.post('https://www.pinpinbox.com/index/diy/sign/', param0, function(r0){
+				r0 = $.parseJSON(r0);
+
+				param0.sign = r0.data;
+				
+				$.post('https://www.pinpinbox.com/index/diy/delete_slot_item/', param0, function(r1) {
+					r1 = $.parseJSON(r1);
+					switch (r1.result) {
+						case 1:
+							photoChangeSettings = true;
+							
+							unit0.remove();
+							
+							$('div.laybar_list').each(function(k0, v0){$(this).find('h4').text(k0 + 1);});
+							
+							slotPossibilityReflesh();
+							break;
+							
+						case 2:
+							_jBox(r1, 'login');
+							break;
+							
+						case 3:
+							_jBox(r1, 'albumProcess');
+							break;
+							
+						default:
+							_jBox(r1, 'error');
+							break;
+					}
+				});
+			});
+		break;
+		
+		// 上傳 音樂 / 影片 / slot圖
+		case 'fileupload' : 
+			var photo_type = $(this).data('photo_type'), num = $(this).data('num'), mediavideo = $(this).data('mediavideo');
+			$(this).fileupload({
+				formData: {album_id: '14332', photo_type: photo_type},
+				dataType: 'json',
+				url: 'https://www.pinpinbox.com/index/diy/file_upload/',
+				add: function (e, data) {
+					if(data.originalFiles[0]['size'] && data.originalFiles[0]['size'] > 12582912 ) {
+						_jBox({'message':'File is too large, [upper limit : 12MB]'}, 'error');
+					} else {
+						data.submit();
+					}
+				},
+				start : function(){
+					box = new jBox('Modal', {
+						offset: {y: -50},
+						position: {y: 'center'},
+						closeButton: 'title',
+						closeOnClick: false,
+						closeOnEsc: false,
+						zIndex: 15000,
+						width : 300,
+						delayClose : 500,
+					}).setContent('上傳中...<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar"aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">0% </div></div>').open();
+				},
+				done: function(e, data) {
+					switch (data.result.result) {
+						case 0:
+							_jBox(data.result, 'error');
+							break;
+							
+						case 1:
+							photoChangeSettings = true;
+
+							switch (photo_type) {
+								case 'audio':
+									var suffix = $(this).data('num');
+									$('div[name="audio_name_'+suffix+'"]').html(data.result.data.input_name).data('output_name', data.result.data.output_name);
+									$('#audio_demo_'+suffix).attr('src', 'https://cdn.pinpinbox.com/upload/' + data.result.data.output_name);
+								break;
+
+								case 'video':
+									$('div[name="'+mediavideo+'_filename"]').html(data.result.data.input_name).data('output_name', data.result.data.output_name);
+									$('#'+mediavideo+'_demo_file source.mp4, #'+mediavideo+'_demo_file').attr('src', 'https://cdn.pinpinbox.com/upload/' + data.result.data.output_name);
+                                    $('input[name="UploadCoverBtn"]').show();
+								break;
+
+								case 'slot':
+									var slot_img = $('div#slot_' + num);
+									if (slot_img.find('div.right_img').length > 0) {
+										slot_img.find('div.right_img img').attr({'src': data.result.data.output_url, 'name': data.result.data.output_name});
+									} else {
+										slot_img.prepend('<div class="right_img"><img src="'+data.result.data.output_url+'" name="'+data.result.data.output_name+'"></div>');
+										$('img#slot_img_' + num).attr('src', 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/laybar_up02.png');
+									}
+								break;
+
+								case 'exchange' :
+									$('img#exchange_image_show').attr({'src' :data.result.data.output_url, 'name': data.result.data.output_name});
+									$('img#exchange_image_upload').attr({'src': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/laybar_up02.png'});
+								break;
+
+                                case 'video_cover' :
+                                    if(mediavideo == 'media') {
+                                        $('#media_demo_file').attr('poster', data.result.data.fileurl).data('poster', data.result.data.basename);
+                                        $('#media_demo_file').load();
+                                    } else {
+                                        $('#video_demo_file').attr('poster', data.result.data.fileurl).data('poster', data.result.data.basename);
+                                        $('#video_demo_file').load();
+                                    }
+                                    break;
+
+                                    default :
+									_jBox({'message':'Error phototype upload.'}, 'error');
+								break;
+							}
+
+							break;
+							
+						case 2:
+							_jBox(data.result, 'login');
+							break;
+
+						case 3:
+							_jBox(data.result, 'albumProcess');
+							break;
+					}
+					box.close();
+				},
+				progressall : function(e, data) {
+					var progress = parseInt(data.loaded / data.total * 100, 10);
+					$('.progress-bar').width(progress+'%').html(progress+'%');
+				},
+			});
+		break;
+
+		case 'cbox' :
+			if($(this).data('cbox') == 'locked') {
+				_jBox({message:'首張相片必須設為預覽圖'}, 'error');
+				return false;
+			}
+		break;
+
+		case 'cancelfile' : 
+			filesQueue = filesQueue-1; 
+			if(filesQueue <= maxUploadFiles) { 
+				btnUpload.find('span').html('開始上傳檔案'); 
+			} else {
+				btnUpload.find('span').html('待上傳數量 : '+filesQueue); 
+			} 
+		break;
+		
+		case 'cancelallfile' : 
+			filesQueue = 0; 
+			$('#before_upload').find('span').html('開始上傳檔案');
+		break;
+	}
+}).on('click', 'div.cropControls>i.cropControlRemoveCroppedImage', function(e){
+	var that = this;
+	$.post('https://www.pinpinbox.com/index/diy/img_remove/', {
+		album_id: '14332',
+		imgUrl: $(this).data('imgUrl'),
+	}, function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 1:
+				$(that).prev().css('display', 'block');
+				$('#ctr-btn').removeClass('con_icon05 active').addClass('con_icon03').html('裁切此頁');
+				break;
+			case 2:
+				_jBox(r, 'login');
+				break;
+			case 3:
+				_jBox(r, 'albumProcess');
+				break;
+			default:
+				_jBox(r, 'error');
+				break;
+		}
+	});
+	make_tooltip('.cropControls .cropControlUpload', '上傳圖檔');
+}).on('click', 'input[name="previewPageNum"]', function() {
+    $('input[name="previewPageType"]').eq(1).prop('checked', true);
+});
+
+//blur事件控制
+$(document).on('blur', '.music', function(e) {
+	audio.pause();
+});
+
+/* ---- Aviary Start ---- */
+function initAviary(){
+	if (typeof Aviary !== 'undefined') {
+		featherEditor = new Aviary.Feather({
+			apiKey: 'd9b349af516c4e72a4f0ed2cac57aa71',
+			tools: [
+				'enhance',
+				'effects',
+				'frames',
+				'stickers',
+				'focus',
+				'brightness',
+				'warmth',
+				'contrast',
+				'sharpness',
+				'colorsplash',
+				'draw',
+				'text',
+				'redeye',
+				'whiten',
+				'blemish',
+			],
+			theme: 'dark',
+			language: 'zh_HANT',
+			onReady: function() {
+				$('#avpw_save_button').on('click' , function(){
+					var obj = $('.jBox-Confirm');
+					if(obj.find('div.content').hasClass('message')) { 
+						$('#jBox-overlay').css('display', 'none');
+						obj.remove(); 
+					}
+					
+					var myConfirm = new jBox('Confirm', {
+						cancelButton: '否',
+						confirmButton: '是',
+						cancel: function() {
+							$('#jBox-overlay').css('display', 'none');
+							myConfirm.destroy();
+							return false;
+						},
+						confirm: function() {
+							$('#jBox-overlay').css('display', 'none');
+							featherEditor.save();
+							myConfirm.destroy();
+						},
+						onCloseComplete: function() {
+							$('#jBox-overlay').css('display', 'none');
+							myConfirm.destroy();
+						}
+					}).setContent(
+						'<div class="message content">儲存後無法再復原</div>'
+					).open();
+				})
+			},
+			onSaveButtonClicked : function(imageID){
+				return false;
+			},
+			onSave: function(imageID, newURL) {
+				var editimg = $('#' + imageID);
+				Pace.track(function() {
+					$.post('https://www.pinpinbox.com/index/diy/diy_aviary/', {
+						album_id: '14332',
+						photo_id: editimg.data('photo_id'),
+						sign: '06f90a8fda7062757ffce60d58b7c531',
+						t: '1534126743',
+						url: newURL,
+					}, function(r) {
+						r = $.parseJSON(r);
+						switch (r.result) {
+							case 1:
+								var that = editimg.parents('.menu_item');
+								that.find('img.thumbnail').prop('src', r.data.newImage);
+								that.find('img.depot').prop('src', r.data.newImage);
+								break;
+							case 2:
+								_jBox(r, 'login');
+								break;
+							case 3:
+								_jBox(r, 'albumProcess');
+								break;
+							default:
+								_jBox(r, 'error');
+								break;
+						}
+					});
+				});
+				featherEditor.close();
+			},
+			onError: function(errorObj) {
+				alert('編輯器發生錯誤，請重新整理');
+			},
+			onClose: function(isDirty) {
+				$('#aviary').hide();
+			}
+		});
+	}
+};
+
+function launchEditor(id, src, file_name, width, height) {
+	$('#aviary').show();
+	featherEditor.launch({
+		image: id,
+		url: src,
+		postData: file_name,
+		cropPresets: [
+			'Custom',
+			'Original',
+			['照片比例', width+':'+height],
+			['方形比例', '1:1'],
+			'3:2', '5:3', '4:3', '5:4', '6:4', '7:5', '10:8', '16:9'
+		],
+		cropPresetDefault: '照片比例'
+	});
+	return false;
+};
+
+function aviary_edit(id) {
+	var	img_target = $('#'+id),
+		img_src = img_target.attr('src'),
+		file_name = img_src.split('/').pop();
+	launchEditor(id, img_src, file_name, 1336, 2004);
+	$('.menu').removeClass('slide-menu-up').addClass('slide-menu-bottom');
+	$('.menu02').removeClass('slide-menu-up').addClass('slide-menu-bottom02');
+	$('#menu').removeClass('maskopen').addClass('maskclose');
+	$('#mask02').removeClass('maskopen').addClass('maskclose');
+}
+/* ---- Aviary End ---- */
+
+var trip = new Trip([
+	{ sel : $("#temp_2"), content : "開始上傳檔案", position : "n"},
+	{ sel : $(".con_icon03"), 
+		content : "調整好大小、方向後，此按鈕可協助您裁減並合併相片。", 
+		position : "w" ,
+		onTripStart : function(){$('#ctr-btn').removeClass('con_icon05 active').addClass('con_icon03').html('裁切此頁');},
+		onTripEnd: function(){$('#ctr-btn').removeClass('con_icon03').addClass('con_icon05').html('確認此頁');},
+	},
+	{ sel : $(".con_icon03"),
+		content : "完成所有頁面後，即可儲存作品<br>此步代表結束所有上傳編輯動作，將進入資訊編輯頁面。", 
+		position : "w" ,
+		onTripStart : function(){$('#ctr-btn').removeClass('con_icon03').addClass('con_icon05').html('確認此頁');},
+		onTripEnd: function(){	$('#ctr-btn').removeClass('con_icon05 active').addClass('con_icon03').html('裁切此頁');},
+	},
+	{ sel : $("#menu_open"), content : "可從此處：1.挑選版型 2.檢視已做完的頁面 3.進階編輯 4.刪除頁面。", position : "n"},
+	{ sel : $(".start"), content : "完成所有頁面後，即可儲存作品<br>此步代表結束所有上傳編輯動作，將進入資訊編輯頁面。", position : "s"},  
+], {
+	animation : 'bounceIn' ,
+	showNavigation : true,
+	showCloseBox : true,
+	delay : -1,
+	prevLabel: '上一步',
+	nextLabel: '下一步',
+	finishLabel: '關閉',  
+});
+
+</script></div>
+<script>
+function popview(url) {
+	$('.jBox-wrapper').remove();
+	$.post(url, {
+		data : null,
+	}, function(r) {
+		content = $(r).find('#tem_content');
+		pinpinboard = $(r).find('#pinpinboard');
+		script = $(r).find('script[name="popview"]');
+
+		if(!$('#JboxPopview').length) {
+			var popview = new jBox('Modal', {
+				addClass : 'popview_content',
+				id : 'JboxPopview',
+				width: 1200,
+	            height: 1600,
+	            zIndex : 1000,
+				onCloseComplete: function() {
+			  		processAjaxData("https://www.pinpinbox.com/index/diy/?album_id=14332");
+					popview.destroy();
+					browseKitRefresh();
+				},
+				onOpen : function(){
+                    processAjaxData(url);
+                    $('li.removeInPop').remove();
+                    $('.jBox-content').append(pinpinboard);
+                    $('.jBox-content').append(script);
+                    $('#pinpinboardAnchor').on('click', function(){
+						$('.jBox-content').animate({scrollTop:$('.comment_info_textarea').offset().top}, 10);
+					})
+                    $('.jBox-content .descrip').html( $('.jBox-content .descrip').html().autoLink({ target: "_blank" }) ) ;
+					window.onpopstate = function(event) { popview.close(); };
+
+				},
+			}).setContent(content).open();
+		}
+	});
+}
+/*
+ * webpush
+ */
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').then(function (registration) {
+    	registration.pushManager.subscribe({
+            userVisibleOnly: true
+        }).then(function (sub) {
+			$.post('https://www.pinpinbox.com/index/serviceworker/register/', {token: sub.endpoint}, function (r) {
+				r = $.parseJSON(r);
+				if (r.result == 1) {
+					registration.update();
+				}
+			});
+        });
+    });
+}
+
+/*
+ * facebook
+ */
+window.fbAsyncInit = function() {
+	FB.init({
+		appId: '472973216191275',
+		cookie: true,
+		version: 'v2.10'
+	});
+
+	Window.FB = FB;
+};
+
+logInWithFacebook = function() {
+	FB.login(function(response) {
+		if (response.authResponse) {
+			$('#login_facebook').hide().next('div').show();
+			$.post('https://www.pinpinbox.com/index/user/login_facebook/?album_id=14332', {accessToken: response.authResponse.accessToken}, function(r) {
+				r = $.parseJSON(r); 
+				if (r.result == 1) {
+					_jBox(r, 'success_notext');
+				} else {
+					_jBox(r, 'error');
+				}
+				$('#login_facebook').show().next('div').hide();
+			});
+		} else {
+			_jBox({message: '登入失敗'}, 'error');
+		}
+	}, {scope: 'public_profile,email,user_friends,user_birthday', auth_type: 'rerequest'});
+	
+	return false;
+};
+
+var askAutoPlay = true,
+    adjustAppQrcodeUrl,
+	a_album_element = [],	//browseKit element of album
+	a_album_item = [];		//browseKit item of album
+
+function browseKit_album(url, param) {
+	param.pageCalledByXHR = $('#pageCalledByXHR').length;
+	if (a_album_item.length == 0) {
+		$.post(url, param, function(r) {
+			r = $.parseJSON(r);
+			if (r.result == 1) {
+				for (var k0 in r.data.readable) {
+					subHtml = '';
+
+					if (r.data.readable[k0]['name']) subHtml += '<h4>' + r.data.readable[k0]['name'] + '</h4>';
+
+					if (r.data.readable[k0]['description']) subHtml += '<p>' + r.data.readable[k0]['description'] + '</p>';
+					
+					if (r.data.readable[k0]['hyperlink']) {
+						hyperlink = [];
+						r.data.readable[k0]['hyperlink'].forEach(function(v0){
+							hyperlink.push('<a target="_blank" href="' + v0.url + '">' + v0.text + '</a>');
+						});
+						subHtml += hyperlink.join('&emsp;');
+					}
+
+					o_audio = {loop: r.data.readable[k0].audio_loop, mode: r.data.readable[k0].audio_mode, src: r.data.readable[k0].audio_target};
+                    //組抽獎影片圖示
+                    slotHtml = '';
+                    videoHtml = '';
+                    switch (r.data.readable[k0]['usefor']) {
+                        case 'slot':
+                        case 'exchange':
+                            slotHtml = '<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="display:block;position:absolute;right:2px;bottom:2px;z-index:3000;background:#FF5E68;width:20px;height:20px;border-radius:20px;">';
+                            break;
+                        case 'video':
+                            videoHtml = '<img alt="影片" title="影片" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/play-01.svg"  style="display:block;position:absolute;left:2px;bottom:2px;z-index:3000;background:rgba(0,0,0,0.65);width:20px;height:20px;border-radius:20px;">';
+                            break;
+                    }
+
+                    //組聲音圖示
+                    audioHtml = '<img alt="聲音" title="聲音" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/speaker-01.svg" style="display:block;position:absolute;left:2px;bottom:2px;z-index:3000;background:rgba(0,0,0,0.65);width:20px;height:20px;border-radius:20px;">';
+
+					switch (r.data.readable[k0]['usefor']) {
+						case 'video':
+							href = r.data.readable[k0]['video_target'];
+							poster = r.data.readable[k0]['image'];
+							thumb = r.data.readable[k0]['image_thumbnail'];
+							platform = fetch_video_platform(href);
+							switch (r.data.readable[k0]['video_refer']) {									
+								case 'embed':
+									a_album_item.push({
+										audio: o_audio,
+								    	href: href,
+								        poster: poster,
+								        src: href,
+								        subHtml: subHtml,
+                                        slotHtml: slotHtml,
+                                        videoHtml: videoHtml,
+								        thumb: thumb,
+								        usefor: 'video',
+								        platform: platform,
+								        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
+								    });
+									break;
+
+								case 'file':
+									if ($('#video-' + k0).length == 0) {
+										$('body').append(
+												'<div class="lgVideoWrapper" style="display:none;" id="video-' + k0 + '">' +
+												'<video controlsList="nodownload" class="lg-video-object lg-html5" controls preload="none">' +
+											    '<source src="' + href + '" type="video/mp4">Your browser does not support HTML5 video.</video>' +
+											    '</div>'
+										);
+									} else {
+                                        $('#video-' + k0).find('source').attr('src', href);
+                                    }
+									
+									a_album_item.push({
+										audio: o_audio,
+								    	html: '#video-' + k0,
+								        poster: poster,
+								        subHtml: subHtml,
+                                        slotHtml: slotHtml,
+                                        videoHtml: videoHtml,
+								        thumb: thumb,
+								        usefor: 'video',
+								        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
+								    });
+									break;
+							}
+							break;
+
+						default:
+							href = r.data.readable[k0]['image'];
+							thumb = r.data.readable[k0]['image_thumbnail'];
+							a_album_item.push({
+						        audio: o_audio,
+						    	href: href,
+						        src: href,
+						        subHtml: subHtml,
+                                slotHtml: slotHtml,
+                                videoHtml: videoHtml,
+						        thumb: thumb,
+						        usefor: 'audio',
+						        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
+						    });
+							break;
+					}
+				}
+
+				param.adjustAppQrcodeUrl = adjustAppQrcodeUrl = r.data.property.album.adjustAppQrcodeUrl;
+
+				browseKit_v2(this, a_album_item, param);
+			} else {
+				_jBox(r, 'error');
+			}
+		});
+	} else {
+        param.adjustAppQrcodeUrl = adjustAppQrcodeUrl
+		browseKit_v2(this, a_album_item, param);
+	}
+}
+
+function browseKit_v2(that, item, param) {
+	a_album_element.push(that);
+	var indexId = 0;
+
+    if($('#mask02').data('indexId')) {
+        indexId = $('#mask02').data('indexId');
+    } else if(param.preview_page_length) {
+        indexId = param.preview_page_length;
+    }
+
+    var	$lg = $(that).lightGallery({
+		loadYoutubeThumbnail: true,
+		youtubeThumbSize : 'hqdefault',
+        dynamic: true,
+        dynamicEl: item,
+        hash: false,
+		hideBarsDelay: 3000,
+		loop: false,
+		download: false,
+		index : indexId,
+		thumbWidth: 80,
+		youtubePlayerParams: {
+	        showinfo: 0,
+	        rel: 0,
+		},
+    }).on('onAfterOpen.lg', function(e) {
+    	if(item[0].audio.src != null) {
+    		audioPlayer = $('#lg-audio'); 
+    		audioPlayer.attr('controlsList', 'nodownload');
+    		setTimeout(function(){ 
+    			audioPlayer[0].play(); 
+    		}, 700); 
+    	}
+            //加入抽獎影片圖示
+            $(".lg-thumb-item").css('position','relative');
+            for(i=0;i<item.length;i++) {
+                if(item[i].audio.src!=null && item[i].audio.src!=''){
+                    //加入聲音圖示
+                    $(".lg-thumb-item:nth-child("+(i+1)+")").append(audioHtml);
+                }
+                $(".lg-thumb-item:nth-child("+(i+1)+")").append(item[i].slotHtml);
+                $(".lg-thumb-item:nth-child("+(i+1)+")").append(item[i].videoHtml);
+            }
+	}).on('onAfterSlide.lg',function(e, p, i){
+	    $lg.data('lightGallery').modules.audio.build();
+        audioPlayer = $('#lg-audio'); _audipPlayer = document.getElementById("lg-audio");
+        audioPlayer.attr('controlsList', 'nodownload');
+        switch(item[i].usefor) {
+        	case 'video' : audioPlayer[0].pause(); break;
+        	case 'audio' : if( _audipPlayer.hasAttribute("autoplay")) audioPlayer[0].play(); break;
+        }
+        if(item[i].audio.mode == 'singular') askAutoPlay = false;
+       
+		if(item[i].audio.src != null && askAutoPlay) { $('span#lg-audio-button').trigger('click') ; }
+
+		audioPlayer[0].addEventListener("play", function () {
+			audioPlayer.bind('contextmenu',function() { return false; }); 
+			if(!_audipPlayer.hasAttribute("autoplay")) audioMaskHide();
+			askAutoPlay = false;
+			audioPlayer.attr('autoplay', 'autoplay');
+		}, false);
+
+		audioPlayer[0].addEventListener("pause", function (e) {	
+			if(e.target.ended == false ) {
+				askAutoPlay = false;
+				audioPlayer.removeAttr('autoplay');
+			}
+		}, false);
+
+        if (item[i].slotHtml != null && item[i].slotHtml != '') {
+            var slotConfirm = new jBox('Modal', {closeButton: 'title'});
+            var slotContent = '', slotTitle = '';
+            slotTitle += '<p class="keypoint" style="margin-right:-20px;font-size:2em;text-align:center;line-height:1.2em;">下載ＡＰＰ即可兌換／抽獎</p>'
+            slotContent += '<div class="content" style="text-align:center;" >';
+            if(isMobile()){
+                slotContent += `<p style="margin:0 auto;width:80%;background:#FF5E68;color:#fff;border-radius:30px;padding:8px 5px;cursor: pointer;" data-uri="pinpinbox://index/album/content/?album_id=${param.album_id}"  onclick="clickHandler(this.dataset.uri);" ><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="vertical-align:middle;display:inline-block;background:#FF5E68;width:30px;height:30px;border-radius:30px;margin-right:3px;">`;
+                slotContent += `<span style="display:inline-block;font-size:20px;vertical-align:middle;" >立即開啟</span></p>`;
+            }else{
+                slotContent += `<span data-uri="pinpinbox://index/album/content/?album_id=${param.album_id}"  onclick="clickHandler(this.dataset.uri);"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="position:absolute;z-index:5;top:38.8%;left:44.8%;vertical-align:middle;display:block;background:#FF5E68;width:40px;height:40px;border-radius:40px;">`;
+                slotContent += `<img src="${param.adjustAppQrcodeUrl}" style="padding:3px;width:180px;height:auto;" ></span>`;
+            }
+            slotConfirm.setTitle(slotTitle).setContent(slotContent).open();
+        }
+        $('.jBox-overlay:last-child').css('background-color','rgba(255,255,255,0.3)');
+		if($('#JboxRecommendedBuyAlbum').length) RecommendedBuyAlbum.destroy();
+
+		
+					
+			setTimeout(function() {
+                if( window.DMplayerE ) { window.DMplayerE.pause(); }
+
+                if((item[i].platform) == 'facebook') {
+					$('div.lg-current .lg-video-cont').empty();
+					var element = `<div
+									id="fbVideo"
+									class="fb-video"
+									data-href="${item[i].src}"
+									data-width="500"
+									data-allowfullscreen="true"></div>`;
+					$('div.lg-current .lg-video-cont').append(element);
+					window.FB.XFBML.parse();
+                } else if ((item[i].platform) == 'dailymotion') {
+                    var videoStr2Array = (item[i].src).split('/'), element = `<div id="DMplayer"></div>`;
+                    $('div.lg-current .lg-video-cont').empty().append(element);
+                    DMplay(videoStr2Array[(((item[i].src).split('/')).length - 1)], 640, 400);
+                }
+
+			}, 200);
+    }).on('onAfterAppendSubHtml.lg',function(e){
+        $lg.data('lightGallery').modules.subhtml.build();
+    }).on('onCloseAfter.lg', function(e){
+        browseKitRefresh();    });
+
+    window.$lg = $lg;
+}
+
+function browseKitRefresh() {
+	a_album_item = [];
+	
+	$.each(a_album_element, function(k0, v0) {
+		$(v0).removeData('lightGallery');
+	});
+}
+
+function browseKit() {
+	//photoswipe
+	if ($('.pswp').length == 0) {
+		$('body').append(
+			'<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">'+
+				'<div class="pswp__bg"></div>'+
+				'<div class="pswp__scroll-wrap">'+
+					'<div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div>'+
+					'<div class="pswp__ui pswp__ui--hidden">'+
+			            '<div class="pswp__top-bar">'+
+			                '<div class="pswp__counter"></div>'+
+			                '<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>'+
+			                '<button class="pswp__button pswp__button--share" title="Share"></button>'+
+			                '<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>'+
+			                '<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>'+
+							'<button class="pswp__button play_video" style="background:none;"><i class="img_mode"></i></button>'+
+			                '<div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div>'+
+			            '</div>'+
+			            '<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div>'+
+			            '<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>'+
+			            '<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>'+
+			            '<div class="pswp__caption"><div class="pswp__caption__center"></div></div>'+
+			        '</div>'+
+			    '</div>'+
+			'</div>'
+		);
+	}
+	var items=[], img_icon=[], img_video_target=[], img_video_refer=[];
+	$('#show_photo img').each(function(k0, v0) {
+		var that1 = $(this);
+		var item = {
+			src: that1.prop('src'),
+			w: that1.prop('width'),
+			h: that1.prop('height'),
+		}
+		img_icon.push(that1.attr('data-usefor'));
+		img_video_refer.push(that1.attr('data-video_refer'));
+		img_video_target.push(that1.attr('data-video_target'));
+	    items.push(item);
+	});
+
+    var options = {loop: false};
+	var pswp = new PhotoSwipe(document.querySelectorAll('.pswp')[0], PhotoSwipeUI_Default, items, options);
+	pswp.init();
+	
+	pswp.listen('close', function() {
+		$('#show_photo').empty();
+	});
+
+	$('.pswp__button--arrow--left').on('click', function() {
+		if (items.length == pswp.getCurrentIndex() + 1) pswp.close();
+	});
+	$('.pswp__button--arrow--right').on('click', function() {
+		if (pswp.getCurrentIndex() == 0) pswp.close();
+	});
+	
+	var set_img_icon = function(index) {
+		var top_icon = '';
+		switch(img_icon[index]) {
+			case 'image' :
+				top_icon = '';
+			break;
+			case 'video' :
+				top_icon = 'mod02';
+			break;
+			case 'exchange' :
+				top_icon = 'mod03';
+			break;
+			case 'slot' :
+				top_icon = 'mod04';
+			break;
+			default :
+				top_icon = '';
+			break;
+		}
+		return top_icon;
+	}
+
+	pswp.listen('imageLoadComplete', function(index, item) {
+		$('i.img_mode').removeClass().addClass('img_mode '+set_img_icon(index)).data('video_target', img_video_target[index]).data('video_refer', img_video_refer[index]);
+	});
+
+	pswp.listen('afterChange', function() { 
+		$('i.img_mode').removeClass().addClass('img_mode '+set_img_icon(pswp.getCurrentIndex())).data('video_target', img_video_target[pswp.getCurrentIndex()]).data('video_refer', img_video_refer[pswp.getCurrentIndex()]);
+	});
+}
+
+function DMplay(id, w = 320, h = 200) {
+    if($('iframe#DMplayer').length > 0) $('iframe#DMplayer').remove();
+    DM.api('/videos', {
+        filters: 'buzz',
+        fields: 'id',
+    }, function () {
+        var player = DM.player(document.getElementById('DMplayer'), {
+            video: id,
+            width: w,
+            height: h,
+        });
+
+        window.DMplayerE = player;
+    });
+}
+
+function fetch_video_platform(url) {	
+	var returnType,
+		isHTML = RegExp.prototype.test.bind(/(<([^>]+)>)/i);
+	
+	if( typeof(url) != 'undefined' && !isHTML(url) ) {
+		if( (url.match('youtu.be') != null || url.match('youtube.com') != null) && !url.includes('embed') ) {
+			returnType = 'youtube';
+		}else if(url.match('vimeo') != null){
+			returnType = 'vimeo';
+		}else if(url.match('facebook') != null ) {
+			returnType = 'facebook';
+		}else if(url.match('dailymotion') != null ) {
+			returnType = 'dailymotion';
+		}else if(url.match('pinpinbox') != null){
+			returnType = 'pinpinbox';
+		}
+	}
+
+	return returnType;
+}
+
+function _jBox(r, c) {
+	var img = {
+		'error': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/error.png',
+		'info': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/info.png',
+		'success': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/success.png',
+	};
+	
+	switch (c) {
+		case 'success':
+		case 'error':
+		case 'info':
+			var box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 100,
+				autoClose : r.timer || 0,
+				title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="' + img[c] + '">',
+				onCloseComplete: function() {
+					if(typeof( window.onbeforeunload) != 'undefined' ) window.onbeforeunload = null;
+					if (r.data && typeof(r.data.task) != 'undefined') { 
+						(typeof(r.data.task.message) != 'undefined' && r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : (r.redirect) ? location.href = r.redirect : null; 
+					} else {
+						if (r.redirect) location.href = r.redirect;
+					}			
+				},
+			}).setContent('<div class="content">' + r.message + '</div>').open();
+			break;
+
+		case 'success_notext':
+			if (typeof( window.onbeforeunload) != 'undefined' ) window.onbeforeunload = null;
+
+			if (r.data && typeof(r.data.task) != 'undefined') {
+				(typeof(r.data.task.message) != 'undefined' && r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : (r.redirect) ? (r.redirect=='createAlbum') ? createAlbum() : location.href = r.redirect : null; 
+			} else {
+				if (r.redirect) {
+					(r.redirect == 'createAlbum') ? createAlbum() : location.href = r.redirect;
+				}
+			}
+			break;
+
+		case 'map':
+			var box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 100,
+				title: '<i style="color:#ee5b8d;font-size:22px;" class="fa fa-map-marker" ></i>'+ r.data,
+			}).setContent('<div class="content">' + r.message + '</div>').open();
+			break;
+	
+		case 'albumProcess':
+			block_box = new jBox('Modal', {
+				offset: {y: -50},
+				position: {y: 'center'},
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 300,
+				zIndex: 1500,
+			}).setContent('<div class="content">正在儲存上次未完成的進度...<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/loading.gif"></div>').open();
+			
+			$.post('https://www.pinpinbox.com/index/album/save_album_ajax/' , {
+				album_id : r.data,
+				template_id: '',
+				current_album_id: '',
+			}, function(r2) {
+				block_box.close();
+				r2 = $.parseJSON(r2);
+				switch (r2.result) {
+					case 0 : 
+						_jBox(r2, 'error');
+					break;
+					case 1 : 
+						location.href = r2.redirect;
+					break;
+					case 2 : 
+						_jBox(r2, 'success');
+					break;
+				}
+			});
+			break;
+
+		case 'block':
+			box = new jBox('Modal', {
+				offset: {y: -50},
+				position: {y: 'center'},
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 300,
+				zIndex: 1500,
+			}).setContent('<div class="content">處理中...<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/loading.gif"></div>').open();
+			break;
+		
+		case 'blockCustomMsg':
+			box = new jBox('Modal', {
+				offset: {y: -50},
+				position: {y: 'center'},
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 800,
+				zIndex: 1500,
+			}).setContent('<div class="content">'+r.message+' <p style="text-align: center;"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/loading.gif"></p><p style="text-align: center;">(請勿關閉視窗)</p></div>');
+			break;
+			
+		case 'login':
+			var message = r.message || '請先登入。',
+			box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 100,
+				onCloseComplete: function() {
+					if (r.redirect) location.href = r.redirect;
+				},
+				title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/info.png">',
+			}).setContent('<div class="content">' + message + '</div>').open();
+			break;
+
+		case 'processing':
+
+			var box = new jBox('Modal', {
+				closeOnClick: false,
+				closeButton: 'title',
+				width: 155,
+				height: 53,
+			}).setContent('<span style="padding-left:20px;font-weight:bold;color:#2299DD">處理中...</span><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/loading.gif">').open();
+			break;
+
+		case 'recommendedDownloadApp':
+						break;
+			
+		case 'recommendedUpgradeGrade':
+			var reDirectConfirm = new jBox('Confirm', {
+				cancelButton: '否',
+				confirmButton: '是',
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 300,
+				cancel: function() { location.href = r.redirect; },
+				confirm: function() {  location.href = 'https://www.pinpinbox.com/index/user/grade/'; },
+				onCloseComplete: function() { reDirectConfirm.destroy(); }
+			}).setContent(r.message).open();
+			break;
+			
+		case 'taketemplate':
+			var box = new jBox('Confirm', {
+				cancelButton: '否',
+				confirmButton: '是',
+				confirm: function() {
+					$.post('https://www.pinpinbox.com/index/template/_taketemplate/', {
+						template_id: r.data.template_id,
+						confirm: true,
+						join_event : r.data.join_event,
+					}, function(r) {
+						r = $.parseJSON(r);
+						switch (r.result) {
+							case 1:
+								_jBox(r, 'success');
+								break;
+							case 2:
+								_jBox(r, 'login');
+								break;
+							case 3:
+								_jBox(r, 'taketemplate');
+								break;
+							case 4:
+								_jBox(r, 'albumProcess');
+								break;
+							case 5:
+								location.href = r.redirect;
+								break;
+							default:
+								site_jBox(r, 'error');
+								break;
+						}
+					});
+				},
+				onCloseComplete: function() {	
+					box.destroy();
+				}
+			}).setContent(
+				'<div class="content">' +
+				'<p>您確定要收藏此版型嗎?</p><p>收藏條件：&nbsp;<span class="red">' + r.data.point + 'P</span></p>' +
+				'</div>'
+			).open();
+			break;
+
+		default:
+			alert('Unknown case of _jBox');
+			break;
+	}
+
+	return box;
+}
+
+function site_jBox(r, type) {
+	if (typeof(r.data) == 'undefined') {r.data = 'Modal'};
+	var a_img = {
+		'success': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/success.png',
+		'error': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/error.png',
+	},
+	img = a_img[type] || 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/info.png';
+	
+	var siteModal = new jBox(r.data, {
+		closeButton: 'title',
+		delayOpen: 200,
+		title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="' + img + '">',
+		onCloseComplete: function() {
+			if (r.redirect) location.href = r.redirect;
+		},
+		maxWidth: 600,
+		minWidth: 100,
+	}).setContent('<div class="content">' + r.message + '</div>').open();
+}
+
+function _TaskAlert(r, c) {
+	switch (c) {
+		case 'task' :
+			var url = (r.data.task.event_url) ? `<p style="text-align:right"><a href="${r.data.task.event_url}" target="_blank">活動連結</a></p>` : '' ;
+				str = `<div class="content">
+							<p style="text-align: center;">
+								<img width="80" height="80" style="vertical-align: middle;" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/gift_2.png">
+							</p>
+							<p style="margin:10px;text-align:center" class="keypoint">${r.data.task.message}</p>
+							${url}
+						</div>`,
+				box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 300,
+				title: '<span style="color: #23afaf; font-size:1.4em;font-weight:bold ; display: inline-block;height: 100%;vertical-align: middle;"><h2>'+r.data.task.title+'</h2></span>',
+				onCloseComplete: function() {
+					if (r.redirect) location.href = r.redirect;
+				},
+			}).setContent(str).open();
+		break;
+	}
+}
+
+function audioMaskHide() {
+	$('.lg-audio-mask:first').hide();
+}
+
+function createAlbum() {
+	$.post('https://www.pinpinbox.com/index/template/_taketemplate_v2/', {
+		template_id: 0,
+	}, function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 1:
+				_jBox(r, 'albumProcess');
+				break;
+			case 2:
+				_jBox(r, 'success_notext');
+				break;
+			case 3:
+				location.href = r.redirect;
+				break;
+			default:
+				_jBox(r, 'error');
+				break;
+		}
+	});
+}
+
+function processAjaxData(urlPath){
+	window.history.pushState("","",urlPath);
+}
+
+function isMobile() {
+    var isAndroid, isIOS, isMobile = false;
+    if(navigator.userAgent.match(/Android/i)) isAndroid = true;
+    if(navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) ) isIOS = true;
+    if(isAndroid || isIOS) isMobile = true;
+
+    return isMobile;
+}
+
+$(document).on('click', '.lg-video-play', function(){
+	if($('video').length > 1) $('video').bind('contextmenu',function() { return false; });
+})
+
+//On photoswipe play video
+$(document).on('click', 'button.play_video', function(){
+	var video_modal = new jBox('Modal', {
+		closeOnClick: false,
+		closeButton: 'title',
+		title : '',
+		width: 'auto',
+		height: 520,
+		onCloseComplete : function () {
+			if($('video').length > 0 ) $('video').remove();
+			
+			if( typeof(video_file) != 'undefined' ) {
+				video_file.pause();
+			}else{
+				video_embed.pause() ;
+				$('div[id^="mep_"]').remove();
+			}
+		},
+	});		
+	var content;
+	
+	switch ($(this).find('i').data('video_refer')) {
+		case 'file':
+			content = '<video id="video_demo_file" controls loop muted preload="auto" width="640" height="480" data-mejsoptions=\'{"alwaysShowControls": true}\'><source class="mp4" type="video/mp4" src="" />很抱歉！您的瀏覽器不支援 HTML5 Video </video>';
+			video_modal.setContent(content).open();
+			var video_file = $("#video_demo_file")[0];
+			$("#video_demo_file source.mp4").attr('src', $(this).find('i').data('video_target'));
+			video_file.play();
+		break;
+		
+		case 'embed':
+			content = '<video style="margin-top:30px;" width="740" height="480" id="video_demo_embed"><source type="video/youtube" src="'+$(this).find('i').data('video_target')+'" /></video>';			
+			video_modal.setContent(content).open();
+			var video_embed = new MediaElementPlayer('#video_demo_embed', {enablePluginDebug: false, flashName: 'flashmediaelement-cdn.swf'});
+		break;
+		
+		default:
+			return false
+		break;
+	}
+});
+</script>
+</body>
+</html>

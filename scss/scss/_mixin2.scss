@@ -1,0 +1,53 @@
+@mixin display-flex($flex-align:center,$flex-direction:row){
+  display: -webkit-box;      
+  display: -moz-box;        
+  display: -ms-flexbox;     
+  display: -webkit-flex;  
+  display: flex; 
+  -webkit-box-align: $flex-align;
+  -moz-box-align: $flex-align;
+  -ms-flex-align: $flex-align;
+  -webkit-align-items: $flex-align;
+  align-items: $flex-align;
+  -webkit-flex-direction: $flex-direction;
+  -moz-flex-direction: $flex-direction;
+  -ms-flex-direction: $flex-direction;
+  flex-direction: $flex-direction;
+}
+
+@mixin flex-wrap($flex-wrap){
+  -webkit-flex-wrap: $flex-wrap;
+  -moz-flex-wrap: $flex-wrap;
+  -ms-flex-wrap: $flex-wrap;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin flex-flow($flex-flow){
+  -webkit-flex-flow: $flex-flow;
+  -moz-flex-flow: $flex-flow;
+  -ms-flex-flow: $flex-flow;
+  flex-flow: $flex-flow;
+}
+
+@mixin flex($flex-value){
+  -webkit-flex: $flex-value;
+  -moz-flex: $flex-value;
+  -ms-flex: $flex-value;
+  flex: $flex-value;
+}
+
+@mixin order($flex-order){
+  -webkit-box-ordinal-group: $flex-order;
+  -moz-box-ordinal-group: $flex-order;
+  -ms-flex-order: $flex-order; 
+  -webkit-order: $flex-order; 
+  order: $flex-order;
+}
+
+
+@mixin user-select($select-action:none){
+  -webkit-user-select: $select-action;  /* Chrome all / Safari all */
+  -moz-user-select: $select-action;     /* Firefox all */
+  -ms-user-select: $select-action;      /* IE 10+ */
+  user-select: $select-action;          /* Likely future */
+}

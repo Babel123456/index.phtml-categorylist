@@ -1,0 +1,1275 @@
+
+<!doctype html>
+<html lang="zh">
+<head>
+        <link rel="icon" type="image/vnd.microsoft.icon" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/favicon.ico"/>
+    <link rel="manifest" href="https://www.pinpinbox.com/manifest.json">
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <meta name="keywords" content="pinpinbox,職人,贊助發佈平台,釘釘吧,微出版,創作分享,拼拼,經濟共享,販售作品,潛能盒子,釘釘,漫畫,旅遊,美食,原創,影片,直播,投稿活動,贊助,pinpin,金馬獎,新藝城,黃百鳴,泰迪羅賓,內容賺錢,麥若愚,眭澔平,創作人,寵物,抽獎,電影,內容贊助,贊助,打賞,掃描QR">
+    <meta name="description" content="pinpinbox-釘釘吧 是⼀個全新型態的創作⼈/斜扛青年之自媒體數位平台，只要將任何創作內容發表在 pinpinbox 作為「發佈⼯具」，可同步分享在社群媒體上，就能讓粉絲閱看，進⼀步對內容贊助支持，無形中亦替你的創作品增加了實質價值。 有別於⼀般社群媒體，在 pinpinbox 可以⾃自由整合「圖片、影片、音樂 (或錄音)、 文字、PDF」成⼀一本翻頁瀏覽的作品，因此十分適合作為「延伸內容」，例如: 在社群媒體放上Vlog，在 pinpinbox 則可嵌入影片，並新增圖解照片、⾏程表等。 若再「關閉預覽」部分內容，即可設定為VIP進階內容，也就是粉絲需要贊助或收藏作品後才可閱看完整作品，例如:私房景點推薦。">
+    <meta name="msvalidate.01" content="851F62F6F1B71365ECE1EFE9C1D56C73"/>
+    <meta name="apple-itunes-app" content="app-id=1057840696">
+    <meta property="og:url" content="www.pinpinbox.com/tutorial/index">
+    <meta property="og:title" content="pinpinbox釘釘吧-內容創作人發佈平台">
+    <meta property="og:description" content="pinpinbox-釘釘吧 是⼀個全新型態的創作⼈/斜扛青年之自媒體數位平台，只要將任何創作內容發表在 pinpinbox 作為「發佈⼯具」，可同步分享在社群媒體上，就能讓粉絲閱看，進⼀步對內容贊助支持，無形中亦替你的創作品增加了實質價值。 有別於⼀般社群媒體，在 pinpinbox 可以⾃自由整合「圖片、影片、音樂 (或錄音)、 文字、PDF」成⼀一本翻頁瀏覽的作品，因此十分適合作為「延伸內容」，例如: 在社群媒體放上Vlog，在 pinpinbox 則可嵌入影片，並新增圖解照片、⾏程表等。 若再「關閉預覽」部分內容，即可設定為VIP進階內容，也就是粉絲需要贊助或收藏作品後才可閱看完整作品，例如:私房景點推薦。">
+    <meta property="og:image" content="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/kanban.png">
+    <script src="https://api.dmcdn.net/all.js"></script>
+    <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <title>pinpinbox釘釘吧-內容創作人發佈平台</title>
+    <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap.min.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/fontello.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/font-awesome/css/font-awesome.css" rel="stylesheet" /><link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/jBox.css" rel="stylesheet" /><link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/mediaelement-2.22.0/mediaelementplayer.min.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/sweet-alert/css/sweet-alert.css" rel="stylesheet" /><link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/jquery-ui.min.css" rel="stylesheet" />    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<link type="text/css" href="./scss/css/style.css" rel="stylesheet" />
+    <script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/zh_TW/fbevents.js');
+fbq('init', '1010541995708559', {
+em: 'insert_email_variable,'
+});
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1010541995708559&ev=PageView&noscript=1"
+/></noscript><script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:598622,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script></head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-58524918-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script><div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.10&appId=472973216191275";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<div id="main"><div id="header">
+	<!-- 電腦版使用導覽列 -->
+	<div id="head_desk">
+		<div class="head_top">
+			<div class="head_center">
+				<div class="logo"><a href="https://www.pinpinbox.com/">pinpinbox</a></div>
+				<div class="top_search" style="width:550px;" >
+					<div class="input-group">
+						<div class="input-group-btn">
+							<button type="button" id="header_searchtype_list" name="header_searchtype_list" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-searchtype="album">作品 <span class="caret"></span></button>
+							<ul class="dropdown-menu dropdown-menu-headerbar" role="menu">
+							  <li><a href="javascript:void(0)" data-searchtype="album">作品</a></li>							  
+							  <li><a href="javascript:void(0)" data-searchtype="user">創作人</a></li>
+							</ul>								
+						</div>
+						<!-- header PC search-->
+						<input type="text" class="form-control height30" id="searchkey_pc" name="searchkey" value="">
+						<div class="input-group-btn">
+							<button class="btn btn-default" type="button" onclick="_search()">
+								<i class="fa fa-search"></i>
+							</button>
+						</div>
+					</div>							
+				</div>
+				<div id="head_other">
+					<ul>
+						<li class="member_hide">
+														<a style="z-index: 99;" href="javascript:void(0);" class="member cicle_btn icon_user" data-iconfor="user" id="member_open">
+								<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/login.png" height="149" width="149"  onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'">
+							</a>
+							<ul>
+								<li><div class="member_nav">
+									<ul>
+									
+										<li>Hi ~ 訪客</li>
+										<li><div class=line></div></li>
+										<li><a href="https://www.pinpinbox.com/index/user/login/">登入</a></li>
+										<li><a href="https://www.pinpinbox.com/index/user/register/">註冊</a></li>									</ul>
+								</div></li>
+							</ul>
+						</li>											
+												<li>
+							<a href="https://www.pinpinbox.com/index/event/" class="cicle_btn icon_event" data-iconfor="event" data-toggle="tooltip" data-placement="bottom"  data-original-title="最新活動">
+								<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/event_a.svg" onerror="this.onerror=null; this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/event_a.png'" >
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" onclick="createAlbum();" class="cicle_btn icon_diy" data-iconfor="diy" data-toggle="tooltip" data-placement="bottom"  data-original-title="建立作品">
+								<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/diy_b.svg" onerror="this.onerror=null; this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/diy_b.png'" >
+							</a>
+						</li>
+											</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 手機板使用導覽列 -->
+	<div id="head_mobile">
+		<div id="head_nav02">
+			<div id="close_nav02"><a href="javascript:void(0);"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/close.png" height="83" width="82"  ></a></div>
+			<ul>
+				<li><div id="login_ok"><a href="https://www.pinpinbox.com/index/user/login/"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/login.png" height="40" width="40"  >登入</a></div></li>				<li><div class="line"></div></li>
+				<li>
+					<div id="nav_wrapper">
+						<div id="scroller">
+							<ul>
+								
+									<li><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>				
+									<li><a href="https://www.pinpinbox.com/index/album/explore/">探索作品</a>
+										<ul>
+										</ul>
+									</li>
+									<li><a href="https://www.pinpinbox.com/index/event/">最新活動</a></li>
+									<li><a target="_blank" href="https://www.facebook.com/pages/pinpinbox/872194489510640">Facebook粉絲專頁</a></li>
+									<li><a href="https://www.pinpinbox.com/index/user/register/">註冊</a></li>							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="head_all">
+			<div id="head_in">
+				<div class="logo mobilehide02"><a href="https://www.pinpinbox.com/"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/logo.png" height="84" width="79"></a></div>
+				<div class="logo mobilehidedispaly02"><a href="https://www.pinpinbox.com/"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/m_logo.png" height="84" width="79"></a></div>
+				<div class="top_search">
+						<div class="input-group">
+							<div class="input-group-btn">
+								<button type="button" id="header_searchtype_list" name="header_searchtype_list" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-searchtype="album">作品 <span class="caret"></span></button>
+								<ul class="dropdown-menu dropdown-menu-headerbar" role="menu">
+								  <li><a href="javascript:void(0)" data-searchtype="album">作品</a></li>
+								  <li><a href="javascript:void(0)" data-searchtype="user">創作人</a></li>
+								</ul>								
+							</div>
+							<!-- header Mobile search-->
+							<input type="text" class="form-control" id="searchkey_m" name="searchkey" value="">
+							
+							<div class="input-group-btn"><button class="btn btn-default" type="button" onclick="_search()"><i class="fa fa-search"></i></button></div>
+						</div>
+				</div>					
+				
+				<div class="menu02">
+					<a href="javascript:;" id="menu2_open"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/menu02.png" height="177" width="174"  ></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="right_btn">
+		<div id="scroll_top"  ><a href="javascript:void(0)"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_top.svg" height="53" width="52"  ></a></div>
+		<div id="fb_link"><a href="https://www.facebook.com/pages/pinpinbox/872194489510640" target="_blank" title="造訪 pinpinbox粉絲團!"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_fb.svg" onerror="this.onerror=null; this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_fb.png'"></a></div>
+</div>
+<script>
+
+//Mobile - notice
+function mobile_notice() {
+	var myConfirm = new jBox('Modal', {
+		cancelButton: '否',
+		confirmButton: '是',
+		confirm: function() {	
+			buyalbum();
+		},
+		onCloseComplete: function() {	
+			myConfirm.destroy();
+		}
+	}).setContent(
+		'<div class="content">' +
+		'<p class="keypoint"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/info.png">&nbsp;Coming Soon!Only a PC device is supported at present.</p>' +
+		// '<p><a data-uri="https://play.google.com/store/apps/details?id=com.pinpinbox.android" onclick="clickHandler(this.dataset.uri)" href="javascript:void(0)"><img class="app" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/jbox_and.png"></a>'+
+		// '<a data-uri="https://itunes.apple.com/tw/app/id1057840696" onclick="clickHandler(this.dataset.uri)" href="javascript:void(0)"><img class="app" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/jbox_ios.png"></a></p><br>' +
+		'</div>'
+	).open();
+}
+</script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-1.11.3.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/browser-deeplink-master/browser-deeplink.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.bxslider/jquery.bxslider.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/bootstrap.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.zh-TW.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/Bootstrap-3-Typeahead-master/bootstrap3-typeahead-modify.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-cookie-master/src/jquery.cookie.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/all.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.nicescroll.min.js"></script><script type="text/javascript" src="https://www.pinpinbox.com/js/jBox-0.4.8/jBox.min.js"></script><script type="text/javascript" src="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/js/owl.carousel.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/mediaelement-2.22.0/mediaelement-and-player.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/sweet-alert/js/sweet-alert.min.js"></script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/imagesloaded.pkgd.min.js"></script><div id="banner" class="index_banner">
+	<div id="fullWidthBanner" class="tutorialBanner">
+		<div class="bannerContent" style="line-height:8;">
+			經營小幫手		</div>
+	</div>
+</div>
+
+<div class="mobile_banner about">
+	<img src="https://babel123456.github.io/index.phtml-categorylist/tutorial(960X540).jpg">
+	<div class="m_bannerContent about">
+		<p class="bannerTitle">經營小幫手</p>
+	</div>
+</div>	
+<!-- 內容頁開始 -->
+<div id="content">
+	<ul id="layout">
+		<li class="wid90">
+			<div id="tutorialContentA">
+				<p class="content">
+				    <!--
+					<iframe width="90%" height="450" src="https://www.youtube.com/embed/vJTR-DWQ_so" frameborder="0" allowfullscreen></iframe>				
+					-->
+					<div class="emb_movie_wrapperRWD" > 
+						 <iframe  class="emb_movieRWD" src="https://www.youtube.com/embed/vJTR-DWQ_so" frameborder="0" allow="encrypted-media"  allowfullscreen></iframe>
+					</div>
+
+					
+				</p>
+				
+				<div class="content">
+					<p class="title">重點回顧:</p>
+					<p class="question">Q: 如何設定預覽內容？</p>
+					<p class="ans">A:（影片0:53~0:56）在建立作品頁中點擊「查看作品」，能發現檔案的右下方皆有個小方框，打勾者為免費開放的內容，不打勾者則需要「贊助」或「收藏」才可觀看。 </p>
+					<p class="question">Q: 如何設定贊助？</p>
+					<p class="ans">A:（影片1:16~1:20）建立作品後，記得設定「P點價格底限」，粉絲即可對你贊助。</p>
+				</div>
+			</div>
+		</li>
+		<li><div class="line"></div></li>
+		<li class="wid90">
+			<div id="tutorialContentB">
+				<p class="title">內容規畫建議</p>
+				<p class="text">不論是免費，還是需要贊助的內容，如果期望觀眾做出行動支持（收藏、贊助），可參考以下做法。</p>
+				<div class="content">
+					<p class="question">● 除了吸睛的標題和封面，更要把握黃金時間</p>
+					<p class="ans">超過 50% 的人會在內容前 5 頁（張照片）、影片前 10 秒決定是否繼續看下去，所以在鋪陳時，建議將此部分想像成預告片，影像和聲音的搭配要短而有力。</p>
+					<p class="question">● 以故事編排方式，在精彩部分「緊急喊卡」</p>
+					<p class="ans">這個不用多解釋了，就像平常看影劇時，廣告總出現在最緊張、最精彩的地方（心裡吶喊：啊啊啊～）所以同樣的，這時候就善用 pinpinbox 的「設定預覽」功能吧！（上方影片 0:53~0:56）</p>
+					<p class="question">● 「痛點激問法」找尋觀眾的需求</p>
+					<p class="ans">思考為什麼觀眾會對該內容有興趣。舉例來說，詢問觀眾「你是不是常被部落客『假推薦真業配』的內容欺騙？」進而喚出他的認同！</p>
+					<p class="question">● 明確表示粉絲付出支持後的價值</p>
+					<p class="ans">例如：贊助（收藏）旅遊類內容，即可看到創作人的私密推薦行程；贊助 P 點最多的前 10 名粉絲，即可得到精心製作的小禮物。</p>
+				</div>
+			</div>
+		</li>
+		<li><div class="line"></div></li>
+		<li class="wid90">
+			<div id="tutorialContentC">
+				<p class="title">經營常見問題</p>
+				<div class="content">
+					<p class="question">Q: 我是新手，沒有經營粉絲的經驗，該怎麼辦？</p>
+					<p class="ans">A: 我們建議你可以嘗試發布不同的風格、類型（當然還是要你本身喜歡、擅長的）內容以測試觀眾的反應。</p>
+					<p class="question">Q:  一定都會收到贊助嗎？</p>
+					<p class="ans">A: 提到此問題，不妨先想想什麼樣的內容會吸引你贊助吧！切記——作出贊助和免費內容的區別是必須的。</p>
+					<p class="question">Q: 什麼類型的內容都適合在 pinpinbox 創價嗎？</p>
+					<p class="ans">A: pinpinbox 是一個開放式的平台，只要內容不違背社會善良風俗及智慧財產權，我們不會有所干預。</p>
+				</div>
+			</div>
+		</li>
+		<li class="wid90">
+			<div id="tutorialContentD">
+				<p class="subTitle">透過創作獲得收益是你應得的</p>
+				<div class="list">
+					<div class="item create">
+							<p class="link">
+								<a onclick="createAlbum();" href="javascript:void(0)"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/start.svg"></a>
+							</p>
+						</div>				</div>
+			</div>
+		</li>		
+	</ul>
+</div>
+<div class="m_footer">
+	<ul>
+		<li><a href="https://www.pinpinbox.com/index/index/qanda/">Q&amp;A</a></li>
+		<li>
+			<select>
+				<option>簡體中文</option>
+				<option>繁體中文</option>
+				<option>English</option>
+			</select>
+		</li>
+		<li><a href="https://www.pinpinbox.com/index/index/privacy/">條款與政策</a></li>
+		<li></li>
+		<li><a href="https://www.pinpinbox.com/index/recruit/">企業合作</a></li>
+	</ul>
+</div>
+<script type="text/javascript">
+$('.btnLink, p.link').hover(function(){
+	$(this).css('opacity', 0.9);
+}, function(){
+	$(this).css('opacity', 1);
+});
+
+$('#tips').on('click', function(){
+		swal("什麼是贊助收藏機制？", '創作人可以設定贊助價格（P點）和免費預覽的頁數；粉絲再使用P點來贊助收藏喜愛的作品，瀏覽完整內容。');
+})
+
+</script><!-- Footer頁面開始 -->
+<div id="footer">
+	<div id="footer_content">
+		<div id="footer_nav">
+			<ul>
+				<li><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
+				<li><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" class="cicle_btn" style="z-index: 100">經營小幫手</a></li>
+				<li><a href="https://www.pinpinbox.com/index/recruit/">企業合作</a></li>
+				<li><a href="https://www.pinpinbox.com/index/index/qanda/">Q&amp;A</a></li>
+				<li><a id="apple_btn" data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696"><!-- iOS --></a></li>
+				<li><a data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android"><!-- Android --></a></li>
+				<li><a href="https://www.pinpinbox.com/index/index/privacy/">條款與政策</a></li>
+				<li><a href="https://www.pinpinbox.com/index/index/terms/"></a></li>
+				<li><a href="https://www.pinpinbox.com/index/index/copyright/"></a></li>
+				<li><a href="https://www.pinpinbox.com/index/index/payment_terms/"></a></li>
+				<li class="dropup">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下載APP<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a id="apple_btn" data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
+						<li><a data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
+					</ul>							
+				</li>				
+				<li class="dropup">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">語言<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="javascript:void(0)"  style="color: #D0D0D0;">English</a></li><li><a href="javascript:void(0)"  style="color: #D0D0D0;">日本語</a></li><li><a href="javascript:void(0)"  style="color: #D0D0D0;">簡體中文</a></li><li><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1&lang=zh_TW">繁體中文</a></li>					</ul>							
+				</li>				
+			</ul>
+		</div>
+		<div id="copyright">
+			<p class="social_link"><a href="#">繁體中文</a> / <a href="#">簡體中文</a> / <a href="#">English</a> / <a href="#">日本語</a></p>
+			<p class="social_link">
+				<a href="https://www.facebook.com/pages/pinpinbox/872194489510640" target="_blank"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/fb.png" height="127" width="127" ></a>
+				<a href="https://www.pinpinbox.com/index/recruit/"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/mail.png"></a>
+				<a href="https://www.pinpinbox.com/index/index/privacy/"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/law.png"></a>			
+			</p>
+			<p style="height:25px;">© 2016 pinpinbox All Rights Reserved.</p>
+		</div>
+	</div>
+</div>
+<script>
+deeplink.setup({
+    iOS: {
+        appId: "1057840696",
+        appName: "pinpinbox",
+    },
+    android: {
+        appId: "com.pinpinbox.android",
+    }
+});
+
+
+$(function(){
+	//search: on + datalist
+	$('input[name="searchkey"]').on({
+		keypress: function(e) {
+			if (e.which == 13 || e.keyCode == 13) _search();
+		},
+	}).typeahead({
+		afterSelect: function(){_search();},
+		autoSelect: false,
+		showHintOnFocus: true,
+		source: function(query, process) {
+			$.post('https://www.pinpinbox.com/index/search/', {
+				searchkey: query
+			}, function(r) {
+				process($.parseJSON(r));
+			});
+		},
+	});
+
+	//search: type
+	var headbar_searchtype = '';
+	switch(headbar_searchtype) {
+		case 'album' :
+			$('button[name="header_searchtype_list"]').html('作品 <span class="caret"></span>').data('searchtype', 'album');
+		break;
+		
+		case 'template':
+			$('button[name="header_searchtype_list"]').html('版型 <span class="caret"></span>').data('searchtype', 'template');
+		break;
+		
+		case 'user' :
+			$('button[name="header_searchtype_list"]').html('創作人 <span class="caret"></span>').data('searchtype', 'user');
+		break;
+		
+		default:
+		break;
+	}
+	
+	$('.dropdown-menu-headerbar>li>a').on('click', function() {
+		var str = $(this).html() + ' <span class="caret"></span>';
+		$('button[name="header_searchtype_list"]').html(str).data('searchtype', $(this).data('searchtype'));
+	});
+   
+    $('li.notice_hide').on('click', function(){
+    	if ($('div.notice_nav').hasClass('active')) {
+    		$('div.notice_nav').toggleClass('active');
+    	} else {
+    		$.post('https://www.pinpinbox.com/index/index/getNotifications/', {
+    			data : 0,
+    		}, function(r) {
+    			r = $.parseJSON(r);
+    			switch (r.result) {
+    				case 1:
+    				    $('.notice_hide .pushqueue_hasunviewed').hide();
+
+    					$('.noticeWarpper').empty()
+						for (let [i, v] of r.data.entries()) {
+							$('.noticeWarpper').append(`<li class="list">
+									<a href="${v.target_url}">
+										<div class="notice_user_pic">
+											<img src="${v.trigger_user_pic}" onerror="this.src=\'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png\'">
+										</div>
+										<div class="notice_msg">
+											<p class="msg_text">${v.message}</p>
+											<p class="msg_time"><time datetime="${v.time}" class="timeago"></time></p>
+										</div>
+									</a>
+								</li>`);
+							}
+						$('time.timeago').timeago();
+						$('div.notice_nav').toggleClass('active');
+					    break;
+    		
+    				default:
+    				    break;
+    			}
+    		});
+    	}
+    })
+	$('time.timeago').timeago();
+    $('body').on('click', function(){
+    	$('div.notice_nav').removeClass('active');
+    })
+});
+
+function _search() {
+	var searchtype = $('button[name="header_searchtype_list"]').data('searchtype');
+	switch (searchtype) {
+		case 'album' :
+			var url = 'https://www.pinpinbox.com/index/album/?rank_id=0';
+		break;
+		
+		case 'template' :
+			var url = 'https://www.pinpinbox.com/index/template/?rank_id=0';
+		break;
+		
+		case 'user' :
+			var url = 'https://www.pinpinbox.com/index/creative/?rank_id=0';
+		break;
+	}
+	
+		var searchkey = ($(window).width() < 1024) ? $('#searchkey_m').val().trim() : $('#searchkey_pc').val().trim();
+	
+	//cookie
+	var search = [], searched = $.cookie('search')? $.parseJSON($.cookie('search')) : [], array = [];
+	if (searchkey !== '') searched.unshift(searchkey);
+	for (var i = 0; i < searched.length; ++i) {
+	    if (array.indexOf(searched[i]) < 0) {
+	  	    array.push(searched[i]);
+	    	search.push(searched[i]);
+	    }
+	}
+	if (search.length > 16) search.pop();
+	$.cookie('search', JSON.stringify(search), {path: '/'});
+	
+	if(encodeURIComponent(searchkey).length == 0) {
+		location.href = 'https://www.pinpinbox.com/index/album/explore/';
+	} else {
+		location.href = url + '&searchtype=' + searchtype + '&searchkey=' + encodeURIComponent(searchkey);
+	}
+}
+
+function clickHandler(uri) {
+    deeplink.open(uri);
+
+    return false;
+}
+
+function ios_notice() {
+	var siteModal = new jBox('Modal', {
+		delayOpen: 200,
+		title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/info.png">',
+		maxWidth: 600,
+		minWidth: 100,
+	}).setContent('Coming Soon!').open();
+}
+</script></div>
+<script>
+$(function(){  $('[data-toggle="tooltip"]').tooltip(); });function popview(url) {
+	$('.jBox-wrapper').remove();
+	$.post(url, {
+		data : null,
+	}, function(r) {
+		content = $(r).find('#tem_content');
+		pinpinboard = $(r).find('#pinpinboard');
+		script = $(r).find('script[name="popview"]');
+
+		if(!$('#JboxPopview').length) {
+			var popview = new jBox('Modal', {
+				addClass : 'popview_content',
+				id : 'JboxPopview',
+				width: 1200,
+	            height: 1600,
+	            zIndex : 1000,
+				onCloseComplete: function() {
+			  		processAjaxData("https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1");
+					popview.destroy();
+					browseKitRefresh();
+				},
+				onOpen : function(){
+                    processAjaxData(url);
+                    $('li.removeInPop').remove();
+                    $('.jBox-content').append(pinpinboard);
+                    $('.jBox-content').append(script);
+                    $('#pinpinboardAnchor').on('click', function(){
+						$('.jBox-content').animate({scrollTop:$('.comment_info_textarea').offset().top}, 10);
+					})
+                    $('.jBox-content .descrip').html( $('.jBox-content .descrip').html().autoLink({ target: "_blank" }) ) ;
+					window.onpopstate = function(event) { popview.close(); };
+
+				},
+			}).setContent(content).open();
+		}
+	});
+}
+/*
+ * webpush
+ */
+
+/*
+ * facebook
+ */
+window.fbAsyncInit = function() {
+	FB.init({
+		appId: '472973216191275',
+		cookie: true,
+		version: 'v2.10'
+	});
+
+	Window.FB = FB;
+};
+
+logInWithFacebook = function() {
+	FB.login(function(response) {
+		if (response.authResponse) {
+			$('#login_facebook').hide().next('div').show();
+			$.post('https://www.pinpinbox.com/index/user/login_facebook/?tutorial_viewed=1', {accessToken: response.authResponse.accessToken}, function(r) {
+				r = $.parseJSON(r); 
+				if (r.result == 1) {
+					_jBox(r, 'success_notext');
+				} else {
+					_jBox(r, 'error');
+				}
+				$('#login_facebook').show().next('div').hide();
+			});
+		} else {
+			_jBox({message: '登入失敗'}, 'error');
+		}
+	}, {scope: 'public_profile,email,user_friends,user_birthday', auth_type: 'rerequest'});
+	
+	return false;
+};
+
+var askAutoPlay = true,
+    adjustAppQrcodeUrl,
+	a_album_element = [],	//browseKit element of album
+	a_album_item = [];		//browseKit item of album
+
+function browseKit_album(url, param) {
+	param.pageCalledByXHR = $('#pageCalledByXHR').length;
+	if (a_album_item.length == 0) {
+		$.post(url, param, function(r) {
+			r = $.parseJSON(r);
+			if (r.result == 1) {
+				for (var k0 in r.data.readable) {
+					subHtml = '';
+
+					if (r.data.readable[k0]['name']) subHtml += '<h4>' + r.data.readable[k0]['name'] + '</h4>';
+
+					if (r.data.readable[k0]['description']) subHtml += '<p>' + r.data.readable[k0]['description'] + '</p>';
+					
+					if (r.data.readable[k0]['hyperlink']) {
+						hyperlink = [];
+						r.data.readable[k0]['hyperlink'].forEach(function(v0){
+							hyperlink.push('<a target="_blank" href="' + v0.url + '">' + v0.text + '</a>');
+						});
+						subHtml += hyperlink.join('&emsp;');
+					}
+
+					o_audio = {loop: r.data.readable[k0].audio_loop, mode: r.data.readable[k0].audio_mode, src: r.data.readable[k0].audio_target};
+                    //組抽獎影片圖示
+                    slotHtml = '';
+                    videoHtml = '';
+                    switch (r.data.readable[k0]['usefor']) {
+                        case 'slot':
+                        case 'exchange':
+                            slotHtml = '<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="display:block;position:absolute;right:2px;bottom:2px;z-index:3000;background:#FF5E68;width:20px;height:20px;border-radius:20px;">';
+                            break;
+                        case 'video':
+                            videoHtml = '<img alt="影片" title="影片" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/play-01.svg"  style="display:block;position:absolute;left:2px;bottom:2px;z-index:3000;background:rgba(0,0,0,0.65);width:20px;height:20px;border-radius:20px;">';
+                            break;
+                    }
+
+                    //組聲音圖示
+                    audioHtml = '<img alt="聲音" title="聲音" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/speaker-01.svg" style="display:block;position:absolute;left:2px;bottom:2px;z-index:3000;background:rgba(0,0,0,0.65);width:20px;height:20px;border-radius:20px;">';
+
+					switch (r.data.readable[k0]['usefor']) {
+						case 'video':
+							href = r.data.readable[k0]['video_target'];
+							poster = r.data.readable[k0]['image'];
+							thumb = r.data.readable[k0]['image_thumbnail'];
+							platform = fetch_video_platform(href);
+							switch (r.data.readable[k0]['video_refer']) {									
+								case 'embed':
+									a_album_item.push({
+										audio: o_audio,
+								    	href: href,
+								        poster: poster,
+								        src: href,
+								        subHtml: subHtml,
+                                        slotHtml: slotHtml,
+                                        videoHtml: videoHtml,
+								        thumb: thumb,
+								        usefor: 'video',
+								        platform: platform,
+								        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
+								    });
+									break;
+
+								case 'file':
+									if ($('#video-' + k0).length == 0) {
+										$('body').append(
+												'<div class="lgVideoWrapper" style="display:none;" id="video-' + k0 + '">' +
+												'<video controlsList="nodownload" class="lg-video-object lg-html5" controls preload="none">' +
+											    '<source src="' + href + '" type="video/mp4">Your browser does not support HTML5 video.</video>' +
+											    '</div>'
+										);
+									} else {
+                                        $('#video-' + k0).find('source').attr('src', href);
+                                    }
+									
+									a_album_item.push({
+										audio: o_audio,
+								    	html: '#video-' + k0,
+								        poster: poster,
+								        subHtml: subHtml,
+                                        slotHtml: slotHtml,
+                                        videoHtml: videoHtml,
+								        thumb: thumb,
+								        usefor: 'video',
+								        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
+								    });
+									break;
+							}
+							break;
+
+						default:
+							href = r.data.readable[k0]['image'];
+							thumb = r.data.readable[k0]['image_thumbnail'];
+							a_album_item.push({
+						        audio: o_audio,
+						    	href: href,
+						        src: href,
+						        subHtml: subHtml,
+                                slotHtml: slotHtml,
+                                videoHtml: videoHtml,
+						        thumb: thumb,
+						        usefor: 'audio',
+						        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
+						    });
+							break;
+					}
+				}
+
+				param.adjustAppQrcodeUrl = adjustAppQrcodeUrl = r.data.property.album.adjustAppQrcodeUrl;
+
+				browseKit_v2(this, a_album_item, param);
+			} else {
+				_jBox(r, 'error');
+			}
+		});
+	} else {
+        param.adjustAppQrcodeUrl = adjustAppQrcodeUrl
+		browseKit_v2(this, a_album_item, param);
+	}
+}
+
+function browseKit_v2(that, item, param) {
+	a_album_element.push(that);
+	var indexId = 0;
+
+    if($('#mask02').data('indexId')) {
+        indexId = $('#mask02').data('indexId');
+    } else if(param.preview_page_length) {
+        indexId = param.preview_page_length;
+    }
+
+    var	$lg = $(that).lightGallery({
+		loadYoutubeThumbnail: true,
+		youtubeThumbSize : 'hqdefault',
+        dynamic: true,
+        dynamicEl: item,
+        hash: false,
+		hideBarsDelay: 3000,
+		loop: false,
+		download: false,
+		index : indexId,
+		thumbWidth: 80,
+		youtubePlayerParams: {
+	        showinfo: 0,
+	        rel: 0,
+		},
+    }).on('onAfterOpen.lg', function(e) {
+    	if(item[0].audio.src != null) {
+    		audioPlayer = $('#lg-audio'); 
+    		audioPlayer.attr('controlsList', 'nodownload');
+    		setTimeout(function(){ 
+    			audioPlayer[0].play(); 
+    		}, 700); 
+    	}
+            //加入抽獎影片圖示
+            $(".lg-thumb-item").css('position','relative');
+            for(i=0;i<item.length;i++) {
+                if(item[i].audio.src!=null && item[i].audio.src!=''){
+                    //加入聲音圖示
+                    $(".lg-thumb-item:nth-child("+(i+1)+")").append(audioHtml);
+                }
+                $(".lg-thumb-item:nth-child("+(i+1)+")").append(item[i].slotHtml);
+                $(".lg-thumb-item:nth-child("+(i+1)+")").append(item[i].videoHtml);
+            }
+	}).on('onAfterSlide.lg',function(e, p, i){
+	    $lg.data('lightGallery').modules.audio.build();
+        audioPlayer = $('#lg-audio'); _audipPlayer = document.getElementById("lg-audio");
+        audioPlayer.attr('controlsList', 'nodownload');
+        switch(item[i].usefor) {
+        	case 'video' : audioPlayer[0].pause(); break;
+        	case 'audio' : if( _audipPlayer.hasAttribute("autoplay")) audioPlayer[0].play(); break;
+        }
+        if(item[i].audio.mode == 'singular') askAutoPlay = false;
+       
+		if(item[i].audio.src != null && askAutoPlay) { $('span#lg-audio-button').trigger('click') ; }
+
+		audioPlayer[0].addEventListener("play", function () {
+			audioPlayer.bind('contextmenu',function() { return false; }); 
+			if(!_audipPlayer.hasAttribute("autoplay")) audioMaskHide();
+			askAutoPlay = false;
+			audioPlayer.attr('autoplay', 'autoplay');
+		}, false);
+
+		audioPlayer[0].addEventListener("pause", function (e) {	
+			if(e.target.ended == false ) {
+				askAutoPlay = false;
+				audioPlayer.removeAttr('autoplay');
+			}
+		}, false);
+
+        if (item[i].slotHtml != null && item[i].slotHtml != '') {
+            var slotConfirm = new jBox('Modal', {closeButton: 'title'});
+            var slotContent = '', slotTitle = '';
+            slotTitle += '<p class="keypoint" style="margin-right:-20px;font-size:2em;text-align:center;line-height:1.2em;">下載ＡＰＰ即可兌換／抽獎</p>'
+            slotContent += '<div class="content" style="text-align:center;" >';
+            if(isMobile()){
+                slotContent += `<p style="margin:0 auto;width:80%;background:#FF5E68;color:#fff;border-radius:30px;padding:8px 5px;cursor: pointer;" data-uri="pinpinbox://index/album/content/?album_id=${param.album_id}"  onclick="clickHandler(this.dataset.uri);" ><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="vertical-align:middle;display:inline-block;background:#FF5E68;width:30px;height:30px;border-radius:30px;margin-right:3px;">`;
+                slotContent += `<span style="display:inline-block;font-size:20px;vertical-align:middle;" >立即開啟</span></p>`;
+            }else{
+                slotContent += `<span data-uri="pinpinbox://index/album/content/?album_id=${param.album_id}"  onclick="clickHandler(this.dataset.uri);"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v6/gift-01.svg" style="position:absolute;z-index:5;top:38.8%;left:44.8%;vertical-align:middle;display:block;background:#FF5E68;width:40px;height:40px;border-radius:40px;">`;
+                slotContent += `<img src="${param.adjustAppQrcodeUrl}" style="padding:3px;width:180px;height:auto;" ></span>`;
+            }
+            slotConfirm.setTitle(slotTitle).setContent(slotContent).open();
+        }
+        $('.jBox-overlay:last-child').css('background-color','rgba(255,255,255,0.3)');
+		if($('#JboxRecommendedBuyAlbum').length) RecommendedBuyAlbum.destroy();
+
+		
+					
+			setTimeout(function() {
+                if( window.DMplayerE ) { window.DMplayerE.pause(); }
+
+                if((item[i].platform) == 'facebook') {
+					$('div.lg-current .lg-video-cont').empty();
+					var element = `<div
+									id="fbVideo"
+									class="fb-video"
+									data-href="${item[i].src}"
+									data-width="500"
+									data-allowfullscreen="true"></div>`;
+					$('div.lg-current .lg-video-cont').append(element);
+					window.FB.XFBML.parse();
+                } else if ((item[i].platform) == 'dailymotion') {
+                    var videoStr2Array = (item[i].src).split('/'), element = `<div id="DMplayer"></div>`;
+                    $('div.lg-current .lg-video-cont').empty().append(element);
+                    DMplay(videoStr2Array[(((item[i].src).split('/')).length - 1)], 640, 400);
+                }
+
+			}, 200);
+    }).on('onAfterAppendSubHtml.lg',function(e){
+        $lg.data('lightGallery').modules.subhtml.build();
+    }).on('onCloseAfter.lg', function(e){
+            });
+
+    window.$lg = $lg;
+}
+
+function browseKitRefresh() {
+	a_album_item = [];
+	
+	$.each(a_album_element, function(k0, v0) {
+		$(v0).removeData('lightGallery');
+	});
+}
+
+function browseKit() {
+	//photoswipe
+	if ($('.pswp').length == 0) {
+		$('body').append(
+			'<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">'+
+				'<div class="pswp__bg"></div>'+
+				'<div class="pswp__scroll-wrap">'+
+					'<div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div>'+
+					'<div class="pswp__ui pswp__ui--hidden">'+
+			            '<div class="pswp__top-bar">'+
+			                '<div class="pswp__counter"></div>'+
+			                '<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>'+
+			                '<button class="pswp__button pswp__button--share" title="Share"></button>'+
+			                '<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>'+
+			                '<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>'+
+							'<button class="pswp__button play_video" style="background:none;"><i class="img_mode"></i></button>'+
+			                '<div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div>'+
+			            '</div>'+
+			            '<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div>'+
+			            '<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>'+
+			            '<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>'+
+			            '<div class="pswp__caption"><div class="pswp__caption__center"></div></div>'+
+			        '</div>'+
+			    '</div>'+
+			'</div>'
+		);
+	}
+	var items=[], img_icon=[], img_video_target=[], img_video_refer=[];
+	$('#show_photo img').each(function(k0, v0) {
+		var that1 = $(this);
+		var item = {
+			src: that1.prop('src'),
+			w: that1.prop('width'),
+			h: that1.prop('height'),
+		}
+		img_icon.push(that1.attr('data-usefor'));
+		img_video_refer.push(that1.attr('data-video_refer'));
+		img_video_target.push(that1.attr('data-video_target'));
+	    items.push(item);
+	});
+
+    var options = {loop: false};
+	var pswp = new PhotoSwipe(document.querySelectorAll('.pswp')[0], PhotoSwipeUI_Default, items, options);
+	pswp.init();
+	
+	pswp.listen('close', function() {
+		$('#show_photo').empty();
+	});
+
+	$('.pswp__button--arrow--left').on('click', function() {
+		if (items.length == pswp.getCurrentIndex() + 1) pswp.close();
+	});
+	$('.pswp__button--arrow--right').on('click', function() {
+		if (pswp.getCurrentIndex() == 0) pswp.close();
+	});
+	
+	var set_img_icon = function(index) {
+		var top_icon = '';
+		switch(img_icon[index]) {
+			case 'image' :
+				top_icon = '';
+			break;
+			case 'video' :
+				top_icon = 'mod02';
+			break;
+			case 'exchange' :
+				top_icon = 'mod03';
+			break;
+			case 'slot' :
+				top_icon = 'mod04';
+			break;
+			default :
+				top_icon = '';
+			break;
+		}
+		return top_icon;
+	}
+
+	pswp.listen('imageLoadComplete', function(index, item) {
+		$('i.img_mode').removeClass().addClass('img_mode '+set_img_icon(index)).data('video_target', img_video_target[index]).data('video_refer', img_video_refer[index]);
+	});
+
+	pswp.listen('afterChange', function() { 
+		$('i.img_mode').removeClass().addClass('img_mode '+set_img_icon(pswp.getCurrentIndex())).data('video_target', img_video_target[pswp.getCurrentIndex()]).data('video_refer', img_video_refer[pswp.getCurrentIndex()]);
+	});
+}
+
+function DMplay(id, w = 320, h = 200) {
+    if($('iframe#DMplayer').length > 0) $('iframe#DMplayer').remove();
+    DM.api('/videos', {
+        filters: 'buzz',
+        fields: 'id',
+    }, function () {
+        var player = DM.player(document.getElementById('DMplayer'), {
+            video: id,
+            width: w,
+            height: h,
+        });
+
+        window.DMplayerE = player;
+    });
+}
+
+function fetch_video_platform(url) {	
+	var returnType,
+		isHTML = RegExp.prototype.test.bind(/(<([^>]+)>)/i);
+	
+	if( typeof(url) != 'undefined' && !isHTML(url) ) {
+		if( (url.match('youtu.be') != null || url.match('youtube.com') != null) && !url.includes('embed') ) {
+			returnType = 'youtube';
+		}else if(url.match('vimeo') != null){
+			returnType = 'vimeo';
+		}else if(url.match('facebook') != null ) {
+			returnType = 'facebook';
+		}else if(url.match('dailymotion') != null ) {
+			returnType = 'dailymotion';
+		}else if(url.match('pinpinbox') != null){
+			returnType = 'pinpinbox';
+		}
+	}
+
+	return returnType;
+}
+
+function _jBox(r, c) {
+	var img = {
+		'error': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/error.png',
+		'info': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/info.png',
+		'success': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/success.png',
+	};
+	
+	switch (c) {
+		case 'success':
+		case 'error':
+		case 'info':
+			var box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 100,
+				autoClose : r.timer || 0,
+				title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="' + img[c] + '">',
+				onCloseComplete: function() {
+					if(typeof( window.onbeforeunload) != 'undefined' ) window.onbeforeunload = null;
+					if (r.data && typeof(r.data.task) != 'undefined') { 
+						(typeof(r.data.task.message) != 'undefined' && r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : (r.redirect) ? location.href = r.redirect : null; 
+					} else {
+						if (r.redirect) location.href = r.redirect;
+					}			
+				},
+			}).setContent('<div class="content">' + r.message + '</div>').open();
+			break;
+
+		case 'success_notext':
+			if (typeof( window.onbeforeunload) != 'undefined' ) window.onbeforeunload = null;
+
+			if (r.data && typeof(r.data.task) != 'undefined') {
+				(typeof(r.data.task.message) != 'undefined' && r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : (r.redirect) ? (r.redirect=='createAlbum') ? createAlbum() : location.href = r.redirect : null; 
+			} else {
+				if (r.redirect) {
+					(r.redirect == 'createAlbum') ? createAlbum() : location.href = r.redirect;
+				}
+			}
+			break;
+
+		case 'map':
+			var box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 100,
+				title: '<i style="color:#ee5b8d;font-size:22px;" class="fa fa-map-marker" ></i>'+ r.data,
+			}).setContent('<div class="content">' + r.message + '</div>').open();
+			break;
+	
+		case 'albumProcess':
+			block_box = new jBox('Modal', {
+				offset: {y: -50},
+				position: {y: 'center'},
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 300,
+				zIndex: 1500,
+			}).setContent('<div class="content">正在儲存上次未完成的進度...<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/loading.gif"></div>').open();
+			
+			$.post('https://www.pinpinbox.com/index/album/save_album_ajax/' , {
+				album_id : r.data,
+				template_id: '',
+				current_album_id: '',
+			}, function(r2) {
+				block_box.close();
+				r2 = $.parseJSON(r2);
+				switch (r2.result) {
+					case 0 : 
+						_jBox(r2, 'error');
+					break;
+					case 1 : 
+						location.href = r2.redirect;
+					break;
+					case 2 : 
+						_jBox(r2, 'success');
+					break;
+				}
+			});
+			break;
+
+		case 'block':
+			box = new jBox('Modal', {
+				offset: {y: -50},
+				position: {y: 'center'},
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 300,
+				zIndex: 1500,
+			}).setContent('<div class="content">處理中...<img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/loading.gif"></div>').open();
+			break;
+		
+		case 'blockCustomMsg':
+			box = new jBox('Modal', {
+				offset: {y: -50},
+				position: {y: 'center'},
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 800,
+				zIndex: 1500,
+			}).setContent('<div class="content">'+r.message+' <p style="text-align: center;"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/loading.gif"></p><p style="text-align: center;">(請勿關閉視窗)</p></div>');
+			break;
+			
+		case 'login':
+			var message = r.message || '請先登入。',
+			box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 100,
+				onCloseComplete: function() {
+					if (r.redirect) location.href = r.redirect;
+				},
+				title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/info.png">',
+			}).setContent('<div class="content">' + message + '</div>').open();
+			break;
+
+		case 'processing':
+
+			var box = new jBox('Modal', {
+				closeOnClick: false,
+				closeButton: 'title',
+				width: 155,
+				height: 53,
+			}).setContent('<span style="padding-left:20px;font-weight:bold;color:#2299DD">處理中...</span><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/loading.gif">').open();
+			break;
+
+		case 'recommendedDownloadApp':
+						break;
+			
+		case 'recommendedUpgradeGrade':
+			var reDirectConfirm = new jBox('Confirm', {
+				cancelButton: '否',
+				confirmButton: '是',
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 300,
+				cancel: function() { location.href = r.redirect; },
+				confirm: function() {  location.href = 'https://www.pinpinbox.com/index/user/grade/'; },
+				onCloseComplete: function() { reDirectConfirm.destroy(); }
+			}).setContent(r.message).open();
+			break;
+			
+		case 'taketemplate':
+			var box = new jBox('Confirm', {
+				cancelButton: '否',
+				confirmButton: '是',
+				confirm: function() {
+					$.post('https://www.pinpinbox.com/index/template/_taketemplate/', {
+						template_id: r.data.template_id,
+						confirm: true,
+						join_event : r.data.join_event,
+					}, function(r) {
+						r = $.parseJSON(r);
+						switch (r.result) {
+							case 1:
+								_jBox(r, 'success');
+								break;
+							case 2:
+								_jBox(r, 'login');
+								break;
+							case 3:
+								_jBox(r, 'taketemplate');
+								break;
+							case 4:
+								_jBox(r, 'albumProcess');
+								break;
+							case 5:
+								location.href = r.redirect;
+								break;
+							default:
+								site_jBox(r, 'error');
+								break;
+						}
+					});
+				},
+				onCloseComplete: function() {	
+					box.destroy();
+				}
+			}).setContent(
+				'<div class="content">' +
+				'<p>您確定要收藏此版型嗎?</p><p>收藏條件：&nbsp;<span class="red">' + r.data.point + 'P</span></p>' +
+				'</div>'
+			).open();
+			break;
+
+		default:
+			alert('Unknown case of _jBox');
+			break;
+	}
+
+	return box;
+}
+
+function site_jBox(r, type) {
+	if (typeof(r.data) == 'undefined') {r.data = 'Modal'};
+	var a_img = {
+		'success': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/success.png',
+		'error': 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/error.png',
+	},
+	img = a_img[type] || 'https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/info.png';
+	
+	var siteModal = new jBox(r.data, {
+		closeButton: 'title',
+		delayOpen: 200,
+		title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="' + img + '">',
+		onCloseComplete: function() {
+			if (r.redirect) location.href = r.redirect;
+		},
+		maxWidth: 600,
+		minWidth: 100,
+	}).setContent('<div class="content">' + r.message + '</div>').open();
+}
+
+function _TaskAlert(r, c) {
+	switch (c) {
+		case 'task' :
+			var url = (r.data.task.event_url) ? `<p style="text-align:right"><a href="${r.data.task.event_url}" target="_blank">活動連結</a></p>` : '' ;
+				str = `<div class="content">
+							<p style="text-align: center;">
+								<img width="80" height="80" style="vertical-align: middle;" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/gift_2.png">
+							</p>
+							<p style="margin:10px;text-align:center" class="keypoint">${r.data.task.message}</p>
+							${url}
+						</div>`,
+				box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 300,
+				title: '<span style="color: #23afaf; font-size:1.4em;font-weight:bold ; display: inline-block;height: 100%;vertical-align: middle;"><h2>'+r.data.task.title+'</h2></span>',
+				onCloseComplete: function() {
+					if (r.redirect) location.href = r.redirect;
+				},
+			}).setContent(str).open();
+		break;
+	}
+}
+
+function audioMaskHide() {
+	$('.lg-audio-mask:first').hide();
+}
+
+function createAlbum() {
+	$.post('https://www.pinpinbox.com/index/template/_taketemplate_v2/', {
+		template_id: 0,
+	}, function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 1:
+				_jBox(r, 'albumProcess');
+				break;
+			case 2:
+				_jBox(r, 'success_notext');
+				break;
+			case 3:
+				location.href = r.redirect;
+				break;
+			default:
+				_jBox(r, 'error');
+				break;
+		}
+	});
+}
+
+function processAjaxData(urlPath){
+	window.history.pushState("","",urlPath);
+}
+
+function isMobile() {
+    var isAndroid, isIOS, isMobile = false;
+    if(navigator.userAgent.match(/Android/i)) isAndroid = true;
+    if(navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) ) isIOS = true;
+    if(isAndroid || isIOS) isMobile = true;
+
+    return isMobile;
+}
+
+$(document).on('click', '.lg-video-play', function(){
+	if($('video').length > 1) $('video').bind('contextmenu',function() { return false; });
+})
+
+//On photoswipe play video
+$(document).on('click', 'button.play_video', function(){
+	var video_modal = new jBox('Modal', {
+		closeOnClick: false,
+		closeButton: 'title',
+		title : '',
+		width: 'auto',
+		height: 520,
+		onCloseComplete : function () {
+			if($('video').length > 0 ) $('video').remove();
+			
+			if( typeof(video_file) != 'undefined' ) {
+				video_file.pause();
+			}else{
+				video_embed.pause() ;
+				$('div[id^="mep_"]').remove();
+			}
+		},
+	});		
+	var content;
+	
+	switch ($(this).find('i').data('video_refer')) {
+		case 'file':
+			content = '<video id="video_demo_file" controls loop muted preload="auto" width="640" height="480" data-mejsoptions=\'{"alwaysShowControls": true}\'><source class="mp4" type="video/mp4" src="" />很抱歉！您的瀏覽器不支援 HTML5 Video </video>';
+			video_modal.setContent(content).open();
+			var video_file = $("#video_demo_file")[0];
+			$("#video_demo_file source.mp4").attr('src', $(this).find('i').data('video_target'));
+			video_file.play();
+		break;
+		
+		case 'embed':
+			content = '<video style="margin-top:30px;" width="740" height="480" id="video_demo_embed"><source type="video/youtube" src="'+$(this).find('i').data('video_target')+'" /></video>';			
+			video_modal.setContent(content).open();
+			var video_embed = new MediaElementPlayer('#video_demo_embed', {enablePluginDebug: false, flashName: 'flashmediaelement-cdn.swf'});
+		break;
+		
+		default:
+			return false
+		break;
+	}
+});
+
+</script>
+</body>
+</html>

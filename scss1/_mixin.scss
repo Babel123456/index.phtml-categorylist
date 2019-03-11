@@ -1,0 +1,228 @@
+@function line-height($font-size){
+  //字距為字型大小的1.5倍
+  //@return ($font-size * 1.5);
+  //字距為字型大小的1.8倍
+  @return ($font-size * 1.8);
+}
+@mixin word-break{
+  word-break: break-all; //for firefox
+  word-break: break-word; //chrome
+}
+@mixin width-max-content{
+  width: -moz-max-content; 
+  width: -webkit-max-content; 
+  width: max-content;
+}
+@mixin max-width-max-content{
+  max-width: -moz-max-content; 
+  max-width: -webkit-max-content; 
+  max-width: max-content;
+}
+@mixin min-width-max-content{
+  min-width: -moz-max-content; 
+  min-width: -webkit-max-content; 
+  min-width: max-content;
+}
+@mixin ellipsis{
+  overflow: hidden;
+  //white-space: nowrap;
+  -o-text-overflow: ellipsis;   /* required for Opera */
+  -ms-text-overflow: ellipsis;  /* required for IE8, allegedly */
+  text-overflow: ellipsis;
+}
+@mixin ellipsis-oneline{
+  overflow: hidden;
+  white-space: nowrap;  /* 讓firefox在一行時有... */
+  -o-text-overflow: ellipsis;   /* required for Opera */
+  -ms-text-overflow: ellipsis;  /* required for IE8, allegedly */
+  text-overflow: ellipsis;
+}
+@mixin line-clamp($box-orient:vertical,$line-clamp:3){
+  display: -webkit-box; 
+  -webkit-box-orient: $box-orient;
+  -webkit-line-clamp: $line-clamp;
+  word-break: break-all; //for firefox;
+  word-break: break-word;
+  //white-space: pre-wrap;
+}
+@mixin absolute-middle{
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin:auto;
+}
+@mixin opacity($opacity:0.7){
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity*100);
+  filter: alpha(opacity=$opacity*100);
+  opacity: $opacity;
+}
+@mixin rotate($rotate){
+  -ms-transform: rotate($rotate);
+  -webkit-transform: rotate($rotate);
+  transform: rotate($rotate);
+}
+@mixin scaleY($scaleY){
+  -moz-transform: scaleY($scaleY);
+  -o-transform: scaleY($scaleY);
+  -webkit-transform: scaleY($scaleY);
+  transform: scaleY($scaleY);
+}
+@mixin border-box($border-box){
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin display-flex($flex-align:center,$flex-direction:row){
+  display: -webkit-box;      
+  display: -moz-box;        
+  display: -ms-flexbox;     
+  display: -webkit-flex;  
+  display: flex; 
+  -webkit-box-align: $flex-align;
+  -moz-box-align: $flex-align;
+  -ms-flex-align: $flex-align;
+  -webkit-align-items: $flex-align;
+  align-items: $flex-align;
+  -webkit-flex-direction: $flex-direction;
+  -moz-flex-direction: $flex-direction;
+  -ms-flex-direction: $flex-direction;
+  flex-direction: $flex-direction;
+}
+
+@mixin flex-wrap($flex-wrap){
+  -webkit-flex-wrap: $flex-wrap;
+  -moz-flex-wrap: $flex-wrap;
+  -ms-flex-wrap: $flex-wrap;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin flex-flow($flex-flow){
+  -webkit-flex-flow: $flex-flow;
+  -moz-flex-flow: $flex-flow;
+  -ms-flex-flow: $flex-flow;
+  flex-flow: $flex-flow;
+}
+
+@mixin flex($flex-value){
+  -webkit-flex: $flex-value;
+  -moz-flex: $flex-value;
+  -ms-flex: $flex-value;
+  flex: $flex-value;
+}
+
+@mixin order($flex-order){
+  -webkit-box-ordinal-group: $flex-order;
+  -moz-box-ordinal-group: $flex-order;
+  -ms-flex-order: $flex-order; 
+  -webkit-order: $flex-order; 
+  order: $flex-order;
+}
+
+
+@mixin user-select($select-action:none){
+  -webkit-user-select: $select-action;  /* Chrome all / Safari all */
+  -moz-user-select: $select-action;     /* Firefox all */
+  -ms-user-select: $select-action;      /* IE 10+ */
+  user-select: $select-action;          /* Likely future */
+}
+@mixin width-max-content{
+  width: -moz-max-content; 
+  width: -webkit-max-content; 
+  width: max-content;
+}
+@mixin max-width-max-content{
+  max-width: -moz-max-content; 
+  max-width: -webkit-max-content; 
+  max-width: max-content;
+}
+@mixin min-width-max-content{
+  min-width: -moz-max-content; 
+  min-width: -webkit-max-content; 
+  min-width: max-content;
+}
+@mixin absolute-middle{
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin:auto;
+}
+@mixin opacity($opacity:0.7){
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity*100);
+  filter: alpha(opacity=$opacity*100);
+  opacity: $opacity;
+}
+@mixin rotate($rotate){
+  -ms-transform: rotate($rotate);
+  -webkit-transform: rotate($rotate);
+  transform: rotate($rotate);
+}
+@mixin scaleY($scaleY){
+  -moz-transform: scaleY($scaleY);
+  -o-transform: scaleY($scaleY);
+  -webkit-transform: scaleY($scaleY);
+  transform: scaleY($scaleY);
+}
+@mixin border-box($border-box){
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin display-flex($flex-align:center,$flex-direction:row){
+  display: -webkit-box;      
+  display: -moz-box;        
+  display: -ms-flexbox;     
+  display: -webkit-flex;  
+  display: flex; 
+  -webkit-box-align: $flex-align;
+  -moz-box-align: $flex-align;
+  -ms-flex-align: $flex-align;
+  -webkit-align-items: $flex-align;
+  align-items: $flex-align;
+  -webkit-flex-direction: $flex-direction;
+  -moz-flex-direction: $flex-direction;
+  -ms-flex-direction: $flex-direction;
+  flex-direction: $flex-direction;
+}
+
+@mixin flex-wrap($flex-wrap){
+  -webkit-flex-wrap: $flex-wrap;
+  -moz-flex-wrap: $flex-wrap;
+  -ms-flex-wrap: $flex-wrap;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin flex-flow($flex-flow){
+  -webkit-flex-flow: $flex-flow;
+  -moz-flex-flow: $flex-flow;
+  -ms-flex-flow: $flex-flow;
+  flex-flow: $flex-flow;
+}
+
+@mixin flex($flex-value){
+  -webkit-flex: $flex-value;
+  -moz-flex: $flex-value;
+  -ms-flex: $flex-value;
+  flex: $flex-value;
+}
+
+@mixin order($flex-order){
+  -webkit-box-ordinal-group: $flex-order;
+  -moz-box-ordinal-group: $flex-order;
+  -ms-flex-order: $flex-order; 
+  -webkit-order: $flex-order; 
+  order: $flex-order;
+}
+
+
+@mixin user-select($select-action:none){
+  -webkit-user-select: $select-action;  /* Chrome all / Safari all */
+  -moz-user-select: $select-action;     /* Firefox all */
+  -ms-user-select: $select-action;      /* IE 10+ */
+  user-select: $select-action;          /* Likely future */
+}

@@ -1,0 +1,74 @@
+<html>
+<style>
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  max-width: 960px;
+  height: 2000px;
+  margin: 0 auto;
+  text-align: center;
+  /* line-height: 580px; */
+}
+.layout {
+  height: 2000px;
+  /*padding-left: 20px;*/
+  /* padding-right: 350px; */
+  /*margin-right: 192px;*/
+}
+.layout:before, .layout:after {
+  content: "";
+  display: table;
+}
+.layout:after {
+  clear: both;
+}
+.col-main {
+  width: calc(100% - 184px);
+  margin-left: -8px;
+  margin-top: -8px;
+  height: 580px;
+  float: left;
+  position: relative;
+  left: 200px;
+  background-color: #f16529;
+  line-height: 580px;
+}
+.col-sub {
+  /* margin-right: -100%; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  line-height: 580px;
+  /* height: 580px; */
+  background-color: #f0dddd;
+  float: left;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+  z-index: 100;
+  background-color: gray;
+  color: red;
+  line-height: 100px;
+}
+</style>
+<body>
+<div class="wrapper">
+  <div class="layout">
+    <div class="col-main">Main Content</div>
+    <div class="col-sub">Sidebar Content
+      <div class="sticky">
+          Sticky Content
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

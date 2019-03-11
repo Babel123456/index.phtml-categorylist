@@ -1,0 +1,158 @@
+/* top-header height */
+$top_header_height_w: 64px;
+$top_header_height_m: 44px;
+$top_header_height_m2: 32px;
+$top_header_height_m3: 42px;
+$top_header_height_m4: 40px;
+$top_header_height_m5: 38px;
+$top_header_height_m6: 48px; /* sign out */
+$top_header_height_m7: 96px;
+$top_header_height_m8: 36px;
+
+/* shadow */
+$box_shadow: 0px 8px 24px 0px #e3e3e3;
+$text_shadow: #9d9d9d 0px 0px 5px;
+
+/* opacity */
+
+/* img */
+$img_width: 42px;
+$img_height: 42px;
+$img_width2: 56px;
+$img_height2: 56px;
+$img_width3: 32px;
+$img_height3: 32px;
+$img_width4: 28px;
+$img_height4: 28px;
+$img_width5: 64px;
+$img_height5: 64px;
+
+/* font */
+$font_family: Noto Sans TC;
+$font_family2: Noto Sans;
+$font_family3: 微軟正黑體;
+$font_weight: 500; 
+$font_weight2: 700;
+$font_size: 14px;
+$font_size2: 16px;
+$font_size3: 18px;
+$font_size4: 20px;
+$font_size5: 22px;
+$title_size: 24px;
+$title_size2: 26px;
+$title_size3: 32px;
+$title_size4: 48px;
+$title_size5: 72px;
+$title_size6: 12px;
+$title_size7: 40px;
+$title_size8: 42px;
+$title_size9: 38px;
+$title_size10: 36px;
+$title_size11: 34px;
+$title_size12: 28px;
+$letter_spacing: 1.5px;
+$letter_spacing2: 2px;
+$letter_spacing3: 3px;
+$letter_spacing4: 4px;
+$letter_spacing5: 5px;
+$line_height: 25px;
+$line_height2: 50px;
+$line_height3: 75px;
+$line_height4: 58px;
+$line_height5: 48px;
+$line_height6: 36px;
+$line_height7: 30px;
+
+/* font color */
+$main_color: #0f8399;
+$main_color2: #00acc1;
+$main_color3: #69cedb;
+$main_color4: #cce1e4;
+$main_gradient_light: #5cb7c2;
+$main_gradient_dark: #0f8399; 
+$grey_color: #4d4d4d;
+$grey_color1: #9e9e9e;
+$grey_color2: #d4d4d4;
+$grey_color3: #f2f2f2;
+$grey_gradient_light: #ededed;
+$grey_gradient_dark: #d7d7d7;
+$pink_color: #ad1457;
+$pink_color2: #ee5b8d; /*#e91e63;*/
+$pink_color3: #f27ba3;
+$pink_color4: #f4adc5;
+$pink_gradient_light: #f15187;
+$pink_gradient_dark: #a61252;
+$sub_color: #ffffff;
+
+/* bg color */
+$body_bgcolor: #ffffff;
+$step_bgcolor: #f9fbfb;
+$footer_bgcolor: #555555;
+
+/* a */
+$a_link: $grey_color;
+$a_hover: $main_color2;
+$a_unlink: $grey_color2;
+
+/* menu */
+$menu_border_color: $grey_color2;
+$menu_width: 360px;
+$menu_ellipsis: 220px;
+$menu_ellipsis2: 200px;
+$menu_ellipsis3: 180px;
+$menu_padding: 32px;
+$menu_padding2: 16px;
+$menu_margin: 16px;
+$menu_margin2: 32px;
+$menu_image: 48px;
+$menu_font: 18px;
+$menu_font2: 16px;
+$menu_line_height: 24px; //18px;
+$menu_line_height2: 22px; //16px;
+
+/* width */
+$width: 100%;
+$width2: 98%;
+$width3: 96%;
+$width4: 94%;
+$width5: 92%;
+$width6: 90%;
+
+/* screen */
+$screen_width: 1920px;
+$screen_width1: 1919px;
+$screen_width2: 1200px;
+$screen_width3: 1024px;
+$screen_width4: 960px;
+$screen_width5: 800px;
+$screen_width6: 600px;
+$screen_width7: 500px;
+$screen_width8: 400px;
+$screen_width9: 360px;
+$screen_width10: 320px;
+$screen_width11: 300px;
+$screen_width12: 240px;
+/* screen for bootstrap */
+$screen_width768: 768px;
+
+/* btn */
+$btn_height_l:  $top_header_height_m4;
+$btn_height_s:  $top_header_height_m2;
+$btn_font_l: $font_size2;
+$btn_font_s: $font_size;
+//$btn_font_s: $title_size6;
+$btn_background: $grey_color3;
+
+/* boder */
+$border_radius: 6px;
+$border_radius2: 25px;
+$border_radius3: 50px;
+$border_radius4: 100px;
+$border_radius5: 0;
+$border_radius6: 40px;
+$border_color: #e8e8e8;
+$border_color2: #eef4f4;
+$border_color3: $grey_color2;
+$border_color4: #bbbbbb;
+$border_width: 1px;
+$border_style: solid; 

@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <link rel="icon" type="image/vnd.microsoft.icon" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/favicon.ico"/>
+  <link rel="manifest" href="https://www.pinpinbox.com/manifest.json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+  <meta name="keywords" content="pinpinbox,職人,贊助發佈平台,釘釘吧,微出版,創作分享,拼拼,經濟共享,販售作品,潛能盒子,釘釘,漫畫,旅遊,美食,原創,影片,直播,投稿活動,贊助,pinpin,金馬獎,新藝城,黃百鳴,泰迪羅賓,內容賺錢,麥若愚,眭澔平,創作人,寵物,抽獎,電影,內容贊助,贊助,打賞,掃描QR">
+  <meta name="description" content="pinpinbox-釘釘吧 是⼀個全新型態的創作⼈/斜扛青年之自媒體數位平台，只要將任何創作內容發表在 pinpinbox 作為「發佈⼯具」，可同步分享在社群媒體上，就能讓粉絲閱看，進⼀步對內容贊助支持，無形中亦替你的創作品增加了實質價值。 有別於⼀般社群媒體，在 pinpinbox 可以⾃自由整合「圖片、影片、音樂 (或錄音)、 文字、PDF」成⼀一本翻頁瀏覽的作品，因此十分適合作為「延伸內容」，例如: 在社群媒體放上Vlog，在 pinpinbox 則可嵌入影片，並新增圖解照片、⾏程表等。 若再「關閉預覽」部分內容，即可設定為VIP進階內容，也就是粉絲需要贊助或收藏作品後才可閱看完整作品，例如:私房景點推薦。">
+  <meta name="msvalidate.01" content="851F62F6F1B71365ECE1EFE9C1D56C73"/>
+  <meta name="apple-itunes-app" content="app-id=1057840696">
+  <meta property="og:url" content="www.pinpinbox.com/index/index">
+  <meta property="og:title" content="pinpinbox釘釘吧-內容創作人發佈平台">
+  <meta property="og:description" content="pinpinbox-釘釘吧 是⼀個全新型態的創作⼈/斜扛青年之自媒體數位平台，只要將任何創作內容發表在 pinpinbox 作為「發佈⼯具」，可同步分享在社群媒體上，就能讓粉絲閱看，進⼀步對內容贊助支持，無形中亦替你的創作品增加了實質價值。 有別於⼀般社群媒體，在 pinpinbox 可以⾃自由整合「圖片、影片、音樂 (或錄音)、 文字、PDF」成⼀一本翻頁瀏覽的作品，因此十分適合作為「延伸內容」，例如: 在社群媒體放上Vlog，在 pinpinbox 則可嵌入影片，並新增圖解照片、⾏程表等。 若再「關閉預覽」部分內容，即可設定為VIP進階內容，也就是粉絲需要贊助或收藏作品後才可閱看完整作品，例如:私房景點推薦。">
+  <meta property="og:image" content="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/kanban.png">
+  <title>pinpinbox釘釘吧-內容創作人發佈平台</title>
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/css/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" />
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" />
+  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" />
+  <link type="text/css" href="./css/style_v2.css" rel="stylesheet" />
+</head>
+<body>
+<div id="main">
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/waypoint/js/waypoint.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.zh-TW.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/browser-deeplink-master/browser-deeplink.min.js"></script>
+  </script><script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-cookie-master/src/jquery.cookie.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/Bootstrap-3-Typeahead-master/bootstrap3-typeahead-modify.min.js"></script>
+  <!-- //20181026: 專區加入開始 -->
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/masonry/js/masonry.pkgd.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.infinitescroll.min.js"></script>
+  <!-- //20181026: 專區加入結束 -->
+  <!-- 表頭區塊開始 -->
+  <div id="header">
+    <!-- 手機版搜尋區塊開始 -->
+    <div id="mobile_search">
+      <div class="header_search">
+	    <div class="header_search_box">
+		  <a href="javascript:void(0);" onclick="_search('mobile')"><i class="fa fa-search"></i></a>
+		  <input type="text" class="search_text" name="searchkey" id="mobile_searchkey" data-searchtype="user" data-device="mobile" autocomplete="off">
+		  <div class="search_btn"><span class="search_type" data-searchtype="user">創作人</span><i class="fa fa-caret-down"></i>
+		    <div class="search_menu">
+		      <ul>
+			    <li><a href="javascript:void(0)" class="searchtype" data-searchtype="user" data-device="mobile">創作人</a></li>
+			    <li><a href="javascript:void(0)" class="searchtype" data-searchtype="album" data-device="mobile">作品</a></li>
+		      </ul>
+		    </div>
+	      </div>
+	    </div>
+      </div>
+      <div class="header_search_close"><i class="fa fa-times"></i></div>
+	</div>
+	<!-- 手機版搜尋區塊結束 -->
+	<!-- 電腦版搜尋區塊開始 -->
+	<div id="header_top">
+	  <div class="header_logo"><a href="https://www.pinpinbox.com/">pinpinbox釘釘吧</a></div>
+	  <div class="header_search">
+		<div class="header_search_box">
+		  <a href="javascript:void(0);" onclick="_search('desktop')"><i class="fa fa-search"></i></a>
+		  <input type="text" class="search_text" name="searchkey" id="desktop_searchkey" data-searchtype="user" data-device="desktop" autocomplete="off">
+		  <div class="search_btn"><span class="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
+			<div class="search_menu">
+			  <ul>
+				<li><a href="javascript:void(0)" class="searchtype" data-searchtype="user" data-device="desktop">創作人</a></li>
+                <li><a href="javascript:void(0)" class="searchtype" data-searchtype="album" data-device="desktop">作品</a></li>
+              </ul>
+			</div>
+	      </div>
+		</div>
+	  </div>
+	  <div class="pin_creator"><a href="https://www.pinpinbox.com/index/user/point/">立即購買Ｐ點贊助</a></div>
+	  <!-- 電腦版選單開始 -->
+	  <div class="header_menu">
+		<a href="javascript:void(0);" onclick="createAlbum();">建立作品</a>
+        <a href="javascript:void(0);" id="notifier">通知<span class="notifier_icon"></span></a>
+		<!--<a href="https://www.pinpinbox.com/index/user/login/">登入 | 註冊</a>-->
+		<a href="javascript:void(0);" id="login"><img onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'" src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg"></a>
+
+	  </div>
+	  <!-- 電腦版選單結束 -->
+	  <!-- 手機版選單開始 -->
+	  <div class="mobile_menu">
+		<div class="mobile_img">
+		  <i class="fa fa-search"></i>
+		  <i id="notifier_m" class="fa fa-bell"></i>
+		  <i id="login_m" class="fa fa-bars" ></i>
+		</div>
+	  </div>
+	  <!-- 手機版選單結束 -->
+	</div>
+	<!-- 電腦版搜尋區塊結束 -->
+	<div id="login_menu">
+	  <ul>
+	    <!--
+		<li>
+		  <div>Hi, 訪客</div>
+		    <div>
+			  <ul>
+		        <li><a href="https://www.pinpinbox.com/index/user/login/">登入</a></li>
+                <li><a href="https://www.pinpinbox.com/index/user/register/">註冊</a></li>
+		      </ul>
+			</div>
+		</li>
+		-->
+		<li>
+		  <div>babel</div>
+          <div>
+		    <ul>
+              <li><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4581&rank_id=1">關於我</a></li>
+              <li><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4581&rank_id=2">我的作品</a></li>
+              <li><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4581&rank_id=3">我的收藏</a></li>
+              <li><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4581&rank_id=4">群組作品</a></li>
+              <li><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4581&rank_id=5">留言板</a></li>
+            </ul>
+		  </div>
+		</li>
+		<li>
+		  <div>管理中心</div>
+		  <div>
+		    <ul>
+              <li><a href="https://www.pinpinbox.com/index/user/sale_album/">積分管理</a></li>
+              <li><a href="https://www.pinpinbox.com/index/user/point/">P點購買</a></li>
+              <li><a href="https://www.pinpinbox.com/index/user/settings/">會員資料</a></li>
+            </ul>
+		  </div>
+		</li>
+		<li>
+		  <div>系統</div>
+		  <div>
+		    <ul>
+              <li><a href="https://www.pinpinbox.com/index/user/question/">回報問題</a></li>
+              <li><a href="https://www.pinpinbox.com/index/user/question_record/">回報紀錄</a></li>
+            </ul>
+		  </div>
+		</li>
+	  </ul>
+	  <a href="https://www.pinpinbox.com/index/user/logout/"><div class="btn_new">登出</div></a>
+	</div>
+	<div id="notifier_menu">
+	  <ul class="noticeWarpper">
+	    <li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14822&amp;categoryarea_id=1">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>眭澔平發布了新作品!</span>
+              <span><time datetime="2018-10-17 11:54:13" class="timeago">2天之前</time></span>
+            </div>
+          </a>
+        </li>
+		<li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14777&amp;categoryarea_id=1">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>眭澔平發布了新作品!</span>
+              <span><time datetime="2018-10-03 11:51:39" class="timeago">16天之前</time></span>
+            </div>
+          </a>
+        </li>
+		<li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14527&amp;categoryarea_id=3">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>48號肥宅釘了[小巷浪浪貓] 一下!</span>
+              <span><time datetime="2018-09-28 17:51:30" class="timeago">21天之前</time></span>
+            </div>
+          </a>
+        </li>
+		<li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14527&amp;categoryarea_id=3">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>擅長變胖的60釘了[小巷浪浪貓] 一下!</span>
+              <span><time datetime="2018-09-27 23:04:15" class="timeago">22天之前</time></span>
+            </div>
+          </a>
+        </li>
+		<li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14769&amp;categoryarea_id=1">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>眭澔平發布了新作品!</span>
+              <span><time datetime="2018-09-26 12:01:46" class="timeago">23天之前</time></span>
+            </div>
+          </a>
+        </li>
+		<li>
+          <a href="https://www.pinpinbox.com/index/album/content/?album_id=14674&amp;categoryarea_id=1">
+            <div class="notifier_img_c"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg" onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'"></div>
+            <div class="notifier_info">
+              <span>眭澔平發布了新作品!</span>
+              <span><time datetime="2018-09-19 11:53:36" class="timeago">大約1個月之前</time></span>
+            </div>
+          </a>
+        </li>
+	  </ul>
+	  <a href="https://www.pinpinbox.com/index/notifications/"><div class="btn_new">更多</div></a>
+    </div>
+  </div>
+  <!-- 表頭區塊結束 -->
+  <!-- //20181102 主要內容區塊開始 -->
+  <div id="content">
+    <!-- 創作人內容區塊開始 -->
+	<div class="creative_content_header">
+	  <div class="creative_info_area">
+	    <div id="creative_name" title="煒承Answer煒承Answer" >
+		  <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4119/picture$7d29.jpg" ></span>
+		  <span>煒承Answer煒承Answer</span></div>
+	    <div id="social_links">
+		  <img src="images/assets-v7/social_home.png" title="Home"><img src="images/assets-v7/social_fb.png" title="fb"><img src="images/assets-v7/social_youtube.png" title="youtube"><img src="images/assets-v7/social_g+.png" title="Google+"><img src="images/assets-v7/social_pinterest.png" title="Pinterest"><img src="images/assets-v7/social_ig.png" title="ig"><img src="images/assets-v7/social_twitter.png" title="twitter"><img src="images/assets-v7/social_in.png" title="in"><img src="images/assets-v7/social_line.png" title="line"><img src="images/assets-v7/social_blogger.png" title="blogger">
+		</div>
+	    <div id="social_links2" title="社群連結" ><i class="fa fa-link"></i></div>
+		<div class="attention_num">關注 : 54462</div>
+		<div class="edit_btn"><!-- 編輯 或 關注按鈕 -->
+		  <!--<a href="content_edit.html"><div class="btn_new">編輯</div></a>-->
+		  <a style="" name="buttonFollow" href="javascript:void(0)" onclick="follow();"><div class="btn_new btn_pink">關注</div></a>
+		</div>
+		<div class="social_links_close"><i class="fa fa-times"></i></div>
+	  </div>
+	</div>
+    <div class="creative_content">
+	  <div class="creative_title">
+	    <div><span>绘画&摄影&萌宠</span></div>
+		<div>
+          <div><span class="creative_num counter">7882</span><span>贊助次數</span></div>
+          <div><span class="creative_num counter">58972</span><span>瀏覽次數</span></div>
+		</div>
+	  </div>
+	  <div class="creative_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4119/cover$34e0.jpg"></div>
+	  <div class="main_content">
+	    <div class="tab-container">
+		  <div class="tab_list_area" >
+		  <!-- 手機版列表選單開始 -->
+		  <div id="mobile_tab"><i class="fa fa-list-ul"></i>作品集</div>
+		  <!-- 手機版列表選單結束 -->
+  	      <ul class="nav nav-pills mobile_tab_menu" id="mobile_tab_menu" >
+	        <li class="active"><a data-toggle="tab" href="#tab0">我的作品</a></li>
+		    <li><a data-toggle="tab" href="#tab1">收藏．贊助</a></li>
+		    <li><a data-toggle="tab" href="#tab2">群組作品</a></li>
+		    <li><a data-toggle="tab" href="#tab3">關於我</a></li>
+		    <li><a data-toggle="tab" href="#tab4">留言版</a></li>
+		  </ul>
+		  <!-- 搜尋區塊開始 -->
+          <div id="content_search">
+		    <div class="content_search_open"><i class="fa fa-search"></i></div>
+	        <div class="content_search_box">
+	      	<a href="javascript:void(0);" onclick="_search('mobile')"><i class="fa fa-search"></i></a>
+	      	<input type="text" class="search_text" name="searchkey" id="mobile_searchkey" data-searchtype="album" data-device="mobile" autocomplete="off">
+	        </div>
+            <div class="content_search_close"><i class="fa fa-times"></i></div>
+	      </div>
+		  <!-- 搜尋區塊結束 -->
+		</div>
+  	      <div class="tab_content">
+  		    <!-- 我的作品區塊開始 -->
+  		    <div id="tab0" class="tab active">
+              <div class="waterfall_content">
+                <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=13050&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20180516/5afbe5f9b23dd.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i></div>
+					  <div class="content_box_name" data-album_id="13050" title="馬祖當兵趴趴造"><a href="https://www.pinpinbox.com/index/album/content/?album_id=13050&amp;click=name">馬祖當兵趴趴造<br>帶大家去看看國之北疆，體會不一樣的環境跟生活，可惜是冬天去沒看到藍眼淚...</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',13050, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/13050/qrcode$3ea7.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20180516/5afbe5f9b23dd_330x248.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=13050&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="13050"><a onclick="buyalbum(13050);" href="javascript:void(0)">收藏</a></li>
+						  <li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="13050">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5798&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170823/599cf1f7b3e9f.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i></div>
+					  <div class="content_box_name" data-album_id="5798" title="動漫彩繪巷"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5798&amp;click=name">動漫彩繪巷動漫彩繪巷動漫彩繪巷動漫彩繪巷動漫彩繪巷</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',5798, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/5798/qrcode$d273.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170823/599cf1f7b3e9f_330x247.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=5798&amp;autoplay=1&amp;categoryarea_id=3')">分享</a></li>
+						  <li data-albumid="5798"><a onclick="buyalbum(5798);" href="javascript:void(0)">收藏</a></li>
+						  <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="5798">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5533&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170726/5977e8b4a0df4.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i></div>
+					  <div class="content_box_name" data-album_id="5533" title="谷關七雄" ><a href="https://www.pinpinbox.com/index/album/content/?album_id=5533&amp;click=name">谷關七雄</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',5533, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/5533/qrcode$7137.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170726/5977e8b4a0df4_248x330.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=5533&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="5533"><a onclick="buyalbum(5533);" href="javascript:void(0)">收藏</a></li><li class="divider"></li>
+						  <li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="5533">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				<div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5789&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170819/5997b66d3f2ca.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i></div>
+					  <div class="content_box_name" data-album_id="5789" title="審計新村"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5789&amp;click=name">審計新村</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',5789, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/5789/qrcode$942e.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170819/5997b66d3f2ca_330x247.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=5789&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="5789"><a onclick="buyalbum(5789);" href="javascript:void(0)">收藏</a></li>
+						  <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="5789">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5232&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170712/5965971137442.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"></div>
+					  <div class="content_box_name" data-album_id="5232" title="臺北一日遊"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5232&amp;click=name">臺北一日遊</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',5232, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/5232/qrcode$6441.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170712/5965971137442_330x247.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=5232&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="5232"><a onclick="buyalbum(5232);" href="javascript:void(0)">收藏</a></li><li class="divider"></li>
+						  <li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="5232">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5534&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170814/59911dba7ba2f.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i></div>
+					  <div class="content_box_name" data-album_id="5534" title="扇形車站"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5534&amp;click=name">扇形車站</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',5534, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/5534/qrcode$f90a.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170814/59911dba7ba2f_330x248.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=5534&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="5534"><a onclick="buyalbum(5534);" href="javascript:void(0)">收藏</a></li>
+						  <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="5534">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+              </div>
+		    </div>
+			<!-- 我的作品區塊結束 -->
+			<!-- 收藏．贊助區塊開始 -->
+  		    <div id="tab1" class="tab">
+			  <div class="waterfall_content">
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5406&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170722/5972caf3942cb.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i></div>
+					  <div class="content_box_name" data-album_id="5406" title="A.H Mingle Brunch"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5406&amp;click=name">A.H Mingle Brunch</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',5406, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/5406/qrcode$7c50.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170722/5972caf3942cb_330x248.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=5406&amp;autoplay=1&amp;categoryarea_id=4')">分享</a></li>
+						  <li data-albumid="5406"><a onclick="buyalbum(5406);" href="javascript:void(0)">收藏</a></li><li class="divider"></li>
+						  <li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="5406">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5031&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170704/595afc9bdb98d.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i></div>
+					  <div class="content_box_name" data-album_id="5031" title="鹿港老街"><a href="https://www.pinpinbox.com/index/album/content/?album_id=5031&amp;click=name">鹿港老街</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',5406, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/5406/qrcode$7c50.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170722/5972caf3942cb_330x248.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=5406&amp;autoplay=1&amp;categoryarea_id=4')">分享</a></li>
+						  <li data-albumid="5406"><a onclick="buyalbum(5406);" href="javascript:void(0)">收藏</a></li><li class="divider"></li>
+						  <li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="5406">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4934&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170628/595351ac3b1e7.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i></div>
+					  <div class="content_box_name" data-album_id="4934" title="桃園行"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4934&amp;click=name">桃園行</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',4934, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/4934/qrcode$b51f.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170628/595351ac3b1e7_248x330.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=4934&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="4934"><a onclick="buyalbum(4934);" href="javascript:void(0)">收藏</a></li>
+						  <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="4934">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4883&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170619/594749d38fb5f.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"></div>
+					  <div class="content_box_name" data-album_id="4883" title="擎天崗之旅"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4883&amp;click=name">擎天崗之旅</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',4883, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/4883/qrcode$7396.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170619/594749d38fb5f_330x220.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=4883&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="4883"><a onclick="buyalbum(4883);" href="javascript:void(0)">收藏</a></li><li class="divider"></li>
+						  <li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="4883">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4902&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170620/5948e3a4cd819.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i></div>
+					  <div class="content_box_name" data-album_id="4902" title="三峽老街"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4902&amp;click=name">三峽老街</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',4902, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/4902/qrcode$1375.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170620/5948e3a4cd819_330x248.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=4902&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="4902"><a onclick="buyalbum(4902);" href="javascript:void(0)">收藏</a></li>
+						  <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="4902">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+              </div>
+		    </div>
+			<!-- 收藏．贊助區塊結束 -->
+			<!-- 群組作品區塊開始 -->
+  		    <div id="tab2" class="tab">
+			  <div class="waterfall_content">
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4699&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170524/59254683588b5.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"></div>
+					  <div class="content_box_name" data-album_id="4699" title="龍船岩大挑戰"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4699&amp;click=name">龍船岩大挑戰</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',4699, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/4699/qrcode$f216.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170524/59254683588b5_248x330.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=4699&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="4699"><a onclick="buyalbum(4699);" href="javascript:void(0)">收藏</a></li>
+						  <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="4699">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4470&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170503/5908b67a89303.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"></div>
+					  <div class="content_box_name" data-album_id="4470" title="說走就走的旅程"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4470&amp;click=name">說走就走的旅程</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',4470, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/4470/qrcode$95ba.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170503/5908b67a89303_248x330.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=4470&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="4470"><a onclick="buyalbum(4470);" href="javascript:void(0)">收藏</a></li>
+						  <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="4470">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4457&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170430/5905788764071.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i></div>
+					  <div class="content_box_name" data-album_id="4457" title="腳踏車環島之旅"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4457&amp;click=name">腳踏車環島之旅</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',4457, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/4457/qrcode$01d1.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170430/5905788764071_330x186.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=4457&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="4457"><a onclick="buyalbum(4457);" href="javascript:void(0)">收藏</a></li>
+						  <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="4457">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4459&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170430/5905b63516e2c.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"></div>
+					  <div class="content_box_name" data-album_id="4459" title="永遠的陪伴"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4459&amp;click=name">永遠的陪伴</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',4459, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/4459/qrcode$fac2.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170430/5905b63516e2c_248x330.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=4459&amp;autoplay=1&amp;categoryarea_id=13')">分享</a></li><li data-albumid="4459"><a onclick="buyalbum(4459);" href="javascript:void(0)">收藏</a></li><li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="4459">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+				 <div class="content_box">
+				  <div class="content_box_img"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4460&amp;click=name"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170501/5907367e7322c.jpg"></a></div>
+				  <div class="content_box_info">
+					<div>
+				      <div class="content_box_icon"></div>
+					  <div class="content_box_name" data-album_id="4460" title="合歡山之旅"><a href="https://www.pinpinbox.com/index/album/content/?album_id=4460&amp;click=name">合歡山之旅</a></div>
+				    </div>
+				    <div class="content_box_menu_btn"><i class="fa fa-ellipsis-h"></i>
+					  <div class="content_box_menu">
+					    <ul>
+					      <li><a href="javascript:void(0)" onclick="share('album',4460, 'https://cdn.pinpinbox.com/storage/zh_TW/user/4119/album/4460/qrcode$0cab.jpg' , 'https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170501/5907367e7322c_330x248.jpg', 'https://www.pinpinbox.com/index/album/content/?album_id=4460&amp;autoplay=1&amp;categoryarea_id=1')">分享</a></li>
+						  <li data-albumid="4460"><a onclick="buyalbum(4460);" href="javascript:void(0)">收藏</a></li>
+						  <li class="divider"></li><li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="4460">檢舉</a></li>
+						</ul>
+					  </div>
+				    </div>
+				  </div>
+				</div>
+              </div>
+		    </div>
+			<!-- 群組作品區塊結束 -->
+			<!-- 關於我區塊開始 -->
+  		    <div id="tab3" class="tab">
+			  <div class="aboutme">熱愛旅遊運動的男孩，目標用雙腳到世界各地留下自己的足跡，用雙眼欣賞大自然偉大奧妙的傑作，藉由相片紀錄稍縱即逝的美好時刻	</div>
+		    </div>
+			<!-- 關於我區塊結束 -->
+			<!-- 留言板區塊開始 -->
+  		    <div id="tab4" class="tab">
+			  <div class="message_board">
+			    <div id="message_leave">
+				  <div>
+				    <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg"></span>
+				    <span><textarea rows="4" placeholder="有什麼想表達的嗎?"></textarea></span>
+				  </div>
+				  <div><span class="btn_new">清除</span><span class="btn_new message_submit" onclick="addCommtent('user', '4376');" >送出</span></div>
+				</div>
+				<div id="message_list">
+				  <div class="message_item">
+				    <div>
+				      <span><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.svg"></span>
+				    </div>
+				    <div>
+				      <div><span><a href="javascript:void(0);" onclick="addTag('8989', '陈天')"> 陈天</a></span><span><time datetime="2018/05/28 03:05:33" class="timeago">21天之前</time></span></div>
+					  <div>眭老师您好翻越千山万水，我都要看你节目我是内地粉丝翻墙，看你节目网络不稳定</div>
+				    </div>
+				  </div>
+				  <div class="message_item">
+				    <div>
+				      <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg"></span>
+				    </div>
+				    <div>
+				      <div><span><a href="javascript:void(0);" onclick="addTag('4376', '眭澔平')"> 眭澔平</a></span><span><time datetime="999/05/17 10:05:26" class="timeago">21天之前</time></span></div>
+					  <div><span><a class="message_tag" target="_blank" href="https://www.pinpinbox.com/index/creative/content/?user_id=4563">June Wu</a></span> 謝謝！每週都會有新影片。2018/10/17
+
+澔平持續深入非洲，探索中非俾格米人最原始部落，參與世人未曾知曉的團圓祭典，傾聽花開的聲音。
+本以為多數被抓去當黑奴，逐漸消失的傳統部落，竟完整流傳下祖先的智慧結晶，各式傳統藥草皆難不倒。
+然而，就在這暖心時刻，澔平驚得瘧疾！陷入高燒昏迷3天的澔平，究竟該如何是好？
+
+【募資下一場奇幻旅程】
+永不停止冒險！您的支持將成為繼續冒險的力量。
+贊助澔平「200P幣」即可獲得限量「眭澔平簽名磁性書籤」，限量100組！
+勇闖世界募資計劃啟動：有了實質力量，澔平將持續推出新的節目回饋大家，敬請支持。
+
+活動辦法：
+1. 前100名參與募資本篇影片者，即可兌換獎品。
+2. APP使用者請於贊助後填寫詳細資料，網頁使用者請於贊助後將贈獎資料傳送至pinpinbox官方粉絲團，以供寄送獎品。（※重要）
+3. 本活動僅限於設籍於台灣、金門、澎湖、馬祖地區者參加，配送地址以中獎人所填資料之地址為準，主辦單位不負贈品無法送達之責任。</div>
+				    </div>
+				  </div>
+				</div>
+			  </div>
+		    </div>
+			<!-- 留言板區塊結束 -->
+	      </div>
+	    </div>
+	  </div>
+	<!-- 創作人內容區塊結束 -->
+  </div>
+  <!-- //20181102 主要內容區塊結束 -->
+  <!-- //20181102 專區JS開始 -->
+  <script>
+    //專區開始
+    //社群連結按鈕
+	$('#social_links2 .fa').on('click', function(){
+	  //關閉非社群連結鈕
+      $(".creative_info_area > div").addClass('hide').removeClass('show_tablecell');
+	  //開啟社群小圖示與關閉按鈕
+	  $("#social_links").addClass('show_tablecell');
+	  $(".social_links_close").addClass('show_tablecell');
+    });
+	$('.social_links_close .fa').on('click', function(){
+	  $(".creative_info_area > div").removeClass('hide').addClass('show_tablecell');
+	  $("#social_links").removeClass('show_tablecell');
+	  $("#social_links2").removeClass('show_tablecell');
+	  $(".social_links_close").removeClass('show_tablecell');
+	});
+	//瀑布流內容
+	if($('.waterfall_content').length>0){
+	  var $container = $('.waterfall_content');
+      $container.imagesLoaded(function () {
+        $container.masonry({
+          itemSelector: '.content_box',
+          columnWidth: '.content_box',
+          gutter: 30,
+        });
+        $('div.content_box').animate({opacity: 1});
+      });
+      $('a[data-toggle=tab]').each(function () {
+      	var $this = $(this);
+      	$this.on('shown.bs.tab', function () {
+      	  $container.imagesLoaded( function () {
+      	  	$container.masonry({
+      	  	  columnWidth: '.content_box',
+      	  	  itemSelector: '.content_box'
+      	  	});
+      	  });
+      	});
+      });
+	}
+	//手機版選單列表
+	$('#mobile_tab .fa').on('click', function(){
+	  $('.mobile_tab_menu').toggleClass("mobile_tab_down");
+    });
+	//搜尋區塊開始
+	$('.content_search_open').on('click', function(){
+	  $('.content_search_open').addClass('hide').removeClass('show_tablecell');
+	  $('.content_search_box').addClass('show_tablecell');
+	  $('.content_search_close').addClass('show_tablecell');
+    });
+	$('.content_search_close').on('click', function(){
+	  $('.content_search_open').removeClass('hide').removeClass('show_tablecell');
+	  $('.content_search_box').removeClass('show_tablecell');
+	  $('.content_search_close').removeClass('show_tablecell');
+    });
+	//搜尋區塊結束
+	//作品右鍵選單
+	$('.content_box_menu_btn').on('click', function(){
+	  var menu_flag;
+	  if($(this).children(".content_box_menu").hasClass("content_box_menu_down")){
+	    menu_flag = true;
+	  }else{
+	    menu_flag = false;
+	  }
+	  $(this).children(".content_box_menu").on('click', function(){
+	    return false;
+	  });
+	  $('.content_box_menu').removeClass("content_box_menu_down");
+	  if(menu_flag){
+	    $(this).children(".content_box_menu").removeClass("content_box_menu_down")
+	  }else{
+	    $(this).children(".content_box_menu").addClass("content_box_menu_down")
+	  }
+    });
+	//暫代function
+	function share(){
+	}
+	function buyalbum(){
+	}
+	//專區結束
+  </script>
+  <!-- //20181102 專區JS結束 -->
+  <!-- FOOTER區塊開始 -->
+  <div id="footer">
+    <div id="footer_area">
+	  <ul>
+	    <li><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
+	    <li><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" class="cicle_btn">經營小幫手</a></li>
+	    <li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/qanda/">Q&amp;A</a></li>
+	    <li class="mobile_show" ><a href="https://www.pinpinbox.com/index/recruit/">企業合作</a></li>
+	    <li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/privacy/">條款與政策</a></li>
+	    <li class="dropup">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下載APP<span class="caret"></span></a>
+		  <ul class="dropdown-menu" role="menu">
+			<li><a id="apple_btn" data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
+			<li><a data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
+		  </ul>							
+	    </li>				
+	    <li class="dropup footer_lang">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">語言<span class="caret"></span></a>
+		    <ul class="dropdown-menu" role="menu">
+			  <li ><a href="javascript:void(0)" >English</a></li>
+			  <li ><a href="javascript:void(0)" >日本語</a></li>
+			  <li ><a href="javascript:void(0)" >簡體中文</a></li>
+			  <li ><a href="https://www.pinpinbox.com/index/?lang=zh_TW">繁體中文</a></li>
+		  </ul>							
+	    </li>
+	    <li class="mobile_show mobile_footer_lang">
+	      <select>
+		    <option>簡體中文</option>
+		    <option selected>繁體中文</option>
+		    <option>English</option>
+	      </select>
+	    </li>
+	    <li class="footer_copyright">© 2018 pinpinbox All Rights Reserved.</li>
+	  </ul>
+	</div>
+  </div>
+  <!-- FOOTER區塊結束 -->
+  <!-- 回上方箭頭與FB區塊開始  -->
+  <div id="right_btn">
+    <div id="scroll_top"><a href="javascript:void(0)"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/icon_top.svg" ></a></div>
+	<div id="p_link"><a href="https://www.pinpinbox.com/index/user/point/" target="_blank" title="P點購買"><img src="images/assets-v7/icon_p.svg"></a></div>
+  </div>
+  <!-- 回上方箭頭與FB區塊結束 -->
+<script>
+$(document).ready(function() {
+  //時間之前
+  $('time.timeago').timeago();
+  //判斷HOVER動作
+  addhover();
+  //搜尋
+  //search: on + datalist
+  $('input[name="searchkey"]').on({
+  	keypress: function(e) {
+  		if (e.which == 13 || e.keyCode == 13) { _search(); }
+  	},
+  }).typeahead({
+  	afterSelect: function(){ _search(); },
+  	autoSelect: false,
+  	showHintOnFocus: true,
+  	source: function(query, process) {
+  	/*
+  	  $.post('https://www.pinpinbox.com/index/search/', {
+  		searchkey: query
+  	  }, function(r) {
+  		process($.parseJSON(r));
+  	  });
+  	*/
+  	},
+  });
+  // v2
+  $('a.searchtype').on('click', function(){
+    var device = $(this).data('device');
+    $('span.search_type').html($(this).html());
+    $('input#'+device+'_searchkey').data('searchtype' , $(this).data('searchtype'));
+  });
+  //數字倒數
+  $('.counter').counterUp({
+      delay: 10,
+      time: 1000
+  });
+  //回上方箭頭
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 495)  {          /* 要滑動到選單的距離 */
+       $('#scroll_top').addClass('topFixed');   /* 幫選單加上固定效果 */
+    } else {
+      $('#scroll_top').removeClass('topFixed'); /* 移除選單固定效果 */
+    }
+  });
+  $("#scroll_top").click(function(){
+	$("html,body").animate({scrollTop:0},900);
+	return false;
+  });
+  //PC版選單切換
+  $('a#login').click(function() {
+    $('#login_menu').toggleClass("login_menu_down");
+	$('.search_menu').removeClass("search_menu_down");
+	$('#notifier_menu').removeClass("login_menu_down");
+  });
+  $('a#notifier').click(function() {
+    $('#notifier_menu').toggleClass("login_menu_down");
+	$('#login_menu').removeClass("login_menu_down");
+	$('.search_menu').removeClass("search_menu_down");
+  });
+  //搜尋選單切換
+  $('.search_btn').click(function() {
+    $('.search_menu').toggleClass("search_menu_down");
+	$('#login_menu').removeClass("login_menu_down");
+	$('#notifier_menu').removeClass("login_menu_down");
+  });
+  //MOBILE版搜尋切換
+  $('.mobile_menu i:nth-child(1)').click(function() {
+	$('#mobile_search').addClass("search_box_open");
+	$('#header_top').addClass("header_top_close");
+  });
+  //MOBILE版搜尋關閉
+  $('.header_search_close').click(function(evt) {
+    closemenu(evt);
+    $('#mobile_search').removeClass("search_box_open");
+	$('#header_top').removeClass("header_top_close");
+	$('.search_menu').removeClass("search_menu_down");
+  });
+  //MOBILE版選單切換
+  $('#notifier_m').click(function() {
+    $('#notifier_menu').toggleClass("login_menu_down");	
+  });
+  $('#login_m').click(function() {
+    $('#login_menu').toggleClass("login_menu_down");
+  });
+  //當WIDNWOS RESIZE時, 關閉選單
+  $( window ).resize(function(evt) {
+    closemenu(evt);
+	addhover();
+  });
+  //輪播
+   $(".banner_carousel1").owlCarousel({
+      singleItem:true,
+      lazyLoad: true,
+      autoPlay: 5000,
+      slideSpeed: 2000,
+      pagination: true,
+      navigation: false,
+	  stopOnHover: true,
+	  afterMove: carouselto1
+    });
+	// 20181102: 修改有輪播才跑 開始
+	if($('.banner_carousel1').length>0){
+	  carouselto(0);
+	}
+	// 20181102: 修改有輪播才跑 結束
+  //按選單之外關閉選單
+  $('body').click(function(evt) {
+	closemenu(evt);
+  });
+});
+//首頁輪播跳頁FUNCTION
+//輪播跳頁
+  function carouselto1(){
+    var owl = $(".banner_carousel1").data('owlCarousel');
+    var current = (owl == null || owl == 'undefined')? 0 : owl.currentItem;
+    carouselto(current);
+  }
+  //手動跳頁
+  function carouselto(x){
+    var owl = $(".banner_carousel1").data('owlCarousel');
+    owl.goTo(x);
+    //BTN改樣式
+    $(".banner_catbtn"+ (x+1)).removeClass('carousel_btn_off').addClass('carousel_btn_on').siblings('div').addClass('carousel_btn_off').removeClass('carousel_btn_on');
+  }
+//關閉選有選單
+function closemenu(evt){
+  if(event.target.id!="login" && $(evt.target).parents("#login").length==0 && $(evt.target).parents("#login_menu").length==0 && event.target.id != "login_menu"
+    && event.target.id != "login_m" && $("#login_menu").hasClass( "login_menu_down" )){
+      $('#login_menu').removeClass("login_menu_down");
+  }
+  if(event.target.id != "notifier" && $(evt.target).parents("#notifier").length==0 && event.target.id != "notifier_menu"  
+    && $(evt.target).parents("#notifier_menu").length==0 && event.target.id != "notifier_m" && $("#notifier_menu").hasClass( "login_menu_down" )){
+      $('#notifier_menu').removeClass("login_menu_down");
+  }
+  if($(evt.target).parents(".search_btn").length==0 && $(evt.target).parents(".search_menu").length==0 && $(".search_menu").hasClass( "search_menu_down" )){
+    $('.search_menu').removeClass("search_menu_down");
+  }
+  // 20181102: 專區關閉左邊列表選單開始
+  if($(evt.target).parents("#mobile_tab").length==0 && event.target.id != "mobile_tab" && event.target.id != "mobile_tab_menu" ){
+    $('.mobile_tab_menu').removeClass("mobile_tab_down");
+  }
+  // 20181102: 專區關閉左邊列表選單結束
+  // 20181102: 專區關閉瀑布流作品選單開始
+  if($(evt.target).parents(".content_box_menu_btn").length==0 && event.target.id != "content_box_menu"){
+    $('.content_box_menu').removeClass("content_box_menu_down");
+  }
+  // 20181102: 專區關閉瀑布流作品選單結束
+}
+//hover動作判斷
+function addhover(){
+  if($( window ).width()> 801){
+    $(".hit_story").addClass('hit_story_hover');
+  }else{
+    $(".hit_story").removeClass('hit_story_hover');
+  }
+}
+deeplink.setup({
+  iOS: {
+      appId: "1057840696",
+      appName: "pinpinbox",
+  },
+  android: {
+      appId: "com.pinpinbox.android",
+  }
+});
+function _search(device = null) {
+  if(device == null) { device = (isMobile()) ? 'mobile' : 'desktop' ; }
+  var searchtype = $('input#'+device+'_searchkey').data('searchtype');
+  switch (searchtype) {
+  	case 'album' :
+  	  var url = 'https://www.pinpinbox.com/index/album/?rank_id=0';
+  	break;
+  	case 'user' :
+  	  var url = 'https://www.pinpinbox.com/index/creative/?rank_id=0';
+  	break;
+  }
+  var searchkey = $('input#'+device+'_searchkey').val().trim();
+  //cookie
+  /*
+  var search = [], searched = $.cookie('search')? $.parseJSON($.cookie('search')) : [], array = [];
+  if (searchkey !== '') searched.unshift(searchkey);
+  for (var i = 0; i < searched.length; ++i) {
+    if (array.indexOf(searched[i]) < 0) {
+      array.push(searched[i]);
+      search.push(searched[i]);
+    }
+  }
+  if (search.length > 16) search.pop();
+  $.cookie('search', JSON.stringify(search), {path: '/'});
+  if(encodeURIComponent(searchkey).length == 0) {
+  	location.href = 'https://www.pinpinbox.com/index/album/explore/';
+  }else{
+  	location.href = url + '&searchtype=' + searchtype + '&searchkey=' + encodeURIComponent(searchkey);
+  }
+  */
+}
+function clickHandler(uri) {
+  deeplink.open(uri);
+  return false;
+}
+function createAlbum() {
+	//此處為暫代的假FUNCTION
+}
+</script>
+</div><!-- #main -->
+</body>
+</html>

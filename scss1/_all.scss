@@ -1,0 +1,1146 @@
+/* _all.scss */
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=cyrillic-ext,latin,greek-ext);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+//20190123: 小K字型(思源柔體)
+@font-face {
+  font-family: Gen Jyuu GothicL Regular;
+  src: local("Gen Jyuu GothicL Regular"),
+       local("GenJyuuGothicL-Regular"),
+	   url(../font/GenJyuuGothicL-Regular.ttf);
+       //url(../font/GenJyuuGothicL-Regular.ttf) format("opentype");
+	   
+  //src: url(../font/GenJyuuGothicL-Regular.ttf);
+}
+
+*{
+  &:focus{
+    outline: none;
+  }
+}
+html{
+  scroll-behavior: smooth;
+}
+a{
+  color: $grey_color;
+  text-decoration: none;
+}
+a:hover{
+  color: $main_color2;
+}
+a:focus{
+  color: $grey_color;
+}
+body{
+  font-family: $font_family, $font_family2;
+  font-family: Gen Jyuu GothicL Regular;
+  font-family: Gen Jyuu GothicL Regular, $font_family, $font_family2;
+  font-size: $font_size16; 
+  color: $grey_color;
+  background: $sub_color;
+  letter-spacing: $letter_spacing;
+  @include breakpoint(max-width $screen_width768){
+    font-size: $font_size14;
+  }
+  scrollbar-width: none; //for firefox
+  /* SCROLL BAR */
+  ::-webkit-scrollbar {
+    width: 1px; //width
+	//width: 10px; //width
+  }
+  ::-webkit-scrollbar-track {
+    //background: $grey_color2; //Track
+	//@include opacity(0);
+	//background: rgba(0,0,0,0);
+	//background: yellow;
+	@include border-radius($border_radius);
+  }
+  ::-webkit-scrollbar-thumb {
+    //background: #4d4d4d; //Handle
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    //background: $grey_color2; //Handle on hover
+  }
+  
+}
+
+/* 大頭圖設定 */
+.profile_img_wrap{
+  overflow: hidden;
+  width: $img_width100p;
+  height: $img_height100p;
+  border: $border_width $border_style $grey_color2;
+  @include border-radius($border_radius100p);
+  background: url('../images/assets-v7/grey-bg.png') 100% 100%;
+  //img{
+  .profile_img{
+    vertical-align: middle;
+    @include opacity(0.9);
+  }
+}
+
+
+/* 表單設定 */
+input[type="radio"]{
+  width: 18px;
+  height: 18px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+input[type="text"],input[type="password"]{
+  width: $width100p;
+  border: none;
+  height: $input_text_height40;
+  line-height: $input_text_height40;
+  padding: 0 16px;
+  font-size: $font_size16;
+  letter-spacing: $letter_spacing;
+  @include border-radius($border_radius);
+  border-radius: 6px !important;
+  background: $grey_color3;
+  @include breakpoint(max-width $screen_width768){
+    padding: 0 6px;
+    height: $input_text_height32;
+    line-height: $input_text_height32;
+  }
+  @include breakpoint(max-width $screen_width500){
+    font-size: $font_size14;
+  }
+}
+
+/* 文字輸入區塊 */
+.message_board [class*="_textarea_wrapper"]{ //textarea的包覆樣式
+
+  position: relative;
+
+  //padding: 16px;
+  padding: 12px 16px;
+  background: $grey_color3;
+  @include border-radius($border_radius);
+  @include breakpoint(max-width $screen_width768){
+    padding: 8px 16px;
+  }
+}
+
+//textarea, [id*="_textarea"]{ //不直接對textarea下樣式
+.message_board [id*="_textarea"], .pinpinboard .textoverlay{ //留言區塊的樣式
+  width: $width100p;
+  //padding: 16px 16px;
+  padding: 0;
+  color: $grey_color;
+  //min-height: 48px; //最低一行高
+  min-height: 24px;
+  //height: auto;
+  font-size: $font_size16;
+  //line-height: line-height($font-size16);
+  line-height: 24px;
+  letter-spacing: $letter-spacing;
+  background: $grey_color3;
+  //@include border-radius($border_radius);
+  border: none;
+  overflow: auto;
+  outline: none;	
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;	
+  resize: none;
+  @include breakpoint(max-width $screen_width768){
+    //min-height: 32px; //初始高度一行高
+	//min-height: 24px; //初始高度一行高
+	//min-height: 18px; //初始高度一行高
+	//padding: 4px 16px;
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $grey_color1;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $grey_color1;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $grey_color1;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: $grey_color1;
+  }
+  textarea::-webkit-input-placeholder {
+	color: $grey_color1;
+  }
+  textarea:-moz-placeholder { /* Firefox 18- */
+	color: $grey_color1;  
+  }
+  textarea::-moz-placeholder {  /* Firefox 19+ */
+	color: $grey_color1;  
+  }
+  textarea:-ms-input-placeholder {
+	color: $grey_color1;  
+  }
+/* 表頭設定 */
+#header{
+  position: fixed; 
+  top: 0px; 
+  z-index: 999;
+  width: $width100p;
+  padding: 0 32px;
+  text-align:center;
+  height: $top_header_height64;
+  background: $sub_color;
+  border-bottom: 1px solid $border_color;
+  @include breakpoint(max-width $screen_width1440){
+    padding: 0 16px;
+  }
+  @include breakpoint(max-width $screen_width1024){
+    padding: 0 8px;
+    border-bottom: 1px solid $border_color !important;
+  }
+  @include breakpoint(max-width $screen_width768){
+    padding: 0 16px;
+	height: $top_header_height44;
+	line-height: $top_header_height44;
+  }
+  @include breakpoint(max-width $screen_width500){
+    padding: 0 10px;
+  }
+  @include breakpoint(max-width $screen_width360){
+    padding: 0 8px;
+  }
+  i{
+    cursor: pointer;
+  }
+  /* 手機搜尋區塊開始 */
+  #mobile_search{
+    display: none;
+	.header_search, .header_search_close{
+	  display: inline-block;
+	}
+	&.search_box_open{
+      display:inline-block;
+      width: $width90p;
+	  @include breakpoint(max-width $screen_width360){
+	    width: $width98p;
+	  }
+    }
+	.header_search{
+	  @include breakpoint(max-width $screen_width500){
+        width: 80%;
+      }
+	  .header_search_box{
+        position: relative;
+        display: inline-block;
+		text-align: left;
+		width: $width100p;
+        height: $search_box_height32;
+        line-height: $search_box_height32;
+        @include border-radius($search_box_height32);
+		background: $grey_color3;
+      }
+	  i{
+		font-size: $font_size20;
+      	display: inline-block;
+      	margin-left:16px;
+      }
+	  .search_text{
+        vertical-align:top;
+        display: inline-block;
+        width: 61.6%;
+        line-height: $input_text_height38;
+        border: none;
+        background: none;
+		//font-weight: normal;
+		@include breakpoint(max-width $screen_width1200){
+		  width: 53%;
+		  padding: 0 8px;
+        }
+		@include breakpoint(max-width $screen_width1024){
+		  width: 49%;
+        }
+		@include breakpoint(max-width $screen_width960){
+		  width: 48%;
+        }
+      }
+	  .search_btn{
+	    position: relative;
+        display: inline-block;
+		float: right;
+        width: 128px;
+        height: 32px;
+        line-height: 22px;
+        font-size: $font_size14;
+        @include border-radius(32px);
+		background: $border_color;
+		border: 4px $border_style $grey_color3; 
+		text-align: center;
+        cursor: pointer;
+		@include breakpoint(max-width $screen_width500){
+          width: 35%;
+        }
+		i{
+	      margin-left:0;
+		  vertical-align: middle;
+        }
+		#search_type{
+          display: inline-block;
+        }
+      }
+	  .search-menu {
+		left:246px;
+		min-width: 94px;
+		@include breakpoint(max-width $screen_width768){
+	      left:240px;
+	      min-width: 96px;
+	    }
+		@include breakpoint(max-width 812px){
+	      left:250px;
+        }
+		@include breakpoint(max-width 823px){
+	      left:230px;
+        }
+		@include breakpoint(max-width 768px){
+	      left:240px;
+        }
+		@include breakpoint(max-width 736px){
+	      left:240px;
+        }
+        @include breakpoint(max-width 667px){
+	      left:240px;
+        }
+		@include breakpoint(max-width $screen_width500){
+	      left:168px;
+	      min-width: 90px;
+        }
+        @include breakpoint(max-width 411px){
+	      left:220px;                       
+        }                                   
+		@include breakpoint(max-width 375px){
+	      left:160px;
+        }
+		@include breakpoint(max-width $screen_width360){
+	      left:150px;
+        }
+		a{
+	  	  font-size: $font_size16;
+	    }
+	  }
+    }
+	.header_search_close{
+      float:right;
+      font-size: $font_size20;
+	  @include breakpoint(max-width $screen_width360){
+	    margin-right:5%;
+      }
+    }
+  }/* 手機搜尋區塊結束 */
+  /* 電腦版搜尋區塊開始 */
+  #header_top{
+  	position: relative;
+	width: $width100p;
+	height: inherit;
+  	display: inline-block;
+  	//font-weight: $font_weight;
+	margin: auto;
+	@include display-flex(center,row);
+	@include breakpoint(max-width $screen_width768){
+      height: $top_header_height44;
+      line-height:$top_header_height44;
+      text-align: right;
+      width: $width100p;
+    }
+    &.header_top_close{
+	  display: none;
+    }
+	&>div{
+	  @include flex(-1 0 0);
+	}
+	.header_logo{
+	  user-select: none;
+	  width: 170px;
+	  height: inherit;
+	  background: url("../images/assets-v7/logo.svg") no-repeat center left;
+	  background-size: 170px 34px;
+      @include breakpoint(max-width $screen_width960){
+		width: 160px;
+		background-size: 160px 32px;
+      }
+	  @include breakpoint(max-width $screen_width768){
+	    overflow: hidden;
+		width: 26px;
+	    height: 31px;
+		line-height: 31px;
+		background-size: 26px 27px !important;
+		background: url("../images/assets-v7/m_logo.svg") no-repeat center left;
+      }
+	  a { 
+	    display: block;
+		height: inherit;
+	    color: transparent; 
+	  }
+    }
+	.pin_creator{
+      //font-weight: $font_weight;
+	  margin-left: 12px;
+	  font-size: $font_size14;
+	  @include display-flex(flex-start,column);
+	  @include breakpoint(max-width $screen_width1200){
+		margin-left: 1%;
+	  }
+	  @include breakpoint(max-width $screen_width768){
+	    @include display-flex(center,row);
+	  }
+	  @include breakpoint(max-width $screen_width360){
+	    display: none;
+	  }
+	  @include breakpoint(max-width $screen_width320){
+	    font-size: $font_size12;
+	  }
+	  a{
+        color: $pink_color2;
+      }
+	  //&>div:first-child{ //.current_point
+	  .current_point{
+	    margin-bottom: 4px;
+		@include breakpoint(max-width $screen_width768){
+		  margin-bottom: 0;
+		  margin-right: 0;
+		}
+	  }
+	  &>div:last-child{ //.buy_point
+	    font-weight: $font_weight;
+	    @include breakpoint(max-width $screen_width768){
+		  display: none;
+		  margin-left: 8px;
+		}
+	  }
+    }
+	.pin_gift{
+	  @include flex(2);
+	  margin-left: 32px;
+	  text-align: left;
+	  @include breakpoint(max-width $screen_width1024){
+	    margin-left: 24px;
+	  }
+	  @include breakpoint(max-width $screen_width960){
+	    margin-left: 8px;
+		//margin-left: 16px;
+	  }
+	  @include breakpoint(max-width $screen_width768){
+	    //margin-left: 1%;
+		margin-left: 16px;
+	  }
+	  .pin_gift_style{
+	    a{
+		  font-weight: $font_weight;
+	      background: none;
+		  color: $pink_color2;
+	    }
+	  }
+	}
+	.header_search{ //大版搜尋框
+	  position: relative;
+	  margin-left: 32px;
+	  width: 468px;
+	  //height: $search_box_height40;
+	  //line-height: $search_box_height40;	 
+	  @include breakpoint(max-width $screen_width1919){
+		width: 452px;
+      }
+	  @include breakpoint(max-width $screen_width1200){
+		width: 30%;
+      }
+	  @include breakpoint(max-width $screen_width960){
+		margin-left: 8px;
+		width: 26%;
+      }
+	  @include breakpoint(max-width $screen_width768){
+	    display: none;
+      }
+	  .header_search_box{
+        position: relative;
+        display: inline-block;
+		text-align: left;
+		width: $width100p;
+        height: $search_box_height40;
+        line-height: $search_box_height40;
+        @include border-radius($border_radius40);
+        background: $grey_color3;
+        vertical-align:middle;
+      }
+	  i{
+		font-size: $font_size20;
+      	display: inline-block;
+      	margin-left:16px;
+		@include breakpoint(max-width $screen_width960){
+          margin-left: 8px;
+        }
+      }
+	  .search_text{
+        vertical-align:top;
+        display: inline-block;
+        //width: 290px;
+		width: 61.6%; //width: 61.97%;
+        line-height: $input_text_height38;
+        border: none;
+        background: none;
+		font-weight: normal;
+		@include breakpoint(max-width $screen_width1200){
+		  width: 53%;
+		  padding: 0 8px;
+        }
+		@include breakpoint(max-width $screen_width1024){
+		  width: 49%;
+        }
+		@include breakpoint(max-width $screen_width960){
+		  //width: 48%;
+		  width: 44%;
+		  padding: 0 4px;
+        }
+      }
+	  .search_btn{
+	    position: relative;
+        display: inline-block;
+		float: right;
+        //width: 90px;
+		width: 128px; //27.35%
+        height: 40px;
+        line-height: 32px;
+        font-size: $font_size14;
+        //border-left: 1px solid $sub_color;
+		@include border-radius(32px);
+		background: $border_color;
+		border: 4px $border_style $grey_color3; 
+		text-align: center;
+        cursor: pointer;
+		@include breakpoint(max-width $screen_width1919){
+		  width: 27.35%
+		}
+		@include breakpoint(max-width $screen_width1200){
+		  width: 31%
+		}
+		@include breakpoint(max-width $screen_width960){
+		  margin-right: 0;
+		  padding-left: 0;
+		  width: 38%;
+        }
+		i{
+	      margin-left:0;
+		  vertical-align: middle;
+        }
+		#search_type{
+          display: inline-block;
+        }
+      }
+    }
+    .header_menu{
+	  @include display-flex(center,row);
+	  @include breakpoint(max-width $screen_width768){
+	    display:none;
+	  }
+	  a{
+        position: relative;	  
+        display: inline-block;
+		@include flex(-1 0 0);
+		text-align: right; 
+        font-size: $font_size16;
+		margin-left: 64px;
+		@include breakpoint(max-width $screen_width1440){
+		  margin-left:32px;
+		}
+		@include breakpoint(max-width $screen_width960){
+		  margin-left: 16px;
+		}
+		@include breakpoint(max-width $screen_width800){
+		  margin-left: 12px;
+		}
+      }
+	  #login{
+	    overflow: hidden;
+		@include border-radius($border_radius100p);
+	    background: url('../images/assets-v7/grey-bg.png') 100% 100%;
+		width: $img_width40;
+        height: $img_height40;
+		img{
+		  width: $img_width40;
+          height: $img_height40;
+          border-radius: $border_radius4;
+		  @include opacity(0.9);
+        }
+	  }
+	}
+	.mobile_menu{
+	  display:none;
+	  text-align:right;
+	  @include breakpoint(max-width $screen_width768){
+    	display:inline-block;
+		height:$top_header_height44;
+        line-height:$top_header_height44;
+      }
+	  i{ 
+        margin-left: 16px;
+        font-size: $font_size20;
+        line-height: $top_header_height44;
+		@include breakpoint(max-width $screen_width768){
+		  font-size: $font_size22;
+		}
+		@include breakpoint(max-width $screen_width400){
+		  margin-left: 10px;
+		}
+      }
+    }
+  }/* 電腦版搜尋區塊結束 */
+  /* 通知選單開始 */
+  /* 登入選單樣式 */
+  #login_menu{
+    display:none;
+	position: absolute;
+	right: 0;
+    width: $menu_width;
+    background: $sub_color;
+    border: 1px solid $menu_border_color;
+    padding: $menu_padding32;
+	height:auto;
+	max-height: 70vh;
+	font-size: $menu_font18;
+	@include breakpoint(max-width $screen_width768){
+      width: $width100p;
+	  max-height: 96vh;
+	  font-size: $menu_font16;
+	}
+	@include breakpoint(max-width $screen_width320){
+	  max-height: 92vh;
+	}
+	ul{
+	  width: $width100p;
+	  li{
+	    text-align: left;
+	    border-bottom: 1px solid $menu_border_color;
+  	    margin-bottom: $menu_margin32;
+		line-height: $menu_line_height24;
+		overflow: hidden;
+		@include display-flex('',row);
+		@include breakpoint(max-width $screen_width768){
+	      line-height: $menu_line_height22;
+		}
+	    &>div{
+		  @include flex(1);
+		}
+		//分類
+		&>div:first-child{
+		  width: 124px;
+		  margin-right: 32px;
+		  @include word-break;
+		}
+		//細項
+		&>div:last-child{
+		  font-weight: $font_weight;
+		}
+		ul{
+		  li{
+		    border-bottom: 0;
+			margin-bottom: 16px;
+		  }
+		  li:last-child{
+  	        margin-bottom: $menu_margin32;
+		  }
+		}
+	  }
+	  li:last-child{
+	    border-bottom: 0;
+		margin-bottom: 0;
+	  }
+	}//.ul
+	&.login_menu_down {
+	  display: block;
+	  position: absolute; 
+	  right: 0;
+	  overflow-y: auto;
+	  @include breakpoint(max-width $screen_width768){
+	    margin-top: -1px;
+	  }
+	}
+  }//#login_menu
+  /* 通知選單樣式  */
+  #notifier_menu{
+    display:none;
+	position: absolute;
+	right: 0;
+    width: $menu_width;
+    background: $sub_color;
+    border: 1px solid $menu_border_color;
+    padding: $menu_padding32;
+    text-align: left;
+	max-height: 70vh;
+	@include breakpoint(max-width $screen_width768){
+      width: $width100p;
+	  max-height: 92vh;
+	}
+	ul{
+      li{
+        border-bottom: 1px solid $menu_border_color;
+  	    margin-top: $menu_margin32;
+		padding-bottom: $menu_margin32;
+  	    &>a{
+		  &>div{
+  	        display: inline-block;
+  	      }
+		  img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+		  .notifier_info{ //通知區塊
+		    margin-left: $menu_margin16;
+		    vertical-align: top;
+		    &>span{
+		      display: block;
+		      line-height: $line_height;
+		    }
+			//通知標題
+		    &>span:first-child{
+		      width: $menu_ellipsis2;
+			  @include ellipsis;
+			  @include breakpoint(max-width $screen_width360){
+			    width: $menu_ellipsis;
+			  }
+			  @include breakpoint(max-width $screen_width320){
+			    width: $menu_ellipsis3;
+			  }
+		    }
+			//通知時間
+		    &>span:last-child{
+		      color: $grey_color2;
+		    }
+		  }
+		}//.a
+      }//.li
+	  li:first-child{
+	    margin-top: 0;
+	  }
+	  li:last-child{
+	    border-bottom: 0;
+		//margin-bottom: 0;
+	  }
+    }
+    &.login_menu_down{
+      display: block;
+      overflow-y: auto;
+      position: absolute;
+	  @include breakpoint(max-width $screen_width768){
+	    margin-top: -1px;
+	  }
+    }
+    .notifier_img_c, .notifier_img_w,{
+      overflow:hidden;
+      width: $menu_image_width48;
+      height: $menu_image_height48;
+    }
+    .notifier_img_c{
+      @include border-radius($border_radius100p);
+    }
+    .notifier_img_w{
+      @include border-radius($border_radius);
+    }
+  }//#notifier_menu
+  /* 通知選單結束 */
+}
+
+/* FOOTER區塊開始 */
+#footer{
+  position: relative;
+  clear: both;
+  display: block;
+  width: $width100p; 
+  background-color: $footer_bgcolor; 
+  text-align: center;
+  @include breakpoint(max-width $screen_width768){
+	height: 100%;
+	//padding: 3%;
+	padding: 16px;
+  }
+  #footer_area{
+    position: relative;
+    display:inline-block;
+    width: 80%;
+    color: $sub_color;
+    text-align: left;
+    line-height: $top_header_height64;
+    height: $top_header_height64;
+    letter-spacing: $letter_spacing;
+	@include breakpoint(max-width $screen_width1200){
+      width: $width96p;
+    }
+	@include breakpoint(max-width $screen_width1024){
+	  line-height: $top_header_height42;
+	  height: $top_header_height42;
+	  width: $width98p;
+    }
+	@include breakpoint(max-width $screen_width768){
+	  height: $width100p;
+	  line-height: normal;
+	}
+	.fa-caret-down{
+	  @include scaleY(-1);
+	  @include breakpoint(max-width $screen_width768){
+	    @include scaleY(1);
+	  }
+	}
+	&>ul{
+	  @include display-flex(center,row);
+	  @include breakpoint(max-width $screen_width768){
+	    @include display-flex(flex-start,column);
+	  }
+	  
+	  li{
+        display: inline-block;
+		@include flex(-1 0 0);
+		&:last-order{
+		  background: yellow;
+		}
+		
+        margin-right: 2%;
+		@include breakpoint(max-width $screen_width768){
+		  display: block;
+		  margin-bottom: 16px;
+	    }
+		a{
+          color: #fff !important;
+        }
+      }
+	  li:not(.mobile_show){
+	    @include breakpoint(max-width $screen_width768){
+	      display: none;
+	    }
+	  }
+	  li:nth-child(5){
+	    @include breakpoint(max-width $screen_width768){
+	      margin-bottom: 0;
+		}
+	  }
+	  li:last-child{
+        margin-right: 0;
+		margin-bottom: 0;
+      }
+	  .app_load{
+	    cursor: pointer;
+	    @include breakpoint(max-width $screen_width768){
+		  order: -1;
+		}
+	  }
+	}
+	.footer_lang{
+	  cursor: pointer;
+	}
+	.mobile_footer_lang{
+      display: none;
+	  @include breakpoint(max-width $screen_width768){
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+	  }
+	  .custom-select{
+	    height: inherit;
+		line-height: inherit;
+	  }
+	  .select-selected{
+	    padding: 0 4px 0 0;
+	  }
+	  .select-selected:after{
+	    top: 9px;
+	    right: unset;
+		border: 5px solid transparent;
+	    border-color: #ffffff transparent transparent transparent;
+	  }
+	  .select-items{
+	    color: $grey_color;
+		right: 0;
+		//@include width-max-content;
+		@include min-width-max-content;
+	  }
+	}
+	.dropdown_menu{
+	  top: unset;
+	  left: unset;
+	  right: unset;
+	  bottom: 64px;
+	  @include breakpoint(max-width $screen_width1024){
+	    bottom: 44px;
+	  }
+	  @include breakpoint(max-width $screen_width768){
+		top: 0;
+		bottom: unset;
+		left: 80px;
+		right: unset;
+	  }
+	  ul{
+	    li{
+	      width: $width100p;
+		  a{
+            color: #4d4d4d !important;
+		    &:hover {
+              color: #00acc1 !important; 
+              background: none;
+            }
+          }
+        }
+	  }
+	}//.dropdown_menu
+  }//#footer_area
+  .footer_copyright{
+    //float: right;
+	@include flex(2);
+	text-align: right;
+	@include breakpoint(max-width $screen_width1024){
+	  font-size: $font_size14;
+	}
+	@include breakpoint(max-width $screen_width960){
+	  display: none !important;
+	}
+  }
+}
+/* 回上方箭頭與FB區塊 */
+#right_btn{ 
+  position: fixed;
+  right: 4%; 
+  //z-index: 100;
+  z-index: 1100; 
+  //bottom: 80px; 
+  //top: 80vh;
+  //top: 70vh;
+  bottom: 10vh;
+  //width: 52px;
+  width: 46px;
+}
+#scroll_top{ 
+  display:none; 
+  width: $width100p; 
+  height: auto; 
+  margin-bottom: 15px;
+  img { 
+    width: $width100p;
+	height: auto;
+	@include opacity(0.7);
+    &:hover{
+      @include opacity(1);
+    }
+	@include breakpoint(max-width $screen_width768){
+	  width: 100%; 
+	  height: auto; 
+	}
+  }
+}
+#p_link { 
+  width: $width100p;
+  height: auto;
+  @include breakpoint(max-width $screen_width768){
+    //display: none;
+  }
+  img{
+    width: $width100p;
+	@include opacity(0.7);
+    &:hover{
+      @include opacity(1);
+    }
+  }
+}
+.topFixed{
+  //@include breakpoint(max-width $screen_width768){
+    display: block !important;
+  //}
+}
+.notifier_icon:before{
+  content: ' ';
+}
+.notifier_icon{
+  position: absolute;
+  top: 14px;
+  right: -16px;
+  display: inline-block;
+  margin-top: -24px;
+  margin-left: 4px;
+  width: 12px;
+  height: 12px;
+  background: $pink_color2;
+  @include border-radius($border_radius100p);
+  vertical-align: middle;
+  @include breakpoint(max-width $screen_width960){
+    right: -12px;
+  }
+}
+/* 按鈕 */
+.btn_new{
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+  font-size: $btn_font_l; 
+  letter-spacing: $letter_spacing;
+  height: $btn_height_l;
+  line-height: $btn_height_l;
+  text-align: center;
+  background: $btn_background;
+  @include border-radius($border_radius);
+  @include breakpoint(max-width $screen_width768){
+    font-size: $btn_font_s; 
+    height: $btn_height32;
+    line-height: $btn_height32;
+  }
+}
+.btn_pink{
+  color: #fff;
+  background: $pink_color2;
+}
+.btn_main{
+  color: #fff;
+  background: $main_color2;
+}
+.btn_attention{
+  color: $grey_color2;
+  background: $sub_color;
+  border: $border_width $border_style $grey_color2;
+}
+.btn_dark_opacity{
+  color: #fff;
+  //background: $grey_color;
+  background: rgba(77,77,77,0.75);
+  //@include opacity(0.75);
+}
+/* 標題-粗體 */
+[id*="_title"],[id*="_name"],[class*="_title"],[class*="_name"]{
+  font-weight: $font_weight;
+}
+/* 20181204: mars */
+label.error { 
+    color: #ee5b8d;
+    font-size: $font_size14;
+}
+//檢舉畫面
+#alert_box_new{
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: $width100p;
+  height: 100vh;
+  #alert_bg_new{
+    @include absolute-middle;
+	background: $grey_color;
+	width: $width100p;
+	height: $height100p;
+  }
+  #alert_box_area{
+    @include border-box(border-box);
+    @include absolute-middle;
+	padding: 32px;
+    width: 480px;
+	height: fit-content;
+	background: $sub_color;
+    @include border-radius($border_radius);
+	@include breakpoint(max-width $screen_width768){ 
+	  width: $width100p;
+	  height: $height100p;
+	  border-radius: 0;
+	}
+  }
+  #alert_top_new{
+    @include display-flex(center,row);
+    font-size: $font_size24;
+	@include breakpoint(max-width $screen_width500){ 
+	  font-size: $font_size20;
+	}
+	#alert_top_title{
+	  @include flex(2);
+	}
+	#alert_close_btn{
+	  cursor: pointer;
+	  width: 24px;
+	  @include flex(0 1 0);
+	}
+  }
+  #alert_content_new{
+    margin-top: 32px;
+	font-size: $font_size18;
+	@include breakpoint(max-width $screen_width768){
+	  height: 80%;
+	}
+	@include breakpoint(max-width $screen_width500){ 
+	  font-size: $font_size14;
+	}
+	#alert_items{
+	  line-height: 25px;
+	  height: 480px;
+	  overflow: auto;
+	  @include breakpoint(max-width $screen_width768){ 
+	    height: 80%;
+	  }
+	  &>div:not(:last-child){
+	    margin-bottom: 32px;
+	  }
+	  div[id^='alert_desc_items']{
+		display: none;
+		margin-top: 8px;
+	    margin-left: 32px;
+	  }
+	  label{
+	    margin-left: 6px;
+	  }
+	  textarea{
+	    letter-spacing: $letter_spacing;
+		@include breakpoint(max-width $screen_width500){ 
+	      font-size: $font_size14;
+	    }
+	  }
+	  #alert_desc_items07{
+		color: $grey_color1;
+	  }
+	}
+	#alert_desc_btn{
+	  text-align: center;
+	  .btn_new{
+		margin-top: 32px;
+	    width: 240px;
+		@include breakpoint(max-width $screen_width768){ 
+	      width: $width100p;
+	    }
+	  }
+	}
+  }
+}
+.red{  //檢舉警告
+  color: red;
+}
+
+/* 當彈出選單突出頁面底部時  */
+.dropdown_menu_bottom{
+  top: auto !important;
+  bottom: 14px !important;
+}
+
+
+
+
+/* bootstrap選單樣式設定 */
+.dropdown_menu{
+  @include min-width-max-content;
+  padding: 32px;
+  left: unset;
+  right: 0;
+  border: 1px solid $grey_color2;
+  ul{
+    li{
+	  @include width-max-content;
+	  display: block !important;
+	  padding: 0 !important;
+	  margin: 0 !important;
+	  font-size: $font_size16 !important;
+	  font-weight: normal !important;
+	  line-height: 16px;
+      &:not(:last-child){
+	    margin-bottom: 16px !important;
+	  }
+	}
+  }
+}
+
+/* 20190115: 為了配合輪播鈕樣式, 頁面SCROLL時, HEADER出現下方線 */
+.header_sticky{
+  border-bottom: 1px solid $border_color !important;
+}

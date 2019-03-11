@@ -1,0 +1,265 @@
+//for btn
+/* 按鈕 */
+.btn_new{
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+  font-size: $btn_font_l; 
+  letter-spacing: $letter_spacing;
+  height: $btn_height_l;
+  line-height: $btn_height_l;
+  text-align: center;
+  background: $btn_background;
+  @include border-radius($border_radius);
+  @include breakpoint(max-width $screen_width768){
+    font-size: $btn_font_s; 
+    height: $top_header_height_m2;
+    line-height: $top_header_height_m2;
+  }
+}
+.btn_pink{
+  color: #fff;
+  background: $pink_color2;
+}
+.btn_main{
+  color: #fff;
+  background: $main_color2;
+}
+.btn_attention{
+  color: $grey_color2;
+  background: $sub_color;
+  border: $border_width $border_style $grey_color2;
+}
+.btn_dark_opacity{
+  color: #fff;
+  background: $grey_color;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75); opacity: 0.75;
+}
+/* 標題-粗體 */
+[class*="_title"],[class*="_name"]{
+  font-weight: $font_weight;
+}
+
+//for new message_board in old style
+.popview_content{
+  .message_board{
+    //width: $width !important;
+	width: 96% !important;
+    #pinpinboard, .pinpinboard{
+	  position: relative;
+	  @include display-flex(flex-start,row);
+	  width: $width;
+	  //使用者頭圖
+	  &>span:first-child{
+		margin-right: 32px;
+		text-align: left;
+		vertical-align: top;
+		@include breakpoint(max-width $screen_width768){
+		  margin-right: 16px;
+		}
+	    img{
+	      width: $img_width5;
+	      height: $img_height5;
+	      @include border-radius($width);
+	    }
+	  }
+	  //使用者留言區塊
+	  &>span:last-child{
+		@include flex(2);
+	  }
+	}//.pinpinboard
+  }//.message_leave
+}//.popview_content
+.message_board{
+  position: relative;
+  //width: $width;
+  margin: auto;
+  width: 960px;
+  @include breakpoint(max-width 1024px){
+	width: 96%;
+  }
+  #message_leave, .message_leave{
+	position: relative;
+	width: $width;
+	//width: 960px;
+	@include breakpoint(max-width 1024px){
+	  width: $width;
+    }
+    border-bottom: 1px solid $grey_color2;
+	padding-bottom: 32px;
+	#pinpinboard, .pinpinboard{
+	  position: relative;
+	  @include display-flex(flex-start,row);
+	  width: $width;
+	  //使用者頭圖
+	  &>span:first-child{
+		margin-right: 32px;
+		text-align: left;
+		vertical-align: top;
+		@include breakpoint(max-width $screen_width768){
+		  margin-right: 16px;
+		}
+	    img{
+	      width: $img_width5;
+	      height: $img_height5;
+	      @include border-radius($width);
+	    }
+	  }
+	  //使用者留言區塊
+	  &>span:last-child{
+		@include flex(2);
+		
+		
+		textarea, .contenteditable1 {
+		  display: block;
+          width: $width !important;
+        }
+		
+		
+		
+	  }
+	}//.pinpinboard
+	//留言按鈕
+	&>div:last-child{
+	  margin-top: 16px;
+	  text-align: right;
+	  span{
+	    display: inline-block;
+		width: 22%;
+		@include breakpoint(max-width $screen_width7){
+		  width: 25%;
+		}
+	  }
+	  span:last-child{
+	    margin-left: 16px;
+	  }
+	  .message_submit{
+	    color: $sub_color;
+	    background: $main_color2;
+	  }
+	}
+  }//.message_leave
+  #message_list, .message_list{
+    width: $width;
+	letter-spacing: $letter_spacing;
+	line-height: $line_height;
+	.message_item{
+	  @include display-flex(flex-start,row);
+	  width: $width;
+	  margin-top: 32px;
+	  margin-bottom: $top_header_height_m6;
+	  @include breakpoint(max-width $screen_width768){
+		margin-top: 24px;
+		margin-bottom: 24px;
+      }
+	  //留言者頭圖
+	  &>div:first-child{ 
+	    padding-right: 32px;
+		vertical-align: top;
+		@include breakpoint(max-width $screen_width768){
+		  padding-right: 16px;
+        }
+		&>span:first-child{
+	      img{
+	        width: $img_width5;
+	        height: $img_height5;
+	        @include border-radius($width);
+	      }
+		}
+	  }
+	  //留言內容
+	  &>div:last-child{
+		@include flex(2);
+	    font-size: $font_size2;
+		text-align: justify;
+		line-height: $line_height;
+		//留言者姓名
+	    &>div:first-child{
+		  margin-bottom: 16px;
+		  @include breakpoint(max-width $screen_width768){
+			margin-bottom: 0px;
+		  }
+		  &>span{
+		    display: inline-block;
+		  }
+		  //留言日期
+		  &>span:last-child{
+		    margin-left: 16px;
+			color: $grey_color2; 
+		  }
+	    }
+		//留言內容
+		&>div:last-child{
+		  @include display-flex(flex-end,row);
+		  &>div:first-child{
+			@include flex(2);
+		    span{
+			  margin-left: 0;
+			}
+		  }
+		  //刪除按鈕
+		  &>div:last-child{
+			width: 32px;
+			vertical-align: bottom;
+		  }
+		}
+	  }
+    }//.message_item
+  }//#message_list
+}//.message_board
+//留言者標記
+.message_tag{
+  color: $main_color2;
+  text-decoration: underline;
+}
+//刪除按鈕
+.delete_box{
+  cursor: pointer;
+  display: block;
+  width: 32px;
+  height: 32px;
+  line-height: 30px;
+  font-size: 20px;
+  text-align: center;
+  color: $grey_color;
+  background: $grey_color2;
+  @include border-radius($border_radius);
+  @include breakpoint(max-width $screen_width768){
+	width: 28px;
+    height: 28px;
+    line-height: 26px;
+  }
+}
+/* 專區留言區TAG樣式開始 */
+.textoverlay-wrapper{
+  @include border-radius($border_radius);
+  border-raidus: 6px !important;
+  text-align: left;
+}
+.textcomplete-dropdown{
+  padding: 32px;
+  li{
+	&:not(:last-child){
+      margin-bottom: 16px;
+    }
+    a{
+	  padding: 0;
+	  color: $grey_color;
+	  cursor: pointer;
+	  img{
+        vertical-align: middle;
+		margin-right: 16px;
+		width: 28px;
+	    height: 28px;
+	    @include border-radius(28px);
+      }
+	}
+  }
+  .active{
+    &>a, &>a:focus, &>a:hover{
+	  color: $main_color2;
+      background-color: $sub_color;
+	}
+  }
+}
+/* 專區留言區TAG樣式結束 */

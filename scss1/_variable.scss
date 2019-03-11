@@ -1,0 +1,197 @@
+/* width */
+$width32: 32px;
+$width40: 40px;
+$width48: 48px;
+
+$width90p: 90%; //#mobile_search, .creator_info
+$width92p: 92%;
+$width94p: 94%;
+$width96p: 96%;
+$width98p: 98%;
+$width100p: 100%;
+
+
+/* height */
+$top_header_height64: 64px;
+$top_header_height44: 44px;
+$top_header_height42: 42px; //#footer_area
+
+$input_text_height32: 32px;
+$input_text_height38: 38px; //.search_text
+$input_text_height40: 40px;
+
+$search_box_height32: 32px;
+$search_box_height40: 40px;
+
+$btn_height32: 32px;
+$btn_height40: 40px;
+
+$height32: 32px;
+$height40: 40px;
+$height48: 48px; //.lock_box
+$height100p: 100%;
+
+
+/* shadow */
+$box_shadow: 0px 8px 24px 0px #e3e3e3;
+$text_shadow: #9d9d9d 0px 0px 5px;
+
+/* img */
+$img_width20: 20px;
+$img_height20: 20px;
+$img_width24: 24px;
+$img_height24: 24px;
+$img_width28: 28px; //.social_links
+$img_height28: 28px;
+$img_width32: 32px;
+$img_height32: 32px;
+$img_width40: 40px;
+$img_height40: 40px;
+$img_width48: 48px;
+$img_height48: 48px;
+$img_width56: 56px; //#creative_name
+$img_height56: 56px;
+$img_width64: 64px; //.message_leave
+$img_height64: 64px;
+$img_width100p: 100%; //.message_leave
+$img_height100p: 100%;
+
+/* font */
+$font_family: Noto Sans TC;
+$font_family2: Noto Sans;
+$font_weight: 700; //500; 
+$letter_spacing: 1.5px;
+$letter_spacing2: 2px;
+$line_height: 25px;
+$font_size12: 12px; //.pin_creator
+$font_size14: 14px;
+$font_size16: 16px;
+$font_size18: 18px;
+$font_size20: 20px;
+$font_size22: 22px; //.mobile_menu i, .plan_info, #creative_name, .album_content_box_icon i
+$font_size24: 24px; //#alert_top_new, .main_content ul li, .story_img, .step_title, .plan_info,
+                    //.creative_title div, .creative_num, .btn_back_creative, #creative_phone, 
+					//#creative_password, #creative_aboutme, .album_content_back, .content_box_name
+$font_size26: 26px; //.main_content2 .tab-container ui li, .star_name, .lock_box i
+$font_size28: 28px; //.plan_info_num, .lock_box i
+$font_size38: 38px; //.main_content2 .tab-container ui li, .creative_num
+$font_size42: 42px; 
+$font_size48: 48px; //.creative_title div, .creative_num
+                    //.main_content2 .tab-container ui li
+					
+					
+/* font color */
+$main_color1: #0f8399;
+$main_color2: #00acc1;
+$main_color3: #69cedb;
+$main_color4: #cce1e4;
+$main_gradient_light: #5cb7c2;
+$main_gradient_dark: #0f8399; 
+$grey_color: #4d4d4d;
+$grey_color1: #9e9e9e;
+$grey_color2: #d4d4d4;
+$grey_color3: #f2f2f2;
+$grey_gradient_light: #ededed;
+$grey_gradient_dark: #d7d7d7;
+$pink_color: #ad1457;
+$pink_color2: #ee5b8d; /*#e91e63;*/
+$pink_color3: #f27ba3;
+$pink_color4: #f4adc5;
+$pink_gradient_light: #f15187;
+$pink_gradient_dark: #a61252;
+$sub_color: #ffffff;
+
+/* bg color */
+$body_bgcolor: #ffffff;
+$step_bgcolor: #f9fbfb;
+$footer_bgcolor: #555555;
+
+/* a */
+$a_link: $grey_color;
+$a_hover: $main_color2;
+$a_unlink: $grey_color2;
+
+/* menu */
+$menu_width: 360px;
+$menu_border_color: $grey_color2;
+$menu_ellipsis: 220px;
+$menu_ellipsis2: 200px;
+$menu_ellipsis3: 180px;
+$menu_margin16: 16px;
+$menu_margin32: 32px;
+$menu_padding16: 16px;
+$menu_padding32: 32px;
+$menu_image_width48: 48px;
+$menu_image_height48: 48px;
+$menu_font16: 16px;
+$menu_font18: 18px;
+$menu_line_height22: 22px; //16px;
+$menu_line_height24: 24px; //18px;
+
+$menu_height: 216px;
+
+
+
+/* screen */
+$screen_width1920: 1920px;
+$screen_width1919: 1919px;
+$screen_width1440: 1440px;
+$screen_width1200: 1200px;
+$screen_width1024: 1024px;
+$screen_width960: 960px;
+$screen_width800: 800px;
+$screen_width768: 768px;
+$screen_width600: 600px;
+$screen_width500: 500px;
+$screen_width400: 400px;
+$screen_width360: 360px;
+$screen_width320: 320px;
+
+
+/* btn */
+$btn_height_l: $btn_height40;
+$btn_height_s: $btn_height32;
+$btn_font_l: $font_size16;
+$btn_font_s: $font_size14;
+$btn_background: $grey_color3;
+
+/* boder */
+$border_radius: 6px; //預設
+$border_radius2: 25px;
+$border_radius3: 50px;
+$border_radius4: 100px;
+$border_radius5: 0;
+$border_radius6: 40px; 
+
+
+$border_radius40: 40px; //.header_search_box
+$border_radius100p: 100%;
+
+$border_color: #e8e8e8;
+$border_color2: #eef4f4;
+$border_color3: $grey_color2;
+$border_color4: #bbbbbb;
+$border_width: 1px;
+$border_style: solid; 
+
+/* margin */
+$margin4: 4px;
+$margin6: 6px;
+$margin8: 8px;
+$margin10: 10px;
+$margin12: 12px;
+$margin16: 16px;
+$margin32: 32px;
+$margin96: 96px;
+
+$margin32p: 2.904%;
+$margin16p: 1.452%;
+$margin12p: 2.556%;
+$margin10p: 2.14%;
+$margin8p: 1.7096%;
+$margin6p: 1.284%;
+$margin4p: 0.856%;
+
+/* padding */
+$padding32: 32px;
+$padding100p: 100%;
