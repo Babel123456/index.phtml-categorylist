@@ -51,7 +51,7 @@
   </div><!-- #message_leave -->
 
   <div id="message_list" class="<?=$type?>_comment_list">
-    <!--
+    
     <div class="message_item" data-pinpinboard_id="1602">
       <div>
         <span>
@@ -95,7 +95,7 @@
         </div>
       </div>
     </div>
-	-->
+	
   </div><!-- #message_list -->
 </div><!-- .message_board -->
 
@@ -277,6 +277,11 @@ $(function(){
 	   
     // 20190307: 移除appendTo: 'body'區塊開始  
 	//},{appendTo: 'body'}).overlay([
+	//}).overlay([
+	},{select: function (e){
+		console.log('select');
+	}
+		
 	}).overlay([
 	// 20190307: 移除appendTo: 'body'區塊結束 
     {
