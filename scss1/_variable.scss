@@ -113,6 +113,8 @@ $a_unlink: $grey_color2;
 
 /* menu */
 $menu_width: 360px;
+$menu_bolder_width: 1px;
+$menu_bolder_style: solid; //bold;
 $menu_border_color: $grey_color2;
 $menu_ellipsis: 220px;
 $menu_ellipsis2: 200px;
@@ -129,12 +131,14 @@ $menu_line_height22: 22px; //16px;
 $menu_line_height24: 24px; //18px;
 
 $menu_height: 216px;
-
+$menu_header_height: 70vh;
+$menu_header_max_height: 92vh;
 
 
 /* screen */
 $screen_width1920: 1920px;
 $screen_width1919: 1919px;
+$screen_width1600: 1600px;
 $screen_width1440: 1440px;
 $screen_width1200: 1200px;
 $screen_width1024: 1024px;
@@ -167,7 +171,8 @@ $border_radius6: 40px;
 $border_radius40: 40px; //.header_search_box
 $border_radius100p: 100%;
 
-$border_color: #e8e8e8;
+//$border_color: #e8e8e8;
+$border_color: $grey_color2;
 $border_color2: #eef4f4;
 $border_color3: $grey_color2;
 $border_color4: #bbbbbb;

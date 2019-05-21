@@ -321,7 +321,8 @@
   	    display:inline-block;
   	    padding:0;
   	    font-size: $font_size24;
-  	    margin: $top_header_height64 $margin32 $margin32 18px;
+  	    //margin: $top_header_height64 $margin32 $margin32 18px;
+		margin: 48px $margin32 $margin32 18px;
   	    font-weight: $font_weight;
   	   }
     }
@@ -428,7 +429,8 @@
         display: inline-block;
         height: 100%;
 	    width: 29.9%;
-		margin: 0 0.1% 48px 2.5%;
+		//margin: 0 0.1% 48px 2.5%;
+		margin: 0 0.1% 40px 2.5%;
         overflow:hidden;
         font-size: $font_size14;
         line-height: line-height($font_size14);
@@ -441,11 +443,13 @@
           width: 28%;
         }
 	    @include breakpoint(max-width 1000px){
-		  margin: 0 1.8% 48px 3%;
+		  //margin: 0 1.8% 48px 3%;
+		  margin: 0 1.8% 40px 3%;
 	    }
   	    @include breakpoint(max-width $screen_width768){
 		  //margin: 32px 1% 48px 2%;
-		  margin: 0 1% 48px 2%;
+		  //margin: 0 1% 48px 2%;
+		  margin: 0 1% 40px 2%;
   		  width: 45%;
         }
   	    @include breakpoint(max-width $screen_width500){
@@ -1172,28 +1176,22 @@
 	
 	//專區分享區塊樣式
 	.social_links_box{
-	  display: none;
-	  //width: 360px;
-	  width: fit-content;
-	  position: absolute;
+	  //@include width-max-content;
+	  width: 300px;
 	  left:0;
-	  top: 64px;
 	  text-align: left;
 	  padding: 32px;
 	  @include border-radius($border_radius);
 	  border: 1px solid $border_color4;
 	  background: $sub_color;
-	  @include breakpoint(max-width $screen_width768){
-	   top: 44px;
-	  }
 	  .social_links_title{
 	    font-size: $font_size18;
 		margin-bottom: 16px;
 	  }
 	  
 	  .social_links_box_area{
-	    @include display-flex(flex-start,'');
-		
+	    @include width-max-content;
+	    @include display-flex(flex-start,row);
 		//社群圖示樣式
 	    .at-resp-share-element .at-share-btn{
 	      //margin-bottom: 0;
@@ -1223,8 +1221,11 @@
 	  
 	  .social_links{
 	    margin-left: 0;
+		//@include flex(1);
+		@include width-max-content;
 		@include breakpoint(max-width $screen_width768){
-          display: block;
+          //display: block;
+		  display: inline-block;
         }
 		img{
 		  @include border-radius($border_radius);
@@ -1241,6 +1242,7 @@
 		}
 	  }
 	  .social_links2{
+	    @include width-max-content;
 		margin-left: 10px;
 	    width: 32px;
 	    height: 32px;
@@ -1517,6 +1519,13 @@
 	@include breakpoint(max-width $screen_width1024){
 	  width: $width100p;
 	}
+	.dropdown_menu{
+	  left:0;
+	  right: unset;
+	  letter-spacing: $letter_spacing2;
+	  font-size: $font_size18 !important;
+	  color: $grey_color;
+	}
   }
   #mobile_tab{
     cursor: pointer;
@@ -1535,52 +1544,48 @@
     }
   }
   .mobile_tab_menu{
-    margin-left: 0 !important;
-    li{
-	  padding: 0 !important;
-	  letter-spacing: $letter_spacing2 !important;
-	  //margin: 96px 32px 32px 0 !important;
-	  margin: 32px 32px 32px 0 !important;
-	  @include breakpoint(max-width $screen_width960){
-	    //margin: 96px 30px 32px 0 !important;
-		margin: 32px 30px 32px 0 !important;
-	  }
-	  @include breakpoint(max-width $screen_width800){
-	    margin: 32px 24px 32px 0 !important;
-	  }
-	  @include breakpoint(max-width $screen_width768){
-	    display: block !important;
-		margin: 0 0 16px 0 !important;
-		float: none;
-		letter-spacing: $letter_spacing2;
-	    font-size: $font_size18 !important;
-	  }
-	  a{
+    ul{
+	  margin-left: 0 !important;
+      li{
 	    padding: 0 !important;
+	    letter-spacing: $letter_spacing2 !important;
+	    //margin: 96px 32px 32px 0 !important;
+	    margin: 32px 32px 32px 0 !important;
+	    @include breakpoint(max-width $screen_width960){
+	      //margin: 96px 30px 32px 0 !important;
+		  margin: 32px 30px 32px 0 !important;
+	    }
+	    @include breakpoint(max-width $screen_width800){
+	      margin: 32px 24px 32px 0 !important;
+	    }
+	    @include breakpoint(max-width $screen_width768){
+	      display: block !important;
+		  margin: 0 0 16px 0 !important;
+		  float: none;
+		  letter-spacing: $letter_spacing2;
+	      font-size: $font_size18 !important;
+	    }
+	    a{
+	      padding: 0 !important;
+	    }
 	  }
-	}
-	li:last-child{
-	  @include breakpoint(max-width $screen_width768){
+	  li:last-child{
+	    @include breakpoint(max-width $screen_width768){
+	      margin: 0 !important;
+	    }
+	  }
+	  /*
+      @include breakpoint(max-width $screen_width768){
+	    //display:none;
+        background: $sub_color;
+        border: 1px solid $menu_border_color;
+        @include border-radius($border_radius);
 	    margin: 0 !important;
-	  }
+	    padding: 32px;
+      }
+	  */
 	}
-    @include breakpoint(max-width $screen_width768){
-	  display:none;
-      background: $sub_color;
-      border: 1px solid $menu_border_color;
-      @include border-radius($border_radius);
-	  margin: 0 !important;
-	  padding: 32px;
-    }
-  }
-  .mobile_tab_down{
-    position: absolute;
-	//z-index: 2;
-	z-index: 5;
-	top: 25px;
-	left: 0;
-    display: block;
-  }
+  }//.mobile_tab_menu
   .tab{
     position: relative;
     width: 960px;
@@ -1703,92 +1708,7 @@
 	  @include breakpoint(max-width $screen_width320){
 		width: 100%;
 	  }
-	  .lock_box{
-		position: absolute;
-		width: $width48;
-		height: $height48;
-		line-height: 56px;
-		background: $pink_color2;
-		z-index:2;
-		left:0;
-		top:0;
-		@include breakpoint(max-width $screen_width768){
-	      width: $width40;
-		  height: $height40;
-		  line-height: 48px;
-	    }
-		@include breakpoint(max-width $screen_width400){
-		  width: $width32;
-		  height: $height32;
-		  line-height: 34px;
-	    }
-		@include border-radius($border_radius);
-		&>span{
-		  display: block;
-		  i{
-		    font-size: $font_size28;
-		    color: $sub_color;
-		    @include breakpoint(max-width $screen_width768){
-			  font-size: $font_size26; 
-		    }
-		    @include breakpoint(max-width $screen_width400){
-			  font-size: $font_size20;
-	        }
-		  }
-		}
-	  }//.lock_box
-	  .content_box_img{
-		cursor: pointer;
-		background: url('../images/assets-v7/grey-bg.png') 100% 100%;
-		@include border-radius($border_radius);
-		overflow: hidden;
-	    img{
-		  width: $width100p;
-		  vertical-align: middle;
-	      @include border-radius($border_radius);
-		  @include opacity(0.9);
-		}
-	  }
-	  .content_box_info{
-	    position: relative;
-		.fa{
-		  font-size: $font_size16;
-		  margin-left: 6px;
-		  color: $grey_color;
-		}
-	  }
-	  .content_box_icon{
-		text-align: left;
-		margin: 8px 0;
-		color: $grey_color;
-		.fa-gift{
-		  //color: $main_color2;
-		}
-	  }
-	  .content_box_menu_btn{
-		position: absolute;
-		display: inline-block;
-		cursor: pointer;
-		top: 0px;
-		right: 0;
-	  }
-	  .content_box_name a{
-	    font-size: $font_size16;
-		font-weight: normal;
-		@include ellipsis;
-        @include line-clamp(vertical,3);
-        line-height: line-height($font_size16);
-        //line-height: 32px;
-		//height: 96px;
-		//max-height: 96px;
-		max-height: line-height($font_size16)*3;
-		text-align:justify;
-		width: 90%;
-		color: $grey_color;
-		&:hover{
-		  color: $main_color2;
-		}
-	  }
+	  
 	  .btn_new{
 		margin-top: 32px;
 	  }
@@ -1819,6 +1739,103 @@
 	
   }
 }
+
+//作品鎖頭
+.lock_box{
+  position: absolute;
+  width: $width48;
+  height: $height48;
+  line-height: 56px;
+  background: $pink_color2;
+  z-index:2;
+  left:0;
+  top:0;
+  @include breakpoint(max-width $screen_width768){
+    width: $width40;
+    height: $height40;
+    line-height: 48px;
+  }
+  @include breakpoint(max-width $screen_width400){
+    width: $width32;
+    height: $height32;
+    line-height: 34px;
+  }
+  @include border-radius($border_radius);
+  &>span{
+    display: block;
+	text-align: center;
+    i{
+      font-size: $font_size28;
+      color: $sub_color;
+      @include breakpoint(max-width $screen_width768){
+  	  font-size: $font_size26; 
+      }
+      @include breakpoint(max-width $screen_width400){
+  	   font-size: $font_size20;
+      }
+    }
+  }
+}//.lock_box
+
+//content_box 相關設定
+.content_box_img{
+  cursor: pointer;
+  background: url('../images/assets-v7/grey-bg.png') 100% 100%;
+  @include border-radius($border_radius);
+  overflow: hidden;
+  img{
+	width: $width100p;
+	vertical-align: middle;
+	@include border-radius($border_radius);
+	@include opacity(0.9);
+  }
+}
+
+.content_box_info{
+  position: relative;
+  .fa{
+	font-size: $font_size16;
+	//margin-left: 6px;
+	margin-left: 8px;
+	color: $grey_color;
+  }
+}
+
+.content_box_icon{
+  text-align: left;
+  margin: 8px 0;
+  color: $grey_color;
+  .fa-gift{
+    //color: $main_color2;
+  }
+}
+
+.content_box_menu_btn{
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+  top: 0px;
+  right: 0;
+}
+
+.content_box_name a{
+  font-size: $font_size16;
+  font-weight: normal;
+  @include ellipsis;
+  @include line-clamp(vertical,3);
+  line-height: line-height($font_size16);
+  //line-height: 32px;
+  //height: 96px;
+  //max-height: 96px;
+  max-height: line-height($font_size16)*3;
+  text-align:justify;
+  width: 90%;
+  color: $grey_color;
+  &:hover{
+    color: $main_color2;
+  }
+}
+
 .creative_num{
   font-size: $font_size48;
   font-weight: $font_weight;
@@ -1859,14 +1876,18 @@
   
   
   .textcomplete-dropdown{
-    li{
+    padding-top: 0; //@套件在選單長度限定時會滑到第一個
+    &>li{
 	  display: block !important;
       font-size: 14px !important;
 	  margin:0 0 16px 0 !important;
 	  font-weight: normal !important;
 	}
-	li:last-child{
+	&>li:last-child{
 	  margin:0 !important;
+	}
+	&>li:first-child{ //@套件在選單長度限定時會滑到第一個
+	  margin-top: 32px !important;
 	}
   }
   
@@ -2109,7 +2130,7 @@
   border-raidus: 6px !important;
   text-align: left;
 }
-.textcomplete-dropdown{
+.textcomplete-dropdown{ //@套件選單
   z-index: 10002 !important; //專區POPUP顯示用
   padding: 32px;
   //bottom: 6vh !important;
@@ -2913,14 +2934,12 @@
 	  }//.album_content_area_warp
 	}//.album_content_area
 	
-	
-	
-  }//.jBox-content
-  
-  .textcomplete-dropdown{
+	.textcomplete-dropdown{ //@套件選單會跑出範圍外
 	  top: auto !important;
 	  bottom: 6vh !important;
-	}
+    }
+	
+  }//.jBox-content
   
 }//.popview_content
 /* 作品資訊頁開始 */
@@ -3471,20 +3490,22 @@
 		  padding-bottom: 0;
 		}
 		.pinpinboard{
-		  &>span:first-child{ //作品資訊頁留言頭圖48X48PX
-		    margin-right: 16px;
-		    .profile_img{
-		    //&>img{
-			  width: $img_width48;
-			  height: $img_height48;
-			  @include border-radius(48px);
-			  @include breakpoint(max-width $screen_width768){
-			    width: $img_width32;
-			    height: $img_height32;
-			    @include border-radius(32px);
+		  .pinpinboard_wrap{
+		    &>span:first-child{ //作品資訊頁留言頭圖48X48PX
+		      margin-right: 16px;
+		      .profile_img{
+		        //&>img{
+			    width: $img_width48;
+			    height: $img_height48;
+			    @include border-radius(48px);
+			    @include breakpoint(max-width $screen_width768){
+			      width: $img_width32;
+			      height: $img_height32;
+			      @include border-radius(32px);
+			    }
 			  }
-			}
-		  }
+		    }
+		  }//.pinpinboard_wrap
 		  .message_leave_btn_area{
 		    margin-top: 8px;
 			.btn_new{
@@ -3730,6 +3751,526 @@
 }//.album_content_area
 
 /* 作品資訊頁結束 */
+
+/* 類別書櫃開始 */
+//書櫃分類標籤列
+.album_explore_content_header{
+  padding: 0 32px;
+  //width: 100%;
+  height: 64px;
+  line-height: 64px;
+  background: $sub_color;
+  border-bottom: $border_width $border_style $border_color;
+  @include breakpoint(max-width $screen_width768){
+    padding: 0 16px;
+    height: 44px;
+    line-height: 44px;
+  }
+  .album_explore_cat_area{
+    //display: inline-block;
+	//height: 40px;
+	//line-height: 40px;
+	//width: 100%;
+	//width: 1270px;
+	margin: auto;
+	width: 100%;
+	//@include width-max-content;
+	@include breakpoint(max-width $screen_width1600){
+	  //width: 66.15%;
+	  width: 90%;
+	}
+	@include breakpoint(max-width $screen_width1200){
+	  width: 100%;
+	}
+	@include breakpoint(max-width $screen_width1024){
+	  width: 92%;
+	}
+	@include breakpoint(max-width $screen_width960){
+	  width: 98%;
+	}
+	@include breakpoint(max-width $screen_width768){
+	  width: 100%;
+	}
+	.album_explore_cat_area_wrap{
+	  margin: auto;
+	  @include width-max-content;
+	}
+  }
+}//.album_explore_content_header
+//書櫃分類標籤
+.album_explore_cat_tab{
+  li{
+    display: inline-block;
+	width: 168px;
+	height: 40px;
+	line-height: 40px;
+	@include breakpoint(max-width $screen_width768){
+	  width: 64px;
+      height: 32px;
+      line-height: 32px;
+    }
+	a{
+	  display: block;
+	  padding: 0;
+	  color: $grey_color;
+	  background: none;
+	  //background: $grey_color2;
+	  @include border-radius(40px);
+	  
+	}
+	a:focus, a:hover{
+	  //color: $sub_color;
+	  //background: $main_color2;
+	}
+	.btn_new{
+	  letter-spacing: 8px; //免去使用者自己空格
+	  background: none;
+	  @include breakpoint(max-width $screen_width768){
+	    letter-spacing: 1.5px;  //小版字中間無空格
+      }
+	}
+	.tab_img{
+	  width: $img_width24;
+	  height: $img_height24;
+	  margin-right: 8px;
+	  vertical-align: sub;
+	  @include breakpoint(max-width $screen_width768){
+	    display: none;
+      }
+	}
+	&:not(:first-child){
+	  margin-left: 16px;
+    }
+	&.active{
+	  a{
+	    color: $sub_color;
+	    background: $main_color2;
+	  }
+	}
+  }
+}//.album_explore_cat_tab
+//類別書櫃BANNER
+.album_explore_banner{
+  position: relative;
+  width: 960px;
+  //margin: 16px auto 64px auto;
+  margin: 16px auto 0 auto; //將底空間讓給BOOKMARK錨點
+  background: $sub_color;
+  //@include display-flex(flex-start,row);
+  @include breakpoint(max-width $screen_width1024){
+    width: 90%;
+  }
+  @include breakpoint(max-width $screen_width768){
+    width: 100%;
+  }
+  .album_explore_banner_area{
+    position: relative;
+    //width: 675px; //70%;
+	//@include flex(2);
+	float: left;
+	width: 70%;
+	
+	@include breakpoint(max-width $screen_width1024){
+      width: 68%;
+    }
+	@include breakpoint(max-width $screen_width960){
+	  float: none;
+	  width: 100%;
+    }
+	
+	
+	
+	//輪播設定
+	.owl-wrapper{
+	  //@include display-flex(flex-start,row);
+	  display: flex !important;
+	  .owl-item{ //當無說明時, 也有底線出現
+	    width: auto;
+        //height: 100%;
+	    @include breakpoint(max-width $screen_width960){
+	      border-bottom: $border_width $border_style $border_color;
+        }
+      }
+	}
+	
+	.owl-carousel .owl-wrapper-outer {
+      box-shadow: none;  //無陰影
+	}
+	.owl-controls{  //按鈕設定
+	  //position: absolute;
+	  //bottom: 0;
+	  //left: 0;
+	  //z-index: -10; //大版時圓鈕不顯示
+	  visibility: hidden;
+	  .owl-page{
+	    span{
+		  margin: 16px 0 0 0;
+		  background: $sub_color;
+		  border: $border_width $border_style $border_color;
+		}
+		&.active span{
+		  background:$grey_color;
+		}
+		&:not(:last-child){
+		  margin-right: 12px;
+		}
+	  }
+	  @include breakpoint(max-width $screen_width960){
+        //position: relative; //小版時圓鈕出現
+		//z-index: 1;
+		//margin-top: 0;
+		visibility: visible;
+	  }	  
+	}
+	
+	.owl-buttons{  //左右鍵頭設定
+	  position: absolute;
+	  right: 0;
+	  //bottom: 10px; //0;
+	  bottom: 50px; //0;
+	  background: $sub_color;
+	  .owl-prev{
+	    margin-right: 8px;
+	  }
+	  .owl-prev, .owl-next{
+	    display: inline-block;
+		width: 24px;
+		height: 24px;
+		color: $sub_color;
+		background: $grey_color;
+		line-height: 24px;
+		text-align: center;
+		@include border-radius($border_radius);
+		
+	  }
+	  @include breakpoint(max-width $screen_width960){
+	    display: none;
+      }
+	}
+	
+	//輪播內影片設置
+	.album_explore_page_video_wrap{
+	  position: absolute; 
+	  top: 0; 
+	  bottom: 0; 
+	  left: 0; 
+	  right: 0; 
+	  margin: auto; 
+	  width: 100%; 
+	  //height: 320px; 
+	  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+	  overflow: hidden;
+	  .album_explore_page_video{
+	    //width: 569px; 
+		width: 100%;
+		height: 100%; 
+		position: absolute; 
+		//top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 5;
+		@include absolute-middle;
+	  }
+	}
+	
+	
+	.album_explore_banner_page_img{
+	  position: relative;
+	  img{
+	    width: $img_width100p;
+		height: $img_width100p;
+	  }
+	}
+	.album_explore_banner_page_desc{
+	  //margin-top: 16px;
+	  //margin-right: 88px; //24+24+8 + 32
+	  padding-right: 124px; //24+24+8 + 68
+	  @include display-flex(center,row);
+	  height: 44px;
+	  @include breakpoint(max-width $screen_width960){
+	    //border-bottom: $border_width $border_style $border_color;
+		padding-right: 16px;
+      }
+	  @include breakpoint(max-width $screen_width768){
+	    padding: 0 16px;
+      }
+	  
+	  .page_desc_icon{
+	    //width: 24px;
+		margin-right: 16px;
+		font-size: $font_size24;
+		@include breakpoint(max-width $screen_width960){
+	      font-size: $font_size16;
+        }
+	  }
+	  
+	  .page_desc_content{
+	    overflow: hidden;
+	    //margin-right: 88px; //24+24+8 + 32
+		//height: 24px;
+	    //line-height: 24px;
+		font-size: $font_size14;
+		@include flex(2);
+		@include line-clamp(vertical,1);
+		@include breakpoint(max-width $screen_width960){
+	      //margin-right: 0;
+        }
+	  }
+	}
+  }
+}//.album_explore_banner
+
+//精選創作人
+.album_explore_creative_area{
+  float: right;
+  padding: 16px 0 32px 32px;
+  width: 269px; //28%
+  font-size: $font_size18;
+  @include breakpoint(max-width $screen_width1024){
+    padding: 16px 0 16px 32px;
+  }
+  @include breakpoint(max-width $screen_width960){
+    display: none;
+  }
+  .album_explore_creative_list{
+    margin-top: 32px;
+	&>a{
+	  display: block;
+	  &:not(:first-child){
+	    margin-top: 16px;
+	  }
+	}
+	.album_explore_creative_list_box{
+	  width: 238px; //24.68%
+	  height: 64px;
+	  @include border-radius(64px);
+	  border: $border_width $border_style $grey_color2;
+	  background: $sub_color;
+	  @include display-flex(center,row);
+	  .profile_img_wrap{
+		width: 64px;
+		height: 64px;
+	  }
+	  .album_explore_creative_name{
+	    //margin: 6px 24px 6px 8px;
+		margin: auto 24px auto 8px;
+	    //margin-left: 8px;
+		//margin-right: 24px;
+	    //width: 140px;
+		overflow: hidden;
+		max-height: 50px;
+		//max-height: line-height($font_size18) * 2;
+		line-height: 24px;
+		//line-height: line-height($font_size18);
+		text-align: center;
+		//@include ellipsis;
+		//@include word-break;
+		@include flex(2);
+	  }
+	}//.album_explore_creative_list_box
+  }//.album_explore_creative_list
+}//.album_explore_creative_area
+
+// 書櫃區塊
+.album_explore_bookcase_content{
+  //position: relative;
+  clear: both;
+  width: 960px;
+  margin: 64px auto 160px auto;
+  //margin-top: 92px; //64+28(輪播圓按鈕大版時不秀)
+  @include breakpoint(max-width $screen_width1024){
+    width: 90%;
+  }
+  @include breakpoint(max-width $screen_width960){
+    margin-top: 32px;
+  }
+  @include breakpoint(max-width $screen_width768){
+    width: 100%;
+	//margin: 0 16px 0 16px;
+  }
+  
+  .album_explore_bookcase_content_list{
+    position: relative;
+	//margin-bottom: 64px; //把空間讓給錨點BOOKMARK
+	padding-top: 64px;
+	@include breakpoint(max-width $screen_width960){
+	  //margin-bottom: 48px;
+	  padding-top: 48px;
+	}
+	@include breakpoint(max-width $screen_width768){
+	  //margin: 0 16px 48px 16px;
+	  margin: 0 16px 0 16px;
+	}
+  }
+
+  .album_explore_bookcase_content_box_more{
+    position: absolute;
+	top: -4px; //0;
+	right: 0;
+    z-index: 2;
+    //width: 100%;
+	width: 96px;
+	text-align: right;
+    @include breakpoint(max-width $screen_width768){
+	  position: relative;
+	  margin-top: 48px;
+	  width: 100%;
+	  text-align: center;
+    }
+    .btn_new{
+	  width: 96px;
+	  @include breakpoint(max-width $screen_width768){
+        width: 192px;
+      }  
+      height: 32px;
+      line-height: 32px;
+    }
+  }
+
+  .album_explore_bookcase_content_list_header{
+    position: relative;
+    width: 100%;
+    height: 24px;
+    @include display-flex(center,row);
+    &>div{
+      @include flex(-1 0 0);
+    }
+    &>div:not(:last-child){
+      margin-right: 16px; 
+    }
+    .album_explore_bookcase_content_title{
+      font-size: $font_size24;
+  	  @include breakpoint(max-width $screen_width960){
+  	    font-size: $font_size20;
+  	  }
+    }
+    .album_explore_bookcase_content_desc{
+	  margin-right: 112px; //控出按鈕位置 16+96 px
+      overflow: hidden;
+      font-size: $font_size18;
+  	  color: $grey_color2;
+  	  visibility: visible;
+      @include flex(2);
+  	  @include line-clamp(vertical,1);
+  	  @include breakpoint(max-width $screen_width960){
+  	    visibility: hidden;
+  	  }
+    }
+    
+  
+    .album_explore_bookcase_content_tab_list{
+      display: none;
+      font-size: $font_size18; 
+      @include breakpoint(max-width $screen_width768){
+  	    display: block;
+  	    margin-right: 22px;
+      }
+      .dropdown_menu{
+        left: 0;
+  	    max-height: 216px;
+        @include width-max-content;
+      }
+    }
+  }//.album_explore_bookcase_content_list_header
+  .album_explore_bookcase_content_box_area{
+    width: 100%;
+    //margin: 16px 0 64px 0;
+	margin: 16px auto 0 auto; //因為只有一排
+	//background: lavender;
+	
+	.album_explore_bookcase_content_box_wrap{
+	  //margin: auto;
+	  @include width-max-content;
+	  @include breakpoint(max-width $screen_width768){
+	    width: 100%;
+	  }
+	}
+	
+	
+	.content_box{
+	//.album_explore_bookcase_content_box{
+	  float: none;
+	  position: relative;
+	  display: inline-block;
+	  vertical-align: top;
+	  width: 216px;
+	  background: white;
+	  &:not(:last-child){
+	    margin-right: 32px;
+	  }
+	
+	  @include breakpoint(max-width $screen_width768){
+	    display: block;
+		width: 100%;
+		//margin: 0 16px 0 16px;
+		margin: 0;
+		&:not(:last-child){
+		  margin-bottom: 48px;
+		}
+	  }
+	  
+	  .content_box_img{
+	    max-height: 360px;
+		@include breakpoint(max-width $screen_width768){
+		  max-height: 100%;
+		}
+	  }
+	
+	  .dropdown_menu{
+	    right: 16px;
+	    /*
+		top: unset;
+		bottom: 0;
+		*/
+		top: -40px;
+		bottom: unset;
+		@include breakpoint(max-width $screen_width768){
+		  right: 0;
+		  bottom: unset;
+		}
+		
+	  }
+	
+	  .content_box_name a{
+	    font-size: $font_size14;
+	    margin-bottom: 16px;
+		line-height: line-height($font_size14);
+		max-height: line-height($font_size14) * 3;
+	  }
+	
+      .content_box_creative{
+	    padding-top: 16px;
+		border-top: $border_width $border_style $border_color;
+		a{
+		  display: block;
+		  @include display-flex(center,row);
+		}
+	    
+        .profile_img_wrap{
+		  margin-right: 8px;
+		  width: $img_width24;
+          height: $img_height24;
+          @include border-radius($border_radius100p);
+		}
+		.creative_name{
+		  overflow: hidden;
+		  font-size: $font_size14;
+		  @include flex(2);
+		  @include line-clamp(vertical,1);
+		}
+	  }//.content_box_creative	  
+	
+	
+	}//.content_box
+	
+	
+  }//.album_explore_bookcase_content_box_area
+
+}//.album_explore_bookcase_content
+/* 類別書櫃結束 */
+
+
+
+/* 類別書櫃結束 */
+
+
 #snackbar, #creative_content_snackbar {
   letter-spacing: $letter_spacing;
   //line-height: $line_height;
@@ -3792,6 +4333,7 @@
 	font-size: $font_size14;
   }
 }
+
 
 /* 下拉選單 與JS配合使用 */
 .custom-select{

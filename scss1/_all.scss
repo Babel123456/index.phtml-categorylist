@@ -18,7 +18,7 @@
   }
 }
 html{
-  scroll-behavior: smooth;
+  //scroll-behavior: smooth;
 }
 a{
   color: $grey_color;
@@ -73,6 +73,7 @@ body{
   background: url('../images/assets-v7/grey-bg.png') 100% 100%;
   //img{
   .profile_img{
+    width: $img_width100p;
     vertical-align: middle;
     @include opacity(0.9);
   }
@@ -117,7 +118,8 @@ input[type="text"],input[type="password"]{
   background: $grey_color3;
   @include border-radius($border_radius);
   @include breakpoint(max-width $screen_width768){
-    padding: 8px 16px;
+    //padding: 8px 16px;
+	padding: 6px 16px;
   }
 }
 
@@ -181,28 +183,16 @@ input[type="text"],input[type="password"]{
   top: 0px; 
   z-index: 999;
   width: $width100p;
-  padding: 0 32px;
   text-align:center;
   height: $top_header_height64;
   background: $sub_color;
   border-bottom: 1px solid $border_color;
-  @include breakpoint(max-width $screen_width1440){
-    padding: 0 16px;
-  }
   @include breakpoint(max-width $screen_width1024){
-    padding: 0 8px;
     border-bottom: 1px solid $border_color !important;
   }
   @include breakpoint(max-width $screen_width768){
-    padding: 0 16px;
 	height: $top_header_height44;
 	line-height: $top_header_height44;
-  }
-  @include breakpoint(max-width $screen_width500){
-    padding: 0 10px;
-  }
-  @include breakpoint(max-width $screen_width360){
-    padding: 0 8px;
   }
   i{
     cursor: pointer;
@@ -226,101 +216,58 @@ input[type="text"],input[type="password"]{
       }
 	  .header_search_box{
         position: relative;
-        display: inline-block;
 		text-align: left;
-		width: $width100p;
-        height: $search_box_height32;
-        line-height: $search_box_height32;
-        @include border-radius($search_box_height32);
-		background: $grey_color3;
+		width: 100%;
+		@include display-flex(center,row);
+		height: $search_box_height32;
+        @include border-radius($border_radius40);
+        background: $grey_color3;
       }
 	  i{
 		font-size: $font_size20;
-      	display: inline-block;
       	margin-left:16px;
+		@include breakpoint(max-width $screen_width960){
+          margin-left: 8px;
+        }
       }
 	  .search_text{
-        vertical-align:top;
-        display: inline-block;
-        width: 61.6%;
-        line-height: $input_text_height38;
+	    @include flex(2);
         border: none;
         background: none;
-		//font-weight: normal;
+		font-weight: normal;
 		@include breakpoint(max-width $screen_width1200){
-		  width: 53%;
 		  padding: 0 8px;
         }
-		@include breakpoint(max-width $screen_width1024){
-		  width: 49%;
-        }
 		@include breakpoint(max-width $screen_width960){
-		  width: 48%;
+		  //padding: 0 4px;
         }
       }
 	  .search_btn{
 	    position: relative;
-        display: inline-block;
-		float: right;
-        width: 128px;
-        height: 32px;
-        line-height: 22px;
+		height: $search_box_height32;
+		padding: 0 16px;
         font-size: $font_size14;
         @include border-radius(32px);
 		background: $border_color;
 		border: 4px $border_style $grey_color3; 
-		text-align: center;
         cursor: pointer;
-		@include breakpoint(max-width $screen_width500){
-          width: 35%;
-        }
+		@include breakpoint(max-width $screen_width960){
+		  //padding: 0 8px;
+		}
+		&>div:first-child{
+		  @include display-flex(center,row);
+		  height: 100%; //字垂直置中對齊
+		}
 		i{
-	      margin-left:0;
-		  vertical-align: middle;
+	      margin-left: 8px;
+		  @include breakpoint(max-width $screen_width960){
+		    //margin-left: 4px;
+		  }
         }
-		#search_type{
-          display: inline-block;
+		.search_type{
+		  @include width-max-content;
         }
       }
-	  .search-menu {
-		left:246px;
-		min-width: 94px;
-		@include breakpoint(max-width $screen_width768){
-	      left:240px;
-	      min-width: 96px;
-	    }
-		@include breakpoint(max-width 812px){
-	      left:250px;
-        }
-		@include breakpoint(max-width 823px){
-	      left:230px;
-        }
-		@include breakpoint(max-width 768px){
-	      left:240px;
-        }
-		@include breakpoint(max-width 736px){
-	      left:240px;
-        }
-        @include breakpoint(max-width 667px){
-	      left:240px;
-        }
-		@include breakpoint(max-width $screen_width500){
-	      left:168px;
-	      min-width: 90px;
-        }
-        @include breakpoint(max-width 411px){
-	      left:220px;                       
-        }                                   
-		@include breakpoint(max-width 375px){
-	      left:160px;
-        }
-		@include breakpoint(max-width $screen_width360){
-	      left:150px;
-        }
-		a{
-	  	  font-size: $font_size16;
-	    }
-	  }
     }
 	.header_search_close{
       float:right;
@@ -333,17 +280,21 @@ input[type="text"],input[type="password"]{
   /* 電腦版搜尋區塊開始 */
   #header_top{
   	position: relative;
+	padding: 0 32px;
 	width: $width100p;
 	height: inherit;
   	display: inline-block;
-  	//font-weight: $font_weight;
-	margin: auto;
+  	margin: auto;
 	@include display-flex(center,row);
+	@include breakpoint(max-width $screen_width960){
+	  padding: 0 16px;
+	}
 	@include breakpoint(max-width $screen_width768){
       height: $top_header_height44;
       line-height:$top_header_height44;
       text-align: right;
       width: $width100p;
+	  padding: 0 8px;
     }
     &.header_top_close{
 	  display: none;
@@ -376,18 +327,15 @@ input[type="text"],input[type="password"]{
 	  }
     }
 	.pin_creator{
-      //font-weight: $font_weight;
-	  margin-left: 12px;
+      margin-left: 12px;
 	  font-size: $font_size14;
 	  @include display-flex(flex-start,column);
 	  @include breakpoint(max-width $screen_width1200){
 		margin-left: 1%;
 	  }
 	  @include breakpoint(max-width $screen_width768){
+	    @include flex(2);
 	    @include display-flex(center,row);
-	  }
-	  @include breakpoint(max-width $screen_width360){
-	    display: none;
 	  }
 	  @include breakpoint(max-width $screen_width320){
 	    font-size: $font_size12;
@@ -395,7 +343,6 @@ input[type="text"],input[type="password"]{
 	  a{
         color: $pink_color2;
       }
-	  //&>div:first-child{ //.current_point
 	  .current_point{
 	    margin-bottom: 4px;
 		@include breakpoint(max-width $screen_width768){
@@ -411,144 +358,96 @@ input[type="text"],input[type="password"]{
 		}
 	  }
     }
-	.pin_gift{
-	  @include flex(2);
-	  margin-left: 32px;
-	  text-align: left;
-	  @include breakpoint(max-width $screen_width1024){
-	    margin-left: 24px;
-	  }
-	  @include breakpoint(max-width $screen_width960){
-	    margin-left: 8px;
-		//margin-left: 16px;
-	  }
-	  @include breakpoint(max-width $screen_width768){
-	    //margin-left: 1%;
-		margin-left: 16px;
-	  }
-	  .pin_gift_style{
-	    a{
-		  font-weight: $font_weight;
-	      background: none;
-		  color: $pink_color2;
-	    }
-	  }
-	}
 	.header_search{ //大版搜尋框
 	  position: relative;
+	  @include flex(2);
+	  text-align: left;
 	  margin-left: 32px;
-	  width: 468px;
-	  //height: $search_box_height40;
-	  //line-height: $search_box_height40;	 
-	  @include breakpoint(max-width $screen_width1919){
-		width: 452px;
-      }
-	  @include breakpoint(max-width $screen_width1200){
-		width: 30%;
-      }
-	  @include breakpoint(max-width $screen_width960){
-		margin-left: 8px;
-		width: 26%;
-      }
 	  @include breakpoint(max-width $screen_width768){
 	    display: none;
       }
 	  .header_search_box{
         position: relative;
-        display: inline-block;
 		text-align: left;
-		width: $width100p;
-        height: $search_box_height40;
-        line-height: $search_box_height40;
+		width: 468px;
+		@include display-flex(center,row);
+		height: $search_box_height40;
         @include border-radius($border_radius40);
         background: $grey_color3;
-        vertical-align:middle;
+        @include breakpoint(max-width $screen_width1919){
+		  width: 468px;
+        }
+		@include breakpoint(max-width $screen_width1600){
+		  width: 60%;
+        }
+		@include breakpoint(max-width $screen_width1024){
+		  width: 88%;
+        }
       }
 	  i{
-		font-size: $font_size20;
-      	display: inline-block;
+	    font-size: $font_size20;
       	margin-left:16px;
 		@include breakpoint(max-width $screen_width960){
           margin-left: 8px;
         }
       }
 	  .search_text{
-        vertical-align:top;
-        display: inline-block;
-        //width: 290px;
-		width: 61.6%; //width: 61.97%;
-        line-height: $input_text_height38;
-        border: none;
+        @include flex(2);
+		border: none;
         background: none;
 		font-weight: normal;
 		@include breakpoint(max-width $screen_width1200){
-		  width: 53%;
 		  padding: 0 8px;
         }
-		@include breakpoint(max-width $screen_width1024){
-		  width: 49%;
-        }
 		@include breakpoint(max-width $screen_width960){
-		  //width: 48%;
-		  width: 44%;
 		  padding: 0 4px;
         }
       }
 	  .search_btn{
-	    position: relative;
-        display: inline-block;
-		float: right;
-        //width: 90px;
-		width: 128px; //27.35%
-        height: 40px;
-        line-height: 32px;
+	    position: relative;		
+		height: $search_box_height40;
+		padding: 0 16px;
         font-size: $font_size14;
-        //border-left: 1px solid $sub_color;
-		@include border-radius(32px);
+        @include border-radius(32px);
 		background: $border_color;
 		border: 4px $border_style $grey_color3; 
-		text-align: center;
         cursor: pointer;
-		@include breakpoint(max-width $screen_width1919){
-		  width: 27.35%
-		}
-		@include breakpoint(max-width $screen_width1200){
-		  width: 31%
-		}
 		@include breakpoint(max-width $screen_width960){
-		  margin-right: 0;
-		  padding-left: 0;
-		  width: 38%;
-        }
+		  padding: 0 8px;
+		}
+		&>div:first-child{
+		  @include display-flex(center,row);
+		  height: 100%; //字垂直置中對齊
+		}
 		i{
-	      margin-left:0;
-		  vertical-align: middle;
+	      margin-left: 8px;
+		  @include breakpoint(max-width $screen_width960){
+		    margin-left: 4px;
+		  }
         }
-		#search_type{
-          display: inline-block;
+		.search_type{
+		  @include width-max-content;
         }
       }
     }
     .header_menu{
 	  @include display-flex(center,row);
-	  @include breakpoint(max-width $screen_width768){
-	    display:none;
-	  }
-	  a{
-        position: relative;	  
-        display: inline-block;
-		@include flex(-1 0 0);
-		text-align: right; 
-        font-size: $font_size16;
-		margin-left: 64px;
-		@include breakpoint(max-width $screen_width1440){
-		  margin-left:32px;
-		}
-		@include breakpoint(max-width $screen_width960){
-		  margin-left: 16px;
-		}
-		@include breakpoint(max-width $screen_width800){
-		  margin-left: 12px;
+	  &>div{
+	    &>a{
+          position: relative;	  
+          display: inline-block;
+		  @include flex(-1 0 0);
+		  font-size: $font_size16;
+		  margin-left: 64px;
+		  @include breakpoint(max-width $screen_width1440){
+		    margin-left:32px;
+		  }
+		  @include breakpoint(max-width $screen_width960){
+		    margin-left: 16px;
+		  }
+		  @include breakpoint(max-width $screen_width768){
+	        display:none;
+	      }
 		}
       }
 	  #login{
@@ -588,57 +487,50 @@ input[type="text"],input[type="password"]{
   }/* 電腦版搜尋區塊結束 */
   /* 通知選單開始 */
   /* 登入選單樣式 */
-  #login_menu{
-    display:none;
-	position: absolute;
-	right: 0;
+  #login_menu, .login_menu{
     width: $menu_width;
-    background: $sub_color;
-    border: 1px solid $menu_border_color;
-    padding: $menu_padding32;
-	height:auto;
-	max-height: 70vh;
+    max-height: $menu_header_height;
 	font-size: $menu_font18;
 	@include breakpoint(max-width $screen_width768){
       width: $width100p;
-	  max-height: 96vh;
+	  max-height: $menu_header_max_height; //96vh;
 	  font-size: $menu_font16;
 	}
 	@include breakpoint(max-width $screen_width320){
 	  max-height: 92vh;
 	}
-	ul{
+	&>ul{
 	  width: $width100p;
-	  li{
+	  &>li{
+	    width: 100%;
 	    text-align: left;
 	    border-bottom: 1px solid $menu_border_color;
   	    margin-bottom: $menu_margin32;
 		line-height: $menu_line_height24;
-		overflow: hidden;
-		@include display-flex('',row);
+		//overflow: hidden;
+		@include display-flex(flex-start,row);
+		display: flex !important; 
 		@include breakpoint(max-width $screen_width768){
 	      line-height: $menu_line_height22;
-		}
-	    &>div{
-		  @include flex(1);
 		}
 		//分類
 		&>div:first-child{
 		  width: 124px;
+		  //width: 118px;
 		  margin-right: 32px;
 		  @include word-break;
 		}
 		//細項
 		&>div:last-child{
 		  font-weight: $font_weight;
-		}
-		ul{
-		  li{
-		    border-bottom: 0;
-			margin-bottom: 16px;
-		  }
-		  li:last-child{
-  	        margin-bottom: $menu_margin32;
+		  ul{
+		    li{
+		      border-bottom: 0;
+			  margin-bottom: 16px;
+		    }
+		    li:last-child{
+  	          margin-bottom: $menu_margin32;
+		    }
 		  }
 		}
 	  }
@@ -647,39 +539,34 @@ input[type="text"],input[type="password"]{
 		margin-bottom: 0;
 	  }
 	}//.ul
-	&.login_menu_down {
-	  display: block;
-	  position: absolute; 
-	  right: 0;
-	  overflow-y: auto;
-	  @include breakpoint(max-width $screen_width768){
-	    margin-top: -1px;
-	  }
-	}
   }//#login_menu
   /* 通知選單樣式  */
-  #notifier_menu{
-    display:none;
-	position: absolute;
-	right: 0;
+  #notifier_menu, .notifier_menu{
     width: $menu_width;
-    background: $sub_color;
-    border: 1px solid $menu_border_color;
-    padding: $menu_padding32;
     text-align: left;
-	max-height: 70vh;
+	max-height: $menu_header_height;
 	@include breakpoint(max-width $screen_width768){
-      width: $width100p;
-	  max-height: 92vh;
+	  width: $width100p;
+	  min-width: $width100p;
+	  left: 0;
+	  max-height: $menu_header_max_height; //92vh;
 	}
-	ul{
-      li{
+	&>ul{
+	  width: $width100p;
+	  &>li{
+	    width: $width100p;
         border-bottom: 1px solid $menu_border_color;
-  	    margin-top: $menu_margin32;
-		padding-bottom: $menu_margin32;
+  	    margin-top: $menu_margin32 !important;
+		padding-bottom: $menu_margin32 !important;
   	    &>a{
+		  width: $width100p;
+		  @include breakpoint(max-width $screen_width768){
+	        width: $width100p;
+	        min-width: $width100p;
+	      }
+		  @include display-flex(flex-start,row);
 		  &>div{
-  	        display: inline-block;
+  	        @include flex(-1 0 0);
   	      }
 		  img{
             object-fit: cover;
@@ -687,7 +574,8 @@ input[type="text"],input[type="password"]{
             height: 100%;
           }
 		  .notifier_info{ //通知區塊
-		    margin-left: $menu_margin16;
+		    @include flex(2);
+			margin-left: $menu_margin16;
 		    vertical-align: top;
 		    &>span{
 		      display: block;
@@ -696,12 +584,18 @@ input[type="text"],input[type="password"]{
 			//通知標題
 		    &>span:first-child{
 		      width: $menu_ellipsis2;
+			  text-align: justify;
+			  //width: 100%;
 			  @include ellipsis;
+		      //@include line-clamp(vertical,1);
+			  @include breakpoint(max-width $screen_width768){
+			    width: $width100p;
+			  }
 			  @include breakpoint(max-width $screen_width360){
-			    width: $menu_ellipsis;
+			    //width: $menu_ellipsis;
 			  }
 			  @include breakpoint(max-width $screen_width320){
-			    width: $menu_ellipsis3;
+			    //width: $menu_ellipsis3;
 			  }
 		    }
 			//通知時間
@@ -712,21 +606,15 @@ input[type="text"],input[type="password"]{
 		}//.a
       }//.li
 	  li:first-child{
-	    margin-top: 0;
+	    margin-top: 0 !important;
 	  }
 	  li:last-child{
-	    border-bottom: 0;
-		//margin-bottom: 0;
+	    border-bottom: 0 ;
+		//padding-bottom: 0 !important;
+		padding-bottom: 16px !important;
 	  }
     }
-    &.login_menu_down{
-      display: block;
-      overflow-y: auto;
-      position: absolute;
-	  @include breakpoint(max-width $screen_width768){
-	    margin-top: -1px;
-	  }
-    }
+	//通知頭圖設定
     .notifier_img_c, .notifier_img_w,{
       overflow:hidden;
       width: $menu_image_width48;
@@ -792,7 +680,7 @@ input[type="text"],input[type="password"]{
         display: inline-block;
 		@include flex(-1 0 0);
 		&:last-order{
-		  background: yellow;
+		  //background: yellow;
 		}
 		
         margin-right: 2%;
@@ -967,6 +855,7 @@ input[type="text"],input[type="password"]{
 }
 /* 按鈕 */
 .btn_new{
+  
   display: inline-block;
   cursor: pointer;
   width: 100%;
@@ -1003,7 +892,7 @@ input[type="text"],input[type="password"]{
   //@include opacity(0.75);
 }
 /* 標題-粗體 */
-[id*="_title"],[id*="_name"],[class*="_title"],[class*="_name"]{
+[id*="_title"],[id*="_name"],[class*="_title"]{ //,[class*="_name"]
   font-weight: $font_weight;
 }
 /* 20181204: mars */
@@ -1108,25 +997,20 @@ label.error {
   color: red;
 }
 
-/* 當彈出選單突出頁面底部時  */
-.dropdown_menu_bottom{
-  top: auto !important;
-  bottom: 14px !important;
-}
-
-
-
-
 /* bootstrap選單樣式設定 */
 .dropdown_menu{
   @include min-width-max-content;
-  padding: 32px;
+  margin: 0;
+  padding: $menu_margin32;
   left: unset;
   right: 0;
-  border: 1px solid $grey_color2;
-  ul{
-    li{
+  border: $menu_bolder_width $menu_bolder_style $menu_border_color;
+  background: $sub_color;
+  overflow: auto;
+  &>ul{
+    &>li{
 	  @include width-max-content;
+	  //width: 100%;
 	  display: block !important;
 	  padding: 0 !important;
 	  margin: 0 !important;
