@@ -1,0 +1,65 @@
+<?php echo $index?>
+<script>
+jQuery('#jqgrid').jqGrid({
+	caption: '<?php echo $this->get_adminmenu_name_by_class(M_CLASS)?>',
+   	url: '<?php echo self::url(M_CLASS, 'json')?>',
+   	mtype: 'GET',
+	datatype: 'json',
+   	colNames: ['<?php echo M_CLASS?>_id', 'name', 'level', 'act', 'sequence', 'modifytime', 'modifyname'],
+   	colModel: [
+   		{name:'<?php echo M_CLASS?>_id', index:'<?php echo M_CLASS?>.<?php echo M_CLASS?>_id', width:2, align:'right'},
+   		{name:'name', index:'<?php echo M_CLASS?>.name', width:3},
+   		{name:'level', index:'<?php echo M_CLASS?>.level', width:2, align:'right'},
+   		{name:'act', index:'<?php echo M_CLASS?>.act', width:2, align:'center', cellattr: function(rowId, val) {return 'class="act_' + val + '"';}},
+   		{name:'sequence', index:'<?php echo M_CLASS?>.sequence', width:2, align:'right', editable:true, editrules:{integer:true, minValue:0, maxValue:65535}},
+   		{name:'modifytime', index:'<?php echo M_CLASS?>.modifytime', width:3, align:'center'},
+   		{name:'modifyname', index:'<?php echo M_CLASS?>.modifyadmin_id', width:2, align:'center'}
+   	],
+   	rowNum: 20,
+   	rowList: [20,50,100],
+    autowidth: true,
+    height: 'auto',
+   	pager: '#pjqgrid',
+   	sortname: '<?php echo M_CLASS?>.modifytime',
+   	sortorder: 'desc',
+   	viewrecords: true,
+    gridview: true,
+    gridComplete: function () {
+    },
+    cellEdit: true,
+    cellurl: '<?php echo self::url(M_CLASS, 'jqgrid_edit')?>',
+    beforeSubmitCell: function (id, celname, value, iRow, iCol) {
+    	var ret = jQuery('#jqgrid').jqGrid('getRowData', id);
+    	return {'<?php echo M_CLASS?>_id': ret.<?php echo M_CLASS?>_id, 'celname': celname, 'value': value};
+    }
+});
+jQuery('#jqgrid').jqGrid('filterToolbar', {stringResult: true, searchOnEnter: true});
+jQuery('#jqgrid').jqGrid('navGrid', '#pjqgrid', {
+	search: false,
+	addfunc: function () {
+		location.href = '<?php echo self::url(M_CLASS, 'form', array('act'=>'add'))?>';
+	},
+	editfunc: function (id) {
+		var ret = jQuery("#jqgrid").jqGrid('getRowData', id);
+		location.href = '<?php echo self::url(M_CLASS, 'form', array('act'=>'edit'))?>&<?php echo M_CLASS?>_id='+ret.<?php echo M_CLASS?>_id;
+	},
+	delfunc: function (id) {
+		if (confirm('<?php echo _('Are you sure to delete it?')?>') && id) {
+			var ret = jQuery("#jqgrid").jqGrid('getRowData', id);
+			$.post('<?php echo self::url(M_CLASS, 'delete')?>', {
+				<?php echo M_CLASS?>_id: ret.<?php echo M_CLASS?>_id
+			}, function(response){
+				response = $.parseJSON(response);
+				var result = response.result;
+				var message = response.message;
+				if (result) {
+					jQuery("#jqgrid").jqGrid('delRowData', id);
+					alert(message);
+				} else {
+					alert(message);
+				}
+			});
+		}
+	}
+});
+</script>

@@ -1,0 +1,237 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+    <h2><?php echo _('Member Center'); ?></h2>
+    <ul>
+        <li class="mobiledisplay"><h3><?php echo _('Statistics on returns'); ?></h3></li>
+        <li class="mobiledisplay">
+            <div class="line"></div>
+        </li>
+        <li class="mobile_open03">
+            <a href="<?php echo self::url('user', 'sale_album') ?>"><?php echo _('Sponsored albums'); ?></a>
+            <a href="javascript:void(0)" class="active"><?php echo _('Profit settlement'); ?></a>
+        </li>
+        <li>
+            <?php include 'member_nav.phtml'; ?>
+
+            <div id="memberbox_item">
+                <div id="album_tab">
+                    <h3><?php echo _('Statistics on returns'); ?></h3>
+                </div>
+                <div class="album_all">
+                    <div id="memset_info">
+                        <ul>
+
+                            <?php
+                            $session_user = (new \userModel)->getSession();
+
+                            if ($session_user && !\userModel::isDownlineOfBusinessUserOfCompany($session_user['user_id'])) {
+
+                                ?>
+
+                                <li>
+                                    <div id="account_box">
+                                        <div id="account_info">
+                                            <ul>
+                                                <li class="green">
+                                                    <span style="float: left;"><?php echo $account_info['name'] ?> </span>
+                                                    <span style="width:23px; height:23px; background-image:url('<?php echo static_file('images/level_icon.png') ?>'); background-size: 100%; text-align: center; line-height: 23px; margin-left: 5px; float: left; color: #FFF;">
+												<?php echo $account_info['level'] ?>
+												</span>
+                                                </li>
+                                                <li>
+                                                    <div class="tdtitle02"><?php echo _('Date of registration'); ?></div>
+                                                    <div class="tdtxt02"><?php echo $account_info['register_time'] ?></div>
+                                                </li>
+                                                <?php
+                                                if ($session_user && \businessuser\Model::isUpline($session_user['user_id'])) {
+                                                    ?>
+
+                                                    <li>
+                                                        <div class="tdtitle02"><?php echo _('本帳號拆分比'); ?></div>
+                                                        <div class="tdtxt02"><?php echo $account_info['album_pointsplitrate'] ?></div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tdtitle02"><?php echo _('由經紀帳號拆分'); ?></div>
+                                                        <div class="tdtxt02"><?php echo (\Model\split::getRatioForBusinessuser($session_user['user_id']) * 100) . '%' ?></div>
+                                                    </li>
+
+                                                    <?php
+                                                } else {
+                                                    ?>
+
+                                                    <li>
+                                                        <div class="tdtitle02"><?php echo _('拆分比'); ?></div>
+                                                        <div class="tdtxt02"><?php echo $account_info['album_pointsplitrate'] ?></div>
+                                                    </li>
+
+                                                    <?php
+                                                }
+                                                ?>
+                                                <li>
+                                                    <div class="tdtitle02"><?php echo _('Remittance Method'); ?></div>
+                                                    <div class="tdtxt02"><?php echo $account_info['remittance'] ?></div>
+                                                </li>
+                                                <?php
+                                                echo $account_info['remittance_info'];
+                                                ?>
+                                                <li>
+                                                    <div class="tdtitle02"><?php echo _('Currency for payment'); ?></div>
+                                                    <div class="tdtxt02"><?php echo $account_info['currency']; ?></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div id="account_total">
+                                            <ul>
+                                                <li>
+                                                    <div class="tdtitle02"><?php echo _('累積總積分(拆分後)'); ?></div>
+                                                    <div class="tdtxt02"><?php echo number_format($account_info['total_sum_pointsplit']); ?>
+                                                        分
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="tdtitle02"><?php echo _('本月積分'); ?></div>
+                                                    <div class="tdtxt02"><span
+                                                                class="unsettlement"><?php echo number_format($account_info['total_unsettled_pointsplit']); ?></span>分
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="tdtitle02"><?php echo _('可兌換積分'); ?></div>
+                                                    <div class="tdtxt02"><span
+                                                                class="settled"><?php echo number_format($account_info['total_settled_pointsplit']); ?></span>分
+                                                    </div>
+                                                </li>
+                                                <?php echo $account_info['btn_value'] ?>
+                                                <!-- -->
+                                                <?php echo $account_info['tipText'] ?>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <?php
+                            }
+
+                            ?>
+
+                            <li>
+                                <div id="tab-container">
+                                    <ul class='etabs' id="account_tab">
+                                        <li class="active"><a href="#tab01"><?php echo _('每月積分'); ?><img
+                                                        src="<?php echo static_file('images/question.png'); ?>"
+                                                        id="question01" height="20" width="20"></a></li>
+
+                                        <?php
+                                        if ($session_user && !\userModel::isDownlineOfBusinessUserOfCompany($session_user['user_id'])) {
+                                            echo '<li><a href="#tab02">' . _('Settlement history') . '</a></li>';
+                                        }
+
+                                        ?>
+                                    </ul>
+                                    <div class="tab_content ">
+                                        <!-- 每月積分 -->
+                                        <div id="tab01" class="tab active">
+                                            <table class="footable" data-limit-navigation="5" data-page-size="12">
+                                                <thead>
+                                                <tr>
+                                                    <th>
+                                                        <?php echo _('Date'); ?>
+                                                    </th>
+                                                    <th data-hide="phone">
+                                                        <?php echo _('每月積分'); ?>
+                                                    </th>
+                                                    <th>
+                                                        <?php echo _('狀態'); ?>
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+                                                if (!empty($settlement)) {
+                                                    foreach ($settlement as $v) {
+                                                        echo '
+                                                            <tr>
+																<td>' . $v['starttime'] . '</td>
+																<td>' . $v['point'] . '分</td>
+																<td>' . $v['state'] . '</td>
+															</tr>';
+                                                    }
+                                                }
+                                                ?>
+                                                </tbody>
+                                                <tfoot>
+                                                <tr>
+                                                    <td colspan="5">
+                                                        <div class="pagination pagination-centered"></div>
+                                                    </td>
+                                                </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                        <!-- 歷史結算紀錄 -->
+                                        <div id="tab02" class="tab">
+                                            <table class="footable" data-limit-navigation="5" data-page-size="10">
+                                                <thead>
+                                                <tr>
+                                                    <th>
+                                                        <?php echo _('Date'); ?>
+                                                    </th>
+                                                    <th data-hide="phone">
+                                                        <?php echo _('Currency'); ?>
+                                                    </th>
+                                                    <th data-hide="phone">
+                                                        <?php echo _('Remittance Method'); ?>
+                                                    </th>
+                                                    <th data-hide="phone">
+                                                        <?php echo _('Sum'); ?>
+                                                    </th>
+                                                    <th data-hide="phone">
+                                                        <?php echo _('status'); ?>
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+                                                if (!empty($income)) {
+                                                    foreach ($income as $k => $v) {
+                                                        echo '<tr>  
+																<td>' . date('Y/m', strtotime($v['inserttime'])) . '</td>
+																<td>' . $v['currency'] . '</td>
+																<td>' . $v['remittance'] . '</td>
+																<td>' . number_format($v['total']) . '&nbsp;' . _('dollar') . '</td>
+																<td>' . $v['state'] . '</td>
+															</tr>';
+                                                    }
+                                                }
+                                                ?>
+                                                </tbody>
+                                                <tfoot>
+                                                <tr>
+                                                    <td colspan="6">
+                                                        <div class="pagination pagination-centered"></div>
+                                                    </td>
+                                                </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+    function check_settlement() {
+        <?php echo $account_info['script']; ?>
+    };
+
+    $(function () {
+        document.querySelector('#question01').onclick = function () {
+            swal("<?php echo _('每月積分是什麼？'); ?>", "<?php echo _('系統於每月1號的積分統計紀錄'); ?>")
+        };
+        $('.footable').footable();
+    });
+</script>

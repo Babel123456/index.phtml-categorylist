@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<link rel="icon" type="image/vnd.microsoft.icon" href="<?php echo static_file('images/favicon.ico')?>" />
+	<meta name="robots" content="noindex">
+	<meta name="googlebot" content="noindex">
+	<meta charset="UTF-8">
+	<meta name="keywords" content="<?php echo $seo['keywords']?>">
+	<meta name="description" content="<?php echo $seo['description']?>">
+	<meta property="og:title" content="<?php echo $seo['title']?>">
+	<meta property="og:description" content="<?php echo $seo['description']?>">
+	<meta property="og:image" content="<?php echo $seo['image']?>">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<title><?php echo $seo['title'] ?></title>
+	<link rel="stylesheet" href="<?php echo static_file('intro/css/fixed-positioning.css')?>">
+	<link rel="stylesheet" href="<?php echo static_file('intro/css/main.css')?>">
+	<link rel="stylesheet" href="<?php echo static_file('intro/css/bootstrap.min.css')?>">
+	<link rel="stylesheet" href="<?php echo static_file('intro/css/jBox.css')?>">
+	<link rel="stylesheet" href="<?php echo static_file('intro/css/bootstrap-theme.min.css')?>">
+</head>
+
+<?php echo Core::settings('GOOGLE_ANALYTICS_TRACKINGCODE')?>
+<body>
+	<div id="bg_header">
+		<div style="width:100%">
+			<a href="<?php echo self::url() ?>" class="home"><img src="<?php echo static_file('intro/images/home.png') ?>"></a>
+			<span><a href="javascript:void(0)" data-scroll="page03" class="nav">招募職人</a></span>
+			<span>|</span>
+			<span><a href="javascript:void(0)" data-scroll="page02" class="nav">如何使用</a></span>
+			<span>|</span>
+			<span><a href="javascript:void(0)" data-scroll="page01" class="nav">介紹</a></span>
+		</div>
+	</div>
+	
+	<div id="bg1_wrapper"  data-anchor="top">
+		<div id="intro" data-0="opacity:1;transform:rotate(0deg);transform-origin:0 0;" data-900="opacity:0;transform:rotate(-90deg);">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators" style="padding-left: ">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active" style="">
+						<a href="<?php echo self::url('user', 'register') ?>"><img src="<?php echo static_file('intro/images/banner04.png') ?>"></a>
+					</div>
+					<div class="item" style="">
+						<a href="<?php echo self::url('user', 'register') ?>"><img src="<?php echo static_file('intro/images/banner05.png') ?>"></a>
+					</div>
+					<div class="item" style="">
+						<a href="<?php echo self::url('creative', 'recruit') ?>"><img src="<?php echo static_file('intro/images/banner06.png') ?>"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="arrow_down"><a href="javascript:void(0)" data-scroll="page01" class="next_btn nav"><img src="<?php echo static_file('intro/images/next.png') ?>" style="margin-left:50%;"></a></div>
+	
+	<div id="bg2_wrapper"  data-anchor="page01">	
+		
+		<div id="easing" data-800="left:0%;top:-10%;width:0%" data-1000="left:10%;top:10%;width:30%" data-1200="left:10%;top:10%;width:30%" data-1600="left:5%;top:-10%;width:30%" data-1700="left:0%;top:10%;width:10%" data-1800="left:-50%;top:-10%;width:0%">
+			<p><img class="title" src="<?php echo static_file('intro/images/D_0.png') ?>"></p>
+			<p><img class="content" src="<?php echo static_file('intro/images/layer_22.png') ?>"></p>
+		</div>
+
+		<div id="transform"  data-550="opacity:0;left:150%;top:0%;display:block;" data-1000="opacity:1;left:85%;top:2%;display:block;"data-1200="opacity:1;left:85%;top:2%;display:block;" data-1800="opacity:0;left:100%;top:0%;display:none;">
+			<img class="bg2_mobile" src="<?php echo static_file('intro/images/mobile.png') ?>">
+		</div>
+	</div>
+	<div class="arrow_down"><a href="javascript:void(0)" data-scroll="page02" class="next_btn nav"><img src="<?php echo static_file('intro/images/next.png') ?>" style="margin-left:35%;margin-top:-5%;"></a></div>
+
+	<div id="bg3_wrapper"  data-anchor="page02"> 
+		<div class="content" data-1700="top:10%;opacity:0"  data-2000="top:10%;opacity:1" data-2300="top:10%;opacity:1" data-2800="top:10%;opacity:0">
+			<ul>
+				<li class="left" data-1700="left:-100%;opacity:0"  data-2000="left:0%;opacity:1" data-2300="left:0%;opacity:1" data-2800="left:-60%;opacity:1" data-3200="left:-100%;opacity:0;">
+					<img class=" p1" src="<?php echo static_file('intro/images/D.png') ?>">
+					<img class=" p2" src="<?php echo static_file('intro/images/q.png') ?>">
+				</li>
+				<li class="right" data-1700="opacity:0;display:none;"  data-2000="opacity:1;display:block;" data-2300="opacity:1" data-2800="opacity:1" data-3200="opacity:0;display:none;" >
+					<div data-0="top:-100%;opacity:0;display:none;" data-1700="top:-100%;opacity:0;display:block;" data-2000="top:0%;opacity:1;display:block;"  data-2600="top:0%;opacity:1;display:block;" data-2800="top:0%;opacity:1;display:none;" data-3200="top:-100%;opacity:0;;display:none;"> 
+						<div class="img01"><img class="text" src="<?php echo static_file('intro/images/layer_17.png') ?>"></div>
+						<div class="img02">
+							<a id="google_btn" href="<?php echo Core::settings('ANDROID_DATA_URI') ;?>" >
+								<img class="google_btn" src="<?php echo static_file('intro/images/googleplay.png') ?>">
+							</a>
+							<a id="apple_btn" href="<?php echo Core::settings('IOS_DATA_URI'); ?>">
+								<img class="ios_btn" src="<?php echo static_file('intro/images/appstore.png') ?>">
+							</a>
+							<a href="<?php echo self::url('user', 'register') ?>" ><img class="btn" src="<?php echo static_file('intro/images/button03_0.png') ?>"></a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="arrow_down"><a href="javascript:void(0)" data-scroll="page03" class="next_btn nav"><img src="<?php echo static_file('intro/images/next.png') ?>" style="margin-left:50%;margin-top:-5%;"></a></div>
+	
+	<div id="bg4_wrapper"  data-anchor="page03">
+		<div id="properties" data-3000="top:100%;" data-3100="top:0%;" data-3300="display:block;" data-3400="top:-20%;display:block;">
+			<p><img src="<?php echo static_file('intro/images/D_1.png') ?>"></p>
+			<p class="text"><img src="<?php echo static_file('intro/images/layer_31.png') ?>"></p>
+		</div>
+
+		<div style="text-align: center;width:100%"  data-0="top:-100%; opacity:0" data-1700="top:-100%; opacity:0" data-2900="top:30%; opacity:0" data-3000="top:30%; opacity:0" data-3100="opacity:1" data-3300="top:30%;opacity:1" data-3400="top:-100%;opacity:0">
+			<ul class="creative_list">
+				<li><a href="<?php echo self::url('loveeatmia') ?>"><img src="<?php echo static_file('intro/images/layer_26.png') ?>"></a></li>
+				<li><a href="<?php echo self::url('hopingjones') ?>"><img src="<?php echo static_file('intro/images/layer_27.png') ?>"></a></li>
+				<li><a href="<?php echo self::url('bobimonkey') ?>"><img src="<?php echo static_file('intro/images/layer_28.png') ?>"></a></li>
+				<li><a href="<?php echo self::url('towtow') ?>"><img src="<?php echo static_file('intro/images/layer_29.png') ?>"></a></li>
+				<li><a href="<?php echo self::url('ckaori66') ?>"><img src="<?php echo static_file('intro/images/layer_30.png') ?>"></a></li>
+			</ul>
+		</div>
+
+		<div id="properties" style="height:auto" data-3000="top:100%;" data-3100="top:80%;" data-3300="display:block;" data-3400="top:40%;display:block;">
+			<a href="<?php echo self::url('creative', 'recruit') ?>"><img src="<?php echo static_file('intro/images/p4_btn.png') ?>"></a>
+		</div>
+	</div>
+	<div id="bg_footer">
+		<div class="text">
+			<a class="logo" href="<?php echo self::url() ?>"> <img class="logo" src="<?php echo static_file('intro/images/LOGOgray.png') ?>"></a>
+			<span><a href="<?php echo self::url('recruit') ?>">合作提案</a></span>
+			<span>|</span>
+			<span><a href="<?php echo self::url('index', 'qanda') ?>">Ｑ＆Ａ</a></span>
+			<span>|</span>
+			<span><a href="<?php echo Core::settings('FACEBOOK_PAGE_URL');  ?>">Facebook</a></span>
+		</div>
+		<div class="text" style="margin-top:-3%">
+			<span class="rights">© 2016 pinpinbox All Rights Reserved.</span>
+		</div>
+	</div>
+
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="dist/skrollr.ie.min.js"></script>
+	<![endif]-->
+</body>
+
+<script type="text/javascript" src="<?php echo static_file('js/jquery-1.11.3.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo static_file('intro/js/skrollr.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo static_file('intro/js/require.js') ?>"></script>
+<script type="text/javascript" src="<?php echo static_file('intro/js/bootstrap.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo static_file('intro/js/jBox.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo static_file('js/browser-deeplink-master/browser-deeplink.min.js') ?>"></script>
+<script>
+	$(function () {
+		$('a.nav').on('click', function() {
+		    var scrollAnchor = $(this).attr('data-scroll');
+		    var scrollPoint = $('div[data-anchor="'+scrollAnchor+'"]').offset().top+100;
+		    $('body,html').animate({
+		        scrollTop: scrollPoint
+		    }, 1750);
+		    return false;
+		})
+	});
+
+  	var s = skrollr.init({
+		edgeStrategy: 'set',
+		easing: {
+			WTF: Math.random,
+			inverted: function(p) {
+				return 1-p;
+			}
+		}
+	});
+
+	function clickHandler(uri) {
+		deeplink.setup({
+			iOS: {
+				appName: "pinpinbox",
+				appId: "<?php echo Core::settings('IOS_APP_ID'); ?>",
+			},
+			android: {
+				appId: "<?php echo Core::settings('ANDROID_APP_URL'); ?>"
+			}
+		});
+
+		deeplink.open(uri);
+		return false;
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!-- 內容頁開始 -->
+<div id="rescuit_content">
+	<div id="rescuit_in">
+		<ul>
+			<li><h2><?php echo $special['name'].'  -  '._('活動訊息'); ?></h2></li>
+			<li><div class="line"></div></li>
+			<li><p><?php echo $special['description']; ?> </p></li>
+			<li>
+				<?php 
+					if(!empty($special_award) && $special['info_required']) {
+						foreach($special_award as $k0 => $v0) {
+							if(!is_null($exchanged_award_id) && $v0['special_award_id'] != $exchanged_award_id) continue;
+							echo '<label >
+									<div class="choose_gift">
+										<img src="'.$v0['image'].'">
+										<p><input '.$v0['status'].' name="award" type="radio" data-key="'.$v0['key'].'" value="'.$v0['special_award_id'].'" class="gift_style">'.$v0['name'].'<span>'.$v0['current'].$v0['unit'].'</span></p>
+									</div>
+								</label>';
+						}
+					}
+				?>
+			</li>
+
+            <?php if($special['info_required']) { ?>
+			<li>
+				<p><?php echo _('請輸入您的寄送聯絡資料') ?></p>
+				<form class="form-horizontal">
+					<div class="control-group">
+						<div class="">
+							<input type="text" id="name" placeholder="<?php echo _('姓名') ?>">
+						</div>
+					</div><br>
+					<div class="control-group">
+						<div class="">
+							<input type="text" id="phone" placeholder="<?php echo _('電話') ?>">
+						</div>
+					</div><br>
+					<div class="control-group">
+						<div class="">
+							<input type="text" id="email" placeholder="<?php echo _('Email') ?>">
+						</div>
+					</div><br>
+					<div class="control-group">
+						<div class="">
+							<input type="text" id="address" placeholder="<?php echo _('通訊地址') ?>">
+						</div>
+					</div><br>
+				</form>
+			</li>
+			<?php } ?>
+			<li><?php echo $special['remark'] ?></li>
+			<li><?php echo $button ;?></li>
+			<li><?php echo $back_btn ;?></li>
+			
+			<ul id="social_share" class="social-likes social-likes_notext"  data-title="<?php echo $special['name']; ?>">
+				<li style="display:none;" class="facebook" title="<?php echo _('Share event to Facebook'); ?>"></li>
+			</ul>
+		</ul>
+	</div>
+</div>
+<script>
+$(document).ready(function(){
+	$('#exchge_submit').on('click', function(){
+		var name = $('#name').val(),
+			phone = $('#phone').val(),
+			address = $('#address').val(),
+			email = $('#email').val(),
+			award = $("input[name='award']:checked").val(),
+			key = $("input[name='award']:checked").data('key');
+			
+		if (typeof award == "undefined" || name == '' || phone == '' || email == '' || address == '' ) {
+			site_jBox({'message':'<?php echo _('請重新確認您的領獎資訊'); ?>'}, 'error');
+		}else{
+			$.post('<?php echo self::url('event', 'special_exchange') ?>' , {
+				name : name,
+				phone : phone,
+				address : address,
+				email : email,
+				award_id : award,
+				key : key,
+				event_id : '<?php echo $special['event_id']?>',
+				special_id : '<?php echo $special['special_id']?>',
+			},function(r){
+				r = $.parseJSON(r);
+				if (r.result == 1) {
+					img = '<?php echo static_file('images/success.png')?>';
+					var siteModal = new jBox('Modal', {
+						closeButton: 'title',
+						closeOnClick: false,
+						closeOnEsc: false,
+						delayOpen: 200,
+						title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="'+img+'">',
+						onCloseComplete: function() {
+							if (r.redirect) location.href = r.redirect;
+						},
+						maxWidth: 1000,
+						minWidth: 100,
+					}).setContent('<div class="content">' + r.message + '</div>').open();
+					
+					//initialize social when exchge
+					$('#social_share').socialLikes({
+						url: '<?php echo self::url('event', 'content', ['event_id'=>$special['event_id'], 'searchtype'=>'album_id', 'searchkey'=>'']) ; ?>'+r.data,
+						title: '<?php echo _('Share the pinpinbox photo event!'); ?>',
+						counters: true,
+						singleTitle: 'Share it!',
+					});
+					
+					$('#copy').trigger('click');
+				}else{
+					site_jBox(r, 'error');
+				}
+			});
+		}
+	});
+
+}).on('click', '#fb_share', function(){
+	$('span.social-likes__button_facebook').trigger('click');
+}).on('click', '#copy', function(){
+	var client = new ZeroClipboard( document.getElementById("copy"));
+	client.on( "ready", function( readyEvent ) {
+		client.on( "aftercopy", function( event ) { ZeroClipboard.destroy(); } );
+	});
+});
+
+//counter link
+$('#social_share').on('popup_closed.social-likes', function(event, service) {
+	$(event.currentTarget).socialLikes({forceUpdate: true});
+    var counter = $(event.currentTarget).find('.social-likes__counter_' + service);
+    counter.text(+(counter.text()||0)+1).removeClass('social-likes__counter_empty');
+});
+	
+</script>

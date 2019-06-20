@@ -1,0 +1,448 @@
+<div id="content" class="">
+	<h3 class="page_title"><?php echo _('Create'); ?></h3>
+	<div id="">
+		<div class="album_search temp">
+			<?php echo $quick; ?>		
+		</div>
+		
+		<div class="row new_nav">
+			<div class="col-md-7 tree_box">
+				<ol class="breadcrumb">
+					<img src="<?php echo static_file('images/p_icon.png') ?>">
+					<?php echo '<li><a href="'.self::url('template', 'index').'">'._('所有版型').'</a></li>'; ?>
+					<!-- Level 1 : style -->
+					<li class="dropdown">
+						<?php 
+							echo (!empty($style_name)) 
+							? '<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span id="categoryarea_name">'.$style_name.'</span> <span class="caret"></span></a>'
+							: '<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span id="categoryarea_name">'._('所有版型').'</span> <span class="caret"></span></a>';
+						?>
+						<ul class="dropdown-menu" role="menu">
+							<?php 
+								foreach($a_style as $k0 => $v0) {
+									echo '<li><a href="'.$v0['url'].'">'.$v0['name'].'</a></li>';
+								}
+							?>
+						</ul>
+					</li>
+					<!-- Level 2 : template_name -->
+					<li class="dropdown">
+						<?php 
+							echo '<span id="categoryarea_name">'.$template['name'].'</span></span>'
+						?>
+					</li>
+				</ol>
+			</div>
+			<div class="col-md-5">
+				<div class="btn-group btn-group-justified">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><?php echo _('Hot') ?>  <span class="caret"></span></button>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="<?php echo $rank0?>" <?php if ($rank == 0) echo 'class="active"'?>><?php echo _('Hot'); ?></a></li>
+							<li><a href="<?php echo $rank1?>" <?php if ($rank == 1) echo 'class="active"'?>><?php echo _('Free'); ?></a></li>
+							<li><a href="<?php echo $rank2?>" <?php if ($rank == 2) echo 'class="active"'?>><?php echo _('Paid'); ?></a></li>
+							<li><a href="<?php echo $rank3?>" <?php if ($rank == 3) echo 'class="active"'?>><?php echo _('Latest'); ?></a></li>
+							<li><a href="<?php echo $rank4?>" <?php if ($rank == 4) echo 'class="active"'?>><?php echo _('Purchased'); ?></a></li>
+						</ul>								
+					</div>	
+					<div class="btn btn-default" ><a href="<?php echo self::url('album', 'index') ?>" data-toggle="tooltip" data-placement="bottom"  data-original-title="<?php echo _('Explore'); ?>"><i class="demo-icon icon-icon_album-01"></i></a></div>
+					<div class="btn active"><a href="javascript:void(0)?>" data-toggle="tooltip" data-placement="bottom"  data-original-title="<?php _('Create'); ?>"><i class="demo-icon icon-icon_start-01"></i></a></div>	
+					<div class="btn btn-default"><a href="<?php echo self::url('creative', 'index') ?>" data-toggle="tooltip" data-placement="bottom"  data-original-title="職人專區"><i class="demo-icon icon-icon_creator-01"></i></a></div>			
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="tem_content" class="no_rwd" >
+		<ul>
+			<li>
+				<div id="slide_pic">
+					<div class="temp_slide">
+						<div id="temp_scroll_container">
+							<div class="temp_list">
+								<ul>
+									<?php 
+									if(!empty($template['preview'])) {
+										foreach($template['preview'] as $k0 => $v0) {
+											echo '<li><a href="javascript:void(0);"><img data-num="'.$k0.'" src="'.$v0['normal'].'" height="1024" width="683" ></a></li>';
+										}
+									}
+									?>
+								</ul>
+							</div>
+							<a class="abtn aleft" href="#up">上移</a>
+							<a class="abtn aright" href="#down">下移</a>
+						</div>
+						<div id="temp_bigimage">
+						<div class="zoom"></div>
+						<a href="javascript:void(0);" id="links" onclick="browse_template()"><img src="<?php echo $template['image'] ?>"  height="1024" width="683" id="bigimage"></a>
+						</div>
+					</div>
+				</div>
+				<div id="temp_infobox">
+					<?php echo $template['event_templatejoin'] ?>
+					<ul>
+						<li class="social">
+							<ul id="social_share" class="social-likes social-likes_notext" data-url="<?php echo self::url('template', 'content', array('template_id'=>$template['template_id']))?>" data-title="<?php echo $template['name']; ?>">	
+								<li class="facebook" title="<?php echo _('Share template to facebook'); ?>"></li>
+								<li class="twitter" title="<?php echo _('Share template to twitter'); ?>"></li>
+								<li class="plusone" title="<?php echo _('Share template to Google+'); ?>"></li>
+								<li class="pinterest" title="<?php echo _('Share template to pinterest'); ?>" data-media="<?php echo $template['image'];?>"></li>	
+								<li class="line" title="<?php echo _('Share template to line'); ?>"></li>		
+							</ul>
+						</li>
+						<li><h3><?php echo $template['name'] ?></h3></li>
+						<li>
+						<div class="by_pic"><img src="<?php echo URL_STORAGE.Core::get_userpicture($template['user']['user_id']) ?>" onerror="this.src='<?php echo static_file('images/face_sample.svg')?>'" height="101" width="101"></div>
+						<div class="by_info">
+							<p class="need_help">
+								<i class="arrow_in"></i><?php echo ($template['record'] != false)? _('已取得') : _('未取得'); ?>
+							</p>
+							<p class="by">by <a href="javascript:void(0);">pinpinbox</a></p>
+						</div>
+						</li>
+						<li>
+							<p class="descrip">
+								<?php echo preg_replace('/<br\\s*?\/??>/i', '<br>', $template['description']); ?>
+							</p>
+						</li>
+						<li><div class="line"></div></li>
+						<?php 
+							echo $button;
+						?>
+						<li>
+							<p class="tdtitle"><?php echo _('Size'); ?></p>
+							<p class="tdtxt"><?php echo $template['width'] ?>*<?php echo $template['height'] ?></p>
+						</li>
+						<li>
+							<p class="tdtitle"><?php echo _('Pattern'); ?></p>
+							<p class="tdtxt"><?php echo $template['count'] ?> <?php echo _('Pattern'); ?></p>
+						</li>
+						<li>
+							<p class="tdtitle"><?php echo _('Savings conditions'); ?></p>
+							<p class="tdtxt"><?php echo $template['point_str'] ?></p>
+						</li>
+						<li>
+							<p class="tdtitle"><?php echo _('收藏量');?></p>
+							<p class="tdtxt"><img src="<?php echo static_file('images/icon_love.png'); ?>" height="13" width="13"><?php echo $template['download'] ?></p>
+						</li>
+						<li>
+							<p class="tdtitle"><?php echo _('瀏覽量');?></p>
+							<p class="tdtxt"><i style="margin-right:5px;" class="fa  fa-eye"></i><?php echo $template['viewed'] ?></p>
+						</li>
+						<li><div class="line"></div></li>
+						<li class="edit_new">
+						<a href="javascript:void(0);" class="pink alert_btn"><img src="<?php echo static_file('images/return.png'); ?>" height="120" width="120"><?php echo _('Report'); ?></a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<?php if (!empty($creative_template)) echo '<li><div class="more_title"><p>'._('職人其他版型').'</p></div></li>'; ?>
+			<li>
+				<div class="seemore_content">
+					<?php 
+					if (!empty($creative_template)) {
+						foreach ($creative_template as $v) {						
+							echo '<div class="item_box"><a href="'.self::url('template', 'content', array('template_id'=>$v['template_id'])).'"><img src="'.$v['image'].'" class="tem_bg" height="330" width="220" onerror="this.src=\''.static_file('images/origin.jpg').'\'"></a></div>';
+						}
+					}
+					?>
+				</div>
+			</li>
+			<li><div id="commet"><div id="disqus_thread"></div></div></li>	
+		</ul>
+	</div>	
+</div>
+<div style="display:none" id="show_photo"></div>
+<script>
+
+$(document).on('click', '.alert_btn', function(e){
+    e.stopPropagation();  $('#alert_box').fadeIn();$('input[name=report]').removeAttr('checked');$('#input04_textarea').val('');$('#input04_li').hide();
+}).on('click', '#close_alert', function(){
+	$('#alert_box').fadeOut('slow' ,function(){$('.step02').hide();$('.step01').show();});
+}).on('click', '#alert_bg', function(){
+	$('#alert_box').fadeOut(function() {$('#close_alert').trigger('click');	});
+}).on('click', '#alert_btn', function(){
+	alert_submit();
+}).on('click', '.step02 .cancel', function(){
+	$('.step02').hide();$('.step01').show();
+}).on('click', '#next_step', function(){
+    var obj = $('input[name=report]:checked');if(obj.val() == 7){$('.step01').hide();$('.step02').show();}else{alert_submit();}
+}).on('change', '#input_04', function(){
+	($('this:checked')) ? $('#input04_li').show() :	$('#input04_li').hide();
+});
+
+$('.descrip').showMore({
+    minheight: 242,
+    buttontxtmore: '﹀',
+    buttontxtless: '︿',
+    buttoncss: 'more_open',
+    animationspeed: 250
+});
+
+$("#temp_scroll_container").Xslider({
+	unitdisplayed:4,
+	numtoMove:1,
+	loop:"cycle",
+	dir:"V",
+	autoscroll:2500,
+	speed:300
+});
+
+$(".temp_list ul li img").hover(function(){
+    $('#bigimage').attr({'src': $(this).attr('src'), 'index_num': $(this).data('num')});
+    $(".temp_list ul li img").removeClass("active");
+    $(this).addClass("active");     
+});
+
+//Mobile - notice
+function mobile_notice() {
+	var myConfirm = new jBox('Modal', {
+		cancelButton: '<?php echo _('No')?>',
+		confirmButton: '<?php echo _('Yes')?>',
+		confirm: function() {},
+		onCloseComplete: function() {	
+			myConfirm.destroy();
+		}
+	}).setContent(
+		'<div class="content">' +
+		'<p class="keypoint"><img src="<?php echo static_file('images/info.png')?>">&nbsp;<?php echo _('Coming Soon!')._('Only a PC device is supported at present.') ;?></p>' +
+		// '<p><a data-uri="<?php echo Core::settings('ANDROID_DATA_URI') ?>" onclick="clickHandler(this.dataset.uri)" href="javascript:void(0)"><img class="app" src="<?php echo static_file('images/jbox_and.png')?>"></a>'+
+		// '<a data-uri="<?php echo Core::settings('IOS_DATA_URI') ?>" onclick="clickHandler(this.dataset.uri)" href="javascript:void(0)"><img class="app" src="<?php echo static_file('images/jbox_ios.png')?>"></a></p><br>' +
+		'</div>'
+	).open();
+}
+
+function taketemplate(work) {
+	$.post('<?php echo self::url('template', '_taketemplate')?>', {
+		template_id: '<?php echo $template['template_id']?>',
+		work : work,
+		<?php if(!empty($_GET['join_event'])) echo 'join_event:\''.$_GET['join_event'].'\',' ?>
+	}, function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 1:
+				_jBox(r, 'success');
+				break;
+			case 2:
+				_jBox(r, 'login');
+				break;
+			case 3:
+				_jBox(r, 'taketemplate');
+				break;
+			case 4:
+				_jBox(r, 'albumProcess');
+				break;
+			case 5:
+				location.href = r.redirect;
+				break;
+			case 6:
+				var box = new jBox('Modal', {
+					closeButton: 'title',
+					delayOpen: 300,
+					maxWidth: 600,
+					minWidth: 100,
+					title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="' + '<?php echo static_file('images/success.png')?>' + '">',
+					onCloseComplete: function() {
+						$.post('<?php echo self::url('template', '_taketemplate')?>', {
+							template_id: r.data.template_id,
+							join_event : r.data.join_event,
+						}, function(r) {
+							r = $.parseJSON(r);
+							switch (r.result) {
+								case 4:
+									_jBox(r, 'albumProcess');
+									break;
+								case 5:
+									if (r.data) {
+										(r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : location.href = r.redirect;; 
+									} else {
+										location.href = r.redirect;
+									}
+									break;
+								default:
+									site_jBox(r, 'error');
+									break;
+							}
+						});
+					},
+				}).setContent('<div class="content">' + r.message + '</div>').open();
+				break;
+			case 7:
+				//詢問付費
+				var box = new jBox('Confirm', {
+					cancelButton: '<?php echo _('No')?>',
+					confirmButton: '<?php echo _('Yes')?>',
+					confirm: function() {
+						//確認付費
+						$.post('<?php echo self::url('template', '_taketemplate')?>', {
+							template_id: r.data.template_id,
+							confirm: true,
+							collect_to_use: true,
+							join_event : r.data.join_event,
+						}, function(r2) {
+							r2 = $.parseJSON(r2);
+							switch (r2.result) {
+								case 6:
+									var box = new jBox('Modal', {
+										closeButton: 'title',
+										delayOpen: 300,
+										maxWidth: 600,
+										minWidth: 100,
+										title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="' + '<?php echo static_file('images/success.png')?>' + '">',
+										onCloseComplete: function() {
+											//檢查process
+											$.post('<?php echo self::url('template', '_taketemplate')?>', {
+												template_id: r2.data.template_id,
+												join_event : r2.data.join_event,
+											}, function(r3) {
+												r3 = $.parseJSON(r3);
+												switch (r3.result) {
+													case 4:
+														_jBox(r3, 'albumProcess');
+														break;
+													case 5:
+														if (r3.data) { 
+															(r3.data.task.message.length > 0) ? _TaskAlert(r3, 'task') : location.href = r3.redirect; 
+														} else {
+															location.href = r3.redirect;
+														}
+														break;
+													default:
+														site_jBox(r3, 'error');
+														break;
+												}
+											});
+										},
+									}).setContent('<div class="content">' + r2.message + '</div>').open();
+									break;
+								default:
+									site_jBox(r2, 'error');
+									break;
+							}
+						});
+					},
+					onCloseComplete: function() {	
+						box.destroy();
+					}
+				}).setContent(
+					'<div class="content">' +
+					'<p><?php echo _('Are you sure you want to save this Template?')?></p><p><?php echo _('Savings conditions：')?>&nbsp;<span class="red">' + r.data.point + 'P</span></p>' +
+					'</div>'
+				).open();
+
+				break;
+			default:
+				_jBox(r, 'error');
+				break;
+		}
+	});
+}
+
+function browse_template() {
+	var a_item = [];//browseKit item
+	$.post('<?php echo self::url('template', 'show_photo')?>', {
+		template_id: <?php echo $template['template_id'] ?>,
+	}, function(r) {
+		r = $.parseJSON(r);
+		if (r.result == 1) {
+			var href, poster;
+			
+			for (var k0 in r.data.readable) {
+				href = r.data.readable[k0]['image'];
+				thumb = r.data.readable[k0]['image_thumbnail'];
+
+				a_item.push({
+			    	href: href,
+			        src: href,
+			        thumb: thumb,
+			        audio: {
+			        	src : null,
+			        	mode : null
+			        }
+			    });
+
+			}
+
+			if (r.data.readable.length > 1) {
+				if (!r.data.favorited && r.data.readable.length < r.data.readable.page) {
+					href = '<?php echo static_file('images/preview_end.jpg')?>';
+					
+					a_item.push({
+				    	href: href,
+				        src: href,
+				        thumb: href,
+				        audio: {
+				        	src : null,
+				        	mode : null
+				        }
+				    });
+				}
+			}
+
+			browseKit_v2(this, a_item);
+		} else if (r.result == 2) {
+			site_jBox(r);
+		} else {
+			site_jBox(r, 'error');
+		}
+	});
+}
+
+function alert_submit() {
+	var obj = $('input[name=report]:checked');
+	var text = '';
+	if (obj.length < 1) {
+		$('#alert_bg').trigger('click');
+		site_jBox({message: '<?php echo _('Please select a report intent.')?>'});
+	} else {
+		var value = obj.val();
+		if (value == 4) {
+			text = $('#input04_textarea').val();
+		}
+		$.post('<?php echo self::url('template', 'report')?>', {
+			value : value,
+			text : text,
+			template_id : <?php echo $template['template_id']?>
+		}, function(r) {
+			r = $.parseJSON(r);
+			$('#alert_bg').trigger('click');
+			if (r.result == 1) {
+				site_jBox(r, 'success');
+			} else if (r.result == 2) {
+				site_jBox(r);
+			} else {
+				site_jBox(r, 'error');
+			}
+		});
+	}
+}
+
+deeplink.setup({
+	iOS: {
+		appName: "pinpinbox",
+		appId: "<?php echo Core::settings('IOS_APP_ID'); ?>",
+	},
+	android: {
+		appId: "<?php echo Core::settings('ANDROID_APP_URL'); ?>"
+	}
+});
+function clickHandler(uri) { deeplink.open(uri); return false;}
+
+//initialize social
+$('#social_share').socialLikes({
+	url: '<?php echo self::url('template', 'content', array('template_id'=>$template['template_id']))?>',
+	title: '<?php echo _('Share this pinpinbox template!')?>',
+    counters: true,
+    singleTitle: '<?php echo _('Share it!')?>',
+});
+
+//counter link
+$('#social_share').on('popup_closed.social-likes', function(event, service) {
+    $(event.currentTarget).socialLikes({forceUpdate: true});
+    var counter = $(event.currentTarget).find('.social-likes__counter_' + service);
+    counter.text(+(counter.text()||0)+1).removeClass('social-likes__counter_empty');
+});
+</script>
+
+<!-- Line -->
+<script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411" ></script>

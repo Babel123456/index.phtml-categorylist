@@ -1,0 +1,89 @@
+<div id="member_left">
+    <div id="memberbox_info">
+        <ul>
+            <li>
+                <div id="memberbox_pic"><img src="<?php echo URL_STORAGE . Core::get_userpicture($user['user_id']) ?>"
+                                             height="500" width="500" alt=""
+                                             onerror="this.src='<?php echo static_file('images/face_sample.svg') ?>'">
+                </div>
+            </li>
+            <li>
+                <?php echo $user['name'] ?><br>
+                <a href="<?php echo self::url('user', 'point') ?>" style="color:#108199;">
+                    <?php echo number_format(Core::get_userpoint($user['user_id'], 'web') + Core::get_userpoint($user['user_id'], 'web', 'point_free')) ?>
+                    P
+                </a>
+            </li>
+            <li>
+                <?php
+                switch ($usergrade['grade']) {
+                    case 'plus':
+                        echo _('Plus-members') . '&nbsp;' . $user['level'] . '等<br>';
+                        echo date('Y/m/d', strtotime($usergrade['endtime'])) . _('Expires');
+                        break;
+
+                    case 'profession':
+                        echo _('Pro-members') . '<br>';
+                        echo date('Y/m/d', strtotime($usergrade['endtime'])) . _('Expires');
+                        break;
+
+                    default:
+                        break;
+                }
+                ?>
+            </li>
+        </ul>
+    </div>
+    <div id="member_category">
+        <ul class="open_ul">
+            <?php
+            $active0 = M_METHOD == 'user::album' ? 'class="active"' : null;
+
+            echo '<ul><li class="cate_title"><a href="javascript:void(0)">' . _('個人專區') . '</a></li></ul>';
+
+            $active1 = in_array(M_METHOD, array('user::sale_album', 'user::sale_template', 'user::settlement', 'user::salechart', 'user::template_list', 'user::template_info', 'user::template_upload')) ? 'class="mem02 active"' : 'class="mem02"';
+            $a_active1 = in_array(M_METHOD, array('user::sale_album', 'user::salechart', 'user::template_list', 'user::template_info', 'user::template_upload')) ? 'class="mem02 active"' : 'class="mem02"';
+            $active11 = (M_METHOD == 'user::sale_album') ? 'class="active"' : null;
+            $active12 = (M_METHOD == 'user::template_list' || M_METHOD == 'user::template_info' || M_METHOD == 'user::template_upload') ? 'class="active"' : null;
+            $active13 = (M_METHOD == 'user::settlement') ? 'class="active"' : null;
+
+            echo '<li class="cate_down">
+					<a ' . $a_active1 . ' href="' . self::url('user', 'sale_album') . '">' . _('積分管理') . '</a>
+					<ul ' . $active1 . '>
+						<li><a ' . $active11 . ' href="' . self::url('user', 'sale_album') . '">' . _('作品積分') . '</a></li>
+                        <li><a ' . $active13 . ' href="' . self::url('user', 'settlement') . '"> ' . _('積分統計') . '</a></li>
+                    </ul>
+				  </li>';
+
+            $active2 = in_array(M_METHOD, array('user::order', 'user::point', 'user::exchange')) ? 'class="mem03 active"' : 'class="mem03"';
+            $a_active2 = in_array(M_METHOD, array('user::order', 'user::point', 'user::exchange')) ? 'class="mem03 active"' : 'class="mem03"';
+            $active21 = M_METHOD == 'user::point' ? 'class="active"' : null;
+            $active22 = M_METHOD == 'user::order' || M_METHOD == 'user::exchange' ? 'class="active"' : null;
+
+            echo '<li class="cate_down">
+				<a ' . $a_active2 . ' href="' . self::url('user', 'point') . '">' . _('Store') . '</a>
+				<ul ' . $active2 . '>
+					<li><a ' . $active21 . ' href="' . self::url('user', 'point') . '">' . _('Buy P Points') . '</a></li>
+					<li><a ' . $active22 . ' href="' . self::url('user', 'order') . '">' . _('消費查詢') . '</a></li>
+				</ul>
+			</li>';
+
+            $active3 = M_METHOD == 'user::settings' ? 'class="active"' : null;
+            $active4 = M_METHOD == 'user::creative_edit' ? 'class="active"' : null;
+            $active5 = M_METHOD == 'user::grade' ? 'class="active"' : null;
+
+            echo '<ul><li class="cate_title"><a href="javascript:void(0)">' . _('會員資料') . '</a></li></ul>
+				<li class="cate_down"><a ' . $active3 . ' href="' . self::url('user', 'settings') . '">' . _('自我介紹') . '</a></li>';
+
+            if ($user['creative'] == 1) {
+                echo '<li class="cate_down"><a ' . $active4 . ' href="' . self::url('user', 'creative_edit') . '">' . _('匯款資料變更') . '</a></li>';
+            }
+            //echo '<li class="cate_down"><a '.$active5.' href="'.self::url('user', 'grade').'">'._('付費升級').'</a></li>';
+
+            $active6 = M_METHOD == 'user::question' ? 'class="active"' : null;
+            echo '<ul><li class="cate_title"><a ' . $active6 . ' href="' . self::url('user', 'question') . '">' . _('回報系統') . '</a></li></ul>';
+
+            ?>
+        </ul>
+    </div>
+</div>

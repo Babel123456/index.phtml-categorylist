@@ -32,7 +32,7 @@
   
   <!-- 測試預設值 (B的靜態頁面測試使用) 區塊開始 -->
   <?php
-    //$type = 'user';
+    //$type = 'creative'; //user
 	$type = 'album';
   ?>
   <!-- 測試預設值 (B的靜態頁面測試使用) 區塊開始 -->
@@ -296,7 +296,6 @@
   //頁面載入時, 判斷更多按鈕是否出現
   $(document).ready(function() {
     desc_more_btn();
-	
   });
   
 	
@@ -304,7 +303,7 @@
   $(document).ajaxComplete(function( event, request, settings ) {
     desc_more_btn();
   }); 
-	
+  
   //複製作品網址按鈕
   $('#album_content_social_links_box').on('click', '#album_content_social_links2', function() {
 	snackbar_show() ;
@@ -334,6 +333,25 @@
 	$('.content_box_menu').toggleClass("content_box_menu_down");
   });
  
+	
+  //判斷是否是點擊照片(或拖曳NICESCROLL區塊)
+  var isDragging=false, startingPos=[0,0];
+  $(".intro_see_more_box").mousedown(function (evt) {
+      isDragging = false;
+      startingPos = [evt.pageX, evt.pageY];
+  }).mousemove(function (evt) {
+      if (!(evt.pageX === startingPos[0] && evt.pageY === startingPos[1])) {
+          isDragging = true;
+      }
+  }).mouseup(function (evt) {
+      if(!right_click(evt)){
+          if (!isDragging){
+              window.location.href = $(this).data('href');
+          }
+      }
+  });
+
+
 	
   
 	//進入觀看

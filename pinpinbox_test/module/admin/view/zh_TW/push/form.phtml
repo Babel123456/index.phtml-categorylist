@@ -1,0 +1,168 @@
+<?php echo $form ?>
+<script>
+    $(function () {
+        $('#form').validate({
+            rules: {},
+            submitHandler: function () {
+                //customize
+                var a_customize = {};
+                $.each($('input[data-group="customize"], select[data-group="customize"]'), function (k0, v0) {
+                    a_customize[$(this).prop('id')] = $(this).val();
+                });
+                if (!Object.keys(a_customize).length) a_customize = null;
+
+                $.post('<?php echo $action?>', {
+                    <?php if ('edit' == $_GET['act']) {?>
+                    <?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+                    <?php }?>
+                    customize: a_customize,
+                    message: $('#message').val(),
+                    mode: $('input[name="mode"]:checked').val(),
+                    remark: $('#remark').val(),
+                    target2type: $('input[name="target2type"]:checked').val(),
+                    target2type_id: $('#target2type_id').val(),
+                    url: $('#url').val(),
+                }, function (r) {
+                    r = $.parseJSON(r);
+                    switch (r.result) {
+                        case 0:
+                            formerror(r.message);
+                            break;
+                        case 1:
+                            formconfirm(r);
+                            break;
+                    }
+                });
+            }
+        });
+
+        //user
+        $('#user-grid').kendoGrid({
+            columns: [
+                {
+                    field: 'user_id', attributes: {'class': 'number'}, filterable: {
+                        ui: function (e) {
+                            e.kendoNumericTextBox({format: 'n0'});
+                        }
+                    }
+                },
+                {field: 'account', attributes: {'class': 'string'}},
+                {field: 'name', attributes: {'class': 'string'}},
+                {field: 'cellphone', attributes: {'class': 'string'}},
+                {field: 'email', attributes: {'class': 'string'}},
+                {field: 'gender', attributes: {'class': 'enums'}},
+                {
+                    field: 'birthday', attributes: {'class': 'date'}, filterable: {
+                        ui: function (e) {
+                            e.kendoDateTimePicker({format: 'yyyy-MM-dd'});
+                        }
+                    }, format: '{0:yyyy-MM-dd}'
+                },
+                {
+                    field: 'creative', attributes: {'class': 'number'}, filterable: {
+                        ui: function (e) {
+                            e.kendoNumericTextBox({format: 'n0'});
+                        }
+                    }
+                },
+                {
+                    field: 'lastlogintime', attributes: {'class': 'date'}, filterable: {
+                        ui: function (e) {
+                            e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});
+                        }
+                    }, format: '{0:yyyy-MM-dd HH:mm:ss}'
+                },
+                {field: 'way', attributes: {'class': 'enums'}},
+                {field: 'act', attributes: {'class': 'enums act-#:act#'}},
+                {field: 'viewed', attributes: {'class': 'number'}},
+                {
+                    title: 'hobby',
+                    columns: [
+                        {
+                            title: '@info',
+                            field: 'hobbyX',
+                            attributes: {'class': 'string'},
+                            encoded: false,
+                            filterable: false,
+                            sortable: false
+                        }
+                    ]
+                },
+            ],
+            dataBinding: function (e) {
+            },
+            dataBound: function (e) {
+            },
+            dataSource: new kendo.data.DataSource({
+                filter: <?php echo $filter?>,
+                page: 1,
+                pageSize: gridpageSize,
+                schema: {
+                    data: function (r) {
+                        return r.data;
+                    },
+                    model: {
+                        id: 'user_id',
+                        fields: {
+                            'birthday': {type: 'date'},
+                            'lastlogintime': {type: 'date'},
+                            'viewed': {type: 'number'},
+                        }
+                    },
+                    total: function (r) {
+                        return r.total;
+                    },
+                },
+                serverFiltering: true,
+                serverPaging: true,
+                serverSorting: true,
+                sort: {field: 'user_id', dir: 'asc'},
+                transport: {
+                    read: {
+                        data: <?php echo $data?>,
+                        dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        type: 'POST',
+                        url: '<?php echo self::url(M_CLASS, 'json')?>',
+                    }
+                },
+            }),
+            filterable: true,
+            height: gridheight,
+            pageable: {
+                input: true,
+                pageSize: gridpageSize,
+                pageSizes: gridpageSizes,
+                refresh: true,
+            },
+            reorderable: true,
+            resizable: true,
+            selectable: true,
+            sortable: true,
+        });
+
+        //
+        direct_toggle();
+
+        $('input[name="mode"]').on('click', function () {
+            direct_toggle();
+        });
+
+        //
+        $('#direct-reset').on('click', function () {
+            $('input[name="mode"]').prop('checked', false);
+
+            $('input[name="target2type"]').prop('checked', false);
+
+            $('#target2type_id').val('');
+
+            $('#url').val('');
+
+            direct_toggle();
+        });
+    });
+
+    function direct_toggle() {
+        $('tr[id^="direct-tr"]').hide();
+        $('tr[id="direct-tr-' + $('input[name="mode"]:checked').val() + '"]').show();
+    }
+</script>

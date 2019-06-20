@@ -75,6 +75,23 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+@mixin display-inline-flex($flex-align:center,$flex-direction:row){
+  display: -webkit-inline-box;      
+  display: -moz-inline-box;        
+  display: -ms-inline-flexbox;     
+  display: -webkit-inline-flex;  
+  display: inline-flex; 
+  -webkit-box-align: $flex-align;
+  -moz-box-align: $flex-align;
+  -ms-flex-align: $flex-align;
+  -webkit-align-items: $flex-align;
+  align-items: $flex-align;
+  -webkit-flex-direction: $flex-direction;
+  -moz-flex-direction: $flex-direction;
+  -ms-flex-direction: $flex-direction;
+  flex-direction: $flex-direction;
+
+}
 @mixin display-flex($flex-align:center,$flex-direction:row){
   display: -webkit-box;      
   display: -moz-box;        

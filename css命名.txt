@@ -1,0 +1,14 @@
+20190515
+CLASS命名:
+1. _content_header: content的header, ex: creative_content_header
+2. _banner: banner區塊
+   _content: 內容區塊
+3. _title: 該區標題
+4. _list: 清單列表
+5. _box: 一個區塊??
+   _img_area: 可以DIV內的圖垂直置中用(此名要全檢查一次)
+6. _img_wrap: ex: profile_img_wrap(灰色底, 有邊線)
+7. _img: ex: profile_img(透明%, 露出底灰色)
+8. _name: 名稱(不是TITLE)
+   _list_area: 列表符號(手機版出現)
+   _tab_list:

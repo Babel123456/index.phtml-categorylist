@@ -1,0 +1,43 @@
+<?php echo $form?>
+<script>
+$(function(){
+	$('#form').validate({
+		rules: {},
+		submitHandler: function() {
+			<?php if ('add' == $_GET['act']) {?>
+			if (!$('#currency').val()) {
+				formerror('<?php echo _('[Currency] is required')?>');
+				return;
+			}
+			<?php }?>
+			
+			//customize
+			var a_customize = {};
+			for (var k0 in keyvalueremark) {
+				var v0 = keyvalueremark[k0];
+				$.each($('input[name="customize_'+ v0 +'[]"]'), function(k1, v1){
+					if ('undefined' === typeof(a_customize[k1])) a_customize[k1] = {};
+					a_customize[k1][v0] = $(this).val();
+				});
+			}
+			if (!Object.keys(a_customize).length) a_customize = null;
+			
+			$.post('<?php echo $action?>', {
+				<?php if ('add' == $_GET['act']) {?>
+				currency: $('#currency').val(),
+				<?php }?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				name: $('#name').val(),
+				customize: a_customize,
+				act: $('input[name="act"]:checked').val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+});
+</script>

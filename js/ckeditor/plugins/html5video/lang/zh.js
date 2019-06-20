@@ -1,0 +1,23 @@
+CKEDITOR.plugins.setLang( 'html5video', 'zh', {
+    //button: '插入 HTML5 影片',
+	button: '嵌入 mp4 影片',
+    //title: 'HTML5 影片',
+	title: 'mp4 影片',
+    infoLabel: '影片資訊',
+    //allowed: '允許的檔案類型: MP4, WebM, Ogv',
+	allowed: '允許的檔案類型: MP4',
+    urlMissing: '缺少影片來源 URL',
+    videoProperties: '影片屬性',
+    upload: '上傳',
+    btnUpload: '傳送至伺服器',
+    advanced: '進階',
+    autoplay: '自動播放?',
+    allowdownload: '允許下載?',
+    advisorytitle: '顯示標題',
+    yes: '是',
+    no: '否',
+    loop: '重覆播放?',
+    responsive: '自動調整寬度',
+    controls: '顯示影片播放控制列',
+    poster: '縮圖'
+} );

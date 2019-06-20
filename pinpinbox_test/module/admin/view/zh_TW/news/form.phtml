@@ -1,0 +1,56 @@
+<?php echo $form?>
+<script>
+$(window).load(function(){
+	$('#form').validate({
+		rules: {
+			name: 'required',
+			'class': 'required'
+		},
+		submitHandler: function() {
+			//magazine
+			var a_customize_magazine = {};
+			a_customize_magazine['page'] = [];
+			$.each($('input[name="customize_magazine[page][]"]'), function(){
+				a_customize_magazine['page'].push($(this).val());
+			});
+			
+			$.post('<?php echo $action?>', {
+				//form
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				<?php
+				switch ($this->get_admin_admingroup_class()) {
+					case 'administrator':
+					case 'approver':
+				?>
+					act: $('input[name="act"]:checked').val(),
+				<?php
+						break;
+				}
+				?>
+				name: $('#name').val(),
+				title: $('#title').val(),
+				text: CKEDITOR.instances['text'].getData(),
+				image: $('input[name="image"]').val(),
+				'class': $('#class').val(),
+				starttime: $('#starttime').val(),
+				endtime: $('#endtime').val(),
+				sequence: $('#sequence').val(),
+				
+				//magazine
+				customize_magazine: a_customize_magazine
+				
+			}, function(response){
+				response = $.parseJSON(response);
+				var result = response.result, message = response.message, redirect = response.redirect;
+				if (result) {
+					location.href = confirm(message)? redirect : location.href;
+				} else {
+					alert(message);
+				}
+			});
+		}
+	});
+});
+</script>

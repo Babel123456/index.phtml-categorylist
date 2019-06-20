@@ -1,0 +1,76 @@
+<!-- 內容頁開始 -->
+<div id="member_content">
+	<form id="form" enctype="multipart/form-data">
+		<div id="member_interest">
+			<ul>
+				<li>
+					<h2><?php echo _('Select what you are interested in'); ?></h2>
+				</li>
+				<li><?php echo _('Which are you interested in?(Please select at least one, a maximum of 3 can be selected)'); ?></li>
+				<li>
+				<?php 
+				foreach ($hobby as $k => $v) {
+					echo '
+					<div class="interest_list">
+						<input type="checkbox" id="input_'.$v['hobby_id'].'" name="interest" value="'.$v['hobby_id'].'" class="interest_check">
+						 <label for="input_'.$v['hobby_id'].'" >
+							 <div class="interest_pic">
+								<div class="hover_pic"><img src="'.static_file('images/inter_bg.png').'" height="88" width="220"></div>
+								<img src="'.URL_UPLOAD.$v['image'].'" height="88" width="220">
+							</div>
+						</label>
+					</div>';
+				}
+				?>
+				</li>
+				<li><a href="javascript:void(0);" class="member_enter" onclick="_submit()"><?php echo _('Registration done'); ?></a></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script>
+window.onbeforeunload = function() {return '<?php echo _('The unsaved profiles will be lost, are you sure you want to leave the page?')?>';}
+
+var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0,  	// Opera 8.0+
+	isFirefox = typeof InstallTrigger !== 'undefined',															// Firefox 1.0+
+	isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0,					// At least Safari 3+: "[object HTMLElementConstructor]"
+	isIE = /*@cc_on!@*/false || !!document.documentMode,														// Internet Explorer 6-11
+	isEdge = !isIE && !!window.StyleMedia,																		// Edge 20+
+	isChrome = !!window.chrome && !!window.chrome.webstore;														// Chrome 1+
+
+$(function() {
+	if(isOpera || isFirefox || isSafari || isChrome) {
+		$('div.interest_pic').on('click' , function() { $(this).siblings('input').trigger("click"); })
+		$("input:checkbox").on('click', function() {
+			$(this).siblings('label').children('div').toggleClass('active');
+			var bol = $("input:checkbox:checked").length >= 3;     
+			$("input:checkbox").not(":checked").attr("disabled", bol);
+		});
+	} else {
+		$('input[name="interest"]').on('change', function(){
+			var bol = $('input[name="interest"]:checked').length >= 3;
+			$("input:checkbox").not(":checked").attr("disabled", bol);
+		})
+	}
+});
+
+function _submit() {
+	var a_hobby_id = [];
+	$("input[type='checkbox']:checked").each(function() {
+		a_hobby_id.push($(this).val());
+	});
+	
+	$.post('<?php echo self::url('user', 'verify', query_string_parse())?>', {
+		hobby: a_hobby_id,
+	}, function(r) {
+		r = $.parseJSON(r);
+		if (r.result == 1) {			
+			window.onbeforeunload = null;
+			r.timer = 1000;
+			_jBox(r, 'success');
+		} else {
+			_jBox(r, 'error');
+		}				
+	});
+}
+</script>

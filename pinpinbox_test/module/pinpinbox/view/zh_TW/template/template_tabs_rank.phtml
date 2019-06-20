@@ -1,0 +1,2 @@
+<a href="<?php echo self::url('template', 'index', array('rank'=>'0', 'sale'=>$sale));?>" <?php if($rank == 0)  echo 'class=active' ?>><?php echo _('Hot'); ?></a>
+<a href="<?php echo self::url('template', 'index', array('rank'=>'1', 'sale'=>$sale));?>" <?php if($rank == 1)  echo 'class=active' ?>><?php echo _('Latest'); ?></a>

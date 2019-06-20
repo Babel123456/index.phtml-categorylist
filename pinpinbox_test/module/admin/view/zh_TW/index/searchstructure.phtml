@@ -1,0 +1,83 @@
+<div id="analysis">
+	<?php include 'nav.phtml'?>
+	<div class="content">
+		<table class="table">
+			<tr class="row">
+				<td class="cell cell-8">
+					<?php echo $html_gird?>
+				</td>
+				<td class="cell cell-4">
+					<div class="panel">
+						<div class="panel-title">Search Type<span class="k-icon k-i-arrowhead-n"></span></div>
+						<div class="panel-content"><div id="searchtype-chart" style="width: 100%; height: 300px; margin: 0 auto"></div></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<script>
+$(function() {
+    $('#grid').kendoGrid({
+    	columns: [
+			{field: 'searchkey', attributes: {'class': 'string'}},
+			{field: 'count', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+		],
+		dataBinding: function(e) {},
+		dataBound: function(e) {},
+        dataSource: new kendo.data.DataSource({
+    		page: 1,
+    		pageSize: gridpageSize,
+    		serverPaging: true,
+    		serverSorting: true,
+    		serverFiltering: true,
+    		transport: {
+    			read: {
+    				dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+    				type: 'POST',
+    				url: '<?php echo self::url(M_CLASS, 'searchstructure')?>',
+    			}
+    		},
+    		schema: {
+    			data: function(r){return r.data;},
+    			total: function(r){return r.total;}
+    		},
+    		sort: {field: 'count', dir: 'desc'}
+    	}),
+        filterable: true,
+        height: gridheight,
+        pageable: {
+            refresh: true,
+            input: true,
+            pageSize: gridpageSize,
+            pageSizes: gridpageSizes,
+        },
+        reorderable: true,
+        resizable: true,
+        selectable: true,
+        sortable: true,
+		toolbar: [
+		  	'excel',
+		],
+    });
+
+	//searchtype-chart
+	$('#searchtype-chart').highcharts({
+        chart: {
+            type: 'pie',
+        },
+        title: {text: null},
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.percentage:.1f}%',
+                }
+            }
+        },
+        series: <?php echo $searchtype?>
+    });
+});
+</script>

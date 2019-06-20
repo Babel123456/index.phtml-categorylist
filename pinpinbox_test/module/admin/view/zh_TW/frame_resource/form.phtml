@@ -1,0 +1,81 @@
+<?php echo $form?>
+<style type="text/css"> 
+#image-img{
+	background-color:#AFD1D8;
+	border:1px solid #F0E5E5;
+}
+</style> 
+<script>
+$(function() {
+	$('#form').validate({
+		ignore: '.ignore',//忽略驗證所選的元素, 但這裡作用是刻意檢查所有(包含隱藏)的元素 
+		rules: {},
+		submitHandler: function() {
+			$.post('<?php echo $action?>', {
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo 'frame'?>_id: $('#<?php echo 'frame'?>_id').val(),
+				<?php }?>
+				name: $('#name').val(),
+				image: $('#image').val(),
+				blank1: $('#blank1').val().length == 0 ? '' : $('#blank1').val(),
+				blank2: $('#blank2').val().length == 0 ? '' : $('#blank2').val(),
+				blank3: $('#blank3').val().length == 0 ? '' : $('#blank3').val(),
+				blank4: $('#blank4').val().length == 0 ? '' : $('#blank4').val(),
+				blank5: $('#blank5').val().length == 0 ? '' : $('#blank5').val(),
+				blank6: $('#blank6').val().length == 0 ? '' : $('#blank6').val(),
+				blank7: $('#blank7').val().length == 0 ? '' : $('#blank7').val(),
+				blank8: $('#blank8').val().length == 0 ? '' : $('#blank8').val(),
+				act: $('input[name="act"]:checked').val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+	
+	$(document).on('click', '#set_preview',function(){
+		var img_str = $('#image-a').attr('href'), blank_data=[];
+		$('input[name^="blank"]').each(function(k, v){
+			var _this = $(v);
+			if(_this.val().length != 0 ) blank_data.push(_this.val());
+		})
+	
+		Block_modal = new jBox('Modal', {
+			position : {x:'center', y:'center'},
+			offset : {x: 3,y: 25},
+			width : 190,
+			height : 50,
+			closeOnEsc : false,
+			closeOnClick : false,
+			closeButton : 'title',
+			delayOpen: 200,
+			zIndex : 1000,
+		});
+		Block_modal.setContent('<span style="padding-left:20px;font-weight:bold;color:#2299DD">processing...<img src="<?php echo str_replace('admin', 'pinpinbox', static_file('images/loading.gif')) ?>"></span>').open();
+
+		$.post('<?php echo self::url(M_CLASS, 'extra0'); ?>', {
+			<?php if ('edit' == $_GET['act']) {?>
+			<?php echo 'frame'?>_id: $('#<?php echo 'frame'?>_id').val(),
+			<?php }?>
+			blank_data: JSON.stringify(blank_data),
+			img_str: img_str,
+		}, function(r) {
+			r = $.parseJSON(r);
+			Block_modal.close()
+			switch (r.result) {
+				case 0:formerror(r.message);break;
+				case 1:formsuccess(r.message);$('#show_preview').attr('src', r.data) ;break;
+			}
+		})
+	}).on('click', '#zoomin_preview', function(){
+		var myModal = new jBox('Modal', {
+			content: '<div style="width:"><img width="600" height="900" src="'+$('#show_preview').attr('src')+'"><div>'
+		});
+		myModal.open();
+	});
+	
+});
+</script>

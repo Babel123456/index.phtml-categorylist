@@ -1,0 +1,96 @@
+<!-- 內容頁開始 -->
+<div id="member_content">
+	<div id="member_in">
+		<form id="js_user_login_form">
+			<ul>
+				<li>
+					<img src="<?php echo static_file('images/login_title.png')?>" height="21" width="163" alt="">
+				</li>
+				
+				<li class="mo_close"><?php echo _('Log in via Facebook'); ?></li>
+				<li>
+					<a href="<?php echo $url; ?>" id="login_facebook" ><img src="<?php echo static_file('images/login_fb.png')?>" height="50" width="230" alt=""></a>
+					<div style="margin: 0px auto; height: 65px; display: none;">
+						<span style="display: inline-block;height: 100%;vertical-align: middle;"></span>
+						<img style="vertical-align: middle;width: 20px;height: 20px;margin: 0 auto;margin-right: 5px;" src="<?php echo static_file('images/loading.gif')?>">
+					</div>
+				</li>
+				<li><img src="<?php echo static_file('images/or.png')?>" height="9" width="460" alt="" class="line_or"></li>
+				
+				<li><?php echo _('Register via basic membership information'); ?></li>
+				<li><input type="text" name="account" placeholder="<?php echo _('E-mail'); ?>"></li>
+				<li><input type="password" name="password" placeholder="<?php echo _('Password'); ?>"></li>
+				<li class="float_li">
+					<!-- 
+					<label class="float"><input type="checkbox" id="input_20_1" name="info1"></label>
+					<label for="input_20_1" ><span class="check_name">記住我的帳號</span></label>
+					 -->
+				</li>
+				<li class="float_li right"><a href="<?php echo self::url('user', 'forgot')?>"><?php echo _('Forgot my password') ;?></a></li>
+				<div style="clear:both"></div>
+				<li><a href="javascript:void(0)" class="member_enter" onclick="$('#js_user_register').trigger('click')"><?php echo _('Log in') ;?></a></li>
+				<input style="display:none;" id="js_user_register" type="submit"> <!-- ajax驗證用submit -->
+				<li><a href="<?php echo self::url('user', 'register', query_string_parse())?>"><?php echo _('Register a new account') ;?></a></li>
+			</ul>
+		</form>
+	</div>
+</div>
+<script>
+$(function() {
+    var _submit = false;
+	$('#js_user_login_form').on('keypress', function(e) {
+        if (e.which == 13 || e.keyCode == 13) {
+            e.preventDefault();
+            if(!_submit) {
+                $('#js_user_login_form').trigger('submit');
+                _submit = true;
+            }
+        }
+	});
+	
+	$('#js_user_login_form').validate({
+		rules: {},
+		submitHandler: function() {
+
+			$.post('<?php echo self::url('user', 'login', query_string_parse())?>', {
+				account: $('input[name="account"]').val(),
+				password: $('input[name="password"]').val()
+			}, function(r) {
+				r = $.parseJSON(r);
+
+				if (r.result == 1) {
+
+                    if (typeof( window.onbeforeunload) != 'undefined' ) window.onbeforeunload = null;
+
+                    if (r.data && typeof(r.data.task) != 'undefined') {
+                        (typeof(r.data.task.message) != 'undefined' && r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : (r.redirect) ? (r.redirect=='createAlbum') ? createAlbum() : location.href = r.redirect : null;
+                    } else {
+                        if (r.redirect) {
+                            (r.redirect == 'createAlbum') ? createAlbum() : location.href = r.redirect;
+                        }
+                    }
+
+				} else {
+                    var box = new jBox('Modal', {
+                        closeButton: 'title',
+                        delayOpen: 300,
+                        maxWidth: 600,
+                        minWidth: 100,
+                        autoClose : r.timer || 0,
+                        title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="<?php echo static_file('images/error.png')?>">',
+                        onCloseComplete: function() {
+                            if(typeof( window.onbeforeunload) != 'undefined' ) window.onbeforeunload = null;
+                            if (r.data && typeof(r.data.task) != 'undefined') {
+                                (typeof(r.data.task.message) != 'undefined' && r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : (r.redirect) ? location.href = r.redirect : null;
+                            } else {
+                                if (r.redirect) location.href = r.redirect;
+                            }
+                            _submit = false;
+                        },
+                    }).setContent('<div class="content">' + r.message + '</div>').open();
+				}				
+			});
+		}
+	});
+});
+</script>

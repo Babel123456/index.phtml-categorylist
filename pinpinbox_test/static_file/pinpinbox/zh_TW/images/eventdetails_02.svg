@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="138" height="36" viewBox="0 0 138 36">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="138" height="36" fill="#00ACC1" rx="5"/>
+        <text fill="#FFF" font-family="MicrosoftJhengHeiBold, Microsoft JhengHei" font-size="16" letter-spacing="5">
+            <tspan x="46" y="24">活動詳情</tspan>
+        </text>
+        <g transform="translate(15 6)">
+            <circle cx="12" cy="12" r="12" fill="#FFF"/>
+            <path fill="#00ACC1" stroke="#00ACC1" stroke-width=".5" d="M12.623 16.8V8.716a.454.454 0 0 0-.472-.459H8.849a.45.45 0 0 0-.449.45c0 .241.201.45.45.45h2.873V16.8H8.85a.454.454 0 0 0-.45.45c0 .241.202.45.45.45h6.3c.242 0 .45-.201.45-.45a.455.455 0 0 0-.45-.45h-2.527zm-.704-9.9a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="66px" height="22px" viewBox="0 0 66 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #F2F2F2;">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>25CA4FDC-7F59-4CC0-8491-28AB9DA8AFD6</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="66" height="22" rx="5"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="66" height="22" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home-page" transform="translate(-1374.000000, -495.000000)">
+            <g id="熱門推薦-/-新進作品" transform="translate(480.000000, 492.000000)"></g>
+            <g id="btn/more/h" transform="translate(1374.000000, 495.000000)">
+                <g>
+                    <use id="Rectangle-8" stroke="#2AB7B3" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                    <text id="更多…" font-family="微軟正黑體" font-size="14" font-weight="normal" letter-spacing="0.875" fill="#2AB7B3">
+                        <tspan x="10.6875" y="16">更多…</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="熱門推薦-/-新進作品" transform="translate(480.000000, 492.000000)"></g>
+        </g>
+    </g>
+</svg>

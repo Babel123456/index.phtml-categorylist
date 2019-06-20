@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="138" height="36" viewBox="0 0 138 36">
+    <defs>
+        <path id="a" d="M.436 8.766c0-1.21.984-2.191 2.201-2.191h4.321c1.216 0 2.201.972 2.201 2.191v.572c0 .895-.728 1.62-1.62 1.62H2.056a1.62 1.62 0 0 1-1.62-1.62v-.572z"/>
+        <path id="b" d="M.436 8.766c0-1.21.984-2.191 2.201-2.191h4.321c1.216 0 2.201.972 2.201 2.191v.572c0 .895-.728 1.62-1.62 1.62H2.056a1.62 1.62 0 0 1-1.62-1.62v-.572z"/>
+        <path id="c" d="M.436 8.766c0-1.21.984-2.191 2.201-2.191h4.321c1.216 0 2.201.972 2.201 2.191v.572c0 .895-.728 1.62-1.62 1.62H2.056a1.62 1.62 0 0 1-1.62-1.62v-.572z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="138" height="36" fill="#BFBFBF" rx="5"/>
+        <text fill="#FFF" font-family="MicrosoftJhengHeiBold, Microsoft JhengHei" font-size="16" letter-spacing="5">
+            <tspan x="46" y="24">參賽作品</tspan>
+        </text>
+        <g transform="translate(15 6)">
+            <circle cx="12" cy="12" r="12" fill="#FFF"/>
+            <g transform="translate(11.27 5.4)">
+                <ellipse cx="4.798" cy="3.068" stroke="#FFF" rx="2.617" ry="3.068"/>
+                <ellipse cx="4.798" cy="3.068" fill="#FFF" stroke="#BFBFBF" rx="2.181" ry="2.63"/>
+                <path stroke="#FFF" d="M.5 8.766v.761c0 .758.613 1.37 1.373 1.37h5.85c.76 0 1.373-.613 1.373-1.37v-.76c0-1.176-.952-2.13-2.122-2.13H2.622C1.452 6.636.5 7.59.5 8.766z"/>
+                <use fill="#FFF" xlink:href="#a"/>
+                <path stroke="#BFBFBF" d="M.936 8.766v.572c0 .62.501 1.12 1.12 1.12H7.54c.617 0 1.12-.503 1.12-1.12v-.572c0-.939-.758-1.691-1.7-1.691H2.636c-.94 0-1.7.757-1.7 1.691z"/>
+            </g>
+            <g transform="translate(3 5.4)">
+                <ellipse cx="4.798" cy="3.068" stroke="#FFF" rx="2.617" ry="3.068"/>
+                <ellipse cx="4.798" cy="3.068" fill="#FFF" stroke="#BFBFBF" rx="2.181" ry="2.63"/>
+                <path stroke="#FFF" d="M.5 8.766v.761c0 .758.613 1.37 1.373 1.37h5.85c.76 0 1.373-.613 1.373-1.37v-.76c0-1.176-.952-2.13-2.122-2.13H2.622C1.452 6.636.5 7.59.5 8.766z"/>
+                <use fill="#FFF" xlink:href="#b"/>
+                <path stroke="#BFBFBF" d="M.936 8.766v.572c0 .62.501 1.12 1.12 1.12H7.54c.617 0 1.12-.503 1.12-1.12v-.572c0-.939-.758-1.691-1.7-1.691H2.636c-.94 0-1.7.757-1.7 1.691z"/>
+            </g>
+            <g transform="translate(7.378 6.867)">
+                <ellipse cx="4.798" cy="3.068" stroke="#FFF" rx="2.617" ry="3.068"/>
+                <ellipse cx="4.798" cy="3.068" fill="#FFF" stroke="#BFBFBF" rx="2.181" ry="2.63"/>
+                <path stroke="#FFF" d="M.5 8.766v.761c0 .758.613 1.37 1.373 1.37h5.85c.76 0 1.373-.613 1.373-1.37v-.76c0-1.176-.952-2.13-2.122-2.13H2.622C1.452 6.636.5 7.59.5 8.766z"/>
+                <use fill="#FFF" xlink:href="#c"/>
+                <path stroke="#BFBFBF" d="M.936 8.766v.572c0 .62.501 1.12 1.12 1.12H7.54c.617 0 1.12-.503 1.12-1.12v-.572c0-.939-.758-1.691-1.7-1.691H2.636c-.94 0-1.7.757-1.7 1.691z"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<script>
+    $(function () {
+        deeplink.setup({
+            iOS: {
+                appName: "pinpinbox",
+                appId: "<?php echo Core::settings('IOS_APP_ID'); ?>",
+            },
+            android: {
+                appId: "<?php echo Core::settings('ANDROID_APP_URL'); ?>"
+            }
+        });
+
+        deeplink.open('<?php echo $deeplink ?>');
+    });
+</script>

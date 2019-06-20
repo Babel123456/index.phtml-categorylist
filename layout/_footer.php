@@ -3,53 +3,25 @@
   <div id="footer">
     <div id="footer_area">
 		  <ul>
-		    <!-- //20181221: 加入class="mobile_show"開始 -->
-			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
+		    <li class="mobile_show"><a href="https://www.pinpinbox.com/index/about/">關於我們</a></li>
 			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1" class="cicle_btn" style="z-index: 100">經營小幫手</a></li>
-			<!-- //20181221: 加入class="mobile_show"結束 -->
 			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/qanda/">Q&amp;A</a></li>
 			<li class="mobile_show" ><a href="https://www.pinpinbox.com/index/recruit/">企業合作</a></li>
 			
 			<li class="mobile_show"><a href="https://www.pinpinbox.com/index/index/privacy/">條款與政策</a></li>
 			
-			<!-- //20190121: 加入class="mobile_show"與置換成BOOTSTRAP選單開始 -->
-			<!--
-			<li class="dropup">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下載APP<span class="caret"></span></a>
-				<ul class="dropdown-menu" role="menu">
-					<li><a id="apple_btn" data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
-					<li><a data-url="pinpinbox://index/"  onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
-				</ul>	
-			</li>
-            -->
-
-           <li class="app_load mobile_show">
-		     <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			   <span>下載APP <i class="fa fa-caret-down"></i>
-			 </div>
+            <li class="app_load mobile_show">
+		      <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+			    <span>下載APP <i class="fa fa-caret-down"></i>
+			  </div>
 		   
-		     <div class="dropdown-menu dropdown_menu" role="menu">
-			   <ul>
-				 <li><a id="apple_btn" data-url="pinpinbox://index/" target="_blank" onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
-				 <li><a data-url="pinpinbox://index/" target="_blank" onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
-			   </ul>
-			 </div>
+		      <div class="dropdown-menu dropdown_menu" role="menu">
+			    <ul>
+				  <li><a id="apple_btn" data-url="pinpinbox://index/" target="_blank" onclick="clickHandler(this.dataset.uri)" href="https://itunes.apple.com/tw/app/id1057840696">iOS</a></li>
+				  <li><a data-url="pinpinbox://index/" target="_blank" onclick="clickHandler(this.dataset.uri)" href="https://play.google.com/store/apps/details?id=com.pinpinbox.android">Android</a></li>
+			    </ul>
+			  </div>
 			</li>
-			
-			<!-- //20190121: li加入class="mobile_show"與置換成BOOTSTRAP選單結束 -->
-			
-			<!-- //20190121: 加入class="mobile_show"與置換成BOOTSTRAP選單開始 -->
-			<!--
-			<li class="dropup footer_lang">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">語言<span class="caret"></span></a>
-				<ul class="dropdown-menu" role="menu">
-					<li ><a href="javascript:void(0)" >English</a></li>
-					<li ><a href="javascript:void(0)" >日本語</a></li>
-					<li ><a href="javascript:void(0)" >簡體中文</a></li>
-					<li ><a href="https://www.pinpinbox.com/index/?lang=zh_TW">繁體中文</a></li>
-				</ul>							
-			</li>
-			-->
 			
 			<li class="footer_lang">
 			  <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -65,32 +37,15 @@
 			  </div>					
 			</li>
 			
-			<!-- //20190121: li加入class="mobile_show"與置換成BOOTSTRAP選單結束 -->
-			
 			<li class="mobile_show mobile_footer_lang">
-			  <!-- //20190121: 下拉選單改用BOOTSTRAP開始 -->
-			  <!--
-			  <select>
-				<option>簡體中文</option>
-				<option selected>繁體中文</option>
-				<option>English</option>
-			  </select>
-			  -->
 			  <span class="custom-select">
-
-			    <!-- //20190122: 加上ONCHANGE與更改OPTION值為連結開始 -->
-				<select id="lang_type" onchange="to_href();">
-				   
+   	            <select id="lang_type" onchange="to_href();">
 				  <option value="https://www.pinpinbox.com/index/?lang=ch">簡體中文</option>
 				  <option value="https://www.pinpinbox.com/index/?lang=zh_TW" selected>繁體中文</option>
 				  <option value="https://www.pinpinbox.com/index/?lang=en">English</option>
-				  
 			    </select>
-				<!-- //20190122: 加上ONCHANGE與更改OPTION值為連結結束 -->
 			  </span>
-			  <!-- //20190121: 下拉選單改用BOOTSTRAP結束 -->
 			</li>
-			
 			<li class="footer_copyright">© 2018 pinpinbox All Rights Reserved.</li>
 		  </ul>
 	</div>
@@ -120,120 +75,38 @@ $(document).ready(function() {
 		$("html,body").animate({scrollTop:0},900);
 		return false;
 	});
+	
 
-
-  //PC版選單切換
-  $('a#login').click(function() {
-    $('#login_menu').toggleClass("login_menu_down");
-	// 20190115 移除.search_menu區塊開始
-	$('.search_menu').removeClass("search_menu_down");
-	// 20190115 移除.search_menu區塊結束
-	$('#notifier_menu').removeClass("login_menu_down");
-  });
-  
-  $('a#notifier').click(function() {
-    $('#notifier_menu').toggleClass("login_menu_down");
-	$('#login_menu').removeClass("login_menu_down");
-	// 20190115 移除.search_menu區塊開始
-	$('.search_menu').removeClass("search_menu_down");
-	// 20190115 移除.search_menu區塊結束
-  });
-  
-  
-  //搜尋選單切換
-  $('.search_btn').click(function() {
-	// 20190115 移除.search_menu區塊開始
-    $('.search_menu').toggleClass("search_menu_down");
-	// 20190115 移除.search_menu區塊結束
-	$('#login_menu').removeClass("login_menu_down");
-	$('#notifier_menu').removeClass("login_menu_down");
-  });
   //MOBILE版搜尋切換
-  $('.mobile_menu i:nth-child(1)').click(function() {
+  $('.mobile_menu #search_m').click(function() {
 	$('#mobile_search').addClass("search_box_open");
 	$('#header_top').addClass("header_top_close");
-	
-	// 20190115 關閉另兩個選單區塊開始
-	$('#login_menu').removeClass("login_menu_down");
-	$('#notifier_menu').removeClass("login_menu_down");	
-	// 20190115 關閉另兩個選單區塊結束
-	
   });
+  
   //MOBILE版搜尋關閉
   $('.header_search_close').click(function(evt) {
-	// 20190104 移除關閉選單區塊開始
-	//closemenu(evt);
-    // 20190104 移除關閉選單區塊結束
-	
 	$('#mobile_search').removeClass("search_box_open");
 	$('#header_top').removeClass("header_top_close");
-	// 20190115 移除.search_menu區塊開始
-	$('.search_menu').removeClass("search_menu_down");
-	// 20190115 移除.search_menu區塊結束
-  
   });
   
   //MOBILE版選單切換
-  $('#notifier_m').click(function() {
-	
-	// 20190114 修改寫法開始(註: 因打開了登入選單)
-    $('#notifier_menu').toggleClass("login_menu_down");
-	$('#login_menu').removeClass("login_menu_down");	
-	// 20190114 修改寫法結束
-	
+  // 20190314 start here, 觸發大版選單
+  $('#notifier_m').click(function(e) {
+    e.stopPropagation();
+    $('#notifier').dropdown('toggle');
   });
-  $('#login_m').click(function() {
-    
-	// 20190114 修改寫法開始(註: 因打開了通知選單)
-    $('#login_menu').toggleClass("login_menu_down");
-	$('#notifier_menu').removeClass("login_menu_down");	
-	// 20190114 修改寫法結束
-	
-	
+  // 20190314 end here
+  
+  // 20190314 start here, 觸發大版選單
+  $('#login_m').click(function(e) {
+	e.stopPropagation();
+    $('#login').dropdown('toggle');
   });
+  // 20190314 end here
   
   
-  //當WIDNWOS RESIZE時, 關閉選單
-  $( window ).resize(function(evt) {
-      	  
-	 // 20190104 移除關閉選單區塊開始
-	//closemenu(evt);
-    // 20190104 移除關閉選單區塊結束
-	  	  
-	  // 20190111 會在手機上影響輸入(輸入塊把視窗往上調), 關閉視窗改變偵測區塊開始
-	  // 20191114 加入表頭搜尋區塊開始
-	  //$('.header_search_close').click();
-	  // 20191114 加入表頭搜尋區塊結束
-	  // 20190111 會在手機上影響輸入(輸入塊把視窗往上調), 關閉視窗改變偵測區塊結束
-  });
-  
-	//按選單之外關閉選單
-	// 20190104 移除關閉選單區塊開始
-	$('body').click(function(evt) {
-	    
-	//closemenu(evt);
-   
-     });
-	  // 20190104 移除關閉選單區塊結束
 });
-//關閉選有選單
-// 20190104 移除關閉選單區塊開始
-/*
-function closemenu(evt){
-    if(event.target.id!="login" && $(evt.target).parents("#login").length==0 && $(evt.target).parents("#login_menu").length==0 && event.target.id != "login_menu"
-    && event.target.id != "login_m" && $("#login_menu").hasClass( "login_menu_down" )){
-	   $('#login_menu').removeClass("login_menu_down");
-	}
-	if(event.target.id != "notifier" && $(evt.target).parents("#notifier").length==0 && event.target.id != "notifier_menu"  
-	  && $(evt.target).parents("#notifier_menu").length==0 && event.target.id != "notifier_m" && $("#notifier_menu").hasClass( "login_menu_down" )){
-	    $('#notifier_menu').removeClass("login_menu_down");
-	}
-	if($(evt.target).parents(".search_btn").length==0 && $(evt.target).parents(".search_menu").length==0 && $(".search_menu").hasClass( "search_menu_down" )){
-	   $('.search_menu').removeClass("search_menu_down");
-	}
-}
-*/
-// 20190104 移除關閉選單區塊結束
+
 
 // 20190114 加上MARS FUNCTION, 讓搜尋選單切換字開始
   // MARS v2
@@ -256,7 +129,7 @@ function closemenu(evt){
 
 // 20190115 HEADER在首頁時, 移除底線區塊結束
 // 20190115 在HEADER加上SCROLL時, 出現底線區塊開始
-  window.onscroll = function() {header_sticky()};
+  window.onscroll = function() {header_sticky();};
   var header = document.getElementById("header");
   var sticky = header.offsetTop;
   function header_sticky(){

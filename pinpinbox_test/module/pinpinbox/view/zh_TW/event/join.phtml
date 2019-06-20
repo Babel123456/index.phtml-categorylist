@@ -1,0 +1,297 @@
+<?php 
+	if(count($event_templatejoin)===0) {
+		$tab1Active = null;
+		$tab2Active = 'active';
+		$style1 = 'style="display:none"';
+	} else {
+		$tab1Active = 'active';
+		$tab2Active = null;
+		$style1 = null;
+	}
+
+?>
+<!-- 內容頁開始 -->
+<div id="act_content">
+	<h2><?php echo $event['name']?></h2>
+		<div id="tab-container" class="tab-container">
+			<ul class='etabs'>
+				<li class="v2 <?php echo $tab1Active; ?>" <?php echo $style1; ?>><a href="#tab01"><i><img src="<?php echo static_file('images/join_icon02.svg'); ?>" onerror="this.onerror=null; this.src='<?php echo static_file('join_icon02.png') ?>'" ></i><span><?php echo _('建立作品'); ?></span></a></li>
+				<li class="v2 <?php echo $tab2Active; ?>"><a href="#tab02"><i><img src="<?php echo static_file('images/join_icon01.svg'); ?>" onerror="this.onerror=null; this.src='<?php echo static_file('join_icon01.png') ?>'" ></i><span><?php echo _('選擇已有作品'); ?></span></a></li>
+			</ul>
+			<div class="tab_content join">
+				<div id="tab01" class="tab <?php echo $tab1Active; ?>">
+					<h4><img src="<?php echo static_file('images/object.png'); ?>" height="20" width="20"><?php echo _('請選擇版型風格'); ?></h4>
+					<?php 
+						foreach($event_templatejoin as $k0 => $v0) {
+							echo '<div class="act_album" >
+								<a href="javascript:void(0)" onclick="show_template('.$v0['template_id'].')">
+									<div class="album_list">
+										<ul>
+											<li><img src="'.$v0['image'].'" height="330" width="220"></li>
+											<li>
+												<div class="product_info">
+													<p>'.$v0['name'].'</p>
+													<p class="green"><i class="fa fa-eye"></i>'.$v0['viewed'].'</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</a> 
+								<a href="javascript:void(0)" onclick="edit_event_template_join('.$v0['template_id'].')" class="start_edit"><img src="'.static_file('images/join_icon02.svg').'" onerror="this.onerror=null; this.src='.static_file('join_icon02.png').'" ><span>'._('開始編輯').'</span></a>
+							</div>';
+						}
+					?>
+				</div>
+				<div id="tab02" class="tab <?php echo $tab2Active; ?>">
+					<div class="title">
+						<img src="<?php echo static_file('images/object.png'); ?>" height="20" width="20">
+						<?php echo $titleText ;?>
+					</div>
+					<div>
+					<?php 
+						foreach ($button as $k0 => $v0) {
+							echo '<a href="'.$v0['href'].'" class="mobilehide join_big choose" onclick="'.$v0['onclick'].'" '.$v0['style'].'>'.$v0['text'].'</a>';
+						}
+					?>
+					</div>
+					<div class="act_join">
+						<div id="act_join">
+							<form id="js_album_join_form">
+								<?php 
+								$user = self::user_get();
+								if(!empty($album)){
+									foreach ($album as $k => $v) {
+										$selected = ( in_array($v['album_id'], $user_eventjoin) ) ? 'selected' : null;
+										echo '<a href="javascript:void(0)">
+											<div class="act_album">
+												<div class="check '.$selected.'" id="item_'.$v['album_id'].'" data-album_id="'.$v['album_id'].'">
+													<input style="display:none;" value="'.$v['album_id'].'" type="text" id="input_'.$k.'" name="interest" class="interest_check" />
+													<label><div class="album_select"><img src="'.static_file('images/wh_select.png').'" height="20" width="30"></div></label>
+												</div>
+												<label for="input_'.$k.'">
+													<div class="album_list">
+														<ul>
+															<li><img src="'.URL_UPLOAD.getimageresize($v['cover'],214 ,321).'" height="330" width="220"></li>
+															<li><div class="product_info"><p>'.$v['name'].'</p><p class="green"><i class="fa fa-eye"></i>'.$v['viewed'].'</p></div></li>
+														</ul>
+													</div>
+												</label>
+											</div>
+										</a>';
+									}
+								}
+								?>
+								<input type="submit" style="display:none;" id="js_album_join">
+							</form>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+</div>
+<div id="template_img" style="display:none;"></div>
+<script>
+$(function() {
+	$('#js_album_join_form').validate({
+		rules: {},
+		submitHandler: function() {
+			var a_album_id = [];
+			if($('div.selected').length > 0){
+				$('div.selected').each(function(){
+					a_album_id.push($(this).data('album_id'));
+				});
+			}else{
+				a_album_id.push('');
+			}
+			
+			$.post('<?php echo self::url('event', 'join')?>', {
+				album_id: a_album_id,
+				event_id: <?php echo $event['event_id']?>
+			}, function(r) {
+				r = $.parseJSON(r);
+				if (r.result == 1) {
+					var img = "<img src=\"<?php echo static_file('images/success.png'); ?>\">&nbsp;";
+					var siteModal = new jBox('Modal', {
+						delayOpen: 300,
+						onClose: function() {
+							location.href = r.redirect 
+						},
+					}).setContent(img + r.message).open();
+				} else if (r.result == 2) {
+					site_jBox(r);
+				} else {
+					site_jBox(r, 'error');
+				}
+			});
+		}
+	});
+	
+	$('div.check').on('click' ,function(e){
+		var obj = $(this);
+		if($('div.selected').length < <?php echo $event['contribution']; ?>) {
+			(obj.hasClass("selected")) ? obj.removeClass('selected') : obj.addClass('selected'); 
+		}else{
+			if(obj.hasClass("selected")) obj.removeClass('selected'); 
+		}
+		$('span.numSelect').html($('div.selected').length);
+	});
+
+});
+
+function create() {
+	$.post('<?php echo self::url('event', '_taketemplate_v2')?>', {
+		template_id: 0,
+		event_id: <?php echo $event['event_id']?>,
+	}, function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 1:
+				_jBox(r, 'albumProcess');
+				break;
+			case 2:
+				_jBox(r, 'login');
+				break;
+			case 3:
+				location.href = r.redirect;
+				break;
+			default:
+				_jBox(r, 'error');
+				break;
+		}
+	});
+}
+
+function edit_event_template_join(id) {
+	var str = '<?php echo _('Are you sure you want to use this Template?') ?>',
+		myConfirm = new jBox('Confirm', {
+		cancelButton: '<?php echo _('No')?>',
+		confirmButton: '<?php echo _('Yes')?>',
+		confirm:function(){
+			$.post('<?php echo self::url('event', 'edit_event_template_join')?>', {
+				event_id: <?php echo $event['event_id']?>,
+				template_id: id,
+				<?php if(!empty($_GET['join_event'])) echo 'join_event:\''.$_GET['join_event'].'\',' ?>
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 1:
+						_jBox(r, 'success');
+						break;
+					case 2:
+						_jBox(r, 'login');
+						break;
+					case 3:
+						_jBox(r, 'taketemplate');
+						break;
+					case 4:
+						_jBox(r, 'albumProcess');
+						break;
+					case 5:
+						location.href = r.redirect;
+						break;
+					default:
+						_jBox(r, 'error');
+						break;
+				}
+			});
+
+		},
+		onCloseComplete:function(){
+			myConfirm.destroy();
+		}
+	}).setContent(str).open();
+}
+
+function confirm_select() {
+	var str = '<p class=\"keypoint title red\">※<?php echo _('Attention')?>※</p><br>'+
+	'<p>1.<?php echo _('The albums downloaded in the “activity” are not included in your earning statistics.'); ?></p>'+
+	'<p>2.<?php echo _('If you want to re-select the album within the period of activity, please click “I want to join” to proceed.'); ?></p>'+
+	'<p>3.<?php echo _('Cancelling the submitted album also cancels the number of votes.') ;?></p>';
+
+	var myConfirm = new jBox('Confirm', {
+		cancelButton: '<?php echo _('No')?>',
+		confirmButton: '<?php echo _('Yes')?>',
+		confirm:function(){
+			// 至少選擇一本相本後送出表單
+			$('#js_album_join').trigger('click');
+		},
+		onCloseComplete:function(){
+			myConfirm.destroy();
+		}
+	}).setContent(str).open();
+}
+
+function mobile() {
+	var r = {'message' : '<?php echo _('目前不支援手機投稿，請使用網頁操作，謝謝') ?>' };
+	_jBox(r, 'info');
+	
+}
+
+function browseKit_template () {
+	//photoswipe
+	if ($('.pswp').length == 0) {
+		$('body').append(
+			'<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">'+
+				'<div class="pswp__bg"></div>'+
+				'<div class="pswp__scroll-wrap">'+
+					'<div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div>'+
+					'<div class="pswp__ui pswp__ui--hidden">'+
+			            '<div class="pswp__top-bar">'+
+			                '<div class="pswp__counter"></div>'+
+			                '<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>'+
+			                '<button class="pswp__button pswp__button--share" title="Share"></button>'+
+			                '<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>'+
+			                '<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>'+
+			                '<div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div>'+
+			            '</div>'+
+			            '<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div>'+
+			            '<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>'+
+			            '<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>'+
+			            '<div class="pswp__caption"><div class="pswp__caption__center"></div></div>'+
+			        '</div>'+
+			    '</div>'+
+			'</div>'
+		);
+	}
+	var items = [];
+	$('#template_img').find('img').each(function(k0, v0) {
+		var that1 = $(this);
+	    var item = {
+			src: that1.prop('src'),
+			w: 1336,
+			h: 2004,
+	    }
+	    items.push(item);
+	});
+    var options = {loop: false};
+	var pswp = new PhotoSwipe(document.querySelectorAll('.pswp')[0], PhotoSwipeUI_Default, items, options);
+	pswp.init();
+
+	$('.pswp__button--arrow--left').on('click', function() {
+		if (items.length == pswp.getCurrentIndex() + 1) pswp.close();
+	});
+	$('.pswp__button--arrow--right').on('click', function() {
+		if (pswp.getCurrentIndex() == 0) pswp.close();
+	});
+
+}
+
+function show_template(id) {
+	$.post('<?php echo self::url('event', 'template_img')?>', {
+		event_id: <?php echo $event['event_id']?>,
+		template_id: id,
+	}, function(r) {
+		r = $.parseJSON(r);
+		if (r.result == 1) {
+			var html = '';
+			for(var i in r.data) {
+				html += '<img src="'+r.data[i]+'">';
+			}
+			$('#template_img').html(html);
+			browseKit_template();
+		} else  {
+			site_jBox(r, 'error');
+		} 
+	});	
+}
+</script>

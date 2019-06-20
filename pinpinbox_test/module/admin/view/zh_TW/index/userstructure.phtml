@@ -1,0 +1,99 @@
+<div id="analysis">
+	<?php include 'nav.phtml'?>
+	<div class="content">
+		<table class="table">
+			<tr class="row">
+				<td class="cell cell-12">
+					<div class="panel">
+						<div class="panel-title">Age<span class="k-icon k-i-arrowhead-n"></span></div>
+						<div class="panel-content"><div id="userage-chart" style="width: 100%; height: 300px; margin: 0 auto"></div></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table class="table">
+			<tr class="row">
+				<td class="cell cell-3">
+					<div class="panel">
+						<div class="panel-title">Gender<span class="k-icon k-i-arrowhead-n"></span></div>
+						<div class="panel-content"><div id="usergender-chart" style="width: 100%; height: 300px; margin: 0 auto"></div></div>
+					</div>
+				</td>
+				<td class="cell cell-3">
+					<div class="panel">
+						<div class="panel-title">Relationship<span class="k-icon k-i-arrowhead-n"></span></div>
+						<div class="panel-content"><div id="userrelationship-chart" style="width: 100%; height: 300px; margin: 0 auto"></div></div>
+					</div>
+				</td>
+				<td class="cell cell-6 list">
+					<ul>
+						<li class="list-key">總數量：</li><li class="list-value"><?php echo $totalamount?></li>
+						<li class="list-key">平均年齡（Unknown 不計入）：</li><li class="list-value"><?php echo $averageage?></li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<script>
+$(function(){
+	//userage
+	$('#userage-chart').highcharts({
+        chart: {
+            type: 'column',
+            zoomType: 'xy'
+        },
+        title: {text: null},
+        tooltip: {shared: true},
+        plotOptions: {
+        	column: {stacking: 'normal'}
+        },
+        series: <?php echo $userage_series?>,
+        xAxis: {
+            categories: <?php echo $userage_x?>
+        },
+        yAxis: {
+        	stackLabels: {enabled: true},
+            title: {text: null}
+        },
+    });
+    
+    //usergender
+    $('#usergender-chart').highcharts({
+        chart: {
+            type: 'pie',
+        },
+        title: {text: null},
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.percentage:.1f}%',
+                }
+            }
+        },
+        series: <?php echo $usergender?>
+    });
+
+    //userrelationship
+    $('#userrelationship-chart').highcharts({
+        chart: {
+            type: 'pie',
+        },
+        title: {text: null},
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.percentage:.1f}%',
+                }
+            }
+        },
+        series: <?php echo $userrelationship?>
+    });
+});
+</script>

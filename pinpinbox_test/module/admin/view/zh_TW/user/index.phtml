@@ -1,0 +1,99 @@
+<?php echo $index?>
+<script>
+$(function(){
+    $('#grid').kendoGrid({
+    	columns: [
+			{field: '<?php echo M_CLASS?>_id', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+			{field: 'account', attributes: {'class': 'string'}},
+			{field: 'name', attributes: {'class': 'string'}},
+			{field: 'cellphone', attributes: {'class': 'string'}},
+			{field: 'email', attributes: {'class': 'string'}},
+			{field: 'gender', attributes: {'class': 'enums'}},
+			{field: 'creative', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+			{field: 'lastlogintime', attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+			{field: 'way', attributes: {'class': 'enums'}},
+			{field: 'viewed', attributes: {'class': 'number'}},
+            {field: 'businessuser_id', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+			{field: 'act', attributes: {'class': 'enums act-#:act#'}},
+			{field: 'modifytime', attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+			{attributes: {'class': 'button'},
+				command: {
+					click: function(e){
+				        var tr = $(e.target).closest('tr'); //get the row for deletion
+				        var data = this.dataItem(tr); //get the row data so it can be referred later
+
+				        //param
+						var param = {};
+						param['<?php echo M_CLASS?>_id'] = data.<?php echo M_CLASS?>_id;
+
+				    	$.post('<?php echo self::url(M_CLASS, 'extra0')?>', param, function(r) {
+				    		r = $.parseJSON(r);
+				    		jConfirm = new jBox('Confirm', {
+								cancelButton: '<?php echo _('No')?>',
+								confirm: function(){
+									var execute = $.extend(true, {}, param);
+									execute['execute'] = true;
+
+									Pace.track(function(){
+										$.post('<?php echo self::url(M_CLASS, 'extra0')?>', execute, function(r) {
+											r = $.parseJSON(r);
+					    					switch (r.result) {
+					    						case 0:griderror(r.message);break;
+					    						case 1:
+					    							gridsuccess(r.message);
+						    						window.open(r.data);
+					    							break;
+					    					}
+										});
+									});
+								},
+								confirmButton: '<?php echo _('Yes')?>',
+								onCloseComplete: function(){
+									jConfirm.destroy();
+								}
+							}).setContent(r.message).open();
+				    	});
+					},
+					text: 'Login',
+				}
+			},
+		],
+		dataBinding: function(e) {},
+		dataBound: function(e) {},
+        dataSource: new kendo.data.DataSource({
+    		page: 1,
+    		pageSize: gridpageSize,
+    		schema: {
+    			data: function(r){return r.data;},
+    			total: function(r){return r.total;}
+    		},
+    		serverFiltering: true,
+    		serverPaging: true,
+    		serverSorting: true,
+    		sort: {field: '<?php echo M_CLASS?>_id', dir: 'desc'},
+    		transport: {
+    			read: {
+    				dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+    				type: 'POST',
+    				url: '<?php echo self::url(M_CLASS, 'json')?>',
+    			}
+    		},
+    	}),
+        filterable: true,
+        height: gridheight,
+        pageable: {
+            input: true,
+            pageSize: gridpageSize,
+            pageSizes: gridpageSizes,
+            refresh: true,
+        },
+        reorderable: true,
+        resizable: true,
+        selectable: true,
+        sortable: true,
+		toolbar: [
+		  	{template: '<a class="k-button" onclick="grid_toolbar_add(\'\\#grid\', \'<?php echo self::url(M_CLASS, 'form', ['act'=>'add'])?>\')"><span class="k-icon k-i-plus"></span></a><a class="k-button" onclick="grid_toolbar_edit(\'\\#grid\', \'<?php echo self::url(M_CLASS, 'form', ['act'=>'edit'])?>\', [\'<?php echo M_CLASS?>_id\'])"><span class="k-icon k-i-pencil"></span></a>'},
+		],
+    });
+});
+</script>

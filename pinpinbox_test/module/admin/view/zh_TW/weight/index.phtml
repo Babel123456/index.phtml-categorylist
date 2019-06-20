@@ -1,0 +1,65 @@
+<?php echo $form?>
+<script>
+var type = ['album', 'user'];
+
+$(function(){
+	$('#form').validate({
+		ignore: 'input[type="number"]',//2017-01-11 Lion: 判斷 step 有問題, 乾脆忽略檢查
+		submitHandler: function() {
+			var a_weight = [];
+
+			for (var k0 in type) {
+				$.each($('input[id^="weight-' + type[k0] + '"]'), function(k1, v1){
+					a_weight.push({
+						type: $(v1).data('type'),
+						keyword: $(v1).data('keyword'),
+						weight: parseFloat($(v1).val() || 0),
+						remark: $('#remark-' + type[k0] + '-' + $(v1).data('keyword')).val(),
+					});
+				});
+			}
+			
+			$.post('<?php echo $action?>', {
+				weight: a_weight,
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formsuccess(r.message);break;
+					case 2:formnotice(r);break;
+				}
+			});
+			
+		}
+	});
+
+	weightAccountingReflesh();
+	
+	$(document).on('input', 'input[id^="weight"]', function(){weightAccountingReflesh();});
+});
+
+function weightAccountingReflesh() {
+	for (var k0 in type) {
+        var $tmp0 = $('input[id^="weight-' + type[k0] + '"]'),
+			num0 = 0,
+			sum0 = 0;
+		
+		$.each($tmp0, function(k1, v1){
+			sum0 += parseFloat($(v1).val() || 0);
+		});
+		
+		$.each($tmp0, function(k1, v1){
+			if (sum0 !== 0) {
+				num0 = (parseFloat($(v1).val() || 0) / sum0 * 100).toFixed(1);
+				
+				if (num0 >= 100.0) {
+					num0 = 100;
+				} else if (num0 <= 0.0) {
+					num0 = 0;
+				}
+			}
+			$(v1).siblings('span[data-tag="weight-accounting"]').text(num0);
+		});
+	}
+}
+</script>

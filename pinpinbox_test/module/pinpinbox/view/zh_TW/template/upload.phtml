@@ -1,0 +1,184 @@
+<div id="content_big" class="temp">
+	<h3 class="page_title"><?php echo _('Create'); ?></h3>
+	<div id="album_top">
+		<ul class="template_ul">
+			<li><a href="<?php echo self::url('template', 'index', ['rank'=>0]) ?>"><?php echo _('Hot'); ?></a></li>
+			<li><a href="<?php echo self::url('template', 'index', ['rank'=>1]) ?>"><?php echo _('Free'); ?></a></li>
+			<li><a href="<?php echo self::url('template', 'index', ['rank'=>2]) ?>"><?php echo _('Paid') ?></a></li>
+			<li><a href="<?php echo self::url('template', 'index', ['rank'=>3]) ?>"><?php echo _('Latest'); ?></a></li>
+			<li><a href="<?php echo self::url('template', 'index', ['rank'=>4]) ?>"><?php echo _('Purchased'); ?></a></li>
+		</ul>
+	</div>
+	<div id="album_content">
+		<div id="tem_content">
+			<div id="tem_upload">
+				<ul>
+					<li><h3><?php echo _('Quick Create'); ?></h3></li>
+					<li><div class="line"></div></li>
+					<a class="upload" href="javascript:void(0)" onclick="save_album()"><?php echo _('Save album')?></a>
+					<li><?php echo _('Size and specifications'); ?> : 1336 px * 2004 px <a href="javascript:void(0)" class="question"><?php echo _('How to upload'); ?></a></li>
+					<li>
+						<!-- The file upload form used as target for the file upload widget -->
+						<form id="fileupload" action="javascript:void(0)" method="POST" enctype="multipart/form-data" name="uploadform" data-ng-app="demo" data-ng-controller="DemoFileUploadController" data-file-upload="options" data-ng-class="{'fileupload-processing': processing() || loadingFiles}">
+							<!-- Redirect browsers with JavaScript disabled to the origin page -->
+							<noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
+							<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+							<div class="row fileupload-buttonbar">
+								<div class="col-lg-7">
+									<!-- The fileinput-button span is used to style the file input field as button -->
+									<span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}">
+										<i class="glyphicon glyphicon-plus"></i>
+										<span><?php echo _('Select record'); ?></span>
+										<input type="file" name="files[]" multiple ng-disabled="disabled" accept="image/jpeg, image/jpg, image/png">
+									</span>
+									<button type="button" id="uploadstart" class="btn btn-success start" data-ng-click="submit()" style="">
+										<i class="glyphicon glyphicon-upload"></i>
+										<span><?php echo _('Start Uploading'); ?></span>
+									</button>
+									<button type="button" id="uploadcancel" class="btn btn-warning cancel" data-ng-click="cancel()">
+										<i class="glyphicon glyphicon-ban-circle"></i>
+										<span><?php echo _('Cancel Uploading'); ?></span>
+									</button>
+									<!-- The global file processing state -->
+									<span class="fileupload-process"></span>
+								</div>
+								<div class="progress" style="display:none;">
+									<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70"	aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:#17b1ad;">
+										<span class="sr-only" style="color:white;"></span>
+									</div>
+								</div>
+							</div>
+							<!-- The table listing the files available for upload/download -->
+							<table class="table table-striped files ng-cloak">
+								<tr data-ng-repeat="file in queue" data-ng-class="{'processing': file.$processing()}" state="pretreat">
+									<td data-ng-switch data-on="!!file.thumbnailUrl">
+										<div class="preview" data-ng-switch-when="true">
+											<a data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery><img data-ng-src="{{file.thumbnailUrl}}" alt=""></a>
+										</div>
+										<div class="preview" data-ng-switch-default data-file-upload-preview="file"></div>
+									</td>
+									<td>
+										<p class="name" data-ng-switch data-on="!!file.url">
+											<span data-ng-switch-when="true" data-ng-switch data-on="!!file.thumbnailUrl">
+												<a data-ng-switch-when="true" data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery>{{file.name}}</a>
+												<a data-ng-switch-default data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}">{{file.name}}</a>
+											</span>
+											<span data-ng-switch-default>{{file.name}}</span>
+										</p>
+										<strong data-ng-show="file.error" style="color:red;" class="error text-danger">{{file.error}}</strong>
+										<strong class="success" style="color:#17b1ad;font-weight:bold;"></strong>
+									</td>
+									<td>
+										<p class="size">{{file.size | formatFileSize}}</p>											
+									</td>
+									<td>											
+										<button type="button" class="btn btn-warning cancel" data-ng-click="file.$cancel()" data-ng-hide="!file.$cancel">
+											<i class="glyphicon glyphicon-ban-circle"></i>
+											<span><?php echo _('Cancel Uploading'); ?></span>
+										</button>											
+									</td>
+								</tr>
+							</table>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+var upload_data = [];
+$(function() {
+	//file upload
+	var target_table = $('table.table-striped');
+	$('#fileupload').fileupload({
+		dataType: 'json',
+		url: '<?php echo self::url('template', 'upload')?>',
+		start: function(e) {},
+		send: function(e, data) {},
+		submit: function(e, data) {
+			if (!$('tr.ng-scope[state="pretreat"]').length) return false;
+		},
+		success: function(result, textStatus, jqXHR) {},
+		error: function(jqXHR, textStatus, errorThrown) {},
+		progressall: function(e, data) {
+			var progressall = parseInt(data.loaded / data.total * 100, 10);
+			$('.progress').slideDown();
+			
+			$('.progress>.progress-bar').css('width', progressall + '%');
+			$('.sr-only').text(progressall + '%');
+			
+			if (progressall == 100) {
+				setTimeout(function() {
+					$('.progress').slideUp();
+					$('.progress>.progress-bar').css('width','0%');
+					$('.sr-only').text('0%');
+				}, 2000);
+			}
+		},
+		done: function(e, data) {
+			switch (data.result.result) {
+				case 0:
+					_jBox(data.result, 'error');
+					break;
+				
+				case 1:
+					upload_data.push(data.result.data);
+					$('tr.ng-scope[state="pretreat"]').each(function() {
+						$(this).attr('state', 'success').find('strong.success').text('<?php echo _('Upload success.')?>').end().find('button.cancel').hide();
+					});
+					break;
+			
+				case 2:
+					_jBox(data.result, 'login');
+					break;
+
+				case 3:
+					_jBox(data.result, 'albumProcess');
+					break;
+			}
+		},
+	});
+	
+	$('.question').on('click', function() {
+		_jBox({'message': '<?php echo _('A large number of files could be uploaded by this service. But certain Templates are not supported.').'<br>'._('First, “Select profile”(repeatable) and adjust the order. Second, upload. Finally, click “Save the album” and wait for the system processing, after which the album will be created.')?>'}, 'info');
+	});
+});
+
+function save_album() {
+	if (upload_data.length == 0) {
+		_jBox({'message': '<?php echo _('You are required to upload the photo profile first.')?>'}, 'info');
+	} else if(upload_data.length > <?php echo $photos_per_album ?>) {
+		_jBox({'message': '<?php echo _('The photo quantity is beyond the limit')?>'}, 'info');
+	}else {
+		$.ajax({
+			url: '<?php echo self::url('template', 'save_album')?>',
+			type: 'POST',
+			data: ({
+				album_data: JSON.stringify(upload_data),
+			}),
+			beforeSend: function(xhr) {
+				box0 = _jBox(null, 'processing');
+			}
+		}).done(function(r) {
+			r = $.parseJSON(r);
+			box0.close();
+			switch (r.result) {
+				case 1:
+					upload_data = [];
+					_jBox(r, 'success');
+					break;
+				case 2:
+					_jBox(r, 'login');
+					break;
+				case 3:
+					_jBox(r, 'albumProcess');
+					break;
+				default:
+					_jBox(r, 'error');
+					break;
+			}
+		});	
+	}
+}
+</script>

@@ -1,0 +1,155 @@
+<!-- 內容頁開始 -->
+<div id="banner">
+	<div id="recuit_banner" class="banner01">
+		<div id="recuit_info">
+			<div class="recuit_title"><?php echo _('Application for sponsorship') ;?></div>
+			<p><?php echo _('Do you want to be a creative talent?  All creative talents brave to show himself throughout the universe are welcomed. As long as you have the courage to be recognized, all creative talents throughout the universe are welcomed.'); ?></p>
+		</div>
+	</div>
+</div>
+<div id="rescuit_ad"><?php echo _('There are already ').'&nbsp;<span>'.$count.'</span> '._('participants in our pinpinbox Recruitment project.'); ?></div>
+<div id="rescuit_content">
+	<div id="rescuit_in">
+		<ul>
+			<li><h2><?php echo _('Platform Introduction'); ?></h2></li>
+			<li><div class="line"></div></li>
+			<li><p><?php echo _('pinpinbox認為任何創作都是有價的，「微數位出版平台」以經濟共享為概念，為創作人搭建一個表現的舞台，在把創意帶給群眾體驗的同時，可以獲得支持者的實質贊助，盡情於創作之餘，也能經營自我品牌。
+			平台網羅各界好手們來此開闢天地，你的作品可以因為觀眾的喜愛而獲得收益。pinpinbox提供職人異業合作的機會，你的設計和創意很有可能因此出現在大街小巷上。平台也結合社群、行銷等活動協助職人接觸到熱愛創意、重視生活品味的族群，滿足職人從創作到推廣的各種需求。'); ?></p></li>
+			<li><h2><?php echo _('Recruits'); ?></h2></li>
+			<li><div class="line"></div></li>
+			<li><p><?php echo _('Underappreciated talents who want and have the guts to be recognized'); ?></p></li>
+			<li><h2><?php echo _('Recruitment requirements'); ?></h2></li>
+			<li><div class="line"></div></li>
+			<li><p><?php echo _('No need to resign.'); ?><br>
+					<?php echo _('No need to register.'); ?><br>
+					<?php echo _('No membership fees.'); ?><br>
+					<?php echo _('Register as members to join pinpinbox'); ?>
+				</p>
+			</li>
+			<li><h2><?php echo _('Work Description'); ?></h2></li>
+			<li><div class="line"></div></li>
+			<li>
+				<p>
+					<?php echo _('1.製作創意作品－運用pinpinbox多元的編輯功能，創作讓人不得不收藏、贊助的特色作品。'); ?>
+				</p>
+			</li>
+			<li><h2><?php echo _('販售分潤'); ?></h2></li>
+			<li><div class="line"></div></li>
+			<li>
+				<p>
+					<span style="font-weight:blod;"><?php echo _('線上貨幣'); ?>:</span><br>
+					<?php echo _('用於pinpinbox平台的虛擬貨幣為「P點」，P點與各國貨幣之間兌換以當時系統匯率為準。') ?><br><br>
+					<span style="font-weight:blod;"><?php echo _('依照職人等級分潤'); ?>:</span><br>
+					<?php echo _('創作人收益基本分潤比例為 50%，分潤比例依據「追蹤人數」和「相本收藏次數」提升，共分為 6 級。'); ?><br><br>
+					<table border="1" style="width:60%">
+						<tr style="border-bottom: 1px solid #ccc">
+							<td style="color:red"><?php echo _('職人等級'); ?><span style="color:blue"><?php echo _('（經由販售註冊申請）') ?></span></td>
+							<td style="color:red"><?php echo _('相本'); ?></td>
+						</tr>
+						<tr>
+							<td><?php echo _('0等(追蹤數:0 相本收藏次數:0)'); ?></td>
+							<td>50%</td>
+						</tr>
+						<tr>
+							<td><?php echo _('1等(追蹤數:60 相本收藏次數:100)'); ?></td>
+							<td>52.5%</td>
+						</tr>
+						<tr>
+							<td><?php echo _('2等(追蹤數:600 相本收藏次數:1440)'); ?></td>
+							<td>55%</td>
+						</tr>
+						<tr>
+							<td><?php echo _('3等(追蹤數:9000 相本收藏次數:29700)'); ?></td>
+							<td>57.5%</td>
+						</tr>
+						<tr>
+							<td><?php echo _('4等(追蹤數:72000 相本收藏次數:288000)'); ?></td>
+							<td>60%</td>
+						</tr>
+						<tr>
+							<td><?php echo _('5等(追蹤數:504000 相本收藏次數:2520000)'); ?></td>
+							<td>65%</td>
+						</tr>
+					</table><br>
+					<span style="font-weight:blod;"><?php echo _('結算匯款'); ?>:</span><br>
+					<?php echo _('當您的純收益（已扣除拆帳部分）達到門檻35美金時，即可申請領取您所賺取的收益，月底統計後於次月15號前匯至指定帳戶。'); ?><br><br>
+					<span style="font-weight:blod;"><?php echo _('海外職人與申報稅率'); ?>:</span><br>
+					<?php echo _('海外創作人亦可申請成為職人。依執行業務所得扣繳稅率計:台灣境內10%、海外地區20%。'); ?>
+				</p>
+			</li>
+		</ul>
+	</div>
+</div>
+<span id="tutorial_img" style="display:none;">
+	<img src="<?php echo static_file('images/tutorial/page_01.jpg'); ?>">
+	<img src="<?php echo static_file('images/tutorial/page_02.jpg'); ?>">
+	<img src="<?php echo static_file('images/tutorial/page_03.jpg'); ?>">
+	<img src="<?php echo static_file('images/tutorial/page_04.jpg'); ?>">
+</span>
+
+<?php 
+	$redirect = (!empty($_GET['redirect'])) ? ['redirect'=>$_GET['redirect']] : [] ;
+	$href = self::url('creative', 'apply', $redirect);
+	$onclick = null;
+	if (empty(self::user_get())) {
+		$href = 'javascript:void(0)';
+		$onclick = 'onclick="var r = {result: 0, message: \''._('Please login first.').'\', redirect: \''.self::url('user', 'login', array('redirect'=>self::url('creative', 'apply'))).'\'};site_jBox(r);"';
+	}
+?>
+
+<div class="button"><a href="<?php echo $href ;?>" <?php echo $onclick ; ?> class="startjoin"><?php echo _('Be a creative talent'); ?></a></div>
+<script type="text/javascript">
+function browseKit_recruit() {
+	//photoswipe
+	if ($('.pswp').length == 0) {
+		$('body').append(
+			'<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">'+
+				'<div class="pswp__bg"></div>'+
+				'<div class="pswp__scroll-wrap">'+
+					'<div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div>'+
+					'<div class="pswp__ui pswp__ui--hidden">'+
+			            '<div class="pswp__top-bar">'+
+			                '<div class="pswp__counter"></div>'+
+			                '<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>'+
+			                '<button class="pswp__button pswp__button--share" title="Share"></button>'+
+			                '<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>'+
+			                '<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>'+
+			                '<div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div>'+
+			            '</div>'+
+			            '<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div>'+
+			            '<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>'+
+			            '<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>'+
+			            '<div class="pswp__caption"><div class="pswp__caption__center"></div></div>'+
+			        '</div>'+
+			    '</div>'+
+			'</div>'
+		);
+	}
+	var items = [];
+	$('#tutorial_img').find('img').each(function(k0, v0) {
+		var that1 = $(this);
+	    var item = {
+			src: that1.prop('src'),
+			w: 1336,
+			h: 2004,
+	    }
+	    items.push(item);
+	});
+    var options = {
+		loop: false,
+	};
+	
+	var pswp = new PhotoSwipe(document.querySelectorAll('.pswp')[0], PhotoSwipeUI_Default, items, options);
+	pswp.init();
+	
+	$('.pswp__button--arrow--left').on('click', function() {
+		if (items.length == pswp.getCurrentIndex() + 1) pswp.close();
+	});
+	
+	$('.pswp__button--arrow--right').on('click', function() {
+		if (pswp.getCurrentIndex() == 0) pswp.close();
+	});
+}
+$(".recuit_title").fitText(1.2, { maxFontSize: '30px' });
+
+</script>

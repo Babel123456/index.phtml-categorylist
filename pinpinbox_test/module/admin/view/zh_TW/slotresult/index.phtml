@@ -1,0 +1,292 @@
+<div id="section">
+    <span class="title"> 搜尋條件 </span>
+    <div class="content">
+        依 
+        <select id="search_key">
+            <option value="">--</option>
+            <?php 
+                foreach ($search_key as $v0) {
+                    echo '<option value="'.$v0['value'].'">'.$v0['name'].'</option>';
+                }
+            ?>
+        </select>
+        的 
+        <select id="search_sub_key">
+            <option value="">--</option>
+        </select>
+        <input type="text" id="search_value">
+        <input type="button" id="start_search" value="搜尋">
+    </div>
+    <div class="content">
+        <span>
+            <a href="javascript:void(0)" onclick="get_data('photousefor')" class="list">全部獎項</a>
+            <a href="javascript:void(0)" onclick="get_data('user')" class="list">全部參與用戶</a>
+        </span>
+    </div>
+</div>
+
+<?php echo $index?>
+<script>
+function get_data(key, sub_key = null, value = null) {
+    var columns, editable;
+    $('#grid').empty();
+    switch (key) {
+        case 'user' :
+
+            switch(sub_key) {
+                case 'account' :
+                case 'email' :
+                case 'name' :
+                case 'user_id' :
+
+                    columns = [
+                        {field: 'photousefor_user_id', attributes: {'class': 'number'}, },
+                        {field: 'user', attributes: {'class': 'string'}, encoded: false, },
+                        {field: 'photousefor', attributes: {'class': 'string'},encoded: false,},
+                        {field: 'album', attributes: {'class': 'string'}, encoded: false, },
+                        {field: 'photo_id', attributes: {'class': 'number'}, },
+                        {field: 'count', attributes: {'class': 'number'}, },
+                        {field: 'os', attributes: {'class': 'string'}, encoded: false, },
+                        {field: 'state', attributes: {'class': 'string'}, encoded: false, },
+                        {field: 'photousefor_user_inserttime', title: 'inserttime',attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+                        {field: 'photousefor_user_modifytime', title: 'modifytime',attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},                    ]
+
+                    editable = {
+                            photousefor_user_id: {editable: false},
+                            user: {editable: false},
+                            photousefor: {editable: false},
+                            album: {editable: false},
+                            photo_id: {editable: false},
+                            count: {editable: false},
+                            state: {editable: false},
+                            os: {editable: false},
+                            photousefor_user_inserttime: {editable: false},
+                            photousefor_user_modifytime: {editable: false},
+                    };
+                    break;
+
+
+                default : 
+                    columns = [
+                            {field: 'user_id', attributes: {'class': 'number'}, },
+                            {field: 'account', attributes: {'class': 'string'}, encoded: false, },
+                            {field: 'user_name', attributes: {'class': 'string'}, encoded: false, },
+                            {field: 'email', attributes: {'class': 'string'}, encoded: false, },
+                            {field: 'way', attributes: {'class': 'string'}, encoded: false, },
+                            {field: 'features', attributes: {'class': 'string'}, encoded: false, },
+                    ];
+
+                    editable = {
+                            user_id: {editable: false},
+                            user_name: {editable: false},
+                            way: {editable: false},
+                            features: {editable: false},
+                            email: {editable: false},
+                            account: {editable: false},
+                    };
+                    break;
+            }
+
+            break;
+
+        case 'photo' :
+            switch(sub_key) {
+                case 'photo_id' :
+                    columns = [
+                        {field: 'photo_id',  attributes: {'class': 'number'}, },
+                        {field: 'photousefor_id',  attributes: {'class': 'number'}, },
+                        {field: 'photousefor_name', attributes: {'class': 'string'}, encoded: false, },
+                        {field: 'image', attributes: {'class': 'string'}, encoded: false, },
+                        {field: 'photousefor_amount', title:'amount', attributes: {'class': 'number'}, },
+                        {field: 'photousefor_count',  title:'count' ,attributes: {'class': 'number'}, },
+                        {field: 'photousefor_inserttime', title: 'inserttime',attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+                        {field: 'photousefor_modifytime', title: 'modifytime',attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+                        {field: 'features', attributes: {'class': 'string'}, encoded: false, },
+                    ]
+
+                    editable = {
+                            photousefor_id: {editable: false},
+                            photo_id: {editable: false},
+                            photousefor_name: {editable: false},
+                            image: {editable: false},
+                            photousefor_amount: {editable: false},
+                            photousefor_count: {editable: false},
+                            photousefor_inserttime: {editable: false},
+                            photousefor_modifytime: {editable: false},
+                            features: {editable: false},
+                    };
+                    break;
+
+
+                    break;
+
+            }
+            break;
+
+        case 'photousefor':
+            switch (sub_key){
+                case 'photousefor_id':
+                case 'photousefor_name':
+                    columns = [
+                        {field: 'photousefor_user', title: 'photousefor_user_id', attributes: {'class': 'string'}, },
+                        {field: 'photousefor', attributes: {'class': 'string'}, encoded: false, },
+                        {field: 'photo_id', attributes: {'class': 'string'}, encoded: false, },
+                        {field: 'user', attributes: {'class': 'string'}, encoded: false, },
+                        {field: 'os', attributes: {'class': 'string'}, },
+                        {field: 'state', attributes: {'class': 'string'}, },
+                        {field: 'photousefor_user_inserttime', title: 'inserttime',attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+                        {field: 'photousefor_user_modifytime', title: 'modifytime',attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+                    ]
+
+                    editable = {
+                            photousefor_user: {editable: false},
+                            photousefor: {editable: false},
+                            photo_id: {editable: false},
+                            user: {editable: false},
+                            os: {editable: false},
+                            state: {editable: false},
+                    };
+                    break;
+
+                default :
+                    columns = [
+                        {field: 'photousefor_id', attributes: {'class': 'number'}, },
+                        {field: 'album', attributes: {'class': 'string'}, encoded: false, },
+                        {field: 'photo_id', attributes: {'class': 'number'}, },
+                        {field: 'photousefor_name', title: 'name', attributes: {'class': 'string'}},
+                        {field: 'amount', attributes: {'class': 'number'}, },
+                        {field: 'count', attributes: {'class': 'number'}, },
+                        {field: 'photousefor_inserttime', title: 'inserttime',attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+                        {field: 'photousefor_modifytime', title: 'modifytime',attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+                        {field: 'features', title: 'features',attributes: {'class': 'date'}, encoded: false},
+                    ]
+
+                    editable = {
+                            photousefor_id: {editable: false},
+                            album: {editable: false},
+                            photo_id: {editable: false},
+                            photousefor_name: {editable: false},
+                            amount: {editable: false},
+                            count: {editable: false},
+                            photousefor_inserttime: {editable: false},
+                            photousefor_modifytime: {editable: false},
+                            features: {editable: false},
+                    };
+                    break;
+            }
+
+
+            break;
+    }
+
+    $('#grid').kendoGrid({
+        columns: columns,
+        dataBinding: function(e) {},
+        dataBound: function(e) {},
+        dataSource: new kendo.data.DataSource({
+            batch: true,
+            page: 1,
+            pageSize: gridpageSize,
+            serverPaging: true,
+            serverSorting: true,
+            serverFiltering: true,
+            transport: {
+                read: {
+                    dataType: 'json', 
+                    type: 'POST',
+                    url: '<?php echo self::url(M_CLASS, 'json')?>',
+                    data: {
+                        key : key,
+                        sub_key : sub_key,
+                        value : value,
+                    }
+                },
+            },
+            schema: {
+                data: function(r){return r.data;},
+                total: function(r){return r.total;},
+                model: {
+                    id: 'id',
+                    fields: editable,
+                } 
+            },
+            sort: {field: 'modifytime', dir: 'desc'}
+        }),
+        editable: {
+            confirmation: false,
+            mode: 'incell'
+        },
+        filterable: true,
+        height: gridheight,
+        pageable: {
+            refresh: true,
+            input: true,
+            pageSize: gridpageSize,
+            pageSizes: gridpageSizes,
+        },
+        reorderable: true,
+        resizable: true,
+        selectable: true,
+        sortable: true,
+    });
+}
+
+$(function(){
+    $('#search_key').on('change', function(){
+       var val = $(this).val(), sub_key;
+        $('#search_sub_key option').not(':first').remove();
+        switch(val) {
+            case 'user' :
+                <?php 
+                    echo 'sub_key=`';
+                    foreach ($search_sub_key['user'] as $k0 => $v0) {
+                        echo '<option value="'.$v0['value'].'">'.$v0['name'].'</option>';
+                    }
+                    echo '`;';
+                ?>
+                $('#search_sub_key').append(sub_key);
+                $('#start_search').val('搜尋中獎清單');
+                break;
+
+            case 'photo' :
+                <?php 
+                    echo 'sub_key=`';
+                    foreach ($search_sub_key['photo'] as $k0 => $v0) {
+                        echo '<option value="'.$v0['value'].'">'.$v0['name'].'</option>';
+                    }
+                    echo '`;';
+                ?>
+                $('#search_sub_key').append(sub_key);
+                break;
+
+            case 'photousefor' :
+                <?php 
+                    echo 'sub_key=`';
+                    foreach ($search_sub_key['photousefor'] as $k0 => $v0) {
+                        echo '<option value="'.$v0['value'].'">'.$v0['name'].'</option>';
+                    }
+                    echo '`;';
+                ?>
+                $('#search_sub_key').append(sub_key);
+                $('#start_search').val('搜尋得獎用戶');
+                break;
+        }
+    });
+
+    $('#start_search').on('click', function(){
+        var search_key = $('#search_key').val(),
+            search_sub_key = $('#search_sub_key').val(),
+            search_value = $('#search_value').val();
+
+        if(search_key.length == 0 || search_sub_key.length == 0 || search_value ==0) {
+            alert('error');
+        } else {
+            get_data(search_key, search_sub_key, search_value);
+        }
+
+    })
+   
+});
+
+
+</script>

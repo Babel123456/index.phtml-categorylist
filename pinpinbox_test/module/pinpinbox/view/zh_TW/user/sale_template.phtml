@@ -1,0 +1,196 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+	<h2><?php echo _('Member Center'); ?></h2>
+	<ul>
+		<li class="mobiledisplay"><h3><?php echo _('Statistics on returns'); ?></h3></li>
+		<li class="mobiledisplay"><div class="line"></div></li>
+		<li class="mobile_open03">
+			<a href="<?php echo self::url('user', 'sale_album');?>" ><?php echo _('Sponsored albums'); ?></a>
+			<a href="javascript:void(0)" class="active"><?php echo _('Sponsored style'); ?></a>
+			<a href="<?php echo self::url('user', 'settlement') ?>"><?php echo _('Profit settlement'); ?></a>
+		</li>
+		<li>
+			<?php include 'member_nav.phtml';?>
+			<div id="memberbox_item">
+				<div id="album_tab">
+					<h3><?php echo _('Statistics on returns'); ?></h3>
+				</div>
+				<div class="album_info">
+					<ul>
+						<li>
+							<a href="<?php echo self::url('user', 'sale_album') ?>"><p class="title"><?php echo _('Sponsored albums'); ?></p></a>
+						</li>
+						<li>
+							<a href="<?php echo self::url('user', 'sale_template') ?>"><p class="title active"><?php echo _('Sponsored style'); ?></p></a>
+						</li>
+						<li>
+							<a href="<?php echo self::url('user', 'settlement') ?>"><p class="title "><?php echo _('Profit settlement'); ?></p></a>
+						</li>
+					</ul>
+				</div>
+				<div class="album_total02">
+					<?php echo _('Option range：'); ?>
+					<div class="time_down">
+						<select id="time_option">
+							<option id="2" value="2"><?php echo _('1 month'); ?></option>
+							<option id="0" value="3" <?php if($info['option'] == 3 ) echo 'selected="true"' ;?> ><?php echo _('3 months'); ?></option>
+							<option id="1" value="1" <?php if($info['option'] == 1 ) echo 'selected="true"' ;?>><?php echo _('Optional time'); ?></option>
+						</select>										
+					</div>
+					<div class="choosetime">
+						<div class="input-daterange input-group" id="datepicker">
+							<form id="time_form" action="./?interval=1" method="post">
+								<span><?php echo _('Option range：'); ?></span>
+								<input type="text" class="input-sm form-control web_url" name="start" />
+								<span class="input-group-addon">to</span>
+								<input type="text" class="input-sm form-control web_url" name="end" />
+								<span><a href="javascript:void(0)" onclick="$('#time_btn').trigger('click')" class="link"><?php echo _('Inquiry'); ?></a></span>
+								<input type="submit" onclick="return check_time_interval()" id="time_btn" style="display:none">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="album_total02">
+					<p><?php echo _('Inquiry period:'); ?><?php  echo $info['timeinterval']; ?></p>
+					<p class="green"><?php echo _('Share on type styles：'); ?><?php echo $info['pointsplitrate_template'] ?></p>
+					<p><?php echo _('Total returns during the period：'); ?><?php echo number_format($info['sum_pointsplit']); ?>P</p>
+					<p><?php echo _('Terminal settlement returns：'); ?><?php echo number_format($info['unsettled_pointsplit']); ?>P</p>
+				</div>
+				<div class="line"></div>
+				<div class="water_content " id="freewall" style="margin-top: 40px;">
+				<?php 
+					if(!empty($template)){
+						foreach($template as $k0 => $v0){
+							echo '<div class="item_box" style="opacity:0;" >
+								<a href="'.$v0['template']['cover_url'].'"><img src="'.$v0['template']['image'].'" onerror="this.src=\''.static_file('images/origin.jpg').'\'" height="330" width="220"></a>
+								<div class="item_info">
+									<div class="info_name">
+										<div class="info_icon">	</div>
+										<h3> <a href="'.$v0['template']['name_url'].'">'.$v0['template']['name'].'</a></h3>
+										<div class="name_more">
+											<p>'.$v0['template']['description'].'</p>
+										</div>
+									</div>
+									<a href="'.$v0['user']['url'].'">
+										<div class="info_user">
+											<div class="user_face"><img src="'.$v0['user']['picture'].'" onerror="this.src=\''.static_file('images/face_sample.svg').'\'" height="101" width="101"></div>
+											<div class="user_name">
+												<p class="name_id">'.$v0['user']['name'].'</p>
+												<p><i class="fa fa-eye"></i>'.$v0['template']['viewed'].'</p>
+												<p>'.$v0['template']['point'].'p</p>
+											</div>
+										</div>
+									</a>
+								</div>	
+								<div class="ear_info">
+									<p>'._('Download').':'.$v0['info']['count'].'</p>
+									<p>'._('Earnings period').':'.number_format($v0['info']['sum']).'P</p>
+									<p>'._('Unsettled earnings').':'.number_format($v0['info']['unsettled']).'P</p>
+									<p><a href="'.self::url('user', 'salechart', array('template_id'=>$v0['template']['template_id'], 'start_time'=>$info['start_time'], 'end_time'=>$info['end_time'])).'">'._('Earnings string diagram').'</a></p>
+								</div>
+							</div>';
+						}
+					}
+				if (!empty($more)) echo '<div style="display:none;" class="more"><a href="'.$more.'"></a></div>' ;
+				?>
+				</div>
+				<div style="display:none;" class="end"><p>End</p></div>
+			</div>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+function name_more_slice(obj) {var divH = $(obj).height(),$p = $("p", $(obj)).eq(0),str = $p.text();if ($p.outerHeight() > divH) {$p.text( str.slice(0, 70)+'...' );};}
+
+$(function() {
+	var $container = $('.water_content');
+	$container.imagesLoaded(function(){
+		$container.masonry({
+			itemSelector: '.item_box',
+			columnWidth: '.item_box',
+			gutter: 10,
+		});
+		/**
+		 *  stamp sample
+		 */
+		$container.masonry('stamp', '.stamp');	
+		$container.masonry();
+		$('div.item_box').animate({ opacity: 1 });
+	});
+	
+	$container.infinitescroll({
+		navSelector  : '.more',
+		nextSelector : '.more a',
+		itemSelector : '.item_box',
+		pathParse: function (path, nextPage) {
+			var customPath = path + "&page=";
+			path = [customPath, ''];
+			return path;
+		},
+		//If no more content, response here
+		errorCallback: function() {$('div.end').css('display', 'block')},
+	},function( newElements ) {
+		var $newElems = $( newElements ).css({ opacity: 0 });
+		$newElems.imagesLoaded(function(){
+			$newElems.animate({ opacity: 1 });
+			$container.masonry( 'appended', $newElems, true );
+		});
+		
+		$(".name_more").each(function(i) {
+			name_more_slice($(this));
+		});
+		
+	}); 
+
+	$(".name_more").each(function(i) {
+		name_more_slice($(this));
+	});
+	
+});
+
+function check_time_interval(){
+	var startDate = $('input[name=start]').val();
+	var endDate = $('input[name=end]').val();
+	
+	if (startDate.length == 0 || endDate.length == 0) {
+		var r = {
+			"message" : '<?php echo _('Please select time interval.'); ?>',
+		};	
+		site_jBox(r);
+		return false;
+	} else {
+		return true;
+	}
+}
+
+$('.choosetime .input-daterange').datepicker({
+	startDate: "-2m",
+	endDate: "+0d",
+	clearBtn: true,
+	language: "zh-TW",
+	todayHighlight: true,
+});
+
+$('#time_option').click(function(){
+	$('#time_option').change(function(){
+		if($(this).val() != '1'){
+			location.href = '<?php echo self::url('user', 'sale_template') ;?>?interval='+$(this).val();
+		}
+	});
+});
+
+$(document).ready(function(){
+	$("#time_option").change(function(){
+		$( "#time_option option:selected").each(function(){
+			if($(this).attr("value")=="0"){
+				$(".choosetime").css('display','none'); 
+			}
+			if($(this).attr("value")=="1"){	
+				$(".choosetime").css('display','block');
+			}
+		});
+	}).change();
+});
+</script>
+

@@ -1,0 +1,56 @@
+<div class="categoryListwrapper ">
+    <div class="categoryListArrows">
+        <span class="arrow-up" ><img  src="<?php echo static_file('images/assets-v6/arrow-left.svg') ?>"></span>
+    </div>
+    <div class="categoryList">
+        <div class= "product_scroll1">
+        <?php
+        foreach ($categoryareaIcon as $k0 => $v0) {
+            echo '<div class="icon" data-iconopposite="'.$v0['iconOpposite'].'" data-icon="'.$v0['icon'].'" data-categoryarea_id="'.$v0['categoryarea_id'].'">
+                <a title="'.$v0['name'].'" href="'.$v0['url'].'">
+                    <img width="60" src="'.$v0['icon'].'">'.$v0['name'].'
+                </a>
+            </div>';
+        }
+        ?>
+        </div>
+    </div>
+    <div class="categoryListArrows">
+        <span class="arrow-down" ><img src="<?php echo static_file('images/assets-v6/arrow-right.svg') ?>"></span>
+    </div>
+</div>
+
+<script>
+    var nicesx2 = $(".categoryList").niceScroll({
+        touchbehavior: true,
+        enablemousewheel: false,
+        cursorcolor: "transparent",
+        cursoropacitymax: 0,
+        cursorwidth: 10,
+    });
+
+    $(".categoryList").getNiceScroll().resize();
+    $('.arrow-up').on('click', function(){nicesx2.doScrollLeft(-300, 1.5);});
+    $('.arrow-down').on('click', function(){nicesx2.doScrollLeft(400, 1.5);});
+//    $('.categoryList .icon a').on('click', function(){location.href = $(this).attr('href');});
+    var isDragging = false, startingPos = [];
+    $(".categoryList .icon a").mousedown(function (evt) {
+        isDragging = false;
+        startingPos = [evt.pageX, evt.pageY];
+    }).mousemove(function (evt) {
+        if (!(evt.pageX === startingPos[0] && evt.pageY === startingPos[1])) {
+            isDragging = true;
+        }
+    }).mouseup(function () {
+        if (!isDragging)
+            location.href = $(this).attr('href');
+    });
+
+    $('.icon').hover(function(){
+        if($(this).data('categoryarea_id') != <?php echo $categoryarea_id ?>) {
+            $(this).find('img').attr('src', $(this).data('iconopposite'));
+        }
+    }, function(){
+        $(this).find('img').attr('src', $(this).data('icon'));
+    });
+</script>

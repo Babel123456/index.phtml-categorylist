@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420" height="45" viewBox="0 0 420 45">
+    <defs>
+        <rect id="a" width="420" height="45" rx="5"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="matrix(1 0 0 -1 0 45)">
+            <use fill="#FFF" xlink:href="#a"/>
+            <rect width="419" height="44" x=".5" y=".5" stroke="#00ACC1" rx="5"/>
+        </g>
+        <text fill="#0F8399" font-family="MicrosoftJhengHeiBold, Microsoft JhengHei" font-size="16" font-weight="bold" letter-spacing="1">
+            <tspan x="168.224" y="30">經營小幫手</tspan>
+        </text>
+    </g>
+</svg>

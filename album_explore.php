@@ -20,22 +20,21 @@
 	<div class="album_explore_content_header">
 	  <div id="album_explore_cat_area" class="album_explore_cat_area">
         <div class="album_explore_cat_area_wrap"><!-- JS: 加NICESCROLL用 -->
-		  <ul class="album_explore_cat_tab">
-            <li class="active"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=1"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat_img01_on.svg">旅人</div></a></li>
-            <li><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=1"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat_img02.svg">美食</div></a></li>
-            <li><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=4"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat_img03.svg">藝文</div></a></li>
-		    <li><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=5"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat_img04.svg">知識</div></a></li>
-            <li><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=12"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat_img05.svg">音樂</div></a></li>
-            <li><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=7"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat_img06.svg">時尚</div></a></li>
-		    <li><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=13"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat_img07.svg">公益</div></a></li>
-            <li><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=11"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat_img08.svg">分享</div></a></li>
-          </ul>
+		  
+            <div class="album_explore_cat_tab active"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=1"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat旅人_img01_on.svg">旅人</div></a></div>
+            <div class="album_explore_cat_tab"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=4"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat美食_img02.svg">美食</div></a></div>
+            <div class="album_explore_cat_tab"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat藝文_img03.svg">藝文</div></a></div>
+		    <div class="album_explore_cat_tab"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=5"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat知識_img04.svg">知識</div></a></div>
+            <div class="album_explore_cat_tab"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=12"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat音樂_img05.svg">音樂</div></a></div>
+            <div class="album_explore_cat_tab"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=7"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat時尚_img06.svg">時尚</div></a></div>
+		    <div class="album_explore_cat_tab"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=13"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat公益_img07.svg">公益</div></a></div>
+            <div class="album_explore_cat_tab"><a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=11"><div class="btn_new"><img class="tab_img" src="images/assets-v7/album_explore_cat分享_img08.svg">分享</div></a></div>
+          
 		</div>
 	  </div>
 	</div>
     <!-- 分類標籤區塊結束 -->
 	
-   
     <!-- BANNER與精選創作人區塊開始 -->
 	<div class="album_explore_banner">
 	  <div class="album_explore_banner_area">
@@ -140,7 +139,7 @@
 		  <a href="https://www.pinpinbox.com/papid?click=album_id_15600">
 		    <div class="album_explore_creative_list_box">
 		      <div class="profile_img_wrap">
-			    <img class="profile_img" src="<?=$url_prefix?>/storage/zh_TW/user/4376/picture$b787.jpg">
+			    <img class="profile_img" src="https://ppb.sharemomo.com/storage/zh_TW/user/151/picture$e71b.jpg">
 		      </div>
 			  <div class="album_explore_creative_name">眭澔平~環遊世界一萬天,太平間歷險神秘女幽靈真面目</div>
 		    </div>
@@ -148,7 +147,7 @@
 		  <a href="https://www.pinpinbox.com/babel">
 		    <div class="album_explore_creative_list_box">
 		      <div class="profile_img_wrap">
-			    <img class="profile_img" src="<?=$url_prefix?>/storage/zh_TW/user/9543/picture$4fb3.jpg">
+			    <img class="profile_img" src="https://ppb.sharemomo.com/storage/zh_TW/user/344/picture$a158.jpg">
 		      </div>
 			  <div class="album_explore_creative_name">林瑞宙</div>
 		    </div>
@@ -178,11 +177,11 @@
 				<div class="dropdown-menu dropdown_menu" role="menu">
 				  <ul>
 					
-					<li><a href="http://localhost/album_explore.php#list_1">层层生活PileUp Life</a></li>
-			        <li><a href="http://localhost/album_explore.php#list_2">观玲的女力研究所</a></li>
+					<li><a href="http://192.168.16.118/album_explore.php#list_1">层层生活PileUp Life</a></li>
+			        <li><a href="http://192.168.16.118/album_explore.php#list_2">观玲的女力研究所</a></li>
 					
-					<li><a href="http://localhost/album_explore.php#list_1">层层生活PileUp Life</a></li>
-			        <li><a href="http://localhost/album_explore.php#list_2">观玲的女力研究所</a></li>
+					<li><a href="http://192.168.16.118/album_explore.php#list_1">层层生活PileUp Life</a></li>
+			        <li><a href="http://192.168.16.118/album_explore.php#list_2">观玲的女力研究所</a></li>
 					
 					
 				  </ul>
@@ -236,7 +235,7 @@
 		                <div class="profile_img_wrap">
 			              <img class="profile_img" src="<?=$url_prefix?>/storage/zh_TW/user/152/picture$e328.jpg">
 		                </div>
-			            <div class="creative_name">拖拖拉拉</div>
+			            <div class="creative_name">拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉拖拖拉拉</div>
 					  </a>
 		            </div>
 					 					 
@@ -430,11 +429,11 @@
 				<div class="dropdown-menu dropdown_menu" role="menu">
 				  <ul>
 					
-					<li><a href="http://localhost/album_explore.php#list_1">层层生活PileUp Life</a></li>
-			        <li><a href="http://localhost/album_explore.php#list_2">观玲的女力研究所</a></li>
+					<li><a href="http://192.168.16.118/album_explore.php#list_1">层层生活PileUp Life</a></li>
+			        <li><a href="http://192.168.16.118/album_explore.php#list_2">观玲的女力研究所</a></li>
 					
-					<li><a href="http://localhost/album_explore.php#list_1">层层生活PileUp Life</a></li>
-			        <li><a href="http://localhost/album_explore.php#list_2">观玲的女力研究所</a></li>
+					<li><a href="http://192.168.16.118/album_explore.php#list_1">层层生活PileUp Life</a></li>
+			        <li><a href="http://192.168.16.118/album_explore.php#list_2">观玲的女力研究所</a></li>
 					
 					
 				  </ul>
@@ -669,30 +668,6 @@
 	  
 	  
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
 	</div><!-- .album_explore_bookcase_content -->
 	<!-- 書櫃區塊結束 -->
     
@@ -704,6 +679,11 @@
 
 
 <script>
+
+  //HEADER頁面載入一開始先移除底線區塊開始
+  if($('.album_explore_cat_tab').length>0){  //有輪播時不要底線
+	$('#header').css('border','none');
+  }
  
   //分類加NICESCROLL
   var nicesx1 = $("#album_explore_cat_area").niceScroll({
@@ -716,7 +696,7 @@
 
   //判斷拖曳還是點擊
   var isDragging = false, startingPos = [];
-  $("#album_explore_cat_area .li a").mousedown(function (evt){
+  $("#album_explore_cat_area a").mousedown(function (evt){
     isDragging = false;
     startingPos = [evt.pageX, evt.pageY];
   }).mousemove(function (evt){
@@ -742,7 +722,6 @@
   //判斷拖曳還是點擊
   var isDragging = false, startingPos = [];
   $(".album_explore_bookcase_content_box_area a").mousedown(function (evt){
-	console.log('.album_explore_bookcase_content_box_area a');
     isDragging = false;
     startingPos = [evt.pageX, evt.pageY];
   }).mousemove(function (evt){
@@ -773,6 +752,10 @@
      })
  
  
+   //20190529 輪播沒有第二頁時, 不秀左右按鈕鍵
+   if($('#album_explore_banner_carousel .page').length ==1 ){
+	$('.album_explore_banner_area .owl-buttons').css('display','none');
+   }
 </script>
 
 <?php include_once('layout/_footer.php') ?>

@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/* Welcome to Compass. In this file you should write your main styles. (or centralize your imports) Import this file using the following HTML or equivalent: <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+
+html { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+a img { border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+#main, section, #top #top_content, #page01 { margin: 0 auto; }
+
+#main { background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZjc5YSIvPjxzdG9wIG9mZnNldD0iMTElIiBzdG9wLWNvbG9yPSIjNDBkMGRmIi8+PHN0b3Agb2Zmc2V0PSIyOCUiIHN0b3AtY29sb3I9IiMxMDQzOWYiLz48c3RvcCBvZmZzZXQ9IjgyJSIgc3RvcC1jb2xvcj0iIzI3OTM3MyIvPjxzdG9wIG9mZnNldD0iOTAlIiBzdG9wLWNvbG9yPSIjMDA5ZWQ4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDA0N2Q4Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'); background-size: 100%; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fff79a), color-stop(11%, #40d0df), color-stop(28%, #10439f), color-stop(82%, #279373), color-stop(90%, #009ed8), color-stop(100%, #0047d8)); background-image: -moz-linear-gradient(top, #fff79a 0%, #40d0df 11%, #10439f 28%, #279373 82%, #009ed8 90%, #0047d8 100%); background-image: -webkit-linear-gradient(top, #fff79a 0%, #40d0df 11%, #10439f 28%, #279373 82%, #009ed8 90%, #0047d8 100%); background-image: linear-gradient(to bottom, #fff79a 0%, #40d0df 11%, #10439f 28%, #279373 82%, #009ed8 90%, #0047d8 100%); }
+
+html, body { width: 100%; height: auto; font-family: Arial, "微軟正黑體"; font-size: 14px; font-size: 14px; line-height: 20px; letter-spacing: 1px; -webkit-text-size-adjust: none; text-size-adjust: none; }
+
+#main { width: 100%; position: relative; overflow: hidden; }
+
+#skip { width: 79px; height: auto; position: fixed; bottom: -30px; left: 50%; margin-left: -49px; z-index: 100; }
+
+section { width: 100%; }
+
+#top { width: 100%; background-image: url("../images/mobile/top_bg.png"); background-size: cover; background-position: top center; }
+#top #top_content { width: 70%; height: auto; padding: 20% 0px 20px 0px; }
+#top #top_content img { width: 100%; height: auto; }
+
+#page01 { width: 100%; position: relative; }
+#page01 img { width: 100%; height: auto; }
+#page01 #page01_content { width: 100%; height: auto; padding: 10% 0px 0px 0px; }
+#page01 #page01_text { width: 80%; position: absolute; left: 10%; top: 100px; }
+
+#page02 { width: 100%; position: relative; background-image: url("../images/mobile/page02_bg.png"); background-size: cover; background-position: top center; }
+#page02 img { width: 100%; height: auto; }
+#page02 #page02_content { width: 100%; height: auto; padding: 50% 0px 0px 0px; }
+@media (max-width: 600px) { #page02 #page02_content { padding: 70% 0px 0px 0px; } }
+#page02 #page02_text { width: 80%; position: absolute; left: 10%; top: 100px; }
+
+#page03 { width: 100%; position: relative; background-image: url("../images/mobile/page03_bg.png"); background-size: cover; background-position: top center; }
+#page03 img { width: 100%; height: auto; }
+#page03 #page03_content { width: 100%; height: auto; padding: 40% 0px 0px 0px; }
+#page03 #page03_text { width: 80%; position: absolute; left: 10%; top: 100px; }
+
+#page04 { width: 100%; position: relative; }
+#page04 img { width: 100%; height: auto; }
+#page04 #page04_content { width: 100%; height: auto; padding: 60% 0px 0px 0px; }
+@media (max-width: 600px) { #page04 #page04_content { padding: 70% 0px 0px 0px; } }
+#page04 #page04_text { width: 80%; position: absolute; left: 10%; top: 100px; }
+
+#page05 { width: 100%; position: relative; background-image: url("../images/mobile/page05_bg.png"); background-size: cover; background-position: top center; }
+#page05 img { width: 100%; height: auto; }
+#page05 #page05_content { width: 100%; height: auto; padding: 140% 0px 0px 0px; }
+@media (max-width: 600px) { #page05 #page05_content { padding: 150% 0px 0px 0px; } }
+#page05 #page05_text { width: 80%; position: absolute; left: 10%; top: 100px; }
+
+#page06 { width: 100%; position: relative; background-image: url("../images/mobile/page06_bg.png"); background-size: cover; background-position: top center; padding-top: 170%; }
+#page06 img { width: 100%; height: auto; }
+#page06 #page06_bottom { width: 100%; height: auto; position: absolute; bottom: -1%; }
+#page06 #page06_start { width: 60%; height: auto; position: absolute; top: 20%; right: 0; }
+#page06 #page06_text { width: 60%; left: 20%; position: absolute; top: 50%; }
+#page06 #page06_app { width: 20%; position: absolute; right: 10%; top: 80%; }
+#page06 #page06_app02 { width: 20%; position: absolute; right: 10%; top: 85%; }

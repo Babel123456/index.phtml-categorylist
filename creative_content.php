@@ -15,6 +15,7 @@
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/masonry/js/masonry.pkgd.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery.infinitescroll.min.js"></script>
   
+  
   <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/jquery-textcomplete/jquery.textcomplete.js"></script>
   <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/jquery-textcomplete/jquery.overlay.js"></script>
   
@@ -39,7 +40,7 @@
   
   <!-- 測試預設值 (B的靜態頁面測試使用) 區塊開始 -->
   <?php
-    $type = 'user';
+    $type = 'creative'; //user
 	//$type = 'album';
   ?>
   <!-- 測試預設值 (B的靜態頁面測試使用) 區塊開始 -->
@@ -51,35 +52,35 @@
 	<div class="creative_content_header">
 	  <div class="creative_info_area">
 	  
-	    <div id="creative_name" >
-		  
+	    <!-- 20190318: 加class name, data-toggle開始 -->
+	    <div id="creative_name" class="creative_name dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
+		<!-- 20190318: 加class name, data-toggle結束 --> 
+		
 		  <span>
-		  
-		    <!--//20190222: 新增div, img class name區塊開始-->
 		    <div class="profile_img_wrap">
 			  <img class="profile_img" src="https://cdn.pinpinbox.com/storage/zh_TW/user/4119/picture$7d29.jpg" title="點我分享">
 		    </div>
-		    <!--//20190222: 新增div區塊結束-->
-		    
 		  </span>
 		  <span title="煒承Answer煒承AnswerSung">煒承Answer煒承Sung煒承Answer煒承Sung煒承Answer煒承Sung煒承Answer煒承Sung</span>
+		
 		</div>
 		
 		<!-- 社群區塊開始  -->
-		<div id="creative_content_social_links_box" class="social_links_box">
+		<!-- 20190318: 加class name與role開始 -->
+		<div id="creative_content_social_links_box" class="social_links_box dropdown-menu dropdown_menu" role="menu">
+		<!-- 20190318: 加class name與role結束 -->
+		
 		  <div class="social_links_title">分享</div>
-		
 		  <div class="social_links_box_area">
-		
 		     <div id="creative_content_social_links" class="social_links">
-		
-             <!-- Go to www.addthis.com/dashboard to customize your tools -->
-             <div class="addthis_inline_share_toolbox"></div><!-- Go to www.addthis.com/dashboard to customize your tools --><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c234e41206c2da6"></script><!-- //20181227: 加入QRCODE區塊開始 --><a href="href="https://cdn.pinpinbox.com/storage/zh_TW/user/3876/album/15124/qrcode$d2f5.jpg" title="顯示QRcode" target="_blank"><!-- //20190212: 圖檔PNG換成SVG開始 --><img src="images/assets-v7/qr_square.svg" >
+             <div class="addthis_inline_share_toolbox"></div>
+			 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c234e41206c2da6"></script>
+			 <a href="href="https://cdn.pinpinbox.com/storage/zh_TW/user/3876/album/15124/qrcode$d2f5.jpg" title="顯示QRcode" target="_blank"><img src="images/assets-v7/qr_square.svg" >
 			 </a>
 			</div>
 	        <div id="creative_content_social_links2" class="social_links2" title="複製作品網址" ><i class="fa fa-link"></i></div>
 		  </div>
-		</div><!-- .social_links_box -->
+		</div>
 		<!-- 社群區塊結束  -->
 		
 		<div id="creative_content_snackbar">
@@ -142,30 +143,37 @@
 		  </div>
 		</div>
 	  </div>
+	  
 	  <!-- 20181227 若沒有BANNER就不顯示此區塊開始 -->
 	  <div class="creative_banner">
 	    <img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4056/cover$2d9d.jpg">
 	  </div>
 	  <!-- 20181227 若沒有BANNER就不顯示此區塊結束 -->
+	  
 	  <div class="main_content">
 	    <div class="tab-container">
 		  <div class="tab_list_area" >
+		  
 		    <!-- 手機版列表選單開始 -->
-		    <div id="mobile_tab" ><i class="fa fa-list-ul"></i><span id="tab_title">作品集</span></div>
-		    <!-- 手機版列表選單結束 -->
-  	        <ul class="nav nav-pills mobile_tab_menu" id="mobile_tab_menu" >
-			  <!-- 20181227 看人就顯示"作品集"區塊開始 -->
-	          <!--
-			  <li class="active"><a data-toggle="tab" href="#tab0">我的作品</a></li>
-			  -->
-			  <li class="active"><a data-toggle="tab" href="#tab0" onclick="$('#mobile_tab #tab_title').text('作品集');">作品集</a></li>
-		      <!-- 20181227 看人就顯示"作品集"區塊結束 -->
-			  <li><a data-toggle="tab" href="#tab1" onclick="$('#mobile_tab #tab_title').text('收藏˙贊助');">收藏˙贊助</a></li>
-			  <li><a data-toggle="tab" href="#tab2" onclick="$('#mobile_tab #tab_title').text('群組作品');">群組作品</a></li>
-		      <li><a data-toggle="tab" href="#tab3" onclick="$('#mobile_tab #tab_title').text('關於我');">關於我</a></li>
-		      <li><a data-toggle="tab" href="#tab4" onclick="$('#mobile_tab #tab_title').text('留言版');">留言版</a></li>
-		    </ul>
+		    <!-- 20190318 加class name區塊開始 -->	
+		    <div id="mobile_tab" class="dropdown-sign dropdown-toggle " data-toggle="dropdown" aria-expanded="false"><i class="fa fa-list-ul"></i><span id="tab_title">作品集</span></div>
+		    <!-- 20190318 加class name區塊結束 -->
+			<!-- 手機版列表選單結束 -->
 			
+			<!-- 20190318 加div, class name區塊開始 -->
+			<div id="mobile_tab_menu" class="mobile_tab_menu" role="menu">
+			  <ul class="nav nav-pills">
+			  <!-- 20190318 加div, class name區塊結束 -->
+			    <li class="active"><a data-toggle="tab" href="#tab0" onclick="$('#mobile_tab #tab_title').text('作品集');"><!--我的作品-->作品集</a></li>
+		        <li><a data-toggle="tab" href="#tab1" onclick="$('#mobile_tab #tab_title').text('收藏˙贊助');">收藏˙贊助</a></li>
+			    <li><a data-toggle="tab" href="#tab2" onclick="$('#mobile_tab #tab_title').text('群組作品');">群組作品</a></li>
+		        <li><a data-toggle="tab" href="#tab3" onclick="$('#mobile_tab #tab_title').text('關於我');">關於我</a></li>
+		        <li><a data-toggle="tab" href="#tab4" onclick="$('#mobile_tab #tab_title').text('留言版');">留言版</a></li>
+		      </ul>
+			
+			<!-- 20190318 加div, class name區塊開始 -->
+			</div>
+			<!-- 20190318 加div, class name區塊結束 -->
 			
 		    <!-- 搜尋區塊開始 -->
 			<div id="content_search">
@@ -361,10 +369,7 @@
 			<!-- 留言板區塊開始 -->
   		    <div id="tab4" class="tab">
 			
-			  <!--//20190304: 嵌入留言區塊開始-->
 			  <?php include_once('layout/_message_board.php') ?>
-			  <!--//20190304: 嵌入留言區塊結束-->
-			  
 			  
 		    </div>
 			<!-- 留言板區塊結束 -->
@@ -392,8 +397,20 @@
           time: 1000
       });
     
+	  // 20190318: 加入大小版選單切換開始
+      mobile_tab_menu_show();
+	  // 20190318: 加入大小版選單切換結束
+	
+	
       //當WIDNWOS RESIZE時, 關閉選單
       $( window ).resize(function(evt) {
+		  
+		  
+		// 20190318: 加入大小版選單切換開始
+        mobile_tab_menu_show();
+	    // 20190318: 加入大小版選單切換結束
+		  
+		  
 		$('.social_links_close .fa').click();
 		$('.content_search_close').click();
       });
@@ -456,16 +473,29 @@
       });
 	}
 	
+	// 20190318: 移除開始
 	//手機版選單列表
-	$('#mobile_tab').on('click', function(){
-	  $('.mobile_tab_menu').toggleClass("mobile_tab_down");
-    });
+	//$('#mobile_tab').on('click', function(){
+	  //$('.mobile_tab_menu').toggleClass("mobile_tab_down");
+    //});
+	// 20190318: 移除開始
 	
-	if($( window ).width() <= 768){
-	  $('.mobile_tab_menu').on('click', function(){
-	   $('.mobile_tab_menu').toggleClass("mobile_tab_down");
-     });
+	// 20190318: start here
+	//大小版選單切換
+	function mobile_tab_menu_show(){
+	  if($( window ).width() <= 768){
+	    $('#mobile_tab_menu').addClass('dropdown-menu dropdown_menu');
+	  }else{
+	    $('#mobile_tab_menu').removeClass('dropdown-menu dropdown_menu');
+	  }
 	}
+	// 20190318: end here
+	
+	
+	
+	
+	
+	
 		
 	//搜尋區塊開始
 	$('.content_search_open').on('click', function(){
@@ -523,7 +553,7 @@
 				//height: 820,
 				
 				//20190222: 樣式移至CSS控制區塊開始
-	              //zIndex : 1000,
+	            zIndex : 1000,
 				//20190222: 樣式移至CSS控制區塊結束
 				
 				target: $('body'), //20181214: Add for position 
@@ -581,10 +611,12 @@
           document.execCommand("copy");
 	    }
 	    
-		$('#creative_name, #creative_content_social_links_box').on('click', function(){
-	      $('#creative_content_social_links_box').toggleClass("show_block");
-        });
 		
+		// 20190318: 移除開始
+		//$('#creative_name, #creative_content_social_links_box').on('click', function(){
+	      //$('#creative_content_social_links_box').toggleClass("show_block");
+        //});
+		// 20190318: 移除結束
 					
 	    $('.alert_btn').on('click', function(){
 			

@@ -1,0 +1,72 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+	<h2><?php echo _('Member Center'); ?></h2>
+	<ul>
+		<li class="mobiledisplay"><h3><?php echo _('Statistics on returns'); ?></h3></li>
+		<li class="mobiledisplay"><div class="line"></div></li>
+		<li class="mobile_open03">
+			<a href="<?php echo self::url('user', 'sale_album') ?>"><?php echo _('Sponsored albums'); ?></a>
+			<a href="<?php echo self::url('user', 'sale_template') ?>"><?php echo _('Sponsored style'); ?></a>
+			<a href="<?php echo self::url('user', 'settlement') ?>"><?php echo _('Profit settlement'); ?></a>
+		</li>
+		<li class="mobiledisplay"><a href="<?php echo self::url('user', 'sale_album') ?>" onclick="" class="upload"><?php echo _('previous'); ?></a></li>
+		<li>
+			<?php include 'member_nav.phtml';?>
+			
+			<div id="memberbox_item">
+				<div id="album_tab">
+					<h3><?php echo _('Statistics on returns'); ?></h3>
+					<a href="<?php echo self::url('user', 'sale_album') ?>"><?php echo _('Sponsored albums'); ?></a>
+					<a href="<?php echo self::url('user', 'settlement') ?>"><?php echo _('Profit settlement'); ?></a>
+					<a href="<?php echo self::url('user', $info['referer']) ?>" onclick="" class="upload"><?php echo _('previous'); ?></a>
+				</div>
+				<div class="album_all" style="margin-top: 40px;">
+					<div id="chart_box"></div>
+				</div>
+			</div>					
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+$(function () {
+    $('#chart_box').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '<?php echo $info['title'] ;?>：[<?php echo $info['chart_name'] ?>]-<?php echo _('Statistical chart of total earnings'); ?>'
+        },
+        subtitle: {
+            text: '<?php echo $info['time_interval'][0].'~'.$info['time_interval'][1] ?>  <?php echo _('Total'); ?>:<?php echo $info['days']+1 ?><?php echo _('days'); ?>'
+        },
+        xAxis: {
+            categories: [
+				<?php echo $all_day;?>,
+            ]
+        },
+        yAxis: {
+            title: {
+                text: 'Point'
+            },
+            min: 0
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} Point</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        series: [{
+            name: '<?php echo _('Single item return details'); ?>',
+            data: [<?php echo $chart_day_split;?>],
+        },
+        {
+            name: '<?php echo _('Total return details'); ?>',
+            data: [<?php echo $total_day_split;?>],
+
+        }]
+    });
+});
+</script>

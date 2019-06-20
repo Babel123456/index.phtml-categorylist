@@ -27,6 +27,13 @@ $img_height4: 28px;
 $img_width5: 64px;
 $img_height5: 64px;
 
+
+$img_width32: 32px; 
+$img_height32: 32px;
+$img_width64: 64px; //.message_leave
+$img_height64: 64px;
+
+
 /* font */
 $font_family: Noto Sans TC;
 $font_family2: Noto Sans;
@@ -62,6 +69,8 @@ $line_height4: 58px;
 $line_height5: 48px;
 $line_height6: 36px;
 $line_height7: 30px;
+$font_size24: 24px;
+$font_size16: 16px;
 
 /* font color */
 $main_color: #0f8399;
@@ -117,6 +126,7 @@ $width3: 96%;
 $width4: 94%;
 $width5: 92%;
 $width6: 90%;
+$width100p: 100%;
 
 /* screen */
 $screen_width: 1920px;
@@ -134,6 +144,7 @@ $screen_width11: 300px;
 $screen_width12: 240px;
 /* screen for bootstrap */
 $screen_width768: 768px;
+$screen_width500: 500px;
 
 /* btn */
 $btn_height_l:  $top_header_height_m4;
@@ -156,3 +167,4 @@ $border_color3: $grey_color2;
 $border_color4: #bbbbbb;
 $border_width: 1px;
 $border_style: solid; 
+$border_radius100p: 100%;

@@ -1,0 +1,66 @@
+<script>
+function countdown(key,time){
+	$('.count_area').eq(key).countdown(time, function(event) {
+		$(this).find('span.day').html(event.strftime('%D'));		
+		$(this).find('span.hour').html(event.strftime('%H'));		
+		$(this).find('span.minute').html(event.strftime('%M'));		
+		$(this).find('span.second').html(event.strftime('%S'));
+	});
+}
+</script>
+<!-- 內容頁開始 -->
+<div id="act_content">
+	<h2><?php echo _('Activities'); ?></h2>
+	<?php 
+	if(!empty($event)){
+		foreach ($event as $k => $v) {
+			if($v['status'] == 'unexpired') {
+				$a_icon = [
+					'countdown' => static_file("images/assets-v5/icon-countdown-r.png"),
+					'popularity' => static_file("images/assets-v5/icon-popularity-r.png"),
+				];
+			} else {
+				$a_icon = [
+					'countdown' => static_file("images/assets-v5/icon-countdown-g.svg"),
+					'popularity' => static_file("images/assets-v5/icon-popularity-g.svg"),
+				];
+			}
+
+			echo '<div class="act_list02">
+				<div class="act_pic"><a href="'.self::url('event', 'content', array('event_id'=>$v['event_id'])).'"><img src="'.$v['image'].'" height="635" width="1155"  ></a></div>
+				<div class="act_info">
+					<ul>
+						<li><a href="'.self::url('event', 'content', array('event_id'=>$v['event_id'])).'"><h3>'.$v['name'].'</h3></a></li>
+						<li><p>'.$v['title'].'</p></li>';
+			            if ($v['contribute_starttime'] != '0000-00-00 00:00:00') echo '<li style="margin:0px;">'._('投稿期間').date('Y/m/d H:i', strtotime($v['contribute_starttime'])).' ~ '.date('Y/m/d H:i', strtotime($v['contribute_endtime'])).'</li>';
+			            if ($v['vote_starttime'] != '0000-00-00 00:00:00') echo '<li>'._('投票期間').date('Y/m/d H:i', strtotime($v['vote_starttime'])).' ~ '.date('Y/m/d H:i', strtotime($v['vote_endtime'])).'</li>';
+			echo '</ul>
+				</div>
+				<div class="act_else">
+					<ul>
+						<li class="float_left">
+							<div class="count_area" id="time">
+								<img src="'.$a_icon['countdown'].'" height="27" width="27" class="clock">';
+			if ($v['status'] == 'prepare') {
+				echo '<span>'._('活動尚未開始').'</span>';
+            }else if ($v['status'] == 'unexpired') {
+				echo '
+				<p class="date"><span class="day"></span><br>'._('days').'</p>
+				<p class="date"><span class="hour"></span><br>'._('hr').'</p>
+				<p class="date"><span class="minute"></span><br>'._('min').'</p>
+				<p class="date"><span class="second"></span><br>'._('sec').'</p>';
+			} else {
+				echo '<span>'._('This activity has ended!').'</span>';
+			}
+			echo '</div>
+					<div id="famous"><img src="'.$a_icon['popularity'].'" height="28" width="27">'._('Popularity').'<span class="bigtxt">'.$v['popularity'].'</span></div>
+						</li>
+						<li class="float_right"><a href="'.self::url('event', 'content', ['event_id'=>$v['event_id']]).'" class="join">'._('Know more about the activity').'</a></li>
+					</ul>
+				</div>
+			</div>
+			<script>countdown('.$k.', "'.$v['endtime'].'")</script>';
+		}
+	}
+	?>
+</div>

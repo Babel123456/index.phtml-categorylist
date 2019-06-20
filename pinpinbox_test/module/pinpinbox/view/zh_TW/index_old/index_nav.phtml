@@ -1,0 +1,37 @@
+<?php 
+$href = self::url('user', 'question');
+$onclick = null;
+if (empty(self::user_get())) {
+	$href = 'javascript:void(0)';
+	$onclick = 'onclick="var r = {result: 0, message: \''._('Please login first.').'\', redirect: \''.self::url('user', 'login', array('redirect'=>self::url('user', 'question'))).'\'};site_jBox(r);"';
+}
+?>
+<li>
+	<div id="member_left">
+		<div id="member_category" class="nobg">
+			<ul class="open_ul">								
+				<li><a href="<?php echo self::url('recruit', 'index'); ?>"><?php echo _('Cooperation'); ?></a></li>
+				<li><a href="<?php echo $href?>" <?php echo $onclick ?> ><?php echo _('Feedback'); ?></a></li>
+				<li><a name="privacy" href="<?php echo self::url('index', 'privacy'); ?>"><?php echo _('Privacy terms'); ?></a></li>
+				<li><a name="terms" href="<?php echo self::url('index', 'terms'); ?>"><?php echo _('Platform specifications'); ?></a></li>
+				<li><a name="copyright" href="<?php echo self::url('index', 'copyright'); ?>"><?php echo _('Copyright statement'); ?></a></li>
+				<li><a name="payment_terms" href="<?php echo self::url('index', 'payment_terms'); ?>"><?php echo _('pay general terms'); ?></a></li>
+				<li><a name="qanda" href="<?php echo self::url('index', 'qanda'); ?>">Q&A</a></li>
+			</ul>
+		</div>
+	</div>					
+</li>	
+<li>
+	<div id="album_category">
+		<a href="#"><h3 class="open_item"><?php echo _('terms and return');?></h3></a>
+		<ul class="open_ul_mobile">							
+			<li><a href="<?php echo self::url('recruit', 'index'); ?>"><?php echo _('Cooperation'); ?></a></li>
+			<li><a href="<?php echo $href?>" <?php echo $onclick ?> ><?php echo _('Feedback'); ?></a></li>
+			<li><a href="<?php echo self::url('index', 'privacy'); ?>"><?php echo _('Privacy terms'); ?></a></li>
+			<li><a href="<?php echo self::url('index', 'terms'); ?>"><?php echo _('Platform specifications'); ?></a></li>
+			<li><a href="<?php echo self::url('index', 'copyright'); ?>"><?php echo _('Copyright statement'); ?></a></li>
+			<li><a href="<?php echo self::url('index', 'payment_terms'); ?>"><?php echo _('pay general terms'); ?></a></li>
+			<li><a name="qanda" href="<?php echo self::url('index', 'qanda'); ?>">Q&A</a></li>
+		</ul>
+	</div>
+</li>

@@ -1,0 +1,216 @@
+<div id="section" style="height: 200px;">
+    <span class="title"> 搜尋條件 </span>
+    <div class="content">
+        <p>
+            <label for="byrange"> <input type="radio" name="querydate" id="byrange" value="range"> 範圍</label>
+            <label for="from">從 : </label>
+            <input type="text" id="from" name="from">
+            <label for="to">至 : </label>
+            <input type="text" id="to" name="to">
+        </p>
+        <p>
+            <label for="byday"><input type="radio" name="querydate" id="byday" checked="checked" value="thisday"> 本日</label>
+            <label for="byweek"> <input type="radio" name="querydate" id="byweek" value="thisweek"> 本周</label>
+            <label for="bymonth"><input type="radio" name="querydate" id="bymonth" value="thismonth"> 本月</label>
+        </p>
+
+    </div>
+    <div class="content">
+        <span>
+            <a href="javascript:void(0)" onclick="get_data('all')" class="list">全部相本</a>
+        </span>        
+        <span> 分類 : </span>
+        <?php 
+            foreach ($categoryarea as $k0 => $v0) {
+                echo '<a href="javascript:void(0)" class="list" onclick="get_data(\'categoryarea\','.$v0['categoryarea_id'].')">['.$v0['name'].']</a> ';
+            }
+        ?>
+    </div>
+    <div class="content">
+        相本id : <input type="text" name="search_album_id"><input type="button" value="搜尋" onclick="get_data('albumid')">
+        使用者id : <input type="text" name="search_user_id">
+            <input type="button" value="搜尋" onclick="get_data('userid');">
+            <input type="button" value="成長比例(逐月)" onclick="get_data('userrate');"> &nbsp;&nbsp;&nbsp;&nbsp;
+    </div>   
+    <div class="content">
+        <p id="showdate" style="color:#0f8399"></p>
+    </div>
+</div>
+
+<?php echo $index?>
+<script>
+
+$(function(){
+    var dateFormat = "yy-mm-dd",
+        from = $( "#from" )
+        .datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 1,
+            dateFormat: "yy-mm-dd"
+        }).on( "change", function() {
+            $('input#byrange').prop('checked', true);
+            to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+        to = $( "#to" ).datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 1,
+            maxDate : "+2m",
+            dateFormat: "yy-mm-dd"
+        }).on( "change", function() {
+            $('input#byrange').prop('checked', true);
+            from.datepicker( "option", "maxDate", getDate( this ) );
+        });
+
+    function getDate( element ) {
+        var date;
+        try {
+            date = $.datepicker.parseDate( dateFormat, element.value );
+        } catch( error ) {
+            date = null;
+        }
+        return date;
+    }    
+});
+
+function get_data(key, value = null) {
+    var columns, editable, date;
+    $('#grid').empty();
+    columns = [
+        {field: 'album_id',  attributes: {'class': 'number'}, },
+        {field: 'album_name', title:'相本名稱', attributes: {'class': 'string'}, encoded: false},
+        {field: 'point', title:'P點', attributes: {'class': 'number'}, },
+        {field: 'pages', title:'頁數', attributes: {'class': 'number'}, sortable: false},
+        {field: 'video', title:'影片', attributes: {'class': 'enums'}, sortable: false},
+        {field: 'audio', title:'音效', attributes: {'class': 'enums'}, sortable: false},
+        {field: 'act', attributes: {'class': 'enums act-#:act#'}},
+        {field: 'user_id',  attributes: {'class': 'number'}, },
+        {field: 'user_name', title:'作者名稱', attributes: {'class': 'string'}, encoded: false},        
+        {field: 'total', title:'瀏覽數', attributes: {'class': 'number'}, },
+    ]
+
+    editable = {
+            album_id: {editable: false},
+            album_name: {editable: false},
+            point: {editable: false},
+            pages: {editable: false},
+            total: {editable: false},
+            act: {editable: false},
+            user_id: {editable: false},
+            video: {editable: false},
+            audio: {editable: false},
+            user_name: {editable: false},
+    };
+
+    switch (key) {
+        case 'all':
+        case 'categoryarea':
+            $('input[name="search_album_id"], input[name="search_user_id"]').val('');
+            break;
+
+        case 'albumid' :
+            value = $('input[name="search_album_id"]').val();
+            break;
+
+        case 'userid' :
+            value = $('input[name="search_user_id"]').val();
+
+            if(value.langth == 0) console.log(123);
+            break;
+
+        case 'userrate' :
+            columns = [
+                {field: 'month', title: '月份', attributes: {'class': 'string'}, sortable: false, filterable: false },
+                {field: 'monthlyNewAlbum', title: '單月新增相本數', attributes: {'class': 'string'}, sortable: false, filterable: false},
+                {field: 'monthlyNewAlbumViewed', title: '單月新增瀏覽數', attributes: {'class': 'string'}, sortable: false, filterable: false},
+                {field: 'monthlyAlbumViewed', title: '相本總瀏覽數', attributes: {'class': 'string'}, sortable: false, filterable: false},
+                {field: 'monthlyAlbumViewedRate', title: '單月新增瀏覽數/相本總瀏覽數(%)', attributes: {'class': 'string'}, sortable: false, filterable: false },
+            ]
+
+            editable = {
+                    month: {editable: false},
+                    monthlyNewAlbum: {editable: false},
+                    monthlyNewAlbumViewed: {editable: false},
+                    monthlyAlbumViewed: {editable: false},
+                    monthlyAlbumViewedRate: {editable: false},
+            };        
+            value = $('input[name="search_user_id"]').val();
+            break;
+    }
+
+    dateType = $('input[name="querydate"]:checked').val();
+    switch(dateType) {
+        case 'range' :
+            date = {
+                'from' :  $( "#from" ).val(),
+                'to' :  $( "#to" ).val(),
+            };
+            break;
+        case 'thisday':
+            date =  'thisday';           
+            break;
+        case 'thisweek':
+            date =  'thisweek';
+            break;
+        case 'thismonth':
+            date =  'thismonth';
+            break;
+    }
+
+    $('#grid').kendoGrid({
+        columns: columns,
+        dataBinding: function(e) {},
+        dataBound: function(e) {},
+        dataSource: new kendo.data.DataSource({
+            batch: true,
+            page: 1,
+            pageSize: gridpageSize,
+            serverPaging: true,
+            serverSorting: true,
+            serverFiltering: true,
+            transport: {
+                read: {
+                    dataType: 'json', 
+                    type: 'POST',
+                    url: '<?php echo self::url(M_CLASS, 'json')?>',
+                    data: {
+                        key : key,
+                        value : value,
+                        date :  date,
+                    },
+                },
+            },
+            schema: {
+                data: function(r){
+                    $('p#showdate').html(r.interval);
+                    return r.data;
+                },
+                total: function(r){return r.total;},
+                model: {
+                    id: 'id',
+                    fields: editable,
+                } 
+            },
+            sort: {field: 'album_id', dir: 'desc'}
+        }),
+        editable: {
+            confirmation: false,
+            mode: 'incell'
+        },
+        filterable: true,
+        height: gridheight,
+        pageable: {
+            refresh: true,
+            input: true,
+            pageSize: gridpageSize,
+            pageSizes: gridpageSizes,
+        },
+        reorderable: true,
+        resizable: true,
+        selectable: true,
+        sortable: true,
+    });
+}
+
+</script>

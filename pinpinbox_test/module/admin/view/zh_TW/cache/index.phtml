@@ -1,0 +1,46 @@
+<?php echo $index?>
+<script>
+jQuery('#jqgrid').jqGrid({
+	caption: '<?php echo $this->get_adminmenu_name_by_class(M_CLASS)?>',
+   	url: '<?php echo self::url(M_CLASS, 'json')?>',
+   	mtype: 'GET',
+	datatype: "json",
+   	colNames: ['key'],
+   	colModel: [
+   		{name:'key', index:'key', width:1}
+   	],
+   	rowNum: 20,
+   	rowList: [20,50,100],
+    autowidth: true,
+    height: 'auto',
+   	pager: '#pjqgrid',
+   	sortname: 'key',
+   	sortorder: 'asc',
+   	viewrecords: true,
+    gridview: true
+});
+jQuery('#jqgrid').jqGrid('filterToolbar', {stringResult: true, searchOnEnter: true});
+jQuery('#jqgrid').jqGrid('navGrid', '#pjqgrid', {
+	search: false,
+	add: false,
+	edit: false,
+	delfunc: function (id) {
+		if (confirm('<?php echo _('Are you sure to delete it?')?>') && id) {
+			var ret = jQuery("#jqgrid").jqGrid('getRowData', id);
+			$.post('<?php echo self::url(M_CLASS, 'delete')?>', {
+				key: ret.key
+			}, function(response){
+				response = $.parseJSON(response);
+				var result = response.result;
+				var message = response.message;
+				if (result) {
+					jQuery("#jqgrid").jqGrid('delRowData', id);
+					alert(message);
+				} else {
+					alert(message);
+				}
+			});
+		}
+	}
+});
+</script>

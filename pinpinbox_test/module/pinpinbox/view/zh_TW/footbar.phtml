@@ -1,0 +1,214 @@
+<!-- Footer頁面開始 -->
+<div id="footer">
+	<div id="footer_content">
+		<div id="footer_nav">
+			<ul>
+				<li><a href="<?php echo self::url('about', 'index') ?>"><?php echo _('關於我們'); ?></a></li>
+				<li><a href="<?php echo $tutorialUrl; ?>" class="cicle_btn" style="z-index: 100"><?php echo $tutorialIcon ?><?php echo _('經營小幫手') ?></a></li>
+				<li><a href="<?php echo self::url('recruit', 'index'); ?>"><?php echo _('Cooperation'); ?></a></li>
+				<li><a href="<?php echo self::url('index', 'qanda'); ?>">Q&amp;A</a></li>
+				<li><a id="apple_btn" data-url="<?php echo self::deeplink(); ?>"  onclick="clickHandler(this.dataset.uri)" href="<?php echo Core::settings('IOS_DATA_URI'); ?>"><!-- iOS --></a></li>
+				<li><a data-url="<?php echo self::deeplink(); ?>"  onclick="clickHandler(this.dataset.uri)" href="<?php echo Core::settings('ANDROID_DATA_URI') ;?>"><!-- Android --></a></li>
+				<li><a href="<?php echo self::url('index', 'privacy'); ?>"><?php  echo _('Privacy statement'); ?></a></li>
+				<li><a href="<?php echo self::url('index', 'terms'); ?>"><?php  //echo _('Platform specifications'); ?></a></li>
+				<li><a href="<?php echo self::url('index', 'copyright'); ?>"><?php // echo _('Copyright statement'); ?></a></li>
+				<li><a href="<?php echo self::url('index', 'payment_terms'); ?>"><?php //echo _('pay general terms'); ?></a></li>
+				<li class="dropup">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">下載APP<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a id="apple_btn" data-url="<?php echo self::deeplink(); ?>"  onclick="clickHandler(this.dataset.uri)" href="<?php echo Core::settings('IOS_DATA_URI'); ?>">iOS</a></li>
+						<li><a data-url="<?php echo self::deeplink(); ?>"  onclick="clickHandler(this.dataset.uri)" href="<?php echo Core::settings('ANDROID_DATA_URI') ;?>">Android</a></li>
+					</ul>							
+				</li>				
+				<li class="dropup">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">語言<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<?php
+						foreach ($headbar_lang as $v0) {
+							echo $v0['act'] == 'open'? '<li><a href="'.$v0['url'].'">'.$v0['name'].'</a></li>' : null ;
+						}
+						?>
+					</ul>							
+				</li>				
+			</ul>
+		</div>
+		<div id="copyright">
+			<p class="social_link"><a href="#"><?php echo _('Traditional Chinese'); ?></a> / <a href="#"><?php echo _('Simplified Chinese'); ?></a> / <a href="#"><?php echo _('English'); ?></a> / <a href="#"><?php echo _('Japanese'); ?></a></p>
+			<p class="social_link">
+				<a href="<?php echo Core::settings('FACEBOOK_PAGE_URL'); ?>" target="_blank"><img src="<?php echo static_file('images/fb.png')?>" height="127" width="127" ></a>
+				<a href="<?php echo self::url('recruit', 'index') ?>"><img src="<?php echo static_file('images/mail.png')?>"></a>
+				<a href="<?php echo self::url('index', 'privacy') ?>"><img src="<?php echo static_file('images/law.png')?>"></a>			
+			</p>
+			<p style="height:25px;">© 2016 pinpinbox All Rights Reserved.</p>
+		</div>
+	</div>
+</div>
+<script>
+deeplink.setup({
+    iOS: {
+        appId: "<?php echo Core::settings('IOS_APP_ID') ?>",
+        appName: "<?php echo Core::settings('DEEPLINK_APP_NAME') ?>",
+    },
+    android: {
+        appId: "<?php echo Core::settings('ANDROID_APP_URL') ?>",
+    }
+});
+
+
+$(function(){
+	//search: on + datalist
+	$('input[name="searchkey"]').on({
+		keypress: function(e) {
+			if (e.which == 13 || e.keyCode == 13) _search();
+		},
+	}).typeahead({
+		afterSelect: function(){_search();},
+		autoSelect: false,
+		showHintOnFocus: true,
+		source: function(query, process) {
+			$.post('<?php echo self::url('search')?>', {
+				searchkey: query
+			}, function(r) {
+				process($.parseJSON(r));
+			});
+		},
+	});
+
+	//search: type
+	var headbar_searchtype = '<?php echo $headbar_searchtype ?>';
+	switch(headbar_searchtype) {
+		case 'album' :
+			$('button[name="header_searchtype_list"]').html('<?php echo _('Album') ;?> <span class="caret"></span>').data('searchtype', 'album');
+		break;
+		
+		case 'template':
+			$('button[name="header_searchtype_list"]').html('<?php echo _('Template') ;?> <span class="caret"></span>').data('searchtype', 'template');
+		break;
+		
+		case 'user' :
+			$('button[name="header_searchtype_list"]').html('<?php echo _('Author') ;?> <span class="caret"></span>').data('searchtype', 'user');
+		break;
+		
+		default:
+		break;
+	}
+	
+	$('.dropdown-menu-headerbar>li>a').on('click', function() {
+		var str = $(this).html() + ' <span class="caret"></span>';
+		$('button[name="header_searchtype_list"]').html(str).data('searchtype', $(this).data('searchtype'));
+	});
+   
+    $('li.notice_hide').on('click', function(){
+    	if ($('div.notice_nav').hasClass('active')) {
+    		$('div.notice_nav').toggleClass('active');
+    	} else {
+    		$.post('<?php echo self::url('index', 'getNotifications') ?>', {
+    			data : 0,
+    		}, function(r) {
+    			r = $.parseJSON(r);
+    			switch (r.result) {
+    				case 1:
+    				    $('.notice_hide .pushqueue_hasunviewed').hide();
+
+    					$('.noticeWarpper').empty()
+						for (let [i, v] of r.data.entries()) {
+							$('.noticeWarpper').append(`<li class="list">
+									<a href="${v.target_url}">
+										<div class="notice_user_pic">
+											<img src="${v.trigger_user_pic}" onerror="this.src=\'<?php echo static_file('images/face_sample.png') ?>\'">
+										</div>
+										<div class="notice_msg">
+											<p class="msg_text">${v.message}</p>
+											<p class="msg_time"><time datetime="${v.time}" class="timeago"></time></p>
+										</div>
+									</a>
+								</li>`);
+							}
+						$('time.timeago').timeago();
+						$('div.notice_nav').toggleClass('active');
+					    break;
+    		
+    				default:
+    				    break;
+    			}
+    		});
+    	}
+    })
+	$('time.timeago').timeago();
+    $('body').on('click', function(){
+    	$('div.notice_nav').removeClass('active');
+    })
+});
+
+function _search() {
+	var searchtype = $('button[name="header_searchtype_list"]').data('searchtype');
+	switch (searchtype) {
+		case 'album' :
+			var url = '<?php echo self::url('album', 'index' , (!empty($rank_id)) ? ['rank_id'=>$rank_id] : ['rank_id'=>0]  ) ?>';
+		break;
+		
+		case 'template' :
+			var url = '<?php echo self::url('template', 'index' ,  (!empty($rank_id)) ? ['rank_id'=>$rank_id] : ['rank_id'=>0] ) ?>';
+		break;
+		
+		case 'user' :
+			var url = '<?php echo self::url('creative', 'index',  (!empty($rank_id)) ? ['rank_id'=>$rank_id] : ['rank_id'=>0] ) ?>';
+		break;
+	}
+	
+	<?php
+	switch (M_METHOD) {
+		default:
+			$url = self::url('album', 'index', ['rank_id'=>0]);
+			break;
+			
+		case 'album::index':
+		case 'album::content':
+			$array0 = [];
+			$array0['rank_id'] = $rank_id;
+			if (!empty($categoryarea_id)) $array0['categoryarea_id'] = $categoryarea_id;
+			if (!empty($category_id)) $array0['category_id'] = $category_id;
+			$url = self::url('album', 'index', $array0);
+			break;
+			
+		case 'user::album':
+			$url = self::url('user', 'album', ['sort'=>$sort, 'rank'=>$rank]);
+			break;			
+	}
+	?>
+	var searchkey = ($(window).width() < 1024) ? $('#searchkey_m').val().trim() : $('#searchkey_pc').val().trim();
+	
+	//cookie
+	var search = [], searched = $.cookie('search')? $.parseJSON($.cookie('search')) : [], array = [];
+	if (searchkey !== '') searched.unshift(searchkey);
+	for (var i = 0; i < searched.length; ++i) {
+	    if (array.indexOf(searched[i]) < 0) {
+	  	    array.push(searched[i]);
+	    	search.push(searched[i]);
+	    }
+	}
+	if (search.length > 16) search.pop();
+	$.cookie('search', JSON.stringify(search), {path: '/'});
+
+	if(encodeURIComponent(searchkey).length == 0) {
+        ($(window).width() < 1024) ? $('#searchkey_m').attr('placeholder', '請輸入搜尋內容') : $('#searchkey_pc').attr('placeholder', '請輸入搜尋內容');
+	} else {
+		location.href = url + '&searchtype=' + searchtype + '&searchkey=' + encodeURIComponent(searchkey);
+	}
+}
+
+function clickHandler(uri) {
+    deeplink.open(uri);
+
+    return false;
+}
+
+function ios_notice() {
+	var siteModal = new jBox('Modal', {
+		delayOpen: 200,
+		title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="<?php echo static_file('images/info.png')?>">',
+		maxWidth: 600,
+		minWidth: 100,
+	}).setContent('<?php echo _('Coming Soon!')?>').open();
+}
+</script>

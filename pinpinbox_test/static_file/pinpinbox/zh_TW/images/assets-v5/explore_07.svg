@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+<g>
+	<circle fill="#F2D1AC" cx="20" cy="20" r="20"/>
+	<g transform="translate(7.5 9)">
+		<path fill="none" stroke="#FFFFFF" d="M10.232,10.36c1.252-1.085,3.288-1.082,4.536,0l4.5,3.893
+			c1.252,1.084,2.024,3.28,1.724,4.917l-0.726,3.938c-0.083,0.497-0.553,0.834-1.051,0.752c-0.031-0.006-0.063-0.013-0.095-0.021
+			c0,0-4.323-1.183-6.62-1.183s-6.62,1.183-6.62,1.183c-0.489,0.133-0.994-0.156-1.126-0.646c-0.008-0.028-0.014-0.057-0.019-0.085
+			L4.01,19.17c-0.3-1.632,0.475-3.836,1.724-4.917L10.232,10.36L10.232,10.36z"/>
+		<ellipse fill="none" stroke="#FFFFFF" cx="8.5" cy="3.5" rx="2.5" ry="3.5"/>
+		<ellipse fill="none" stroke="#FFFFFF" cx="2.5" cy="9.5" rx="2.5" ry="3.5"/>
+		<ellipse fill="none" stroke="#FFFFFF" cx="16.5" cy="3.5" rx="2.5" ry="3.5"/>
+		<ellipse fill="none" stroke="#FFFFFF" cx="22.5" cy="9.5" rx="2.5" ry="3.5"/>
+	</g>
+</g>
+</svg>

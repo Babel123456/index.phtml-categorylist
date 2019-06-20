@@ -1,0 +1,107 @@
+<?php echo $index?>
+<script>
+$(function(){
+    $('#grid').kendoGrid({
+    	columns: [
+			{field: '<?php echo M_CLASS?>_id', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+			{
+				title: 'user',
+				columns: [
+					{field: 'user_id', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+					{title: '@info', field: 'userX', attributes: {'class': 'string'}, encoded: false, filterable: false, sortable: false}
+				]
+			},
+			{
+				title: 'style',
+				columns: [
+					{field: 'style_id', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+					{title: '@info', field: 'styleX', attributes: {'class': 'string'}, encoded: false, filterable: false, sortable: false}
+				]
+			},
+			{field: 'event_id', attributes: {'class': 'string'}},
+			{field: 'name', attributes: {'class': 'string'}},
+			{field: 'cover', attributes: {'class': 'image'}, encoded: false, filterable: false, sortable: false},
+			{field: 'point', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+			{field: 'sequence', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+			{field: 'state', attributes: {'class': 'enums state-#:state#'}},
+			{field: 'viewed', attributes: {'class': 'number'}},
+			{field: 'act', attributes: {'class': 'enums act-#:act#'}},
+			{field: 'modifytime', attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+		],
+		dataBinding: function(e) {},
+		dataBound: function(e) {},
+        dataSource: new kendo.data.DataSource({
+    		batch: true,
+    		page: 1,
+    		pageSize: gridpageSize,
+    		serverPaging: true,
+    		serverSorting: true,
+    		serverFiltering: true,
+    		transport: {
+    			read: {
+    				dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+    				type: 'POST',
+    				url: '<?php echo self::url(M_CLASS, 'json')?>',
+    			},
+    			update: {
+    				beforeSend: function() {},
+    				complete: function(xhr) {
+    					r = $.parseJSON(xhr.responseText);
+    					switch(r.result) {
+    						case 0:griderror(r.message);break;
+    						case 1:gridsuccess(r.message);break;
+    					}
+    				},
+    				dataType: 'json',
+    				type: 'POST',
+    				url: '<?php echo self::url(M_CLASS, 'grid_edit')?>',
+    			},
+    		},
+    		schema: {
+    			data: function(r){return r.data;},
+    			total: function(r){return r.total;},
+    			model: {
+    				id: '<?php echo M_CLASS?>_id',
+                    fields: {
+                    	<?php echo M_CLASS?>_id: {editable: false},
+                    	user_id: {editable: false},
+                    	userX: {editable: false},
+                    	style_id: {editable: false},
+                    	styleX: {editable: false},
+                    	name: {editable: false},
+                    	cover: {editable: false},
+						point: {editable: false},
+                    	sequence: {type: 'number', validation: {required: true, min: 0, max: 255}},
+                    	state: {editable: false},
+                    	viewed: {editable: false},
+                    	act: {editable: false},
+    					modifytime: {editable: false},
+                    }
+                }
+    		},
+    		sort: {field: 'modifytime', dir: 'desc'}
+    	}),
+        editable: {
+			confirmation: false,
+			mode: 'incell'
+		},
+        filterable: true,
+        height: gridheight,
+        pageable: {
+            refresh: true,
+            input: true,
+            pageSize: gridpageSize,
+            pageSizes: gridpageSizes,
+        },
+        reorderable: true,
+        resizable: true,
+        selectable: true,
+        sortable: true,
+		toolbar: [
+		  	{template: '<a class="k-button" onclick="grid_toolbar_edit(\'\\#grid\', \'<?php echo self::url(M_CLASS, 'form', array('act'=>'edit'))?>\', [\'<?php echo M_CLASS?>_id\'])"><span class="k-icon k-i-pencil"></span></a>'},
+		  	'save',
+		  	'cancel',
+		],
+    });
+});
+</script>

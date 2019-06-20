@@ -1,0 +1,72 @@
+<?php echo $index?>
+<script>
+$(function(){
+    $('#grid').kendoGrid({
+    	columns: [
+  			{field: '<?php echo M_CLASS?>_id', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+			{
+				title: 'user',
+				columns: [
+					{field: 'user_id', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+					{title: '@info', field: 'userX', attributes: {'class': 'string'}, encoded: false, filterable: false, sortable: false}
+				]
+			},
+			{
+				title: 'payment',
+				columns: [
+					{field: 'payment_id', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+					{title: '@info', field: 'paymentX', attributes: {'class': 'string'}, encoded: false, filterable: false, sortable: false}
+				]
+			},
+			{field: 'total', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n4'});}}},
+			{field: 'currency', attributes: {'class': 'enums'}},
+			{field: 'remittance', attributes: {'class': 'enums'}},
+			{field: 'remittance_info', attributes: {'class': 'string'}, encoded: false, filterable: false, sortable: false},
+			{field: 'state', attributes: {'class': 'enums state-#:state#'}},
+			{field: 'modifytime', attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+			{
+				title: 'settlement',
+				columns: [
+					{title: '@count', field: 'settlementX', attributes: {'class': 'number'}, filterable: false, sortable: false}
+				]
+			},
+		],
+		dataBinding: function(e) {},
+		dataBound: function(e) {},
+        dataSource: new kendo.data.DataSource({
+    		page: 1,
+    		pageSize: gridpageSize,
+    		schema: {
+    			data: function(r){return r.data;},
+    			total: function(r){return r.total;}
+    		},
+    		serverPaging: true,
+    		serverSorting: true,
+    		serverFiltering: true,
+    		sort: {field: 'modifytime', dir: 'desc'},
+    		transport: {
+    			read: {
+    				dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+    				type: 'POST',
+    				url: '<?php echo self::url(M_CLASS, 'json')?>',
+    			}
+    		},
+    	}),
+        filterable: true,
+        height: gridheight,
+        pageable: {
+            refresh: true,
+            input: true,
+            pageSize: gridpageSize,
+            pageSizes: gridpageSizes,
+        },
+        reorderable: true,
+        resizable: true,
+        selectable: true,
+        sortable: true,
+		toolbar: [
+		  	{template: '<a class="k-button" onclick="grid_toolbar_edit(\'\\#grid\', \'<?php echo self::url(M_CLASS, 'form', array('act'=>'edit'))?>\', [\'<?php echo M_CLASS?>_id\'])"><span class="k-icon k-i-pencil"></span></a>'},
+		],
+    });
+});
+</script>

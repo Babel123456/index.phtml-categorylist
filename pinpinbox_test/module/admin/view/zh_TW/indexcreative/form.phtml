@@ -1,0 +1,33 @@
+<?php echo $form?>
+<script>
+
+$(window).load(function() {
+	$('#form').validate({
+		rules: {},
+		submitHandler: function() {
+			
+			if($('#indexcreative').val().length == 0) {
+				alert('必須選擇一位職人');
+			}else {
+
+				$.post('<?php echo $action?>', {
+					<?php if ('edit' == $_GET['act']) {?>
+					<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+					<?php }?>
+					user_id: $('#indexcreative').val(),
+					sequence: $('#sequence').val(),
+					act: $('input[name="act"]:checked').val(),
+				}, function(r) {
+					r = $.parseJSON(r);
+					switch (r.result) {
+						case 0:formerror(r.message);break;
+						case 1:formconfirm(r);break;
+					}
+				});
+			}
+		}
+	});
+
+	$("select[id='indexcreative']").chosen({width: "30%"});
+});
+</script>

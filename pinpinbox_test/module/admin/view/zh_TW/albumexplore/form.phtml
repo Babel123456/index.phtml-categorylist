@@ -1,0 +1,133 @@
+<?php echo $form?>
+<script>
+
+function add_to_display(obj){
+	var [album_id ,	album_cover_src	] = [ $(obj).data('album_id'), $(obj).data('cover_src')	];
+	$('ul#sort li').each(function(){
+		var _this = $(this);
+		if(_this.data('status') != 'set'){
+			_this.data({'status':'set', 'album_id': album_id}).children('img').attr('src', album_cover_src);
+			return false;
+		}
+	})
+}
+
+$(window).load(function() {
+	$( "#sort" ).sortable();
+
+	$( "#sort li").on('dblclick', function(){
+		$(this).data({'status': 'unset'}).children('img').attr('src', '');
+	})
+
+	$('#form').validate({
+		rules: {},
+		submitHandler: function() {
+			var exhibit = [];
+			$('ul#sort li').each(function(){ if($(this).data('status') == 'set'){exhibit.push($(this).data('album_id'));}});
+
+			if($('#basis').val() == 'manual' && exhibit.length < 4) {
+				alert('請至少填入四本相本');
+			} else {
+				$.post('<?php echo $action?>', {
+					<?php if ('edit' == $_GET['act']) {?>
+					<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+					<?php }?>
+					name: $('#name').val(),
+					basis: $('#basis').val(),
+					basis_id: $('#basis_id').val() || 0,
+					exhibit :  JSON.stringify(exhibit),
+					categoryarea2explore_id: $('#categoryarea2explore_id').val(),
+					url: $('#url').val(),
+					sequence: $('#sequence').val(),
+					description: $('#description').val(),
+					act: $('input[name="act"]:checked').val(),
+				}, function(r) {
+					r = $.parseJSON(r);
+					switch (r.result) {
+						case 0:formerror(r.message);break;
+						case 1:formconfirm(r);break;
+					}
+				});
+			}
+		}
+	});
+	
+	//Fetch album info
+	$('#search_album').on('blur', function() {
+			$.post('<?php echo self::url('albumexplore', 'album_search') ?>' ,{
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				album_id: $(this).val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+
+					case 1:
+						if($('#album_show').length < 1) { $('#search_album').parent().append('<div id="album_show"></div>');	}
+
+						var data = $.parseJSON(r.data),
+							obj =  `<p>相本名稱 : ${data.album}</p><p>作者名稱 : ${data.user}</p>
+									<p><img width="220" height="330" src="${data.cover}"></p>
+									<p><a onclick="add_to_display(this)" href="javascript:void(0)" data-album_id="${data.album_id}" data-cover_src="${data.cover}">加入展示</p>`;
+						$('#album_show').html(obj);
+						break;
+					
+				}
+			});
+	}).on('keypress', function(e){
+		if(e.keyCode == 13) {$(this).blur();return false;}
+	});
+
+	$('#basis').on('change', function() {
+	    var val = $(this).val();
+	    $('#layout').empty();
+	    if(val == 'creative' || val == 'categoryarea' || val == 'category') {
+            if ($('.basisAlert').length == 0) {
+                $('#elementlayout').prepend('<p class="basisAlert" style="color:red;">*此模式下手動選擇的作品將失效</p>');
+            }
+
+            $.post('<?php echo self::url('albumexplore', 'elementlayout') ?>' ,{
+                value : val,
+                <?php if(!empty($_GET[M_CLASS.'_id'])) echo 'id : "'.$_GET[M_CLASS.'_id'].',"'    ?>
+            },function(r) {
+                r = $.parseJSON(r);
+                switch(r.result) {
+                    case 1 :
+                        $('#layout').html(r.data);
+                        $('#basis_id').val(<?php echo $basis_id; ?>).trigger('change');
+
+                        $("#basis_id").on('change', function(evt, params) {
+                            $.post('<?php echo self::url('albumexplore', 'refreshlayout') ?>' ,{
+                                basis : val,
+                                basis_id : $('#basis_id').val(),
+                                categoryarea2explore_id : $('#categoryarea2explore_id').val(),
+                            }, function(r) {
+                                r = $.parseJSON(r);
+                                switch (r.result) {
+                                    case 0:formerror(r.message);break;
+
+                                    case 1:
+                                        $('#sort').empty().append(r.data);
+                                        break;
+                                }
+                            });
+                        }).chosen({width:"25%",});
+
+                        break;
+
+                    default :
+                        formerror(r.message);
+                        break;
+                }
+            });
+
+        } else {
+	        if($('.basisAlert').length > 0) $('.basisAlert').remove();
+        }
+    })
+
+    $('#basis').val('<?php echo $basis; ?>').trigger('change').trigger('chosen:updated');
+});
+</script>

@@ -1,0 +1,163 @@
+<div id="banner" class="index_banner">
+	<div id="fullWidthBanner" class="aboutBanner">
+		<div class="bannerContent">
+			<p><?php echo _('為新世代營造友善的內容贊助環境');?></p>
+			<?php echo $registerButton; ?>
+			
+		</div>
+	</div>
+</div>
+
+<div class="mobile_banner about">
+	<img src="<?php echo static_file('images/assets-v5/m_aboutbanner.png') ?>">
+	<div class="m_bannerContent about">
+		<p class="bannerTitle"><?php echo _('為新世代營造') ?></p>
+		<p class="bannerTitle"><?php echo _('友善的創作生態') ?></p>
+		<?php 
+			if(!is_null($registerButton)) {
+				echo '<div class="btn about"><div><a href="'.self::url('user', 'register').'">'._('立即加入').'</a></div></div>';
+			}
+		?>
+	</div>
+</div>	
+
+<!-- 內容頁開始 -->
+<div id="content">
+	<ul id="layout">
+		<li class="wid90">
+			<div id="aboutVideoEmbed">
+				<p class="content">
+                    <div class="emb_movie_wrapperRWD" >
+                        <?php echo $publicity_film; ?>
+                    </div>
+				</p>
+			</div>
+		</li>
+
+		<li class="wid90">
+			<div id="aboutContentA">
+				<p class="title"><?php echo _('About pinpinbox 釘釘吧') ?></p>
+
+                <p class="content" style="height: auto; margin-bottom: 2%; ">
+					<?php echo _('pinpinbox釘釘吧 是個「創作人及斜扛青年」發佈作品取得募資的平台，創作人將作品發表在pinpinbox釘釘吧，透過募資機制輕鬆創造被動收入。pinpinbox釘釘吧 提供各種作品上傳形式「圖片、影片、音樂 (或錄音)、文字 、PDF檔」及社群分享無縫接軌、募資金流後台管理之完整功能。') ?>
+				</p>
+
+<!--                <p class="content" style="height: auto; margin-bottom: 2%; ">-->
+<!--					--><?php //echo _('') ?>
+<!--				</p>-->
+<!---->
+<!--                <p class="content" style="height: auto; margin-bottom: 2%; ">-->
+<!--					--><?php //echo _('') ?>
+<!--				</p>-->
+                <br>
+                <div class="list">
+
+                    <a target="_blank" href="https://www.pinpinbox.com/index/creative/content/?user_id=3900">
+                        <div class="item">
+                            <p><img src="<?php echo static_file('images/assets-v5/img-01-multi-creative-forms.svg') ?>"></p>
+                            <p class="itemTitle"><?php echo _('整合多元連結') ?></p>
+                            <p class="text"><?php echo _('支援JPG、PNG、MP3、MP4、PDF、錄音、GIF，並可嵌入地圖導航、URL，和Youtube、Vimeo、Facebook、DailyMotion等平台的影片。')?></p>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://www.pinpinbox.com/index/creative/content/?user_id=3900">
+                        <div class="item">
+                            <p><img src="<?php echo static_file('images/assets-v5/img-02-creation-of-additional-revenue.svg') ?>"></p>
+                            <p class="itemTitle"><?php echo _('創造額外收益')?></p>
+                            <p class="text"><?php echo _('透過簡單的募資機制，作品可設定進階VIP內容，也就是粉絲給予贊助或收藏作品後才可閱看完整作品。')?></p>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://www.pinpinbox.com/index/creative/content/?user_id=3900">
+                        <div class="item">
+                            <p><img src="<?php echo static_file('images/assets-v5/img-03-community-release.svg') ?>"></p>
+                            <p class="itemTitle"><?php echo _('社群無縫接軌') ?></p>
+                            <p class="text"><?php echo _('可跨平台分享並觸發贊助及導購機制。透過分享的擴散效應，達到收益回饋的效果。')?></p>
+                        </div>
+                    </a>
+                </div>
+                <br>
+				<p class="title"><?php echo _('資訊共享 ≠ 原創無價')?></p>
+				<p class="content">
+					<?php echo _('我們的理念很簡單，人們看到街頭藝人表演時，會願意打賞以表示支持。那麼，同樣在網路上，為什麼「免費的」優質作品卻普遍被視為理所當然呢?因此，pinpinbox 釘釘吧 希望為優秀的創作人及斜扛青年營造友善正面的創作生態，也為瀏覽人匯集了藝文、音樂、時尚生活、美食旅遊等優質作品。') ?>
+				</p>
+
+			</div>
+		</li>
+		<li><div class="line"></div></li>
+		<li class="wid90">
+			<div id="aboutContentC">
+				<p><?php echo _('如何創造募資？') ?></p>
+				<div class="list mobilehide02">
+					<p><img src="<?php  echo static_file('images/assets-v6/img-selling-work.svg') ?>"></p>
+				</div>
+				<div class="list mobiledisplay02 ">
+					<p class="stepimg"><img src="<?php  echo static_file('images/assets-v5/step-01.svg') ?>"></p>
+					<p class="stepimg"><img src="<?php  echo static_file('images/assets-v5/step-02.svg') ?>"></p>
+					<p class="stepimg"><img src="<?php  echo static_file('images/assets-v5/step-03.svg') ?>"></p>
+				</div>
+				<div class="list">
+					<div class="item"> 
+						<p class="text"><?php echo _('新手不知道如何建立作品、如何經營？')?></p>
+						<p class="text"><a href="<?php echo self::url('tutorial') ?>"><img src="<?php echo static_file('images/assets-v6/helper.svg') ?>"></a></p>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li><div class="line"></div></li>
+		<li class="wid90">
+			<div id="aboutContentD">
+				<p class="title"><?php echo _('成為 pinpinbox釘釘吧 的一份子！') ?></p>
+				<div class="list mobilehide02">
+					<div class="item"> 
+						<p><img src="<?php echo static_file('images/assets-v6/part.svg') ?>"></p>
+					</div>
+
+				</div>
+				<div class="list mobiledisplay02">
+					<div class="item"> 
+						<p><img src="<?php echo static_file('images/assets-v6/part.svg') ?>"></p>
+					</div>
+
+				</div>
+			</div>
+		</li>
+		<li class="wid90">
+			<div name="aboutContentF" id="aboutContentF">
+				<p class="subTitle"><?php echo _('透過創作獲得募資收益')?></p>
+				<div class="list">
+					<?php 
+						foreach ($action as $k0 => $v0) {
+							echo $v0;
+						}
+					 ?>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="m_footer">
+	<ul>
+		<li><a href="<?php echo self::url('index', 'qanda') ?>">Q&amp;A</a></li>
+		<li>
+			<select>
+				<option><?php echo _('Simplified Chinese'); ?></option>
+				<option><?php echo _('Traditional Chinese'); ?></option>
+				<option><?php echo _('English'); ?></option>
+			</select>
+		</li>
+		<li><a href="<?php echo self::url('index', 'privacy') ?>"><?php  echo _('Privacy statement'); ?></a></li>
+		<li></li>
+		<li><a href="<?php echo self::url('recruit') ?>"><?php echo _('Cooperation'); ?></a></li>
+	</ul>
+</div>
+<script type="text/javascript">
+$('.btnLink, p.link').hover(function(){
+	$(this).css('opacity', 0.9);
+}, function(){
+	$(this).css('opacity', 1);
+});
+
+$('#tips').on('click', function(){
+		swal("<?php echo _('什麼是贊助收藏機制？'); ?>", '<?php echo _('創作人可以設定贊助價格（P點）和免費預覽的頁數；粉絲再使用P點來贊助收藏喜愛的作品，瀏覽完整內容。')?>');
+})
+
+</script>

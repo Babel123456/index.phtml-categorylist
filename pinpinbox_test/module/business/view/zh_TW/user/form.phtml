@@ -1,0 +1,42 @@
+<?php echo $form ?>
+<script>
+    $(function () {
+        $('#form').validate({
+            rules: {
+                <?php if ('add' == $_GET['act']) {?>
+                repassword: {
+                    equalTo: '#password'
+                },
+                <?php }?>
+            },
+            submitHandler: function () {
+                $.post('<?php echo $action?>', {
+                    <?php if ('add' == $_GET['act']) {?>
+                    account: $('#account').val(),
+                    password: $('#password').val(),
+                    name: $('#name').val(),
+                    cellphone: $('#cellphone').intlTelInput('getNumber'),
+                    gender: $('input[name="gender"]:checked').val(),
+                    birthday: $('#birthday').val(),
+                    <?php }?>
+                    <?php if ('edit' == $_GET['act']) {?>
+                    <?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+                    <?php }?>
+                    act: $('input[name="act"]:checked').val(),
+                }, function (r) {
+                    r = $.parseJSON(r);
+
+                    switch (r.result) {
+                        case '<?php echo \Lib\Result::SYSTEM_ERROR ?>':
+                            formerror(r.message);
+                            break;
+
+                        case '<?php echo \Lib\Result::SYSTEM_OK ?>':
+                            formconfirm(r);
+                            break;
+                    }
+                });
+            }
+        });
+    });
+</script>

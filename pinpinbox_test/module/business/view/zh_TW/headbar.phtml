@@ -1,0 +1,32 @@
+<div id="head">
+    <div id="top">
+        <div id="logo"><?php echo Core::settings('SITE_TITLE') ?>&nbsp;<?php echo _('Background Admin System') ?></div>
+        <div id="info">Hi, <?php echo $businessuserSession['name'] ?>&nbsp;｜&nbsp;
+            <a class="a" target="_blank"
+               href="<?php echo frontstageController::url() ?>"><?php echo _('Website Homepage') ?></a>
+            &nbsp;｜&nbsp;
+            <a class="a" href="<?php echo self::url('index', 'logout') ?>"><?php echo _('Logout') ?></a>
+        </div>
+    </div>
+    <div id="menu">
+        <div id="menu-visible">
+            <ul id="menu-bar">
+                <?php
+                foreach ($a_menu as $v1) {
+                    echo '<li class="current"><a class="with-ul" href="javascript:void(0)">' . $v1['name'] . '<span class="indicator"></span></a>';
+                    if (!empty($v1['down'])) {
+                        echo '<ul>';
+                        foreach ($v1['down'] as $v2) {
+                            echo '<li><a href="' . $v2['url'] . '">' . $v2['name'] . '</a></li>';
+                        }
+                        echo '</ul>';
+                    }
+                    echo '</li>';
+                }
+                ?>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="nav"><span><?php echo $nav ?></span></div>
+<div id="content">

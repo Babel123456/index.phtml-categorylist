@@ -1,0 +1,484 @@
+<div id="content">
+    <div class="creative_content_header">
+        <div class="creative_info_area">
+            <div id="creative_name" title="<?php echo $creative['creator']['user']['name'] ?>" class="creative_name dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
+                <span>
+                    <div class="profile_img_wrap">
+                        <img class="profile_img" src="<?php echo $creative['creator']['user']['picture'] ?>" onerror="this.src='<?php echo static_file('images/face_sample.png') ?>'">
+                    </div>
+                </span>
+
+                <span><?php echo $creative['creator']['user']['name'] ?></span>
+            </div>
+
+            <!-- 社群區塊開始  -->
+            <div id="creative_content_social_links_box" class="social_links_box dropdown-menu dropdown_menu" role="menu">
+                <div class="social_links_title"><?php echo _('分享'); ?></div>
+                <div class="social_links_box_area">
+                    <div id="creative_content_social_links" class="social_links">
+                        <div class="addthis_inline_share_toolbox"></div>
+                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c234e41206c2da6"></script>
+                        <a class="imagepop" href="<?php echo $creative['creative']['qrcode'] ?>" title="" target="_blank">
+                            <img src="<?php echo static_file('images/assets-v7/qr_square.svg') ?>" >
+                        </a>
+                    </div>
+                    <div id="creative_content_social_links2" class="social_links2" title="<?php echo _('複製網址'); ?>" ><i class="fa fa-link"></i></div>
+                </div>
+            </div><!-- .social_links_box -->
+            <!-- 社群區塊結束  -->
+            <div id="creative_content_snackbar">
+                <span><?php echo _('已複製到剪貼簿'); ?></span>
+                <span><input id="creative_content_page_url" type="text" value="<?php echo $creative['creative']['creative_url'] ?>"></span>
+            </div>
+
+            <div id="social_links">
+                <?php
+                    foreach ($creative['creator']['sociallink'] as $k0 => $v0) {
+                        if (!empty($v0)) {
+                            echo '<a href="' .$v0 . '" title="' . $k0 . '" target="_blank">
+                                <img src="'.static_file('images/assets-v7/social_'.$k0.'.png').'" title="'.$k0.'">
+                            </a>';
+                        }
+                    }
+                ?>
+            </div>
+            <div id="social_links2" title="<?php echo _('社群連結') ?>" ><i class="fa fa-link"></i></div>
+            <div class="attention_num"><?php echo _('關注') ?> : <span><?php echo $creative['creator']['followfrom']['formatCount'] ?></span></div>
+            <div class="edit_btn">
+
+                <?php if($creative['creative']['pageState'] == 'creator') { ?>
+                    <a href="<?php echo self::url('creative', 'edit', ['user_id'=>$creative['creator']['user']['user_id']]) ?>"><div class="btn_new"><?php echo _('編輯') ?></div></a>
+                <?php } else { ?>
+                <a name="buttonFollow" href="javascript:void(0)" onclick="follow();">
+                        <?php
+                        if ($creative['creative']['follow']) {
+							echo '<div class="follow_btn btn_new btn_attention">'._('取消關注').'</div>';
+						} else {
+							echo '<div class="follow_btn btn_new btn_pink">'._('關注').'</div>';
+                        }
+                        ?>
+                </a>
+                <?php } ?>
+
+            </div>
+                <div class="social_links_close"><i class="fa fa-times"></i></div>
+        </div>
+    </div>
+
+    <div class="creative_content">
+        <div class="creative_title">
+            <div><span><?php echo $creative['creator']['user']['creative_name1'] ?></span></div>
+            <div>
+                <div class="creative_num_donate">
+                    <div>
+                        <span class="creative_num counter"><?php echo $creative['creator']['user']['formatCollectedbyusers'] ?></span>
+                        <span><?php echo _('贊助次數') ?></span>
+                    </div>
+                </div>
+                <div class="creative_num_view">
+                    <div>
+                        <span class="creative_num counter"><?php echo $creative['creator']['album']['formatViewed'] ?></span>
+                        <span><?php echo _('瀏覽次數') ?></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php if($creative['creator']['user']['cover']) { ?>
+        <div class="creative_banner">
+            <img src="<?php echo $creative['creator']['user']['cover'] ?>">
+        </div>
+        <?php } ?>
+
+        <div class="main_content">
+            <div class="tab-container">
+                <div class="tab_list_area" >
+                    <!-- 手機版列表選單開始 -->
+                    <div id="mobile_tab" class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-list-ul"></i><span id="tab_title">作品集</span></div>
+                    <!-- 手機版列表選單結束 -->
+                    <div id="mobile_tab_menu" class="mobile_tab_menu" role="menu">
+                        <ul class="nav nav-pills" >
+                            <?php
+                            foreach ($creative['creative']['tabLists'] as $k0 => $v0) {
+                                if ($v0['act'] == 'open') echo '<li class="' . $v0['class'] . '"><a  data-toggle="tab" href="' . $v0['href'] . '" onclick="' . $v0['onclick'] . '" name="' . $v0['name'] . '">' . $v0['text'] . '</a></li>';
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                    <!-- 搜尋區塊開始 -->
+                    <div id="content_search">
+                        <div class="content_search_open"><i class="fa fa-search"></i></div>
+                        <div class="content_search_box">
+                            <a href="javascript:void(0);" onclick="filter()"><i class="fa fa-search"></i></a>
+                            <input type="text" class="search_text" id="searchkey" data-searchtype="album" data-rank_id="<?php echo $rank_id ?>" autocomplete="off">
+                        </div>
+                        <div class="content_search_close"><i class="fa fa-times"></i></div>
+                    </div>
+                    <!-- 搜尋區塊結束 -->
+                </div>
+
+                <div class="tab_content">
+                    <!-- 我的作品區塊開始 -->
+                    <div id="tab1" class="tab infinitityWrapper <?php echo $creative['creative']['tabContentLists'][0] ?>"></div>
+                    <!-- 我的作品區塊結束 -->
+                    <!-- 收藏．贊助區塊開始 -->
+                    <div id="tab2" class="tab infinitityWrapper <?php echo $creative['creative']['tabContentLists'][1] ?>" ></div>
+                    <!-- 收藏．贊助區塊結束 -->
+                    <!-- 群組作品區塊開始 -->
+                    <div id="tab3" class="tab infinitityWrapper <?php echo $creative['creative']['tabContentLists'][2] ?>"></div>
+                    <!-- 群組作品區塊結束 -->
+                    <!-- 關於我區塊開始 -->
+                    <div id="tab4" class="tab <?php echo $creative['creative']['tabContentLists'][3] ?>" >
+                        <div class="aboutme"><?php echo ($creative['creator']['user']['description0'] == null) ? '<p class="no_content" style="text-align: center;">'._('尚未填寫介紹').'</p>' : $creative['creator']['user']['description0']; ?></div>
+                    </div>
+                    <!-- 關於我區塊結束 -->
+                    <!-- 留言板區塊開始 -->
+                    <div id="tab5" class="tab <?php echo $creative['creative']['tabContentLists'][4] ?>">
+						<?php
+						if ($creative['creator']['user']['discuss'] == 'open' || $creative['creative']['pageState'] == 'creator') {
+							include(dirname(dirname(__FILE__)) . '/pinpinboard.phtml');
+						} else {
+							echo '<div id="pinpinboard"><p style="color: #cdccc2">'._('此用戶關閉了留言版功能').'</p></div>';
+						}
+						?>
+                    </div>
+                    <!-- 留言板區塊結束 -->
+                </div><!-- .tab_content -->
+            </div><!-- .tab-container -->
+        </div><!-- .main_content -->
+        <!-- 創作人內容區塊結束 -->
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+        window.pinpinbox = {}; // 初始化全域 infScroll
+        pinpinbox.infScroll = {};
+        pinpinbox.socialLikesButtons = {
+            line: {
+                clickUrl: '',
+                pupupWidth: 650,
+                popupHeight: 500,
+            }
+        };
+
+        tabSwitch('<?php echo $creative['creative']['tabInitail'] ?>');
+
+        //社群連結按鈕
+        $('#social_links2 .fa').on('click', function(){
+            //關閉非社群連結鈕
+            $(".creative_info_area > div").addClass('hide').removeClass('show_tablecell');
+            //開啟社群小圖示與關閉按鈕
+            $("#social_links").addClass('show_tablecell');
+            $(".social_links_close").addClass('show_tablecell');
+        });
+        $('.social_links_close .fa').on('click', function(){
+            $(".creative_info_area > div").removeClass('hide');
+            $("#social_links").removeClass('show_tablecell');
+            $("#social_links2").removeClass('show_tablecell');
+            $(".social_links_close").removeClass('show_tablecell');
+        });
+
+        //搜尋區塊開始
+        $('.content_search_open').on('click', function(){
+            $('.content_search_open').addClass('hide').removeClass('show_tablecell');
+            $('.content_search_box').addClass('show_tablecell');
+            $('.content_search_close').addClass('show_tablecell');
+        });
+        $('.content_search_close').on('click', function(){
+            $('.content_search_open').removeClass('hide').removeClass('show_tablecell');
+            $('.content_search_box').removeClass('show_tablecell');
+            $('.content_search_close').removeClass('show_tablecell');
+        });
+        //搜尋區塊結束
+
+        //數字倒數
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+
+        $('a[name="tabCooperate"], a[name="tabPinpinboard"]').on('click', function() {
+            $('#content_search').hide();
+        });
+
+        //當WIDNWOS RESIZE時, 關閉選單
+        $(window).resize(function(evt) {
+            $('.social_links_close .fa').click();
+            $('.content_search_close').click();
+            mobile_tab_menu_show();
+        });
+
+        if($( window ).width() <= 768){
+            $('.mobile_tab_menu').on('click', function(){
+                $('.mobile_tab_menu').toggleClass("mobile_tab_down");
+            });
+        }
+
+        $('.imagepop').magnificPopup({type: 'image',});
+
+        // 加入大小版選單切換開始
+        mobile_tab_menu_show();
+    });
+
+    $(document).on('keypress' , '#searchkey', function(e) {
+        if (e.which == 13 || e.keyCode == 13) { filter(); }
+    });
+
+    // report
+    function alert_submit(id) {
+        var obj = $('input[name=report]:checked'), value = obj.val();
+        console.log(value);
+
+        if (obj.length < 1) {
+            alert('請選擇一個檢舉意向。');
+        } else {
+            $.post("<?php echo self::url('album', 'report') ?>", {
+                value: value,
+                album_id: id,
+                url: window.location.href,
+            }, function (r) {
+                r = $.parseJSON(r);
+                $('#alert_bg_new').trigger('click');
+                if (r.result == 1) {
+                    alert(r.message);
+                } else if (r.result == 2) {
+                    _jbox(r, 'error');
+                } else {
+                    alert(r.message);
+                }
+            });
+        }
+    }
+
+    function mobile_tab_menu_show(){
+        if($( window ).width() <= 768){
+            $('#mobile_tab_menu').addClass('dropdown-menu dropdown_menu');
+        }else{
+            $('#mobile_tab_menu').removeClass('dropdown-menu dropdown_menu');
+        }
+    }
+
+    function buyalbum(id) {
+        $.post('<?php echo self::url('creative', 'buyalbum', query_string_parse())?>', {
+            album_id: id,
+        }, function (r) {
+            r = $.parseJSON(r);
+            switch (r.result) {
+                case 2:
+                    _jBox(r, 'success_notext');
+                    break;
+                case 4:
+                    var myConfirm = new jBox('Confirm', {
+                        cancelButton: '<?php echo _('No')?>',
+                        confirmButton: r.data.property.buyAlbumBoxBtn,
+                        confirm: function () {
+                            $.post('<?php echo self::url('creative', 'buyalbum', query_string_parse())?>', {
+                                album_id: id,
+                                buy: true,
+                            }, function (r2) {
+                                r2 = $.parseJSON(r2);
+
+                                switch (r2.result) {
+                                    case 1:
+                                        var myModal = new jBox('Modal', {
+                                            delayOpen: 300,
+                                            title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span>' + '<img style="vertical-align: middle;" src="<?php echo static_file('images/success.png')?>">',
+                                            onCloseComplete: function () {
+                                                myModal.destroy();
+                                                $('li[data-albumId="' + id + '"]').remove();
+                                                if (r2.data) {
+                                                    if (r2.data.task.message.length > 0) _TaskAlert(r2, 'task');
+                                                }
+                                                if (r2.data.album_count) $('span.albumstatistics').html(r2.data.album_count);
+                                                $('h3[data-album_id="' + id + '"]').prepend('<img src="<?php echo static_file('images/assets-v5/icon-collection-h.svg') ?>">')
+                                            }
+                                        }).setContent(
+                                            '<div class="content">' + r2.message + '</div>'
+                                        ).open();
+                                        break;
+
+                                    case 2:
+                                        _jBox(r2, 'info');
+                                        break;
+
+                                    case 3:
+                                        window.open('<?php echo self::url('user', 'point', ['albumcontent' => encrypt([$user['user_id']])]) ?>', 'userpoint', config = 'height=800,width=1200');
+                                        break;
+                                    default:
+                                        _jBox(r2, 'error');
+                                        break;
+                                }
+                            });
+                        },
+                        onCloseComplete: function () {
+                            myConfirm.destroy();
+                        }
+                    }).setContent(r.data.property.buyAlbumBoxContent).open();
+
+                    break;
+
+                case 5 :
+                    if (r.data) {
+                        if (r.data.task.message.length > 0) _TaskAlert(r, 'task');
+                    }
+                    browseKitRefresh();
+                    browseKit_album('<?php echo self::url('album', 'show_photo')?>', {album_id: id});
+                    break;
+
+
+                default:
+                    _jBox(r, 'error');
+                    break;
+            }
+        });
+    }
+
+    function filter() {
+        var key = $('#searchkey').val(), rank_id = $('#searchkey').data('rank_id');
+        if(key) { tabSwitch(rank_id, key); }
+    }
+
+    function follow() {
+        $.post('<?php echo self::url('creative', 'follow')?>', {
+            user_id: '<?php echo $creative['creator']['user']['user_id']?>',
+        }, function (r) {
+            r = $.parseJSON(r);
+            if (r.result == 1) {
+                if(r.data['followstatus'] == 1) {
+                    $('.follow_btn').text('<?php echo _('取消關注')?>').addClass('btn_attention').removeClass('btn_pink');
+                } else {
+                    $('.follow_btn').text('<?php echo _('Follow')?>').addClass('btn_pink').removeClass('btn_attention');
+                }
+                $('.attention_num>span').html(r.data['count']);
+                if (r.data.task) {
+                    if (r.data.task.message.length > 0 && r.data.task.result) _TaskAlert(r, 'task');
+                }
+            } else {
+                site_jBox(r, 'error');
+            }
+        });
+    }
+
+    function infinitityScroll(rank_id) {
+        var $container = $('.tab' + rank_id + '_content');
+
+        // initial items reveal
+        $container.imagesLoaded(function () {
+
+            var $grid = $container.masonry({
+                itemSelector: '.content_box',
+                columnWidth: '.content_box',
+                gutter: 30,
+                stagger: 30,
+                horizontalOrder : true,
+            });
+
+            if($('.more').length > 0) {
+                // get Masonry instance
+                var msnry = $grid.data('masonry');
+
+                $grid.infiniteScroll({
+                    path: function () {
+                        return $('.more').attr('href') + '&page=' + (this.pageIndex + 1);
+                    },
+                    append: '.content_box',
+                    outlayer: msnry,
+                    history: false,
+                    status: '.page-load-status',
+                });
+
+                $grid.on('load.infiniteScroll', function (event, response, path) {
+                    var found = $('.content_box', $(new XMLSerializer().serializeToString(response)));
+                    if (found.prevObject.length == 0) {
+                        $grid.infiniteScroll('destroy');
+                    }
+                });
+
+                pinpinbox.infScroll = $grid.data('infiniteScroll');
+            }
+        });
+    }
+
+    function tabSwitch(rank_id, searchkey) {
+        
+        if ([4,5].includes(parseInt(rank_id))) return;
+        $('#content_search').show();
+        
+        if(typeof pinpinbox.infScroll.destroy != 'undefined') pinpinbox.infScroll.destroy(); // 重置 infScroll
+        $('.infinitityWrapper').empty(); // 清除元素
+        $('div#tab'+rank_id).append(`<div id="tab${rank_id}_wrapper"><div class="waterfall_content tab${rank_id}_content"></div></div>`); // 插入預設元素
+        $('#searchkey').data('rank_id', rank_id);
+
+        $.post('<?php echo self::url('creative', 'getItem', ['initial' => true, 'user_id' => $creative['creator']['user']['user_id'], 'rank_id' => null]) ?>' + rank_id, {
+            creator_id: '<?php echo $creative['creator']['user']['user_id']; ?>',
+            c_searchkey: searchkey,
+        }, function (r) {
+            r = $.parseJSON(r);
+            switch (r.result) {
+                case 1:
+                    var item;
+                    if (r.data.item.length == 0) {
+                        $('div.tab'+rank_id+'_content').append('<p class="no_content">沒有任何作品可以顯示</p>');
+                    } else {
+                        for (var i = 0; i < r.data.item.length; i++) {
+                            item = `<div class="content_box">
+                                ${r.data.item[i].lock}
+                                <div class="content_box_img" onclick="popview('${r.data.item[i].cover_url}');">
+                                    <a href="javascript:void(0);">
+                                        <img src="${r.data.item[i].cover}" onerror="this.src=\'<?php echo static_file('images/origin.jpg') ?>\'">
+                                    </a>
+                                </div>
+                                <div class="content_box_info">
+                                    <div>
+                                        <div class="content_box_icon">${r.data.item[i].audio_tag}${r.data.item[i].video_tag}</div>
+                                        <div class="content_box_name" data-album_id="${r.data.item[i].type_id}" title="${r.data.item[i].name}">
+                                            <a target="_blank" href="javascript:void(0);" onclick="popview('${r.data.item[i].cover_url}');">${r.data.item[i].name}</a>
+                                        </div>
+                                    </div>
+                                    <div class="content_box_menu_btn">
+                                        <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </div>
+                                        <div class="dropdown-menu dropdown_menu" role="menu">
+                                            <ul>${r.data.item[i].menulist.join('')}</ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                            $('div.tab'+rank_id+'_content').append(item);
+                        }
+                        if (r.data.more) ($('div.more_wrappper').length) ? $('a.more').attr('href', r.data.more) : $('div#tab'+rank_id).append(`<div class="more_wrappper" style="display:none;"><a class="more" href="${r.data.more}"></a></div>`);
+                        infinitityScroll(rank_id);
+                    }
+                    break;
+
+                default :
+                    break;
+            }
+        });
+
+    }
+
+    //複製作品網址按鈕
+    $('#creative_content_social_links_box').on('click', '#creative_content_social_links2', function() {
+        creative_content_snackbar_show() ;
+    });
+
+    //彈出網址已複製訊息
+    function creative_content_snackbar_show() {
+        // 顯示訊息
+        var x = document.getElementById("creative_content_snackbar");
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        // 複製網址
+        $('body').append('<textarea id="clip_area"></textarea>');
+        var clip_area = $('#clip_area');
+        clip_area.text('<?php echo $creative['creative']['creative_url'] ?>');
+        clip_area.select();
+        document.execCommand('copy');
+        clip_area.remove();
+    }
+
+</script>
+<!-- Line  -->

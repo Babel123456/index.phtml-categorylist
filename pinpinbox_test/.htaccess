@@ -1,0 +1,46 @@
+# 設置環境變數
+SetEnv APPLICATION_ENV development
+
+# 啟用 RewriteEngine
+RewriteEngine On
+# 檢查 ${REQUEST_FILENAME} 中，結尾為各名稱，(不論大小寫)或是
+RewriteCond %{REQUEST_FILENAME} \.(gif|jpe?g|png|js|css|swf|ico|txt|pdf|xml|html)$ [NC,OR]
+# 檢查 ${REQUEST_FILENAME} 中，大小不為 0 的檔案是否存在，或是
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+# 檢查 ${REQUEST_FILENAME} 中，指定的符號連結是否存在，或是
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+# 檢查 ${REQUEST_FILENAME} 中，指定的目錄是否存在
+RewriteCond %{REQUEST_FILENAME} -d
+# 上面規則有符合的話就直接導過去
+RewriteRule ^.*$ - [NC,L]
+# 沒有符合的就全部導向 index.php
+RewriteRule ^.*$ index.php [NC,L]
+
+# 關閉瀏覽器以目錄形式瀏覽
+Options -Indexes
+
+# 禁止訪問特定類型文件
+<filesmatch "\.(ini)$">
+Order Allow,Deny
+Deny from all
+</filesmatch>
+
+# 對每個錯誤代碼制定個性化的錯誤頁面
+ErrorDocument 404 /404.html
+
+<ifmodule mod_headers.c>
+# htm, html, txt 類的文件緩存一天
+<filesmatch "\.(html|htm|txt)$">
+header set cache-control "max-age=86400"
+</filesmatch>
+
+# css, js, swf 類的文件緩存三天
+<filesmatch "\.(css|js|swf)$">
+header set cache-control "max-age=259200"
+</filesmatch>
+
+# jpg, gif, jpeg, png, ico, flv, pdf 類的文件緩存一個星期
+<filesmatch "\.(ico|gif|jpg|jpeg|png|flv|pdf)$">
+header set cache-control "max-age=604800"
+</filesmatch>
+</ifmodule>

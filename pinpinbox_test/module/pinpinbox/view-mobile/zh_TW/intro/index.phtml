@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<link rel="icon" type="image/vnd.microsoft.icon" href="<?php echo static_file('images/favicon.ico')?>" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><?php echo Core::settings('SITE_TITLE')?></title>
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="<?php echo static_file('intro/css/mo_style.css')?>">
+	<link rel="stylesheet" href="<?php echo URL_ROOT.'js/jBox-0.3.2/Source/jBox.css'?>">
+</head>
+<body>
+<?php echo Core::settings('GOOGLE_ANALYTICS_TRACKINGCODE')?>
+	<div id="main">
+		<div id="skip"><a href="<?php echo self::url()?>"><img src="<?php echo static_file('intro/images/skip.png')?>" height="80" width="79" alt=""></a></div>
+		<section>
+			<div id="top">
+				<div id="top_content"><img src="<?php echo static_file('intro/images/mobile/top_01.png')?>" height="1960" width="1076" alt=""></div>
+			</div>
+		</section>
+		<section>
+			<div id="page01">
+				<div id="page01_text">
+					<img src="<?php echo static_file('intro/images/mobile/page01_text.png')?>" height="348" width="1084" alt="">
+				</div>
+				<div id="page01_content">
+					<img src="<?php echo static_file('intro/images/mobile/page01_bg.png')?>" height="2405" width="1440" alt="">
+				</div>
+			</div>
+		</section>
+		<section>
+			<div id="page02">
+				<div id="page02_text">
+					<img src="<?php echo static_file('intro/images/mobile/page02_text.png')?>" height="334" width="1088" alt="">
+				</div>
+				<div id="page02_content">
+					<img src="<?php echo static_file('intro/images/mobile/page02_01.png')?>" height="2536" width="1440" alt="">
+				</div>
+			</div>
+		</section>
+		<section>
+			<div id="page03">
+				<div id="page03_text">
+					<img src="<?php echo static_file('intro/images/mobile/page03_text.png')?>" height="420" width="1084" alt="">
+				</div>
+				<div id="page03_content">
+					<img src="<?php echo static_file('intro/images/mobile/page03_01.png')?>" height="1928" width="1440" alt="">
+				</div>
+			</div>
+		</section>
+		<section>
+			<div id="page04">
+				<div id="page04_text">
+					<img src="<?php echo static_file('intro/images/mobile/page04_text.png')?>" height="387" width="1106" alt="">
+				</div>
+				<div id="page04_content">
+					<img src="<?php echo static_file('intro/images/mobile/page04_bg.png')?>" height="1686" width="1440" alt="">
+				</div>
+			</div>
+		</section>
+		<section>
+			<div id="page05">
+				<div id="page05_text">
+					<img src="<?php echo static_file('intro/images/mobile/page05_02.png')?>" height="1520" width="1079" alt="">
+				</div>
+				<div id="page05_content">
+					<img src="<?php echo static_file('intro/images/mobile/page05_01.png')?>" height="637" width="1440" alt="">
+				</div>
+			</div>			
+		</section>
+		<section>
+			<div id="page06">
+				<div id="page06_start"><a href="<?php echo self::url()?>"><img src="<?php echo static_file('intro/images/mobile/page06_01.png')?>" height="817" width="1440" alt=""></a></div>
+				<div id="page06_text"><img src="<?php echo static_file('intro/images/mobile/page06_text.png')?>" height="273" width="691" alt=""></div>
+				<div id="page06_app">
+					<a href="javascript:void(0)" data-uri="<?php echo Core::settings('ANDROID_DATA_URI')?>" onclick="clickHandler(this.dataset.uri)"><img src="<?php echo static_file('intro/images/mobile/page06_03.png')?>" height="66" width="229" alt=""></a>
+				</div>
+				<div id="page06_app02">
+					<a href="javascript:void(0)" onclick="ios_notice()"><img src="<?php echo static_file('intro/images/mobile/page06_04.png')?>" height="65" width="228" alt=""></a>
+				</div>
+				<div id="page06_bottom">
+					<img src="<?php echo static_file('intro/images/mobile/page06_02.png')?>" height="329" width="1440" alt="">
+				</div>
+			</div>
+		</section>
+	</div>
+<script type="text/javascript" src="<?php echo static_file('intro/js/jquery-1.11.1.min.js')?>"></script>
+<script type="text/javascript" src="<?php echo static_file('intro/js/mo_all.js')?>"></script>
+<script type="text/javascript" src="<?php echo URL_ROOT.'js/jBox-0.3.2/Source/jBox.min.js'?>"></script>
+<script type="text/javascript" src="<?php echo static_file('js/browser-deeplink-master/browser-deeplink.min.js')?>"></script>
+<script>
+function ios_notice() {
+	var siteModal = new jBox('Modal', {
+		delayOpen: 200,
+		title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="<?php echo static_file('images/info.png')?>">',
+		maxWidth: 600,
+		minWidth: 100,
+	}).setContent('<?php echo _('Coming Soon!')?>').open();
+}
+
+deeplink.setup({
+    iOS: {
+        appId: "<?php echo Core::settings('IOS_APP_ID') ?>",
+        appName: "<?php echo Core::settings('DEEPLINK_APP_NAME') ?>",
+    },
+    android: {
+        appId: "<?php echo Core::settings('ANDROID_APP_URL') ?>",
+    }
+});
+
+function clickHandler(uri) {
+    deeplink.open(uri);
+    return false;
+}
+</script>
+</body>
+</html>

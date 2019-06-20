@@ -1,0 +1,43 @@
+<?php echo $form?>
+<script>
+$(function() {
+	$('#form').validate({
+		ignore: [],
+		rules: {},
+		submitHandler: function() {
+			var a_target = [];
+			$.each($('input[name="target[]"]'), function(){
+				if ($(this).val().trim() !== '') a_target.push($(this).val());
+			});
+			if (!a_target.length) a_target = null;
+			
+			$.post('<?php echo $action?>', {
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				platform: $('input[name="platform"]:checked').val(),
+				version: $('#version').val(),
+				type: $('input[name="type"]:checked').val(),
+				target: a_target,
+				remark: $('#remark').val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+
+	typeToggle();
+
+	$('input[name="type"], .dynamictable-button-add').on('click', function() {
+		typeToggle();
+	});
+});
+
+function typeToggle() {
+	$('input.target').attr('disabled', $('input[name="type"]:checked').val() !== 'part');
+}
+</script>

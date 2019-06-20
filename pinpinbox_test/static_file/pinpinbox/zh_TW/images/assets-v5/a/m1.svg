@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="125px" height="40px" viewBox="0 0 125 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>5233CD3F-E1DB-4A9C-B336-3344396242E3</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="440" height="40" rx="5"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="440" height="40" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#DADADA" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-4" x="315" y="0" width="125" height="40"></rect>
+        <mask id="mask-5" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="125" height="40" fill="white">
+            <use xlink:href="#path-4"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Resources-top-＆-bottom" transform="translate(-1215.000000, -263.000000)">
+            <g id="top-01-work" transform="translate(200.000000, 263.000000)">
+                <g id="搜尋工具" transform="translate(700.000000, 0.000000)">
+                    <use id="Rectangle-3" stroke="#DADADA" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                    <use id="Rectangle-5" stroke="#DADADA" mask="url(#mask-5)" stroke-width="2" fill="url(#linearGradient-3)" xlink:href="#path-4"></use>
+                    <path d="M333.238801,24.7912713 C329.6913,24.7912713 326.804346,21.8817204 326.804346,18.3048703 C326.804346,14.7280202 329.6913,11.8200506 333.238801,11.8200506 C336.789441,11.8200506 339.674825,14.7280202 339.674825,18.3048703 C339.674825,21.8817204 336.789441,24.7912713 333.238801,24.7912713 M339.712481,23.3839342 C340.801365,21.9750158 341.479172,20.2261227 341.479172,18.3048703 C341.479172,13.7254902 337.782616,10 333.238801,10 C328.694987,10 325,13.7254902 325,18.3048703 C325,22.8842505 328.694987,26.6113219 333.238801,26.6113219 C335.22672,26.6113219 337.026359,25.8697027 338.44787,24.6853257 L343.59261,29.8671727 C343.74951,29.9351676 343.907978,30 344.082137,30 C344.588923,30 345,29.584124 345,29.0749526 C345,28.8962682 344.93724,28.741303 344.852514,28.598988 L339.712481,23.3839342 Z" id="Fill-1" fill="#4D4D4D"></path>
+                    <text id="看更多作品" font-family="PingFangTC-Regular, PingFang TC" font-size="15" font-weight="normal" letter-spacing="1" fill="#4D4D4D">
+                        <tspan x="350" y="26">看更多作品</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

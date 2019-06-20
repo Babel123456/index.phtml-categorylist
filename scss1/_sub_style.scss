@@ -125,7 +125,7 @@
 	    left: 0; 
 	  }
 	  .owl-next{ 
-		right: 0; 
+		right: 0;
 	  } 
 	}
   }//#banner_carousel
@@ -1829,7 +1829,11 @@
   //max-height: 96px;
   max-height: line-height($font_size16)*3;
   text-align:justify;
-  width: 90%;
+  //max-width: 90%;
+  margin-right: 20px; //16+4 px
+  @include breakpoint(max-width $screen_width768){
+    margin-right: 0;
+  }
   color: $grey_color;
   &:hover{
     color: $main_color2;
@@ -3756,7 +3760,6 @@
 //書櫃分類標籤列
 .album_explore_content_header{
   padding: 0 32px;
-  //width: 100%;
   height: 64px;
   line-height: 64px;
   background: $sub_color;
@@ -3767,16 +3770,9 @@
     line-height: 44px;
   }
   .album_explore_cat_area{
-    //display: inline-block;
-	//height: 40px;
-	//line-height: 40px;
-	//width: 100%;
-	//width: 1270px;
 	margin: auto;
 	width: 100%;
-	//@include width-max-content;
 	@include breakpoint(max-width $screen_width1600){
-	  //width: 66.15%;
 	  width: 90%;
 	}
 	@include breakpoint(max-width $screen_width1200){
@@ -3799,7 +3795,6 @@
 }//.album_explore_content_header
 //書櫃分類標籤
 .album_explore_cat_tab{
-  li{
     display: inline-block;
 	width: 168px;
 	height: 40px;
@@ -3847,7 +3842,6 @@
 	    background: $main_color2;
 	  }
 	}
-  }
 }//.album_explore_cat_tab
 //類別書櫃BANNER
 .album_explore_banner{
@@ -3856,17 +3850,15 @@
   //margin: 16px auto 64px auto;
   margin: 16px auto 0 auto; //將底空間讓給BOOKMARK錨點
   background: $sub_color;
-  //@include display-flex(flex-start,row);
   @include breakpoint(max-width $screen_width1024){
     width: 90%;
   }
   @include breakpoint(max-width $screen_width768){
+    margin-top: 0;
     width: 100%;
   }
   .album_explore_banner_area{
     position: relative;
-    //width: 675px; //70%;
-	//@include flex(2);
 	float: left;
 	width: 70%;
 	
@@ -3882,7 +3874,6 @@
 	
 	//輪播設定
 	.owl-wrapper{
-	  //@include display-flex(flex-start,row);
 	  display: flex !important;
 	  .owl-item{ //當無說明時, 也有底線出現
 	    width: auto;
@@ -3897,11 +3888,8 @@
       box-shadow: none;  //無陰影
 	}
 	.owl-controls{  //按鈕設定
-	  //position: absolute;
-	  //bottom: 0;
-	  //left: 0;
-	  //z-index: -10; //大版時圓鈕不顯示
-	  visibility: hidden;
+	  margin-top: 0;
+	  visibility: hidden; //大版時圓鈕不顯示
 	  .owl-page{
 	    span{
 		  margin: 16px 0 0 0;
@@ -3916,10 +3904,7 @@
 		}
 	  }
 	  @include breakpoint(max-width $screen_width960){
-        //position: relative; //小版時圓鈕出現
-		//z-index: 1;
-		//margin-top: 0;
-		visibility: visible;
+		visibility: visible; //小版時圓鈕出現
 	  }	  
 	}
 	
@@ -3927,7 +3912,8 @@
 	  position: absolute;
 	  right: 0;
 	  //bottom: 10px; //0;
-	  bottom: 50px; //0;
+	  //bottom: 50px; //0;
+	  bottom: 40px;
 	  background: $sub_color;
 	  .owl-prev{
 	    margin-right: 8px;
@@ -3941,38 +3927,54 @@
 		line-height: 24px;
 		text-align: center;
 		@include border-radius($border_radius);
-		
+	  }
+	  .owl-next{
+	    i{
+		  margin-left: 4px;
+		}
 	  }
 	  @include breakpoint(max-width $screen_width960){
 	    display: none;
       }
 	}
 	
-	//輪播內影片設置
-	.album_explore_page_video_wrap{
-	  position: absolute; 
-	  top: 0; 
-	  bottom: 0; 
-	  left: 0; 
-	  right: 0; 
-	  margin: auto; 
-	  width: 100%; 
-	  //height: 320px; 
-	  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-	  overflow: hidden;
-	  .album_explore_page_video{
-	    //width: 569px; 
-		width: 100%;
-		height: 100%; 
-		position: absolute; 
-		//top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 5;
-		@include absolute-middle;
-	  }
-	}
+	
 	
 	
 	.album_explore_banner_page_img{
 	  position: relative;
+	  
+	  //輪播內影片設置
+	  .album_explore_page_video_wrap{
+	    position: absolute; 
+	    z-index: 5;
+	    top: 0; 
+	    bottom: 0; 
+	    left: 0; 
+	    right: 0; 
+	    margin: auto; 
+	    width: 100%; 
+		
+		border-bottom: 2px $border_style $sub_color;
+			
+	    //height: 320px;
+	    //padding-top: 56.25%; /* 16:9 Aspect Ratio */
+	    overflow: hidden;
+	    .album_explore_page_video{
+	      //width: 569px; 
+		  width: 100%;
+		  height: 100%; 
+	  	  position: absolute; 
+		  //z-index: 5;
+		  //top: 0; bottom: 0; left: 0; right: 0; margin: auto; z-index: 5;
+		  @include absolute-middle;
+		  
+		  // knock out nasty borders
+          outline: 2px solid white !important;
+          outline-offset: -1px;
+	    }
+	  }
+	  
 	  img{
 	    width: $img_width100p;
 		height: $img_width100p;
@@ -3984,6 +3986,7 @@
 	  padding-right: 124px; //24+24+8 + 68
 	  @include display-flex(center,row);
 	  height: 44px;
+	  line-height: 44px;
 	  @include breakpoint(max-width $screen_width960){
 	    //border-bottom: $border_width $border_style $border_color;
 		padding-right: 16px;
@@ -4006,6 +4009,7 @@
 	    //margin-right: 88px; //24+24+8 + 32
 		//height: 24px;
 	    //line-height: 24px;
+		line-height: 24px; //for firefox
 		font-size: $font_size14;
 		@include flex(2);
 		@include line-clamp(vertical,1);
@@ -4047,6 +4051,10 @@
 	  .profile_img_wrap{
 		width: 64px;
 		height: 64px;
+		border: none;
+		.profile_img{
+		  height: 100%;
+		}
 	  }
 	  .album_explore_creative_name{
 	    //margin: 6px 24px 6px 8px;
@@ -4075,11 +4083,16 @@
   width: 960px;
   margin: 64px auto 160px auto;
   //margin-top: 92px; //64+28(輪播圓按鈕大版時不秀)
+  
+  //min-height: 128px; //當沒作品時, FOOTER太上
+  min-height: 196px; //當沒作品時, FOOTER太上
+  
   @include breakpoint(max-width $screen_width1024){
     width: 90%;
   }
   @include breakpoint(max-width $screen_width960){
-    margin-top: 32px;
+    //margin-top: 32px;
+	margin-top: 16px;
   }
   @include breakpoint(max-width $screen_width768){
     width: 100%;
@@ -4090,6 +4103,22 @@
     position: relative;
 	//margin-bottom: 64px; //把空間讓給錨點BOOKMARK
 	padding-top: 64px;
+	
+	
+	
+	
+	&:first-child{
+	  //padding-top: 16px;
+	  padding-top: 22px;
+	  .album_explore_bookcase_content_box_more{
+	    //top: 10px;
+		top: 20px;
+		@include breakpoint(max-width $screen_width768){
+	      margin-top: 28px;
+		  margin-bottom: 18px;
+	    }
+	  }
+	}
 	@include breakpoint(max-width $screen_width960){
 	  //margin-bottom: 48px;
 	  padding-top: 48px;
@@ -4102,25 +4131,33 @@
 
   .album_explore_bookcase_content_box_more{
     position: absolute;
-	top: -4px; //0;
+	top: 60px;
 	right: 0;
     z-index: 2;
     //width: 100%;
 	width: 96px;
 	text-align: right;
+	@include breakpoint(max-width $screen_width960){
+	  top: 40px;
+	}
     @include breakpoint(max-width $screen_width768){
 	  position: relative;
-	  margin-top: 48px;
+	  //margin-top: 48px;
+	  margin-top: 8px;
+	  margin-bottom: 48px;
 	  width: 100%;
 	  text-align: center;
     }
+	
     .btn_new{
 	  width: 96px;
-	  @include breakpoint(max-width $screen_width768){
-        width: 192px;
-      }  
       height: 32px;
       line-height: 32px;
+	  @include border-radius($border_radius32);
+	  @include breakpoint(max-width $screen_width768){
+        width: 192px;
+		@include border-radius($border_radius40);
+      }
     }
   }
 
@@ -4144,28 +4181,35 @@
     .album_explore_bookcase_content_desc{
 	  margin-right: 112px; //控出按鈕位置 16+96 px
       overflow: hidden;
+	  height: 18px; //for firefox
       font-size: $font_size18;
   	  color: $grey_color2;
   	  visibility: visible;
       @include flex(2);
   	  @include line-clamp(vertical,1);
-  	  @include breakpoint(max-width $screen_width960){
+  	  @include breakpoint(max-width $screen_width768){
   	    visibility: hidden;
   	  }
     }
     
   
     .album_explore_bookcase_content_tab_list{
+	  //position: relative;
       display: none;
-      font-size: $font_size18; 
+	  cursor: pointer;
+      //font-size: $font_size18; 
+	  font-size: $font_size20;
       @include breakpoint(max-width $screen_width768){
   	    display: block;
   	    margin-right: 22px;
       }
       .dropdown_menu{
         left: 0;
+		right: unset;
   	    max-height: 216px;
-        @include width-max-content;
+        //@include width-max-content;
+		@include min-width-max-content;  //FOR iPAD
+		//@include max-width-max-content;
       }
     }
   }//.album_explore_bookcase_content_list_header
@@ -4219,17 +4263,19 @@
 		top: unset;
 		bottom: 0;
 		*/
-		top: -40px;
+		top: -80px; //-40px;
 		bottom: unset;
 		@include breakpoint(max-width $screen_width768){
-		  right: 0;
-		  bottom: unset;
+		  //top: 0;
+		  top: unset;
+		  bottom: 0;
 		}
 		
 	  }
 	
 	  .content_box_name a{
 	    font-size: $font_size14;
+		display: inline-block;
 	    margin-bottom: 16px;
 		line-height: line-height($font_size14);
 		max-height: line-height($font_size14) * 3;
@@ -4239,21 +4285,34 @@
 	    padding-top: 16px;
 		border-top: $border_width $border_style $border_color;
 		a{
-		  display: block;
-		  @include display-flex(center,row);
+		  //display: inline-block;
+		  //line-height: 24px;
+		  //@include display-flex(center,row);
+		  @include display-inline-flex(center,row);
+		  flex-wrap: wrap;
+		  //&>div{
+		    //display: inline-block;
+			//height: $img_height24;
+		  //}
 		}
 	    
         .profile_img_wrap{
 		  margin-right: 8px;
 		  width: $img_width24;
           height: $img_height24;
+		  border: none;
           @include border-radius($border_radius100p);
+		  .profile_img{
+		    height: 100%;
+		  }
 		}
 		.creative_name{
 		  overflow: hidden;
 		  font-size: $font_size14;
+		  line-height: 24px;
 		  @include flex(2);
 		  @include line-clamp(vertical,1);
+		  
 		}
 	  }//.content_box_creative	  
 	

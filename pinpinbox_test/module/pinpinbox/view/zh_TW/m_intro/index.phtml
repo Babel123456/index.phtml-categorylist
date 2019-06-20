@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<link rel="icon" type="image/vnd.microsoft.icon" href="<?php echo static_file('images/favicon.ico')?>" />
+	<meta charset="UTF-8">
+	<meta name="keywords" content="<?php echo $seo['keywords']?>">
+	<meta name="description" content="<?php echo $seo['description']?>">
+	<meta property="og:title" content="<?php echo $seo['title']?>">
+	<meta property="og:description" content="<?php echo $seo['description']?>">
+	<meta property="og:image" content="<?php echo $seo['image']?>">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<title><?php echo $seo['title'] ?></title>
+	<link rel="stylesheet" href="<?php echo static_file('intro/css/fixed-positioning.css')?>">
+	<link rel="stylesheet" href="<?php echo static_file('intro/css/mobile_main.css')?>">
+	<link rel="stylesheet" href="<?php echo static_file('intro/css/bootstrap.min.css')?>">
+	<link rel="stylesheet" href="<?php echo static_file('intro/css/jBox.css')?>">
+	<link rel="stylesheet" href="<?php echo static_file('intro/css/bootstrap-theme.min.css')?>">
+
+</head>
+
+<?php echo Core::settings('GOOGLE_ANALYTICS_TRACKINGCODE')?>
+<body>
+	<div id="bg_header">
+		<div style="width:100%">
+			<a href="<?php echo self::url() ?>" class="home"><img src="<?php echo static_file('intro/images/m_logo.png') ?>"></a>
+			<span><a href="#bg4_wrapper" data-scroll="page03" class="nav">招募職人</a></span>
+			<span>|</span>
+			<span><a href="#bg3_wrapper" data-scroll="page02" class="nav">如何使用</a></span>
+			<span>|</span>
+			<span><a href="#bg2_wrapper" data-scroll="page01" class="nav">介紹</a></span>
+		</div>
+	</div>
+	<div id="bg1_wrapper"  data-anchor="top">
+		<div id="carousel-example-generic" class="carousel slide img_slider" data-ride="carousel">
+			<!-- Indicators -->
+			<ol style="top:110%;" class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active indicators" ></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1" class="indicators" ></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2" class="indicators" ></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<a href="<?php echo self::url('user', 'register') ?>"><img src="<?php echo static_file('intro/images/mo_banner01.png') ?>"></a>
+				</div>
+				<div class="item">
+					<a href="<?php echo self::url('user', 'register') ?>"><img src="<?php echo static_file('intro/images/mo_banner02.png') ?>"></a>
+				</div>
+				<div class="item">
+					<a href="<?php echo self::url('creative', 'recruit') ?>"><img src="<?php echo static_file('intro/images/mo_banner03.png') ?>"></a>
+				</div>
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
+					<img src="<?php echo static_file('intro/images/slider_left.png') ?>">
+				</span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true">
+					<img src="<?php echo static_file('intro/images/slider_right.png') ?>">
+				</span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	<div id="bg2_wrapper"  data-anchor="page01">
+		<div class="bg2_title"><img src="<?php echo static_file('intro/images/D_0.png') ?>" ></div>
+		<div class="bg2_text"><img src="<?php echo static_file('intro/images/layer_22.png') ?>" ></div>
+		<div class="bg2_content">
+			<img src="<?php echo static_file('intro/images/mo_img01.png') ?>" >
+			<img src="<?php echo static_file('intro/images/mo_img02.png') ?>" >
+			<img src="<?php echo static_file('intro/images/mo_img03.png') ?>" >
+			<img src="<?php echo static_file('intro/images/mo_img04.png') ?>" >
+		</div>
+	</div>
+	<div id="bg3_wrapper"  data-anchor="page02"> 
+		<div class="bg3_title"><img src="<?php echo static_file('intro/images/D.png') ?>" ></div>
+		<div class="bg3_content_wrapper">
+			<div class="bg3_text"><img src="<?php echo static_file('intro/images/layer_17.png') ?>" ></div>
+			<div class="img_content">
+				<img class="img01" src="<?php echo static_file('intro/images/mo_img05.png') ?>">
+				<a href="<?php echo self::url('user', 'register') ?>"><img class="img02" src="<?php echo static_file('intro/images/mo_img06.png') ?>">
+				<a href="<?php echo Core::settings('ANDROID_DATA_URI') ;?>"><img class="img03" src="<?php echo static_file('intro/images/mo_img07.png') ?>"></a>
+				<a href="#" data-uri="pinpinbox://profile" onclick="clickHandler(this.dataset.uri)"><img class="img04" src="<?php echo static_file('intro/images/mo_img08.png') ?>"></a>
+			</div>
+		</div>
+	</div>		
+	<div id="bg4_wrapper"  data-anchor="page03">
+		<div class="bg4_title"><img src="<?php echo static_file('intro/images/D_1.png') ?>"></div>
+		<div class="bg4_text">pinpinbox透過贊助與分潤，提供創作人一個能獲得關注的舞台，你的創意作品、版型設計都能因為受網友的喜愛而賺取收益，支持你全神投入的創作。</div>
+		<div id="bg4_creative_wrapper"> 
+			<div class="bg4_creative">
+				<a href="<?php echo self::url('loveeatmia') ?>"><img src="<?php echo static_file('intro/images/mo_img09.png') ?>"></a>
+				<a href="<?php echo self::url('hopingjones') ?>"><img src="<?php echo static_file('intro/images/mo_img10.png') ?>"></a>
+				<a href="<?php echo self::url('bobimonkey') ?>"><img src="<?php echo static_file('intro/images/mo_img11.png') ?>"></a>
+				<a href="<?php echo self::url('towtow') ?>"><img src="<?php echo static_file('intro/images/mo_img12.png') ?>"></a>
+				<a href="<?php echo self::url('ckaori66') ?>"><img src="<?php echo static_file('intro/images/mo_img13.png') ?>"></a>
+			</div>
+		</div>
+		<div class="bg4_btn">
+			<a href="<?php echo self::url('creative', 'recruit') ?>"><img src="<?php echo static_file('intro/images/mo_img14.png') ?>"></a>
+		</div>
+	</div>
+	<div id="bg_footer">
+		<div class="bgf_title"><img src="<?php echo static_file('intro/images/LOGOgray.png') ?>"></div>
+		<div class="text">
+			<span><a href="<?php echo self::url('recruit') ?>">合作提案</a></span>
+			<span>|&nbsp;&nbsp;&nbsp;</span>
+			<span><a href="<?php echo self::url('index', 'qanda') ?>">Ｑ＆Ａ</a></span>
+			<span>|&nbsp;&nbsp;&nbsp;</span>
+			<span><a href="<?php echo Core::settings('FACEBOOK_PAGE_URL');  ?>">Facebook</a></span>
+		</div>
+		<div class="text2">© 2016 pinpinbox All Rights Reserved.</div>
+	</div>
+
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="dist/skrollr.ie.min.js"></script>
+	<![endif]-->
+</body>
+
+<script type="text/javascript" src="<?php echo static_file('js/jquery-1.11.3.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo static_file('js/jquery.nicescroll.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo static_file('intro/js/skrollr.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo static_file('intro/js/require.js') ?>"></script>
+<script type="text/javascript" src="<?php echo static_file('intro/js/bootstrap.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo static_file('intro/js/jBox.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo static_file('js/browser-deeplink-master/browser-deeplink.min.js') ?>"></script>
+<script>
+	$(function () {
+		$('.carousel').carousel({
+			interval: 3000
+		})
+
+	    var nicesx = $("#bg4_creative_wrapper").niceScroll({
+	        touchbehavior: true,
+	        cursorcolor: "transparent",
+	        cursoropacitymax: 0.6,
+	        cursorwidth: 8
+	    });
+	    $('.nicescroll-rails').remove();
+	});
+	
+	function clickHandler(uri) {
+		deeplink.setup({
+			iOS: {
+				appName: "pinpinbox",
+				appId: "<?php echo Core::settings('IOS_APP_ID'); ?>",
+			},
+			android: {
+				appId: "<?php echo Core::settings('ANDROID_APP_URL'); ?>"
+			}
+		});
+
+		deeplink.open(uri);
+		return false;
+	}
+
+</script>
+</body>
+</html>

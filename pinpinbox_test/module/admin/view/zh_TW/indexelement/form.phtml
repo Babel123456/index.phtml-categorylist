@@ -1,0 +1,175 @@
+<?php echo $form?>
+<script>
+$(window).load(function() {
+	$('#form').validate({
+		rules: {},
+		submitHandler: function() {
+			var e_target = $('#e_'+$('#indexelement_for').val()).val(),
+				e_source = 'unuse',
+				e_sort='unuse', 
+				e_keyword='unuse';
+				
+			if( e_target == '' && $('input[name="act"]:checked').val() == 'open' ) {formerror('必須選擇連結目標');return;}
+			switch($('#indexelement_for').val()) {
+				case 'categoryarea': break;
+				case 'creative' : break;
+				case 'custom' : var e_keyword = $('#e_custom_keyword').val(); 	break;				
+				case 'region' : var e_keyword = $('#e_region_keyword').val(); 	break;				
+				case 'event' : break;
+				case 'link' : break;
+				default : formerror('必須選擇一種類別');return;	break;
+			}
+			
+			e_transform = $('input[name="e_image_transform"]:checked').val();
+			switch( e_transform ) {
+				case 'single':
+					if($('#e_image').val() == '') {formerror('請上傳圖片');return;}
+					e_source = $('#e_image').val();
+				break;
+				
+				case 'multi' :
+					e_source = $('#e_categoryarea').val();
+					e_sort = $('input[name="e_sort"]:checked').val();
+					if (typeof e_sort === 'undefined') {formerror('請選擇多張排序方式');return;}
+				break;
+				
+				case 'unuse':
+					e_source = e_sort = null;
+				break;
+				
+				default : 
+					formerror('必須選擇是否產生圖片二態樣式');return;
+				break;
+			}
+			
+			$.post('<?php echo $action?>', {
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				name: $('#name').val(),
+				image: $('#image').val(),
+				icon: $('#icon').val(),
+				indexelement_for: $('#indexelement_for').val(), 
+				tmp: JSON.stringify([e_target, e_transform, e_source, e_sort, e_keyword]), 
+				url: $('#url').html(),
+				sequence: $('#sequence').val(),
+				act: $('input[name="act"]:checked').val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+	
+	$('#indexelement_for').on('change', function(){
+		var _this = $(this).val();
+		$.post('<?php echo self::url('indexelement', 'elementlayout') ?>' ,{
+			value : _this,
+			<?php if(!empty($_GET[M_CLASS.'_id'])) echo 'id : "'.$_GET[M_CLASS.'_id'].',"'    ?>
+		},function(r){
+			r = $.parseJSON(r);
+			switch(r.result) {
+				case 1 :
+					$('#elementlayout').html(r.data);
+					switch(_this){
+						case 'categoryarea':
+							$('#e_categoryarea').on('change', function(evt, params) {
+								var _target = $('#e_categoryarea');
+								var target = '<?php echo str_replace('admin', 'index', url('album', 'index'))?>?categoryarea_id='+ _target.val();
+								$('a#url').html(target).attr('href', target);
+							}).chosen({width: "15%"});
+						break;
+						
+						case 'creative' :
+							$("#e_creative").on('change', function(evt, params) {
+								$.post('<?php echo self::url('indexelement', 'get_user_url') ?>', {
+									id : $(this).val(),
+								},function(r){
+									r = $.parseJSON(r);
+									$('a#url').html(r.data).attr('href', r.data);
+								});
+							}).chosen({width:"25%",});
+						break;
+						
+						case 'custom' :
+							$('#e_custom').on('change', function(evt, params) {
+								var target = 'http://' + $('#e_custom_keyword').val();
+								$('a#url').html(target).attr('href', target).data('link', target);
+							}).chosen({width: "15%"});
+							
+							$('#e_custom_keyword').on('change', function(){
+								$('a#url').html('http://'+$(this).val()).attr('href', 'http://'+$(this).val());
+							}).on('keyup', function(){ $(this).trigger('change');});
+						break;
+						
+						case 'region' :
+							$('#e_region').on('change', function(evt, params){
+								var key = $('#e_region').val();
+								$('div.multi_radio').show();
+								switch(key) {
+									case 'album_keyword':
+										$('#e_region_keyword').removeAttr('disabled');
+										var target = '<?php echo str_replace('admin', 'index', url('album', 'index'))?>?searchtype=album&searchkey=';
+									break;
+									
+									case 'template_keyword':
+										$('#e_region_keyword').removeAttr('disabled');
+										var target = '<?php echo str_replace('admin', 'index', url('template', 'index'))?>?searchtype=user&searchkey=';
+									break;
+
+									default :
+										$('#e_region_keyword').attr('disabled' , 'disabled').val('');
+										var target = '<?php echo str_replace('admin', 'index', url('creative', 'index'))?>?area=true&searchtype=user&searchkey='+ $('#e_region').val();	
+									break;
+								}
+								$('a#url').html(target).attr('href', target).data('link', target);
+							}).on('chosen:ready', function(){
+								if($('#e_region').val() == 'url') $('div.multi_radio').hide();
+								
+							}).chosen({width: "15%"});
+							
+							$('#e_region_keyword').on('change', function(){
+								var tmp = $('a#url').data('link');
+								$('a#url').html(tmp+$(this).val()).attr('href', tmp+$(this).val());
+							}).on('keyup', function(){ $(this).trigger('change');});
+						break;
+						
+						case 'event' :
+							$('#e_event').on('change', function(evt, params) {
+								var target = '<?php echo str_replace('admin', 'index', url('event', 'content'))?>?event_id='+ $('#e_event').val();
+								$('a#url').html(target).attr('href', target);
+							}).chosen({width: "17%"});
+						break;
+						
+						case 'link' :
+							$('#e_link').on('change', function(evt, params) {
+								var value = ($('#e_link').val() == 'apply') ? 'creative/apply' : $('#e_link').val();
+								var target = '<?php echo URL_ROOT.'index/' ?>'+value;
+								$('a#url').html(target).attr('href', target);
+								
+								if(value != 'creative') {
+									$("input#d_r2").attr('disabled', true);
+									if( $("input#d_r2").val() == 'multi' ) $("input#d_r5").prop('checked', true) ;
+								}else{
+									$("input#d_r2").attr('disabled', false);
+								}
+							}).chosen({width: "17%"});
+
+							break;
+							
+						default: break;
+					}
+					break;
+				default :
+					formerror(r.message);
+				break;
+			}
+		});
+	});
+	
+	$('#indexelement_for').val('<?php echo $indexelement_for; ?>').trigger('change').trigger('chosen:updated');
+});
+</script>

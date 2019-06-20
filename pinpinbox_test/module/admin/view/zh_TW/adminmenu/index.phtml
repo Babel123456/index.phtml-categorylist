@@ -1,0 +1,149 @@
+<?php echo $index?>
+<script>
+$(function(){
+    $('#grid').kendoGrid({
+    	columns: [
+			{field: '<?php echo M_CLASS?>_id', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+			{field: 'name', attributes: {'class': 'string'}},
+			{field: 'level', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+			{field: 'class', attributes: {'class': 'string'}},
+			{field: 'sequence', attributes: {'class': 'number'}, filterable: {ui: function(e){e.kendoNumericTextBox({format: 'n0'});}}},
+			{field: 'modifytime', attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+		],
+		dataBinding: function(e) {},
+		dataBound: function(e) {},
+        dataSource: new kendo.data.DataSource({
+    		batch: true,
+    		page: 1,
+    		pageSize: gridpageSize,
+    		serverPaging: true,
+    		serverSorting: true,
+    		serverFiltering: true,
+    		transport: {
+    			read: {
+    				dataType: 'json',//"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+    				type: 'POST',
+    				url: '<?php echo self::url(M_CLASS, 'json')?>',
+    			},
+    			update: {
+    				beforeSend: function() {},
+    				complete: function(xhr) {
+    					r = $.parseJSON(xhr.responseText);
+    					switch(r.result) {
+    						case 0:griderror(r.message);break;
+    						case 1:gridsuccess(r.message);break;
+    					}
+    				},
+    				dataType: 'json',
+    				type: 'POST',
+    				url: '<?php echo self::url(M_CLASS, 'grid_edit')?>',
+    			},
+    		},
+    		schema: {
+    			data: function(r){return r.data;},
+    			total: function(r){return r.total;},
+    			model: {
+    				id: '<?php echo M_CLASS?>_id',
+                    fields: {
+                    	<?php echo M_CLASS?>_id: {editable: false},
+                    	name: {editable: false},
+                    	level: {editable: false},
+                    	class: {editable: false},
+                    	sequence: {type: 'number', validation: {required: true, min: 0, max: 255}},
+                    	modifytime: {editable: false},
+                    }
+                }
+    		},
+    		sort: {field: 'modifytime', dir: 'desc'}
+    	}),
+		editable: {
+			confirmation: false,
+			mode: 'incell'
+		},
+        filterable: true,
+        height: gridheight,
+        pageable: {
+            refresh: true,
+            input: true,
+            pageSize: gridpageSize,
+            pageSizes: gridpageSizes,
+        },
+        reorderable: true,
+        resizable: true,
+        selectable: true,
+        sortable: true,
+		toolbar: [
+		  	{template: '<a class="k-button" onclick="grid_toolbar_add(\'\\#grid\', \'<?php echo self::url(M_CLASS, 'form', array('act'=>'add'))?>\')"><span class="k-icon k-i-plus"></span></a><a class="k-button" onclick="grid_toolbar_edit(\'\\#grid\', \'<?php echo self::url(M_CLASS, 'form', array('act'=>'edit'))?>\', [\'<?php echo M_CLASS?>_id\'])"><span class="k-icon k-i-pencil"></span></a><a class="k-button" onclick="grid_toolbar_delete(\'\\#grid\', \'<?php echo self::url(M_CLASS, 'delete')?>\', [\'<?php echo M_CLASS?>_id\'])"><span class="k-icon k-i-close"></span></a>'},
+		  	'save',
+		  	'cancel',
+		],
+    });
+});
+/*
+jQuery('#jqgrid').jqGrid({
+	caption: '<?php echo $this->get_adminmenu_name_by_class(M_CLASS)?>',
+   	url: '<?php echo self::url(M_CLASS, 'json')?>',
+   	mtype: 'GET',
+	datatype: 'json',
+   	colNames: ['<?php echo M_CLASS?>_id', 'name', 'level', 'class', 'sequence', 'modifytime', 'modifyname'],
+   	colModel: [
+   		{name:'<?php echo M_CLASS?>_id', index:'<?php echo M_CLASS?>.<?php echo M_CLASS?>_id', width:2, align:'right'},
+   		{name:'name', index:'<?php echo M_CLASS?>.name', width:3},
+   		{name:'level', index:'<?php echo M_CLASS?>.level', width:2, align:'right'},
+   		{name:'class', index:'<?php echo M_CLASS?>.class', width:2},
+   		{name:'sequence', index:'<?php echo M_CLASS?>.sequence', width:2, align:'right', editable:true, editrules:{integer:true, minValue:0, maxValue:255}},
+   		{name:'modifytime', index:'<?php echo M_CLASS?>.modifytime', width:3, align:'center'},
+   		{name:'modifyname', index:'<?php echo M_CLASS?>.modifyadmin_id', width:2, align:'center'}
+   	],
+   	rowNum: 20,
+   	rowList: [20,50,100],
+    autowidth: true,
+    height: 'auto',
+   	pager: '#pjqgrid',
+   	sortname: '<?php echo M_CLASS?>.modifytime',
+   	sortorder: 'desc',
+   	viewrecords: true,
+    gridview: true,
+    cellEdit: true,
+    cellurl: '<?php echo self::url(M_CLASS, 'jqgrid_edit')?>',
+    beforeSubmitCell: function (id, celname, value, iRow, iCol) {
+    	var ret = jQuery('#jqgrid').jqGrid('getRowData', id);
+    	return {'<?php echo M_CLASS?>_id': ret.<?php echo M_CLASS?>_id, 'celname': celname, 'value': value};
+    }
+});
+*/
+/*
+ * [Searching -> Toolbar Searching]
+ * searchOnEnter: 是否需要按 Enter 進行搜尋
+ */
+/*
+jQuery('#jqgrid').jqGrid('filterToolbar', {stringResult: true, searchOnEnter: true});
+jQuery('#jqgrid').jqGrid('navGrid', '#pjqgrid', {
+	search: false,
+	addfunc: function () {
+		location.href = '<?php echo self::url(M_CLASS, 'form', array('act'=>'add'))?>';
+	},
+	editfunc: function (id) {
+		var ret = jQuery('#jqgrid').jqGrid('getRowData', id);
+		location.href = '<?php echo self::url(M_CLASS, 'form', array('act'=>'edit'))?>&<?php echo M_CLASS?>_id='+ret.<?php echo M_CLASS?>_id;
+	},
+	delfunc: function (id) {
+		if (confirm('<?php echo _('Are you sure to delete it?')?>') && id) {
+			var ret = jQuery('#jqgrid').jqGrid('getRowData', id);
+			$.post('<?php echo self::url(M_CLASS, 'delete')?>', {
+				<?php echo M_CLASS?>_id: ret.<?php echo M_CLASS?>_id
+			}, function(response){
+				response = $.parseJSON(response);
+				var result = response.result, message = response.message;
+				if (result) {
+					jQuery('#jqgrid').jqGrid('delRowData', id);
+					alert(message);
+				} else {
+					alert(message);
+				}
+			});
+		}
+	}
+});
+*/
+</script>

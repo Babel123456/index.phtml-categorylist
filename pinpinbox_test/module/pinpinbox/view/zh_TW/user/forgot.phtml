@@ -1,0 +1,50 @@
+<!-- 內容頁開始 -->
+	<div id="member_content">
+		<div id="member_in">
+			<ul>
+				<li>
+					<img src="<?php echo static_file('images/forgot_title.png')?>" height="21" width="222" alt="">
+				</li>		
+				<form id="js_user_forget_password_form">
+					<li><?php echo _('Please input the following information and recover your password.'); ?></li>
+					<li><input type="tel"  id="mobile-number" name="cellphone" placeholder="手機號碼"></li>
+					<li><input type="text" name="account" placeholder="帳號"></li>				
+					<li>
+						<a class="member_enter" onclick="$('#js_user_forget_password').trigger('click');"><?php echo _('Forgot my password'); ?>?</a>
+						<img style="width:20px;height:20px;" display="hidden" class="loading_img" src="<?php echo static_file('images/loading.gif')?>">
+					</li>
+				    <input style="display:none;" id="js_user_forget_password" type="submit"> <!-- 觸發a標籤用的submit 0217 -->
+				</form>
+				
+			</ul>
+		</div>
+	</div>
+<script>
+$(function() {
+	$('.loading_img').hide();
+
+	$('#mobile-number').intlTelInput({defaultCountry: 'auto'});//電話國碼	
+
+	//驗證表單按下submit事件 0217
+	$('#js_user_forget_password_form').validate({
+		rules: {},
+		submitHandler: function() {
+			$('.member_enter').eq(0).hide().next('img').show();
+			$.post('<?php echo self::url('user', 'forgot') ;?>', {
+				cellphone: $('input[name="cellphone"]').val(),
+				account: $('input[name="account"]').val()
+			}, function(r) {
+				r = $.parseJSON(r);
+				if (r.result == 1) {
+					site_jBox(r,'success');
+					$('.member_enter').eq(0).show().next('img').hide();
+				} else {
+					site_jBox(r,'error');
+					$('.member_enter').eq(0).show().next('img').hide();
+				}				
+			});
+		}
+	});
+	
+});
+</script>

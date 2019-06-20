@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="<?php echo $lang ?>">
+<?php /*For 404 header status_code*/
+if (M_CLASS === '_' && M_FUNCTION === '_404') echo header($_SERVER['SERVER_PROTOCOL'] . " 404"); ?>
+<head>
+    <?php
+    if (SITE_EVN == 'production') {
+        $session_user = (new \userModel)->getSession();
+
+        $config = $session_user ?
+            'gtag(\'config\', \'UA-58524918-1\', {\'user_id\': ' . $session_user['user_id'] . '});' :
+            'gtag(\'config\', \'UA-58524918-1\');';
+
+        echo '
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58524918-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag(\'js\', new Date());
+          ' . $config . '
+        </script>
+        ';
+    }
+    ?>
+    <?php echo $noindex; ?>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="<?php echo static_file('images/favicon.ico') ?>"/>
+    <link rel="manifest" href="<?php echo URL_ROOT ?>manifest.json">
+    <meta charset="utf-8">
+    <?php
+    $viewport = (M_CLASS == 'diy') ? null : 'width=device-width ,initial-scale=1.0';
+    ?>
+    <meta name="viewport" content="<?php echo $viewport; ?>">
+    <meta name="keywords" content="<?php echo $seo['keywords'] ?>">
+    <meta name="description" content="<?php echo $seo['description'] ?>">
+    <meta name="msvalidate.01" content="851F62F6F1B71365ECE1EFE9C1D56C73"/>
+    <meta name="apple-itunes-app" content="app-id=<?php echo (new settingsModel)->getByKeyword('IOS_APP_ID') ?>">
+    <meta property="og:url" content="<?php echo $seo['url'] ?>">
+    <meta property="og:title" content="<?php echo $seo['title'] ?>">
+    <meta property="og:description" content="<?php echo $seo['description'] ?>">
+    <meta property="og:image" content="<?php echo $seo['image'] ?>">
+    <script src="https://api.dmcdn.net/all.js"></script>
+    <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <title><?php echo $seo['title'] ?></title>
+    <?php echo $html_css ?>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <?php
+    if (SITE_EVN == 'production') {
+        echo (new settingsModel)->getByKeyword('FACEBOOK_PIXEL_CODE');
+        echo (new settingsModel)->getByKeyword('HOTJAR_TRACKING_CODE');
+    }
+    ?>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=<?php echo (new settingsModel)->getByKeyword('FACEBOOK_API_VERSION')?>&appId=<?php echo (new settingsModel)->getByKeyword('FACEBOOK_APP_ID')?>";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<?php
+if (M_CLASS === 'album' || M_CLASS === 'template' || (M_CLASS === 'creative' && M_FUNCTION === 'content') || (M_CLASS === 'index' && M_FUNCTION === 'index')) {
+    include('report.phtml');
+}
+//if (M_METHOD === 'user::grade') {
+//    include('alert_movie.phtml');
+//}
+//if (M_METHOD === 'user::settings') {
+//    include('password.phtml');
+//    include('phone.phtml');
+//}
+?>
+<div id="main">

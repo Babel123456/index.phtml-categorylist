@@ -1,0 +1,89 @@
+<html>
+<head>
+  <link rel="shortcut icon" href="#" />
+</head>
+test for we-inlucde-html
+<div w3-include-html="html-include.html"></div>
+
+<script>
+includeHTML();
+
+function testconsole(){
+  console.log('load2');
+}
+
+function includeHTML() {
+  console.log('includeHTML()');
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      /*
+	  xhttp.onload = function(e) {
+        console.log('load2');
+		//var arraybuffer = oReq.response; // not responseText
+	  };
+	  */
+	  xhttp.onload = getHeaderTime;
+	  xhttp.addEventListener("progress", updateProgress);
+      xhttp.addEventListener("load", transferComplete);
+      xhttp.addEventListener("error", transferFailed);
+      xhttp.addEventListener("abort", transferCanceled);
+	  xhttp.addEventListener("loadend", loadEnd);
+
+	  xhttp.onreadystatechange = function() {
+	  //xhttp.addEventListener("load", testconsole);
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      } 
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
+}
+
+//XMLHttpRequest 支援可監視其傳輸進度的 DOM 進度事件，此事件遵循進度事件規範：這些事件實作了 ProgressEvent 介面。
+// progress on transfers from the server to the client (downloads)
+function updateProgress (oEvent) {
+  if (oEvent.lengthComputable) {
+    var percentComplete = oEvent.loaded / oEvent.total;
+    // ...
+  } else {
+    // Unable to compute progress information since the total size is unknown
+  }
+}
+
+function transferComplete(evt) {
+  console.log("The transfer is complete.");
+}
+
+function transferFailed(evt) {
+  console.log("An error occurred while transferring the file.");
+}
+
+function transferCanceled(evt) {
+  console.log("The transfer has been canceled by the user.");
+}
+function loadEnd(e) {
+  console.log("The transfer finished (although we don't know if it succeeded or not =>abort、load 或 error).");
+}
+
+function getHeaderTime () {
+  console.log(this.getResponseHeader("Last-Modified"));  /* A valid GMTString date or null */
+  console.log(this.filepath);
+}
+</script>
+</html>

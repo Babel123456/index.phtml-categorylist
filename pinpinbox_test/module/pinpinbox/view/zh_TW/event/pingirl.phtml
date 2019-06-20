@@ -1,0 +1,176 @@
+<!-- 內容頁開始 -->
+<div id="act_content">
+    <div id="pg_content">
+
+        <div id="row1" class="row">
+            <div class="col-sm-8">
+                <h2></h2>
+                <div class="act_pic mobilehide02"><a href="javascript:void(0)"><img class="apic"
+                                                                                    src="<?php echo static_file('images/event/pingirl.jpg'); ?>"></a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="t_block"><span><?php echo _('贊助排行榜') ?></span></div>
+                <div id="act_right1">
+                    <div class="act_info">
+                        <ul>
+                            <li>
+                                <ul id="social_share" class="social-likes social-likes_notext"
+                                    data-title="<?php echo $event['name']; ?>">
+                                    <li class="facebook" title="<?php echo _('Share event to Facebook'); ?>"></li>
+                                    <li class="twitter" title="<?php echo _('Share event to twitter'); ?>"></li>
+                                    <li class="plusone" title="<?php echo _('Share event to Google+'); ?>"></li>
+                                    <li class="pinterest" title="<?php echo _('Share event to pinterest'); ?>"
+                                        data-media="<?php echo $event['image']; ?>"></li>
+                                    <li class="line" title="<?php echo _('Share event to line'); ?>"></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="act_else">
+                        <ul>
+                            <li><h3 class="eventtitle"><?php echo _('第一屆pinGirl不科學美腿大比拼(複賽階段)') ?></h3></li>
+                            <li>
+                                <div class="act_pic mobiledisplay"><a href="javascript:void(0)"><img
+                                                src="<?php echo static_file('images/event/pingirl.jpg'); ?>"></a></div>
+                            </li>
+                            <li class="float_left">
+                                <div>
+                                    <img src="<?php echo static_file('images/assets-v6/icon-clock-r.png') ?>"
+                                         height="27" width="27" class="clock">
+                                    <p><?php echo _('計算期間') ?></p><span
+                                            class="ddate"><?php echo $starttime . ' ~ ' . $endtime ?></span>
+                                </div>
+                                <div>
+                                    <img src="<?php echo static_file('images/assets-v6/icon-p-r.png') ?>" height="27"
+                                         width="27" class="clock">
+                                    <p><?php echo _('總贊助積分') ?></p><span><?php echo $eventPointTotal ?> 分</span>
+                                </div>
+                                <div class="act_desc">
+                                    <a href="<?php echo $event_url ?>"><?php echo _('活動詳情') ?> >></a>
+                                </div>
+                            </li>
+                            <li>
+                            </li>
+                            <li class="mobilehide"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!--#row1-->
+
+        <div id="act_left">
+            <div class="pwater_content">
+                <!-- pingirl content-->
+                <?php
+                foreach ($pingirl as $k0 => $v0) {
+                    echo '<div id="' . $v0['userPingirlId'] . '" class="item_boxp">
+					<div class="album_award">
+						<div class="award_num">' . ($k0 + 1) . '</div>
+					</div>
+					<a href="' . $v0['userPingirlUrl'] . '" target="_blank" class="mobilehide">
+						<img class="img1" src="' . $v0['userPingirlPic'] . '">
+					</a>
+					<a href="javascript:void(0)" data-link="' . $v0['userPingirlUrl'] . '" data-uri="' . $v0['userPingirlUrlScheme'] . '" onclick="clickHandler_sp(this.dataset.link, this.dataset.uri)" class="mobiledisplay ">
+						<img class="img1" src="' . $v0['userPingirlPic'] . '">
+					</a>
+					<div class="item_info">
+						<div class="info_name">
+							<a class="mobilehide"  href="' . $v0['userPingirlUrl'] . '"  target="_blank"><span class="trim_name">' . $v0['userPingirlName'] . '</span></a>
+							<a href="javascript:void(0)" data-link="' . $v0['userPingirlUrl'] . '" data-uri="' . $v0['userPingirlUrlScheme'] . '" onclick="clickHandler_sp(this.dataset.link, this.dataset.uri)" class="mobiledisplay "><span class="trim_name">' . $v0['userPingirlName'] . '</span></a>
+							<p>累積贊助  <span>' . $v0['userPingirlPointTotal'] . '分</span></p>
+						</div>
+					</div>
+				</div>';
+                }
+                ?>
+                <!-- //pingirl content end-->
+            </div>
+        </div>
+
+    </div><!-- #pg_content -->
+</div>
+
+<script type="text/javascript">
+    //line icon
+    var socialLikesButtons = {
+        line: {
+            clickUrl: 'http://line.naver.jp/R/msg/text/?<?php echo '第一屆pinGirl不科學美腿大比拼  -  ' . self::url('event', 'pingirl')  ?>',
+            pupupWidth: 650,
+            popupHeight: 500,
+        }
+    };
+
+    function clickHandler_sp(link, uri) {
+        deeplink.setup({
+            iOS: {
+                appName: "pinpinbox",
+                appId: "<?php echo Core::settings('IOS_APP_ID'); ?>",
+            },
+            android: {
+                appId: "<?php echo Core::settings('ANDROID_APP_URL'); ?>"
+            }
+        });
+
+        <?php
+        $Mobile_Detect = new Mobile_Detect();
+
+        if ($Mobile_Detect->isMobile()) {
+            if ($Mobile_Detect->isAndroidOS() && strpos($_SERVER['HTTP_USER_AGENT'], Core::settings('ANDROID_APP_URL')) !== false) {
+            ?>
+
+            location.href = uri.replace('pinpinbox', 'intent');
+
+            <?php
+            } elseif ($Mobile_Detect->isiOS() && strpos($_SERVER['HTTP_USER_AGENT'], Core::settings('IOS_BUNDLE_IDENTIFIER')) !== false) {
+                ?>
+
+                deeplink.open(uri);
+
+                <?php
+            } else {
+                $flag = md5(self::url('event', 'pingirl'));
+
+                if (\Session::get($flag) === null) {
+                    \Session::set($flag, true);
+                    ?>
+
+                    var myConfirm = new jBox('Confirm', {
+                        cancelButton: '<?php echo _('使用 App')?>',
+                        confirmButton: '<?php echo _('繼續瀏覽') ?>',
+                        cancel: function () {
+                            deeplink.open(uri);
+                        },
+                        confirm: function () {
+                            myConfirm.close();
+
+                            location.href = link;
+                        },
+                        onCloseComplete: function () {
+                            myConfirm.destroy();
+                        },
+                        closeOnClick: 'overlay'
+                    }).setContent('<?php echo _('使用 App 將獲得更佳瀏覽體驗') ?>').open();
+
+                    <?php
+                } else {
+                    ?>
+
+                    location.href = link;
+
+                    <?php
+                }
+            }
+        } else {
+            ?>
+
+            location.href = link;
+
+            <?php
+        }
+        ?>
+
+        return false;
+    }
+</script>

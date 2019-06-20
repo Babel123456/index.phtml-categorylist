@@ -1,0 +1,44 @@
+<?php echo $form?>
+<script>
+$(window).load(function() {
+	$('#form').validate({
+		rules: {
+			<?php if ('add' == $_GET['act']) {?>
+			level: 'required',
+			<?php }?>
+			name: 'required'
+		},
+		submitHandler: function() {
+			//admingroup_adminmenu
+			var a_admingroup_adminmenu = [];
+			$.each($('input[name^="admingroup_adminmenu_act"]:checked'), function(k1, v1) {
+				var $this = $(this), start = $this.prop('name').lastIndexOf('['), end = $this.prop('name').lastIndexOf(']'), admingroup_id = $this.prop('name').substr(start + 1, end - start - 1);
+				a_admingroup_adminmenu[k1] = {};
+				<?php if ('edit' == $_GET['act']) {?>a_admingroup_adminmenu[k1]['adminmenu_id'] = $('#adminmenu_id').val();<?php }?>
+				a_admingroup_adminmenu[k1]['admingroup_id'] = admingroup_id;
+				a_admingroup_adminmenu[k1]['act'] = $(this).val();
+			});
+			
+			$.post('<?php echo $action?>', {
+				<?php if ('add' == $_GET['act']) {?>
+				level: $('#level').val(),
+				up: $('#up').prop('disabled')? 0 : $('#up').val(),
+				<?php }?>
+				<?php if ('edit' == $_GET['act']) {?>
+				adminmenu_id: $('#adminmenu_id').val(),
+				<?php }?>
+				name: $('#name').val(),
+				'class': $('#class').val(),
+				sequence: $('#sequence').val(),
+				admingroup_adminmenu: (a_admingroup_adminmenu.length)? a_admingroup_adminmenu: null,
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+});
+</script>

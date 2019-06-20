@@ -1,0 +1,421 @@
+<!-- 內容頁開始 -->
+<!--<div id="banner" class="index_banner">-->
+<div id="banner" class="mobile_banner2">
+    <div id="banner_content">
+        <div class="fotorama owl-carousel">
+            <?php
+            foreach ($banner as $k0 => $v0) {
+                switch ($v0['banner_type']) {
+                    case 'creative':
+                        foreach ($v0['creative_group'] as $k1 => $v1) {
+                            echo '<div class="page">
+                                    <div class="creator_box">
+                                         <img src="' . $v0['image'] . '">
+                                    </div>
+                                    <div class="creator_list">';
+                            foreach ($v1['sort'] as $k2 => $v2) {
+                                echo '<a href="' . $v2['url'] . '">
+                                                <div class="creator_item">
+                                                    <div class="face"><img src="' . $v2['picture'] . '" height="101" width="101" onerror="this.onerror=null; this.src=\'' . static_file('images/face_sample.svg') . '\'"></div>
+                                                    <div class="name">' . $v2['name'] . '</div>
+                                                </div>
+                                            </a>';
+                            }
+                            echo '</div>                                    
+                                </div>';
+                        }
+                        break;
+
+                    case 'image':
+                        echo '<div class="page">
+                                <div class="creator_box">
+                                    <a target="_blank" href="' . $v0['url'] . '" data-bgcolor="" data-txt="' . $v0['btntext'] . '"><img src="' . $v0['image'] . '" ></a>
+                                </div>
+                            </div>';
+                        break;
+
+                    case 'video':
+                        $linkText = '<img src="' . $v0['image'] . '">';
+                        if (!is_null($v0['link'])) $linkText = '<a target="_blank" href="' . $v0['link'] . '" data-bgcolor="" data-txt="' . $v0['btntext'] . '"><img src="' . $v0['image'] . '"></a>';
+
+                        $m_linkText = null;
+                        if (!is_null($v0['link'])) $m_linkText = '<span><a target="_blank" style="color: #fff;" href="' . $v0['link'] . '">' . $v0['btntext'] . '</a></span>';
+
+                        echo '<div class="page">
+                                <a target="_blank" href="https://www.pinpinbox.com/hphsu"  title="' . $v0['videotext'] . '"  data-bgcolor="00dfff" data-txt="' . $v0['btntext'] . '" >
+                                <div class="page_img">
+                                    <div class="emb_movie_wrapper" >
+                                       <iframe  class="emb_movie" src="' . $v0['url'] . '" frameborder="0" allow="encrypted-media"  allowfullscreen></iframe>
+                                    </div>
+                                    <div class="creator_box">' . $linkText . '</div>
+                                </div>
+                                <div class="page_desc">
+								   <span>' . $v0['videotext'] . '</span>' . $m_linkText . '
+								</div>
+							
+							</a>
+                            </div>';
+                        break;
+
+                }
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+    <h3 class="page_title"><?php echo _('Explore'); ?></h3>
+    <ul id="layout" class="albumExplore">
+        <li style="margin-bottom: 10px;"><?php include_once('categoryarealist.phtml'); ?></li>
+        <li>
+            <div class="line"></div>
+        </li>
+        <li class="wid90">
+            <?php
+            foreach ($explore as $k0 => $v0) {
+                $_url = $m_more_url = null;
+                if (!empty($v0['bookcase']['url'])) {
+                    $_url = '<a href="' . $v0['bookcase']['url'] . '"><img src="' . static_file('images/assets-v5/btn-more-n.svg') . '"></a>';
+                    $m_more_url = '<li class="wid90"><a href="' . $v0['bookcase']['url'] . '" class="mo_more">more</a></li>';
+                }
+
+                echo '<li class="wid90"><div class="text">
+						<p class="title"> ' . $v0['bookcase']['name'] . ' </p>
+						<p class="descrip"> ' . $v0['bookcase']['description'] . ' </p>
+					</div>
+					<span class="more">' . $_url . '</span>
+					<div  class="bookcase-container">
+						<div class="tab_content " tabindex="5000" style="overflow: hidden; outline: none; cursor: -webkit-grab;">
+							<div class="tab active">
+								<div class="product_scroll">
+									<div>';
+                foreach ($v0['item'] as $k1 => $v1) {
+                    $tags_gift = null;
+                    if ($v1['album']['album_tags']) {
+                        $tags_gift = '<div class="album_tags_gift">
+                                                <img alt="抽獎" title="抽獎" src="' . static_file('images/assets-v6/gift-01.svg') . '">
+                                                <div class="album_tags_gift_bg"></div>
+                                            </div>';
+                    }
+                    echo '<div class="albumExploreItem" data-album_id="' . $v1['album']['album_id'] . '">
+                                                ' . $tags_gift . '       
+												<div class="albumItem" style="position:relative">
+													<div class="dropdownItem dropdown-arrow">
+														<div class="btn-group">
+															<p class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+																<i class="fa fa-bars"></i> 
+															</p>
+															<ul class="dropdown-menu" role="menu">
+																' . implode($v1['dropdownMenu']) . '
+															</ul>
+														</div>
+													</div>
+													<div class="blackCover" onclick="popview(\'' . self::url('album', 'content', ['album_id' => $v1['album']['album_id'], 'categoryarea_id' => $v1['categoryarea']['categoryarea_id']]) . '\');"></div>
+													<div class="product_pic" onclick="popview(\'' . self::url('album', 'content', ['album_id' => $v1['album']['album_id'], 'categoryarea_id' => $v1['categoryarea']['categoryarea_id']]) . '\');">
+														<a href="javascript:void(0)" ><img onclick="" src="' . $v1['album']['cover'] . '" height="330" width="220"> </a>
+													</div>
+												</div>
+												<div class="product_info">
+													<p class="title" title="' . $v1['album']['name_all'] . '">
+														' . $v1['album']['collect_icon'] . '
+														<a href="javascript:void(0)" onclick="popview(\'' . self::url('album', 'content', ['album_id' => $v1['album']['album_id'], 'categoryarea_id' => $v1['categoryarea']['categoryarea_id']]) . '\');">' . $v1['album']['name'] . '</a>
+													</p>
+													<div>
+														<a href="' . $v1['user']['url'] . '">
+															<div class="info_user">
+																<div class="user_face"><img src="' . $v1['user']['picture'] . '" onerror="this.src=\'' . static_file('images/face_sample.svg') . '\'"  height="101" width="101"></div>
+																<div class="user_name">
+																	<p class="name_id">' . $v1['user']['name'] . '</p>
+																	<p><i class="fa fa-eye"></i>&nbsp;' . $v1['album']['viewed'] . '</p>
+																</div>
+
+															</div>
+														</a>
+														<div class="user_dropdown">
+															<div class="dropdown-arrow dropup">
+																<p class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+																	<i class="fa fa-bars"></i>
+																</p>
+																<ul class="dropdown-menu" role="menu">' . implode($v1['dropdownMenu']) . '</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>';
+                }
+                echo '
+									</div>
+								</div>
+							</div>
+						</div>
+					</div></li>' . $m_more_url . '<li><div class="line"></div>';
+            }
+            ?>
+        </li>
+    </ul>
+</div><!--end content-->
+<div style="display:none" id="show_photo"></div>
+<script>
+
+    $(document).on('click', '#alert_btn', function (e) {
+        alert_submit($(this).data('album_id'));
+    }).on('click', '.alert_btn', function (e) {
+        e.stopPropagation();
+        $('#alert_btn, #next_step').data('album_id', $(this).data('album_id'));
+        $('#alert_box').fadeIn();
+        $('input[name=report]').removeAttr('checked');
+        $('#input04_textarea').val('');
+        $('#input04_li').hide();
+    }).on('click', '#close_alert', function (e) {
+        $('#alert_box').fadeOut('slow', function () {
+            $('.step02').hide();
+            $('.step01').show();
+        });
+    }).on('click', '#alert_bg', function (e) {
+        $('#alert_box').fadeOut(function () {
+            $('#close_alert').trigger('click');
+        });
+    }).on('click', '.step02 .cancel', function (e) {
+        $('.step02').hide();
+        $('.step01').show();
+    }).on('click', '#next_step', function (e) {
+        var obj = $('input[name=report]:checked');
+        if (obj.val() == 7) {
+            $('.step01').hide();
+            $('.step02').show();
+        } else {
+            alert_submit($(this).data('album_id'));
+        }
+    });
+
+    $('span.more').hover(function () {
+        $(this).find('a').css('background-color', '#f6f6f6');
+        $(this).find('img').attr('src', '<?php echo static_file('images/assets-v5/btn-more-h.svg') ?>');
+    }, function () {
+        $(this).find('a').css('background-color', '#f6f6f6');
+        $(this).find('img').attr('src', '<?php echo static_file('images/assets-v5/btn-more-n.svg') ?>');
+    });
+
+    if ($(window).width() > 1024) {
+        $('div.albumItem').hover(function () {
+            $(this).children('.blackCover').css('display', 'block');
+            $(this).children('.dropdownItem').css('display', 'block');
+        }, function () {
+            if ($(this).find('div.btn-group').hasClass('open')) $(this).find('div.btn-group').removeClass('open');
+            $(this).children('.blackCover').css('display', 'none');
+            $(this).children('.dropdownItem').css('display', 'none');
+        });
+    }
+
+    function alert_submit(id) {
+        var obj = $('input[name=report]:checked');
+        var text = '';
+        if (obj.length < 1) {
+            alert('<?php echo _('Please select a report intent.')?>');
+        } else {
+            var value = obj.val();
+            if (value == 4) {
+                text = $('#input04_textarea').val();
+            }
+            $.post('<?php echo self::url('album', 'report')?>', {
+                value: value,
+                text: text,
+                album_id: id,
+                url: window.location.href,
+            }, function (r) {
+                r = $.parseJSON(r);
+                if (r.result == 1) {
+                    $('#alert_bg').trigger('click');
+                    alert(r.message);
+                } else if (r.result == 2) {
+                    $('#alert_bg').trigger('click');
+                    location.href = "<?php echo self::url('user', 'login', ['redirect' => self::url('album', 'content', ['report' => true, 'album_id' => null])]) ?>" + id;
+                } else {
+                    $('#alert_bg').trigger('click');
+                    alert(r.message);
+                }
+            });
+        }
+    }
+
+    function buyalbum(id) {
+        $.post('<?php echo self::url('album', 'buyalbum', query_string_parse())?>', {
+            album_id: id,
+        }, function (r) {
+            r = $.parseJSON(r);
+            switch (r.result) {
+                case 2:
+                    _jBox(r, 'success_notext');
+                    break;
+                case 4:
+                    var myConfirm = new jBox('Confirm', {
+                        cancelButton: '<?php echo _('No')?>',
+                        confirmButton: r.data.property.buyAlbumBoxBtn,
+                        confirm: function () {
+                            $.post('<?php echo self::url('album', 'buyalbum', query_string_parse())?>', {
+                                album_id: id,
+                                buy: true,
+                            }, function (r2) {
+                                r2 = $.parseJSON(r2);
+
+                                switch (r2.result) {
+                                    case 1:
+                                        var myModal = new jBox('Modal', {
+                                            delayOpen: 300,
+                                            title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span>' + '<img style="vertical-align: middle;" src="<?php echo static_file('images/success.png')?>">',
+                                            onCloseComplete: function () {
+                                                myModal.destroy();
+                                                $('li[data-albumId="' + id + '"]').remove();
+                                                if (r2.data) {
+                                                    if (r2.data.task.message.length > 0) _TaskAlert(r2, 'task');
+                                                }
+                                                if (r2.data.album_count) $('span.albumstatistics').html(r2.data.album_count);
+
+                                                $('div.albumExploreItem[data-album_id="' + id + '"]>div.product_info>p.title').prepend('<img src="<?php echo static_file('images/assets-v5/icon-collection-h.svg') ?>">')
+
+                                                // browseKitRefresh();
+                                                // browseKit_album('<?php echo self::url('album', 'show_photo')?>', {album_id: id});
+                                            }
+                                        }).setContent(
+                                            '<div class="content">' + r2.message + '</div>'
+                                        ).open();
+                                        break;
+
+                                    case 2:
+                                        _jBox(r2, 'info');
+                                        break;
+
+                                    case 3:
+                                        window.open('<?php echo self::url('user', 'point', ['albumcontent' => encrypt([$user['user_id']])]) ?>', 'userpoint', config = 'height=800,width=1200');
+                                        break;
+                                    default:
+                                        _jBox(r2, 'error');
+                                        break;
+                                }
+                            });
+                        },
+                        onCloseComplete: function () {
+                            myConfirm.destroy();
+                        }
+                    }).setContent(r.data.property.buyAlbumBoxContent).open();
+
+                    break;
+
+                case 5 :
+                    if (r.data) {
+                        if (r.data.task.message.length > 0) _TaskAlert(r, 'task');
+                    }
+                    browseKitRefresh();
+                    browseKit_album('<?php echo self::url('album', 'show_photo')?>', {album_id: id});
+                    break;
+
+                default:
+                    _jBox(r, 'error');
+                    break;
+            }
+        });
+    }
+
+    function share_album(id, qrcode, cover, shareUrl) {
+        var str = '<div>' +
+            '<ul class="share_album_' + id + '">' +
+            '<li class="facebook" title="<?php echo _('分享我的作品至Facebook!') ?>"></li>' +
+            '<li class="twitter" title="<?php echo _('分享我的作品至twitter'); ?>"></li>' +
+            '<li class="plusone" title="<?php echo _('分享我的作品至Google+'); ?>"></li>' +
+            '<li class="pinterest" title="<?php echo _('分享我的作品至pinterest'); ?>" data-media="' + cover + '"></li>' +
+            '<li class="line" title="<?php echo _('Share album to Line') ?>"></li>' +
+            '<li class="qrcode social-likes__widget" title="<?php echo _('開啟QRcode'); ?>"><a class="imagepop" href="' + qrcode + '"><img width="23" src="<?php echo static_file('images/qr.png')?>" style="padding-top:5px;"></a></li>' +
+            '</ul>' +
+            '</div><br>' +
+            '<div>' +
+            '<input style="width:300px;height:2em;" type="text" class="share_url" value="' + shareUrl + '">' +
+            '</div>';
+
+        box = new jBox('Modal', {
+            closeButton: 'title',
+            title: 'Share it',
+            width: 350,
+            height: 130,
+            zIndex: 200,
+            onOpen: function () {
+                socialLikesButtons.line.clickUrl = 'http://line.naver.jp/R/msg/text/?' + encodeURIComponent(shareUrl);
+                $('.share_album_' + id).socialLikes({
+                    url: shareUrl,
+                    title: '<?php echo _('Share the pinpinbox photo album!'); ?>',
+                    counters: true,
+                    singleTitle: 'Share it!',
+                });
+
+                //counter link
+                $('.share_album_' + id).on('popup_closed.social-likes', function (event, service) {
+                    $(event.currentTarget).socialLikes({forceUpdate: true});
+                    var counter = $(event.currentTarget).find('.social-likes__counter_' + service);
+                    counter.text(+(counter.text() || 0) + 1).removeClass('social-likes__counter_empty');
+
+                    if (service == 'facebook') {
+                        $.post('<?php echo self::url('album', 'clear_task') ?>', {
+                            album_id: id,
+                        }, function (r) {
+                            r = $.parseJSON(r);
+                            switch (r.result) {
+                                case 1:
+                                    if (r.data) {
+                                        if (r.data.task.message.length > 0) _TaskAlert(r, 'task');
+                                    }
+                                    break;
+
+                                default :
+
+                                    break;
+                            }
+                        });
+                    }
+                });
+
+                $('.imagepop').magnificPopup({type: 'image',});
+            },
+        }).setContent(str).open();
+    }
+
+    $(function () {
+
+        $('.owl-carousel').owlCarousel({
+            nav: true,
+            margin: 10,
+            width: '100%',
+            lazyLoad: true,
+            paginationSpeed: 1200,
+            singleItem: true,
+            stopOnHover: true,
+        })
+
+        var nicesx = $(".tab_content").niceScroll({
+            touchbehavior: true,
+            cursorcolor: "transparent",
+            cursoropacitymax: 0.6,
+            cursorwidth: 8,
+        });
+
+        <?php echo $autoBuyAlbumId; ?>
+        <?php echo $autoplay; ?>
+    });
+
+    //counter link
+    $('#social_share').on('popup_closed.social-likes', function (event, service) {
+        $(event.currentTarget).socialLikes({forceUpdate: true});
+        var counter = $(event.currentTarget).find('.social-likes__counter_' + service);
+        counter.text(+(counter.text() || 0) + 1).removeClass('social-likes__counter_empty');
+    });
+
+    //line icon
+    var socialLikesButtons = {
+        line: {
+            clickUrl: '',
+            pupupWidth: 650,
+            popupHeight: 500,
+        }
+    };
+</script>
+<!-- Line  -->
+<script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411"></script>

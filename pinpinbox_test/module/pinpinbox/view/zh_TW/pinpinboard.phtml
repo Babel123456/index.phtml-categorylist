@@ -1,0 +1,247 @@
+<div class="message_board">
+    <div class="message_count"> <?php echo count($pinpinboard) ?> 則回覆</div>
+    <div id="message_leave" class="message_leave">
+        <div id="pinpinboard" class="pinpinboard" data-type="pinpinboard_<?php echo $pinpinboardParam['type'] ?>">
+            <div class="pinpinboard_wrap">
+                <span>
+                    <div class="profile_img_wrap">
+                        <img class="profile_img" src="<?php echo URL_STORAGE.Core::get_userpicture($user['user_id']) ?>" onerror="this.src='<?php echo static_file('images/face_sample.svg') ?>'">
+                    </div>
+                </span>
+
+                <span>
+                <div class="<?php echo $pinpinboardParam['type'] ?>_comment_textarea_wrapper" >
+                    <textarea id="<?php echo $pinpinboardParam['type'] ?>_comment_textarea"
+                        placeholder="<?php echo (!empty($user)) ? _('發佈留言') : _('請先登入會員') ; ?>"
+                        rows="4" maxlength="300" style="min-height: 24px;"
+                        <?php if(empty($user)) echo 'onfocus="location.href=\''.self::url('user', 'login', ['redirect'=> self::url($pinpinboardParam['type'], 'content', [$pinpinboardParam['redirectParam'] => $pinpinboardParam['type_id'], 'rank_id' => 5])]).'\'"' ?>></textarea>
+                </div>
+
+                <div class="message_leave_btn_area">
+                    <a href="javascript:void(0)" class="comment_text_cancel" onclick="cancelCommtent('<?php echo $pinpinboardParam['type']?>');">
+                        <span class="btn_new"><?php echo _('清除'); ?></span>
+                    </a>
+                    <a href="javascript:void(0)" class="comment_text_submit" onclick="addCommtent('<?php echo $pinpinboardParam['type']?>', '<?php echo $pinpinboardParam['type_id']?>');">
+                        <span class="btn_new message_submit"><?php echo _('送出'); ?></span>
+                    </a>
+                </div>
+
+            </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="message_list" class="<?php echo $pinpinboardParam['type'] ?>_comment_list">
+		<?php
+		if(!empty($pinpinboard)) {
+			foreach ($pinpinboard as $k0 => $v0) {
+			    echo '<div class="message_item" data-pinpinboard_id="'.$v0['pinpinboard_id'].'">
+                    <div>
+                        <span>
+                            <a href="'.$v0['authorUrl'].'">
+                                <div class="profile_img_wrap">
+                                    <img class="profile_img" title="'.$v0['authorName'].'" width="100" src="'.$v0['picture'].'" onerror="this.src=\''.static_file('images/face_sample.svg').'\'">
+                                </div>
+                             </a>
+                        </span>
+                    </div>
+                    <div>
+                        <div>
+                            <span><a href="javascript:void(0);" onclick="addTag(\''.$v0['user_id'].'\', \''.$v0['authorName'].'\')">'.$v0['authorName'].'</a></span>
+                            <span><time datetime="'.$v0['time'].'" class="timeago">'.$v0['time'].'</time></span>
+                        </div>
+                        <div>
+                            <div class="comment_reply_text">'.$v0['mentionText'].' </div>
+                            <div>'.$v0['act'].'</div>
+                        </div>
+                    </div>
+                </div>';
+            }
+		}
+		?>
+    </div>
+
+</div>
+
+<script type="text/javascript" name="popview">
+
+function addCommtent(type, type_id) {
+	var comment = $('#'+type+'_comment_textarea'),
+		comment_val = comment.val().replace(/\n/g,"<br>").trim(),
+        push_notice_ids = new Set();
+
+	$('.textoverlay').find('span').each(function(k, v){
+        str = $(v).html();
+        push_notice_ids.add(str.substring(str.indexOf('[')+1,str.indexOf(':')));
+    });
+
+	if(comment_val.length == 0) {
+		comment.val('').attr('placeholder', '<?php echo _('還沒有填寫留言') ?>').focus();
+	} else {
+		$.post('<?php echo self::url('pinpinboard', 'addcomment') ?>', {
+			type :  type,
+			type_id : type_id,
+			text :  comment_val,
+            push_notice_ids : Array.from(push_notice_ids),
+		}, function(r) {
+			r = $.parseJSON(r);
+			switch (r.result) {
+				case 1:
+					$('#comment').val('');
+					var newComment = `<div class="message_item" data-pinpinboard_id="${r.data.pinpinboard_id}">
+                        <div>
+                            <span><div class="profile_img_wrap"><a href="${r.data.user_url}"><img class="profile_img" title="${r.data.user_name}" width="100" src="${r.data.user_picture}" onerror="this.src=\'<?php echo static_file('images/face_sample.svg') ?>\'"></a></div></span>
+                        </div>
+                        <div>
+                            <div>
+                                <span><a href="${r.data.user_url}" onclick="addTag('${r.data.user.user_id}', '${r.data.user_name}')">${r.data.user_name}</a></span>
+                                <span><time datetime="${r.data.inserttime}" class="timeago">${r.data.inserttime}</time></span>
+                            </div>
+                            <div>
+                                <div class="comment_reply_text"> ${r.data.textToMention.autoLink({ target: "_blank" })} </div>
+                                <div><span class="delete_box" onclick="delComment('${type}', ${type_id}, '${r.data.pinpinboard_id}')" aria-hidden="true">&times;</span><span class="sr-only"></span></div>
+                            </div>
+                        </div>
+                    </div>`;
+					$('.textoverlay').html('');
+                    cancelCommtent(type);
+					$('.'+type+'_comment_list').hide().prepend(newComment).fadeIn('slow');
+					comment.val('');
+					break;
+
+                default : break;
+			}
+		});
+	}
+}
+
+function addSymbol(type) {
+    $('#'+type+'_comment_textarea').val($('#'+type+'_comment_textarea').val()+'\u0020@');
+    $('#'+type+'_comment_textarea').focus();
+}
+
+function addTag(id, name) {
+    var comment = $('#<?php echo $pinpinboardParam['type'] ?>_comment_textarea'),
+        comment_val = comment.val().replace(/\n/g,"<br>").trim(),
+        mention_ids = new Set(["<?php echo $user['user_id'] ?>"]),
+        regex = regex = /\[(.+?)\]/g,  matches = [] , match;
+
+    while (match = regex.exec(comment_val)) {
+        mention_ids.add(match[1].substring(match[1].indexOf('[')+1,match[1].indexOf(':')));
+    }
+
+    if(!mention_ids.has(id)) {
+        comment.val(comment_val + `[${id}:${name}]`);
+    }
+}
+
+function cancelCommtent(type) {
+    $('#'+type+'_comment_textarea').val(''); // 20190222: 修改ID稱
+    $('.textoverlay').html(''); //clear overlay
+    $('#'+type+'_comment_textarea').css('height',$('#'+type+'_comment_textarea').css('min-height'));
+}
+
+function comment_setheight(comment_name){
+    $(comment_name).height($(comment_name).css('min-height'));
+    var comment_height = $(comment_name).height();
+    var comment_scrollheight = $(comment_name)[0].scrollHeight;
+    if(comment_scrollheight > comment_height){
+        $(comment_name).height(comment_scrollheight);
+    }
+}
+
+function delComment(type, type_id, id) {
+	$.post('<?php echo self::url('pinpinboard', 'deleteComment') ?>', {
+        type : type,
+        type_id : type_id,
+        pinpinboard_id : id,
+	}, function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 1:
+				$('.'+type+'_comment_list').hide();
+				$('div[data-pinpinboard_id="'+id+'"]').remove();
+				$('.'+type+'_comment_list').fadeIn('slow');
+				break;
+
+			default :
+				_jBox(r, 'error');
+				break;
+		}
+	});
+}
+
+$(function(){
+	$('.comment_reply_text').each(function(){
+		$(this).html( $(this).html().autoLink({ target: "_blank" }) );
+	});
+
+    if ($('#<?php echo $pinpinboardParam['type'] ?>_comment_textarea').length>0){
+        //恢復初始高度
+        cancelCommtent('<?php echo $pinpinboardParam['type'] ?>');
+        $('#<?php echo $pinpinboardParam['type'] ?>_comment_textarea').bind('scroll keyup', function(){
+            comment_setheight('#<?php echo $pinpinboardParam['type'] ?>_comment_textarea');
+        });
+    }
+
+    $('#<?php echo $pinpinboardParam['type'] ?>_comment_textarea').textcomplete([
+        {
+            id: 'pinpinboard',
+            match: /\B@([\u4e00-\u9fa5a-zA-Z0-9]+)$/,
+            search: function (term, callback) {
+                $.post('<?php echo self::url('pinpinboard', 'mention') ?>', {
+                    searchkey : term,
+                    text : $('#<?php echo $pinpinboardParam['type'] ?>_comment_textarea').val(),
+                }, function(r) {
+                    r = $.parseJSON(r);
+                    callback($.map(r , function (v, i) {
+                        return (v.name.toLowerCase().indexOf(term.toLowerCase()) >= 0 ) ? v : null;
+                    }));
+                });
+            },
+            template: function (value) {
+                return '<img src="'+value.picture+'"></img>' + value.name;
+            },
+            replace: function (value, term) {
+                return '['+value.user_id+':'+value.name+'] ';
+            },
+            context : function(value) {
+                return value;
+            },
+            index: 1,
+        },
+    ], {
+        placement: 'top',
+        appendTo: $('[data-type="pinpinboard_<?php echo $pinpinboardParam['type'] ?>"]'),
+        className:'<?php echo $pinpinboardParam['type'] ?>'
+    },{
+        onKeydown: function (e, commands) {
+            if(e.ctrlKey && e.keyCode === 74){ // CTRL-J
+                return commands.KEY_ENTER;
+            }
+        }
+    }).overlay([
+        {
+            match: /(\[{1}[0-9]+:{1}[^\[\]:]+\]{1})/g,
+            css: {
+            }
+        }
+    ]).on({
+        'textComplete:show': function (e) {
+            $('.<?php echo $pinpinboardParam['type'] ?>').attr('name', '<?php echo $pinpinboardParam['type'] ?>_textcomplete_dropdown');
+            if($('.popview_content').length>0){
+                $('[name="<?php echo $pinpinboardParam['type'] ?>_textcomplete_dropdown"]').addClass('position_absolute');
+            }else{
+                $('[name="<?php echo $pinpinboardParam['type'] ?>_textcomplete_dropdown"]').removeClass('position_absolute');
+            }
+        }
+    });
+
+
+
+
+    $('time.timeago').timeago();
+
+});
+
+</script>

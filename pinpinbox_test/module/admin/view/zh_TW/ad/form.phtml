@@ -1,0 +1,52 @@
+<?php echo $form?>
+<script>
+$(function(){
+	$('#form').validate({
+		rules: {},
+		submitHandler: function(){
+
+		    //url
+			var a_url = {};
+			$.each($('input[name^="url"]'), function(){
+				$this = $(this);
+				var start = $this.prop('name').lastIndexOf('['), end = $this.prop('name').lastIndexOf(']'), key = $this.prop('name').substr(start + 1, end - start - 1), value;
+				switch ($this.prop('type')) {
+					case 'checkbox':
+					case 'radio':
+						value = ($('input[name="'+ $this.prop('name') +'"]:checked').val())? $('input[name="'+ $this.prop('name') +'"]:checked').val() : null;
+						break;
+
+					default:
+						value = ($this.val())? $this.val() : null;
+						break;
+				}
+				a_url[key] = value;
+			});
+			
+			$.post('<?php echo $action?>', {
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				album_id: $('#album_id').val(),
+				event_id: $('#event_id').val(),
+				template_id: $('#template_id').val(),
+				user_id: $('#user_id').val(),
+				name: $('#name').val(),
+				title: $('#title').val(),
+				image: $('#image').val(),
+                image_960x540: $('#image_960x540').val(),
+				url: a_url,
+				html: CKEDITOR.instances['html'].getData(),
+				html_mobile: CKEDITOR.instances['html_mobile'].getData(),
+				act: $('input[name="act"]:checked').val()
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+});
+</script>

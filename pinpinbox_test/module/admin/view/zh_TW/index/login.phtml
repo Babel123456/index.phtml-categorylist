@@ -1,0 +1,53 @@
+<div id="wrappertop"></div>
+
+<div id="wrapper">
+	<div id="content">
+	
+		<div id="header"><a href="<?php echo URL_ROOT?>" target="_blank"><img src="<?php echo static_file('images/logo.png')?>" alt="<?php echo Core::settings('SITE_TITLE')?>"></a></div>
+		
+		<div id="darkbanner" class="banner320"><h2><?php echo _('Sign in here')?></h2></div>
+		
+		<div id="darkbannerwrap"></div>
+		
+		<form id="form" onsubmit="return(false)">
+			<fieldset class="form">
+				<p class="error"><img width="16px" height="16px" src="<?php echo static_file('images/error.png')?>"><span></span></p>
+				<p><label for="account"><?php echo _('Account')?>:</label> <input id="account" name="account" type="text" required></p>
+				<p><label for="password"><?php echo _('Password')?>:</label> <input id="password" name="password" type="password" required></p>
+				<button type="submit" class="positive" name="submit"><img src="<?php echo static_file('images/key.png')?>" alt="Announcement" /><?php echo _('Login')?></button>
+				<ul id="forgottenpassword">
+					<li class="boldtext">|</li>
+					<li><a href="#" onclick="">Forgotten it?</a></li>
+				</ul>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+<div id="wrapperbottom_branding">
+	<div id="wrapperbottom_branding_text"><?php echo Core::settings('SITE_TITLE')?></div>
+</div>
+
+<script>
+$(function(){
+	document.forms.form.account.focus();
+	
+	$('#form').on('submit', function(){
+        $.post('<?php echo self::url('index', 'login', query_string_parse())?>', {
+            account: $('#account').val(),
+            password: $('#password').val(),
+        }, function(r) {
+			r = $.parseJSON(r);
+			switch (r.result) {
+				case 0:
+					$('#form p.error').find('span').html(r.message).end().show();
+					break;
+					
+				case 1:
+					window.location.href = r.redirect;
+					break;
+			}
+		});
+    });
+});
+</script>

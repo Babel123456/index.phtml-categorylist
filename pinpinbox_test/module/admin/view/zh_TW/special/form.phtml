@@ -1,0 +1,28 @@
+<?php echo $form?>
+<script>
+$(window).load(function() {
+	$('#form').validate({
+		rules: {},
+		submitHandler: function() {
+			$.post('<?php echo $action?>', {
+				//form
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				event_id: $('#event_id').val(),
+				name: $('#name').val(),
+				description: CKEDITOR.instances['description'].getData(),
+				remark: CKEDITOR.instances['remark'].getData(),
+                info_required: $('input[name="info_required"]:checked').val(),
+				act: $('input[name="act"]:checked').val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+});
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="icon" type="image/vnd.microsoft.icon" href="<?php echo static_file('images/favicon.ico')?>" />
+	<meta charset="UTF-8">
+	<meta property="og:title" content="<?php echo Core::settings('SITE_TITLE'); ?>" />
+	<meta property="og:description" content="<?php echo Core::settings('SITE_DESCRIPTION'); ?>" />
+	<meta property="og:image" content="<?php echo static_file('images/intro.jpg'); ?>" />
+	<meta name="description" content="<?php echo Core::settings('SITE_DESCRIPTION'); ?>">
+	<title><?php echo Core::settings('SITE_TITLE')?></title>
+</head>
+<body>
+<?php echo Core::settings('GOOGLE_ANALYTICS_TRACKINGCODE')?>
+<?php
+switch ($way) {
+	case 'facebook'://fb 貌似沒有 php 登出的方式
+		?>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=<?php echo Core::settings('FACEBOOK_API_VERSION')?>&appId=<?php echo Core::settings('FACEBOOK_APP_ID')?>";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId: '<?php echo Core::settings('FACEBOOK_APP_ID')?>',
+				cookie: true,
+				version: '<?php echo Core::settings('FACEBOOK_API_VERSION')?>'
+			});
+		    FB.getLoginStatus(function(r) {
+		        if (r && r.status === 'connected') {
+		        	FB.logout(function(r) {
+		        		location.href = '<?php echo self::url('user', 'login')?>';
+		        	});
+		        } else {
+		        	location.href = '<?php echo self::url('user', 'login')?>';
+		        }
+		    });
+		};
+		</script>
+		<?php
+		break;
+		
+	default://為使 google 分析碼運行，以 js 方式跳轉
+		?>
+		<script>
+		location.href = '<?php echo self::url('user', 'login')?>';
+		</script>
+		<?php
+		break;
+}
+?>
+</body>
+</html>

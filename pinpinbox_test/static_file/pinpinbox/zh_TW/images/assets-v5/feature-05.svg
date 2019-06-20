@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="440px" height="140px" viewBox="0 0 440 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>3E022B24-DA23-4C45-86F0-B58AAC285E53</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="20" y="30" width="140" height="80" rx="5"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="140" height="80" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="企業合作" transform="translate(-960.000000, -340.000000)">
+            <g id="多功能行銷工具-cards" transform="translate(520.000000, 200.000000)">
+                <g id="cards">
+                    <g id="card/企業合作/多功能行銷工具/02" transform="translate(440.000000, 140.000000)">
+                        <g id="card/企業合作/多功能行銷工具">
+                            <text id="即時發送線上抽獎、兌換券，同步傳遞推播訊" font-family="MicrosoftJhengHeiRegular, 微軟正黑體" font-size="14" font-weight="normal" line-spacing="20" letter-spacing="1" fill="#4D4D4D">
+                                <tspan x="190" y="55">根據不同廣告需求，刊登在相關</tspan>
+                                <tspan x="190" y="75">作品類別的版位，為您精準找到</tspan>
+                                <tspan x="190" y="95">目標客群。</tspan>
+                            </text>
+                            <use id="Rectangle-32" stroke="#0F8399" mask="url(#mask-2)" stroke-width="2" fill="#0F8399" xlink:href="#path-1"></use>
+                            <text id="抽獎兌換券" font-family="MicrosoftJhengHeiBold, 微軟正黑體" font-size="18" font-weight="bold" line-spacing="25" letter-spacing="1" fill="#FFFFFF">
+                                <tspan x="52.5" y="77">廣告曝光</tspan>
+                            </text>
+                            <polygon id="Triangle-2" fill="#0F8399" points="170 70 160 75 160 65"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

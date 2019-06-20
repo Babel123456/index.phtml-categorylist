@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>94680B75-027F-4B19-90A0-4EDD499E99BD</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M7.77777778,3.32306713 C4.56934602,4.28034965 2.22222222,7.25603414 2.22222222,10.7786043 L2.22222222,20 L17.7777778,20 L17.7777778,10.7786043 C17.7777778,7.25374682 15.4349877,4.2779839 12.2222222,3.32201241 L12.2222222,2.21713158 C12.2222222,0.990777969 11.2272994,0 10,0 C8.76414405,0 7.77777778,0.992643622 7.77777778,2.21713158 L7.77777778,3.32306713 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="15.5555556" height="20" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <path d="M0.575120692,20.9297004 C0.871160717,19.8639563 2.00493469,19 3.11592802,19 L16.8841469,19 C17.991356,19 19.1300209,19.8679404 19.4249542,20.9297004 L19.7310685,22.0317116 C19.8796159,22.5664825 19.5447319,23 19.0082344,23 L0.991840572,23 C0.44408284,23 0.118945815,22.5719299 0.269006469,22.0317116 L0.575120692,20.9297004 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="19.0519519" height="4" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="7.22222222" y="22" width="5.55555556" height="3"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="5.55555556" height="3" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Resources-icon-list" transform="translate(-140.000000, -88.000000)">
+            <g id="icon_通知中心" transform="translate(140.000000, 88.000000)">
+                <g id="nav-bar/icon/通知中心/n">
+                    <g id="icon_通知中心_n">
+                        <circle id="Oval-10-Copy-2" fill="#DADADA" cx="20" cy="20" r="20"></circle>
+                        <g id="Group-2-Copy" transform="translate(10.000000, 8.000000)" stroke="#FFFFFF" stroke-width="2">
+                            <use id="Combined-Shape" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                            <use id="Rectangle-2" mask="url(#mask-4)" xlink:href="#path-3"></use>
+                            <use id="Rectangle-23" mask="url(#mask-6)" xlink:href="#path-5"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

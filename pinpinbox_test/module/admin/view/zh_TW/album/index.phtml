@@ -1,0 +1,250 @@
+<?php echo $index ?>
+<script>
+    $(function () {
+        $('#grid').kendoGrid({
+            columns: [
+                {
+                    field: '<?php echo M_CLASS?>_id', attributes: {'class': 'number'}, filterable: {
+                        ui: function (e) {
+                            e.kendoNumericTextBox({format: 'n0'});
+                        }
+                    }
+                },
+                {
+                    title: 'user',
+                    columns: [
+                        {
+                            field: 'user_id', attributes: {'class': 'number'}, filterable: {
+                                ui: function (e) {
+                                    e.kendoNumericTextBox({format: 'n0'});
+                                }
+                            }
+                        },
+                        {
+                            title: '@info',
+                            field: 'userX',
+                            attributes: {'class': 'string'},
+                            encoded: false,
+                            filterable: false,
+                            sortable: false
+                        }
+                    ]
+                },
+                {
+                    title: 'category',
+                    columns: [
+                        {
+                            field: 'category_id', attributes: {'class': 'number'}, filterable: {
+                                ui: function (e) {
+                                    e.kendoNumericTextBox({format: 'n0'});
+                                }
+                            }
+                        },
+                        {
+                            title: '@info',
+                            field: 'categoryX',
+                            attributes: {'class': 'string'},
+                            encoded: false,
+                            filterable: false,
+                            sortable: false
+                        }
+                    ]
+                },
+                {
+                    title: 'template',
+                    columns: [
+                        {
+                            field: 'template_id', attributes: {'class': 'number'}, filterable: {
+                                ui: function (e) {
+                                    e.kendoNumericTextBox({format: 'n0'});
+                                }
+                            }
+                        },
+                        {
+                            title: '@info',
+                            field: 'templateX',
+                            attributes: {'class': 'string'},
+                            encoded: false,
+                            filterable: false,
+                            sortable: false
+                        }
+                    ]
+                },
+                {
+                    title: 'audio',
+                    columns: [
+                        {
+                            field: 'audio_id', attributes: {'class': 'number'}, filterable: {
+                                ui: function (e) {
+                                    e.kendoNumericTextBox({format: 'n0'});
+                                }
+                            }
+                        },
+                        {
+                            title: '@info',
+                            field: 'audioX',
+                            attributes: {'class': 'string'},
+                            encoded: false,
+                            filterable: false,
+                            sortable: false
+                        }
+                    ]
+                },
+                {field: 'name', attributes: {'class': 'string'}},
+                {field: 'cover', attributes: {'class': 'image'}, encoded: false, filterable: false, sortable: false},
+                {field: 'weather', attributes: {'class': 'enums'}},
+                {field: 'mood', attributes: {'class': 'enums'}},
+                {field: 'rating', attributes: {'class': 'enums'}},
+                {
+                    field: 'point', attributes: {'class': 'number'}, filterable: {
+                        ui: function (e) {
+                            e.kendoNumericTextBox({format: 'n0'});
+                        }
+                    }
+                },
+                {
+                    field: 'recommend', attributes: {'class': 'number'}, filterable: {
+                        ui: function (e) {
+                            e.kendoNumericTextBox({format: 'n0'});
+                        }
+                    }
+                },
+                {field: 'viewed', attributes: {'class': 'number'}},
+                {field: 'act', attributes: {'class': 'enums act-#:act#'}},
+                {
+                    field: 'inserttime',
+                    format: "{0: yyyy-MM-dd HH:mm:ss}",
+                    attributes: {'class': 'date'},
+                    filterable: {
+                        ui: function (e) {
+                            e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});
+                        }
+                    }
+                },
+                {
+                    field: 'modifytime',
+                    format: "{0: yyyy-MM-dd HH:mm:ss}",
+                    attributes: {'class': 'date'},
+                    filterable: {
+                        ui: function (e) {
+                            e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});
+                        }
+                    }
+                },
+            ],
+            dataBinding: function (e) {
+            },
+            dataBound: function (e) {
+            },
+            dataSource: new kendo.data.DataSource({
+                batch: true,
+                page: 1,
+                pageSize: gridpageSize,
+                serverPaging: true,
+                serverSorting: true,
+                serverFiltering: true,
+                transport: {
+                    read: {
+                        dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        type: 'POST',
+                        url: '<?php echo self::url(M_CLASS, 'json')?>',
+                    },
+                    parameterMap: function (data, type) {
+                        if (data.filter) {
+                            data.filter.filters.forEach(function (e) {
+                                switch (e.field) {
+                                    case 'inserttime':
+                                    case 'modifytime':
+                                        e.value = kendo.toString(e.value, 'yyyy-MM-dd HH:mm:ss');
+                                        break;
+                                }
+                            });
+                        }
+
+                        return data;
+                    },
+                    update: {
+                        beforeSend: function () {
+                        },
+                        complete: function (xhr) {
+                            r = $.parseJSON(xhr.responseText);
+                            switch (r.result) {
+                                case 0:
+                                    griderror(r.message);
+                                    break;
+                                case 1:
+                                    gridsuccess(r.message);
+                                    break;
+                            }
+                        },
+                        dataType: 'json',
+                        type: 'POST',
+                        url: '<?php echo self::url(M_CLASS, 'grid_edit')?>',
+                    },
+                },
+                schema: {
+                    data: function (r) {
+                        return r.data;
+                    },
+                    total: function (r) {
+                        return r.total;
+                    },
+                    model: {
+                        id: '<?php echo M_CLASS?>_id',
+                        fields: {
+                            <?php echo M_CLASS?>_id: {editable: false},
+                            user_id: {editable: false},
+                            userX: {editable: false},
+                            category_id: {editable: false},
+                            categoryX: {editable: false},
+                            template_id: {editable: false},
+                            templateX: {editable: false},
+                            audio_id: {editable: false},
+                            audioX: {editable: false},
+                            name: {editable: false},
+                            cover: {editable: false},
+                            weather: {editable: false},
+                            mood: {editable: false},
+                            rating: {editable: false},
+                            point: {editable: false},
+                            recommend: {type: 'number', validation: {required: true, min: 0, max: 255}},
+                            viewed: {editable: false},
+                            act: {editable: false},
+                            inserttime: {editable: false, type: 'date'},
+                            modifytime: {editable: false, type: 'date'},
+                        }
+                    }
+                },
+                sort: {field: '<?php echo M_CLASS?>_id', dir: 'desc'}
+            }),
+            editable: {
+                confirmation: false,
+                mode: 'incell'
+            },
+            filterable: {
+                operators: {
+                    date: {
+                        gte: '大於等於',
+                        lte: '小於等於',
+                    }
+                }
+            },
+            height: gridheight,
+            pageable: {
+                refresh: true,
+                input: true,
+                pageSize: gridpageSize,
+                pageSizes: gridpageSizes,
+            },
+            reorderable: true,
+            resizable: true,
+            selectable: true,
+            sortable: true,
+            toolbar: [
+                {template: '<a class="k-button" onclick="grid_toolbar_edit(\'\\#grid\', \'<?php echo self::url(M_CLASS, 'form', array('act' => 'edit'))?>\', [\'<?php echo M_CLASS?>_id\'])"><span class="k-icon k-i-pencil"></span></a><a class="k-button" onclick="grid_toolbar_download(\'\\#grid\', \'<?php echo self::url(M_CLASS, 'download')?>\', [\'<?php echo M_CLASS?>_id\'])">Download</a>'},
+                'save',
+                'cancel',
+            ],
+        });
+    });
+</script>

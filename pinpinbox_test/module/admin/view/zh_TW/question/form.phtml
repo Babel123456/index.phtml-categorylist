@@ -1,0 +1,29 @@
+<?php echo $form?>
+<script>
+$(function() {
+	$('#form').validate({
+		rules: {},
+		submitHandler: function() {
+			if (!$('#feedback').val()) {
+				formerror('<?php echo _('[Feedback] is required')?>');
+				return;
+			}
+			
+			$.post('<?php echo $action?>', {
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				name: $('#name').val(),
+				feedback: $('#feedback').val(),
+				act: $('input[name="act"]:checked').val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+});
+</script>

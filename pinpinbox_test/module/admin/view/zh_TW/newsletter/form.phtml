@@ -1,0 +1,658 @@
+<?php echo $form ?>
+<script>
+    $(function () {
+        $('#form').validate({
+            rules: {
+                <?php if ('add' == $_GET['act']) {?>
+                repassword: {
+                    equalTo: '#password'
+                },
+                <?php }?>
+            },
+            submitHandler: function () {
+                $.post('<?php echo $action?>', {
+                    <?php if ('add' == $_GET['act']) {?>
+                    account: $('#account').val(),
+                    password: $('#password').val(),
+                    name: $('#name').val(),
+                    cellphone: $('#cellphone').intlTelInput('getNumber'),
+                    gender: $('input[name="gender"]:checked').val(),
+                    birthday: $('#birthday').val(),
+                    <?php }?>
+                    <?php if ('edit' == $_GET['act']) {?>
+                    <?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+                    <?php }?>
+                    act: $('input[name="act"]:checked').val(),
+                }, function (r) {
+                    r = $.parseJSON(r);
+                    switch (r.result) {
+                        case 0:
+                            formerror(r.message);
+                            break;
+                        case 1:
+                            formconfirm(r);
+                            break;
+                    }
+                });
+            }
+        });
+
+        <?php if ('edit' == $_GET['act']) {?>
+        //Edit User Point
+        $('#userpoint_submit').on('click', function () {
+            var userpoint_platform_val = $('#userpoint_platform').val(),
+                userpoint_platform_text = $('#userpoint_platform option:selected').text(),
+                userpoint_point = $('#userpoint_point').val(),
+                userpoint_remark = $('#userpoint_remark').val();
+
+            if (!userpoint_platform_val) {
+                alert('請選擇 Platform');
+                return;
+            }
+
+            if (!userpoint_point) {
+                alert('請填寫 Point');
+                return;
+            }
+
+            box = new jBox('Confirm', {
+                id: 'jBox_edituserpoint',
+                cancelButton: '<?php echo _('No')?>',
+                confirmButton: '<?php echo _('Yes')?>',
+                onOpen: function () {
+                    var confirm_btn = $('#jBox_edituserpoint').find('.jBox-Confirm-button-submit'),
+                        cancel_btn = $('#jBox_edituserpoint').find('.jBox-Confirm-button-cancel'),
+                        time_element = '<span id="timer" class="jBox-Confirm-button jBox-Confirm-button-cancel">time</span>';
+
+                    $(confirm_btn).hide(function () {
+                        $(cancel_btn).after(time_element);
+                        var time = 3000;//倒數3秒
+                        !function DisableEnable() {
+                            if (time <= 0) {
+                                $('#timer').hide();
+                                $(confirm_btn).show();
+                            } else {
+                                $('#timer').text((time / 1000) + " sec...");
+                                setTimeout(DisableEnable, 1000);
+                            }
+                            time -= 1000;
+                        }();
+                    });
+                },
+                confirm: function () {
+                    $.post('<?php echo self::url('user', 'edituserpoint')?>', {
+                        platform: userpoint_platform_val,
+                        point: userpoint_point,
+                        remark: userpoint_remark,
+                        user_id: <?php echo $user_id?>,
+                    }, function (r) {
+                        r = $.parseJSON(r);
+                        switch (r.result) {
+                            case 0:
+                                formerror(r.message);
+                                break;
+                            case 1:
+                                formsuccess(r.message);
+
+                                $('#userpoint_platform_' + r.data.platform).text(r.data.point)
+
+                                $('#userpointqueue-grid').data('kendoGrid').dataSource.read();
+                                break;
+                        }
+                    });
+                },
+                onCloseComplete: function () {
+                    box.destroy();
+                }
+            }).setContent(
+                '<div class="content">' +
+                '<p><b>添加 P 點嗎？</b></p><br>' +
+                '<p>將&nbsp;' + userpoint_platform_text + '&nbsp;的點數添加<span style="color:red">&nbsp;' + userpoint_point + '&nbsp;</span>點</p>' +
+                '</div>'
+            ).open();
+        });
+
+        //userpointqueue
+        $('#userpointqueue-grid').kendoGrid({
+            columns: [
+                {
+                    title: 'user',
+                    columns: [
+                        {
+                            field: 'user_id', attributes: {'class': 'number'}, filterable: {
+                                ui: function (e) {
+                                    e.kendoNumericTextBox({format: 'n0'});
+                                }
+                            }
+                        },
+                        {
+                            title: '@info',
+                            field: 'userX',
+                            attributes: {'class': 'string'},
+                            encoded: false,
+                            filterable: false,
+                            sortable: false
+                        }
+                    ]
+                },
+                {field: 'trade', attributes: {'class': 'enums'}},
+                {
+                    field: 'trade_id', attributes: {'class': 'number'}, filterable: {
+                        ui: function (e) {
+                            e.kendoNumericTextBox({format: 'n0'});
+                        }
+                    }
+                },
+                {field: 'platform', attributes: {'class': 'enums'}},
+                {
+                    field: 'point_before', attributes: {'class': 'number'}, filterable: {
+                        ui: function (e) {
+                            e.kendoNumericTextBox({format: 'n0'});
+                        }
+                    }
+                },
+                {
+                    field: 'point', attributes: {'class': 'number'}, filterable: {
+                        ui: function (e) {
+                            e.kendoNumericTextBox({format: 'n0'});
+                        }
+                    }
+                },
+                {
+                    field: 'inserttime', attributes: {'class': 'date'}, filterable: {
+                        ui: function (e) {
+                            e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});
+                        }
+                    }
+                },
+            ],
+            dataBinding: function (e) {
+            },
+            dataBound: function (e) {
+            },
+            dataSource: new kendo.data.DataSource({
+                filter: {field: '<?php echo M_CLASS?>_id', operator: 'eq', value: <?php echo $user_id?>},
+                page: 1,
+                pageSize: gridpageSize,
+                schema: {
+                    data: function (r) {
+                        return r.data;
+                    },
+                    total: function (r) {
+                        return r.total;
+                    }
+                },
+                serverPaging: true,
+                serverSorting: true,
+                serverFiltering: true,
+                sort: {field: 'inserttime', dir: 'desc'},
+                transport: {
+                    read: {
+                        data: {'case': 'userpointqueue'},
+                        dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        type: 'POST',
+                        url: '<?php echo self::url(M_CLASS, 'json')?>',
+                    }
+                },
+            }),
+            filterable: true,
+            pageable: {
+                refresh: true,
+                input: true,
+                pageSize: gridpageSize,
+                pageSizes: gridpageSizes,
+            },
+            reorderable: true,
+            resizable: true,
+            selectable: true,
+            sortable: true,
+        });
+
+        //userpointsplit
+        $('#userpointsplit_submit').on('click', function () {
+            let
+                userpointsplit_ratio = $('#userpointsplit_ratio').val(),
+                userpointsplit_remark = $('#userpointsplit_remark').val();
+
+            if (!userpointsplit_ratio) {
+                alert('請填寫 Ratio');
+                return;
+            } else {
+                if (userpointsplit_ratio > 1) {
+                    alert('Ratio 最大值為 1');
+                    return;
+                }
+
+                if (userpointsplit_ratio < 0) {
+                    alert('Ratio 最小值為 0');
+                    return;
+                }
+            }
+
+            if (!userpointsplit_remark) {
+                alert('請填寫 Remark');
+                return;
+            }
+
+            box = new jBox('Confirm', {
+                id: 'jBox_edituserpointsplit',
+                cancelButton: '<?php echo _('No')?>',
+                confirmButton: '<?php echo _('Yes')?>',
+                onOpen: function () {
+                    var confirm_btn = $('#jBox_edituserpointsplit').find('.jBox-Confirm-button-submit'),
+                        cancel_btn = $('#jBox_edituserpointsplit').find('.jBox-Confirm-button-cancel'),
+                        time_element = '<span id="timer" class="jBox-Confirm-button jBox-Confirm-button-cancel">time</span>';
+
+                    $(confirm_btn).hide(function () {
+                        $(cancel_btn).after(time_element);
+                        var time = 3000;//倒數3秒
+                        !function DisableEnable() {
+                            if (time <= 0) {
+                                $('#timer').hide();
+                                $(confirm_btn).show();
+                            } else {
+                                $('#timer').text((time / 1000) + " sec...");
+                                setTimeout(DisableEnable, 1000);
+                            }
+                            time -= 1000;
+                        }();
+                    });
+                },
+                confirm: function () {
+                    $.post('<?php echo self::url('user', 'edituserpointsplit')?>', {
+                        ratio: userpointsplit_ratio,
+                        remark: userpointsplit_remark,
+                        user_id: <?php echo $user_id?>,
+                    }, function (r) {
+                        r = $.parseJSON(r);
+                        switch (r.result) {
+                            case 0:
+                                formerror(r.message);
+                                break;
+                            case 1:
+                                formsuccess(r.message);
+
+                                $('#userpointsplit-grid').data('kendoGrid').dataSource.read();
+                                break;
+                        }
+                    });
+                },
+                onCloseComplete: function () {
+                    box.destroy();
+                }
+            }).setContent(
+                '<div class="content">' +
+                '<p><b>修改 P 點拆分比嗎？</b></p><br>' +
+                '<p>將 P 點拆分比改為<span style="color:red">&nbsp;' + (userpointsplit_ratio * 100) + '%</span></p>' +
+                '</div>'
+            ).open();
+        });
+
+        $('#userpointsplit-grid').kendoGrid({
+            columns: [
+                {
+                    title: 'user',
+                    columns: [
+                        {
+                            field: 'user_id', attributes: {'class': 'number'}, filterable: {
+                                ui: function (e) {
+                                    e.kendoNumericTextBox({format: 'n0'});
+                                }
+                            }
+                        },
+                        {
+                            title: '@info',
+                            field: 'userX',
+                            attributes: {'class': 'string'},
+                            encoded: false,
+                            filterable: false,
+                            sortable: false
+                        }
+                    ]
+                },
+                {
+                    field: 'ratio', attributes: {'class': 'number'}, filterable: {
+                        ui: function (e) {
+                            e.kendoNumericTextBox({format: 'n0'});
+                        }
+                    }
+                },
+                {field: 'remark', attributes: {'class': 'string'}},
+                {
+                    field: 'inserttime', attributes: {'class': 'date'}, filterable: {
+                        ui: function (e) {
+                            e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});
+                        }
+                    }
+                },
+                {field: 'modifyadmin_id', attributes: {'class': 'number'}},
+            ],
+            dataBinding: function (e) {
+            },
+            dataBound: function (e) {
+            },
+            dataSource: new kendo.data.DataSource({
+                filter: {field: '<?php echo M_CLASS?>_id', operator: 'eq', value: <?php echo $user_id?>},
+                page: 1,
+                pageSize: gridpageSize,
+                schema: {
+                    data: function (r) {
+                        return r.data;
+                    },
+                    total: function (r) {
+                        return r.total;
+                    }
+                },
+                serverFiltering: true,
+                serverPaging: true,
+                serverSorting: true,
+                sort: {field: 'inserttime', dir: 'desc'},
+                transport: {
+                    read: {
+                        data: {'case': 'userpointsplitqueue'},
+                        dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        type: 'POST',
+                        url: '<?php echo self::url(M_CLASS, 'json')?>',
+                    }
+                },
+            }),
+            filterable: true,
+            pageable: {
+                refresh: true,
+                input: true,
+                pageSize: gridpageSize,
+                pageSizes: gridpageSizes,
+            },
+            reorderable: true,
+            resizable: true,
+            selectable: true,
+            sortable: true,
+        });
+
+        //
+        $('#userstatistics_submit').on('click', function () {
+            let
+                userstatistics_besponsored_manual = $('#userstatistics_besponsored_manual').val(),
+                userstatistics_followfrom_manual = $('#userstatistics_followfrom_manual').val(),
+                userstatistics_viewed_manual = $('#userstatistics_viewed_manual').val();
+
+            if (!userstatistics_viewed_manual) {
+                alert('請填寫被瀏覽次數');
+                return;
+            }
+
+            if (!userstatistics_besponsored_manual) {
+                alert('請填寫被贊助次數');
+                return;
+            }
+
+            if (!userstatistics_followfrom_manual) {
+                alert('請填寫被關注次數');
+                return;
+            }
+
+            box = new jBox('Confirm', {
+                id: 'jBox_edituserstatistics',
+                cancelButton: '<?php echo _('No')?>',
+                confirmButton: '<?php echo _('Yes')?>',
+                onOpen: function () {
+                    var confirm_btn = $('#jBox_edituserstatistics').find('.jBox-Confirm-button-submit'),
+                        cancel_btn = $('#jBox_edituserstatistics').find('.jBox-Confirm-button-cancel'),
+                        time_element = '<span id="timer" class="jBox-Confirm-button jBox-Confirm-button-cancel">time</span>';
+
+                    $(confirm_btn).hide(function () {
+                        $(cancel_btn).after(time_element);
+                        var time = 3000;//倒數3秒
+                        !function DisableEnable() {
+                            if (time <= 0) {
+                                $('#timer').hide();
+                                $(confirm_btn).show();
+                            } else {
+                                $('#timer').text((time / 1000) + " sec...");
+                                setTimeout(DisableEnable, 1000);
+                            }
+                            time -= 1000;
+                        }();
+                    });
+                },
+                confirm: function () {
+                    $.post('<?php echo self::url('user', 'edituserstatistics')?>', {
+                        besponsored_manual: userstatistics_besponsored_manual,
+                        followfrom_manual: userstatistics_followfrom_manual,
+                        viewed_manual: userstatistics_viewed_manual,
+                        user_id: <?php echo $user_id?>,
+                    }, function (r) {
+                        r = $.parseJSON(r);
+                        switch (r.result) {
+                            case 0:
+                                formerror(r.message);
+                                break;
+                            case 1:
+                                formsuccess(r.message);
+                                break;
+                        }
+                    });
+                },
+                onCloseComplete: function () {
+                    box.destroy();
+                }
+            }).setContent(
+                '<div class="content">' +
+                '<p><b>修改調整數值嗎？</b></p><br>' +
+                '<p>將被瀏覽次數<span style="color:red">&nbsp;+&nbsp;' + userstatistics_viewed_manual + '</span></p>' +
+                '<p>將被贊助次數<span style="color:red">&nbsp;+&nbsp;' + userstatistics_besponsored_manual + '</span></p>' +
+                '<p>將被關注次數<span style="color:red">&nbsp;+&nbsp;' + userstatistics_followfrom_manual + '</span></p>' +
+                '</div>'
+            ).open();
+        });
+
+        //usergradequeue
+        $('#usergradequeue-grid').kendoGrid({
+            columns: [
+                {
+                    title: 'user',
+                    columns: [
+                        {
+                            field: 'user_id', attributes: {'class': 'number'}, filterable: {
+                                ui: function (e) {
+                                    e.kendoNumericTextBox({format: 'n0'});
+                                }
+                            }
+                        },
+                        {
+                            title: '@info',
+                            field: 'userX',
+                            attributes: {'class': 'string'},
+                            encoded: false,
+                            filterable: false,
+                            sortable: false
+                        }
+                    ]
+                },
+                {
+                    field: 'order_id', attributes: {'class': 'number'}, filterable: {
+                        ui: function (e) {
+                            e.kendoNumericTextBox({format: 'n0'});
+                        }
+                    }
+                },
+                {field: 'grade', attributes: {'class': 'enums'}},
+                {
+                    field: 'starttime', attributes: {'class': 'date'}, filterable: {
+                        ui: function (e) {
+                            e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});
+                        }
+                    }
+                },
+                {
+                    field: 'endtime', attributes: {'class': 'date'}, filterable: {
+                        ui: function (e) {
+                            e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});
+                        }
+                    }
+                },
+                {
+                    field: 'inserttime', attributes: {'class': 'date'}, filterable: {
+                        ui: function (e) {
+                            e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});
+                        }
+                    }
+                },
+            ],
+            dataBinding: function (e) {
+            },
+            dataBound: function (e) {
+            },
+            dataSource: new kendo.data.DataSource({
+                filter: {field: '<?php echo M_CLASS?>_id', operator: 'eq', value: <?php echo $user_id?>},
+                page: 1,
+                pageSize: gridpageSize,
+                schema: {
+                    data: function (r) {
+                        return r.data;
+                    },
+                    total: function (r) {
+                        return r.total;
+                    }
+                },
+                serverFiltering: true,
+                serverPaging: true,
+                serverSorting: true,
+                sort: {field: 'inserttime', dir: 'desc'},
+                transport: {
+                    read: {
+                        data: {'case': 'usergradequeue'},
+                        dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        type: 'POST',
+                        url: '<?php echo self::url(M_CLASS, 'json')?>',
+                    }
+                },
+            }),
+            filterable: true,
+            pageable: {
+                refresh: true,
+                input: true,
+                pageSize: gridpageSize,
+                pageSizes: gridpageSizes,
+            },
+            reorderable: true,
+            resizable: true,
+            selectable: true,
+            sortable: true,
+        });
+
+        //usercreative
+        $('#usercreative-grid').kendoGrid({
+            columns: [
+                {
+                    field: 'inserttime', attributes: {'class': 'date'}, filterable: {
+                        ui: function (e) {
+                            e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});
+                        }
+                    }
+                },
+            ],
+            dataBinding: function (e) {
+            },
+            dataBound: function (e) {
+            },
+            dataSource: new kendo.data.DataSource({
+                filter: {field: '<?php echo M_CLASS?>_id', operator: 'eq', value: <?php echo $user_id?>},
+                page: 1,
+                pageSize: gridpageSize,
+                schema: {
+                    data: function (r) {
+                        return r.data;
+                    },
+                    total: function (r) {
+                        return r.total;
+                    }
+                },
+                serverFiltering: true,
+                serverPaging: true,
+                serverSorting: true,
+                sort: {field: 'inserttime', dir: 'desc'},
+                transport: {
+                    read: {
+                        data: {'case': 'usercreative'},
+                        dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                        type: 'POST',
+                        url: '<?php echo self::url(M_CLASS, 'json')?>',
+                    }
+                },
+            }),
+            filterable: true,
+            pageable: {
+                refresh: true,
+                input: true,
+                pageSize: gridpageSize,
+                pageSizes: gridpageSizes,
+            },
+            reorderable: true,
+            resizable: true,
+            selectable: true,
+            sortable: true,
+        });
+
+        $('#btn').on('click', function () {
+            var new_grade = $('#new_grade').val(), _starttime = $('#starttime').text(), _endtime = $('#endtime').val(),
+                _editremark = $('#editremark').val(),
+                box = new jBox('Confirm', {
+                    id: 'jBox_editgrade',
+                    cancelButton: '<?php echo _('No')?>',
+                    confirmButton: '<?php echo _('Yes')?>',
+                    onOpen: function () {
+                        var confirm_btn = $('#jBox_editgrade').find('.jBox-Confirm-button-submit'),
+                            cancel_btn = $('#jBox_editgrade').find('.jBox-Confirm-button-cancel'),
+                            time_element = '<span id="edit_timer" class="jBox-Confirm-button jBox-Confirm-button-cancel">time</span>';
+
+                        $(confirm_btn).hide(function () {
+                            $(cancel_btn).after(time_element);
+                            var time = 7000;//倒數7秒
+                            !function DisableEnable() {
+                                if (time <= 0) {
+                                    $('#edit_timer').hide();
+                                    $(confirm_btn).show();
+                                } else {
+                                    $('#edit_timer').text((time / 1000) + " sec...");
+                                    setTimeout(DisableEnable, 1000);
+                                }
+                                time -= 1000;
+                            }();
+                        });
+                    },
+                    confirm: function () {
+                        $.post('<?php echo self::url('user', 'editgrade')?>', {
+                            user_id: <?php echo $user_id;?>,
+                            origin_grade: "<?php echo Core::get_usergrade($user_id); ?>",
+                            grade: new_grade,
+                            endtime: _endtime,
+                            editremark: _editremark,
+                        }, function (r) {
+                            r = $.parseJSON(r);
+                            switch (r.result) {
+                                case 0:
+                                    formerror(r.message);
+                                    break;
+                                case 1:
+                                    formsuccess(r.message);
+                                    break;
+                            }
+                        });
+                    },
+                    onCloseComplete: function () {
+                        box.destroy();
+                    }
+                }).setContent(
+                    `<div class="content">
+                    <p><?php echo _('確定要修改此使用者的身份?')?></p>
+                    <p><?php echo _('目前身份為：')?>&nbsp;<span style="color:blue"><?php echo $user_grade; ?></span></p>
+                    <p><?php echo _('修改身份為：')?>&nbsp;<span style="color:red">${new_grade}</span></p>
+                    <p><?php echo _('生效時間：')?>&nbsp;<span style="color:red">${_starttime}</span></p>
+                    <p><?php echo _('截止時間：')?>&nbsp;<span style="color:red">${_endtime}</span></p>
+                </div>`
+                ).open();
+        });
+        <?php }?>
+    });
+</script>

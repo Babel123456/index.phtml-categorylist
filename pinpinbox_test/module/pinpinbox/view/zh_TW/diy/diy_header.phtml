@@ -1,0 +1,39 @@
+<style type="text/css">
+#main {
+	padding-top: 0px;
+}
+</style>
+<div id="header">
+<!-- 電腦版使用導覽列 -->
+	<div id="head_desk">
+		<div class="head_top">
+			<div class="head_center">
+				<div class="logo"><a href="<?php echo self::url('index', 'index') ?>">logo</a></div>
+				<div id="head_other">
+					<ul>
+						<li class="member_hide">
+							<a href="javascript:;" class="member" id="member_open"><img src="<?php echo URL_STORAGE.Core::get_userpicture($user['user_id']);?>" height="149" width="149" onerror="this.src='<?php echo static_file('images/face_sample.svg')?>'"></a>
+							<ul>
+								<li><div class="member_nav">
+									<ul>
+										<?php echo'
+										<li style="color:#D0D0D0;">'.$user['name'].'</li>
+										<li><div class=line></div></li>
+										<li><a href="'.self::url('user', 'settings').'">'._('Member Center').'</a></li>										
+										<li><a href="'.Core::get_creative_url($user['user_id']).'">'._('My Zone').'</a></li>
+										<li><div class=line></div></li>
+										<li><a href="'.self::url('user', 'order').'">'._('Fees').'</a></li>
+										<li><div class=line></div></li>
+										<li><a href="'.self::url('user', 'question').'">'._('Feedback').'</a></li>
+										<li><a href="'.self::url('user', 'logout').'">'._('Log out').'</a></li>';
+										?>
+									</ul>
+								</div></li>
+							</ul>
+						</li>	
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

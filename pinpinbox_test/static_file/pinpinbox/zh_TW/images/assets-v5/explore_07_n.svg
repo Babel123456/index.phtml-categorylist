@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40">
+    <g fill="none" fill-rule="evenodd" transform="translate(.571)">
+        <circle cx="20" cy="20" r="20" fill="#DADADA"/>
+        <g stroke="#FFF" transform="translate(7.5 9)">
+            <path d="M10.232 10.36c1.252-1.085 3.287-1.082 4.536 0l4.499 3.893c1.253 1.084 2.025 3.28 1.724 4.917l-.726 3.937a.913.913 0 0 1-1.145.731s-4.323-1.183-6.62-1.183c-2.297 0-6.62 1.183-6.62 1.183a.918.918 0 0 1-1.145-.731L4.01 19.17c-.3-1.632.475-3.836 1.724-4.917l4.499-3.893z"/>
+            <ellipse cx="8.5" cy="3.5" rx="2.5" ry="3.5"/>
+            <ellipse cx="2.5" cy="9.5" rx="2.5" ry="3.5"/>
+            <ellipse cx="16.5" cy="3.5" rx="2.5" ry="3.5" transform="matrix(-1 0 0 1 33 0)"/>
+            <ellipse cx="22.5" cy="9.5" rx="2.5" ry="3.5" transform="matrix(-1 0 0 1 45 0)"/>
+        </g>
+    </g>
+</svg>

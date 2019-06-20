@@ -1,0 +1,167 @@
+<div id="album_content">
+	<h2><?php echo _('Member Center'); ?></h2>
+	<ul>
+		<li class="mobiledisplay"><h3><?php echo _('Upload Templates. Step1. Upload materials of Templates.');?></h3></li>
+		<li class="mobiledisplay"><div class="line"></div></li>
+		<li>
+			<?php include 'member_nav.phtml';?>
+			
+			<div id="memberbox_item">
+				<div id="album_tab">
+				  <h3><?php echo _('Templates to be uploaded'); ?></h3>
+					<span>Step1. <?php echo _('Fill in template information.'); ?></span>
+				</div>
+				<div class="album_all">
+					<div id="memset_info" style="min-height:0px">
+						<form action="<?php echo self::url('user', 'template_upload', array('act'=>'add')) ?>" method="POST">
+						<ul>
+							<li>
+								<div class="tdtitle"><?php echo _('Name of your Template'); ?></div>
+								<div class="tdtxt"><input id="name" name="name" type="text"></div>		
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('Introduction of your Template'); ?></div>
+								<div class="tdtxt">
+									<textarea cols="" rows="5" id="description" name="description"></textarea><br>
+								</div>		
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('設定類別'); ?></div>
+								<div class="tdtxt">
+									<div class="controls">
+										<select id="style" name="style">
+											<option disabled="disabled"><?php echo _('選擇類別'); ?></option>
+											<?php
+											if(!empty($style_info)) {
+												foreach($style_info as $k0 => $v0) {
+													if($k0 == 0 ) $sign = encrypt(['style_name'=>$v0['name']], SITE_SECRET);
+													echo '<option value="'.$v0['style_id'].'" data-sign="'.encrypt(['style_name'=>$v0['name']], SITE_SECRET).'">'.$v0['name'].'</option>' ;
+												}
+											}
+											?>
+										</select>
+										<input type="hidden" name="style_sign" value="<?php echo $sign ?>">
+									</div>											
+								</div>
+							</li>							
+							<li>
+								<div class="tdtitle"><?php echo _('上傳宣傳圖'); ?></div>
+								<div class="tdtxt">
+									<div class="cover_content">
+										<ul id="cover_content_list">
+											<li><?php echo _('#封面#'); ?>
+												<div class="upload_photo" id="upload0"></div>
+												<a href="javascript:void(0)" class="control_btn" id="upload_0"><img src="<?php echo static_file('images/icon_upload.svg'); ?>"><?php echo _('上傳'); ?></a>
+												<a href="javascript:void(0)" style="display:none;" class="control_btn delete_upload"><img src="<?php echo static_file('images/icon_delete.svg'); ?>"><?php echo _('刪除'); ?></a>
+											</li>
+											<li><br>
+												<div class="upload_photo" id="upload1"></div>
+												<a href="javascript:void(0)" class="control_btn" id="upload_1"><img src="<?php echo static_file('images/icon_upload.svg'); ?>"><?php echo _('上傳'); ?></a>
+												<a href="javascript:void(0)" style="display:none;" class="control_btn delete_upload"><img src="<?php echo static_file('images/icon_delete.svg'); ?>"><?php echo _('刪除'); ?></a>
+											</li>
+											<li><br>
+												<div class="upload_photo" id="upload2"></div>
+												<a href="javascript:void(0)" class="control_btn" id="upload_2"><img src="<?php echo static_file('images/icon_upload.svg'); ?>"><?php echo _('上傳'); ?></a>
+												<a href="javascript:void(0)" style="display:none;" class="control_btn delete_upload"><img src="<?php echo static_file('images/icon_delete.svg'); ?>"><?php echo _('刪除'); ?></a>
+											</li>
+										</ul>
+									</div>
+									<label class="checkbox">
+										<input type="checkbox" >
+										<?php echo _('Checking the box means that you have read and accept the').'<a target="_blank" href="'.self::url('index', 'terms').'">'._('specifications').'</a>'._(' and ').'<a target="_blank" href="'.self::url('index', 'privacy').'">'._('Privacy statement').'</a>';?>
+									</label>
+								</div>
+							</li>
+							<li><div class="tdtxt"><a href="javascript:void(0)" onclick="before_validate()" class="used"><?php echo _('Next'); ?></a></div></li>
+						</ul>
+						<input type="submit" id="info_btn" onclick="return nextstep()" style="display:none;">
+						</form>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<script>
+
+function before_validate() {
+	$('#cover_content_list li').each(function(k, v) {
+		var obj = $(this);
+		setTimeout(function() {
+			if( $('i.cropControlCrop').length != 0) {
+				obj.find('i.cropControlCrop').click();
+			}else {
+				$('#info_btn').trigger('click');
+			}
+		},  500 + ( k * 1500 ));
+	});
+}
+
+function nextstep() {
+	if($(':input[name="preview_upload0"]').length == 0) {
+		var r = {'message': '<?php echo _('請上傳封面圖片.')?>'};
+		site_jBox(r);
+		return false;
+	}
+
+	if ($('#name').val() == '' || $('#description').val() == '' || $('#style').val() == '') {
+		var r = {'message': '<?php echo _('Please enter the name and introduction.')?>'};
+		site_jBox(r);
+		return false;
+	}
+	
+	if ($("input[type='checkbox']:checked").length < 1) {
+		var r = {'message': '<?php echo _('You are not allowed to operate further unless you accept the specifications and privacy statement of our platform.')?>'};
+		site_jBox(r, 'error');
+		return false;
+	} else {
+		return true;
+	}
+}
+
+$(document).ready(function(){
+	$('div.cover_content').find('li').each(function(k, v) {
+		var siteModal ,
+			croppicContainerEyecandyOptions = {
+			customUploadButtonId:'upload_'+k,
+			uploadUrl:'<?php echo self::url('user', 'img_save_to_file')?>',
+			cropUrl:'<?php echo self::url('user', 'img_crop_to_file')?>',
+			onError: function(data) {
+				var r = {'message': data};
+				site_jBox(r, 'error');
+			},
+			onAfterImgUpload: function() {
+			},
+			onBeforeImgCrop: function() {
+				siteModal = new jBox('Modal', {
+					closeOnClick : false,
+					closeButton : 'title',
+					width : 140,
+					height: 45,
+				});
+				siteModal.setContent('<span style="font-weight:bold;color:#2299DD">Clipping...</span><img src="<?php echo static_file('images/loading.gif'); ?>">').open();
+			},
+			onAfterImgCrop:	function(obj) {
+				var str=this.croppedImg[0].src;
+				var str1 = str.replace(/<?php echo str_replace('/', '\/', URL_UPLOAD); ?>/g, '');
+				$('#upload'+k).append('<input type="hidden" name="preview_upload'+k+'" value="'+str1+'">');
+				$('#upload_'+k).hide().siblings('.delete_upload').show();
+				siteModal.close();
+			},
+			imgEyecandy:true,
+			loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> '
+		}
+		var cropContainerEyecandy = new Croppic('upload'+k, croppicContainerEyecandyOptions);
+	})
+}).on('click', '.delete_upload', function() {
+	$(this).siblings('.upload_photo').find('i.cropControlRemoveCroppedImage').trigger('click');
+	$(this).hide().prev('.control_btn').show();
+}).on('click', 'i.cropControlRemoveCroppedImage', function() {
+	$item = $(this).parents('div.upload_photo').attr('id').substr(-1, 1);
+	$('#upload_'+$item).show().next('.delete_upload').hide();
+	$(this).parent().siblings(':input[name="preview_upload'+$item+'"]').remove();
+}).on('change', '#style', function() {
+	$(':input[name="style_sign"]').attr('value', $('#style option:selected').data('sign'));
+});
+
+</script>

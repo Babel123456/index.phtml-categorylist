@@ -1,0 +1,336 @@
+<!-- FOOTER區塊開始 -->
+<div id="footer">
+    <div id="footer_area">
+        <ul>
+            <li class="mobile_show"><a href="<?php echo self::url('about', 'index') ?>"><?php echo _('關於我們'); ?></a></li>
+            <li class="mobile_show"><a href="<?php echo $tutorialUrl; ?>" class="cicle_btn"><?php echo $tutorialIcon ?><?php echo _('經營小幫手') ?></a></li>
+            <li class="mobile_show"><a href="<?php echo self::url('index', 'qanda'); ?>">Q&amp;A</a></li>
+            <li class="mobile_show"><a href="<?php echo self::url('recruit', 'index'); ?>"><?php echo _('Cooperation'); ?></a></li>
+            <li class="mobile_show"><a href="<?php echo self::url('index', 'privacy'); ?>"><?php  echo _('Privacy statement'); ?></a></li>
+            <li class="app_load mobile_show">
+                <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <span><?php echo _('下載APP') ?> <i class="fa fa-caret-down"></i>
+                </div>
+
+                <div class="dropdown-menu dropdown_menu" role="menu">
+                    <ul>
+                        <li><a id="apple_btn" data-url="<?php echo self::deeplink(); ?>" target="_blank" onclick="clickHandler(this.dataset.uri)" href="<?php echo Core::settings('IOS_DATA_URI'); ?>">iOS</a></li>
+                        <li><a data-url="<?php echo self::deeplink(); ?>" target="_blank" onclick="clickHandler(this.dataset.uri)" href="<?php echo Core::settings('ANDROID_DATA_URI') ;?>">Android</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="footer_lang">
+                <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+			    <span><?php echo _('語言'); ?> <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-menu dropdown_menu" role="menu">
+                    <ul>
+                        <?php
+                        foreach ($headbar_lang as $v0) {
+                            echo $v0['act'] == 'open'? '<li><a href="'.$v0['url'].'">'.$v0['name'].'</a></li>' : null ;
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="mobile_show mobile_footer_lang">
+                <span class="custom-select">
+				    <select id="lang_type" onchange="to_href();">
+                        <?php
+                        foreach ($headbar_lang as $v0) {
+                            echo $v0['act'] == 'open'? '<option value="'.$v0['url'].'">'.$v0['name'].'</option>' : null ;
+                        }
+                        ?>
+			        </select>
+                </span>
+            </li>
+            <li class="footer_copyright">© 2018 pinpinbox All Rights <R></R>eserved.</li>
+        </ul>
+    </div>
+</div>
+<!-- FOOTER區塊結束 -->
+
+<!-- 回上方箭頭與FB區塊開始  -->
+<div id="right_btn">
+    <div id="scroll_top"><a href="javascript:void(0)"><img src="<?php echo static_file('images/icon_top.svg') ?>" ></a></div>
+    <div id="p_link"><a href="<?php echo self::url('user', 'point') ?>" target="_blank" title="P點購買"><img src="<?php echo static_file('images/assets-v7/icon_p.svg') ?>"></a></div>
+</div>
+<!-- 回上方箭頭與FB區塊結束 -->
+
+<script>
+    $(document).ready(function() {
+        custom_select();
+    });
+
+    function custom_select(){
+        var x, i, j, selElmnt, a, b, c;
+        x = document.getElementsByClassName("custom-select");  //包住SELECT元件的SPAN區塊
+        for (i = 0; i < x.length; i++) {
+            selElmnt = x[i].getElementsByTagName("select")[0];
+
+            /*for each element, create a new DIV that will act as the selected item:*/
+            a = document.createElement("DIV");
+            a.setAttribute("class", "select-selected"); //顯示被選的項目文字, 蓋在SELECT元件上
+            a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+
+            //查看是否已有仿製下拉選單
+            if(!$('#'+selElmnt.id).siblings('.select-selected').length){
+                x[i].appendChild(a);
+            }
+            if(!$('#'+selElmnt.id).siblings('.select-items').length){
+
+                b = document.createElement("DIV");
+                b.setAttribute("class", "select-items select-hide"); //仿下拉選單
+                for (j = 0; j < selElmnt.length; j++) {
+                    c = document.createElement("DIV"); //仿每一筆下拉選單值OPTION
+                    c.innerHTML = selElmnt.options[j].innerHTML; //仿選單的顯示值等於被選的SELECT顯示值
+                    if(selElmnt.id == 'hobby_0' || selElmnt.id == 'hobby_1' || selElmnt.id =='hobby_2'){
+                        if(j>0){
+                            c.setAttribute("id", selElmnt.id+"_"+selElmnt.options[j].value); //第一筆請選擇不理會它
+                        }
+                    }
+                    //特殊處理部份: 專區編輯頁面結束
+                    var tempClassName = selElmnt.options[j].value; //給仿下拉選單CLASS NAME同SELECT下拉選單值
+                    c.addEventListener("click", function(e) {
+                        var y, i, k, s, h;
+                        s = this.parentNode.parentNode.getElementsByTagName("select")[0]; //select物件
+                        h = this.parentNode.previousSibling; //顯示被選項目值
+                        for (i = 0; i < s.length; i++) {
+                            if (s.options[i].innerHTML == this.innerHTML) {
+                                s.selectedIndex = i;  //透過被選項目值更改SELECT被選值
+                                $('#'+s.id).change(); //若原SELECT物件有設ONCHANGE時, 執行FUNCTION
+                                h.innerHTML = this.innerHTML;
+                                y = this.parentNode.getElementsByClassName("same-as-selected"); //仿製下拉選單先前被選的項目
+                                for (k = 0; k < y.length; k++) {
+                                    y[k].removeAttribute("class"); //之前被選的OPTION
+                                }
+                                this.setAttribute("class", "same-as-selected");  //新被選的OPTION
+                                break;
+                            }
+                        }
+                        h.click();
+                    });
+                    b.appendChild(c);
+                }
+                x[i].appendChild(b);
+            }
+            a.addEventListener("click", function(e) {
+                e.stopPropagation();
+                closeAllSelect(this);
+                this.nextSibling.classList.toggle("select-hide");
+                this.classList.toggle("select-arrow-active");
+            });
+        }// for
+
+        //特殊處理部份: 專區編輯頁面開始
+        if($('#user_address_id_1st').length>0){
+            addr2_list();	//當頁面載入時先關閉城市選單
+        }
+        //特殊處理部份: 專區編輯頁面結束
+    }
+
+    function closeAllSelect(elmnt) {
+        var x, y, i, arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        for (i = 0; i < y.length; i++) {
+            if (elmnt == y[i]) {
+                arrNo.push(i)
+            } else {
+                y[i].classList.remove("select-arrow-active");
+            }
+        }
+        for (i = 0; i < x.length; i++) {
+            if (arrNo.indexOf(i)) {
+                x[i].classList.add("select-hide");
+            }
+        }
+    }
+
+    document.addEventListener("click", closeAllSelect);
+
+deeplink.setup({
+    iOS: {
+        appId: "<?php echo Core::settings('IOS_APP_ID') ?>",
+        appName: "<?php echo Core::settings('DEEPLINK_APP_NAME') ?>",
+    },
+    android: {
+        appId: "<?php echo Core::settings('ANDROID_APP_URL') ?>",
+    }
+});
+
+$(function(){
+    //判斷HOVER動作
+    addhover();
+
+	//search: on + datalist
+	$('input[name="searchkey"]').on({
+		keypress: function(e) {
+			if (e.which == 13 || e.keyCode == 13) { _search(); }
+		},
+	}).typeahead({
+		afterSelect: function(){ _search(); },
+		autoSelect: false,
+		showHintOnFocus: true,
+		source: function(query, process) {
+			$.post('<?php echo self::url('search')?>', {
+				searchkey: query
+			}, function(r) {
+				process($.parseJSON(r));
+			});
+		},
+	});
+
+    $('#notifier').on('click', function() {
+        $.post('<?php echo self::url('index', 'getNotifications') ?>', {
+            data : 0,
+        }, function(r) {
+            r = $.parseJSON(r);
+            switch (r.result) {
+                case 1:
+                    $('.notifier_icon').hide();
+
+                    $('.noticeWarpper').empty();
+                    for (let [i, v] of r.data.entries()) {
+                        $('.noticeWarpper').append(`<li>
+                            <a href="${v.target_url}">
+                                <div class="notifier_img_c"><img src="${v.trigger_user_pic}" onerror="this.src=\'<?php echo static_file('images/face_sample.png') ?>\'"></div>
+                                <div class="notifier_info">
+                                    <span>${v.message}</span>
+                                    <span><time datetime="${v.time}" class="timeago"></time></span>
+                                </div>
+                            </a>
+                        </li>`);
+                    }
+
+                    $('time.timeago').timeago();
+                    break;
+
+                default:
+                    break;
+            }
+        });
+    });
+
+    // v2
+    $('a.searchtype').on('click', function(){
+        var device = $(this).data('device');
+        $('span.search_type').html($(this).html());
+        $('input#'+device+'_searchkey').data('searchtype' , $(this).data('searchtype'));
+    });
+
+    //MOBILE版搜尋切換
+    $('.mobile_menu i:nth-child(1)').click(function() {
+        $('#mobile_search').addClass("search_box_open");
+        $('#header_top').addClass("header_top_close");
+    });
+
+    //MOBILE版搜尋關閉
+    $('.header_search_close').click(function(evt) {
+        $('#mobile_search').removeClass("search_box_open");
+        $('#header_top').removeClass("header_top_close");
+    });
+
+    $('#notifier_m').click(function(e) {
+        e.stopPropagation();
+        $('#notifier').dropdown('toggle');
+    });
+
+    $('#login_m').click(function(e) {
+        e.stopPropagation();
+        $('#login').dropdown('toggle');
+    });
+
+    //當WIDNWOS RESIZE時, 關閉選單
+    $( window ).resize(function(evt) {
+        addhover();
+    });
+});
+
+//hover動作判斷
+function addhover(){
+    if($( window ).width()> 801){
+        $(".hit_story").addClass('hit_story_hover');
+    }else{
+        $(".hit_story").removeClass('hit_story_hover');
+    }
+}
+
+function _search(device = null) {
+    if(device == null) { device = (isMobile()) ? 'mobile' : 'desktop' ; }
+	var searchtype = $('input#'+device+'_searchkey').data('searchtype');
+
+	switch (searchtype) {
+		case 'album' :
+			var url = '<?php echo self::url('album', 'index' , (!empty($rank_id)) ? ['rank_id'=>$rank_id] : ['rank_id'=>0]  ) ?>';
+		break;
+
+		case 'user' :
+			var url = '<?php echo self::url('creative', 'index',  (!empty($rank_id)) ? ['rank_id'=>$rank_id] : ['rank_id'=>0] ) ?>';
+		break;
+	}
+	
+	<?php
+	switch (M_METHOD) {
+		default:
+			$url = self::url('album', 'index', ['rank_id'=>0]);
+			break;
+			
+		case 'album::index':
+		case 'album::content':
+			$array0 = [];
+			$array0['rank_id'] = $rank_id;
+			if (!empty($categoryarea_id)) $array0['categoryarea_id'] = $categoryarea_id;
+			if (!empty($category_id)) $array0['category_id'] = $category_id;
+			$url = self::url('album', 'index', $array0);
+			break;
+			
+		case 'user::album':
+			$url = self::url('user', 'album', ['sort'=>$sort, 'rank'=>$rank]);
+			break;			
+	}
+	?>
+	var searchkey = $('input#'+device+'_searchkey').val().trim();
+
+	//cookie
+	var search = [], searched = $.cookie('search')? $.parseJSON($.cookie('search')) : [], array = [];
+	if (searchkey !== '') searched.unshift(searchkey);
+	for (var i = 0; i < searched.length; ++i) {
+	    if (array.indexOf(searched[i]) < 0) {
+	  	    array.push(searched[i]);
+	    	search.push(searched[i]);
+	    }
+	}
+	if (search.length > 16) search.pop();
+	$.cookie('search', JSON.stringify(search), {path: '/'});
+	
+	if(encodeURIComponent(searchkey).length == 0) {
+        $('input#'+device+'_searchkey').attr('placeholder', '請輸入搜尋內容');
+    } else {
+        location.href = url + '&searchtype=' + searchtype + '&searchkey=' + encodeURIComponent(searchkey);
+    }
+}
+
+function clickHandler(uri) {
+    deeplink.open(uri);
+
+    return false;
+}
+
+function ios_notice() {
+	var siteModal = new jBox('Modal', {
+		delayOpen: 200,
+		title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="<?php echo static_file('images/info.png')?>">',
+		maxWidth: 600,
+		minWidth: 100,
+	}).setContent('<?php echo _('Coming Soon!')?>').open();
+}
+
+function to_href(){
+   var lang_type = document.getElementById("lang_type");
+    var lang_type_url = lang_type.options[lang_type.selectedIndex].value;
+    location.href = lang_type_url;
+}
+
+</script>

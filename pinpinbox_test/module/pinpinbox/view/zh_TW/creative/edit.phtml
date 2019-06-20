@@ -1,0 +1,795 @@
+<!-- 主要內容區開始 -->
+<div id="content">
+	<!-- 創作人內容編輯資訊區塊開始 -->
+	<div class="creative_content_header">
+		<div class="creative_info_area">
+			<ul class="edit_tab">
+				<li><a href="#tab01"><div class="btn_new"><?php echo _('專區') ?></div></a></li>
+                <li><a href="#tab02"><div class="btn_new"><?php echo _('個人') ?></div></a></li>
+                <li><a href="#tab03"><div class="btn_new"><?php echo _('關於我') ?></div></a></li>
+				<li><a href="javascript:void(0);"><?php echo _('帳號') ?> ： <?php echo $user['account'] ?></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="creative_edit">
+		<!-- 個人區塊開始 -->
+		<div id="tab01" class="tab-inner">
+            <form method="post" class="cmxform" id="userCreativeForm" action="#">
+                <!-- 上方BANNER圖區塊開始  -->
+                <div id="creative_banner">
+                    <div>
+                        <div>
+                            <img id="CreatorCover" src="<?php echo $user['cover'] ?>" onerror="this.src='<?php echo static_file('images/assets-v6/pre-banner.png') ?>'">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span><?php echo _('專區名稱'); ?></span>
+                            <span><input type="text" id="creative_name" name="creative_name" onkeydown="" maxlength="22" placeholder="<?php echo _('請輸入專區名稱(最長22個字)'); ?>" value="<?php echo $user['creative_name'] ?>"></span>
+                        </div>
+                        <div>
+                            <a href="javascript:void(0)" onclick="uploadAvatar('CreatorCover');">
+                                <div class="btn_new btn_main"><?php echo _('上傳背景圖'); ?></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 上方BANNER圖區塊結束  -->
+                <!-- 下方社群圖區塊開始  -->
+                <div id="creative_social">
+                    <div><?php echo _('連結'); ?></div>
+                    <div id="creative_social_link">
+                        <div>
+                            <div><span><img src="<?php echo static_file('images/assets-v7/social_web.png') ?>"></span><span><input name="sociallink_web" id="sociallink_web" type="text" value="<?php echo $user['social_link']['web'] ?>"></span></div>
+                            <div><span><img src="<?php echo static_file('images/assets-v7/social_facebook.png') ?>"></span><span><input name="sociallink_facebook" id="sociallink_facebook" type="text" value="<?php echo $user['social_link']['facebook'] ?>"></span></div>
+                            <div><span><img src="<?php echo static_file('images/assets-v7/social_youtube.png') ?>"></span><span><input name="sociallink_youtube" id="sociallink_youtube" type="text" value="<?php echo $user['social_link']['youtube'] ?>"></span></div>
+                            <div><span><img src="<?php echo static_file('images/assets-v7/social_google.png') ?>"></span><span><input name="sociallink_google" id="sociallink_google" type="text" value="<?php echo $user['social_link']['google'] ?>"></span></div>
+                            <div><span><img src="<?php echo static_file('images/assets-v7/social_pinterest.png') ?>"></span><span><input name="sociallink_pinterest" id="sociallink_pinterest" type="text" value="<?php echo $user['social_link']['pinterest'] ?>"></div>
+                        </div>
+                        <div>
+                            <div><span><img src="<?php echo static_file('images/assets-v7/social_instagram.png') ?>"></span><span><input name="sociallink_instagram" id="sociallink_instagram" type="text" value="<?php echo $user['social_link']['instagram'] ?>"></span></div>
+                            <div><span><img src="<?php echo static_file('images/assets-v7/social_twitter.png') ?>"></span><span><input name="sociallink_twitter" id="sociallink_twitter" type="text" value="<?php echo $user['social_link']['twitter'] ?>"></span></div>
+                            <div><span><img src="<?php echo static_file('images/assets-v7/social_linkedin.png') ?>"></span><span><input name="sociallink_linkedin" id="sociallink_linkedin" type="text" value="<?php echo $user['social_link']['linkedin'] ?>"></span></div>
+                            <div><span><img src="<?php echo static_file('images/assets-v7/social_line.png') ?>"></span><span><input name="sociallink_line" id="sociallink_line" type="text" value="<?php echo $user['social_link']['line'] ?>"></span></div>
+                            <div><span><img src="<?php echo static_file('images/assets-v7/social_blog.png') ?>"></span><span><input name="sociallink_blog" id="sociallink_blog" type="text" value="<?php echo $user['social_link']['blog'] ?>"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="javascript:void(0)" name="buttonSave" onclick="$('#userCreativeFormSubmit').trigger('click')">
+                            <div class="btn_new btn_main"><?php echo _('編輯完成'); ?></div>
+                        </a>
+                        <input type="submit" id="userCreativeFormSubmit" style="display: none;" onclick="userCreativeFormUpdate();">
+                    </div>
+                </div>
+                <!-- 下方社群圖區塊結束  -->
+            </form>
+		</div>
+		<!-- 專區區塊開始 -->
+		<div id="tab02" class="tab-inner">
+            <div id="creative_info">
+                <div id="creative_head_info">
+                    <div id="crea_face">
+                        <img src="<?php echo $user['picture'] ?>" onerror="this.src='<?php echo static_file('images/assets-v7/creative_sample.svg') ?>'">
+                    </div>
+                    <div><div class="btn_new" onclick="uploadAvatar('avatar');"><?php echo _('上傳頭像') ?></div></div>
+                </div>
+                <form method="post" class="cmxform" id="userInfoForm" action="#">
+                    <div id="creative_info_edit">
+                        <div>
+                            <span><?php echo _('暱稱') ?></span>
+                            <span><input type="text" name="user_name" id="user_name" placeholder="<?php echo _('請輸入你的暱稱') ?>" value="<?php echo $user['name'] ?>" maxlength="32"></span>
+                        </div>
+                        <div class="creative_info_email">
+                            <span><?php echo _('信箱'); ?></span>
+                            <span class="sub_desc"><?php echo _('不同於帳號'); ?></span>
+                            <span><input type="text" name="user_email" id="user_email" value="<?php echo $user['email'] ?>" maxlength="32"></span>
+                        </div>
+                        <div class="creative_short">
+                            <span> <?php echo _('個人短網址'); ?> </span>
+                            <span>
+                                <span>www.pinpinbox.com/</span>
+                                <span><input type="text" maxlength="32" placeholder="<?php echo _('個人帳號(英文/數字)'); ?>" name="user_creative_code" id="user_creative_code" value="<?php echo $user['creative_code'] ?>"></span>
+                            </span>
+                        </div>
+                        <div class="flex_column">
+                            <div>
+                                <span> <?php echo _('生日'); ?> </span>
+                                <span class="input-daterange"><input type="text" name="user_birthday" value="<?php echo $user['birthday'] ?>" placeholder="<?php echo _('請輸入生日'); ?>" maxlength="10"></span>
+                            </div>
+                            <div>
+                                <span><?php echo _('性別'); ?></span>
+                                <span class="custom-select">
+                                    <select id="user_gender">
+                                        <option value="none" <?php if($user['gender']=='none') echo 'selected'; ?> ><?php echo _('不透露'); ?></option>
+                                        <option value="female" <?php if($user['gender']=='female') echo 'selected'; ?> ><?php echo _('女性'); ?></option>
+                                        <option value="male" <?php if($user['gender']=='male') echo 'selected'; ?> ><?php echo _('男性'); ?></option>
+                                    </select>
+                                </span>
+
+                            </div>
+                            <div>
+                                <span><?php echo _('婚姻'); ?></span>
+                                <span class="custom-select">
+                                    <select id="user_relationship">
+                                        <option value="none" <?php if($user['relationship']=='none') echo 'selected'; ?> ><?php echo _('不透露'); ?></option>
+                                        <option value="single" <?php if($user['relationship']=='single') echo 'selected'; ?> ><?php echo _('未婚'); ?></option>
+                                        <option value="married" <?php if($user['relationship']=='married') echo 'selected'; ?> ><?php echo _('已婚'); ?></option>
+                                    </select>
+                                </span>
+                            </div>
+                        </div>
+                        <!--  居住地區塊開始  -->
+                        <div class="flex_column">
+                            <div>
+                                <span><?php echo _('居住地'); ?></span>
+                                <span class="custom-select">
+                                    <select id="user_address_id_1st" onchange="addressChange(this.value);">
+                                        <option value="0"><?php echo _('請選擇') ?></option>
+										<?php
+										foreach ($addresses as $address) {
+											$_selected = ($user['address_1st_id'] == $address['address_id']) ? 'selected' : null ;
+											echo '<option value="'.$address['address_id'].'" '.$_selected.'>'.$address['name'].'</option>';
+										}
+										?>
+                                    </select>
+                                </span>
+                            </div>
+                            <div id="address_2nd_menu">
+                                <span></span>
+                                <span class="custom-select">
+                                    <select id="user_address_id_2nd" >
+                                        <option value="0"><?php echo _('請選擇') ?></option>
+										<?php
+										foreach ($addresses[0]['cities'] as $city) {
+											$_selected = ($user['address_2nd_id'] == $city['address_id']) ? 'selected' : null ;
+											echo '<option value="'.$city['address_id'].'" '.$_selected.'>'.$city['name'].'</option>';
+										}
+										?>
+                                    </select>
+                                </span>
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="flex_column">
+                            <!-- hobby -->
+							<?php
+							for ($i = 0 ; $i < 3 ; ++$i) {
+								$hobbyTitle = ($i == 0) ? _('興趣') : null ;
+								$id = (isset($hobby_user[$i]['id'])) ? $hobby_user[$i]['id'] : 0 ;
+
+								echo '<div>
+                                    <span>'.$hobbyTitle.'</span>
+                                    <span class="custom-select" id="custom-select-hobby_'.$i.'">
+                                        <select id="hobby_'.$i.'" onchange="hobbyChange(this.id);">
+                                            <option value="0">'._('--請選擇--').'</option>';
+								foreach ($hobbies as $hobby) {
+									$_selected = ($hobby['hobby_id'] == $id) ? 'selected' : null ;
+									echo '<option value="'.$hobby['hobby_id'].'" '.$_selected.' >'.$hobby['name'].'</option>';
+								}
+								echo '</select>
+                                    </span>
+                                </div>';
+							}
+							?>
+                        </div>
+                    </div>
+                    <input type="submit" style="display: none;" id="userInfoFormSubmit" onclick="userInfoFormUpdate();">
+                </form>
+                <div id="epaper_option">
+                    <div>
+                        <div><?php echo _('留言板'); ?></div>
+                        <div>
+                            <span>
+                                <input id="discuss_open" type="radio" name="discuss" value="open" <?php if($user['discuss'] == 'open') echo 'checked="true"'; ?>>
+                                <label for="discuss_open"><?php echo _('開啟'); ?></label>
+                            </span>
+                            <span>
+                                <input id="discuss_close" type="radio" name="discuss" value="close" <?php if($user['discuss'] == 'close') echo 'checked="true"'; ?>>
+                                <label for="discuss_close"><?php echo _('關閉'); ?></label>
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <div><?php echo _('訂閱電子報'); ?></div>
+                        <div>
+                            <span>
+                                <input id="newsletter_open" type="radio" name="newsletter" value="1" <?php if($user['newsletter']) echo 'checked="true"'; ?>>
+                                <label for="newsletter_open"><?php echo _('開啟'); ?></label>
+                            </span>
+                            <span>
+                                <input id="newsletter_close" type="radio" name="newsletter" value="0" <?php if(!$user['newsletter']) echo 'checked="true"'; ?>>
+                                <label for="newsletter_close"><?php echo _('開啟'); ?></label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn_edit_complete">
+                    <div onclick="$('#userInfoFormSubmit').trigger('click')" class="btn_new btn_main"><?php echo _('編輯完成'); ?></div>
+                </div>
+
+                <!-- 變更手機號碼區塊開始 -->
+                <div id="creative_phone">
+                    <div>
+                        <span><?php echo _('變更手機號碼'); ?></span>
+                        <span class="sub_desc"><?php echo _('當前號碼').' : '. $user['cellphone'] ?></span>
+                    </div>
+                    <div>
+                        <span><?php echo _('要變更為'); ?></span>
+                        <span>
+		                    <span>
+                                <input type="text" id="mobile-number" name="user_cellphone" placeholder="<?php echo _('手機號碼'); ?>" autocomplete="off" maxlength="13">
+                            </span>
+                            <span>
+                                <a href="javascript:void(0)" class="used" id="sendSmsPwdBtn" onclick="send_smspwd()">
+                                    <div class="btn_new btn_main sendSmsPwd"><?php echo _('寄送驗證碼'); ?></div>
+                                </a>
+                            </span>
+		                 </span>
+                    </div>
+                    <div>
+                        <span><?php echo _('輸入驗證碼'); ?></span>
+                        <span>
+                            <input type="text" name="smspassword" placeholder="<?php echo _('請輸入收到的驗證碼'); ?>" maxlength="4">
+                        </span>
+                        <span>
+                            <a href="javascript:void(0)" class="used" onclick="verify_phone()">
+                                <div class="btn_new btn_main"><?php echo _('送出'); ?></div>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <!-- 變更手機號碼區塊結束 -->
+
+                <!-- 變更密碼號碼區塊開始 -->
+                <form method="post" class="cmxform" id="userPasswordForm" action="#">
+                    <div id="creative_password">
+                        <div><span><?php echo _('變更密碼'); ?></span></div>
+                        <div>
+                            <span><?php echo _('當前密碼'); ?></span>
+                            <span><input type="password" name="old_pass" id="old_pass" placeholder="<?php echo _('輸入原密碼'); ?>" maxlength="16"></span>
+                        </div>
+                        <div>
+                            <span><?php echo _('新密碼'); ?></span>
+                            <span class="sub_desc"><?php echo _('最少八位英數字'); ?></span>
+                            <span><input type="password" name="new_pass" id="new_pass" placeholder="輸入新密碼" maxlength="16" ></span>
+                        </div>
+                        <div>
+                            <span><?php echo _('再確認一次新密碼'); ?></span>
+                            <span>
+                                <span><input type="password" name="new_pass_check" id="new_pass_check" placeholder="<?php echo _('再次輸入新密碼'); ?>" maxlength="16" ></span>
+                                <span>
+                                    <a href="javascript:void(0)" onclick="$('#userPasswordFormSubmit').trigger('click');">
+                                        <div class="btn_new btn_main updatePassword"><?php echo _('送出'); ?></div>
+                                    </a>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <input type="submit" style="display: none;" value="submit" id="userPasswordFormSubmit" onclick="userPasswordFormUpdate();">
+                </form>
+                <!-- 變更密碼號碼區塊結束 -->
+            </div><!-- #creative_info -->
+		</div>
+		<!-- 專區區塊結束 -->
+		<!-- 關於我區塊開始 -->
+		<div id="tab03" class="tab-inner">
+            <form method="post" class="cmxform" id="userDescriptionForm" action="#">
+                <div id="creative_aboutme">
+                    <div><?php echo _('關於我'); ?></div>
+                    <div>
+                        <textarea id="user_description" onkeydown="return checkCols();" name="user_description"><?php echo $user['description0'] ?></textarea>
+                    </div>
+                    <div>
+                        <a href="javascript:void(0)" onclick="$('#userDescriptionFormSubmit').trigger('click')" >
+                            <div class="btn_new btn_main"><?php echo _('編輯完成'); ?></div>
+                        </a>
+                        <input type="submit" id="userDescriptionFormSubmit" style="display: none;" onclick="userDescriptionFormUpdate();">
+                    </div>
+                </div>
+            </form>
+		</div>
+		<!-- 關於我區塊結束 -->
+	</div>
+	<!-- 創作人內容編輯資訊區塊結束 -->
+    <div id="btn_back_creative_area" class="btn_back_creative_area">
+        <a href="<?php echo self::url('creative', 'content', ['user_id'=> $user['user_id']]) ?>"><div class="btn_new btn_back_creative">返回創作人專區</div></a>
+    </div>
+
+</div>
+<!-- 主要內容區結束 -->
+<script>
+    $(document).ready(function () {
+        // 專區編輯表頭 tab 切換
+        if($('.edit_tab').length > 0){
+            var $li = $('ul.edit_tab li:nth-child(-n+3)');
+            $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
+            if($( window ).width()< 800){
+                $('#tab03[class="tab-inner"]').hide();
+            }else{
+                $('#tab03[class="tab-inner"]').show();
+            }
+            $li.click(function(){
+                $($(this).find('a').attr('href')).show().siblings('.tab-inner').hide();
+                $(this).addClass('active').siblings('.active').removeClass('active');
+                if($( window ).width()> 801){
+                    if($(this).find('a').attr('href') == '#tab01'){
+                        $('#tab03[class="tab-inner"]').show();
+                    }
+                }
+            });
+        }
+
+        // 選取生日日期
+        $('.input-daterange').datepicker({
+            startDate: "-80y",
+            endDate: "",
+            format: "yyyy-mm-dd",
+            clearBtn: true,
+            startView: "decade",
+            language: "zh-TW",
+            todayHighlight: true,
+        });
+        // 電話國碼
+        $("#mobile-number").intlTelInput({defaultCountry: 'auto'});
+        // 關於我編輯區塊
+        if ($('#user_description').length > 0) {
+            CKEDITOR.replace('user_description', {
+                filebrowserUploadUrl: 'https://www.pinpinbox.com/index/upload/ckeditor/?class=creative',
+                filebrowserImageUploadUrl: 'https://www.pinpinbox.com/index/upload/ckeditor/?class=creative',
+                filebrowserFlashUploadUrl: 'https://www.pinpinbox.com/index/upload/ckeditor/?class=creative',
+                toolbar: 'Full',
+                width: '100%',
+                height: '400px'
+            });
+        }
+
+        // 初始化各個下拉選單內容
+        custom_select();
+        hobbyChange();
+        addressChange(<?php echo $user['address_1st_id'] ?>);
+
+        $('body #footer').addClass('hide');
+    });
+
+    // 重整地址選單
+    function addressChange(value) {
+        if(value != 1) {
+            $('#user_address_id_2nd').val(0);
+            $('#address_2nd_menu div.select-items div:first').click();
+            $('#address_2nd_menu div.select-selected').css('cursor', 'not-allowed');
+            $('#address_2nd_menu div.select-items div').not('.same-as-selected').hide();
+        } else {
+            $('#address_2nd_menu div.select-selected').css('cursor', 'pointer');
+            $('#address_2nd_menu div.select-items div').not('.same-as-selected').show();
+        }
+    }
+
+    // 重整興趣選單
+    function hobbyChange() {
+        var _selectValue = [], unSelected = 0;
+        for (var i = 0 ; i < 3 ; i ++) {
+            _selectValue.push(parseInt($('#hobby_'+i).val()));
+            if (parseInt($('#hobby_'+i).val()) == 0) unSelected++;
+        }
+
+        for (var i = 0 ; i < 3 ; i ++) {
+            $('#custom-select-hobby_'+i+' div.select-items div').each(function(k, v) {
+                (_selectValue.includes($(v).data('value'))) ? $(v).hide() : $(v).show() ;
+                if ($(v).data('value') == 0  && unSelected < 2) $(v).show();
+            });
+        }
+    }
+
+    // 修改手機號碼-Step1. 驗證碼
+    function send_smspwd() {
+        var user_cellphone = $('input[name="user_cellphone"]').val();
+        if(user_cellphone.length == 0 ) {
+            _jBox({message : '請填寫電話號碼'}, 'error');
+        } else {
+            $.post('<?php echo self::url('creative', 'settings_phone') ?>' , {
+                cellphone : user_cellphone,
+                usefor : 'sms_send',
+            }, function(r) {
+                r = $.parseJSON(r);
+                switch(r.result) {
+                    case 1 :
+                        _jBox(r, 'success');
+                        resetBtn();
+                        break;
+                    default :
+                        _jBox(r, 'error');
+                        break;
+                }
+            });
+        }
+    }
+
+    // 防止重複操作
+    function resetBtn() {
+        var fiveSeconds = new Date().getTime() + 30000 ;
+        $('#sendSmsPwdBtn').attr('onclick', '');
+        $('.sendSmsPwd').countdown(fiveSeconds, function(event) {
+            $(this).html('請等待 ' + event.strftime('%S') + ' 秒');
+        }).on('finish.countdown', function(event) {
+            $(this).html('<?php echo _('寄送驗證碼') ?>');
+            $('#sendSmsPwdBtn').attr('onclick', 'send_smspwd();');
+        });
+    }
+
+    // 修改手機號碼-Step2. 送出修改
+    function verify_phone() {
+        $.post('<?php echo self::url('creative', 'settings_phone') ?>' , {
+            cellphone: $('input[name="user_cellphone"]').val(),
+            smspassword: $('input[name="smspassword"]').val(),
+            usefor : 'editcellphone',
+        }, function(r) {
+            r = $.parseJSON(r);
+            switch(r.result) {
+                case 1 :
+                    _jBox(r, 'success');
+                    break;
+
+                default :
+                    _jBox(r, 'error');
+                    break;
+            }
+        });
+    }
+
+    // 上傳圖片視窗
+    function uploadAvatar(uploadType) {
+        var uploadAvatarHtml = `<div id="creative_head_img_upload">
+        <div class="demo-wrap upload-demo">
+            <div class="container">
+                <div class="grid">
+                    <div class="col-1-2" style="display:none;">
+                        <div class="actions">
+                            <a class="btn file-btn">
+                                <input type="file" id="uploadCroppie" value="Choose a file" accept="image/*" />
+                            </a>
+                            <button class="upload-result">Result</button>
+                        </div>
+                    </div>
+                    <div class="col-1-2">
+                        <div class="upload-msg"></div>
+                        <div class="upload-demo-wrap">
+                            <div id="upload-demo"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="uploadCroppieBtnGroup">
+                <a class="uploadCroppieBtn" id="reUploadCroppiie" href="javascript:void(0)"><div class="btn_new">` + "上傳檔案" + `</div></a>
+                <a class="uploadCroppieBtn uploadCroppieSave" id="saveCroppiie" href="javascript:void(0)"><div class="btn_new btn_main">` + "編輯完成" + `</div></a>
+            </div>
+        </div>`;
+
+        //加入DIV與BTN樣式
+        if (uploadType == 'avatar') {
+            jBoxtitle = '變更個人頭像';
+            jBoxWidth = 380;
+            jBoxHeight = 450; //改短一點
+        } else {
+            jBoxtitle = '專區背景圖片';
+            jBoxWidth = 1000;
+            jBoxHeight = 560; //改短一點
+        }
+
+        uploadView = new jBox('Modal', {
+            width: jBoxWidth,
+            height: jBoxHeight,
+            title: jBoxtitle,
+            closeButton: 'title',
+            content: uploadAvatarHtml,
+            id: 'uploadViewJbox',
+            onOpen: function () {
+                CroppieUpload(uploadType);
+                $('.container').css('width', '100%');
+                $('img.cr-image').attr('src', '<?php echo static_file('images/white_search.png') ?>');
+                $('#uploadCroppie').trigger('click');
+
+                $('#saveCroppiie').on('click', function () {
+                    $('button.upload-result').trigger('click');
+                });
+
+                $('#reUploadCroppiie').on('click', function () {
+                    $('#uploadCroppie').trigger('click');
+                })
+            },
+            onCloseComplete: function () {
+                this.destroy();
+            }
+        }).open();
+    };
+
+    // 初始化截圖
+    function CroppieUpload(uploadType) {
+        var $uploadCrop;
+
+        if (uploadType == 'avatar') {
+            croppieViewportWidth = croppieViewportHeight = 200;
+            croppieBoundaryWidth = croppieBoundaryHeight = 300;
+            resultSize = 'viewport';
+        } else {
+            croppieViewportWidth = 480;
+            croppieViewportHeight = 225;
+            croppieBoundaryWidth = '100%';
+            croppieBoundaryHeight = 400;
+            resultSize = {'width': 960, 'height': 450,};
+        }
+
+        function readFile(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.upload-demo').addClass('ready');
+                    $uploadCrop.croppie('bind', {
+                        url: e.target.result
+                    }).then(function () {
+                        console.log('jQuery bind complete');
+                    });
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+            else {
+                console.log("Sorry - you're browser doesn't support the FileReader API");
+            }
+        }
+
+        $uploadCrop = $('#upload-demo').croppie({
+            enableExif: true,
+            viewport: {
+                width: croppieViewportWidth,
+                height: croppieViewportHeight,
+                type: 'square'
+            },
+            boundary: {
+                width: croppieBoundaryWidth,
+                height: croppieBoundaryHeight,
+            },
+        });
+
+        $('#uploadCroppie').on('change', function () {
+            readFile(this);
+        });
+
+        $('.upload-result').on('click', function (ev) {
+            $uploadCrop.croppie('result', {
+                format: 'jpeg',
+                size: resultSize,
+                type: 'canvas'
+            }).then(function (resp) {
+                $.post('<?php echo self::url('creative', 'croppie') ;?>', {
+                    data: resp,
+                    uploadType: uploadType,
+                }, function (r) {
+                    r = $.parseJSON(r);
+                    switch (r.result) {
+                        case 1:
+                            if (uploadType == 'avatar') {
+                                $('#crea_face>img, a#login>img').attr('src', resp);
+                            } else {
+                                $('img#CreatorCover').attr('src', resp);
+                            }
+                            break;
+
+                        default :
+                            site_jBox(r, 'error');
+                            break;
+                    }
+                });
+                uploadView.close();
+            });
+        });
+    }
+
+    // 驗證及送出編輯資訊
+    function userInfoFormUpdate() {
+
+        $('#userInfoForm').validate({
+            rules: {
+                user_name: {
+                    required : true,
+                    maxlength : 32,
+                },
+                user_email : {
+                    required : true,
+                    email :true,
+                    maxlength : 32,
+                },
+                user_creative_code : {
+                    maxlength : 32,
+                }
+            },
+            submitHandler : function(form) {
+                var data = {
+                    name : $('input[name="user_name"]').val(),
+                    email : $('input[name="user_email"]').val(),
+                    creative_code : $('input[name="user_creative_code"]').val(),
+                    birthday : $('input[name="user_birthday"]').val(),
+                    gender : $('#user_gender').val(),
+                    relationship : $('#user_relationship').val(),
+                    address_id_1st : $('#user_address_id_1st').val(),
+                    address_id_2nd : $('#user_address_id_2nd').val(),
+                    hobby_0 : $('select#hobby_0').val(),
+                    hobby_1 : $('select#hobby_1').val(),
+                    hobby_2 : $('select#hobby_2').val(),
+                    discuss : $('input[name="discuss"]:checked').val(),
+                    newsletter : $('input[name="newsletter"]:checked').val(),
+                };
+
+                $.post('<?php echo self::url('creative', 'update') ;?>', {
+                    data: data,
+                }, function (r) {
+                    r = $.parseJSON(r);
+                    switch (r.result) {
+                        case 1:
+                            _jBox(r, 'success');
+                            break;
+
+                        default :
+                            _jBox(r, 'error');
+                            break;
+                    }
+                });
+            },
+            success: function(error){},
+        });
+
+    }
+
+    // 驗證及送出修改密碼
+    function userPasswordFormUpdate() {
+        $("#userPasswordForm").validate({
+            rules: {
+                old_pass: {
+                    required: true,
+                    rangelength: [8, 16]
+                },
+                new_pass: {
+                    required: true,
+                    rangelength: [8, 16]
+                },
+                new_pass_check: {
+                    required: true,
+                    rangelength: [8, 16],
+                    equalTo:"#new_pass"
+                },
+            },
+            messages : {
+                new_pass_check : {
+                    equalTo : '密碼輸入不一致，請重新輸入',
+                }
+            },
+            submitHandler : function(form) {
+                var data = {
+                    old_pass : $('#old_pass').val(),
+                    new_pass : $('#new_pass').val(),
+                };
+
+                $.post('<?php echo self::url('creative', 'updatePassword') ;?>', {
+                    data: data,
+                }, function (r) {
+                    r = $.parseJSON(r);
+                    switch (r.result) {
+                        case 1:
+                            _jBox(r, 'success');
+                            break;
+
+                        default :
+                            _jBox(r, 'error');
+                            break;
+                    }
+                });
+            },
+            success: function(error){},
+        });
+    }
+
+    // 驗證及送出社群網站連結
+    function userCreativeFormUpdate() {
+        $("#userCreativeForm").validate({
+            rules: {
+                sociallink_web: { url: true, },
+                sociallink_facebook: { url: true, },
+                sociallink_youtube: { url: true, },
+                sociallink_google: { url: true, },
+                sociallink_pinterest: { url: true, },
+                sociallink_instagram: { url: true, },
+                sociallink_twitter: { url: true, },
+                sociallink_linkedin: { url: true, },
+                sociallink_line: { url: true, },
+                sociallink_blog: { url: true, },
+            },
+            messages : {},
+            submitHandler : function(form) {
+                var data = {
+                    "blog" : $('#sociallink_blog').val(),
+                    "facebook" : $('#sociallink_facebook').val(),
+                    "google" : $('#sociallink_google').val(),
+                    "instagram" : $('#sociallink_instagram').val(),
+                    "line" : $('#sociallink_line').val(),
+                    "youtube" : $('#sociallink_youtube').val(),
+                    "web" : $('#sociallink_web').val(),
+                    "pinterest" : $('#sociallink_pinterest').val(),
+                    "twitter" : $('#sociallink_twitter').val(),
+                    "linkedin" : $('#sociallink_linkedin').val(),
+                },
+                    creative_name = $('#creative_name').val();
+
+                $.post('<?php echo self::url('creative', 'updateCreative') ;?>', {
+                    data: JSON.stringify(data),
+                    creative_name : creative_name,
+                }, function (r) {
+                    r = $.parseJSON(r);
+                    switch (r.result) {
+                        case 1:
+                            _jBox(r, 'success');
+                            break;
+
+                        default :
+                            _jBox(r, 'error');
+                            break;
+                    }
+                });
+            },
+            success: function(error) {},
+        });
+    }
+
+    // 更新關於我內容
+    function userDescriptionFormUpdate() {
+        $("#userDescriptionForm").validate({
+            rules: {},
+            messages : {},
+            submitHandler : function(form) {
+                $.post('<?php echo self::url('creative', 'updateDescription') ;?>', {
+                    user_description: CKEDITOR.instances['user_description'].getData(),
+                }, function (r) {
+                    r = $.parseJSON(r);
+                    switch (r.result) {
+                        case 1:
+                            _jBox(r, 'success');
+                            break;
+
+                        default :
+                            _jBox(r, 'error');
+                            break;
+                    }
+                });
+            },
+            success: function(error){},
+        });
+    }
+
+    $( window ).resize(function(evt) {
+       //若小版的關於我是打開的
+       if($( window ).width()> 801){
+           if($('ul.edit_tab li:nth-child(3)[class="active"]').length>0){
+               $li.eq(1).click();
+           }
+       }else{
+           if($('ul.edit_tab li:nth-child(2)[class="active"]').length>0){
+               $li.eq(1).click();
+           }
+       }
+   });
+
+    //依居住地顯示城市選項清單
+    function addr2_list(){
+        if($('#user_address_id_1st').prop('selectedIndex')=='1'){ //台灣
+            $('#user_address_id_2nd ~ .select-items > div').css('display','block');
+            $('#user_address_id_2nd ~ .select-items > div:first-child').css('margin-bottom','16px');
+        }else{
+            $('#user_address_id_2nd').prop('selectedIndex',0); //城市歸0;
+            $('#user_address_id_2nd ~ .select-selected').html('請選擇');
+            $('#user_address_id_2nd ~ .select-items > div:not(:first-child)').css('display','none');
+            $('#user_address_id_2nd ~ .select-items > div:first-child').css('margin-bottom','0');
+        }
+    }
+</script>

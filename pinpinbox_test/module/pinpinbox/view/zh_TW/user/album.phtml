@@ -1,0 +1,148 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+	<h2><?php echo _('Member Center'); ?></h2>
+	<ul>
+		<?php 
+			$active1 = $active2 = null;
+			if ($rank == 1){$active1 = 'class="active"';}else{$active2 = 'class="active"';}
+		?>
+		<li class="mobile_open04">
+			<a href="<?php echo self::url('user', 'album', array('rank'=>1)); ?>" <?php if($rank ==1) echo 'class="active"'; ?> ><?php echo _('我上傳的作品'); ?></a>
+			<a href="<?php echo self::url('user', 'album', array('rank'=>2)); ?>" <?php if($rank ==2) echo 'class="active"'; ?> ><?php echo _('其他收藏'); ?></a>
+			<a href="<?php echo self::url('user', 'album', array('rank'=>3)); ?>" <?php if($rank ==3) echo 'class="active"'; ?> ><?php echo _('共用收藏'); ?></a>
+			<div class="item_info">
+				<p <?php if($rank ==1) echo 'class="active"'?>><?php echo _('我上傳的作品').'&nbsp;'.$info['my_albums'] ?></p>
+				<p <?php if($rank ==2) echo 'class="active"'?>><?php echo _('其他收藏').'&nbsp;'.$info['my_collect'] ?></p>
+				<p <?php if($rank ==3) echo 'class="active"'?>><?php echo _('共用收藏').'&nbsp;'.$info['my_cooperation'] ?></p>	
+			</div>
+		</li>
+		<li>
+			<?php include ('member_nav.phtml') ;?>
+			<div id="memberbox_item">
+				<div id="album_tab">
+					<?php 
+						$active1 = $active2 = $background_pen_img = null;
+						if ($rank == 1){$active1 = 'class="active"';}else{$active2 = 'class="active"'; $background_pen_img = 'style="background-image:url()"'; }
+					?>
+					<h3><?php echo _('My Album') ?></h3>
+					<div class="member_sort">
+						<select id="sort">
+							<?php 
+							if ($_GET['sort'] == 2) {
+								echo '<option value="1">'._('New-Old').'</option>';
+								echo '<option selected value="2">'._('Old-New').'</option>';
+							} else {
+								echo '<option selected value="1">'._('New-Old').'</option>';
+								echo '<option value="2">'._('Old-New').'</option>';
+							}
+							?>
+						</select>
+					</div>
+					<div>
+						<div class="album_search">
+							<div class="search_box">
+								<div class="select_item">								
+									<select id="searchtype_pc" name="searchtype">
+										<option value="album"><?php echo _('Albums')?></option>
+									</select>	
+								</div>
+								<input type="text" id="searchkey_content_pc" name="content_searchkey" value="<?php echo $searchkey?>" class="search_input" placeholder="請輸入關鍵字">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="album_info">
+					<ul>
+						<li>
+							<a href="<?php echo self::url('user', 'album', ['rank'=>1]); ?>"><p class="title <?php if($rank == 1) echo 'active'; ?>"><?php echo _('我上傳的作品'); ?></p></a><p><?php echo $info['my_albums']; ?>本</p>
+						</li>
+						<li>
+							<a href="<?php echo self::url('user', 'album', ['rank'=>2]); ?>"><p class="title <?php if($rank == 2) echo 'active'; ?>"><?php echo _('其他收藏'); ?></p></a><p><?php echo $info['my_collect']; ?>本</p>
+						</li>
+						<li>
+							<a href="<?php echo self::url('user', 'album', ['rank'=>3]); ?>"><p class="title <?php if($rank == 3) echo 'active'; ?>"><?php echo _('共用收藏'); ?></p></a><p><?php echo $info['my_cooperation']; ?>本</p>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="water_content" id="freewall">
+					<?php 
+						if (!empty($album)) {
+							foreach ($album as $k => $v) {
+								echo '<div class="item_box" style="opacity:0;">
+									<a href="'.$v['album']['cover_url'].'"><img src="'.$v['album']['cover'].'" height="330" width="220" onerror="this.src=\''.static_file('images/origin.jpg').'\'"></a>
+								<div class="item_info">
+									<div class="info_name">
+										'.$v['collect'].'
+										<h3 class="long"> <a href="'.$v['album']['name_url'].'">'.$v['album']['name'].'</a></h3>
+										<div class="name_more">'.$v['album']['description'].'</div>
+									</div>
+									<a href="'.$v['user']['url'].'">
+										<div class="info_user">
+											'.$v['cooperation'].'
+											<div class="user_face"><img src="'.$v['user']['picture'].'" onerror="this.src=\''.static_file('images/face_sample.svg').'\'" height="101" width="101"></div>
+											<div class="user_name">
+												<p class="name_id">'.$v['user']['name'].'</p>
+												<p><i class="fa fa-eye"></i>'.$v['album']['viewed'].'</p>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>';
+							}
+						}
+					?>
+					<?php if (!empty($more)) echo '<div style="display:none;" class="more"><a href="'.$more.'"></a></div>' ; ?>
+
+				</div>
+				<div style="display:none;" class="end"><p>End</p></div>
+			</div>
+		</li>
+	</ul>
+</div>
+<script>
+var $container = $('.water_content');
+$(function(){
+	$container.imagesLoaded(function(){
+		$container.masonry({
+			itemSelector: '.item_box',
+			columnWidth: '.item_box',
+			gutter: 10,
+		});
+		$('div.item_box').animate({ opacity: 1 });
+	});
+	
+	$container.infinitescroll({
+		navSelector  : '.more',
+		nextSelector : '.more a',
+		itemSelector : '.item_box',
+		pathParse: function (path, nextPage) {
+			var customPath = path + "&page=";
+			path = [customPath, ''];
+			return path;
+		},
+		//If no more content, response here
+		errorCallback: function() {$('div.end').css('display', 'block')},
+	},function( newElements ) {
+		var $newElems = $( newElements ).css({ opacity: 0 });
+		
+		$newElems.imagesLoaded(function(){
+			$newElems.animate({ opacity: 1 });
+			$container.masonry( 'appended', $newElems, true );
+		});
+		$(".name_more").each(function(i) {if ($(this).text().length > 60) {$(this).text($(this).text().slice(0, 60)+'...');}});
+	}); 	
+	$(".name_more").each(function(i) {if ($(this).text().length > 60) {$(this).text($(this).text().slice(0, 60)+'...');}});
+	
+	/* 本頁search*/
+	$('input[name="content_searchkey"]').on('keypress', function(e) {
+		if (e.which == 13 || e.keyCode == 13) {
+			location.href = '<?php echo self::url('user', 'album')?>?sort=' + $('#sort').val() + '&rank=<?php echo $rank?>&searchtype=' + $('select[name="searchtype"]').val() + '&searchkey=' + encodeURIComponent($('input#searchkey_content_pc').val());
+		};
+	});
+}); 
+
+$('#sort').on('change', function(){
+	location.href = '<?php echo self::url('user', 'album')?>?sort=' + $(this).val() + '&rank=<?php echo $rank?>&searchtype=' + $('select[name="searchtype"]').val() + '&searchkey=' + encodeURIComponent($('input#searchkey_content_pc').val());
+});
+</script>

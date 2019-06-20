@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px"
+	 height="40.001px" viewBox="0 0 40 40.001" enable-background="new 0 0 40 40.001" xml:space="preserve">
+<g id="地球">
+	<path fill="#8DE1F7" d="M20,0C8.954,0,0,8.955,0,20.001c0,11.045,8.954,20,20,20c11.045,0,20-8.955,20-20C40,8.955,31.045,0,20,0z"
+		/>
+	<g>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M26.229,13.355h4.951
+			c-2.156-3.618-6.008-6.094-10.464-6.336C21.251,7.275,24.432,8.955,26.229,13.355z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M20,13.355V20h7.464
+			c-0.02-2.705-0.519-4.89-1.236-6.645H20z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M13.862,13.355H20V6.983
+			c-0.208,0-0.409,0.021-0.614,0.031C18.89,7.249,15.673,8.918,13.862,13.355z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M26.229,13.355
+			c-1.797-4.4-4.977-6.08-5.514-6.336C20.477,7.006,20.241,6.983,20,6.983v6.373H26.229z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M20,13.355h-6.139
+			c-0.717,1.755-1.215,3.939-1.235,6.645H20V13.355z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M12.626,20
+			c-0.017,2.346,0.342,4.298,0.901,5.921H20V20H12.626z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M20,25.921h6.563
+			c0.559-1.623,0.918-3.575,0.901-5.921H20V25.921z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M27.464,20h5.554
+			c0-2.431-0.679-4.697-1.839-6.645h-4.951C26.945,15.11,27.444,17.295,27.464,20z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M13.527,25.921
+			c1.755,5.097,5.495,6.891,5.889,7.069c0.195,0.009,0.386,0.028,0.584,0.028v-7.098H13.527z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M19.387,7.014
+			c-4.5,0.21-8.394,2.696-10.566,6.342h5.041C15.673,8.918,18.89,7.249,19.387,7.014z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M20.686,32.984
+			c4.762-0.248,8.841-3.046,10.898-7.063h-5.021C24.823,30.974,21.131,32.783,20.686,32.984z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M27.464,20
+			c0.017,2.346-0.343,4.298-0.901,5.921h5.021c0.911-1.778,1.435-3.786,1.435-5.921H27.464z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M26.563,25.921H20v7.098
+			c0.231,0,0.457-0.022,0.686-0.034C21.131,32.783,24.823,30.974,26.563,25.921z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M13.862,13.355H8.821
+			C7.661,15.303,6.982,17.569,6.982,20h5.644C12.646,17.295,13.145,15.11,13.862,13.355z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M13.527,25.921H8.416
+			c2.072,4.046,6.194,6.855,11,7.069C19.022,32.812,15.283,31.018,13.527,25.921z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M12.626,20H6.982
+			c0,2.135,0.523,4.143,1.434,5.921h5.111C12.969,24.298,12.609,22.346,12.626,20z"/>
+	</g>
+</g>
+<g id="地球_copy" display="none">
+	<path fill="#8DE1F7" d="M20,0C8.954,0,0,8.955,0,20.001c0,11.045,8.954,20,20,20c11.045,0,20-8.955,20-20C40,8.955,31.045,0,20,0z"
+		/>
+	<g>
+		<path display="inline" fill="#FFFFFF" d="M33.041,21.298c0,1.56-1.275,2.835-2.834,2.835H9.793c-1.559,0-2.834-1.275-2.834-2.835
+			v-2.846c0-1.559,1.275-2.834,2.834-2.834h20.413c1.559,0,2.834,1.275,2.834,2.834V21.298z"/>
+	</g>
+	<g>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M26.229,14.355h4.951
+			c-2.156-3.618-6.008-6.094-10.464-6.336C21.251,8.275,24.432,9.955,26.229,14.355z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M20,14.355V21h7.464
+			c-0.02-2.705-0.519-4.89-1.236-6.645H20z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M13.862,14.355H20V7.983
+			c-0.208,0-0.409,0.021-0.614,0.031C18.89,8.249,15.673,9.918,13.862,14.355z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M26.229,14.355
+			c-1.797-4.4-4.977-6.08-5.514-6.336C20.477,8.006,20.241,7.983,20,7.983v6.373H26.229z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M20,14.355h-6.139
+			c-0.717,1.755-1.215,3.939-1.235,6.645H20V14.355z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M12.626,21
+			c-0.017,2.346,0.342,4.298,0.901,5.921H20V21H12.626z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M20,26.921h6.563
+			c0.559-1.623,0.918-3.575,0.901-5.921H20V26.921z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M27.464,21h5.554
+			c0-2.431-0.679-4.697-1.839-6.645h-4.951C26.945,16.11,27.444,18.295,27.464,21z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M13.527,26.921
+			c1.755,5.097,5.495,6.891,5.889,7.069c0.195,0.009,0.386,0.028,0.584,0.028v-7.098H13.527z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M19.387,8.014
+			c-4.5,0.21-8.394,2.696-10.566,6.342h5.041C15.673,9.918,18.89,8.249,19.387,8.014z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M20.686,33.984
+			c4.762-0.248,8.841-3.046,10.898-7.063h-5.021C24.823,31.974,21.131,33.783,20.686,33.984z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M27.464,21
+			c0.017,2.346-0.343,4.298-0.901,5.921h5.021c0.911-1.778,1.435-3.786,1.435-5.921H27.464z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M26.563,26.921H20v7.098
+			c0.231,0,0.457-0.022,0.686-0.034C21.131,33.783,24.823,31.974,26.563,26.921z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M13.862,14.355H8.821
+			C7.661,16.303,6.982,18.569,6.982,21h5.644C12.646,18.295,13.145,16.11,13.862,14.355z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M13.527,26.921H8.416
+			c2.072,4.046,6.194,6.855,11,7.069C19.022,33.812,15.283,32.018,13.527,26.921z"/>
+		<path display="inline" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" d="M12.626,21H6.982
+			c0,2.135,0.523,4.143,1.434,5.921h5.111C12.969,25.298,12.609,23.346,12.626,21z"/>
+	</g>
+	<g display="inline">
+		<circle fill="none" stroke="#8DE1F7" stroke-miterlimit="10" cx="27.465" cy="19.69" r="2.187"/>
+		<path fill="none" stroke="#8DE1F7" stroke-miterlimit="10" d="M21.408,19.69c0,0,4.973,5.75,12.113,0"/>
+		<path fill="none" stroke="#8DE1F7" stroke-miterlimit="10" d="M22.58,19.636c0,0,4.011-4.637,9.77,0"/>
+	</g>
+</g>
+<g id="Layer_3">
+	
+		<text transform="matrix(1.0276 0 0 1 7.8408 23.1055)" display="none" fill="#18A2B6" font-family="'SourceHanSansSC-Bold-GBpc-EUC-H'" font-size="8.1603">NEWS</text>
+</g>
+<g id="麥克風1_copy_4">
+</g>
+</svg>

@@ -1,0 +1,50 @@
+<?php echo $index?>
+<script>
+$(function(){
+    $('#grid').kendoGrid({
+    	columns: [
+			{field: '<?php echo M_CLASS?>_id', attributes: {'class': 'string'}},
+			{field: 'name', attributes: {'class': 'string'}},
+			{field: 'currency', attributes: {'class': 'enums'}},
+			{field: 'act', attributes: {'class': 'enums act-#:act#'}},
+			{field: 'modifytime', attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+		],
+		dataBinding: function(e) {},
+		dataBound: function(e) {},
+        dataSource: new kendo.data.DataSource({
+    		page: 1,
+    		pageSize: gridpageSize,
+    		serverPaging: true,
+    		serverSorting: true,
+    		serverFiltering: true,
+    		transport: {
+    			read: {
+    				dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+    				type: 'POST',
+    				url: '<?php echo self::url(M_CLASS, 'json')?>',
+    			}
+    		},
+    		schema: {
+    			data: function(r){return r.data;},
+    			total: function(r){return r.total;}
+    		},
+    		sort: {field: 'modifytime', dir: 'desc'}
+    	}),
+        filterable: true,
+        height: gridheight,
+        pageable: {
+            refresh: true,
+            input: true,
+            pageSize: gridpageSize,
+            pageSizes: gridpageSizes,
+        },
+        reorderable: true,
+        resizable: true,
+        selectable: true,
+        sortable: true,
+		toolbar: [
+		  	{template: '<a class="k-button" onclick="grid_toolbar_add(\'\\#grid\', \'<?php echo self::url(M_CLASS, 'form', array('act'=>'add'))?>\')"><span class="k-icon k-i-plus"></span></a><a class="k-button" onclick="grid_toolbar_edit(\'\\#grid\', \'<?php echo self::url(M_CLASS, 'form', array('act'=>'edit'))?>\', [\'<?php echo M_CLASS?>_id\'])"><span class="k-icon k-i-pencil"></span></a>'},
+		],
+    });
+});
+</script>

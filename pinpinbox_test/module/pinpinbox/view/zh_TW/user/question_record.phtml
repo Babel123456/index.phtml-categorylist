@@ -1,0 +1,89 @@
+<div id="album_content">
+	<h2><?php echo _('Member Center'); ?></h2>
+		<ul>
+			<li class="mobiledisplay"><h3><?php echo _('Fees'); ?></h3></li>
+			<li class="mobiledisplay"><div class="line"></div></li>
+			<li class="mobile_open02">
+				<a href="<?php echo self::url('user', 'question') ?>"><?php echo _('Feedback system'); ?></a>	
+				<a href="<?php echo self::url('user', 'question_record')?>" class="active" ><?php echo _('Feedback records'); ?></a>	
+			</li>
+			<li>
+				<?php include ('member_nav.phtml');?>
+				<div id="memberbox_item">
+					<div id="album_tab">
+						<h3><?php echo _('Feedback records'); ?></h3>
+					</div>
+					<div class="album_info">
+						<ul>
+							<li>
+								<a href="<?php echo self::url('user', 'question_record') ?>"><p class="title active"><?php echo _('Feedback records'); ?></p></a>
+							</li>
+							<li>
+								<a href="<?php echo self::url('user', 'question') ?>"><p class="title"><?php echo _('Feedback system'); ?></p></a>
+							</li>
+						</ul>
+					</div>							
+					<div class="album_all">
+						<div id="table_box">
+						   <table class="footable quest" data-page-size="10">
+								<thead>
+									<tr>
+										<th>
+											<?php echo _('Feedback date'); ?>
+										</th>
+										<th data-hide="phone">
+											<?php echo _('Case number'); ?>
+										</th>
+										<th>
+											<?php echo _('Feedback type'); ?>
+										</th>
+										<th data-hide="phone">
+											<?php echo _('Content'); ?>
+										</th>
+										<th data-hide="all">
+											<?php echo _('Content'); ?>
+										</th>
+										<th data-hide="all">
+											<?php echo _('Reply'); ?>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+										foreach($question_list as $k => $v){
+											echo '<tr>
+													<td>'.$v['inserttime'].'</td>
+													<td>'.$v['question_user_id'].'</td>
+													<td>'.$v['name'].'</td>
+													<td>'.mb_substr($v['content'],0,18,'utf-8').'...</td>
+													<td >
+														<span class="bold">'.$v['content'].'</span>
+													</td>
+													<td>
+														<span class="bold">'.$v['answer'].'</span><br>
+														'.$v['modifytime'].'
+													</td>
+												  </tr>';
+										}
+									?>								
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="5">
+											<div class="pagination pagination-centered "></div>
+										</td>
+									</tr>
+								</tfoot>					               
+							</table>								
+						</div>
+
+					</div>
+				</div>					
+			</li>
+		</ul>
+	</div>
+<script type="text/javascript">
+	$(function () {
+		$('.footable').footable();
+	});
+</script>		

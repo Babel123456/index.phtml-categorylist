@@ -1,0 +1,42 @@
+<?php
+$active0 = in_array(M_METHOD, ['index::index', 'index::userregistration'])? 'active' : null;
+$style0 = $active0? 'style="display: block;"' : null;
+$active1 = in_array(M_METHOD, ['index::searchstructure'])? 'active' : null;
+$style1 = $active1? 'style="display: block;"' : null;
+?>
+<div class="nav">
+	<ul>
+		<li onclick="$(this).next('ul').toggle(300, 'swing').end().find('.indicator').toggleClass('active');">
+			<div class="text text-level-0"><?php echo _('User')?><span class="indicator <?php echo $active0?>"></span></div>
+		</li>
+		<ul class="list" <?php echo $style0?>>
+			<li><a href="<?php echo self::url()?>"><div class="text text-level-1 <?php if (M_METHOD == 'index::index') echo 'active'?>">Overview</div></a></li>
+			<li><a href="<?php echo self::url(M_CLASS, 'userregistration')?>"><div class="text text-level-1 <?php if (M_METHOD == 'index::userregistration') echo 'active'?>">Registration</div></a></li>
+		</ul>
+	</ul>
+	<ul>
+		<li onclick="$(this).next('ul').toggle(300, 'swing').end().find('.indicator').toggleClass('active');">
+			<div class="text text-level-0"><?php echo _('Search')?><span class="indicator <?php echo $active1?>"></span></div>
+		</li>
+		<ul class="list" <?php echo $style1?>>
+			<li><a href="<?php echo self::url(M_CLASS, 'searchstructure')?>"><div class="text text-level-1 <?php if (M_METHOD == 'index::searchstructure') echo 'active'?>">Overview</div></a></li>
+		</ul>
+	</ul>
+</div>
+<script>
+$(function(){
+  	//panel - exapand
+	$('body').on('click', '.panel-title .k-i-arrowhead-s', function(e) {
+		var t = $(e.target);
+		t.removeClass('k-i-arrowhead-s').addClass('k-i-arrowhead-n');
+		kendo.fx(t.closest('.panel').find('.panel-content')).expand('vertical').stop().play();
+	});
+	
+	//panel - collapse
+	$('body').on('click', '.panel-title .k-i-arrowhead-n', function(e) {
+		var t = $(e.target);
+		t.removeClass('k-i-arrowhead-n').addClass('k-i-arrowhead-s');
+		kendo.fx(t.closest('.panel').find('.panel-content')).expand('vertical').stop().reverse();
+	});
+});
+</script>

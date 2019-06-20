@@ -1,0 +1,191 @@
+<!-- 表頭區塊開始 -->
+<div id="header">
+    <!-- 手機版搜尋區塊開始 -->
+    <div id="mobile_search">
+        <div class="header_search">
+            <div class="header_search_box">
+                <a href="javascript:void(0);" onclick="_search('mobile')"> <i class="fa fa-search"></i> </a>
+                <input type="text" class="search_text" name="searchkey" id="mobile_searchkey" data-searchtype="user" data-device="mobile" autocomplete="off">
+
+                <div class="search_btn">
+                    <!-- 20190114 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS開始 -->
+                    <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="search_type" data-searchtype="user"><?php echo _('創作人') ?></span> <i class="fa fa-caret-down"></i>
+                    </div>
+                    <!-- 20190114 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS結束 -->
+                    <!-- 20190114 置換BOOTSTRAP CLASS開始 -->
+                    <!--<div class="search_menu">-->
+                    <div class="dropdown-menu dropdown_menu" role="menu">
+                        <!-- 20190114 置換BOOTSTRAP CLASS結束 -->
+                        <ul>
+                            <!-- 20190114 在<a>加入class="searchtype", data-...與MARS v2同步開始 -->
+                            <li><a href="javascript:void(0)" class="searchtype" data-searchtype="user" data-device="mobile"><?php echo _('創作人') ?></a></li>
+                            <li><a href="javascript:void(0)" class="searchtype" data-searchtype="album" data-device="mobile"><?php echo _('作品') ?></a></li>
+                            <!-- 20190114 在<a>加入class="searchtype"與MARS v2同步結束 -->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="header_search_close"><i class="fa fa-times"></i></div>
+    </div>
+
+    <!-- 電腦版搜尋區塊開始 -->
+    <div id="header_top">
+        <div class="header_logo"><a href="<?php echo self::url(); ?>"><?php echo _('pinpinbox釘釘吧') ?></a></div>
+        <div class="header_search">
+            <div class="header_search_box">
+                <a href="javascript:void(0);" onclick="_search('desktop')"> <i class="fa fa-search"></i> </a>
+                <input type="text" class="search_text" name="searchkey" id="desktop_searchkey" data-searchtype="user" data-device="desktop" autocomplete="off">
+                <div class="search_btn">
+                    <!-- 20190114 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS開始 -->
+                    <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="search_type" data-searchtype="user">創作人</span> <i class="fa fa-caret-down"></i>
+                    </div>
+                    <!-- 20190114 加入BOOTSTRAP DIV區塊, 將SPAN ID換成CLASS結束 -->
+                    <!-- 20190114 置換BOOTSTRAP CLASS開始 -->
+                    <!--<div class="search_menu">-->
+                    <div class="dropdown-menu dropdown_menu" role="menu">
+                        <!-- 20190114 置換BOOTSTRAP CLASS結束 -->
+                        <ul>
+                            <!-- 20190114 在<a>加入class="searchtype", data-...與MARS v2同步開始 -->
+                            <li><a href="javascript:void(0)" class="searchtype" data-searchtype="user" data-device="desktop"><?php echo _('創作人') ?></a></li>
+                            <li><a href="javascript:void(0)" class="searchtype" data-searchtype="album" data-device="desktop"><?php echo _('作品') ?></a></li>
+                            <!-- 20190114 在<a>加入class="searchtype"與MARS v2同步結束 -->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- 電腦版選單開始 -->
+        <div class="header_menu">
+            <div class="create_album_area">
+                <a href="javascript:void(0);" onclick="createAlbum();"><?php echo _('Create') ?></a>
+            </div>
+            <div class="notifier_menu_area">
+                <a href="javascript:void(0);" id="notifier" class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><?php echo _('通知') . $pushqueue_viewed_icon ?></a>
+                <div id="notifier_menu" class="notifier_menu dropdown-menu dropdown_menu" role="menu">
+                    <ul class="noticeWarpper"></ul>
+                    <a href="<?php echo self::url('notifications') ?>">
+                        <div class="btn_new"><?php echo _('通知中心') ?></div>
+                    </a>
+                </div>
+            </div>
+            <?php if ($headbar_user) { ?>
+                <div class="login_menu_area">
+                    <a href="javascript:void(0);" id="login" class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <img onerror="this.src='<?php echo static_file('images/face_sample.png') ?>'" src="<?php echo $headbar_user ? $headbar_user['picture'] : static_file('images/login.png') ?>">
+                    </a>
+
+                    <div id="login_menu" class="login_menu dropdown-menu dropdown_menu" role="menu">
+                        <ul>
+                            <?php
+                            if ($headbar_user) {
+                                echo '<li>
+                                <div>' . $headbar_user['name'] . '</div>
+                                <div>
+                                    <ul>
+                                        <li><a href="' . self::url('creative', 'content', ['user_id' => $headbar_user['user_id'], 'rank_id' => 4]) . '">' . _('我的專區頻道') . '</a></li>
+                                        <li><a href="' . self::url('creative', 'content', ['user_id' => $headbar_user['user_id'], 'rank_id' => 1]) . '">' . _('我的作品') . '</a></li>
+                                        <li><a href="' . self::url('creative', 'content', ['user_id' => $headbar_user['user_id'], 'rank_id' => 2]) . '">' . _('我的收藏') . '</a></li>
+                                        <li><a href="' . self::url('creative', 'content', ['user_id' => $headbar_user['user_id'], 'rank_id' => 3]) . '">' . _('群組作品') . '</a></li>
+                                        <li><a href="' . self::url('creative', 'content', ['user_id' => $headbar_user['user_id'], 'rank_id' => 5]) . '">' . _('留言板') . '</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+            
+                            <li>
+                                <div>' . _('Member Center') . '</div>
+                                <div>
+                                    <ul>
+                                        <li><a href="' . self::url('user', 'sale_album') . '">' . _('積分管理') . '</a></li>
+                                        <li><a href="' . self::url('user', 'point') . '">' . _('P點購買') . '</a></li>
+                                        <li><a href="' . self::url('user', 'settings') . '">' . _('會員資料') . '</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div>' . _('系統') . '</div>
+                                <div>
+                                    <ul>
+                                        <li><a href="' . self::url('user', 'question') . '">' . _('回報問題') . '</a></li>
+                                        <li><a href="' . self::url('user', 'question_record') . '">' . _('回報紀錄') . '</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            ';
+                            } else {
+                            echo '
+                                <li><div>' . ('Hi, 訪客') . '</div>
+                                    <div>
+                                        <ul>
+                                            <li><a href="' . self::url('user', 'login', $login_redirect) . '">' . _('Log in') . '</a></li>
+                                            <li><a href="' . self::url('user', 'register') . '">' . _('Register') . '</a></li>
+                                        </ul>
+                                    </div>
+                                </li>';
+                            } ?>
+                        </ul>
+                        <?php
+                        if ($headbar_user) {
+                            echo '<a href="' . self::url('user', 'logout') . '">
+                                <div class="btn_new">' . _('登出') . '</div>
+                            </a>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            <?php } else { echo '<a href="'.self::url('user', 'login').'">'._('登入 | 註冊').'</a>'; } ?>
+        </div>
+
+        <div class="pin_creator">
+            <?php
+            if ($headbar_user) {
+                echo '<div class="current_point">'._('目前P點').':'. (new userModel())->getPoint($headbar_user['user_id'],'web').'</div>
+                       <div class="buy_point"><a href="'.self::url('user', 'point').'">'._('購買P點').'</a></div>';
+            }
+            ?>
+        </div>
+
+        <!-- 手機版選單開始 -->
+        <div class="mobile_menu">
+            <div class="mobile_img">
+                <i class="fa fa-search"></i>
+                <i id="notifier_m" class="fa fa-bell"></i>
+                <i id="login_m" class="fa fa-bars"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<!-- 表頭區塊結束 -->
+
+<script>
+    //Mobile - notice
+    function mobile_notice() {
+        var myConfirm = new jBox('Modal', {
+            cancelButton: '<?php echo _('No')?>',
+            confirmButton: '<?php echo _('Yes')?>',
+            confirm: function () {
+                buyalbum();
+            },
+            onCloseComplete: function () {
+                myConfirm.destroy();
+            }
+        }).setContent(
+            '<div class="content">' +
+            '<p class="keypoint"><img src="<?php echo static_file('images/info.png')?>">&nbsp;<?php echo _('Coming Soon!') . _('Only a PC device is supported at present.');?></p>' +
+            //		 '<p><a data-uri="<?php //echo Core::settings('ANDROID_DATA_URI') ?>//" onclick="clickHandler(this.dataset.uri)" href="javascript:void(0)"><img class="app" src="<?php //echo static_file('images/jbox_and.png')?>//"></a>'+
+            //		 '<a data-uri="<?php //echo Core::settings('IOS_DATA_URI') ?>//" onclick="clickHandler(this.dataset.uri)" href="javascript:void(0)"><img class="app" src="<?php //echo static_file('images/jbox_ios.png')?>//"></a></p><br>' +
+            '</div>'
+        ).open();
+    }
+
+</script>

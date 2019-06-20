@@ -1,0 +1,113 @@
+<!-- 內容頁開始 -->
+<div id="follow_content">
+	<?php
+	foreach ($follow as $k0 => $v0) {
+		switch ($v0['notice']['type']) {
+			case 'album':
+				echo '
+				<div class="follow_box">
+					<div class="follow_guy">
+						<div class="follow_face"><a href="'.$v0['user']['url'].'"><img src="'.$v0['user']['picture'].'" onerror="this.src=\''.static_file('images/face_sample.svg').'\'" height="101" width="101" alt=""></a></div>
+						<div class="follow_name">
+							<p><a href="'.$v0['user']['url'].'">'.$v0['user']['name'].'</a></p>
+							<p>'.$v0['notice']['inserttime'].'</p>
+							<p class="love"><img src="'.static_file('images/icon_pin.svg').'" height="12" width="8" alt="">'.$v0['follow']['count_from'].'</p>
+						</div>
+					</div>
+					<div class="follow_outside">
+						<div class="follow_all">
+							<a href="'.$v0['album']['url'].'">
+								<div class="product_list">
+									<div class="product_pic"><img src="'.$v0['album']['cover'].'" height="330" width="220"></div>
+									<div class="product_info">
+										<div class="point">
+											<p>'.$v0['album']['point'].'P</p>
+										</div>
+										<p>'.$v0['album']['name'].'</p>
+										<p>by '.$v0['user']['name'].'</p>
+										<p class="follow_txt"><span>'.$v0['album']['description'].'</span></p>
+									</div>
+								</div>
+							</a>
+							<div class="follow_else">
+								<div class="favorite">
+									<ul>
+										<li class="left"><a href="javascript:void(0)"><p><img src="'.static_file('images/icon_love.png').'" height="12" width="12" alt="">'.$v0['albumstatistics']['count'].'</p></a></li>
+										<li class="right">
+											<ul id="social_share" class="social-likes social-likes_single" data-url="'.self::url('album', 'content', array('album_id'=>$v0['notice']['id'])).'" data-title="'.$v0['album']['name'].'" >
+												<li class="facebook" title="'._('Share album to Facebook').'"></li>
+												<li class="twitter" title="'._('Share album to twitter').'"></li>
+												<li class="plusone" title="'._('Share album to Google+').'"></li>
+												<li class="pinterest" title="'._('Share album to pinterest').'" data-media="'.URL_UPLOAD.$v0['album']['share_cover'].'"></li>
+												<li class="line" title="'._('Share album to Line').'"></li>														
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div class="message">';
+				
+				if ($page == 1 && $k0 == 0) {
+					echo '<a id="first" href="javascript:void(0)" data-disqus="" onclick="changeThread($(this), \''.md5(self::disqus_album($v0['notice']['id'])).'\', \''.self::disqus_album($v0['notice']['id']).'\')">'._('Display messages').'</a>'.$disqus;
+				} else {
+					echo '<a href="javascript:void(0)" onclick="changeThread($(this), \''.md5(self::disqus_album($v0['notice']['id'])).'\', \''.self::disqus_album($v0['notice']['id']).'\');">'._('Display messages').'</a>';
+				}
+				echo '
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>';
+				break;
+
+			default:
+				throw new Exception("[".__METHOD__."] Unknown case");
+				break;
+		}
+	}
+	?>	
+	<?php if (!empty($more)) echo '<div id="next"><a href="'.$more.'"></a></div>' ;?>	
+</div>
+<script>
+var changeThread = function (source, id, url) {
+	$('#disqus_thread').insertAfter(source);
+	DISQUS.reset({
+		reload: true,
+		config: function () {
+			this.page.identifier = id;
+			this.page.url = url;
+		}
+	});
+};
+
+var ias = $.ias({
+	container:  '#follow_content',
+	item:       '.follow_box',
+	pagination: '#next',
+	next:       '#next a'
+});
+ias.extension(new IASSpinnerExtension());
+ias.extension(new IASTriggerExtension({
+	offset : 0 ,
+	html: '<div style="clear:both;color:red;"><a href="javascript:void(0)"><div class="see_more"><?php echo _('More'); ?></div></a></div>'
+}));
+ias.extension(new IASNoneLeftExtension({
+	html: '<div style="clear:both;"></div><div class="see_end"><hr><div class="see_end_in">END</div></div>'
+}));
+
+// initialize social
+$('#social_share').socialLikes({
+	title: '<?php echo _('Share the pinpinbox photo album!'); ?>',
+    counters: true,
+    singleTitle: 'Share',
+});
+
+// counter link
+$('#social_share').on('popup_closed.social-likes', function(event, service) {
+    $(event.currentTarget).socialLikes({forceUpdate: true});
+
+    var counter = $(event.currentTarget).find('.social-likes__counter_' + service);
+    counter.text(+(counter.text()||0)+1).removeClass('social-likes__counter_empty');
+});
+</script>
+<!-- Line -->
+<script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411" ></script>

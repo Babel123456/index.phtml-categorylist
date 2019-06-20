@@ -1,0 +1,198 @@
+<div id="more_setting_box" class="photo_setting">
+    <div class="mask common" id="set_close" data-act="set_close"></div>
+    <div id="more_set_in">
+        <div id="more_enter"> <a onclick="$('#form_submit').trigger('click');" href="javascript:void(0)"><?php echo _('儲存'); ?></a> </div>
+        <header><span name="photo_setting_num" ></span> <?php echo _('進階設定'); ?></header>
+        <div id="more_tab">
+            <ul class="etabs">
+                <li class="active"><a href="#top_p1"><?php echo _('模式設定'); ?></a></li>
+            </ul>
+            <!--模式設定開始-->
+            <div id="top_p1" class="tabs active">
+                <form id="photo_form_enter" action="javascript:void(0)">
+                    <h3><?php echo _('選擇模式'); ?></h3>
+                    <div id="type_tab">
+                        <ul class="etabs02">
+                            <li name="image"><a href="#type_p1" class="ty01"><?php echo _('圖片'); ?></a></li>
+                            <li name="video"><a href="#type_p2" class="ty02"><?php echo _('影片'); ?></a></li>
+							<?php
+							//profession 才可使用 兌換券及拉霸
+							if ($diy['user']['grade'] == 'profession') {
+								echo '<li name="exchange"><a href="#type_p3" class="ty03">'._('兌換券').'</a></li>
+								<li name="slot"><div class="money"></div><a href="#type_p4" class="ty04">'._('拉霸抽獎').'</a></li>';
+							}
+							?>
+                        </ul>
+                        <div class="out_content">
+                            <div class="info_box">
+                                <h3><?php echo _('資訊設定')?></h3>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="text_left"><?php echo _('地點'); ?></div>
+                                    <div class="text_right"><input type="text" class="info_loaction" placeholder="<?php echo _('地點'); ?>" maxlength="64"></div>
+                                </li>
+                                <li>
+                                    <div class="text_left"><?php echo _('URL 1'); ?></div>
+                                    <div class="text_right">
+                                        <input type="text" class="info_url1_name" placeholder="<?php echo _('連結名稱') ?>" maxlength="32">
+                                        <input type="url" class="info_url1" placeholder="http://">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text_left"><?php echo _('URL 2'); ?></div>
+                                    <div class="text_right">
+                                        <input type="text" class="info_url2_name" placeholder="<?php echo _('連結名稱') ?>" maxlength="32">
+                                        <input type="url" class="info_url2" placeholder="http://" >
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text_left"><?php echo _('描述'); ?></div>
+                                    <div class="text_right"><textarea class="info_description" cols="30" rows="3" class="info03"></textarea></div>
+                                </li>
+                            </ul>
+                            <div class="line"></div>
+                        </div>
+                        <div class="tab_content">
+                            <!--模式設定-圖片開始-->
+                            <div id="type_p1" class="type_tabs active"></div>
+                            <!--模式設定-圖片結束-->
+                            <!--模式設定-影片開始-->
+                            <div id="type_p2" class="type_tabs">
+                                <h3><?php echo _('影片設定'); ?></h3>
+                                <ul>
+                                    <li>
+                                        <label class="film_label">
+                                            <input type="radio" name="group1" class="triggervideo common video_url" data-rel="video_url" data-act="triggervideo" />
+											<?php echo _('URL'); ?>
+                                        </label>
+                                        <label class="film_label">
+                                            <input type="radio" name="group1" class="triggervideo common video_upload" data-rel="video_upload" data-act="triggervideo"/>
+											<?php echo _('上傳影片'); ?>
+                                        </label>
+                                        <span class="fbVideoTips"> <?php echo _('如何嵌入Facebook影片?') ?>
+                                            <a href="javascript:void(0)" class="vidoetips"><img src="<?php echo static_file('images/question.png') ?>" height="20" width="20"></a>
+										</span>
+                                    </li>
+                                    <li class="video_url film_content">
+                                        <div style="height:30px;">
+                                            <div class="text_left"><?php echo _('輸入網址'); ?></div>
+                                            <div class="text_right"><input id="video_url" type="url"  placeholder="支援 Youtube / Vimeo / Facebook / Dailymotion 影片" style="margin-bottom:5px;width:380px;"><div id="video_area1" ></div></div>
+                                        </div>
+                                    </li>
+                                    <li class="video_upload film_content">
+                                        <div class="text_left">
+                                            <input type="button" class="video_upload_btn" onclick="$('#fileupload').trigger('click');" value="<?php echo _('Select record'); ?>">
+                                            <input type="button" class="video_upload_btn" onclick="$('#fileupload_replace_cover').trigger('click');" value="<?php echo _('選擇封面'); ?>" style="margin-top:5px;" name="UploadCoverBtn">
+                                        </div>
+                                        <div class="text_right" name="video_filename"></div>
+                                        <div>
+                                            <input id="fileupload" class="fileupload common" style="display:none;" type="file" name="files[]" data-url="file_upload" data-photo_type="video" data-num="0" data-act="fileupload" data-mediavideo="video" multiple accept="video/mp4" />
+                                            <input id="fileupload_replace_cover" class="fileupload common" style="display:none;" type="file" name="files[]" data-url="file_upload" data-photo_type="video_cover"  data-act="fileupload" data-mediavideo="video" accept="image/jpeg,image/png"/>
+                                        </div>
+                                        <br>
+                                        <div id="video_area2">
+                                            <video id="video_demo_file" controls loop muted preload="auto" width="320" height="240" data-mejsoptions='{"alwaysShowControls": true}'>
+                                                <source class="mp4" type="video/mp4" src="" />
+												<?php echo _('很抱歉！您的瀏覽器不支援 HTML5 Video '); ?>
+                                            </video>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--模式設定-影片結束-->
+                            <!--模式設定-兌換券開始-->
+                            <div id="type_p3" class="type_tabs">
+                                <div class="info_box">
+                                    <h3><?php echo _('兌換券設定')?></h3>
+                                    <span>※發佈作品後即無法修改！建議圖片尺寸 668x1002 pixels</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div style="width:23%" class="text_left"><?php echo _('項目')?></div>
+                                        <div style="width:77%" class="text_right">
+                                            <div id="exchange_layer">
+                                                <div class="laybar_left">
+                                                    <ul>
+                                                        <li>
+                                                            <div  data-tag="photousefor-name">
+                                                                名稱: <input type="text" name="exchange_name" maxlength="32" class="laybar_text">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div data-tag="photousefor-amount">
+                                                                數量: <input step="1" type="number" max="65535" min="1" class="info_exchange_amount" placeholder="1 ~ 65535">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div data-tag="photousefor-exchange_starttime">
+                                                                <p>開始時間: <input type="text" name="exchange_starttime" class="datepicker" style="width:60%;"></p>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div data-tag="photousefor-exchange_endtime">
+                                                                <p>結束時間: <input type="text" name="exchange_endtime" class="datepicker" style="width:60%;"></p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="laybar_right">
+                                                    <div class="right_upload" data-tag="photousefor-exchangeImageBtn">
+                                                        <img id="exchange_image_upload" class="common" src="<?php echo static_file('images/laybar_up.png')?>" data-act="exchange_image_upload">
+                                                    </div>
+                                                    <input style="display:none;" class="exchange_fileupload common" type="file" name="files[]" data-photo_type="exchange" data-num="0" data-act="fileupload" accept="image/png,image/jpeg,image/jpg">													</div>
+                                                <div>
+                                                    <img id="exchange_image_show" src="<?php echo static_file('images/transparent.png') ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="text_left"><?php echo _('描述')?></div>
+                                        <div class="text_right" data-tag="photousefor-description"><textarea cols="30" rows="3"></textarea></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--模式設定-兌換券結束-->
+                            <!--模式設定-拉霸開始-->
+                            <div id="type_p4" class="type_tabs">
+                                <div class="info_box">
+                                    <h3><?php echo _('拉霸抽獎設定')?></h3>
+                                    <a href="javascript:void(0)" class="common" data-act="add_slot_item">
+                                        <img src="<?php echo static_file('images/editor/add_class.png')?>" height="15" width="15">
+                                    </a>
+                                    <span>※發佈作品後即無法修改！建議圖片尺寸 668x1002 pixels</span>
+                                </div>
+                                <ul style="width:98%;">
+                                    <li>
+                                        <div style="width:23%" class="text_left"><?php echo _('項目')?></div>
+                                        <div style="width:77%" class="text_right"><div id="laybar_box"></div></div>
+                                    </li>
+                                    <li>
+                                        <div class="text_left"><?php echo _('開始時間:')?></div>
+                                        <div class="text_right" data-tag="photousefor-slot-starttime">
+                                            <input type="text" name="slot_starttime" class="datepicker" style="width:25%;">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="text_left"><?php echo _('結束時間:')?></div>
+                                        <div class="text_right" data-tag="photousefor-slot-endtime">
+                                            <input type="text" name="slot_endtime" class="datepicker" style="width:25%;">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="text_left"><?php echo _('描述')?></div>
+                                        <div class="text_right" data-tag="photousefor-description"><textarea cols="30" rows="2"></textarea></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--模式設定-拉霸結束-->
+                        </div>
+                    </div>
+                    <input type="submit" id="form_submit" style="display:none;">
+                </form>
+            </div>
+            <!--模式設定結束-->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,320 @@
+<script>
+	var str = '<span style="padding-left:20px;font-weight:bold;color:#2299DD">Loading...  <img src="<?php echo str_replace('admin', 'pinpinbox', static_file('images/loading.gif')) ?>"></span>';
+	Block_modal = new jBox('Modal', {
+		position : {x:'center', y:'center'},
+		offset : {x: 3,y: 25},
+		width : 160,
+		height : 50,
+		closeOnEsc : false,
+		closeOnClick : false,
+		closeButton : 'title',
+		delayOpen: 200,
+		zIndex : 1000,
+	});
+	Block_modal.setContent(str).open();
+</script>
+<div id="album_content">
+<h2><?php echo _('Member Center');?></h2>
+<ul>
+	<li class="mobiledisplay"><h3><?php echo _('Upload Templates. Step2. Upload Template photos'); ?></h3></li>
+	<li class="mobiledisplay"><div class="line"></div></li>
+	<li class="mobiledisplay"><a href="<?php echo self::url('user', 'template_info') ?>" class="upload"><?php echo _('Back to editing'); ?></a></li>
+	<li>
+		<?php include 'member_nav.phtml';?>	
+		<div id="memberbox_item">
+			<div id="album_tab">
+			  <h3><?php echo _('Upload Templates.'); ?></h3>
+				<span>Step2. <?php echo _('Upload Template photos'); ?></span>
+				<a href="<?php echo self::url('user', 'template_info') ?>" class="upload"><?php echo _('Back to editing'); ?></a>
+			</div>
+			<div class="album_total02">
+				<?php echo _('Size limit: 1336px * 2004px'); ?><a target="_blank" href="<?php echo URL_ROOT.Core::settings('TEMPLATE_FILE_DOWNLOAD') ?>"><?php echo _('Download blank Templates (PNG files)'); ?></a><br>
+				<img src="<?php echo static_file('images/icon_smart.png') ?>" height="68" width="67" alt="" class="smart"><?php echo _('Click + to upload materials of your Templates.'); ?>
+			</div>
+			<div class="album_all" style="margin-top: 20px;">
+			<?php
+			for ($i = 1 ; $i <= 12 ; $i++) {
+				if(empty($img[$i]['src'])){
+					$class= 'style="display:none;"';
+					$alt = 'false';
+					$size = 0;
+					$img[$i]['src'] = static_file('images/input.png');
+				}else{
+					$size = $img[$i]['size'];
+					$class= 'style="display:block;"';
+					$alt = 'true';
+				}	
+				echo '
+				<div class="act_album" >
+					<div class="album_list02 img_in">
+						<div class="tem_imgbox">
+							<div class="control_box">
+								<div id="preview_btn'.$i.'">
+									<a href="javascript:void(0)" class="preview_btn'.$i.'" '.$class.' onclick="browseKit(this)">
+										<img src="'.static_file('images/icon_see.png').'" height="70" width="109" class="see" >
+									</a>
+								</div>
+								<a href="javascript:void(0)" onclick="drop('.$i.')" class="delete_btn'.$i.'" '.$class.'>
+									<img src="'.static_file('images/icon_del.png').'" height="95" width="70" class="del">
+								</a>
+							</div>
+							<div class="origin_box" onclick="$(\'#uploadImage'.$i.'\').trigger(\'click\')">
+								<img src="" height="2004" width="1337" alt="" class="temimg demobg'.$i.'" style="display:none">
+							</div>
+							<div id="act_album">
+								<img id="uploadPreview'.$i.'" size="'.$size.'" src="'.$img[$i]['src'].'" onclick="$(\'#uploadImage'.$i.'\').trigger(\'click\')" height="2004" width="1336" class="temimg" alt="'.$alt.'">
+								<input style="display:none" id="uploadImage'.$i.'" type="file" onchange="PreviewImage('.$i.');" accept="image/jpeg, image/jpg, image/png" />
+							</div>
+						</div>
+					</div>
+					<div id="info_'.$i.'" class="ear_info">
+						<div class="controls">
+							<div class="frame_select resource'.$i.'"></div>
+						</div>
+					</div>
+				</div>';
+			}
+			?>
+			</div>	
+			<div class="album_all" >
+				<a href="javascript:void(0)" onclick="save()" class="used"><?php echo _('Send for verification'); ?></a>
+			</div>					
+		</div>					
+	</li>
+</ul>
+</div>
+
+
+<script>
+function browseKit(obj) {
+	//photoswipe
+	if ($('.pswp').length == 0) {
+		$('body').append(
+			'<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">'+
+				'<div class="pswp__bg"></div>'+
+				'<div class="pswp__scroll-wrap">'+
+					'<div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div>'+
+					'<div class="pswp__ui pswp__ui--hidden">'+
+			            '<div class="pswp__top-bar">'+
+			                '<div class="pswp__counter"></div>'+
+			                '<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>'+
+			                '<button class="pswp__button pswp__button--share" title="Share"></button>'+
+			                '<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>'+
+			                '<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>'+
+			                '<div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div>'+
+			            '</div>'+
+			            '<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div>'+
+			            '<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>'+
+			            '<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>'+
+			            '<div class="pswp__caption"><div class="pswp__caption__center"></div></div>'+
+			        '</div>'+
+			    '</div>'+
+			'</div>'
+		);
+	}
+	var items = [];
+	var item = {
+		src: $(obj).parents('.control_box').siblings('#act_album').children('img').prop('src'),
+		w: 1336,
+		h: 2004,
+	}
+	items.push(item);
+	
+    var options = {loop: false};
+	var pswp = new PhotoSwipe(document.querySelectorAll('.pswp')[0], PhotoSwipeUI_Default, items, options);
+	pswp.init();
+
+	$('.pswp__button--arrow--left').on('click', function() {
+		if (items.length == pswp.getCurrentIndex() + 1) pswp.close();
+	});
+	$('.pswp__button--arrow--right').on('click', function() {
+		if (pswp.getCurrentIndex() == 0) pswp.close();
+	});
+}
+
+$(document).ready(function(){Block_modal.close();});
+
+$(function() {
+	$('.frame_select').ddslick({
+		data: <?php echo ($basic); ?>,
+		width: 150,
+		height: 180,
+		background: "#fffff",
+		showSelectedHTML:true,
+		onSelected: function (data) {
+			var n = $('.frame_select').index($(this).parents('div.frame_select'))+1;
+			if(data.selectedIndex != 0){
+				get_bg_demo(n, data.selectedData.value);
+			}else{
+				$('.demobg'+n).attr('src', '').css('display', 'none');
+			}
+		}
+	});
+	
+	//apend title for Tooltip
+	$('div.act_album').each(function(){
+		$(this).find('li').attr('title', '');
+		
+	});
+	
+	$('div.act_album').find('li').hover(function(){
+		var value = $(this).find('input').attr('value');
+		if(value != 0){
+			if(value.length == 1) value = '0'+value;
+			
+			$(this).tooltip({
+				position: {
+					my: "left top",
+					at: "right+15 top-250"
+				},
+				content: '<img style="border:0.1em solid #108199 ;background-color:#CCCCCC;" width="150" height="225" src= "<?php echo static_file('images/template/') ?>'+value+'.png">',
+			});
+		}
+	},function(){
+		return false;
+	});
+	
+});
+
+function PreviewImage(no) {
+	var oFReader = new FileReader();
+	var obj = document.getElementById("uploadImage"+no);
+		
+	if (obj.files[0].size > '<?php echo $frame_limit?>') {
+		var r = {'message':'<?php echo _('Exceeded upload size limit : ').ini_get('upload_max_filesize').'B'?>'};
+		site_jBox(r, 'info');
+	} else if (obj.files[0].type != 'image/png') {
+		var r = {'message':'<?php echo _('Please upload the image file type is PNG.')?>'};
+		site_jBox(r, 'info');
+	} else {
+		oFReader.readAsDataURL(obj.files[0]);
+		oFReader.onload = function (oFREvent) {
+			document.getElementById("uploadPreview"+no).src = oFREvent.target.result;
+			$('#uploadPreview'+no).attr({"size": obj.files[0].size, 'alt':'true'});
+			$('.preview_btn'+no).css('display', 'block');
+			$('.delete_btn'+no).css('display', 'block');
+		};
+	}
+}
+
+function drop(num) {
+	$('#uploadPreview'+num).attr({'alt': 'false' ,'size' : 0, 'src': '<?php echo static_file('images/input.png') ;?>'});
+	$('.demobg'+num).attr('src', '').css('display', 'none');
+	$('.delete_btn'+num).css('display', 'none');
+	$('.preview_btn'+num).css('display', 'none');
+}
+
+function get_bg_demo(obj ,num) {
+	$('div.resource'+obj).children('div.dd-select').css('border', '1px solid #cccccc');
+	
+	$.post('<?php echo self::url('user', 'template_bgdemo') ;?>', {
+		bg_num: num,
+	}, function(r) {	
+		r = $.parseJSON(r);
+		if (r.result == 1) {
+			$('.demobg'+obj).attr('src', r.message).css('display', 'block');
+		} else if (r.result == 2) {
+			site_jBox(r, 'error');
+			$('.resource'+obj).ddslick('select', {index: 0 });
+		}
+	});
+}
+
+function save() {
+	var upload_lower_limit = 12;
+	var check = true;
+	var data = [];
+	var reg = /\.png$/;
+	$('img[id^=uploadPreview]').each(function(k, v){
+		if ($(this).attr('alt') == 'true') {
+			if ( $('.resource'+(k+1)).data('ddslick').selectedData.value == 0 ) {
+				
+				if (check == true) {
+					var r = {'message':'<?php echo _('Please select a template style.'); ?>'};
+					site_jBox(r);
+				}
+				$('.resource'+(k+1)).children('div.dd-select').css('border', '1px solid red');
+				check = false;
+			} else if ($(this).attr('src').indexOf('data:image\/png;') == -1 && reg.test($(this).attr('src')) == false) {
+				var siteModal= new jBox('Modal', {
+					onCloseComplete:function(){
+						siteModal.destroy();
+					},
+				});
+				siteModal.setContent("<img src=\"<?php echo static_file('images/error.png'); ?>\">&nbsp;<?php echo _('Please upload the image file type is PNG.'); ?>").open();			
+				check = false;
+			} else {
+				$('.resource'+(k+1)).children('div.dd-select').css('border', '1px solid #cccccc');
+				data.push({'src' : $(this).attr('src'), 'resource' : $('.resource'+(k+1)).data('ddslick').selectedData.value});
+			}
+		}
+	});
+	
+	if (check == true) {
+		var size = 0;
+		$('img[id^=uploadPreview]').each(function(k, v) {
+			size += parseInt($(this).attr('size'));
+		});
+		
+		//Check post size
+		if (size > <?php echo $post_max_size?>) {
+			var r = {'message' : '<?php echo _('Exceeded total upload size limit : ').ini_get('post_max_size').'B'?>'};
+			site_jBox(r, 'error');
+			check = false;
+		}
+	}
+	
+	check == false;
+	
+	var num = data.length;
+	if (num == 0 && check == true) {
+		var r = {'message':'<?php echo _('Please upload your template.')?>'};
+		site_jBox(r);
+	} else if (num < upload_lower_limit && check == true) {
+		var r = {'message':'<?php echo _('The number of upload templates are not enough.')?>'};
+		site_jBox(r, 'error');
+	} else if (check == true) {
+		var siteConfirm = new jBox('Confirm', {
+			cancelButton: '<?php echo _('No')?>',
+			confirm: function() {
+				var str = '<span style="padding-left:20px;font-weight:bold;color:#2299DD">Processing... <img src="<?php echo str_replace('admin', 'pinpinbox', static_file('images/loading.gif')) ?>"></span>';
+				Block_modal = new jBox('Modal', {
+					position : {x:'center', y:'center'},
+					offset : {x: 3,y: 25},
+					width : 200,
+					height : 50,
+					closeOnEsc : false,
+					closeOnClick : false,
+					closeButton : 'title',
+					delayOpen: 200,
+					zIndex : 1000,
+				});
+				Block_modal.setContent(str).open();
+				
+				$.post('<?php echo self::url('user', 'save_template')?>', {
+					frame: JSON.stringify(data),
+					act: '<?php echo $page_info['act'];?>',
+					name: '<?php echo addslashes( $page_info['name'] )?>',
+					description: '<?php echo addslashes ($page_info['description']) ?>',
+					style_id: '<?php echo $page_info['style'];?>',
+					style_sign: '<?php echo $page_info['style_sign'];?>',
+					<?php if($page_info['act'] == 'add') echo 'preview_upload:'.json_encode($page_info['preview_upload']).',' ?>
+					<?php if($page_info['act'] == 'update') echo 'template_id:'.$page_info['template_id'].',' ?>				
+				}, function(r) {
+					r = $.parseJSON(r);
+					Block_modal.close();
+					if (r.result == 1) {
+						site_jBox(r, 'success');
+					} else {
+						site_jBox(r, 'error');
+					}				
+				});		
+			},
+			confirmButton: '<?php echo _('Yes')?>',
+			onCloseComplete: function() {
+				siteConfirm.destroy();
+			}
+		}).setContent('<div class="content"><?php echo _('The number of template : ')?><span class="red">'+num+'</span><?php echo '<br>'._('Sure to submit?')?></div>').open();
+	}
+}
+</script>

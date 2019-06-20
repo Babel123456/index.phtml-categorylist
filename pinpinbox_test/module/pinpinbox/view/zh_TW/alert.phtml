@@ -1,0 +1,42 @@
+<?php 
+	$where = array();
+	$where[] = array(array(array('act', '=', 'open')), 'and');
+	$m_reportintent = Model('reportintent')->where($where)->order(array('sequence'=>'desc'))->fetchAll();
+	
+?>
+<div id="alert_box">
+	<div id="alert_bg"></div>
+	<div id="alert_in">
+		<div id="alert_top">
+			<div id="close_alert"><a href="#">X</a></div>
+			<?php echo _('Report the album');?>
+		</div>
+		<div id="alert_content">
+			<ul class="step01">
+				<?php 
+				if(!empty($m_reportintent)){
+					foreach($m_reportintent as $k => $v){
+						if($k == 3){
+							echo '<li><input type="radio" value="'.($k+1).'" id="input_0'.($k+1).'" value="0'.($k+1).'" name="report" class="report_check"> <label id="input_0'.($k+1).'" onclick="$(this).prev(\'input\').click();">'.\Core\Lang::i18n($v['name']).'</label></li>';
+							echo '<li class="hide" id="input04_li"><textarea id="input04_textarea" rows="5" placeholder="'._('Detailed description').'"></textarea></li>';
+						}else{
+							echo '<li><input type="radio" value="'.($k+1).'" id="input_0'.($k+1).'" name="report" class="report_check"> <label id="input_0'.($k+1).'" onclick="$(this).prev(\'input\').click();">'.\Core\Lang::i18n($v['name']).'</label></li>';
+						}
+					}
+				}				
+				?>
+			<li><a href="#" class="used" id="next_step"><?php echo _('Submit'); ?></a></li>
+			</ul>
+			<ul class="step02">
+				<li>
+					<p><?php echo _('No one is allowed to submit your works protected on Pin Pin Box by the copyright unless he or she is permitted by the copy holder or authorized agent who is the only person or group that is allowed to make such requirement.'); ?></p>
+					<p><?php echo _('A quicker and easier way to inform Pin Pin Box of alleged infringement is to fill in the web-based form which is suggested to be written with desktop or laptop, since it is rather complicated with a Mobile or tablet device.'); ?></p>
+				</li>
+				<li><a href="javascript:void(0)" id="alert_btn" class="used"><?php echo _('Submit your appeal'); ?></a></li>
+				<li><a href="javascript:void(0)" class="cancel" ><?php echo _('Go back to previous page'); ?></a></li>
+				<li><p><?php echo _('It indicates that you have taken the formal legal procedure if you made an infringement notification and require us to remove relevant information.'); ?></p></li>
+				<li><p class="red"><?php echo _('False statement is not allowed. Abuse of this program may lead your account to be banned, and you yourself are probably required to bear related legal liability.'); ?></p></li>
+			</ul>
+		</div>
+	</div>
+</div>

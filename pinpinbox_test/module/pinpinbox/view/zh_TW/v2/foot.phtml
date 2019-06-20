@@ -1,0 +1,755 @@
+</div>
+<script>
+<?php 
+	if (M_CLASS != 'diy') echo '$(function(){  $(\'[data-toggle="tooltip"]\').tooltip(); });' ; 
+	$popviewCloseUrl = (M_CLASS == 'creative' && M_FUNCTION == 'content') ? $creative['creative']['creative_url'] : self::url(M_CLASS, M_FUNCTION, query_string_parse());
+?>
+function popview(url) {
+    $('.jBox-wrapper').remove();
+    $.post(url, {
+        data : null,
+    }, function(r) {
+        content = $(r).find('#album_content_area');
+        script = $(r).find('script[name="popview"]');
+
+        if(!$('#JboxPopview').length) {
+            var popview = new jBox('Modal', {
+                addClass : 'popview_content',
+                id : 'JboxPopview',
+                zIndex : 1000,
+                target: $('body'),
+                isolateScroll: false,
+                onCloseComplete: function() {
+                    popview.destroy();
+                    browseKitRefresh();
+                },
+                onOpen : function(){
+                    $('.jBox-content .descrip').html( $('.jBox-content .descrip').html() ) ;
+                    $('.jBox-content').append(script);
+                    // 由於作品頁會被其他頁面引入, 需透過 refresh 重新處理分享連結
+                    addthis.layers.refresh();
+                    window.onpopstate = function(event) { popview.close();};
+                },
+            }).setContent(content).open();
+        }
+    });
+}
+
+/*
+ * webpush
+ */
+<?php
+if (Model('user')->getSession()) {
+?>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').then(function (registration) {
+    	registration.pushManager.subscribe({
+            userVisibleOnly: true
+        }).then(function (sub) {
+			$.post('<?php echo self::url('serviceworker', 'register')?>', {token: sub.endpoint}, function (r) {
+				r = $.parseJSON(r);
+				if (r.result == 1) {
+					registration.update();
+				}
+			});
+        });
+    });
+}
+<?php
+}
+?>
+
+/*
+ * facebook
+ */
+window.fbAsyncInit = function() {
+	FB.init({
+		appId: '<?php echo Core::settings('FACEBOOK_APP_ID')?>',
+		cookie: true,
+		version: '<?php echo Core::settings('FACEBOOK_API_VERSION')?>'
+	});
+
+	Window.FB = FB;
+};
+
+logInWithFacebook = function() {
+	FB.login(function(response) {
+		if (response.authResponse) {
+			$('#login_facebook').hide().next('div').show();
+			$.post('<?php echo self::url('user', 'login_facebook', query_string_parse())?>', {accessToken: response.authResponse.accessToken}, function(r) {
+				r = $.parseJSON(r); 
+				if (r.result == 1) {
+					_jBox(r, 'success_notext');
+				} else {
+					_jBox(r, 'error');
+				}
+				$('#login_facebook').show().next('div').hide();
+			});
+		} else {
+			_jBox({message: '<?php echo _('Login failed.')?>'}, 'error');
+		}
+	}, {scope: '<?php echo implode(',', json_decode(Core::settings('FACEBOOK_APP_SCOPE'), true))?>', auth_type: 'rerequest'});
+	
+	return false;
+};
+
+var askAutoPlay = true,
+    adjustAppQrcodeUrl,
+	a_album_element = [],	//browseKit element of album
+	a_album_item = [];		//browseKit item of album
+
+function browseKit_album(url, param) {
+	param.pageCalledByXHR = $('#pageCalledByXHR').length;
+	if (a_album_item.length == 0) {
+		$.post(url, param, function(r) {
+			r = $.parseJSON(r);
+			if (r.result == 1) {
+				for (var k0 in r.data.readable) {
+					subHtml = '';
+
+					if (r.data.readable[k0]['name']) subHtml += '<h4>' + r.data.readable[k0]['name'] + '</h4>';
+
+					if (r.data.readable[k0]['description']) subHtml += '<p>' + r.data.readable[k0]['description'] + '</p>';
+					
+					if (r.data.readable[k0]['hyperlink']) {
+						hyperlink = [];
+						r.data.readable[k0]['hyperlink'].forEach(function(v0){
+							hyperlink.push('<a target="_blank" href="' + v0.url + '">' + v0.text + '</a>');
+						});
+						subHtml += hyperlink.join('&emsp;');
+					}
+
+					o_audio = {loop: r.data.readable[k0].audio_loop, mode: r.data.readable[k0].audio_mode, src: r.data.readable[k0].audio_target};
+                    //組抽獎影片圖示
+                    slotHtml = '';
+                    videoHtml = '';
+                    switch (r.data.readable[k0]['usefor']) {
+                        case 'slot':
+                        case 'exchange':
+                            slotHtml = '<img src="<?php echo static_file('images/assets-v6/gift-01.svg') ?>" style="display:block;position:absolute;right:2px;bottom:2px;z-index:3000;background:#FF5E68;width:20px;height:20px;border-radius:20px;">';
+                            break;
+                        case 'video':
+                            videoHtml = '<img alt="影片" title="影片" src="<?php echo static_file('images/assets-v6/play-01.svg') ?>"  style="display:block;position:absolute;left:2px;bottom:2px;z-index:3000;background:rgba(0,0,0,0.65);width:20px;height:20px;border-radius:20px;">';
+                            break;
+                    }
+
+                    //組聲音圖示
+                    audioHtml = '<img alt="聲音" title="聲音" src="<?php echo static_file('images/assets-v6/speaker-01.svg') ?>" style="display:block;position:absolute;left:2px;bottom:2px;z-index:3000;background:rgba(0,0,0,0.65);width:20px;height:20px;border-radius:20px;">';
+
+					switch (r.data.readable[k0]['usefor']) {
+						case 'video':
+							href = r.data.readable[k0]['video_target'];
+							poster = r.data.readable[k0]['image'];
+							thumb = r.data.readable[k0]['image_thumbnail'];
+							platform = fetch_video_platform(href);
+							switch (r.data.readable[k0]['video_refer']) {									
+								case 'embed':
+									a_album_item.push({
+										audio: o_audio,
+								    	href: href,
+								        poster: poster,
+								        src: href,
+								        subHtml: subHtml,
+                                        slotHtml: slotHtml,
+                                        videoHtml: videoHtml,
+								        thumb: thumb,
+								        usefor: 'video',
+								        platform: platform,
+								        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
+								    });
+									break;
+
+								case 'file':
+									if ($('#video-' + k0).length == 0) {
+										$('body').append(
+												'<div class="lgVideoWrapper" style="display:none;" id="video-' + k0 + '">' +
+												'<video controlsList="nodownload" class="lg-video-object lg-html5" controls preload="none">' +
+											    '<source src="' + href + '" type="video/mp4">Your browser does not support HTML5 video.</video>' +
+											    '</div>'
+										);
+									} else {
+                                        $('#video-' + k0).find('source').attr('src', href);
+                                    }
+									
+									a_album_item.push({
+										audio: o_audio,
+								    	html: '#video-' + k0,
+								        poster: poster,
+								        subHtml: subHtml,
+                                        slotHtml: slotHtml,
+                                        videoHtml: videoHtml,
+								        thumb: thumb,
+								        usefor: 'video',
+								        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
+								    });
+									break;
+							}
+							break;
+
+						default:
+							href = r.data.readable[k0]['image'];
+							thumb = r.data.readable[k0]['image_thumbnail'];
+							a_album_item.push({
+						        audio: o_audio,
+						    	href: href,
+						        src: href,
+						        subHtml: subHtml,
+                                slotHtml: slotHtml,
+                                videoHtml: videoHtml,
+						        thumb: thumb,
+						        usefor: 'audio',
+						        recommendedBuyAlbum : r.data.readable[k0]['recommendedBuyAlbum'],
+						    });
+							break;
+					}
+				}
+
+				param.adjustAppQrcodeUrl = adjustAppQrcodeUrl = r.data.property.album.adjustAppQrcodeUrl;
+
+				browseKit_v2(this, a_album_item, param);
+			} else {
+				_jBox(r, 'error');
+			}
+		});
+	} else {
+        param.adjustAppQrcodeUrl = adjustAppQrcodeUrl
+		browseKit_v2(this, a_album_item, param);
+	}
+}
+
+function browseKit_v2(that, item, param) {
+	a_album_element.push(that);
+	var indexId = 0;
+
+    if($('#mask02').data('indexId')) {
+        indexId = $('#mask02').data('indexId');
+    } else if(param.preview_page_length) {
+        indexId = (param.preview_page_length >= item.length ) ? 0 : param.preview_page_length ;
+    }
+
+    var	$lg = $(that).lightGallery({
+		loadYoutubeThumbnail: true,
+		youtubeThumbSize : 'hqdefault',
+        dynamic: true,
+        dynamicEl: item,
+        hash: false,
+		hideBarsDelay: 3000,
+		loop: false,
+		download: false,
+		index : indexId,
+		thumbWidth: 80,
+        keyPress : !param.keyPress,
+		youtubePlayerParams: {
+	        showinfo: 0,
+	        rel: 0,
+		},
+    }).on('onAfterOpen.lg', function(e) {
+    	if(item[0].audio.src != null) {
+    		audioPlayer = $('#lg-audio'); 
+    		audioPlayer.attr('controlsList', 'nodownload');
+    		setTimeout(function(){ 
+    			audioPlayer[0].play(); 
+    		}, 700); 
+    	}
+            //加入抽獎影片圖示
+            $(".lg-thumb-item").css('position','relative');
+            for(i=0;i<item.length;i++) {
+                if(item[i].audio.src!=null && item[i].audio.src!=''){
+                    //加入聲音圖示
+                    $(".lg-thumb-item:nth-child("+(i+1)+")").append(audioHtml);
+                }
+                $(".lg-thumb-item:nth-child("+(i+1)+")").append(item[i].slotHtml);
+                $(".lg-thumb-item:nth-child("+(i+1)+")").append(item[i].videoHtml);
+            }
+	}).on('onAfterSlide.lg',function(e, p, i){
+	    $lg.data('lightGallery').modules.audio.build();
+        audioPlayer = $('#lg-audio'); _audipPlayer = document.getElementById("lg-audio");
+        audioPlayer.attr('controlsList', 'nodownload');
+        switch(item[i].usefor) {
+        	case 'video' : audioPlayer[0].pause(); break;
+        	case 'audio' : if( _audipPlayer.hasAttribute("autoplay")) audioPlayer[0].play(); break;
+        }
+        if(item[i].audio.mode == 'singular') askAutoPlay = false;
+       
+		if(item[i].audio.src != null && askAutoPlay) { $('span#lg-audio-button').trigger('click') ; }
+
+		audioPlayer[0].addEventListener("play", function () {
+			audioPlayer.bind('contextmenu',function() { return false; }); 
+			if(!_audipPlayer.hasAttribute("autoplay")) $('.lg-audio-mask:first').hide();
+			askAutoPlay = false;
+			audioPlayer.attr('autoplay', 'autoplay');
+		}, false);
+
+		audioPlayer[0].addEventListener("pause", function (e) {	
+			if(e.target.ended == false ) {
+				askAutoPlay = false;
+				audioPlayer.removeAttr('autoplay');
+			}
+		}, false);
+
+        if (item[i].slotHtml != null && item[i].slotHtml != '') {
+            var slotConfirm = new jBox('Modal', {closeButton: 'title'});
+            var slotContent = '', slotTitle = '';
+            slotTitle += '<p class="keypoint" style="margin-right:-20px;font-size:2em;text-align:center;line-height:1.2em;"><?php echo _('下載ＡＰＰ即可兌換／抽獎') ?></p>'
+            slotContent += '<div class="content" style="text-align:center;" >';
+            if(isMobile()){
+                slotContent += `<p style="margin:0 auto;width:80%;background:#FF5E68;color:#fff;border-radius:30px;padding:8px 5px;cursor: pointer;" data-uri="<?php echo self::deeplink('album', 'content', ['album_id'=>null]); ?>${param.album_id}"  onclick="clickHandler(this.dataset.uri);" ><img src="<?php echo static_file('images/assets-v6/gift-01.svg') ?>" style="vertical-align:middle;display:inline-block;background:#FF5E68;width:30px;height:30px;border-radius:30px;margin-right:3px;">`;
+                slotContent += `<span style="display:inline-block;font-size:20px;vertical-align:middle;" ><?php echo _('立即開啟') ?></span></p>`;
+            }else{
+                slotContent += `<span data-uri="<?php echo self::deeplink('album', 'content', ['album_id'=>null]); ?>${param.album_id}"  onclick="clickHandler(this.dataset.uri);"><img src="<?php echo static_file('images/assets-v6/gift-01.svg') ?>" style="position:absolute;z-index:5;top:38.8%;left:44.8%;vertical-align:middle;display:block;background:#FF5E68;width:40px;height:40px;border-radius:40px;">`;
+                slotContent += `<img src="${param.adjustAppQrcodeUrl}" style="padding:3px;width:180px;height:auto;" ></span>`;
+            }
+            slotConfirm.setTitle(slotTitle).setContent(slotContent).open();
+        }
+        $('.jBox-overlay:last-child').css('background-color','rgba(255,255,255,0.3)');
+		if($('#JboxRecommendedBuyAlbum').length) RecommendedBuyAlbum.destroy();
+
+		<?php if( (M_CLASS == 'album' && in_array(M_FUNCTION, ['content_v2', 'explore', 'index'])) || (M_CLASS =='index' && in_array(M_FUNCTION, ['index'])) || (M_CLASS =='creative' && in_array(M_FUNCTION, ['content']))) echo 'if(item[i].recommendedBuyAlbum ) recommendedBuyAlbum();'; ?>
+
+		<?php if(M_CLASS == 'event' && in_array(M_FUNCTION, ['content'])) echo 'if(item[i].recommendedBuyAlbum ) recommendedBuyAlbum(param.album_id);';?>			
+			setTimeout(function() {
+                if( window.DMplayerE ) { window.DMplayerE.pause(); }
+
+                if((item[i].platform) == 'facebook') {
+					$('div.lg-current .lg-video-cont').empty();
+					var element = `<div
+									id="fbVideo"
+									class="fb-video"
+									data-href="${item[i].src}"
+									data-width="500"
+									data-allowfullscreen="true"></div>`;
+					$('div.lg-current .lg-video-cont').append(element);
+					window.FB.XFBML.parse();
+                } else if ((item[i].platform) == 'dailymotion') {
+                    var videoStr2Array = (item[i].src).split('/'), element = `<div id="DMplayer"></div>`;
+                    $('div.lg-current .lg-video-cont').empty().append(element);
+                    DMplay(videoStr2Array[(((item[i].src).split('/')).length - 1)], 640, 400);
+                }
+
+			}, 200);
+    }).on('onAfterAppendSubHtml.lg',function(e){
+        $lg.data('lightGallery').modules.subhtml.build();
+    }).on('onCloseAfter.lg', function(e){
+        <?php
+        if (isset($agent)) {
+        	switch ($agent) {
+				case 'mobile':
+					echo '_jBox({}, \'recommendedDownloadApp\');';
+					break;
+			}
+        }
+        if(M_CLASS == 'diy') echo 'browseKitRefresh();';
+        ?>
+    });
+
+    window.$lg = $lg;
+}
+
+function browseKitRefresh() {
+	a_album_item = [];
+	
+	$.each(a_album_element, function(k0, v0) {
+		$(v0).removeData('lightGallery');
+	});
+}
+
+function DMplay(id, w = 320, h = 200) {
+    if($('iframe#DMplayer').length > 0) $('iframe#DMplayer').remove();
+    DM.api('/videos', {
+        filters: 'buzz',
+        fields: 'id',
+    }, function () {
+        var player = DM.player(document.getElementById('DMplayer'), {
+            video: id,
+            width: w,
+            height: h,
+        });
+
+        window.DMplayerE = player;
+    });
+}
+
+function fetch_video_platform(url) {	
+	var returnType,
+		isHTML = RegExp.prototype.test.bind(/(<([^>]+)>)/i);
+	
+	if( typeof(url) != 'undefined' && !isHTML(url) ) {
+		if( (url.match('youtu.be') != null || url.match('youtube.com') != null) && !url.includes('embed') ) {
+			returnType = 'youtube';
+		}else if(url.match('vimeo') != null){
+			returnType = 'vimeo';
+		}else if(url.match('facebook') != null ) {
+			returnType = 'facebook';
+		}else if(url.match('dailymotion') != null ) {
+			returnType = 'dailymotion';
+		}else if(url.match('pinpinbox') != null){
+			returnType = 'pinpinbox';
+		}
+	}
+
+	return returnType;
+}
+
+function _jBox(r, c) {
+	var img = {
+		'error': '<?php echo static_file('images/error.png')?>',
+		'info': '<?php echo static_file('images/info.png')?>',
+		'success': '<?php echo static_file('images/success.png')?>',
+	};
+	
+	switch (c) {
+		case 'success':
+		case 'error':
+		case 'info':
+			var box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 100,
+				autoClose : r.timer || 0,
+				title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="' + img[c] + '">',
+				onCloseComplete: function() {
+					if(typeof( window.onbeforeunload) != 'undefined' ) window.onbeforeunload = null;
+					if (r.data && typeof(r.data.task) != 'undefined') { 
+						(typeof(r.data.task.message) != 'undefined' && r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : (r.redirect) ? location.href = r.redirect : null; 
+					} else {
+						if (r.redirect) location.href = r.redirect;
+					}			
+				},
+			}).setContent('<div class="content">' + r.message + '</div>').open();
+			break;
+
+		case 'success_notext':
+			if (typeof( window.onbeforeunload) != 'undefined' ) window.onbeforeunload = null;
+
+			if (r.data && typeof(r.data.task) != 'undefined') {
+				(typeof(r.data.task.message) != 'undefined' && r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : (r.redirect) ? (r.redirect=='createAlbum') ? createAlbum() : location.href = r.redirect : null; 
+			} else {
+				if (r.redirect) {
+					(r.redirect == 'createAlbum') ? createAlbum() : location.href = r.redirect;
+				}
+			}
+			break;
+
+		case 'map':
+			var box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 100,
+				title: '<i style="color:#ee5b8d;font-size:22px;" class="fa fa-map-marker" ></i>'+ r.data,
+			}).setContent('<div class="content">' + r.message + '</div>').open();
+			break;
+	
+		case 'albumProcess':
+			block_box = new jBox('Modal', {
+				offset: {y: -50},
+				position: {y: 'center'},
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 300,
+				zIndex: 1500,
+			}).setContent('<div class="content"><?php echo _('正在儲存上次未完成的進度...')?><img src="<?php echo static_file('images/loading.gif'); ?>"></div>').open();
+			
+			$.post('<?php echo self::url('album', 'save_album_ajax')?>' , {
+				album_id : r.data,
+				template_id: '<?php echo (isset($template['template_id'])) ? $template['template_id'] : null; ?>',
+				current_album_id: '<?php echo (isset($album['album']['album_id'])) ? $album['album']['album_id'] : null ; ?>',
+			}, function(r2) {
+				block_box.close();
+				r2 = $.parseJSON(r2);
+				switch (r2.result) {
+					case 0 : 
+						_jBox(r2, 'error');
+					break;
+					case 1 : 
+						location.href = r2.redirect;
+					break;
+					case 2 : 
+						_jBox(r2, 'success');
+					break;
+				}
+			});
+			break;
+
+		case 'block':
+			box = new jBox('Modal', {
+				offset: {y: -50},
+				position: {y: 'center'},
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 300,
+				zIndex: 1500,
+			}).setContent('<div class="content"><?php echo _('Processing...')?><img src="<?php echo static_file('images/loading.gif'); ?>"></div>').open();
+			break;
+		
+		case 'blockCustomMsg':
+			box = new jBox('Modal', {
+				offset: {y: -50},
+				position: {y: 'center'},
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 800,
+				zIndex: 1500,
+			}).setContent('<div class="content">'+r.message+' <p style="text-align: center;"><img src="<?php echo static_file('images/loading.gif'); ?>"></p><p style="text-align: center;">(請勿關閉視窗)</p></div>');
+			break;
+			
+		case 'login':
+			var message = r.message || '<?php echo _('Please login first.')?>',
+			box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 100,
+				onCloseComplete: function() {
+					if (r.redirect) location.href = r.redirect;
+				},
+				title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="<?php echo static_file('images/info.png')?>">',
+			}).setContent('<div class="content">' + message + '</div>').open();
+			break;
+
+		case 'processing':
+
+			var box = new jBox('Modal', {
+				closeOnClick: false,
+				closeButton: 'title',
+				width: 155,
+				height: 53,
+			}).setContent('<span style="padding-left:20px;font-weight:bold;color:#2299DD"><?php echo _('Processing...')?></span><img src="<?php echo static_file('images/loading.gif')?>">').open();
+			break;
+
+		case 'recommendedDownloadApp':
+			<?php
+			if (isset($album['album']['album_id']) && SDK('Mobile_Detect')->isMobile()) {
+			?>
+				var box = new jBox('Confirm', {
+					cancelButton: '<?php echo _('No')?>',
+					confirmButton: '<?php echo _('Yes')?>',
+					confirm: function(){
+						clickHandler('<?php echo self::deeplink('album', 'content', ['album_id'=>$album['album']['album_id']])?>');
+					},
+					onCloseComplete: function(){
+						box.destroy();
+					}
+				}).setContent(
+					'<div class="content">' +
+					'<p><?php echo _('建議您使用 App 以取得最佳瀏覽體驗，是否開啟？')?></p>' +
+					'</div>'
+				).open();
+			<?php
+			}
+			?>
+			break;
+			
+		case 'recommendedUpgradeGrade':
+			var reDirectConfirm = new jBox('Confirm', {
+				cancelButton: '<?php echo _('No')?>',
+				confirmButton: '<?php echo _('Yes')?>',
+				closeButton: 'title',
+				closeOnClick: false,
+				closeOnEsc: false,
+				delayOpen: 300,
+				cancel: function() { location.href = r.redirect; },
+				confirm: function() {  location.href = '<?php echo self::url('user', 'grade') ?>'; },
+				onCloseComplete: function() { reDirectConfirm.destroy(); }
+			}).setContent(r.message).open();
+			break;
+			
+		case 'taketemplate':
+			var box = new jBox('Confirm', {
+				cancelButton: '<?php echo _('No')?>',
+				confirmButton: '<?php echo _('Yes')?>',
+				confirm: function() {
+					$.post('<?php echo self::url('template', '_taketemplate')?>', {
+						template_id: r.data.template_id,
+						confirm: true,
+						join_event : r.data.join_event,
+					}, function(r) {
+						r = $.parseJSON(r);
+						switch (r.result) {
+							case 1:
+								_jBox(r, 'success');
+								break;
+							case 2:
+								_jBox(r, 'login');
+								break;
+							case 3:
+								_jBox(r, 'taketemplate');
+								break;
+							case 4:
+								_jBox(r, 'albumProcess');
+								break;
+							case 5:
+								location.href = r.redirect;
+								break;
+							default:
+								site_jBox(r, 'error');
+								break;
+						}
+					});
+				},
+				onCloseComplete: function() {	
+					box.destroy();
+				}
+			}).setContent(
+				'<div class="content">' +
+				'<p><?php echo _('Are you sure you want to save this Template?')?></p><p><?php echo _('Savings conditions：')?>&nbsp;<span class="red">' + r.data.point + 'P</span></p>' +
+				'</div>'
+			).open();
+			break;
+
+		default:
+			alert('Unknown case of _jBox');
+			break;
+	}
+
+	return box;
+}
+
+function site_jBox(r, type) {
+	if (typeof(r.data) == 'undefined') {r.data = 'Modal'};
+	var a_img = {
+		'success': '<?php echo static_file('images/success.png')?>',
+		'error': '<?php echo static_file('images/error.png')?>',
+	},
+	img = a_img[type] || '<?php echo static_file('images/info.png')?>';
+	
+	var siteModal = new jBox(r.data, {
+		closeButton: 'title',
+		delayOpen: 200,
+		title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="' + img + '">',
+		onCloseComplete: function() {
+			if (r.redirect) location.href = r.redirect;
+		},
+		maxWidth: 600,
+		minWidth: 100,
+	}).setContent('<div class="content">' + r.message + '</div>').open();
+}
+
+function _TaskAlert(r, c) {
+	switch (c) {
+		case 'task' :
+			var url = (r.data.task.event_url) ? `<p style="text-align:right"><a href="${r.data.task.event_url}" target="_blank">活動連結</a></p>` : '' ;
+				str = `<div class="content">
+							<p style="text-align: center;">
+								<img width="80" height="80" style="vertical-align: middle;" src="<?php echo static_file('images/gift_2.png') ?>">
+							</p>
+							<p style="margin:10px;text-align:center" class="keypoint">${r.data.task.message}</p>
+							${url}
+						</div>`,
+				box = new jBox('Modal', {
+				closeButton: 'title',
+				delayOpen: 300,
+				maxWidth: 600,
+				minWidth: 300,
+				title: '<span style="color: #23afaf; font-size:1.4em;font-weight:bold ; display: inline-block;height: 100%;vertical-align: middle;"><h2>'+r.data.task.title+'</h2></span>',
+				onCloseComplete: function() {
+					if (r.redirect) location.href = r.redirect;
+				},
+			}).setContent(str).open();
+		break;
+	}
+}
+
+function createAlbum() {
+    $.post('<?php echo self::url('template', '_taketemplate_v2')?>', {
+        template_id: 0,
+    }, function(r) {
+        r = $.parseJSON(r);
+        switch (r.result) {
+            case 1:
+                _jBox(r, 'albumProcess');
+                break;
+            case 2:
+                _jBox(r, 'success_notext');
+                break;
+            case 3:
+                location.href = r.redirect;
+                break;
+            default:
+                _jBox(r, 'error');
+                break;
+        }
+    });
+}
+
+function processAjaxData(urlPath){
+	window.history.pushState("","",urlPath);
+}
+
+function isMobile() {
+    var isAndroid, isIOS, isMobile = false;
+    if(navigator.userAgent.match(/Android/i)) isAndroid = true;
+    if(navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) ) isIOS = true;
+    if(isAndroid || isIOS) isMobile = true;
+
+    return isMobile;
+}
+
+$(document).on('click', '.lg-video-play', function(){
+	if($('video').length > 1) $('video').bind('contextmenu',function() { return false; });
+})
+
+//On photoswipe play video
+$(document).on('click', 'button.play_video', function(){
+	var video_modal = new jBox('Modal', {
+		closeOnClick: false,
+		closeButton: 'title',
+		title : '',
+		width: 'auto',
+		height: 520,
+		onCloseComplete : function () {
+			if($('video').length > 0 ) $('video').remove();
+			
+			if( typeof(video_file) != 'undefined' ) {
+				video_file.pause();
+			}else{
+				video_embed.pause() ;
+				$('div[id^="mep_"]').remove();
+			}
+		},
+	});		
+	var content;
+	
+	switch ($(this).find('i').data('video_refer')) {
+		case 'file':
+			content = '<video id="video_demo_file" controls loop muted preload="auto" width="640" height="480" data-mejsoptions=\'{"alwaysShowControls": true}\'><source class="mp4" type="video/mp4" src="" /><?php echo _('很抱歉！您的瀏覽器不支援 HTML5 Video '); ?></video>';
+			video_modal.setContent(content).open();
+			var video_file = $("#video_demo_file")[0];
+			$("#video_demo_file source.mp4").attr('src', $(this).find('i').data('video_target'));
+			video_file.play();
+		break;
+		
+		case 'embed':
+			content = '<video style="margin-top:30px;" width="740" height="480" id="video_demo_embed"><source type="video/youtube" src="'+$(this).find('i').data('video_target')+'" /></video>';			
+			video_modal.setContent(content).open();
+			var video_embed = new MediaElementPlayer('#video_demo_embed', {enablePluginDebug: false, flashName: 'flashmediaelement-cdn.swf'});
+		break;
+		
+		default:
+			return false
+		break;
+	}
+});
+
+if($('#banner_catbtn').length>0){  //有輪播時不要底線
+    $('#header').css('border','none');
+}
+
+// 在HEADER加上SCROLL時, 出現底線區塊開始
+window.onscroll = function() {header_sticky()};
+var header = document.getElementById("header");
+var sticky = header.offsetTop;
+function header_sticky(){
+    if (window.pageYOffset > sticky){
+        header.classList.add("header_sticky");
+    }else{
+        header.classList.remove("header_sticky");
+    }
+}
+</script>
+</body>
+</html>

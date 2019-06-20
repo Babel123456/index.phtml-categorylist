@@ -1,0 +1,136 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+	<h2><?php echo _('Member Center'); ?></h2>
+	<ul>
+		<li class="mobiledisplay"><h3><?php echo _('List'); ?></h3></li>
+		<li class="mobiledisplay"><div class="line"></div></li>
+		<li class="mobiledisplay"><a href="<?php echo self::url('user', 'template_info') ?>" class="upload"><?php echo _('Upload'); ?></a></li>
+		<li>
+			<?php include 'member_nav.phtml';?>
+			
+			<div id="memberbox_item">
+				<div id="album_tab">
+				  <h3><?php echo _('List'); ?></h3>
+				  <a href="<?php echo self::url('user', 'template_info') ?>" class="upload"><?php echo _('Upload'); ?></a>					
+				</div>				
+				<div class="album_all">
+					<div class="album_total02">
+						<?php echo _('Size limit: 1336px * 2004px'); ?><br><a target="_blank" href="<?php echo URL_ROOT.Core::settings('TEMPLATE_FILE_DOWNLOAD') ?>"><?php echo _('Download blank Templates (PNG files)'); ?></a>
+						<a id="tutorial" href="javascript:void(0)" onclick="browseKit_list()">
+							<img src="<?php echo static_file('images/question.png') ?>" height="250" width="250" alt="" class="question">
+						</a>
+						<span id="tutorial_img" style="display:none;">
+							<img src="<?php echo static_file('images/tutorial/page_01.jpg'); ?>">
+							<img src="<?php echo static_file('images/tutorial/page_02.jpg'); ?>">
+							<img src="<?php echo static_file('images/tutorial/page_03.jpg'); ?>">
+							<img src="<?php echo static_file('images/tutorial/page_04.jpg'); ?>">
+						</span>
+					</div>
+					<div id="table_box">
+					   <table class="footable" data-page-size="10" data-limit-navigation="5">
+							<thead>
+								<tr>
+									<th>
+										<?php echo _('Name of your Template'); ?>
+									</th>
+									<th data-hide="phone">
+										<?php echo _('Date'); ?>
+									</th>
+									<th >
+										<?php echo _('Price'); ?>
+									</th>
+									<th data-hide="phone">
+										<?php echo _('Download'); ?>
+									</th>
+									<th data-hide="phone">
+										<?php echo _('Status'); ?>
+									</th>
+									<th data-hide="all">
+										<?php echo _('Direction'); ?>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php 
+								if(!empty($template)){
+									foreach($template as $k => $v){
+										echo '<tr>
+											<td><a href="'.$v['link'].'">'.stripslashes ($v['name']).'</a></td>
+											<td>'.date('Y-m-d', strtotime($v['modifytime'])).'</td>
+											<td>'.$v['point'].'</td>
+											<td '.$v['class'].'>'.$v['count'].'</td>
+											<td '.$v['class'].'>'.$v['state'].'</td>
+											<td '.$v['class'].'>'.$v['instruction'].'</td>
+										</tr>';										
+									}
+								}								
+								?>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="5">
+										<div class="pagination pagination-centered"></div>
+									</td>
+								</tr>
+							</tfoot>					               
+						</table>								
+					</div>
+
+				</div>
+			</div>					
+		</li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$('.footable').footable();
+});
+function browseKit_list () {
+	//photoswipe
+	if ($('.pswp').length == 0) {
+		$('body').append(
+			'<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">'+
+				'<div class="pswp__bg"></div>'+
+				'<div class="pswp__scroll-wrap">'+
+					'<div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div>'+
+					'<div class="pswp__ui pswp__ui--hidden">'+
+			            '<div class="pswp__top-bar">'+
+			                '<div class="pswp__counter"></div>'+
+			                '<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>'+
+			                '<button class="pswp__button pswp__button--share" title="Share"></button>'+
+			                '<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>'+
+			                '<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>'+
+			                '<div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div>'+
+			            '</div>'+
+			            '<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div>'+
+			            '<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>'+
+			            '<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>'+
+			            '<div class="pswp__caption"><div class="pswp__caption__center"></div></div>'+
+			        '</div>'+
+			    '</div>'+
+			'</div>'
+		);
+	}
+	var items = [];
+	$('#tutorial_img').find('img').each(function(k0, v0) {
+		var that1 = $(this);
+	    var item = {
+			src: that1.prop('src'),
+			w: 1336,
+			h: 2004,
+	    }
+	    items.push(item);
+	});
+    var options = {loop: false};
+	var pswp = new PhotoSwipe(document.querySelectorAll('.pswp')[0], PhotoSwipeUI_Default, items, options);
+	pswp.init();
+
+	$('.pswp__button--arrow--left').on('click', function() {
+		if (items.length == pswp.getCurrentIndex() + 1) pswp.close();
+	});
+	$('.pswp__button--arrow--right').on('click', function() {
+		if (pswp.getCurrentIndex() == 0) pswp.close();
+	});
+}
+</script>

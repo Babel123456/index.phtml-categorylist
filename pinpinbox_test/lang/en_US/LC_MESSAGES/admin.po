@@ -1,0 +1,867 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: admin\n"
+"POT-Creation-Date: 2015-07-06 18:15+0800\n"
+"PO-Revision-Date: 2015-07-06 18:15+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-Basepath: D:/xampp/htdocs/lion/testmvc/trunk/module/admin\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: controller/ad.php:30 controller/ad.php:50 controller/adarea.php:30
+#: controller/adarea.php:50 controller/admin.php:35 controller/admin.php:57
+#: controller/admingroup.php:31 controller/admingroup.php:75
+#: controller/adminmenu.php:33 controller/adminmenu.php:53
+#: controller/adminself.php:80 controller/audio.php:29 controller/audio.php:57
+#: controller/categoryarea.php:30 controller/categoryarea.php:51
+#: controller/event.php:35 controller/event.php:60 controller/hobby.php:25
+#: controller/hobby.php:41 controller/news.php:90 controller/news.php:117
+#: controller/newsarea.php:30 controller/newsarea.php:50
+#: controller/question.php:27 controller/question.php:45
+#: controller/recruitintent.php:28 controller/recruitintent.php:47
+#: controller/reportintent.php:29 controller/reportintent.php:50
+#: controller/template.php:34 controller/template.php:59
+msgid "Data already exists by [Name]"
+msgstr ""
+
+#: controller/ad.php:42 controller/ad.php:62 controller/adarea.php:42
+#: controller/adarea.php:60 controller/adarea_ad.php:39
+#: controller/adarea_ad.php:50 controller/admin.php:48 controller/admin.php:74
+#: controller/admingroup.php:67 controller/admingroup.php:100
+#: controller/adminmenu.php:45 controller/adminmenu.php:63
+#: controller/adminself.php:95 controller/album.php:37 controller/audio.php:49
+#: controller/audio.php:72 controller/buy.php:58 controller/buy.php:88
+#: controller/cashflow.php:41 controller/cashflow.php:53
+#: controller/category.php:38 controller/category.php:53
+#: controller/categoryarea.php:43 controller/categoryarea.php:62
+#: controller/categoryarea_category.php:40
+#: controller/categoryarea_category.php:52 controller/dev.php:22
+#: controller/dev.php:26 controller/event.php:52 controller/event.php:77
+#: controller/hobby.php:33 controller/hobby.php:49 controller/income.php:33
+#: controller/lang.php:40 controller/lang.php:54 controller/news.php:109
+#: controller/news.php:136 controller/newsarea.php:42
+#: controller/newsarea.php:60 controller/newsarea_news.php:38
+#: controller/newsarea_news.php:50 controller/order.php:31
+#: controller/payment.php:44 controller/payment.php:56
+#: controller/question.php:37 controller/question.php:55
+#: controller/question_user.php:36 controller/recruit.php:34
+#: controller/recruitintent.php:39 controller/recruitintent.php:58
+#: controller/report.php:35 controller/reportintent.php:42
+#: controller/reportintent.php:63 controller/script.php:37
+#: controller/script.php:48 controller/settings.php:62
+#: controller/settings.php:95 controller/settlement.php:32
+#: controller/sms.php:36 controller/sms.php:47 controller/template.php:51
+#: controller/template.php:123 controller/user.php:34
+msgid "Success, back to previous page?"
+msgstr ""
+
+#: controller/ad.php:116 controller/adarea.php:150 controller/admin.php:148
+#: controller/admingroup.php:189 controller/adminmenu.php:177
+#: controller/adminself.php:39 controller/album.php:106
+#: controller/audio.php:122 controller/cashflow.php:111
+#: controller/category.php:103 controller/categoryarea.php:152
+#: controller/dev.php:50 controller/event.php:147 controller/hobby.php:95
+#: controller/lang.php:109 controller/news.php:275 controller/newsarea.php:151
+#: controller/question.php:105 controller/recruit.php:95
+#: controller/recruitintent.php:110 controller/reportintent.php:117
+#: controller/sms.php:102 controller/template.php:195 controller/user.php:71
+#: view/zh_TW/logsite/form.php:12
+msgid "Name"
+msgstr ""
+
+#: controller/ad.php:120 controller/album.php:108 controller/event.php:151
+#: controller/news.php:279
+msgid "Title"
+msgstr ""
+
+#: controller/ad.php:124 controller/event.php:155 controller/news.php:287
+#: controller/template.php:215
+msgid "Image"
+msgstr ""
+
+#: controller/ad.php:128
+msgid "Url"
+msgstr ""
+
+#: controller/ad.php:140 controller/adarea.php:166
+#: controller/adarea_ad.php:145 controller/admin.php:164
+#: controller/album.php:143 controller/audio.php:138 controller/buy.php:264
+#: controller/cashflow.php:130 controller/category.php:119
+#: controller/categoryarea.php:172 controller/categoryarea_category.php:147
+#: controller/event.php:191 controller/lang.php:125 controller/news.php:314
+#: controller/newsarea.php:167 controller/question.php:126
+#: controller/recruitintent.php:135 controller/reportintent.php:146
+#: controller/script.php:124 controller/sms.php:118
+#: controller/template.php:237 controller/user.php:114
+msgid "Act"
+msgstr ""
+
+#: controller/ad.php:143 controller/adarea.php:173
+#: controller/adarea_ad.php:152 controller/admin.php:167
+#: controller/admingroup.php:192 controller/adminmenu.php:204
+#: controller/adminself.php:44 controller/album.php:146
+#: controller/audio.php:141 controller/buy.php:267 controller/category.php:122
+#: controller/categoryarea.php:175 controller/categoryarea_category.php:154
+#: controller/event.php:194 controller/exchange.php:83 controller/hobby.php:98
+#: controller/income.php:106 controller/lang.php:128
+#: controller/newsarea.php:174 controller/newsarea_news.php:153
+#: controller/order.php:87 controller/payment.php:127
+#: controller/question.php:129 controller/question_user.php:105
+#: controller/recruit.php:129 controller/recruitintent.php:138
+#: controller/report.php:105 controller/reportintent.php:149
+#: controller/script.php:127 controller/settings.php:216
+#: controller/settlement.php:105 controller/sms.php:121
+#: controller/template.php:240 controller/user.php:117
+msgid "Insert Time"
+msgstr ""
+
+#: controller/ad.php:145 controller/adarea.php:175
+#: controller/adarea_ad.php:154 controller/admin.php:169
+#: controller/admingroup.php:194 controller/adminmenu.php:206
+#: controller/adminself.php:46 controller/album.php:148
+#: controller/audio.php:143 controller/buy.php:269 controller/category.php:124
+#: controller/categoryarea.php:177 controller/categoryarea_category.php:156
+#: controller/event.php:196 controller/exchange.php:85
+#: controller/hobby.php:100 controller/income.php:108 controller/lang.php:130
+#: controller/newsarea.php:176 controller/newsarea_news.php:155
+#: controller/order.php:89 controller/payment.php:129
+#: controller/question.php:131 controller/question_user.php:107
+#: controller/recruit.php:131 controller/recruitintent.php:140
+#: controller/report.php:107 controller/reportintent.php:151
+#: controller/script.php:129 controller/settings.php:218
+#: controller/settlement.php:107 controller/sms.php:123
+#: controller/template.php:242 controller/user.php:119
+msgid "Modify Time"
+msgstr ""
+
+#: controller/ad.php:147 controller/adarea.php:177
+#: controller/adarea_ad.php:156 controller/admin.php:171
+#: controller/admingroup.php:196 controller/adminmenu.php:208
+#: controller/adminself.php:48 controller/album.php:150
+#: controller/audio.php:145 controller/buy.php:271 controller/category.php:126
+#: controller/categoryarea.php:179 controller/categoryarea_category.php:158
+#: controller/event.php:198 controller/exchange.php:87
+#: controller/hobby.php:102 controller/income.php:110 controller/lang.php:132
+#: controller/newsarea.php:178 controller/newsarea_news.php:157
+#: controller/order.php:91 controller/payment.php:131
+#: controller/question.php:133 controller/question_user.php:109
+#: controller/recruit.php:133 controller/recruitintent.php:142
+#: controller/report.php:109 controller/reportintent.php:153
+#: controller/script.php:131 controller/settings.php:220
+#: controller/settlement.php:109 controller/sms.php:125
+#: controller/template.php:244 controller/user.php:121
+msgid "Modify Admin Name"
+msgstr ""
+
+#: controller/ad.php:149 controller/adarea.php:179
+#: controller/adarea_ad.php:158 controller/admin.php:195
+#: controller/admingroup.php:236 controller/adminmenu.php:210
+#: controller/adminself.php:50 controller/album.php:152
+#: controller/audio.php:147 controller/buy.php:273 controller/cashflow.php:133
+#: controller/category.php:128 controller/categoryarea.php:181
+#: controller/categoryarea_category.php:160 controller/dev.php:101
+#: controller/event.php:200 controller/hobby.php:104 controller/income.php:112
+#: controller/lang.php:134 controller/news.php:323 controller/newsarea.php:184
+#: controller/newsarea_news.php:159 controller/payment.php:133
+#: controller/question.php:135 controller/question_user.php:111
+#: controller/recruit.php:135 controller/recruitintent.php:144
+#: controller/report.php:111 controller/reportintent.php:155
+#: controller/script.php:133 controller/settings.php:222
+#: controller/settlement.php:111 controller/sms.php:127
+#: controller/template.php:247 controller/user.php:123
+msgid "Submit"
+msgstr ""
+
+#: controller/ad.php:150 controller/adarea.php:180
+#: controller/adarea_ad.php:159 controller/admin.php:196
+#: controller/admingroup.php:237 controller/adminmenu.php:211
+#: controller/album.php:153 controller/audio.php:148 controller/buy.php:274
+#: controller/cashflow.php:134 controller/category.php:129
+#: controller/categoryarea.php:182 controller/categoryarea_category.php:161
+#: controller/dev.php:102 controller/event.php:201 controller/exchange.php:89
+#: controller/hobby.php:105 controller/income.php:113 controller/lang.php:135
+#: controller/news.php:324 controller/newsarea.php:185
+#: controller/newsarea_news.php:160 controller/order.php:93
+#: controller/payment.php:134 controller/question.php:136
+#: controller/question_user.php:112 controller/recruit.php:136
+#: controller/recruitintent.php:145 controller/report.php:112
+#: controller/reportintent.php:156 controller/script.php:134
+#: controller/settings.php:223 controller/settlement.php:112
+#: controller/sms.php:128 controller/template.php:248 controller/user.php:124
+msgid "Back"
+msgstr ""
+
+#: controller/ad.php:155 controller/adarea.php:185
+#: controller/adarea_ad.php:164 controller/admingroup.php:244
+#: controller/adminmenu.php:218 controller/adminself.php:55
+#: controller/album.php:158 controller/audio.php:153 controller/buy.php:279
+#: controller/cashflow.php:139 controller/category.php:134
+#: controller/categoryarea.php:187 controller/categoryarea_category.php:166
+#: controller/dev.php:107 controller/event.php:206 controller/exchange.php:94
+#: controller/hobby.php:110 controller/income.php:118 controller/lang.php:140
+#: controller/news.php:329 controller/newsarea.php:190
+#: controller/newsarea_news.php:165 controller/order.php:98
+#: controller/payment.php:139 controller/question.php:141
+#: controller/question_user.php:117 controller/recruit.php:141
+#: controller/recruitintent.php:150 controller/report.php:117
+#: controller/reportintent.php:161 controller/script.php:139
+#: controller/settings.php:228 controller/settlement.php:117
+#: controller/sms.php:133 controller/template.php:253 controller/user.php:129
+msgid "Form"
+msgstr ""
+
+#: controller/ad.php:175 controller/adarea.php:205 controller/adarea.php:252
+#: controller/adarea_ad.php:184 controller/admin.php:219
+#: controller/admingroup.php:279 controller/adminmenu.php:238
+#: controller/audio.php:173 controller/cache.php:33
+#: controller/category.php:154 controller/categoryarea.php:250
+#: controller/categoryarea_category.php:186 controller/dev.php:123
+#: controller/generate_qrcode.php:15 controller/news.php:52
+#: controller/news.php:54 controller/news.php:362 controller/newsarea.php:211
+#: controller/newsarea.php:295 controller/newsarea_news.php:185
+#: controller/template.php:349 controller/upload.php:146
+#: controller/upload.php:208 controller/upload.php:304
+msgid "Success"
+msgstr ""
+
+#: controller/adarea.php:153 controller/adminmenu.php:180
+#: controller/categoryarea.php:155 controller/newsarea.php:154
+#: controller/user.php:87
+msgid "Level"
+msgstr ""
+
+#: controller/adarea.php:155 controller/adminmenu.php:182
+#: controller/categoryarea.php:157 controller/newsarea.php:156
+msgid "Up"
+msgstr ""
+
+#: controller/adarea.php:170 controller/adarea_ad.php:149
+#: controller/adminmenu.php:201 controller/buy.php:252
+#: controller/category.php:107 controller/categoryarea.php:160
+#: controller/categoryarea_category.php:151 controller/lang.php:113
+#: controller/news.php:320 controller/newsarea.php:171
+#: controller/newsarea_news.php:150 controller/reportintent.php:134
+#: controller/template.php:223
+msgid "Sequence"
+msgstr ""
+
+#: controller/adarea_ad.php:28 controller/categoryarea_category.php:28
+#: controller/newsarea_news.php:28
+msgid "Data already exists"
+msgstr ""
+
+#: controller/admin.php:32
+msgid "Data already exists by [Account]"
+msgstr ""
+
+#: controller/admin.php:65 controller/adminself.php:88
+msgid "Password is not correct"
+msgstr ""
+
+#: controller/admin.php:99 controller/admin.php:128
+#: controller/adminself.php:23 controller/user.php:67
+#: view/zh_TW/index/login.phtml:20
+msgid "Account"
+msgstr ""
+
+#: controller/admin.php:132 controller/adminself.php:27
+msgid "Old Password"
+msgstr ""
+
+#: controller/admin.php:140 controller/adminself.php:31 controller/user.php:69
+#: view/zh_TW/index/login.phtml:21
+msgid "Password"
+msgstr ""
+
+#: controller/admin.php:144 controller/adminself.php:35
+msgid "Re Password"
+msgstr ""
+
+#: controller/admin.php:152 controller/adminself.php:42
+#: controller/recruit.php:99 controller/user.php:75
+msgid "Email"
+msgstr ""
+
+#: controller/adminmenu.php:160
+msgid "View"
+msgstr ""
+
+#: controller/adminmenu.php:160
+msgid "Add"
+msgstr ""
+
+#: controller/adminmenu.php:160
+msgid "Edit"
+msgstr ""
+
+#: controller/adminmenu.php:160
+msgid "Delete"
+msgstr ""
+
+#: controller/adminmenu.php:197 controller/news.php:291
+msgid "Class"
+msgstr ""
+
+#: controller/album.php:110 controller/event.php:159 controller/report.php:91
+#: controller/template.php:211 controller/user.php:85
+msgid "Description"
+msgstr ""
+
+#: controller/album.php:113
+msgid "Cover"
+msgstr ""
+
+#: controller/album.php:117
+msgid "Photo"
+msgstr ""
+
+#: controller/album.php:120
+msgid "Location"
+msgstr ""
+
+#: controller/album.php:122
+msgid "Weather"
+msgstr ""
+
+#: controller/album.php:124
+msgid "Mood"
+msgstr ""
+
+#: controller/album.php:126
+msgid "Rating"
+msgstr ""
+
+#: controller/album.php:128 controller/exchange.php:79
+#: controller/settlement.php:85 controller/settlement.php:87
+#: controller/template.php:219
+msgid "Point"
+msgstr ""
+
+#: controller/album.php:131
+msgid "Recommend"
+msgstr ""
+
+#: controller/album.php:166 controller/album.php:171
+msgid "Album Index"
+msgstr ""
+
+#: controller/album.php:260
+msgid "Param error."
+msgstr ""
+
+#: controller/album.php:266
+msgid "File is not exist."
+msgstr ""
+
+#: controller/audio.php:126
+msgid "File"
+msgstr ""
+
+#: controller/buy.php:32 controller/buy.php:66
+msgid ""
+"Data already exists by [Platform] and [Assets] and [Assets Item] and [Total] "
+"and [Currency]"
+msgstr ""
+
+#: controller/buy.php:36 controller/buy.php:70
+msgid "Data already exists by [Apple]"
+msgstr ""
+
+#: controller/buy.php:40 controller/buy.php:74
+msgid "Data already exists by [Google]"
+msgstr ""
+
+#: controller/buy.php:225 controller/exchange.php:71 controller/order.php:67
+msgid "Platform"
+msgstr ""
+
+#: controller/buy.php:227 controller/order.php:69
+msgid "Assets"
+msgstr ""
+
+#: controller/buy.php:229 controller/buy.php:230
+msgid "Assets Item"
+msgstr ""
+
+#: controller/buy.php:234 controller/income.php:86 controller/order.php:73
+msgid "Total"
+msgstr ""
+
+#: controller/buy.php:237 controller/cashflow.php:114 controller/income.php:88
+#: controller/order.php:75
+msgid "Currency"
+msgstr ""
+
+#: controller/buy.php:240
+msgid "Obtain"
+msgstr ""
+
+#: controller/cashflow.php:29
+msgid "Data already exists by [ID] and [Currency]"
+msgstr ""
+
+#: controller/cashflow.php:107 controller/exchange.php:75
+#: controller/lang.php:106 controller/report.php:89 controller/script.php:98
+#: controller/sms.php:98
+msgid "ID"
+msgstr ""
+
+#: controller/cashflow.php:118 controller/script.php:106
+#: controller/sms.php:106
+msgid "Customize"
+msgstr ""
+
+#: controller/controller.php:69 controller/controller.php:71
+msgid "Access Denied"
+msgstr ""
+
+#: controller/controller.php:401
+msgid "You are here"
+msgstr ""
+
+#: controller/controller.php:401
+msgid "Home"
+msgstr ""
+
+#: controller/dev.php:54 controller/news.php:244 controller/payment.php:109
+msgid "Date"
+msgstr ""
+
+#: controller/dev.php:58
+msgid "Time"
+msgstr ""
+
+#: controller/dev.php:62
+msgid "DateTime"
+msgstr ""
+
+#: controller/dev.php:66
+msgid "Upload"
+msgstr ""
+
+#: controller/dev.php:70
+msgid "Textarea"
+msgstr ""
+
+#: controller/dev.php:74
+msgid "Editor"
+msgstr ""
+
+#: controller/dev.php:78
+msgid "Color"
+msgstr ""
+
+#: controller/dev.php:82
+msgid "Background"
+msgstr ""
+
+#: controller/dev.php:86
+msgid "Foreground"
+msgstr ""
+
+#: controller/dev.php:90
+msgid "Image Combine"
+msgstr ""
+
+#: controller/event.php:163
+msgid "Award"
+msgstr ""
+
+#: controller/event.php:167
+msgid "Vote"
+msgstr ""
+
+#: controller/event.php:171
+msgid "Contribution"
+msgstr ""
+
+#: controller/event.php:175 controller/settlement.php:89
+msgid "Start Time"
+msgstr ""
+
+#: controller/event.php:179 controller/settlement.php:91
+msgid "End Time"
+msgstr ""
+
+#: controller/event.php:214 controller/event.php:219
+msgid "Event Join"
+msgstr ""
+
+#: controller/event.php:227 controller/event.php:232
+msgid "Event Vote"
+msgstr ""
+
+#: controller/exchange.php:73 controller/report.php:87
+#: controller/settings.php:201
+msgid "Type"
+msgstr ""
+
+#: controller/exchange.php:77
+msgid "Point Before"
+msgstr ""
+
+#: controller/exchange.php:81
+msgid "Point Split"
+msgstr ""
+
+#: controller/income.php:90
+msgid "Remittance"
+msgstr ""
+
+#: controller/income.php:92
+msgid "Remittance Info"
+msgstr ""
+
+#: controller/income.php:103 controller/order.php:77
+#: controller/payment.php:124 controller/question_user.php:102
+#: controller/recruit.php:126 controller/report.php:102
+#: controller/settlement.php:102 controller/template.php:301
+msgid "State"
+msgstr ""
+
+#: controller/lang.php:26 controller/script.php:26 controller/sms.php:26
+msgid "Data already exists by [ID]"
+msgstr ""
+
+#: controller/news.php:202
+msgid "Reflesh"
+msgstr ""
+
+#: controller/news.php:203
+msgid "Date range"
+msgstr ""
+
+#: controller/news.php:228
+msgid "By Act"
+msgstr ""
+
+#: controller/news.php:267
+msgid "Analysis"
+msgstr ""
+
+#: controller/news.php:283
+msgid "Text"
+msgstr ""
+
+#: controller/news.php:295
+msgid "StartTime"
+msgstr ""
+
+#: controller/news.php:299
+msgid "EndTime"
+msgstr ""
+
+#: controller/news.php:337
+msgid "Page"
+msgstr ""
+
+#: controller/news.php:341
+msgid "Magazine"
+msgstr ""
+
+#: controller/order.php:71
+msgid "Assets Info"
+msgstr ""
+
+#: controller/order.php:79
+msgid "Remote IP"
+msgstr ""
+
+#: controller/order.php:81
+msgid "Callback"
+msgstr ""
+
+#: controller/order.php:83
+msgid "Request"
+msgstr ""
+
+#: controller/order.php:85
+msgid "Return"
+msgstr ""
+
+#: controller/payment.php:112 controller/script.php:102
+#: controller/settings.php:213
+msgid "Remark"
+msgstr ""
+
+#: controller/question.php:114 controller/recruitintent.php:123
+#: controller/reportintent.php:130
+msgid "Feedback"
+msgstr ""
+
+#: controller/question_user.php:87
+msgid "Question"
+msgstr ""
+
+#: controller/question_user.php:90
+msgid "Answer"
+msgstr ""
+
+#: controller/recruit.php:97
+msgid "Telephone"
+msgstr ""
+
+#: controller/recruit.php:101
+msgid "Country"
+msgstr ""
+
+#: controller/recruit.php:103
+msgid "Zip Code"
+msgstr ""
+
+#: controller/recruit.php:105
+msgid "Address"
+msgstr ""
+
+#: controller/recruit.php:107
+msgid "VAT Number"
+msgstr ""
+
+#: controller/recruit.php:109
+msgid "Website"
+msgstr ""
+
+#: controller/recruit.php:111
+msgid "Intro"
+msgstr ""
+
+#: controller/recruit.php:113
+msgid "Proposal"
+msgstr ""
+
+#: controller/recruit.php:115
+msgid "Contact"
+msgstr ""
+
+#: controller/recruitintent.php:114 controller/reportintent.php:121
+msgid "Reply"
+msgstr ""
+
+#: controller/script.php:111
+msgid "Execute"
+msgstr ""
+
+#: controller/settings.php:30
+msgid "Data already exists by [Keyword]"
+msgstr ""
+
+#: controller/settings.php:34
+msgid "Data already exists by [Keyword] and [Lang]"
+msgstr ""
+
+#: controller/settings.php:69
+msgid "Admin Groups inconsistent."
+msgstr ""
+
+#: controller/settings.php:179
+msgid "Keyword"
+msgstr ""
+
+#: controller/settings.php:205 controller/settings.php:209
+msgid "Value"
+msgstr ""
+
+#: controller/template.php:100
+msgid "File copy fail"
+msgstr ""
+
+#: controller/template.php:199
+msgid "width"
+msgstr ""
+
+#: controller/template.php:203
+msgid "height"
+msgstr ""
+
+#: controller/template.php:207
+msgid "Instruction"
+msgstr ""
+
+#: controller/template.php:319
+msgid "Frame"
+msgstr ""
+
+#: controller/template.php:325
+msgid "Template"
+msgstr ""
+
+#: controller/upload.php:28 controller/upload.php:88
+msgid "The extension of file is not allowed."
+msgstr ""
+
+#: controller/upload.php:43
+msgid "Upload success."
+msgstr ""
+
+#: controller/upload.php:175 controller/upload.php:227
+#: controller/upload.php:237
+msgid "File type error"
+msgstr ""
+
+#: controller/user.php:73
+msgid "Cellphone"
+msgstr ""
+
+#: controller/user.php:77
+msgid "Sex"
+msgstr ""
+
+#: controller/user.php:79
+msgid "Birthday"
+msgstr ""
+
+#: controller/user.php:81
+msgid "Picture"
+msgstr ""
+
+#: controller/user.php:83
+msgid "Relationship"
+msgstr ""
+
+#: controller/user.php:89
+msgid "Social Link"
+msgstr ""
+
+#: controller/user.php:91
+msgid "Discuss"
+msgstr ""
+
+#: controller/user.php:93
+msgid "Creative"
+msgstr ""
+
+#: controller/user.php:95
+msgid "Creative Name"
+msgstr ""
+
+#: controller/user.php:97
+msgid "Creative Code"
+msgstr ""
+
+#: controller/user.php:99
+msgid "Last Login IP"
+msgstr ""
+
+#: controller/user.php:101
+msgid "Last Login Time"
+msgstr ""
+
+#: controller/user.php:103
+msgid "Modify Time Self"
+msgstr ""
+
+#: controller/user.php:146 controller/user.php:155
+msgid "User Point"
+msgstr ""
+
+#: controller/user.php:150
+msgid "User Point Queue"
+msgstr ""
+
+#: controller/user.php:165
+msgid "User Grade Queue"
+msgstr ""
+
+#: controller/user.php:170
+msgid "User Grade"
+msgstr ""
+
+#: view/zh_TW/logsite/form.php:16
+msgid "Site Block"
+msgstr ""
+
+#: view/zh_TW/admin/form.phtml:25 view/zh_TW/settings/form.phtml:13
+msgid "[Admin Group] is required"
+msgstr ""
+
+#: view/zh_TW/admin/index.phtml:92 view/zh_TW/admingroup/index.phtml:82
+#: view/zh_TW/adminmenu/index.phtml:131 view/zh_TW/cache/index.phtml:28
+#: view/zh_TW/dev/index.phtml:108 view/zh_TW/logsite/index.phtml:72
+#: view/zh_TW/news/index.phtml:48 view/zh_TW/newsarea/form.phtml:83
+#: view/zh_TW/newsarea/index.phtml:47 view/zh_TW/newsarea_news/index.phtml:50
+msgid "Are you sure to delete it?"
+msgstr ""
+
+#: view/zh_TW/buy/form.phtml:26
+msgid "Unknow case of assets"
+msgstr ""
+
+#: view/zh_TW/buy/form.phtml:33
+msgid "Please check the [Platform]."
+msgstr ""
+
+#: view/zh_TW/buy/form.phtml:37
+msgid "Please check the [Assets]."
+msgstr ""
+
+#: view/zh_TW/buy/form.phtml:41
+msgid "Please check the [Assets Item]."
+msgstr ""
+
+#: view/zh_TW/buy/form.phtml:45
+msgid "Please check the [Currency]."
+msgstr ""
+
+#: view/zh_TW/cashflow/form.phtml:9
+msgid "[Currency] is required"
+msgstr ""
+
+#: view/zh_TW/event/form.phtml:8
+msgid "[Start Time] must be less than the [End Time]"
+msgstr ""
+
+#: view/zh_TW/headbar.phtml:3
+msgid "Background Admin System"
+msgstr ""
+
+#: view/zh_TW/headbar.phtml:4
+msgid "Group"
+msgstr ""
+
+#: view/zh_TW/headbar.phtml:4
+msgid "Language"
+msgstr ""
+
+#: view/zh_TW/headbar.phtml:4
+msgid "Website Homepage"
+msgstr ""
+
+#: view/zh_TW/headbar.phtml:4
+msgid "Logout"
+msgstr ""
+
+#: view/zh_TW/index/login.phtml:8
+msgid "Sign in here"
+msgstr ""
+
+#: view/zh_TW/index/login.phtml:22
+msgid "Login"
+msgstr ""
+
+#: view/zh_TW/payment/form.phtml:33 view/zh_TW/script/form.phtml:67
+msgid "No"
+msgstr ""
+
+#: view/zh_TW/payment/form.phtml:37 view/zh_TW/script/form.phtml:71
+msgid "Yes"
+msgstr ""
+
+#: view/zh_TW/question/form.phtml:8 view/zh_TW/recruitintent/form.phtml:8
+#: view/zh_TW/reportintent/form.phtml:8
+msgid "[Feedback] is required"
+msgstr ""
+
+#: view/zh_TW/script/form.phtml:75
+msgid "Are you sure to execute it?"
+msgstr ""
+
+#: view/zh_TW/settings/form.phtml:8
+msgid "[Lang] is required"
+msgstr ""

@@ -1,0 +1,136 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+	<h2><?php echo _('Member Center'); ?></h2>
+	<ul>
+		<li class="mobiledisplay"><h3><?php echo _('Feedback system'); ?></h3></li>
+		<li class="mobiledisplay"><div class="line"></div></li>
+		<li class="mobile_open02">
+			<a href="<?php echo self::url('user', 'question') ?>" class="active" ><?php echo _('Feedback system'); ?></a>	
+			<a href="<?php echo self::url('user', 'question_record') ?>" ><?php echo _('Feedback records'); ?></a>
+		</li>
+		<li>
+			<?php include ('member_nav.phtml') ;?>
+			
+			<div id="memberbox_item">
+				<div id="album_tab">
+					<h3><?php echo _('Feedback system'); ?></h3>
+				</div>
+				<div class="album_info">
+					<ul>
+						<li>
+							<a href="<?php echo self::url('user', 'question_record') ?>"><p class="title "><?php echo _('Feedback records'); ?></p></a>
+						</li>
+						<li>
+							<a href="<?php echo self::url('user', 'question') ?>"><p class="title active"><?php echo _('Feedback system'); ?></p></a>
+						</li>
+					</ul>
+				</div>							
+				<div class="album_all">
+					<div id="memset_info" style="min-height:0px">
+						<form id="js_question_form">
+							<ul>
+								<li>
+									<div class="tdtitle"><?php echo _('Intended question'); ?></div>
+									<div class="tdtxt">
+										<div class="albumedit_down sex">
+											<select name="" id="question"  >
+												<option value='no' >--<?php echo _('Intended question'); ?>--</option>
+													<?php 
+														foreach($question as $k => $v){
+															echo '<option value='.$v['question_id'].'>'.$v['name'].'</option>';
+														}
+													?>
+											</select>	
+										</div>
+									</div>		
+								</li>
+								<!--
+								<li>
+									<div class="tdtitle">標題</div>
+									<div class="tdtxt"><input type="text"></div>		
+								</li>
+								-->
+								<li>
+									<div class="tdtitle"><?php echo _('Input problems'); ?></div>
+									<div class="tdtxt">
+										<textarea id="content" cols="" rows="5"></textarea>
+									</div>		
+								</li>
+								<li>
+									<div class="tdtxt">
+										<div class="textcenter" style="margin: 0 auto; width: 35%;">
+											<div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+												<a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a>
+											</div>
+												<p><?php echo _('Slide the lever to verify.'); ?></p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="tdtxt">
+										<a href="javascript:void(0)"  onclick="$('#js_question_submiu').trigger('click')" class="used"><?php echo _('Submit'); ?></a>
+										<img style="width:20px;height:20px;display:block; margin:auto;" class="loading_img " src="<?php echo static_file('images/loading.gif')?>">
+									</div>
+								</li>		
+								<input type="submit" style="display:none;" id="js_question_submiu">
+							</ul>
+						</form>
+					</div>
+
+				</div>
+			</div>					
+		</li>
+	</ul>
+</div>
+
+<script>
+$(document).ready(function(){
+	$('#slider').slider({
+		animate: true,
+		max: <?php echo $max?>,
+		stop: function(event, ui) {
+			if (ui.value == <?php echo $max?>) {
+				$(this).slider('disable').next('p').css({'color': 'green'}).text('<?php echo _('Authentication passed'); ?>');
+			} else {
+				$(this).find('a').animate({'left': 0});
+			}
+		}
+	});
+
+	$('#js_question_form').validate({	
+		rules: {},
+		submitHandler: function() {
+			$('.used').hide().next('img').show();
+			
+			if ($('#slider').slider('value') != <?php echo $max?>) {
+				var siteModal=new jBox('Modal', {
+					onCloseComplete:function(){
+						$('.used').show().next('img').hide();
+					},
+				});
+				siteModal.setContent("<img src=\"<?php echo static_file('images/error.png'); ?>\">&nbsp;<?php echo _('Slide the lever to verify.'); ?>").open();			
+				return;
+			}
+
+			$.post('<?php echo self::url('user', 'question') ;?>', {
+				question_name_id: $('#question :selected').val(),
+				question_content: $('#content').val(),
+				captcha: $('#slider').slider('value'),
+			}, function(r) {
+				r = $.parseJSON(r);
+				if (r.result == 1) {
+					site_jBox(r,'success');	
+					$('.used').show().next('img').hide();
+				} else {
+					site_jBox(r,'error');
+					$('.used').show().next('img').hide();
+				}				
+			});
+		}
+	});
+	$('.loading_img').hide();
+});
+
+
+
+</script>

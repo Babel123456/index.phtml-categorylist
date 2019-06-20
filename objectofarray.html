@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+範例二 store/get an object or object of array 
+// object of array 存取教學
+
+<script>
+  /*
+  var array = [{"TechARide":"localStorage 介紹與使用","date":20120710},{"Author":"Zam","date":20120710}];
+
+  // 在你放入之前，要先使用轉JSON String
+   window.localStorage("array",JSON.stringify(array));
+
+  // 拿出來再將其轉回來
+  var storage = JSON.parse(localStorage("array"));
+  console.log('storage:'+storage);
+  */
+  var myNameSpace = {};
+
+myNameSpace.localStorage = {
+
+    save: function (name, object) {
+
+        //save to localStorage
+        window.localStorage.setItem(name, window.JSON.stringify(object));
+
+    }
+
+}
+
+myNameSpace.localStorage.save('testObject', {test: true});
+</script>
+
+
+範例三 判斷瀏覽器是否支援(localStorage support)
+ if (localStorage) {
+     return "Local Storage: Supported";  
+ } else {
+     return "Local Storage: Unsupported";  
+ }
+ </body>
+ </html>

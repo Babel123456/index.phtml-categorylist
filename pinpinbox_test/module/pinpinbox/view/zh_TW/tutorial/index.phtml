@@ -1,0 +1,106 @@
+<div id="banner" class="index_banner">
+	<div id="fullWidthBanner" class="tutorialBanner">
+		<div class="bannerContent" style="line-height:8;">
+			<?php echo _('經營小幫手');?>
+		</div>
+	</div>
+</div>
+
+<div class="mobile_banner about">
+	<img src="<?php echo static_file('images/assets-v6/tutorial.jpg') ?>">
+	<div class="m_bannerContent about">
+		<p class="bannerTitle"><?php echo _('經營小幫手') ?></p>
+	</div>
+</div>	
+
+<!-- 內容頁開始 -->
+<div id="content">
+	<ul id="layout">
+		<li class="wid90">
+			<div id="tutorialContentA">
+				<p class="content">
+                    <div class="emb_movie_wrapperRWD" >
+                        <?php echo $tutorial_film; ?>
+                    </div>
+				</p>
+				<div class="content">
+					<p class="title"><?php echo _('重點回顧:') ?></p>
+					<p class="question"><?php echo _('Q: 如何設定作品募資內容？') ?></p>
+					<p class="ans"><?php echo _('A:（影片1:31~1:38）在建立作品頁中點擊「查看作品」，能發現檔案上方可選擇預覽設定，點選「預覽全開」為開放全數的內容，點選「前_頁可供預覽」並設定頁數，則需要「贊助」或「收藏」才可觀看全部內容。')?></p>
+					<p class="question"><?php echo _('Q: 如何設定募資金額？');?></p>
+					<p class="ans"><?php echo _('A:（影片2:08~2:11）建立作品後，記得設定「P點價格底限」，粉絲即可對你贊助。') ?></p>
+				</div>
+			</div>
+		</li>
+		<li><div class="line"></div></li>
+		<li class="wid90">
+			<div id="tutorialContentB">
+				<p class="title"><?php echo _('內容規畫建議') ?></p>
+				<p class="text"><?php echo _('不論是免費，還是需要募資的內容，如果期望觀眾做出行動支持（收藏、贊助），可參考以下做法。') ?></p>
+				<div class="content">
+					<p class="question"><?php echo _('● 除了吸睛的標題和封面，更要把握黃金時間') ?></p>
+					<p class="ans"><?php echo _('超過 50% 的人會在內容前 5 頁（張照片）、影片前 10 秒決定是否繼續看下去，所以在鋪陳時，建議將此部分想像成預告片，影像和聲音的搭配要短而有力。')?></p>
+					<p class="question"><?php echo _('● 以故事編排方式，在精彩部分「緊急喊卡」');?></p>
+					<p class="ans"><?php echo _('這個不用多解釋了，就像平常看影劇時，廣告總出現在最緊張、最精彩的地方（心裡吶喊：啊啊啊～）所以同樣的，這時候就善用 pinpinbox釘釘吧 的「設定預覽」功能吧！（上方影片 1:31~1:38）') ?></p>
+					<p class="question"><?php echo _('● 「痛點激問法」找尋觀眾的需求');?></p>
+					<p class="ans"><?php echo _('思考為什麼觀眾會對該內容有興趣。舉例來說，詢問觀眾「你是不是常被部落客『假推薦真業配』的內容欺騙？」進而喚出他的認同！') ?></p>
+					<p class="question"><?php echo _('● 明確表示粉絲付出支持後的價值');?></p>
+					<p class="ans"><?php echo _('例如：贊助（收藏）旅遊類內容，即可看到創作人的私密推薦行程；贊助 P 點最多的前 10 名粉絲，即可得到精心製作的小禮物。') ?></p>
+				</div>
+			</div>
+		</li>
+		<li><div class="line"></div></li>
+		<li class="wid90">
+			<div id="tutorialContentC">
+				<p class="title"><?php echo _('經營常見問題') ?></p>
+				<div class="content">
+					<p class="question"><?php echo _('Q: 我是新手，沒有經營粉絲的經驗，該怎麼辦？') ?></p>
+					<p class="ans"><?php echo _('A: 我們建議你可以嘗試發佈不同的風格、類型（當然還是要你本身喜歡、擅長的）內容以測試觀眾的反應。')?></p>
+					<p class="question"><?php echo _('Q:  一定都會收到募資金額嗎？');?></p>
+					<p class="ans"><?php echo _('A: 提到此問題，不妨先想想什麼樣的內容會吸引你吧！切記作出募資和免費內容的區別是必須的。') ?></p>
+					<p class="question"><?php echo _('Q: 什麼類型的內容適合在 pinpinbox釘釘吧募資呢?');?></p>
+					<p class="ans"><?php echo _('A: pinpinbox釘釘吧 是一個開放式的平台，只要內容不違背社會善良風俗及智慧財產權，我們不會有所干預。') ?></p>
+				</div>
+			</div>
+		</li>
+		<li class="wid90">
+			<div id="tutorialContentD">
+				<p class="subTitle"><?php echo _('透過創作獲得被動收入是你應得的')?></p>
+				<div class="list">
+					<?php 
+						foreach ($action as $k0 => $v0) {
+							echo $v0;
+						}
+					 ?>
+				</div>
+			</div>
+		</li>		
+	</ul>
+</div>
+<div class="m_footer">
+	<ul>
+		<li><a href="<?php echo self::url('index', 'qanda') ?>">Q&amp;A</a></li>
+		<li>
+			<select>
+				<option><?php echo _('Simplified Chinese'); ?></option>
+				<option><?php echo _('Traditional Chinese'); ?></option>
+				<option><?php echo _('English'); ?></option>
+			</select>
+		</li>
+		<li><a href="<?php echo self::url('index', 'privacy') ?>"><?php  echo _('Privacy statement'); ?></a></li>
+		<li></li>
+		<li><a href="<?php echo self::url('recruit') ?>"><?php echo _('Cooperation'); ?></a></li>
+	</ul>
+</div>
+<script type="text/javascript">
+$('.btnLink, p.link').hover(function(){
+	$(this).css('opacity', 0.9);
+}, function(){
+	$(this).css('opacity', 1);
+});
+
+$('#tips').on('click', function(){
+		swal("<?php echo _('什麼是贊助收藏機制？'); ?>", '<?php echo _('創作人可以設定贊助價格（P點）和免費預覽的頁數；粉絲再使用P點來贊助收藏喜愛的作品，瀏覽完整內容。')?>');
+})
+
+</script>

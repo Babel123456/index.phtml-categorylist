@@ -1,0 +1,315 @@
+<!-- BANNER輪播區塊開始 -->
+<div id="bannner">
+    <div id="banner_carousel">
+        <div id="banner_catbtn">
+            <?php
+                foreach ($banners as $k0 => $banner) {
+                    echo '<div class="banner_catbtn'.($k0+1).'" onclick="carouselto('.$k0.');">
+                            <div class="banner_catbtn_area">
+                                <span>'.$banner['name'].'</span>
+                            </div>
+                        </div>';
+                }
+            ?>
+        </div>
+
+        <div class="banner_carousel1 owl-carousel">
+            <?php
+            foreach ($banners as $k0 => $banner) {
+                echo '<a href="'.$banner['url']['href'].'" target="'.$banner['url']['target'].'">
+                        <img alt="'.$banner['title'].'" class="lazyOwl" data-src="'.$banner['html'].'" src="'.$banner['html'].'" />
+                        <span class="carousel_item_title">'.$banner['name'].'</span>
+                    </a>';
+            }
+            ?>
+        </div>
+
+        <div class="owl-buttons">
+            <div class="owl-prev"><i class="fa fa-chevron-left"></i></div>
+            <div class="owl-next"><i class="fa fa-chevron-right"></i></div>
+        </div>
+    </div>
+</div>
+<!-- BANNER輪播區塊結束 -->
+
+<!-- 累計數字區塊開始 -->
+<div class="plan_info_count">
+    <div class="plan_info_count_area">
+        <div class="pin_num">
+            <div class="pin_num_area">
+                <span class="plan_info_num counter"><?php echo $albumqueueCount ?></span>
+                <span><?php echo _('贊助次數') ?></span>
+            </div>
+        </div>
+        <div class="work_num">
+            <div class="work_num_area">
+                <span class="plan_info_num counter"><?php echo $albumPublishCount ?></span>
+                <span><?php echo _('發佈作品') ?></span>
+            </div>
+        </div>
+        <div class="creator_num">
+            <div class="creator_num_area">
+                <span class="plan_info_num counter"><?php echo $activityUsers; ?></span>
+                <span><?php echo _('創作人'); ?></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 累計數字區塊結束 -->
+
+<div id="content">
+
+    <div class="main_content">
+        <!-- 熱門推薦區塊開始 -->
+        <div class="tab-container">
+            <ul class="nav nav-pills nav_tab">
+                <li class="active"><?php echo _('專區精選'); ?></li>
+                <li class="nav_sub_tab">
+                    <ul>
+                        <?php
+                        foreach ($indexCreative as $k0 => $creative) {
+                            if ($k0 === 0) {
+                                echo '<li class="active"><a data-toggle="tab" href="#tab' . $k0 . '">' . $creative['name'] . '</a></li>';
+                            } else {
+                                echo '<li><a data-toggle="tab" href="#tab' . $k0 . '">' . $creative['name'] . '</a></li>';
+                            }
+                        }
+                        ?>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="tab_content">
+                <!-- 熱門區塊開始 -->
+                <div id="tab0" class="tab active">
+                    <?php
+                    foreach ($indexCreative[0]['user'] as $creative) {
+                        echo '<div class="hit_story">
+                            <a href="' . $creative['url'] . '">
+                                <div class="story_img">
+                                    <div class="creator_info">
+                                        <div class="creator_info_wrap">
+                                            <span><img src="' . $creative['avatar'] . '"></span><span>' . $creative['name'] . '</span>
+                                        </div>
+                                    </div>
+                                    <div class="creator_banner"><img src="' . $creative['cover'] . '"></div>
+                                </div>
+                                <div class="story_desc">' . $creative['description'] . '</div>
+                                <div class="story_info">
+                                    <div class="story_view">' . _('瀏覽') . '： <span class="pin_count_num">' . $creative['viewed'] . '</span></div>
+                                    <div class="pin_count">' . _('贊助次數') . '：<span class="pin_count_num">' . $creative['besponsored'] . '</span></div>
+                                </div>
+                            </a>
+                        </div>';
+
+                    }
+                    ?>
+                </div>
+                <!-- 熱門區塊結束 -->
+                <!-- 推薦區塊開始 -->
+                <div id="tab1" class="tab">
+                    <?php
+                    foreach ($indexCreative[1]['user'] as $creative) {
+                        echo '<div class="hit_story">
+                            <a href="' . $creative['url'] . '">
+                                <div class="story_img">
+                                    <div class="creator_info">
+                                        <div class="creator_info_wrap">
+                                            <span><img src="' . $creative['avatar'] . '"></span><span>' . $creative['name'] . '</span>
+                                        </div>
+                                    </div>
+                                    <div class="creator_banner"><img src="' . $creative['cover'] . '"></div>
+                                </div>
+                                <div class="story_desc">' . $creative['description'] . '</div>
+                                <div class="story_info">
+                                    <div class="story_view">' . _('瀏覽') . '： <span class="pin_count_num">' . $creative['viewed'] . '</span></div>
+                                    <div class="pin_count">' . _('贊助次數') . '：<span class="pin_count_num">' . $creative['besponsored'] . '</span></div>
+                                </div>
+                            </a>
+                        </div>';
+                    }
+                    ?>
+                </div>
+                <!-- 推薦區塊結束 -->
+            </div>
+        </div>
+        <!-- 熱門推薦區塊結束 -->
+
+        <!-- 新加入區塊開始 -->
+        <div class="tab-container">
+            <ul class="nav nav-pills">
+                <li class="active"><?php echo _('新加入') ?></li>
+            </ul>
+            <div class="tab_content">
+                <div class="tab active">
+                    <div class="new_star_area">
+                        <?php
+                        foreach ($newer_indexCreative as $newer_creative) {
+                            echo '<div class="new_star">
+                                    <a href="' . $newer_creative['url'] . '">
+                                        <div class="star_img"><img src="' . $newer_creative['avatar'] . '"></div>
+                                        <div class="star_name">' . $newer_creative['name'] . '</div>
+                                        <div class="star_desc">' . $newer_creative['description'] . '</div>
+                                    </a>
+                                </div>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 新加入區塊結束 -->
+
+        <!-- 分類區塊開始 -->
+        <div class="tab-container">
+            <ul class="nav nav-pills">
+                <li class="active"><?php echo _('分類') ?></li>
+            </ul>
+            <div class="tab_content">
+                <div class="tab active">
+                    <?php
+                    foreach ($categoryareas as $categoryarea) {
+                        echo '<div class="cat_areaw"><a href="' . self::url('album', 'explore', ['categoryarea_id' => $categoryarea['categoryarea_id']]) . '">
+                                    <div class="cat_info">
+                                        <div class="cat_name">' . $categoryarea['name'] . '</div>
+                                    </div>
+                                    <div class="cat_area">
+                                        <div class="cat_01">
+                                            <div class="cat_img"><img src="' . $categoryarea['image_204x204'] . '"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>';
+                    }
+                    ?>
+
+                </div>
+            </div>
+        </div>
+        <!-- 分類區塊結束 -->
+    </div>
+
+    <div class="main_content2">
+        <!-- 輕鬆啟動創作募資計劃開始 -->
+        <div class="tab-container">
+            <ul class="nav nav-pills">
+                <li class="active"><?php echo('創作價值　由你決定') ?></li>
+            </ul>
+            <!-- 低門檻募資就醬EZ!4個STEP開始 -->
+            <div class="tab_content">
+                <div class="tab active">
+                    <div class="pin_plan_step">
+                        <div class="pin_plan_step1">
+                            <div class="step_img"><div class="step_img_area"><img src="<?php echo static_file('images/assets-v7/planstep-01.png'); ?>"></div></div>
+                            <div class="step_title"><?php echo _('創作主導') ?></div>
+                            <div class="step_desc"><?php echo _('完整保留你的創作核心主導權') ?></div>
+                        </div>
+                        <div class="pin_plan_step2">
+                            <div class="step_img"><div class="step_img_area"><img src="<?php echo static_file('images/assets-v7/planstep-02.png'); ?>"></div></div>
+                            <div class="step_title"><?php echo _('創作頻道') ?></div>
+                            <div class="step_desc"><?php echo _('免費創建專屬贊助頻道</br>無縫分享至社群平台') ?></div>
+                        </div>
+                        <div class="pin_plan_step3">
+                            <div class="step_img"><div class="step_img_area"><img src="<?php echo static_file('images/assets-v7/planstep-03.png'); ?>"></div></div>
+                            <div class="step_title"><?php echo _('創作價值') ?></div>
+                            <div class="step_desc"><?php echo _('為作品設定P點</br>創造被動收入') ?></div>
+                        </div>
+                        <div class="pin_plan_step4">
+                            <div class="step_img"><div class="step_img_area"><img src="<?php echo static_file('images/assets-v7/planstep-04.png'); ?>"></div></div>
+                            <div class="step_title"><?php echo _('超高分潤') ?></div>
+                            <div class="step_desc"><?php echo _('提升粉絲的關注及觀看次數</br>自動提高分潤') ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 低門檻募資就醬EZ!4個STEP結束 -->
+
+            <div class="tab_content">
+                <div class="tab active">
+                    <div class="plan_info_title"><?php echo _('【pinpinbox】創作人募資平台'); ?></div>
+                    <div class="pin_plan">
+                        <div class="plan_video">
+                            <div class="plan_video_wrap">
+                                <div class="plan_video_cnt">
+                                    <iframe src="https://www.youtube.com/embed/Lc-uI8meBiY" frameborder="0"
+                                            allowfullscreen=""></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan_info">
+                            <div>
+                                <span class="plan_info_desc">pinpinbox釘釘吧 是個「創作人及斜扛青年」發佈作品取得募資的平台。創作人將作品發表在pinpinbox釘釘吧，透過募資機制輕鬆創造被動收入。 pinpinbox釘釘吧 提供各種作品上傳形式「圖片、影片、音樂 (或錄音)、文字 、PDF檔」及社群分享無縫接軌、募資金流後台管理之完整功能。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        addhover();
+
+        //數字倒數
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+        //回上方箭頭
+//        $(window).scroll(function() {
+//            if ($(this).scrollTop() > 495)  {          /* 要滑動到選單的距離 */
+//                $('#scroll_top').addClass('topFixed');   /* 幫選單加上固定效果 */
+//            } else {
+//                $('#scroll_top').removeClass('topFixed'); /* 移除選單固定效果 */
+//            }
+//        });
+//        $("#scroll_top").click(function(){
+//            $("html,body").animate({scrollTop:0},900);
+//            return false;
+//        });
+
+        //輪播
+        var owl1 = $(".banner_carousel1");
+        owl1.owlCarousel({
+            singleItem: true,
+            lazyLoad: true,
+            autoPlay: 5000,
+            slideSpeed: 2000,
+            pagination: false,
+            navigation: false,
+            stopOnHover: true,
+            afterMove: carouselto1
+        });
+        carouselto(0);
+
+        //  小版輪播前往按鈕開始
+        $('.owl-prev').click(function() {
+            owl1.trigger('owl.prev',[300]);
+        });
+        $('.owl-next').click(function() {
+            owl1.trigger('owl.next',[300]);
+        });
+    });
+
+    //輪播跳頁
+    function carouselto1() {
+        var owl = $(".banner_carousel1").data('owlCarousel'),
+            current = (owl == null || owl == 'undefined') ? 0 : owl.currentItem;
+        carouselto(current);
+    }
+
+    //手動跳頁
+    function carouselto(x) {
+        var owl = $(".banner_carousel1").data('owlCarousel');
+        owl.goTo(x);
+        $(".banner_catbtn" + (x + 1)).removeClass('carousel_btn_off').addClass('carousel_btn_on').siblings('div').addClass('carousel_btn_off').removeClass('carousel_btn_on');
+
+    }
+
+    function addhover() {
+        ($( window ).width()> 768) ? $(".hit_story").addClass('hit_story_hover') : $(".hit_story").removeClass('hit_story_hover');
+    }
+</script>

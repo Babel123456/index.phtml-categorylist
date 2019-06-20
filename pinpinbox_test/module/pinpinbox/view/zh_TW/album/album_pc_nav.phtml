@@ -1,0 +1,23 @@
+<div id="member_category"><!-- for PC -->
+	<a href="#"><h3><?php echo _('Classification'); ?></h3></a>
+	<div class="line"></div>
+	<div id="cate_slide">
+		<ul id="open_ul_pc" class="open_ul">
+			<li><a href="<?php echo self::url('album')?>" <?php if ($categoryarea_id == null) echo 'class="active"'?>><?php echo _('All Albums'); ?></a></li>
+			<?php
+			foreach ($categoryarea as $v0) {
+				if ($v0['categoryarea_id'] == $categoryarea_id) {
+					echo '<li class="cate_down"><a href="'.$v0['url'].'" class="active">'.$v0['name'].'</a><ul class="active">';
+					foreach ($v0['category'] as $v1) {
+						$active = ($v1['category_id'] == $category_id)? 'active' : null;
+						echo '<li><a href="'.$v1['url'].'" class="'.$active.'">'.\Core\Lang::i18n($v1['name']).'</a></li>';
+					}
+					echo '</ul></li>';
+				} else {
+					echo '<li class="cate_down"><a href="'.$v0['url'].'">'.\Core\Lang::i18n($v0['name']).'</a></li>';
+				}
+			}
+			?>
+		</ul>
+	</div>
+</div>

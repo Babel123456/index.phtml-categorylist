@@ -1,0 +1,134 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+	<h2><?php echo _('Member Center'); ?></h2>
+	<ul>
+		<li>
+			<?php include 'member_nav.phtml';?>
+			<div id="memberbox_item">
+				
+				<div class="open">
+					<div id="album_tab">
+						<h3><?php echo _('Please select the thumbnail you want.'); ?></h3>
+					</div>
+					<div class="album_total03">
+						<p>
+							<?php echo _('Thumbnail selected'); ?>(<span id="total_check">0</span>/<?php echo $preview_limit; ?>)&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="checkbox" id="select_all" class="slder_check"><label style="width:50%;display:inline;" for="select_all"><span id="select_text"><?php echo _('Select all'); ?></span></label>
+						</p>
+					</div>
+					<div class="album_all" >
+					<?php 
+						foreach($all_photo as $k => $v){
+							$inputProps = ($k==0) ? 'readonly="readonly"' : null;
+							echo '<div class="act_album" tag="select_img">
+								<div class="ear_info check">
+									<input tag="'.$v['src'].'" tag2="'.$v['source'].'" type="checkbox" '.$inputProps.' id="input_'.$k.'" name="slider_set" class="slder_check" '.$v['check'].'>
+								</div>
+								<label for="input_'.$k.'" >
+									<div class="album_list02">
+										<ul>
+											<li style="min-height:240px;width:160px;height:240px;"><img src="'.$v['src'].'"></li>
+										</ul>
+									</div>
+								</label>
+							</div>';
+						};
+					?>	
+					</div>
+					<div class="album_total03">
+						<a href="<?php echo self::url('user', 'albumcontent_setting', array('album_id'=>$album['album_id'])) ?>" class="used"><?php echo _('Reedit the picture'); ?></a>
+						<a href="javascript:void(0)" class="used" id="finished" ><?php echo _('Edited'); ?></a>
+						<!-- <a href="#" class="used" id="next_step"><?php echo _('Next'); ?></a> -->
+					</div>	
+				</div>
+			</div>
+		</li>
+	</ul>
+	</div>
+	
+<script type="text/javascript">
+	$(document).ready(function(){
+		var bol = $('input[id^="input_"]:checkbox:checked').length >=<?php echo Core::settings('ALBUM_PREVIEW_LIMIT'); ?>;     
+		$('input[id^="input_"]:checkbox').not(":checked").attr("disabled",bol);
+		$("#total_check").text($("input:checkbox:checked").length);
+		
+		var selectState = false;
+		$('input[id^="input_"]:checkbox').each(function(k ,v) {
+			if(k == 0) $(v).prop('checked', true);
+			if($(this).prop("checked")){
+				selectState = true;
+			}
+		});
+		
+		$("#total_check").text($('input[id^="input_"]:checkbox:checked').length);
+
+		if(selectState) {
+			$('#select_text').text('<?php echo _('Cancel'); ?>');
+			$('#select_all').prop('checked', true);
+		}
+
+	});
+	
+	$('input[id^="input_"]:checkbox').click(function() {
+		var bol = $('input[id^="input_"]:checkbox:checked').length >=<?php echo Core::settings('ALBUM_PREVIEW_LIMIT'); ?>,
+			checked_length = $('input[id^="input_"]:checkbox:checked').length,
+			img_src = $(this).attr('tag'),
+			img_source = $(this).attr('tag2');
+
+		if($(this).attr('id') == 'input_0') return false;
+
+		$('input[id^="input_"]:checkbox').not(":checked").attr("disabled",bol);
+		$("#total_check").text(checked_length);
+		
+		if(checked_length == 0){
+			$('#select_text').text('<?php echo _('Select all'); ?>');
+			$('#select_all').prop('checked', false);
+		}
+
+	});
+	
+	$('#finished').click(function(){
+		//取得選取的相片
+		var str =[];
+		$('input[id^="input_"]:checkbox:checked').each(function(k, v){
+			str.push( $(v).attr('tag2') );
+		});
+		
+		$.post('<?php echo self::url('user', 'albumpreview_setting') ;?>', {
+				album_id : '<?php echo $album['album_id'] ?>',
+				album_preview : JSON.stringify(str),
+			}, function(r) {
+				r = $.parseJSON(r);
+				if (r.result == 1) {
+					site_jBox(r,'success');						
+				} else {
+					site_jBox(r,'error');								
+				}				
+		});
+	
+	});
+	
+	$('#select_all').click(function(){
+		if($(this).prop("checked")){
+			$('input[id^="input_"]:gt(31)').attr("disabled", 'disabled').prop("checked", false);
+			
+			var n = 0;
+			$('input[id^="input_"]:lt(<?php echo Core::settings('ALBUM_PREVIEW_LIMIT'); ?>)').each(function() {
+				$(this).trigger('click');
+				n++;
+			});
+			
+			$('#select_text').text('<?php echo _('Cancel'); ?>');
+			$("#total_check").text(n);
+		}else{
+			$('input[id^="input_"]').removeAttr("disabled").prop("checked", true).each(function() {
+				$(this).trigger('click');
+			});
+			
+			$('#select_text').text('<?php echo _('Select all'); ?>');
+			$("#total_check").text(1);
+		}
+	});
+	
+	
+</script>

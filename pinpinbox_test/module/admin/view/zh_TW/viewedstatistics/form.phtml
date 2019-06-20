@@ -1,0 +1,67 @@
+<?php echo $form?>
+<script>
+$(function(){
+	$('#form').validate({
+		rules: {},
+		submitHandler: function() {
+			$.post('<?php echo $action?>', {
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				recommend: $('#recommend').val(),
+				act: $('input[name="act"]:checked').val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+
+	<?php if ('edit' == $_GET['act']) {?>
+	//albumindex
+    $('#albumindex-grid').kendoGrid({
+    	columns: [
+			{field: 'index', attributes: {'class': 'string'}},
+			{field: 'inserttime', attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+		],
+		dataBinding: function(e) {},
+		dataBound: function(e) {},
+        dataSource: new kendo.data.DataSource({
+        	filter: {field: '<?php echo M_CLASS?>_id', operator: 'eq', value: <?php echo $album_id?>},
+    		page: 1,
+    		pageSize: gridpageSize,
+    		schema: {
+    			data: function(r){return r.data;},
+    			total: function(r){return r.total;}
+    		},
+    		serverPaging: true,
+    		serverSorting: true,
+    		serverFiltering: true,
+    		sort: {field: 'inserttime', dir: 'desc'},
+    		transport: {
+    			read: {
+    				data: {'case': 'albumindex'},
+    				dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+    				type: 'POST',
+    				url: '<?php echo self::url(M_CLASS, 'json')?>',
+    			}
+    		},
+    	}),
+        filterable: true,
+        pageable: {
+            refresh: true,
+            input: true,
+            pageSize: gridpageSize,
+            pageSizes: gridpageSizes,
+        },
+        reorderable: true,
+        resizable: true,
+        selectable: true,
+        sortable: true,
+    });
+    <?php }?>
+});
+</script>

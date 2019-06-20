@@ -1,0 +1,687 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+    <h2><?php echo _('Member Center'); ?></h2>
+    <ul>
+        <li class="mobiledisplay">
+            <div class="line"></div>
+        </li>
+        <li>
+			<?php include('member_nav.phtml'); ?>
+        </li>
+        <li>
+            <form id="js_user_albumsetting_form">
+                <div id="album_item">
+                    <h3 style="margin:0 10px 15px 0; color: #108199;font-size: 18px"><?php echo _('編輯資訊') ?></h3>
+                    <div id="tem_content">
+                        <div id="adminalbum">
+                            <ul>
+                                <li>
+                                    <div id="slide_pic">
+                                        <div id="slider_set">
+                                            <ul id="links" class="bxslider02"
+                                                onclick="browseKit_album('<?php echo self::url('album', 'show_photo') ?>', {album_id: '<?php echo $album['album']['album_id'] ?>'})">
+												<?php
+												if (!empty($album['preview'])) {
+													echo '<li><img id="img_0" src="' . URL_UPLOAD . getimageresize($album['cover'], 466, 699) . '" width="265px" height="397px" onerror="img_err(0)" /></li>';
+													// foreach($album['preview'] as $k => $v){
+													// echo '<li><img id="img_'.$k.'" src="'.URL_UPLOAD.getimageresize($v, 466, 699).'" width="265px" height="397px" onerror="img_err('.$k.')" /></li>';
+													// }
+												}
+												?>
+                                            </ul>
+                                        </div>
+                                        <div id="location">
+                                            <ul>
+                                                <li class="local_name"><input style="height:32px;" name="album_location"
+                                                                              type="text"
+                                                                              value="<?php echo $album['location']; ?>"
+                                                                              placeholder="e.g. TAIPEI 101"
+                                                                              class="address"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div id="temp_infobox">
+                                        <ul>
+                                            <li><span class="star"
+                                                      style="color:red; font-size:16px; display:none;">*</span><input
+                                                        type="text" maxlength="64" name="album_title"
+                                                        placeholder="<?php echo $albumNamePrefix ?>"
+                                                        value="<?php echo htmlspecialchars($album['name']) ?>"></li>
+                                            <li><p class="by">by <?php echo htmlspecialchars($user['name']) ?></p></li>
+                                            <li>
+                                                <textarea rows="10" cols="50" id="description" name="description"
+                                                          class=""><?php echo htmlspecialchars($album['description']) ?></textarea>
+                                            </li>
+                                            <li>
+                                                <div class="line"></div>
+                                            </li>
+                                            <li>
+                                                <!-- <p class="float"><img src="<?php echo static_file('images/icon_love.png'); ?>" height="12" width="12" alt=""><?php echo $album['download_count']; ?></p> -->
+                                                <p class="float"><?php echo ($album['status'] != _('Off the shelves')) ? $album['status'] : null; ?></p>
+                                            </li>
+                                            <li>
+                                                <p class="tdtitle"><?php echo _('Establishing time'); ?></p>
+                                                <p class="tdtxt"><?php echo $album['inserttime'] ?></p>
+                                            </li>
+                                            <li>
+                                                <p class="tdtitle select"><?php echo _('Privacy Setting'); ?></p>
+                                                <p class="tdtxt">
+                                                    <label style="width: 40%;display: initial;">
+                                                        <input name="privacy" value="close"
+                                                               type="radio" <?php echo ($album['act'] == 'close') ? 'checked="checked"' : null; ?>>&nbsp;<?php echo _('Private'); ?>
+                                                        &nbsp;</input>
+                                                    </label>
+                                                    <label style="width: 40%;display: initial;">
+                                                        <input name="privacy" data-state="<?php echo $album['state'] ?>"
+                                                               value="open" id="privacyOpen"
+                                                               type="radio" <?php echo ($album['act'] == 'open') ? 'checked="checked"' : null; ?>>&nbsp;<?php echo _('Public'); ?>
+                                                        &nbsp;</input>
+                                                    </label>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="tdtitle select"><span class="star"
+                                                                                style="color:red; font-size:16px; display:none;">*</span><?php echo _('Categories'); ?>
+                                                </p>
+                                                <p class="tdtxt">
+                                                <div class="albumedit_down cate">
+                                                    <select id="album_categoryarea">
+                                                        <option value="0">------</option>
+														<?php
+														foreach ($categoryarea as $k => $v) {
+															echo ($v['categoryarea_id'] == $album['categoryarea_id'])
+																? '<option selected="selected" value="' . $v['categoryarea_id'] . '" >' . $v['name'] . '</option>'
+																: '<option value="' . $v['categoryarea_id'] . '" >' . $v['name'] . '</option>';
+														}
+														?>
+                                                    </select>
+                                                </div>
+                                                <div class="albumedit_down cate">
+                                                    <select id="category02">
+														<?php
+														foreach ($categoryarea as $k => $v) {
+															if ($v['categoryarea_id'] == $album['categoryarea_id']) {
+																foreach ($v['group'] as $k2 => $v2) {
+																	echo ($v2['category_id'] == $album['category_id'])
+																		? '<option selected="selected" value="' . $v2['category_id'] . '" >' . $v2['name'] . '</option>'
+																		: '<option value="' . $v2['category_id'] . '" >' . $v2['name'] . '</option>';
+																}
+															}
+														}
+														?>
+                                                    </select>
+                                                </div>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="tdtitle"><?php echo _('Pagination'); ?></p>
+                                                <p class="tdtxt"><?php echo $album['page']; ?></p>
+                                            </li>
+                                            <li>
+                                                <p class="tdtitle">
+													<?php echo _('最低贊助'); ?>
+                                                </p>
+                                                <p class="tdtxt editpoint">
+                                                    <input maxlength="5" min="0" max="50000" type="number"
+                                                           name="album_point" value="<?php echo $album['point'] ?>">
+                                                    &nbsp; P
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="tdtitle"><?php echo _('Grading'); ?></p>
+                                                <p class="tdtxt"><?php echo $album['rating']; ?></p>
+                                            </li>
+                                            <li>
+                                                <p class="tdtitle select"><?php echo _('贊助次數'); ?></p>
+                                                <p class="tdtxt">
+                                                    <label style="width: 40%;display: initial;">
+                                                        <input name="display_num_of_collect" value="1"
+                                                               type="radio" <?php echo ($album['display_num_of_collect']) ? 'checked="checked"' : null; ?>>&nbsp;<?php echo _('顯示'); ?>
+                                                        &nbsp;</input>
+                                                    </label>
+                                                    <label style="width: 40%;display: initial;">
+                                                        <input name="display_num_of_collect" value="0"
+                                                               type="radio" <?php echo (!$album['display_num_of_collect']) ? 'checked="checked"' : null; ?>>&nbsp;<?php echo _('不顯示'); ?>
+                                                        &nbsp;</input>
+                                                    </label>
+                                                </p>
+                                            </li>
+
+                                            <li id="reward" class="" <?php if( $album['point'] < 3 || $album['usergrade'] == 'free') echo 'style="display:none;"' ?> >
+                                                <p class="tdtitle select"><?php echo _('贊助回饋'); ?></p>
+                                                <p class="tdtxt">
+                                                    <label style="width: 40%;display: initial;">
+                                                        <input name="reward_after_collect" value="1"
+                                                               type="radio" <?php echo ($album['reward_after_collect']) ? 'checked="checked"' : null; ?>>&nbsp;<?php echo _('有'); ?>
+                                                        &nbsp;</input>
+                                                    </label>
+                                                    <label style="width: 40%;display: initial;">
+                                                        <input name="reward_after_collect" value="0"
+                                                               type="radio" <?php echo (!$album['reward_after_collect']) ? 'checked="checked"' : null; ?>>&nbsp;<?php echo _('沒有'); ?>
+                                                        &nbsp;</input>
+                                                    </label>
+                                                </p>
+                                            </li>
+
+                                            <li id="reward_description" class="" <?php if($album['point'] < 3 || !$album['reward_after_collect'] || $album['usergrade'] == 'free') echo 'style="display:none;"' ?>>
+                                                <p class="tdtitle select"><?php echo _('回饋說明'); ?></p>
+                                                <p class="tdtxt">
+                                                    <textarea name="reward_description"><?php echo $album['reward_description'] ?></textarea>
+                                                </p>
+                                            </li>
+
+                                            </li>
+                                            <li>
+												<?php
+												if ($album['usergrade'] == 'profession') {
+													echo '<p class="tdtitle">' . _('Serial number index') . '</p>
+											  		 <p class="tdtxt">
+											  		 	<a id="add_index" title="' . _('Addition') . _('索引') . '" href="javascript:void(0)"><i style="font-size:22px;color:#108199;" class="fa fa-plus"></i></a>&nbsp;&nbsp;&nbsp;
+											  		 	<a id="delete_index" title="' . _('Delete') . _('索引') . '" href="javascript:void(0)"><i style="font-size:22px;color:rgb(238, 91, 141);" class="fa fa-times"></i></a></p>
+														<div id="album_index" class="tdtxt">';
+													foreach ($albumindex as $k0 => $v0) {
+														echo '<div class="input-group albumindex_div" data-div_index_wrapper="index' . ($k0 + 1) . '">' . ($k0 + 1) . '.
+															<input type="text" class="fomr-control" style="margin:5px 0 0 0;width:80%;" onblur="check(this)" name="album_index_' . ($k0 + 1) . '" class="num" maxlength="32" value="' . $v0['index'] . '">
+															</div>';
+													}
+													echo '</div>';
+												}
+												?>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="javascript:void(0)" onclick="$('#js_user_albumsetting').trigger('click')"
+                                       class="used"><?php echo _('Edited'); ?></a></li>
+                                <input style="display:none;" id="js_user_albumsetting" type="submit">
+                            </ul>
+                        </div>
+                        <div id="albumedit">
+                            <a href="javascript:void(0)" onclick="album_editor()"
+                               class="e_edit p2"><?php echo _('Album editor'); ?></a>
+                            <a href="javascript:void(0)" onclick="show_recipient()"
+                               class="e_edit p2"><?php echo _('寄送資料'); ?></a>
+                            <a href="javascript:void(0)" onclick="delete_album()"
+                               class="e_edit p6"><?php echo _('Delete'); ?></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </li>
+    </ul>
+</div>
+<div id="admin_mobile">
+    <a href="#" data-uri="pinpinbox://profile" onclick="clickHandler(this.dataset.uri)"
+       class="adminmo_btn p2"><?php echo _('Album editor') ?></a>
+    <a href="javascript:void(0)" onclick="delete_album()" class="adminmo_btn p3"><?php echo _('Delete'); ?></a>
+</div>
+
+<script>
+    window.onload = function () {
+        album_act($('input[name="privacy"]:checked').val());
+    };
+
+    $('input[name="privacy"]').on('change', function () {
+        album_act($(this).val());
+    });
+
+    //有連結但圖不存在
+    function img_err(n) {
+        $('.bx-wrapper').css('height', '340px');
+        $('#img_' + n).attr('src', '<?php echo static_file("/images/origin.jpg") ?>');
+    };
+
+    //diy editor
+    function album_editor() {
+        $.post('<?php echo self::url('user', 'album_editor')?>', {
+            album_id: '<?php echo $album['album']['album_id'];?>',
+        }, function (r) {
+            r = $.parseJSON(r);
+            switch (r.result) {
+                case 1:
+                    location.href = r.redirect;
+                    break;
+                case 2:
+                    _jBox(r, 'albumProcess');
+                    break;
+                default :
+                    _jBox(r, 'error');
+                    break;
+            }
+        });
+    }
+
+    //序號索引操作-delete
+    function del_index(num) {
+        $('div[data-div_index_wrapper="' + num + '"]').remove();
+    }
+
+    //檢查index內容
+    function check() {
+        var obj = event.target;
+        if (obj.value != '') {
+            $.post('<?php echo self::url('user', 'albumindex_verify');?>', {
+                value: obj.value,
+                album_id: <?php echo $album['album_id']; ?>,
+            }, function (r) {
+                r = $.parseJSON(r);
+                if (r.result == 1) {
+                    $(obj).css('border', '').siblings('span.tip').text('');
+                } else {
+                    $(obj).css('border', 'solid red 2px').siblings('span.tip').text('Has be used');
+                }
+            });
+        }
+    }
+
+    function categoryarea_option(categoryarea_id) {
+        $.post('<?php echo self::url('user', 'albumcontent_setting')?>', {
+            action: 'select',
+            categoryarea_id: categoryarea_id,
+        }, function (r) {
+            r = $.parseJSON(r);
+
+            var html = '';
+            r.data.forEach(function (element) {
+                html += '<option value="' + element.category_id + '">' + element.name + '</option>';
+            });
+            $('#category02').html(html);
+        });
+    }
+
+    function print() {
+        var r = {result: 1, message: '<?php echo _('Coming Soon.')?>'};
+        site_jBox(r);
+    }
+
+    function album_act(act) {
+        if (act == 'close') {
+            $('.star').fadeOut();
+        } else {
+            $('.star').fadeIn();
+        }
+    }
+
+    $(function () {
+
+        //沒有連結導致slider無法產生時=>append預設圖
+        if ($('.bxslider02').children('li').length < 1) {
+            var default_img = '<li><img src="<?php echo static_file('images/origin.jpg'); ?>" width="265px" height="397px" /></li>';
+            $('.bxslider02').append(default_img);
+        }
+
+        //序號索引操作-add
+        $('#add_index').click(function () {
+            var current_num = $('.albumindex_div').size();
+            if (current_num < 10) {
+                var index_item = '<div class="input-group albumindex_div" data-div_index_wrapper="index' + (current_num + 1) + '">' + (current_num + 1) + '. ' +
+                    '<input type="text" class="fomr-control" style="margin:5px 0 0 0;width:80%;" onblur="check(this)" name="album_index_' + (current_num + 1) + '" class="input_index" maxlength="32">' +
+                    '</div>';
+                $('#album_index').append(index_item);
+            }
+        });
+
+        //序號索引操作-delete
+        $('#delete_index').click(function () {
+            var current_num = $('.albumindex_div').size();
+            $('.albumindex_div').eq((current_num - 1)).remove();
+        });
+
+        //表單的Ajax
+        $('#js_user_albumsetting_form').validate({
+            rules: {},
+            submitHandler: function () {
+                var privacy = $('input[name="privacy"]:checked').val(),
+                    obj = $('#js_user_albumsetting'),
+                    album_index = [],
+                    albumindex_size = $('.albumindex_div').size(), reg = /\\/, reg2 = /^[0-9a-zA-Z]*$/,
+                    user_grade = '<?php echo Core::get_usergrade($album['user_id']) ?>';
+
+                obj.queue('js_user_albumsetting', function (next) {
+                    //check Index value type
+                    if (user_grade != 'profession') {
+                        next();
+                    } else {
+                        if (albumindex_size > 0) {
+                            for (i = 1; i <= albumindex_size; i = i + 1) {
+                                var value = $(':input[name=album_index_' + i + ']').val();
+                                if (reg.test(value) == false && reg2.test(value) == true && value != "") {
+                                    album_index.push(value);
+                                } else {
+                                    (value == "") ? _jBox({'message': '<?php echo _('未輸入索引內容'); ?>'}, 'error') : _jBox({'message': '<?php echo _('Index Code error!(Type)') . ',' . _('僅能輸入英文/數字'); ?>'}, 'error');
+
+                                    obj.clearQueue('js_user_albumsetting');
+                                    break;
+                                }
+                            }
+                        }
+                        next();
+                    }
+                });
+
+                obj.queue('js_user_albumsetting', function (next) {
+                    //check index repeat(Frontside)
+                    if (user_grade != 'profession') next();
+                    if ($('.input_index').length > 0) {
+                        $('.input_index').each(function (k, o) {
+                            for (i = 0; i < $('.input_index').length; i = i + 1) {
+                                var tmp = $(this).val();
+                                if ((tmp == album_index[i]) && k != i) {
+                                    siteModal = new jBox('Modal');
+                                    siteModal.setContent("<img src=\"<?php echo static_file('images/error.png'); ?>\">&nbsp;<?php echo _('Index Code error!(Type)'); ?>").open();
+                                    obj.clearQueue('js_user_albumsetting');
+                                    break;
+                                }
+                            }
+                        });
+                    } else {
+                        next();
+                    }
+                });
+
+                obj.queue('js_user_albumsetting', function (next) {
+                    if (privacy == 'close') {
+                        if (confirm('<?php echo _('您的隱私狀態設為隱私，是否調為"公開"？') ?>')) {
+                            privacy = 'open';
+                        }
+                    }
+                    next();
+                });
+
+                obj.queue('js_user_albumsetting', function (next) {
+                    if (privacy == 'close' && <?php echo $event_join ?>) {
+                        if (!confirm('<?php echo _('此作品正在參加投稿活動中') . '\n' . _('設為隱藏將會退出活動，您確定嗎?') ?>')) {
+                            obj.clearQueue('js_user_albumsetting');
+                        } else {
+                            next();
+                        }
+                    } else {
+                        next();
+                    }
+                });
+
+                obj.queue('js_user_albumsetting', function (next) {
+                    if (String($('input[name=album_point]').val()).indexOf(".") > -1) {
+                        var myModel = new jBox('Modal', {
+                            onCloseComplete: function () {
+                                myModel.destroy();
+                                $('input[name=album_point]').val(3);
+                            }
+                        }).setContent(
+                            '<div class="content">' +
+                            '<p class="keypoint red"><?php echo _('贊助條件至少最少為3p且為整數, 請重新設定.'); ?></p>' +
+                            '</div>'
+                        ).open();
+                        obj.clearQueue('js_user_albumsetting');
+                    } else {
+                        next();
+                    }
+                });
+
+                obj.queue('js_user_albumsetting', function (next) {
+                    var box = _jBox({'message': ' '}, 'processing');
+                    $.post('<?php echo self::url('user', 'albumcontent_setting');?>', {
+                        action: 'form',
+                        album_id: '<?php echo $album['album_id'] ?>',
+                        album_location: $('input[name=album_location]').val(),
+                        album_title: $('input[name=album_title]').val(),
+                        album_description: $('#description').val(),
+                        album_privacy: privacy,
+                        album_categoryarea: $('#album_categoryarea :selected').val(),
+                        album_category: $('#category02 :selected').val(),
+                        album_index: album_index,
+                        album_point: $('input[name=album_point]').val(),
+                        display_num_of_collect : $('input[name="display_num_of_collect"]:checked').val(),
+                        reward_after_collect : $('input[name="reward_after_collect"]:checked').val(),
+                        reward_description : $('textarea[name="reward_description"]').val(),
+						<?php if (!empty($_GET['event_id'])) echo 'event_id:\'' . $_GET['event_id'] . '\',' ?>
+						<?php if (!empty($_GET['join_event'])) echo 'join_event:\'' . $_GET['join_event'] . '\',' ?>
+                    }, function (r) {
+                        window.onbeforeunload = null;
+                        r = $.parseJSON(r);
+                        box.close();
+
+                        if (r.result == 1) {
+                            //FB clean cache
+                            $.post('https://graph.facebook.com', {
+                                id: '<?php echo self::url('album', 'content', array('album_id' => $album['album_id']));?>',
+                                scrape: true
+                            }, function (response) {
+
+                            });
+                            _jBox(r, 'success_notext');
+                        } else {
+                            _jBox(r, 'error');
+                        }
+                    });
+                });
+
+                obj.dequeue("js_user_albumsetting");
+            }
+        });
+
+        $('#album_categoryarea').change(function () {
+            categoryarea_option($(this).val());
+        });
+
+
+        $('input[name=album_point]').on('change', function () {            
+            if ($(this).val() == 1 || $(this).val() == 2 || String($(this).val()).indexOf(".") > -1) {
+                var myModel = new jBox('Modal', {
+                    onCloseComplete: function () {
+                        myModel.destroy();
+                        $('input[name=album_point]').val(3);
+                    }
+                }).setContent(
+                    '<div class="content">' +
+                    '<p class="keypoint red"><?php echo _('贊助條件至少最少為3p且為整數, 請重新設定.'); ?></p>' +
+                    '</div>'
+                ).open();
+				<?php if($album['usergrade'] != 'free') {?>
+                $('#reward').show();
+				<?php } ?>
+            } else if( $(this).val() > 2 ) {
+				<?php if($album['usergrade'] != 'free') {?>
+                $('#reward').show();
+				<?php } ?>
+            } else if( $(this).val() == 0) {
+                $('#reward').hide();
+                $('li#reward_description').hide();
+            }
+        });
+
+
+        $('input[name="reward_after_collect"]').on('change', function(){
+            if ($(this).val()==1) {
+                show_msg();
+                $('textarea[name="reward_description"]').html('');
+                $('li#reward_description').show();
+            } else {
+                $('li#reward_description').hide();
+            }
+        });
+
+        $('.imagepop').magnificPopup({type: 'image',});
+
+        var auto_mode = ($(".bxslider02").find('li').length > 1) ? true : false;
+        $('.bxslider02').bxSlider({
+            mode: 'horizontal',
+            captions: true,
+            auto: auto_mode,
+            speed: 800,
+        });
+
+		<?php if($album['state'] == 'process') { ?>
+
+        $('input[type="radio"][name="privacy"]').change(function () {
+            if ($(this).val() == 'open' && $('input[type="radio"][name="privacy"][value="open"]').data('state') == 'process') {
+                var myConfirm = new jBox('Confirm', {
+                    cancelButton: '<?php echo _('No')?>',
+                    confirmButton: '<?php echo _('Yes')?>',
+                    cancel: function () {
+                        $('input[type="radio"][name="privacy"][value="close"]').prop('checked', true);
+                    },
+                    confirm: function () {
+                        $.ajax({
+                            url: '<?php echo self::url('user', 'save_album');?>',
+                            type: 'POST',
+                            data: {
+                                album_id: <?php echo $album['album_id'];?>,
+                            },
+                            beforeSend: function (xhr) {
+                                Block_modal = _jBox(null, 'block');
+                            }
+                        }).done(function (r) {
+                            Block_modal.close();
+                            r = $.parseJSON(r);
+                            switch (r.result) {
+                                case 1:
+                                    _jBox(r, 'success');
+                                    $('input[type="radio"][name="privacy"][value="open"]').data('state', 'success');
+                                    break;
+                                default:
+                                    _jBox(r, 'error');
+                                    break;
+                            }
+                        });
+
+                    },
+                    onCloseComplete: function () {
+                        myConfirm.destroy();
+                    }
+                }).setContent(
+                    '<div class="content">' +
+                    '<div class="keypoint"><p>※<?php echo _('Attention')?>※</p><?php echo _('您的作品尚未完成編輯，是否仍要公開?')?></div>' +
+                    '</div>'
+                ).open();
+            }
+
+        });
+
+		<?php } ?>
+    });
+
+    function delete_album() {
+        var myConfirm = new jBox('Confirm', {
+            cancelButton: '<?php echo _('No')?>',
+            confirmButton: '<?php echo _('Yes')?>',
+            confirm: function () {
+                block_modal = new jBox('Modal', {
+                    position: {x: 'center', y: 'center'},
+                    width: 150,
+                    height: 50,
+                    closeOnEsc: false,
+                    closeOnClick: false,
+                    closeButton: 'title',
+                    zIndex: 1500,
+                });
+                block_modal.setContent('<span style="padding-left:20px;font-weight:bold;color:#2299DD";font-size:26px;><?php echo _('Deleting...'); ?><img src="<?php echo static_file('images/loading.gif'); ?>"></span>').open();
+
+                $.post('<?php echo self::url('user', 'delete_album');?>', {
+                    album_id: <?php echo $album['album_id'];?>,
+                }, function (r) {
+                    window.onbeforeunload = null;
+                    block_modal.close();
+                    r = $.parseJSON(r);
+                    if (r.result == 1) {
+                        _jBox(r, 'success_notext');
+                    } else {
+                        _jBox(r, 'error');
+                    }
+                });
+            },
+            onCloseComplete: function () {
+                myConfirm.destroy();
+            }
+        }).setContent(
+            '<div class="content">' +
+            '<?php echo _('Are you sure you want to delete?')?><br><br><div class="keypoint"><p>※<?php echo _('Attention')?>※</p><?php echo _('The album cannot be restored after deleted. The settlement and download count of this album will be removed.')?></div>' +
+            '</div>'
+        ).open();
+    }
+
+    function show_recipient() {
+
+        $.post('<?php echo self::url('user', 'getRecipient')?>', {
+            album_id: '<?php echo $album['album']['album_id'];?>',
+        }, function (r) {
+            r = $.parseJSON(r);
+            switch (r.result) {
+                case 1:
+                    var tbody='', html ='', recipient='', img = '<?php echo static_file('images/info.png')?>';
+
+                    if(r.data.length) {
+                        for (let [index, value] of r.data.entries()) {
+                            tbody += `<tr><td>${index + 1}</td><td>${value.recipient}</td><td>${value.recipient_tel}</td><td>${value.recipient_address}</td><td>${value.point_use}</td><td>${value.recipient_text}</td></tr>`;
+                        }
+
+                        html = `<div class="content table-responsive">
+                            <table class="table table-striped">
+                                <thead><tr><th>項次</th><th>收件者姓名</th><th>連絡電話</th><th>地址</th><th>贊助P點</th><th>給您的留言</th></tr></thead>
+                                <tbody>${tbody}</tbody>
+                            </table>
+                        </div>`;
+                    } else {
+                        html = `<?php echo '尚無資料' ?>`;
+                    }
+
+                    recipient = new jBox('Modal', {
+                            title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="' + img + '">',
+                            onCloseComplete: function() {
+                                recipient.destroy();
+                            }
+                        }).setContent(html).open();
+                    break;
+
+                default :
+                    _jBox(r, 'error');
+                    break;
+            }
+        });
+
+    }
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+            $("#admin_mobile02").css({'position': 'relative'});
+        } else {
+            $("#admin_mobile02").css({'position': 'fixed'});
+        }
+    });
+
+    var trip = new Trip([
+        {sel: $('div#setting_pic'), content: '<?php echo _('Edit thumbnail preview'); ?>', position: "s",},
+        {sel: $(".used"), content: '<?php echo _('Finish'); ?>', position: "n"},
+    ], {
+        animation: 'bounceIn',
+        showNavigation: true,
+        showCloseBox: true,
+        delay: -1,
+        prevLabel: '<?php echo _('Previous'); ?>',
+        nextLabel: '<?php echo _('Next'); ?>',
+        finishLabel: '<?php echo _('Close'); ?>',
+        backToTopWhenEnded: true,
+    });
+
+    deeplink.setup({
+        iOS: {
+            appName: "pinpinbox",
+            appId: "<?php echo Core::settings('IOS_APP_ID'); ?>",
+        },
+        android: {
+            appId: "<?php echo Core::settings('ANDROID_APP_URL'); ?>"
+        }
+    });
+
+    function clickHandler(uri) {
+        deeplink.open(uri);
+        return false;
+    }
+
+	<?php if (empty($album['preview'])) echo 'trip.start();'; ?>
+
+    function show_msg() {
+        var r = { message : '啟用需遵守個人資料保護法之相關規定，盡善良管理人之注意義務，不得外流或作為本次回饋使用者以外目的之使用，並須遵守本平台含隱私權政策在內之相關規定，如有違反，需自負一切責任'};
+        _jBox(r, 'info');
+    }
+</script>

@@ -1,0 +1,534 @@
+<div id="banner" class="index_banner">
+    <div id="banner_content">
+        <div class="fotorama owl-carousel">
+            <?php
+            foreach ($ad as $v0) {
+                echo $v0['html'];
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
+<div class="mobile_banner owl-carousel">
+    <?php
+    foreach ($ad as $v0) {
+        echo $v0['html_mobile'];
+    }
+    ?>
+</div>
+
+<!-- 內容頁開始 -->
+<div id="content">
+    <!--舊樣式 -->
+    <ul id="layout">
+        <li class="wid90">
+            <div class="categoryListwrapper ">
+                <div class="categoryListArrows">
+                    <span class="arrow-up"><img
+                                src="<?php echo static_file('images/assets-v6/arrow-left.svg') ?>"></span>
+                </div>
+                <div class="categoryList">
+                    <div class="product_scroll1">
+                        <?php
+                        foreach ($categoryareaIcon as $k0 => $v0) {
+                            echo '<div class="icon" data-iconopposite="' . $v0['iconOpposite'] . '" data-icon="' . $v0['icon'] . '">
+                                        <a title="' . $v0['name'] . '" href="' . $v0['url'] . '">
+                                            <img width="60" src="' . $v0['icon'] . '">' . $v0['name'] . '
+                                        </a>
+                                    </div>';
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="categoryListArrows">
+                    <span class="arrow-down"><img
+                                src="<?php echo static_file('images/assets-v6/arrow-right.svg') ?>"></span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="line"></div>
+        </li>
+        <li class="wid90" style="margin:0 auto;">
+            <?php
+            $itemCount = count($tabs);
+            foreach ($tabs as $k0 => $v0) {
+                echo (!$k0) ? '<h2><i name="likes" class="fa fa-thumb-tack fa-lg rotate_pin pincolor"></i>' . $v0 . '</h2>' : '<li><a href="#tab' . $k0 . '">' . $v0 . '</a></li>';
+                echo (($k0 + 1) < $itemCount) ? '<li class="liBread" style="display:block;">|</li>' : null;
+            }
+            ?>
+        </li>
+        <li>
+            <div id="tab-container" class="tab-container">
+                <div class="tab_content">
+                    <?php
+                    foreach ($indexpopularity as $k0 => $v0) {
+                        echo (!$k0) ? '<div id="tab' . $k0 . '" class="tab active">' : '<div id="tab' . $k0 . '" class="tab">';
+                        echo '<div class= "product_scroll">';
+                        foreach ($v0['album_info'] as $k1 => $v1) {
+                            $tags_gift = null;
+                            if ($v1['album_tags']) {
+                                $tags_gift = '<div class="album_tags_gift">
+                                                <img alt="抽獎" title="抽獎" src="' . static_file('images/assets-v6/gift-01.svg') . '">
+                                                <div class="album_tags_gift_bg"></div>
+                                            </div>';
+                            }
+
+                            echo '
+                            <div>	
+							    <div class="product_list">
+                                    ' . $tags_gift . '
+                                    <div class="black_box" style="height:100%;">
+                                        <p class="album_name"><a href="javascript:void(0)" onclick="popview(\'' . $v1['album_url'] . '\');">' . $v1['album_name'] . '</a></p>
+                                        <p class="album_view" onclick="popview(\'' . $v1['album_url'] . '\');"></p>
+                                        <p class="user_pic"><a href="' . $v1['user_url'] . '"><img src="' . $v1['user_pic'] . '" onerror="this.src=\'' . static_file('images/face_sample.svg') . '\'"></a></p>
+                                    </div>
+                                    <div class="product_pic">
+                                        <a href="javascript:void(0)" onclick="popview(\'' . $v1['album_url'] . '\');"><img src="' . $v1['album_cover'] . '" height="330" width="220"> </a>
+                                    </div>
+                                    <div class="product_info">
+                                        <p><a onclick="popview(\'' . $v1['album_url'] . '\');" href="' . $v1['album_url'] . '">' . $v1['album_name'] . '</a></p>
+                                        <p class="user_name">by <a href="' . $v1['user_url'] . '">' . $v1['user_name'] . '</a></p>
+                                    </div>
+                                </div>	
+                            </div>';
+                        }
+                        echo '</div></div>';
+                    }
+                    ?>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="line"></div>
+        </li>
+        <?php if (count($event) > 0) echo '<li class="wid90" style="margin-bottom:25px;"><h2><i name="likes" class="fa fa-thumb-tack fa-lg rotate_pin pincolor"></i>' . _('釘活動') . '</h2><span class="more"><a href="' . self::url('event') . '"><img src="' . static_file('images/assets-v5/btn-more-n.svg') . '"></a></span></li>'; ?>
+        <?php
+        if (count($event) > 0) {
+            echo '<div class="eventFotorama">';
+            foreach ($event as $k0 => $v0) {
+                if ($v0['status'] == 'unexpired') {
+                    echo '<li class="wid90 eventItem" style="margin-bottom:0px;">
+                            <div class="act_list">
+                                <div class="act_pic"><a href="' . $v0['url'] . '"><img src="' . $v0['image'] . '"></a></div>
+                                <div class="act_info">
+                                    <ul>
+                                        <li><a href="' . $v0['url'] . '"><h3>' . $v0['name'] . '</h3></a></li>
+                                        <li>' . date('Y/m/d', strtotime($v0['starttime'])) . '~' . date('Y/m/d', strtotime($v0['endtime'])) . '</li>
+                                        <li><p>' . $v0['title'] . '</p></li>
+                                    </ul>
+                                </div>
+                                <div class="act_else">
+                                    <ul>
+                                        <li class="float_left">
+                                            <div id="time' . $k0 . '" class="timeCounter">
+                                                <img src="' . static_file('images/assets-v5/icon-countdown-r.png') . '" height="27" width="27" class="clock">
+                                                <p class="date"><span class="day"></span><br>' . _('days') . '</p>
+                                                <p class="date"><span class="hour"></span><br>' . _('hr') . '</p>
+                                                <p class="date"><span class="minute"></span><br>' . _('min') . '</p>
+                                                <p class="date"><span class="second"></span><br>' . _('sec') . '</p>
+                                            </div>
+                                            <div id="famous">
+                                                <img src="' . static_file('images/assets-v5/icon-popularity-r.png') . '" height="28" width="27">' . _('Popularity') . '<span class="bigtxt">' . $v0['popularity'] . '</span>
+                                            </div>
+                                        </li>
+                                        <li class="float_right"><a href="' . $v0['url'] . '" class="join"><img src="' . static_file('images/assets-v5/learn-event-btn.svg') . '"></a></li>
+                                    </ul>
+                                </div>
+                            </div>				
+                        </li>';
+                }
+            }
+            echo '</div>';
+        }
+        ?>
+        <?php if (count($event) > 0) echo '<li><div class="line"></div></li>'; ?>
+        <li class="wid90" style="margin:0 auto;"><h2><i name="likes"
+                                                        class="fa fa-thumb-tack fa-lg rotate_pin pincolor"></i><?php echo _('釘關注') ?>
+            </h2></li>
+        <?php
+        if (!empty($indexcreative)) {
+            echo '<div class="creativeFotorama">';
+            foreach ($indexcreative as $k0 => $v0) {
+                echo '<li class="wid90"><div class="create_box">';
+                foreach ($v0 as $k1 => $v1) {
+                    echo '<a class="createListItem" href="' . $v1['user_url'] . '">
+									<div class="create_list color0' . $v1['user_belong'] . '">
+										<div class="bg color' . $v1['user_belong'] . '"></div>
+										<ul>
+											<li class="pic_flow">
+												<div class="create_pic">
+													<img onerror="this.src=\'' . static_file('images/face_sample.svg') . '\'" src="' . $v1['user_pic'] . '" height="101" width="101">
+												</div>
+											</li>
+											<li class="create_descrip">
+												<p class="crea_name">' . $v1['user_name'] . '</p>
+												<div class="create_info">' . $v1['user_description'] . '</div>
+											</li>
+										</ul>
+									</div>
+								</a>';
+                }
+                echo '</div></li>';
+            }
+            echo '</div>';
+        }
+        ?>
+        <li class="wid90" style="display: none;"><a href="<?php echo self::url('creative') ?>" class="mo_more">more</a>
+        </li>
+        <li>
+            <div class="line"></div>
+        </li>
+        <li class="wid90"><h2><i name="likes"
+                                 class="fa fa-thumb-tack fa-lg rotate_pin pincolor"></i><?php echo _('釘推薦') ?></h2></li>
+    </ul>
+
+    <!-- 新樣式 -->
+    <div class="water_content " id="freewall">
+        <?php
+        foreach ($indexelement as $k0 => $v0) {
+            echo '<div class="index_item_box">';
+            echo '<div class="ww mobilehide02"  >
+						<div class="origin">
+							<img src="' . $v0['image'] . '"></a>
+						</div>
+						<div class="vary vary_' . $v0['transform'] . '">';
+            foreach ($v0['img_hover'] as $k1 => $v1) {
+                echo $v1;
+            }
+            echo '</div></div><div class="mobiledisplay02"><a href="' . $v0['url'] . '" ><img class="mobile_wrap_img" src="' . $v0['image'] . '"></a></div>
+					<div class="item_info">
+						<a href="' . $v0['url'] . '">
+							<div class="info_user">
+								<div class="user_name">
+									<div class="info_name">
+										<div class="info_icon">
+											<p class="name_id">
+												<i class="index_icon" style="background-image:url(' . URL_UPLOAD . $v0['icon'] . ')"></i>
+												' . $v0['name'] . '
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>';
+        }
+        ?>
+    </div>
+    <!-- <div class="end image"><p class="image"><img src="<?php //echo static_file('images/8.gif') ;?>" ></p></div> -->
+    <div style="display:none;" class="end"><p>End</p></div>
+</div>
+
+<div class="fullWidthBanner Banner1">
+    <div class="title"> <?php echo _('關於pinpinbox釘釘吧') ?> </div>
+    <div class="videoEmbed">
+        <div class="videoframe">
+            <?php echo $publicity_film; ?>
+        </div>
+    </div>
+</div>
+<div class="fullWidthBanner Banner2">
+    <div class="content">
+        <div class="title"><?php echo _('輕鬆啟動創作募資') ?></div>
+        <div class="subTitle"><?php echo _('和超過') . '<span class="counter">' . $numberofUsers . '</span>' . _('創作者發佈作品') ?></div>
+        <div class="btnCreate"><a href="javascript:void(0)" onclick="createAlbum();"><img
+                        src="<?php echo static_file('images/assets-v5/btn-start-creating.svg') ?>"></a></div>
+        <div class="btnExplode"><a href="<?php echo self::url('album', 'explore') ?>"><img
+                        src="<?php echo static_file('images/assets-v5/btn-explore-the-work.svg') ?>"></a></div>
+    </div>
+    <div class="m_content">
+        <div class="title"><?php echo _('輕鬆啟動') ?></div>
+        <div class="title2"><?php echo _('創作募資') ?></div>
+        <div class="subTitle"><?php echo _('和超過') . '<span class="counter">' . $numberofUsers . '</span>' . _('創作者發佈作品') ?></div>
+        <div class="btnCreate">
+            <a id="createBtn" href="javascript:void(0);" data-uri="<?php echo $urlScheme; ?>"
+               onclick="clickHandler(this.dataset.uri)" class="join">
+                <img src="<?php echo static_file('images/assets-v5/btn-start-creating.svg') ?>">
+            </a>
+        </div>
+        <div class="btnExplode"><a href="<?php echo self::url('album', 'explore') ?>"><img
+                        src="<?php echo static_file('images/assets-v5/btn-explore-the-work.svg') ?>"></a></div>
+    </div>
+</div>
+<div style="display:none" id="show_photo"></div>
+<div class="m_footer">
+    <ul>
+        <li><a href="<?php echo self::url('index', 'qanda') ?>">Q&amp;A</a></li>
+        <li>
+            <select>
+                <option><?php echo _('Simplified Chinese'); ?></option>
+                <option><?php echo _('Traditional Chinese'); ?></option>
+                <option><?php echo _('English'); ?></option>
+            </select>
+        </li>
+        <li><a href="<?php echo self::url('index', 'privacy') ?>"><?php echo _('Privacy statement'); ?></a></li>
+        <li></li>
+        <li><a href="<?php echo self::url('recruit') ?>"><?php echo _('Cooperation'); ?></a></li>
+    </ul>
+</div>
+
+<script>
+    $(document).ready(function (e) {
+        SidebarTabHandler.Init();
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+
+        $('div.sample').hover(function () {
+            $(this).find('div.product_info').show();
+        }, function () {
+            $(this).find('div.product_info').hide();
+        });
+
+        var nicesx = $(".tab_content").niceScroll({
+            touchbehavior: true,
+            cursorcolor: "transparent",
+            cursoropacitymax: 0.6,
+            cursorwidth: 8
+        });
+
+        var nicesx2 = $(".categoryList").niceScroll({
+            touchbehavior: true,
+            enablemousewheel: false,
+            cursorcolor: "transparent",
+            cursoropacitymax: 0,
+            cursorwidth: 10
+        });
+
+        $(".categoryList").getNiceScroll().resize();
+        $('.arrow-up').on('click', function () {
+            nicesx2.doScrollLeft(-300, 1.5);
+        });
+        $('.arrow-down').on('click', function () {
+            nicesx2.doScrollLeft(400, 1.5);
+        })
+        var isDragging = false, startingPos = [];
+        $(".categoryList .icon a").mousedown(function (evt) {
+            isDragging = false;
+            startingPos = [evt.pageX, evt.pageY];
+        }).mousemove(function (evt) {
+            if (!(evt.pageX === startingPos[0] && evt.pageY === startingPos[1])) {
+                isDragging = true;
+            }
+        }).mouseup(function () {
+            if (!isDragging)
+                location.href = $(this).attr('href');
+        });
+
+        //釘關注作者資訊只要文字
+        $(".create_info").each(function () {
+            var creStr = $(this).text();
+            $(this).html("<p>" + creStr + "</p>");
+        });
+    });
+
+    $(document).on('click', '#alert_btn', function (e) {
+        alert_submit($(this).data('album_id'));
+    }).on('click', '.alert_btn', function (e) {
+        e.stopPropagation();
+        $('#alert_btn, #next_step').data('album_id', $(this).data('album_id'));
+        $('#alert_box').fadeIn();
+        $('input[name=report]').removeAttr('checked');
+        $('#input04_textarea').val('');
+        $('#input04_li').hide();
+    }).on('click', '#close_alert', function (e) {
+        $('#alert_box').fadeOut('slow', function () {
+            $('.step02').hide();
+            $('.step01').show();
+        });
+    }).on('click', '#alert_bg', function (e) {
+        $('#alert_box').fadeOut(function () {
+            $('#close_alert').trigger('click');
+        });
+    }).on('click', '.step02 .cancel', function (e) {
+        $('.step02').hide();
+        $('.step01').show();
+    }).on('click', '#next_step', function (e) {
+        var obj = $('input[name=report]:checked');
+        if (obj.val() == 7) {
+            $('.step01').hide();
+            $('.step02').show();
+        } else {
+            alert_submit($(this).data('album_id'));
+        }
+    });
+
+    $('.icon').hover(function () {
+        $(this).find('img').attr('src', $(this).data('iconopposite'));
+    }, function () {
+        $(this).find('img').attr('src', $(this).data('icon'));
+    });
+
+    var SidebarTabHandler = {
+        Init: function () {
+            $(".tabItemContainer>li").hover(function () {
+                _this = $(this).data('index');
+                $('.tabItemContainer li').each(function (k, v) {
+                    if ($(v).data('index') == _this) {
+                        $(v).children('a').addClass($(v).data('index')).removeClass($(v).data('index') + '-b');
+                        $('div.tabBodyItem').eq(k).addClass('tabBodyCurrent');
+                    } else {
+                        $(v).children('a').addClass($(v).data('index') + '-b').removeClass($(v).data('index'));
+                        $('div.tabBodyItem').eq(k).removeClass('tabBodyCurrent');
+                    }
+                })
+            });
+        }
+    }
+
+    function countdown(time) {
+        for (var i = time.length - 1; i >= 0; i--) {
+            $('#time' + i).countdown(time[i], function (event) {
+                $(this).find('span.day').html(event.strftime('%D'));
+                $(this).find('span.hour').html(event.strftime('%H'));
+                $(this).find('span.minute').html(event.strftime('%M'));
+                $(this).find('span.second').html(event.strftime('%S'));
+            });
+        }
+    }
+
+    function name_more_slice(obj) {
+        var divH = $(obj).height(), $p = $("p", $(obj)).eq(0), str = $p.text();
+        if ($p.outerHeight() > divH) {
+            $p.text(str.slice(0, 70) + '...');
+        }
+        ;
+    }
+
+    function show_template(i) {
+        var t_item = [];//browseKit item
+        $.post('<?php echo self::url('index', 'show_template')?>', {
+            template_id: i,
+        }, function (r) {
+            r = $.parseJSON(r);
+            if (r.result == 1) {
+                var href, poster;
+
+                for (var k0 in r.data.readable) {
+                    href = r.data.readable[k0]['image'];
+                    thumb = r.data.readable[k0]['image_thumbnail'];
+
+                    t_item.push({
+                        href: href,
+                        src: href,
+                        thumb: thumb,
+                    });
+
+                }
+
+                if (r.data.readable.length > 1) {
+                    if (!r.data.favorited && r.data.readable.length < r.data.readable.page) {
+                        href = '<?php echo static_file('images/preview_end.jpg')?>';
+
+                        t_item.push({
+                            href: href,
+                            src: href,
+                            thumb: href,
+                        });
+                    }
+                }
+
+                browseKit_v2(this, t_item);
+            } else if (r.result == 2) {
+                site_jBox(r);
+            } else {
+                site_jBox(r, 'error');
+            }
+        });
+    }
+
+    function owlCarousel(anchor, option) {
+        option.width = '100%';
+        option.lazyLoad = true;
+        option.autoPlay = 5000;
+        option.paginationSpeed = 1200;
+        option.singleItem = true;
+        option.stopOnHover = true;
+
+        $(anchor).owlCarousel(option);
+    }
+
+    $(function () {
+        $('.ww').on('mouseover', function (e) {
+            $(this).find('div.origin').hide().siblings('div.vary').show();
+            e.preventdefault;
+        });
+        $('.ww').on('mouseout', function (e) {
+            $(this).find('div.vary').hide().siblings('div.origin').show();
+            e.preventdefault;
+        });
+
+        $('span.more').hover(function () {
+            $(this).find('a').css('background-color', '#f6f6f6');
+            $(this).find('img').attr('src', '<?php echo static_file('images/assets-v5/btn-more-h.svg') ?>');
+        }, function () {
+            $(this).find('a').css('background-color', '#f6f6f6');
+            $(this).find('img').attr('src', '<?php echo static_file('images/assets-v5/btn-more-n.svg') ?>');
+        });
+
+        $('.page').css('display', 'block');
+
+        $(".name_more").each(function (i) {
+            name_more_slice($(this));
+        });
+
+        $('.bannerBtn input, .btnCreate, .btnExplode').hover(function () {
+            $(this).css('opacity', 0.8);
+        }, function () {
+            $(this).css('opacity', 1);
+        });
+
+        //ad-pc
+        var option = {ratio: '1920/400'}
+        owlCarousel('.fotorama', option);
+
+        //event
+        var option2 = {ratio: '960/210'}
+        owlCarousel('.eventFotorama', option2);
+
+        //creative
+        var option3 = {ratio: '960/210'}
+        owlCarousel('.creativeFotorama', option3);
+
+        //ad-mobile
+        if (innerWidth < 1025) {
+            var option4 = {autoHeight: true}
+            owlCarousel('.mobile_banner', option4);
+        }
+
+        $(window).resize(function () {
+            var option4 = {autoHeight: true};
+            (innerWidth < 1024) ? owlCarousel('.mobile_banner', option4) : $('.mobile_banner').hide();
+        });
+    });
+
+    <?php
+    if (count($event) > 0) {
+        echo 'var timeList = [];';
+        foreach ($event as $k0 => $v0) {
+            echo 'timeList.push("' . $v0['endtime'] . '");';
+        }
+        echo 'countdown(timeList);';
+    }
+    ?>
+
+    deeplink.setup({
+        iOS: {
+            appName: "pinpinbox",
+            appId: "<?php echo Core::settings('IOS_APP_ID'); ?>",
+        },
+        android: {
+            appId: "<?php echo Core::settings('ANDROID_APP_URL'); ?>"
+        }
+    });
+
+    function clickHandler(uri) {
+        deeplink.open(uri);
+        return false;
+    }
+
+</script>

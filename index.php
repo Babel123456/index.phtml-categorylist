@@ -11,7 +11,6 @@
   <!-- BANNER輪播區塊開始 -->
   <div id="bannner">
     <div id="banner_carousel" >
-	   <!-- //20190115 移到最圖片上方開始 -->
 	   <div id="banner_catbtn">
 	     <div class="banner_catbtn1" onclick="carouselto(0);">
 	       <div class="banner_catbtn_area"><span>2019愉你同在</span></div>
@@ -25,117 +24,61 @@
 	     <div class="banner_catbtn4" onclick="carouselto(3);">
 	       <div class="banner_catbtn_area"><span>快閃抽獎　好康報你知!!!</span></div>
 	     </div>
-		 
 	  </div>
-	  <!-- //20190115 移到最圖片上方結束	  -->
 	    <div class="banner_carousel1 owl-carousel">
 		    <a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1">
-			  <img alt="貞手作" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20190108/5c34803b92a7b.gif" src="https://cdn.pinpinbox.com/upload/admin/ad/20190108/5c34803b92a7b.gif" />
-			  <!-- //20190114 加入顯示文字開始 -->
+			  <img alt="貞手作" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20190311/5c86111092e2c.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20190108/5c34803b92a7b.gif" />
 			  <span class="carousel_item_title">挺你的時尚挺你的時尚挺你的時十六</span>
-			  <!-- //20190114 加入顯示文字結束 -->
 			</a>
 			<a href="https://www.pinpinbox.com/buzhisuoyun">
 			  <img alt="小愉兒" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181226/5c2359b28c748.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20181226/5c2359b28c748.jpg" />
-			  <!-- //20190114 加入顯示文字開始 -->
 			  <span class="carousel_item_title">挺你的時尚挺你的時尚挺你的時十六挺你的時尚挺你的時尚挺你的時十六挺你的時尚挺你的時尚挺你的時十六挺你的時尚挺你的時尚挺你的時十六</span>
-			  <!-- //20190114 加入顯示文字結束 -->
 			</a>
 			<a href="https://www.pinpinbox.com/index/tutorial/?tutorial_viewed=1">
 			  <img alt="輕鬆起動創作募資計劃" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20181225/5c21e2f95b7c9.jpg" src="https://cdn.pinpinbox.com/upload/admin/ad/20181225/5c21e2f95b7c9.jpg" />
-			  <!-- //20190114 加入顯示文字開始 -->
 			  <span class="carousel_item_title">挺你的時尚挺你的時尚挺你的時十六</span>
-			  <!-- //20190114 加入顯示文字結束 -->
 			</a>
 			<a href="https://www.pinpinbox.com/pinpinbox" target="_blank">
 			  <img alt="快閃抽獎" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20190104/5c2f34770c31b.jpg"  src="https://cdn.pinpinbox.com/upload/admin/ad/20190104/5c2f34770c31b.jpg"  />
-			  <!-- //20190114 加入顯示文字開始 -->
 			  <span class="carousel_item_title">挺你的時尚挺你的時尚挺你的時十六</span>
-			  <!-- //20190114 加入顯示文字結束 -->
 			</a>
 		</div>
-		<!-- //20190114 加入小版顯示按鈕開始 -->
 		<div class="owl-buttons">
 		  <div class="owl-prev"><i class="fa fa-chevron-left"></i></div>
 		  <div class="owl-next"><i class="fa fa-chevron-right"></i></div>
 		</div>
-		<!-- //20190114 加入小版顯示按鈕結束 -->
 	</div>
-	<!-- //20190115 移到最圖片上方開始 -->
-	<!--
-	<div id="banner_catbtn">
-	    <div class="banner_catbtn1" onclick="carouselto(0);">
-	      <div class="banner_catbtn_area"><span>挺你的時尚</span></div>
-	    </div>
-	    <div class="banner_catbtn2" onclick="carouselto(1);">
-	      <div class="banner_catbtn_area"><span>2019愉你同在　http:www.pinpinbox.com.tw春節公益活動</span></div>
-	    </div>
-	    <div class="banner_catbtn3" onclick="carouselto(2);">
-	      <div class="banner_catbtn_area"><span>釘上你的創作計劃 長度測試一標籤 長度測試一</span></div>
-	    </div>
-	    <div class="banner_catbtn4" onclick="carouselto(3);">
-	      <div class="banner_catbtn_area"><span>创作人主打 Miss Pink</span></div>
-	    </div>
-	</div>
-	-->
-	<!-- //20190115 移到最圖片上方結束	  -->
   </div>
   <!-- BANNER輪播區塊結束 -->
 
-  <!-- //20190114 移至CONTENT區塊外開始 -->
-	  <!-- 累計數字區塊開始 -->
-	  <div class="plan_info_count">
-		<div class="plan_info_count_area">
-		  <!-- //20190114 調整顯示資訊區塊開始 -->
-		  <div class="pin_num"><div class="pin_num_area"><span class="plan_info_num counter">89851</span><span>贊助次數</span></div></div>
-		  <div class="work_num"><div class="work_num_area"><span class="plan_info_num counter">48952</span><span>發佈作品</span></div></div>
-		  <div class="creator_num"><div class="creator_num_area"><span class="plan_info_num counter">48952</span><span>創作人</span></div></div>
-		  <!-- //20190114 調整顯示資訊區塊結束 -->
-		</div>
-	  </div>
-	  <!-- //20190114 移至CONTENT區塊外結束 -->
-
+  <!-- 累計數字區塊開始 -->
+  <div class="plan_info_count">
+	<div class="plan_info_count_area">
+	  <div class="pin_num"><div class="pin_num_area"><span class="plan_info_num counter">89851</span><span>贊助次數</span></div></div>
+	  <div class="work_num"><div class="work_num_area"><span class="plan_info_num counter">48952</span><span>發佈作品</span></div></div>
+	  <div class="creator_num"><div class="creator_num_area"><span class="plan_info_num counter">48952</span><span>創作人</span></div></div>
+	</div>
+  </div>
+	
   <!-- 主要內容區開始 -->
   <div id="content">
-      <!-- //20190114 移至CONTENT區塊外開始 -->
-	  <!-- 累計數字區塊開始 -->
-	  <!--
-	  <div class="plan_info_count">
-		<div class="plan_info_count_area">
-		  <div class="pin_num"><span class="plan_info_num counter">89851</span><span>贊助次數</span></div>
-		  <div class="work_num"><span class="plan_info_num counter">48952</span><span>發佈作品</span></div>
-		  <div class="creator_num"><span class="plan_info_num counter">48952</span><span>創作人</span></div>
-		</div>
-	  </div>
-	  -->
-	  <!-- //20190114 移至CONTENT區塊外結束 -->
-	  <!-- 累計數字區塊結束 -->
+        <!-- 累計數字區塊結束 -->
 	  <div class="main_content">
 		  <!-- 熱門推薦區塊開始 -->
 		  <div class="tab-container">
 		  
-		      <!-- //20190114 調整專籤區塊開始 -->
-			  <!--
-			  <ul class="nav nav-pills" ><li class="active"><a data-toggle="tab" href="#tab0">熱門</a></li><li><a data-toggle="tab" href="#tab1">推薦</a></li></ul>
-			  -->
-			  <ul class="nav nav-pills nav_tab" ><li class="active">專區精選</li>
+		      <ul class="nav nav-pills nav_tab" ><li class="active">專區精選</li>
 			                             <li class="nav_sub_tab"><ul><li class="active"><a data-toggle="tab" href="#tab0">熱門</a></li><li><a data-toggle="tab" href="#tab1">推薦</a></li></ul></li></ul>
-			  
-			  <!-- //20190114 調整專籤區塊結束 -->
 			  <div class="tab_content">
 				  <!-- 熱門區塊開始 -->
-				  <!-- //20181011移除 align_center 開始 -->
 				  <div id="tab0" class="tab active">
-				  <!-- //20181011移除 align_center 結束 -->
 					 <div class="hit_story" >
 						 <a href="https://www.pinpinbox.com/andy729huiblog">
 						   <div class="story_img">
 							   <div class="creator_info">
-							     <!-- //20190218 加個div排位置開始 -->
 								 <div class="creator_info_wrap">
 							       <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/picture$2d70.jpg"></span><span>潛能盒子 channelbox</span>
 							     </div>
-								 <!-- //20190218 加個div排位置結束 -->
 							   </div> 
 							   <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4151/cover$dc41.jpg"></div>
 						   </div>
@@ -175,11 +118,9 @@
 						 <a href="https://www.pinpinbox.com/chen101211">
 						   <div class="story_img">
 							 <div class="creator_info">
-							   <!-- //20190218 加個div排位置開始 -->
 							   <div class="creator_info_wrap">
 							     <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4069/picture$ea13.jpg"></span><span>Ivy Chen</span>
 							   </div>
-							   <!-- //20190218 加個div排位置結束 -->
 							 </div>
 							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4069/cover$bf64.jpg"></div>
 						   </div>
@@ -191,13 +132,11 @@
 						 <a href="https://www.pinpinbox.com/babel">
 						   <div class="story_img">
 							 <div class="creator_info">
-							   <!-- //20190218 加個div排位置開始 -->
 							   <div class="creator_info_wrap">
 							     <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$3a34.jpg"></span><span>babel</span>
 							   </div>
-							   <!-- //20190218 加個div排位置結束 -->
 							 </div>
-							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$4880.jpg"></div>
+							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/cover$f1a9.jpg"></div>
 							</div>
 						   <div class="story_desc">過了十年的米蟲生活, 畫下那懷念喜愛的米蟲日子~</div>
 						   <div class="story_info"><div class="story_view">瀏覽：10000</span></div><div class="pin_count">贊助次數：<span class="pin_count_num">1000</div></div>
@@ -207,11 +146,9 @@
 						 <a href="https://www.pinpinbox.com/misspink">
 							<div class="story_img">
 							  <div class="creator_info">
-							    <!-- //20190218 加個div排位置開始 -->
 							    <div class="creator_info_wrap">
 							      <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4039/picture$54a2.jpg"></span><span>Miss.Pink</span>
 							    </div>
-							    <!-- //20190218 加個div排位置結束 -->
 							  </div>
 							  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4039/cover$9690.jpg"></div>
 							</div>
@@ -223,11 +160,9 @@
 						 <a href="https://www.pinpinbox.com/Hannah">
 						   <div class="story_img">
 							 <div class="creator_info">
-							    <!-- //20190218 加個div排位置開始 -->
 							    <div class="creator_info_wrap">
 							      <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4171/picture$c588.jpg"></span><span>楊花花</span>
 							    </div>
-							    <!-- //20190218 加個div排位置結束 -->
 							 </div>
 							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4171/cover$fc7c.jpg"></div>
 						   </div>
@@ -239,11 +174,9 @@
 						 <a href="https://www.pinpinbox.com/ticklefeet">
 						   <div class="story_img">
 							 <div class="creator_info">
-							    <!-- //20190218 加個div排位置開始 -->
 							    <div class="creator_info_wrap">
 							      <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4023/picture$ce53.jpg"></span><span>腳癢の少女</span>
 							    </div>
-							    <!-- //20190218 加個div排位置結束 -->
 							  </div>
 							  <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4023/cover$2de0.jpg"></div>
 						   </div>
@@ -254,18 +187,14 @@
 				  </div>
 				  <!-- 熱門區塊結束 -->
 				  <!-- 推薦區塊開始 -->
-				  <!-- //20181011移除 align_center 開始 -->
 				  <div id="tab1" class="tab">
-				  <!-- //20181011移除 align_center 結束 -->
-					<div class="hit_story" >
+				  <div class="hit_story" >
 						 <a href="hhttps://www.pinpinbox.com/darren960319">
 						   <div class="story_img">
 						     <div class="creator_info">
-							   <!-- //20190218 加個div排位置開始 -->
 							   <div class="creator_info_wrap">
 							     <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4018/picture$c066.jpg"></span><span>Darren</span>
 							   </div>
-							   <!-- //20190218 加個div排位置結束 -->
 							 </div>
 						     <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4018/cover$8e76.jpg"></div>
 						   </div>
@@ -277,11 +206,9 @@
 						 <a href="https://www.pinpinbox.com/taiwanli">
 						   <div class="story_img">
 						     <div class="creator_info">
-							   <!-- //20190218 加個div排位置開始 -->
 							   <div class="creator_info_wrap">
 							     <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4005/picture$cf74.jpg"></span><span>台灣莉</span>
 							   </div>
-							   <!-- //20190218 加個div排位置結束 -->
 							 </div>
 							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4005/cover$6815.jpg"></div>
 						   </div>
@@ -293,11 +220,9 @@
 						 <a href="https://www.pinpinbox.com/kasaki">
 						   <div class="story_img">
 							 <div class="creator_info">
-							   <!-- //20190218 加個div排位置開始 -->
 							   <div class="creator_info_wrap">
 							     <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4045/picture$ec13.jpg"></span><span>KASAKI 賀崎</span>
 							   </div>
-							   <!-- //20190218 加個div排位置結束 -->
 							 </div>
 							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4045/cover$9fd6.jpg"></div>
 						   </div>
@@ -309,11 +234,9 @@
 						 <a href="https://www.pinpinbox.com/alice83107">
 						   <div class="story_img">
 							 <div class="creator_info">
-							   <!-- //20190218 加個div排位置開始 -->
 							   <div class="creator_info_wrap">
 							     <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4016/picture$60eb.jpg"></span><span>許雁林</span>
 							   </div>
-							   <!-- //20190218 加個div排位置結束 -->
 							 </div>	
 							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4016/cover$3854.jpg"></div>
 						   </div>
@@ -325,11 +248,9 @@
 						 <a href="https://www.pinpinbox.com/pileuplife">
 						   <div class="story_img">
 							 <div class="creator_info">
-							   <!-- //20190218 加個div排位置開始 -->
 							   <div class="creator_info_wrap">
 							     <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9211/picture$a2fd.jpg"></span><span>PileUp Life</span>
 							   </div>
-							   <!-- //20190218 加個div排位置結束 -->
 							 </div>
 							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9211/cover$34c4.jpg"></div>
 						   </div>
@@ -342,11 +263,9 @@
 						 <a href="https://www.pinpinbox.com/hphsu">
 						   <div class="story_img">
 							 <div class="creator_info">
-							   <!-- //20190218 加個div排位置開始 -->
 							   <div class="creator_info_wrap">
 							     <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg"></span><span>眭澔平</span>
 							   </div>
-							   <!-- //20190218 加個div排位置結束 -->
 							 </div>
 							 <div class="creator_banner"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/cover$25a6.jpg"></div>
 						   </div>
@@ -359,49 +278,37 @@
 				</div>
 		  </div>
 		  <!-- 熱門推薦區塊結束 -->
+		  
+		  <!-- //20190401 移除新加入區塊開始 -->
 		  <!-- 新加入區塊開始 -->
-        <div  class="tab-container">
+		  <!--
+          <div  class="tab-container">
             <ul class="nav nav-pills">
                 <li class="active">新加入</li>
             </ul>
             <div class="tab_content">
               <div class="tab active">
               
-                <!-- //20190114: 多加個DIV區塊包住NEW_STAR開始 -->		
                 <div class="new_star_area">
-				<!-- //20190114: 多加個DIV區塊包住NEW_STAR結束 -->	
-				
 				  <div class="new_star">
                     <a href="https://w3.pinpinbox.com/index/creative/content/?user_id=370">
-                      <div class="star_img">
-					    <img src="https://ppb.sharemomo.com/storage/zh_TW/user/370/picture$f046_300x300.jpg">
-					  </div>
+                      <div class="star_img"><img src="https://ppb.sharemomo.com/storage/zh_TW/user/370/picture$f046_300x300.jpg"></div>
                       <div class="star_name">Cailum Liu</div>
-					  
-					  <!-- //20190114: class="story_desc"改"star_desc"開始 -->
-                      <div class="star_desc">1234</div>
-					  <!-- //20190114: class="story_desc"改"star_desc"結束 -->
-					  
+				      <div class="star_desc">1234</div>
 					</a>
                   </div>
 				  <div class="new_star">
                     <a href="https://w3.pinpinbox.com/index/creative/content/?user_id=364">
                       <div class="star_img"><img src="https://ppb.sharemomo.com/storage/zh_TW/user/364/picture$22ca_300x217.jpg"></div>
                       <div class="star_name">cailum_4699999999999999999999999</div>
-					  
-					  <!-- //20190114: class="story_desc"改"star_desc"開始 -->
-                      <div class="star_desc">casasfggegdDdd46464646564644
+				      <div class="star_desc">casasfggegdDdd46464646564644
 49846948998479797987987987979797979798798798797979879879879879798797987987897</div>
-                      <!-- //20190114: class="story_desc"改"star_desc"結束 -->
-
                     </a>
                   </div>
 				  <div class="new_star">
                     <a href="https://w3.pinpinbox.com/index/creative/content/?user_id=327">
                       <div class="star_img"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/9855/picture$6abf_300x300.jpg"></div>
                       <div class="star_name">財團法人基督教臺北市私立伯大尼兒少家園</div>
-					  
-					  <!-- //20190114: class="story_desc"改"star_desc"開始 -->
                       <div class="star_desc">愛心義賣&nbsp; &nbsp;
 
 邀您一起幫助弱勢兒少
@@ -440,18 +347,15 @@ http://bethany.org.tw/
 
 &nbsp;
 </div>
-<!-- //20190114: class="story_desc"改"star_desc"結束 -->
 					</a>
-                  </div>  
-				
-				<!-- //20190114: 多加個DIV區塊包住NEW_STAR開始 -->		
-                </div><!-- .new_star_area -->
-				<!-- //20190114: 多加個DIV區塊包住NEW_STAR結束 -->
-				
+                  </div>
+                </div>
 		      </div>
             </div>
         </div>
+		-->
         <!-- 新加入區塊結束 -->
+		<!-- //20190401 移除新加入區塊結束 -->
 
 
 		  <!-- 分類區塊開始 -->
@@ -544,7 +448,9 @@ http://bethany.org.tw/
 		   </div>
 		  <!-- 分類區塊結束 -->
 	  </div>
-  <!-- //20181116 P好康區塊開始 -->
+	  
+  <!-- //20190312 移除P好康區塊開始 -->
+  <!--
   <div id="p_bannner">
     <div id="p_banner_carousel" >
 	    <div>
@@ -552,15 +458,14 @@ http://bethany.org.tw/
 		</div>
 	</div>
   </div>
+  -->
+  <!-- //20190312 移除P好康區塊結束 -->
   
-  <!-- //20181116 P好康區塊開始 -->
 	  <div class="main_content2">
 		 <!-- 輕鬆啟動創作募資計劃開始 -->
 		 <div class="tab-container">
 			 <ul class="nav nav-pills" >
-			   <!-- //20190122: 移除創作價值後空格區塊開始 -->
 			   <li class="active"><!--<a data-toggle="tab" href="">-->創作價值由你決定<!--</a>--></li>
-			   <!-- //20190122: 移除創作價值後空格區塊結束 -->
 			 </ul>
 			 <!-- 低門檻募資就醬EZ!4個STEP開始 -->
 			 <div class="tab_content">
@@ -568,36 +473,28 @@ http://bethany.org.tw/
 					<div class="pin_plan_step">
 					  <div class="pin_plan_step1">
 					    <div class="step_img">
-					      <!-- //20190114: 換圖檔(附檔名)與加DIV開始 -->
 					      <div class="step_img_area"><img src="images/assets-v7/planstep-01.png"></div>
-					      <!-- //20190114: 換圖檔(附檔名)與加DIV結束 -->
 						</div>
 					    <div class="step_title">創作主導</div>   
 					    <div class="step_desc">完整保留你的創作核心主導權</div>
 					  </div>
 					  <div class="pin_plan_step2">
 					    <div class="step_img">
-					      <!-- //20190114: 換圖檔(附檔名)開始 -->
 					      <div class="step_img_area"><img src="images/assets-v7/planstep-02.png"></div>
-					      <!-- //20190114: 換圖檔(附檔名)結束 -->
 						</div>
 					    <div class="step_title">創作頻道</div>    
 					    <div class="step_desc">免費創建專屬贊助頻道</br>無縫分享至社群平台</div>
 					  </div>
 					  <div class="pin_plan_step3">
 					    <div class="step_img">
-					      <!-- //20190114: 換圖檔(附檔名)開始 -->
 					      <div class="step_img_area"><img src="images/assets-v7/planstep-03.png"></div>
-					      <!-- //20190114: 換圖檔(附檔名)結束 -->
 						</div>
 					    <div class="step_title">創作價值</div>
 					    <div class="step_desc">為作品設定P點</br>創造被動收入</div>
 					  </div>
 					  <div class="pin_plan_step4">
 					    <div class="step_img">
-					      <!-- //20190114: 換圖檔(附檔名)開始 -->
 					      <div class="step_img_area"><img src="images/assets-v7/planstep-04.png"></div>
-					      <!-- //20190114: 換圖檔(附檔名)結束 -->
 						</div>
 					    <div class="step_title">超高分潤</div>    
 					    <div class="step_desc">提升粉絲的關注及觀看次數</br>自動提高分潤</div>
@@ -608,9 +505,7 @@ http://bethany.org.tw/
 			  <!-- 低門檻募資就醬EZ!4個STEP結束 -->
 			  <div class="tab_content">
 				  <div class="tab active">
-				     <!-- //20190114: 將標題移到上面去開始 -->
-				       <div class="plan_info_title">【pinpinbox】創作人募資平台</div>
-					   <!-- //20190114: 將標題移到上面去結束-->
+				     <div class="plan_info_title">【pinpinbox】創作人募資平台</div>
 					 <div class="pin_plan">
 					   <div class="plan_video">
 						   <div class="plan_video_wrap">
@@ -621,10 +516,7 @@ http://bethany.org.tw/
 					   </div>
 					   <div class="plan_info">
 						   <div>
-						        <!-- //20190114: 將標題移到上面去開始 -->
-								<!--<span class="plan_info_title">【pinpinbox】創作人募資平台</span>-->
-								<!-- //20190114: 將標題移到上面去結束-->
-								<span class="plan_info_desc">pinpinbox釘釘吧 是個「創作人及斜扛青年」發佈作品取得募資的平台。創作人將作品發表在pinpinbox釘釘吧，透過募資機制輕鬆創造被動收入。 pinpinbox釘釘吧 提供各種作品上傳形式「圖片、影片、音樂 (或錄音)、文字 、PDF檔」及社群分享無縫接軌、募資金流後台管理之完整功能。</span>
+						     <span class="plan_info_desc">pinpinbox釘釘吧 是個「創作人及斜扛青年」發佈作品取得募資的平台。創作人將作品發表在pinpinbox釘釘吧，透過募資機制輕鬆創造被動收入。 pinpinbox釘釘吧 提供各種作品上傳形式「圖片、影片、音樂 (或錄音)、文字 、PDF檔」及社群分享無縫接軌、募資金流後台管理之完整功能。</span>
 						   </div>
 						 </div>
 					 </div>
@@ -656,11 +548,8 @@ $(document).ready(function() {
   });
   
   //輪播
-  // 20190114 將輸播指定到一個變數開始
-  //$(".banner_carousel1").owlCarousel({
    var owl1 = $(".banner_carousel1");
    owl1.owlCarousel({
-   // 20190114 將輸播指定到一個變數結束
         singleItem:true,
         lazyLoad: true,
         autoPlay: false,
@@ -672,19 +561,12 @@ $(document).ready(function() {
     });
 	carouselto(0);
 	
-	// 20190114 小版輪播前往按鈕開始
 	$('.owl-prev').click(function() {
       owl1.trigger('owl.prev',[300]);
     })
     $('.owl-next').click(function() {
       owl1.trigger('owl.next',[300]);
     })
-	// 20190114 小版輪播前往按鈕結束
-	
-	//按選單之外關閉選單
-	$('body').click(function(evt) {
-	    //closemenu(evt);
-     });
 });
 
 //輪播跳頁
@@ -703,10 +585,7 @@ function carouselto(x){
 }
 //hover動作判斷
 function addhover(){
-  // 20190114 改視窗值為768, 符合BOOTSTRAP的版開始
-  //if($( window ).width()> 801){
   if($( window ).width()> 768){
-  // 20190114 改視窗值為768, 符合BOOTSTRAP的版結束  
     $(".hit_story").addClass('hit_story_hover');
   }else{
     $(".hit_story").removeClass('hit_story_hover');

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="20" cy="20" r="20" fill="#DADADA"/>
+        <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" d="M16.199 8.167c-2.978-1.116-4.416 3.662-3.057 5.038-1.359-1.376-6.08.08-4.977 3.094 1.6 4.371 11.641 3.652 11.641 3.652S20.518 9.786 16.2 8.167"/>
+        <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" d="M8.165 23.994c-1.102 3.014 3.618 4.47 4.977 3.094-1.359 1.376.08 6.154 3.057 5.038 4.318-1.62 3.607-11.783 3.607-11.783s-10.041-.72-11.64 3.651"/>
+        <path stroke="#FFF" stroke-linecap="square" stroke-linejoin="round" d="M23.801 32.126c2.978 1.116 4.416-3.662 3.057-5.038 1.359 1.376 6.08-.08 4.977-3.094-1.6-4.371-11.641-3.651-11.641-3.651s-.712 10.164 3.607 11.783"/>
+        <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" d="M31.781 16.38c1.101-3.01-3.611-4.463-4.968-3.09 1.357-1.373-.079-6.143-3.051-5.029-4.312 1.617-3.602 11.763-3.602 11.763s10.025.72 11.621-3.645M20.341 20.754S18.995 33.288 23.45 37"/>
+    </g>
+</svg>

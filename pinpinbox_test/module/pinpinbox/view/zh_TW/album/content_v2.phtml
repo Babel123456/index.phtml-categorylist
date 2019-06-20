@@ -1,0 +1,778 @@
+<!-- 主要內容區開始 -->
+<div id="content">
+	<div id="album_content_area" class="album_content_area">
+		<div class="album_content_area_warp">
+			<!-- 作品資訊區塊開始 -->
+			<div class="album_content_main_wrap">
+				<div id="album_content_main" class="album_content_main">
+					<div class="album_content_box">
+						<div class="album_content_box_img">
+							<div class="album_content_box_img_area" onclick="browseKit_album('<?php echo self::url('album', 'show_photo') ?>', {album_id: '<?php echo $album['album']['album_id'] ?>', keyPress : <?php echo $album['album']['browseKitKeyPress']; ?>})">
+                                <img src="<?php echo $album['album']['cover'] ?>" alt="<?php echo $album['album']['name'] ?>" title="<?php echo $album['album']['name'] ?>" onerror="this.src='<?php echo static_file('images/assets-v7/album_banner.png') ?>'">
+							</div>
+							<div class="album_content_box_img_btn" onclick="browseKit_album('<?php echo self::url('album', 'show_photo') ?>', {album_id: '<?php echo $album['album']['album_id'] ?>', keyPress : <?php echo $album['album']['browseKitKeyPress']; ?>})" >
+                                <div class="btn_new btn_dark_opacity"><?php echo _('進入觀看'); ?></div>
+                            </div>
+						</div>
+						<div class="album_content_box_info">
+							<div class="album_content_box_icon">
+								<!-- 圖示與頁數區塊 -->
+								<div class="album_content_box_icons">
+                                    <span>
+                                        <?php if ($album['album']['tags']['audio']) { ?> <i class="fa fa-volume-down" title="音樂"></i><?php } ?>
+                                        <?php if ($album['album']['tags']['video']) { ?> <i class="fa fa-play-circle" title="影片"></i><?php } ?>
+                                        <?php if ($album['album']['tags']['exchange']) { ?> <i class="fa fa-gift" title="抽獎/兌換"></i><?php } ?>
+                                    </span>
+                                </div>
+								<div class="album_content_box_pages"><span><?php echo $album['album']['page'] ?>頁</span></div>
+
+                                <div class="album_content_box_menu_btn">
+                                    <div class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-h"></i>
+                                    </div>
+                                    <div class="dropdown-menu dropdown_menu" role="menu">
+                                        <ul>
+                                            <?php echo implode($album['dropdownMenu']) ?>
+                                        </ul>
+                                    </div>
+                                </div>
+
+							</div><!-- .content_box_icon -->
+							<div class="content_box_name"><?php echo $album['album']['name'] ?></div>
+							<div id="album_content_desc" class="album_content_desc">
+								<div id="album_content_box_desc" class="album_content_box_desc"><?php echo $album['album']['description'] ?></div>
+								<div id="album_content_desc_more" class="btn_new"><?php echo _('更多'); ?></div>
+							</div><!-- .album_content_desc -->
+						</div><!-- .content_box_info -->
+					</div><!-- .album_content_box -->
+
+                    <div class="album_content_donate_area_wrap">
+
+                        <div class="album_content_donate_area">
+
+                            <div class="album_content_more_info_area">
+
+                                <!-- 作品資訊 -->
+                                <div class="album_content_more_info">
+                                    <div class="album_content_more_info_title"><?php echo _('作品資訊'); ?></div>
+                                    <div class="album_content_more_info_detail">
+                                        <div class="album_content_more_info_date">
+                                            <span><i class="fa fa-clock-o"></i></span><span><?php echo $album['album']['publishtime'] ?></span>
+                                        </div>
+                                        <?php
+                                            if ($album['album']['location']) {
+                                                echo '<div class="album_content_more_info_location">
+                                                    <span><i class="fa fa-map-marker"></i></span>'.$album['album']['location'].'<span></span>
+                                                </div>';
+                                            }
+                                        ?>
+                                        <div class="album_content_more_info_view">
+                                            <span><i class="fa fa-eye"></i></span><span><?php echo $album['albumstatistics']['viewed'] ?></span>
+                                        </div>
+                                        <div class="album_content_more_info_pin">
+                                            <span>
+                                                <a href="javascript:void(0)" title="釘一下" onclick="likes(<?php echo $album['album']['album_id'] ?>);">
+                                                    <i name="pin_likes" class="fa fa-thumb-tack <?php echo ($album['album2likes']['userHasLikes']) ? 'pin_likes' : null ; ?>"></i>
+                                                </a>
+                                            </span>
+                                            <span name="pin_likes"><?php echo $album['album2likes']['count'] ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 贊助/關注 -->
+                                <div class="album_content_donate">
+                                    <div class="donate_btn">
+                                        <?php echo $album['button']['mainButton'] ?>
+                                    </div>
+
+                                    <div class="donate_desc">
+                                        <?php if($album['album']['point'] > 0 ) { ?>
+                                            <span><?php echo _('贊助條件'); ?></span>
+                                            <span> <?php echo $album['album']['point'] ?>P </span>
+                                            <span class="p_to_nt">(<?php echo round($album['album']['point']/2) ?>TWD) </span>
+                                        <?php } ?>
+                                    </div>
+
+                                    <div class="album_content_back" onclick="$('.jBox-closeButton').click();">
+                                        <span><i class="fa fa-angle-left"></i></span>
+                                        <span><?php echo _('返回'); ?></span>
+                                    </div>
+                                </div><!-- .album_content_donate -->
+
+                                <!-- 社群區塊  -->
+                                <div class="social_links_box_area">
+                                    <div class="social_links_box_area_wrap">
+                                        <div id="album_content_social_links_box" class="social_links_box">
+                                            <div class="social_links_title"><?php echo _('分享此作品'); ?></div>
+                                            <div class="social_links_box_icons">
+                                                <div id="album_content_social_links" class="social_links">
+                                                    <div class="addthis_inline_share_toolbox"></div>
+                                                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c234e41206c2da6"></script>
+                                                    <a class="imagepop" href="<?php echo $album['album']['qrcodeUrl'] ?>" target="_blank">
+                                                        <img src="<?php echo static_file('images/assets-v7/qr_square.svg') ?>">
+                                                    </a>
+                                                </div>
+                                                <div id="album_content_social_links2" class="social_links2" onclick="snackbar_show();" title="<?php echo _('複製作品網址'); ?>" ><i class="fa fa-link"></i></div>
+                                            </div>
+                                        </div><!-- .social_links_box -->
+                                    </div><!-- .social_links_box_area_wrap -->
+                                </div><!-- .social_links_box_area -->
+                                <div id="snackbar">
+                                    <span><?php echo _('已複製到剪貼簿'); ?></span>
+                                    <span>
+				                        <input id="page_url" type="text" value="<?php echo $album['album']['url'] ?>" autocomplete="off">
+				                    </span>
+                                </div>
+
+                            </div><!-- .album_content_more_info_area -->
+
+
+                            <!-- 作者資訊區塊開始 -->
+                            <div class="album_content_creative_info">
+                                <div class="album_content_creative_info_wrap">
+                                    <div class="album_content_creative_info_title_area">
+                                        <div class="album_content_creative_info_title"><?php echo _('創作人'); ?></div>
+                                        <div class="album_content_creative_info_btn">
+                                            <a href="<?php echo $album['user']['url'] ?>" >
+                                                <span class="btn_new"><?php echo _('更多他/她的作品'); ?></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="album_content_creative_info_img_area">
+                                        <div class="album_content_creative_info_img_name">
+                                            <div class="album_content_creative_info_img">
+                                                <a href="<?php echo $album['user']['url'] ?>" title="<?php echo $album['user']['name'] ?>">
+                                                    <div class="profile_img_wrap">
+                                                        <img class="profile_img" onerror="this.src='<?php echo static_file('images/face_sample.svg') ?>'" src="<?php echo $album['user']['cover'] ?>">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="album_content_creative_info_name">
+                                                <span><a href="<?php echo $album['user']['url'] ?>" title="<?php echo $album['user']['name'] ?>"><?php echo $album['user']['name'] ?></a></span>
+                                            </div>
+                                        </div><!-- .album_content_creative_info_img_name -->
+
+                                        <?php if($album['user']['user_id'] !== $user['user_id']) { ?>
+                                        <div class="album_content_creative_info_img_btn">
+                                            <a name="buttonFollow" href="javascript:void(0)" onclick="follow();">
+                                                <div class="btn_new <?php echo ($album['follow']['is_follow']) ? 'btn_attention' : 'btn_pink' ; ?>"><?php echo ($album['follow']['is_follow']) ? _('取消關注') : _('關注') ; ?></div>
+                                            </a>
+                                        </div>
+                                        <?php } ?>
+                                    </div><!-- .album_content_creative_info_img_area -->
+                                </div>
+                            </div><!-- .album_content_creative_info -->
+                            <!-- 作者資訊區塊結束 -->
+
+                            <!-- 投票區塊開始 -->
+                            <?php if ($album['eventjoin']) { ?>
+                                <?php if ($album['eventjoin']) { ?>
+                                    <div class="activity_vote">
+                                        <div class="activity_vote_desc"><?php echo _('作品正在參加活動'); ?></div>
+                                        <div class="activity_vote_area">
+                                            <span class="activity_vote_title"><a href="<?php echo self::url('event', 'content', ['event_id'=>$album['eventjoin']['event_id']]) ?>" target="_blank"><?php echo $album['eventjoin']['name'] ?></a></span>
+                                            <?php
+                                            if (!$property['user']['hasvoted']) {
+                                                echo '<span class="btn_new btn_main" onclick="voteToEvent();">'._('投票').'</span>';
+                                            } else {
+                                                echo '<span class="btn_new btn_main">'._('已投票').'</span>';
+                                            };
+                                            ?>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            <?php } ?>
+                            <!-- 投票區塊結束 -->
+
+                            <!-- 你可能會想看區塊  -->
+                            <div id="removeInPop" class="intro_see_more_area">
+                                <div class="intro_title"><?php echo _('你可能會想看'); ?></div>
+                                <div class="intro_see_more">
+                                    <?php
+                                    foreach ($moreAlbums as $moreAlbum) {
+                                        echo '<div class="intro_see_more_box" data-href="'.$moreAlbum['album']['cover_url'].'">
+                                            <div class="intro_see_more_img">
+                                                <div class="intro_see_more_img_area"><img src="'.$moreAlbum['album']['cover'].'" onerror="this.src=\''.static_file('images/origin.jpg').'\'"></div>
+                                            </div>
+                                        <div class="intro_see_more_name">'.$moreAlbum['album']['name'].'</div>
+                                    </div>';
+                                    }
+                                    ?>
+                                </div><!-- .intro_see_more -->
+                            </div><!-- .intro_see_more_area  -->
+
+                        </div><!-- .album_content_donate_area -->
+
+                    </div>
+
+					<!-- 留言區塊開始 -->
+					<?php include(dirname(dirname(__FILE__)) . '/pinpinboard.phtml'); ?>
+					<!-- 留言區塊結束 -->
+				</div><!-- #album_content_main -->
+			</div><!-- .album_content_left_area -->
+			<!--</div> 2. 作品資訊區塊結束 -->
+
+		</div><!-- .album_content_intro_area -->
+	</div><!-- .album_content_area -->
+</div><!-- #content -->
+<!-- 主要內容區結束 -->
+
+<script type="text/javascript" name="popview">
+    $(function() {
+		<?php
+		if ($autoplay) {
+			echo 'browseKit_album(\'' . self::url('album', 'show_photo') . '\', {album_id: \'' . $album['album']['album_id'] . '\', keyPress : \''. $property['property']['browseKitKeyPress'] .'\'  });';
+		}
+		if ($autobuy) {
+			if ($user['user_id'] == $album['user']['user_id'] || $property['user']['collected']) {
+				echo 'browseKitRefresh();';
+				echo 'browseKit_album(\'' . self::url('album', 'show_photo') . '\', {album_id: \'' . $album['album']['album_id'] . '\', keyPress : \''. $property['property']['browseKitKeyPress'] .'\'});';
+			} else {
+				echo 'buyalbum()';
+			}
+		}
+		?>
+        // 頁面載入時, 判斷更多按鈕是否出現
+        desc_more_btn();
+
+        $('#album_content_box_desc').html($('#album_content_box_desc').html().autoLink({target: "_blank"}));
+
+        $('.imagepop').magnificPopup({type: 'image',});
+    });
+
+    // 當被POPUP顯示時, 判斷更多按鈕是否出現
+    $(document).ajaxComplete(function( event, request, settings ) {
+        desc_more_btn();
+    });
+
+    // 作品資訊顯示更多
+    $('#album_content_desc_more').on('click', function(){
+        $('#album_content_box_desc').toggleClass('show_block');
+        $('#album_content_desc_more').removeClass('show_block');
+    });
+
+    $('.album_content_box_menu_btn').on('click', function () {
+        $('.content_box_menu').toggleClass("content_box_menu_down");
+    });
+
+    //判斷是否是點擊照片, 或拖曳NICESCROLL區塊
+    var isDragging=false, startingPos=[0,0];
+    $(".intro_see_more_box").mousedown(function (evt) {
+        isDragging = false;
+        startingPos = [evt.pageX, evt.pageY];
+    }).mousemove(function (evt) {
+        if (!(evt.pageX === startingPos[0] && evt.pageY === startingPos[1])) {
+            isDragging = true;
+        }
+    }).mouseup(function (evt) {
+        if(!right_click(evt)){
+            if (!isDragging){
+                window.location.href = $(this).data('href');
+            }
+        }
+    });
+
+
+    // report
+    function alert_submit(id) {
+        var obj = $('input[name=report]:checked'), value = obj.val();
+        console.log(value);
+
+        if (obj.length < 1) {
+            alert('請選擇一個檢舉意向。');
+        } else {
+            $.post("<?php echo self::url('album', 'report') ?>", {
+                value: value,
+                album_id: id,
+                url: window.location.href,
+            }, function (r) {
+                r = $.parseJSON(r);
+                $('#alert_bg_new').trigger('click');
+                if (r.result == 1) {
+                    alert(r.message);
+                } else if (r.result == 2) {
+                    _jbox(r, 'error');
+                } else {
+                    alert(r.message);
+                }
+            });
+        }
+    }
+
+    // 收藏/贊助作品
+    function buyalbum() {
+        $.post('<?php echo self::url('album', 'buyalbum', query_string_parse())?>', {
+            album_id: '<?php echo $album['album']['album_id']?>',
+        }, function (r) {
+            r = $.parseJSON(r);
+
+            switch (r.result) {
+                case 2:
+                    if (typeof(window.onbeforeunload) != 'undefined') window.onbeforeunload = null;
+                    if (r.data && typeof(r.data.task) != 'undefined') {
+                        (typeof(r.data.task.message) != 'undefined' && r.data.task.message.length > 0) ? _TaskAlert(r, 'task') : (r.redirect) ? location.href = r.redirect : null;
+                    } else {
+                        if (r.redirect) location.href = r.redirect;
+                    }
+                    break;
+
+                case 4:
+                    var myConfirm = new jBox('Confirm', {
+                        cancelButton: '<?php echo _('關閉')?>',
+                        confirmButton: '<?php echo $property['property']['buyAlbumBoxBtn'] ?>',
+                        closeOnConfirm : false,
+                        closeButton : 'box',
+                        confirm: function () {
+                            var recipient = {}, validation = true;
+							<?php if ($property['album']['data']['album']['reward_after_collect'] && $property['property']['balance'] >= 0) { ?>
+
+                            if (!$('input[name="recipient"]').val()) {
+                                $('input[name="recipient"]').addClass('warning');
+                                validation = false;
+                            } else {
+                                recipient.recipient = $('input[name="recipient"]').val();
+                                $('input[name="recipient"]').removeClass('warning') ;
+                            }
+
+                            if (!$('input[name="recipient_tel"]').val() || !$.isNumeric($('input[name="recipient_tel"]').val()) ) {
+                                $('input[name="recipient_tel"]').addClass('warning');
+                                validation = false;
+                            } else {
+                                recipient.recipient_tel = $('input[name="recipient_tel"]').val();
+                                $('input[name="recipient_tel"]').removeClass('warning') ;
+                            }
+
+                            if(!$('input[name="recipient_address"]').val()) {
+                                $('input[name="recipient_address"]').addClass('warning');
+                                validation = false;
+                            } else {
+                                recipient.recipient_address = $('input[name="recipient_address"]').val();
+                                $('input[name="recipient_address"]').removeClass('warning') ;
+                            }
+
+                            recipient.recipient_text = $('textarea[name="recipient_text"]').val();
+
+							<?php } ?>
+
+                            if(validation) {
+                                $.post('<?php echo self::url('album', 'buyalbum', query_string_parse())?>', {
+                                    buy: true,
+                                    recipient: recipient,
+                                    album_id: '<?php echo $album['album']['album_id']?>',
+                                    point_to_use: $('input[name="customerpoint"]').val(),
+                                }, function (r2) {
+                                    r2 = $.parseJSON(r2);
+
+                                    switch (r2.result) {
+                                        case 1:
+                                            _jBox(r2, 'success');
+
+                                            if (r2.data) { if (r2.data.task.message.length > 0) _TaskAlert(r2, 'task'); }
+                                            $('div.donate_btn').empty().append(`<?php echo $album['button']['afterCollectAlbum'] ?>`);
+                                            browseKitRefresh();
+                                            browseKit_album('<?php echo self::url('album', 'show_photo')?>', {album_id: '<?php echo $album['album']['album_id']?>', keyPress : <?php echo $property['property']['browseKitKeyPress']; ?>});
+                                            myConfirm.close();
+                                            break;
+
+                                        case 2:
+                                            _jBox(r2, 'info');
+                                            myConfirm.close();
+                                            break;
+
+                                        case 3:
+                                            _jBox({message:'P點不足請先儲值'}, 'info');
+                                            break;
+                                        default:
+                                            _jBox(r2, 'error');
+                                            myConfirm.close();
+                                            break;
+                                    }
+                                });
+                            }
+                        },
+                        onCloseComplete: function () {
+                            myConfirm.destroy();
+                        }
+                    }).setContent(`<?php echo $property['property']['buyAlbumBoxContent']; ?>`).open();
+
+                    break;
+
+                case 5 :
+                    if (r.data) { if (r.data.task.message.length > 0) _TaskAlert(r, 'task'); }
+                    if (r.data.album_count) $('span.albumstatistics').html(r.data.album_count);
+                    $('div.donate_btn').empty().append(`<?php echo $album['button']['afterCollectAlbum'] ?>`);
+                    browseKitRefresh();
+                    browseKit_album('<?php echo self::url('album', 'show_photo')?>', {album_id: '<?php echo $album['album']['album_id']?>', keyPress : <?php echo $property['property']['browseKitKeyPress']; ?>});
+                    break;
+
+                default:
+                    _jBox(r, 'error');
+                    break;
+            }
+        });
+    }
+
+    // 檢查輸入的 point
+    function checkpoint(i, v) {
+        var minPoints = <?php echo $album['album']['point'] ?>,
+            maxPoints = 50000,
+            customerPoints = <?php echo $property['user']['userpoint'] ?>,
+            message = '';
+        $('#albumPoint2TWD').html((v/2).toFixed(1));
+        if (v < minPoints) {
+            message = '<?php echo _('最低為:') ?>' + minPoints + 'P';
+        } else if (v > maxPoints) {
+            message = '<?php echo _('最高為:') ?>' + maxPoints + 'P';
+            $(i).val(maxPoints);
+            $('#albumPoint2TWD').html((maxPoints/2).toFixed(1));
+        } else if (v > customerPoints) {
+            message = '<?php echo _('您的P點不足, 是否前往') ?><a href="javascript:void(0)" onclick="deposit();">儲值</a>?';
+        }
+
+        $('p[name="pointTips"]').html(message);
+    }
+
+    // 儲值導向
+    function deposit() {
+        location.href="<?php echo self::url('user', 'point', ['album_id'=> $album['album']['album_id']]) ?>";
+    }
+
+    // 刪除作品
+    function delete_album() {
+        var myConfirm = new jBox('Confirm', {
+            cancelButton: '<?php echo _('No')?>',
+            confirmButton: '<?php echo _('Yes')?>',
+            confirm: function () {
+                block_modal = new jBox('Modal', {
+                    position: {x: 'center', y: 'center'},
+                    width: 150,
+                    height: 55,
+                    closeOnEsc: false,
+                    closeOnClick: false,
+                    closeButton: 'title',
+                    zIndex: 1500,
+                });
+                block_modal.setContent('<span style="padding-left:20px;font-weight:bold;color:#2299DD";font-size:26px;><?php echo _('Deleting...'); ?><img src="<?php echo static_file('images/loading.gif'); ?>"></span>').open();
+
+                $.post('<?php echo self::url('user', 'delete_album');?>', {
+                    album_id: <?php echo $album['album']['album_id'];?>,
+                }, function (r) {
+                    window.onbeforeunload = null;
+                    block_modal.close();
+                    r = $.parseJSON(r);
+                    if (r.result == 1) {
+                        _jBox(r, 'success_notext');
+                    } else {
+                        _jBox(r, 'error');
+                    }
+                });
+            },
+            onCloseComplete: function () {
+                myConfirm.destroy();
+            }
+        }).setContent(
+            '<div class="content">' +
+            '<?php echo _('Are you sure you want to delete?')?><br><br><div class="keypoint"><p>※<?php echo _('Attention')?>※</p><?php echo _('The album cannot be restored after deleted. The settlement and download count of this album will be removed.')?></div>' +
+            '</div>'
+        ).open();
+    }
+
+    // 描述區塊顯示更多
+    function desc_more_btn(){
+        if($('#album_content_box_desc').height()>=95){
+            $('#album_content_desc_more').addClass('show_block');
+        }
+    }
+
+    // 關注作者
+    function follow() {
+        $.post('<?php echo self::url('creative', 'follow')?>', {
+            user_id: '<?php echo $album['user']['user_id'] ?>',
+        }, function (r) {
+            r = $.parseJSON(r);
+            if (r.result == 1) {
+                if(r.data['followstatus'] == 1) {
+                    $('a[name="buttonFollow"] div').text('<?php echo _('取消關注')?>').addClass('btn_attention').removeClass('btn_pink');
+                } else {
+                    $('a[name="buttonFollow"] div').text('<?php echo _('Follow')?>').addClass('btn_pink').removeClass('btn_attention');
+                }
+                if (r.data.task) {
+                    if (r.data.task.message.length > 0 && r.data.task.result) _TaskAlert(r, 'task');
+                }
+            } else {
+                site_jBox(r, 'error');
+            }
+        });
+    }
+
+    // 點擊喜歡
+    function likes(id) {
+        $('i[name="pin_likes"]').toggleClass('pin_likes');
+        $.post('<?php echo self::url('album', 'likes') ?>', {
+            album_id: id,
+        }, function (r) {
+            r = $.parseJSON(r);
+            switch (r.result) {
+                case 1:
+                    if (r.data) {
+                        $('span[name="pin_likes"]').html( parseInt($('span[name="pin_likes"]').html()) + 1 );
+                    } else {
+                        $('span[name="pin_likes"]').html( parseInt($('span[name="pin_likes"]').html()) - 1 );
+                    }
+                    break;
+
+                case 2:
+                    _jBox(r, 'success_notext');
+                    break;
+
+                default :
+                    _jBox(r, 'error');
+                    break;
+            }
+        });
+    }
+
+    // 彈出網址已複製訊息
+    function snackbar_show(){
+        // 顯示訊息
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        // 複製網址
+        $('body').append('<textarea id="clip_area"></textarea>');
+        var clip_area = $('#clip_area');
+        clip_area.text('<?php echo $album['album']['url'] ?>');
+        clip_area.select();
+        document.execCommand('copy');
+        clip_area.remove();
+    }
+
+    // QRcode
+    function showQrcode() {
+        new jBox('Modal', {
+            width: 260,
+            title: '',
+            overlay: true,
+            content: '<div><img src="<?php echo $album['album']['qrcodeUrl'] ?>"></div>',
+            closeButton : 'title',
+            repositionOnOpen: false,
+            repositionOnContent: false
+        }).open();
+    }
+
+    // 分享作品
+    function share_album(id, qrcode, cover, shareUrl) {
+        var str = '<div>' +
+            '<ul class="share_album_' + id + '">' +
+            '<li class="facebook" title="<?php echo _('分享我的作品至Facebook!') ?>"></li>' +
+            '<li class="twitter" title="<?php echo _('分享我的作品至twitter'); ?>"></li>' +
+            '<li class="plusone" title="<?php echo _('分享我的作品至Google+'); ?>"></li>' +
+            '<li class="pinterest" title="<?php echo _('分享我的作品至pinterest'); ?>" data-media="' + cover + '"></li>' +
+            '<li class="line" title="<?php echo _('Share album to Line') ?>"></li>' +
+            '<li class="qrcode social-likes__widget" title="<?php echo _('開啟QRcode'); ?>"><a class="imagepop" href="' + qrcode + '"><img width="23" src="<?php echo static_file('images/qr.png')?>" style="padding-top:5px;"></a></li>' +
+            '</ul>' +
+            '</div><br>' +
+            '<div>' +
+            '<input style="width:300px;height:2em;" type="text" class="share_url" value="' + shareUrl + '">' +
+            '</div>';
+
+        box = new jBox('Modal', {
+            closeButton: 'title',
+            title: 'Share it',
+            width: 350,
+            height: 130,
+            zIndex: 1002,
+            onOpen: function () {
+                $('.share_album_' + id).socialLikes({
+                    url: shareUrl,
+                    title: '<?php echo _('Share the pinpinbox photo album!'); ?>',
+                    counters: true,
+                    singleTitle: 'Share it!',
+                });
+
+                //counter link
+                $('.share_album_' + id).on('popup_closed.social-likes', function (event, service) {
+                    $(event.currentTarget).socialLikes({forceUpdate: true});
+                    var counter = $(event.currentTarget).find('.social-likes__counter_' + service);
+                    counter.text(+(counter.text() || 0) + 1).removeClass('social-likes__counter_empty');
+
+                    if (service == 'facebook') {
+                        $.post('<?php echo self::url('album', 'clear_task') ?>', {
+                            album_id: '<?php echo $album['album']['album_id'] ?>',
+                        }, function (r) {
+                            r = $.parseJSON(r);
+                            switch (r.result) {
+                                case 1:
+                                    if (r.data) {
+                                        if (r.data.task.message.length > 0) _TaskAlert(r, 'task');
+                                    }
+                                    break;
+
+                                default :
+
+                                    break;
+                            }
+                        });
+                    }
+                });
+
+                //initialize social
+                $('#social_share').socialLikes({
+                    url: '<?php echo self::url('album', 'content', ['album_id' => $album['album']['album_id'], 'autoplay' => true])?>',
+                    title: "<?php echo preg_replace('/\s(?=)/', '', htmlspecialchars($album['album']['name'], ENT_QUOTES)) ?>",
+                    counters: true,
+                    singleTitle: '<?php echo _('Share it!')?>',
+                });
+
+                //counter link
+                $('#social_share').on('popup_closed.social-likes', function (event, service) {
+                    $(event.currentTarget).socialLikes({forceUpdate: true});
+                    var counter = $(event.currentTarget).find('.social-likes__counter_' + service);
+                    counter.text(+(counter.text() || 0) + 1).removeClass('social-likes__counter_empty');
+
+                    if (service == 'facebook') {
+                        $.post('<?php echo self::url('album', 'clear_task') ?>', {
+                            album_id: '<?php echo $album['album']['album_id'] ?>',
+                        }, function (r) {
+                            r = $.parseJSON(r);
+                            switch (r.result) {
+                                case 1:
+                                    if (r.data) {
+                                        if (r.data.task.message.length > 0) _TaskAlert(r, 'task');
+                                    }
+                                    break;
+
+                                default :
+
+                                    break;
+                            }
+                        });
+                    }
+                });
+
+                $('.imagepop').magnificPopup({type: 'image',});
+            },
+        }).setContent(str).open();
+    }
+
+    //line icon
+    var socialLikesButtons = {
+        line: {
+            clickUrl: 'http://line.naver.jp/R/msg/text/?<?php echo preg_replace('/\s(?=)/', '', htmlspecialchars($album['album']['name'], ENT_QUOTES)) . ' - ' . self::url('album', 'content', ['album_id' => $album['album']['album_id'], 'autoplay' => true])?>',
+            pupupWidth: 650,
+            popupHeight: 500,
+        }
+    };
+
+    function recommendedBuyAlbum() {
+        var myConfirm = new jBox('Confirm', {
+            id: 'JboxRecommendedBuyAlbum',
+            cancelButton: '<?php echo _('關閉')?>',
+            confirmButton: '<?php echo $property['property']['buyAlbumBoxBtn'] ?>',
+            closeOnConfirm : false,
+            closeButton : 'box',
+            confirm: function () {
+
+                var recipient = {}, validation = true;
+				<?php if ($property['album']['data']['album']['reward_after_collect'] && $property['property']['balance']>=0) { ?>
+
+                if (!$('input[name="recipient"]').val()) {
+                    $('input[name="recipient"]').addClass('warning');
+                    validation = false;
+                } else {
+                    recipient.recipient = $('input[name="recipient"]').val();
+                    $('input[name="recipient"]').removeClass('warning') ;
+                }
+
+                if (!$('input[name="recipient_tel"]').val() || !$.isNumeric($('input[name="recipient_tel"]').val()) ) {
+                    $('input[name="recipient_tel"]').addClass('warning');
+                    validation = false;
+                } else {
+                    recipient.recipient_tel = $('input[name="recipient_tel"]').val();
+                    $('input[name="recipient_tel"]').removeClass('warning') ;
+                }
+
+                if(!$('input[name="recipient_address"]').val()) {
+                    $('input[name="recipient_address"]').addClass('warning');
+                    validation = false;
+                } else {
+                    recipient.recipient_address = $('input[name="recipient_address"]').val();
+                    $('input[name="recipient_address"]').removeClass('warning') ;
+                }
+
+                recipient.recipient_text = $('textarea[name="recipient_text"]').val();
+				<?php } ?>
+
+                if(validation) {
+
+                    $.post('<?php echo self::url('album', 'buyalbum', query_string_parse())?>', {
+                        album_id: '<?php echo $album['album']['album_id']?>',
+                        buy: true,
+                        point_to_use: $('input[name="customerpoint"]').val(),
+                        recipient: recipient,
+                    }, function (r) {
+                        r = $.parseJSON(r);
+                        switch (r.result) {
+                            case 1:
+                                _jBox(r, 'success');
+                                $lg.data('lightGallery').destroy();
+
+                                if (r.data) {
+                                    if (r.data.task.message.length > 0) _TaskAlert(r, 'task');
+                                }
+                                if (r.data.album_count) $('span.albumstatistics').html(r.data.album_count);
+                                browseKitRefresh();
+                                setTimeout(function () {
+                                    browseKit_album('<?php echo self::url('album', 'show_photo')?>', {
+                                        album_id: '<?php echo $album['album']['album_id']?>',
+                                        keyPress : <?php echo $property['property']['browseKitKeyPress']; ?>,
+                                        preview_page_length: <?php echo $property['album']['previewPhotos'] ?>});
+                                }, 500);
+                                myConfirm.close();
+                                break;
+
+                            case 2:
+                                _jBox(r, 'success_notext');
+                                myConfirm.close();
+                                break;
+                            case 3:
+                                _jBox({message:'P點不足請先儲值'}, 'info');
+                                break;
+
+                            default:
+                                _jBox(r, 'error');
+                                myConfirm.close();
+                                break;
+                        }
+                    });
+                }
+            },
+            onCloseComplete: function () {
+                myConfirm.destroy();
+            }
+        }).setContent(`<?php echo $property['property']['buyAlbumBoxContent']; ?>`).open();
+
+        window.RecommendedBuyAlbum = myConfirm;
+    }
+
+    <?php if(!empty($property['album']['eventjoin']) && (!$property['user']['hasvoted'])) { ?>
+        function voteToEvent() {
+            $.post('<?php echo self::url('album', 'vote', query_string_parse())?>', {
+                act: 'addvote',
+                event_id: <?php echo $property['album']['eventjoin']['event_id']?>,
+                album_id: '<?php echo $album['album']['album_id']?>',
+            }, function (r) {
+                r = $.parseJSON(r);
+                if (r.result == 1) {
+                    r.data = 'Modal';
+                    site_jBox(r, 'success');
+                } else if (r.result == 2) {
+                    site_jBox(r);
+                } else {
+                    site_jBox(r, 'error');
+                }
+            });
+        }
+	<?php } ?>
+</script>

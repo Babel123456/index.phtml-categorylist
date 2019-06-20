@@ -1,0 +1,44 @@
+<li><div class="line"></div></li>
+<li><a href="<?php echo self::url('template', 'index', array('sale'=>'false'));?>" <?php if($sale == 'false')  echo 'class=active' ?>><?php echo _('Free'); ?></a></li>
+<!-- 保留
+<li class="cate_down">
+	<a href="#">活動風格</a>
+	<ul>
+		<li><a href="#">旅行紀錄</a></li>
+		<li><a href="#">愛上攝影</a></li>
+		<li><a href="#">藝術文創</a></li>
+		<li><a href="#">四季節慶</a></li>
+		<li><a href="#">日常生活</a></li>
+		<li><a href="#">結婚寫真</a></li>
+		<li><a href="#">家庭點滴</a></li>
+		<li><a href="#">可愛寵物</a></li>
+		<li><a href="#">商品型錄</a></li>
+	</ul>
+</li>
+-->
+<li class="cate_down">
+	<a href="<?php echo self::url('template', 'index', array('sale'=>'true'));?>" <?php if($sale == 'true')  echo 'class=active' ?>><?php echo _('Paid') ?></a>
+	<ul >
+		<li><a href="#"><?php echo _('Travel'); ?></a></li>
+		<li><a href="#"><?php echo _('Photography'); ?></a></li>
+		<li><a href="#"><?php echo _('Art Creation'); ?></a></li>
+		<li><a href="#"><?php echo _('Festivals'); ?></a></li>
+		<li><a href="#"><?php echo _('Daily life'); ?></a></li>
+		<li><a href="#"><?php echo _('Wedding Records'); ?></a></li>
+		<li><a href="#"><?php echo _('Parties with Family'); ?></a></li>
+		<li><a href="#"><?php echo _('Pets'); ?></a></li>
+		<li><a href="#"><?php echo _('Catalogues'); ?></a></li>
+	</ul>
+</li>
+<?php 
+	$href_purchased = self::url('template', 'index', array( 'rank'=>2 , 'sale'=>'purchased'));
+	$href_upload = self::url('template', 'upload');
+	$onclick_purchased = $onclick_upload = null;
+	if (empty(self::user_get())) {
+		$href_purchased = $href_upload = 'javascript:void(0)';
+		$onclick_purchased = 'onclick="var r = {result: 0, message: \''._('Please login first.').'\', redirect: \''.self::url('user', 'login', array('redirect'=>self::url('template', 'index', array( 'rank'=>2 , 'sale'=>'purchased')))).'\'};site_jBox(r);"';
+		$onclick_upload = 'onclick="var r = {result: 0, message: \''._('Please login first.').'\', redirect: \''.self::url('user', 'login', array('redirect'=>self::url('template', 'upload'))).'\'};site_jBox(r);"';
+	}
+?>
+<li><a <?php echo $onclick_purchased; ?> href="<?php echo $href_purchased ;?>" <?php if($sale == 'purchased')  echo 'class=active' ?>><?php echo _('Purchased'); ?></a></li>
+<li><a <?php echo $onclick_upload; ?> href="<?php echo $href_upload ;?>" <?php if(M_FUNCTION == 'upload')  echo 'class=active' ?>><?php echo _('Quick Create'); ?></a></li>

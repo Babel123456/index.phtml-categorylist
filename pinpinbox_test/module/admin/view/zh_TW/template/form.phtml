@@ -1,0 +1,81 @@
+<?php echo $form?>
+<style type="text/css"> 
+a.img-a img{
+	background-color:#AFD1D8;
+	border:1px solid #F0E5E5;
+}
+</style> 
+<script>
+function preview() {
+	Block_modal = new jBox('Modal', {
+		position : {x:'center', y:'center'},
+		offset : {x: 3,y: 25},
+		width : 190,
+		height : 50,
+		closeOnEsc : false,
+		closeOnClick : false,
+		closeButton : 'title',
+		delayOpen: 200,
+		zIndex : 1000,
+	});
+	Block_modal.setContent('<span style="padding-left:20px;font-weight:bold;color:#2299DD">processing...<img src="<?php echo str_replace('admin', 'pinpinbox', static_file('images/loading.gif')) ?>"></span>').open();
+
+	$.post('<?php echo self::url(M_CLASS, 'extra0'); ?>', {
+		frame_upload: '<?php echo $frame_upload; ?>',
+		template_id: '<?php echo $template_id; ?>',
+	}, function(r) {
+		r = $.parseJSON(r);
+		switch (r.result) {
+			case 0:formerror(r.message);break;
+			case 1:formconfirm(r);Block_modal.close();break;
+		}
+	});
+
+}
+
+$(function() {
+	$('#form').validate({
+		ignore: '.ignore',//忽略驗證所選的元素, 但這裡作用是刻意檢查所有(包含隱藏)的元素 
+		rules: {},
+		submitHandler: function() {
+			//instruction
+			var a_instruction = {};
+			for (var k1 in keyvalueremark) {
+				var v1 = keyvalueremark[k1];
+				$.each($('input[name="instruction_'+ v1 +'[]"]'), function(k2, v2){
+					if ('undefined' === typeof(a_instruction[k2])) a_instruction[k2] = {};
+					a_instruction[k2][v1] = $(this).val();
+				});
+			}
+			if (!Object.keys(a_instruction).length) a_instruction = null;
+			
+			$.post('<?php echo $action?>', {
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				style_id: $('#style_id').val(),
+				event_id: $('#event_id').val(),
+				name: $('#name').val(),
+				image1: $('#image1').val(),
+				image2: $('#image2').val(),
+				image3: $('#image3').val(),
+				instruction: a_instruction,
+				description: CKEDITOR.instances['description'].getData(),
+				width: $('#width').val(),
+				height: $('#height').val(),
+				point: $('#point').val(),
+				sequence: $('#sequence').val(),
+				state: $('input[name="state"]:checked').val(),
+				act: $('input[name="act"]:checked').val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+	
+});
+</script>

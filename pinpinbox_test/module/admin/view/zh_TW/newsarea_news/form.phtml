@@ -1,0 +1,33 @@
+<?php echo $form?>
+<script>
+$(window).load(function(){
+	$('#form').validate({
+		rules: {
+			<?php if ('add' == $_GET['act']) {?>
+			newsarea_id: 'required',
+			news_id: 'required'
+			<?php }?>
+		},
+		submitHandler: function() {
+			$.post('<?php echo $action?>', {
+				<?php if ('add' == $_GET['act']) {?>
+				newsarea_id: $('#newsarea_id').val(),
+				news_id: $('#news_id').val(),
+				<?php }?>
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				sequence: $('#sequence').val()
+			}, function(response){
+				response = $.parseJSON(response);
+				var result = response.result, message = response.message, redirect = response.redirect;
+				if (result) {
+					location.href = confirm(message)? redirect : location.href;
+				} else {
+					alert(message);
+				}
+			});
+		}
+	});
+});
+</script>

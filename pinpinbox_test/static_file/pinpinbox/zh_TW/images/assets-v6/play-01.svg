@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px"
+	 height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+<g id="Layer_1" display="none" opacity="0.65">
+	<circle display="inline" fill="#231F20" cx="14" cy="14" r="14"/>
+</g>
+<g id="PLAY_x28_三角_x29_">
+	<polygon fill="#FFFFFF" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		20.881,14 12.563,19.015 12.563,14 12.563,8.985 	"/>
+</g>
+<g id="speaker_x28_喇叭_x29_" display="none">
+	<g display="inline">
+		
+			<rect x="9.676" y="11.511" fill="#FFFFFF" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="3.07" height="4.976"/>
+		<polygon fill="#FFFFFF" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			9.676,14 18.323,19.215 18.323,14 18.323,8.786 		"/>
+	</g>
+</g>
+<g id="UP" display="none">
+	
+		<polygon display="inline" fill="#FFFFFF" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		14,6.855 22.613,21.144 14,21.144 5.386,21.144 	"/>
+</g>
+<g id="down" display="none">
+	
+		<polygon display="inline" fill="#FFFFFF" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		14,21.142 22.613,6.857 14,6.857 5.386,6.857 	"/>
+</g>
+<g id="minus" display="none">
+	
+		<rect x="4.88" y="12" display="inline" fill="#FFFFFF" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="18.239" height="4.375"/>
+</g>
+</svg>

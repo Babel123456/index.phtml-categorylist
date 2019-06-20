@@ -79,7 +79,7 @@
 	     <div id="creative_info">
          <div id="creative_head_info">
 		   <div id="crea_face">
-             <img src="images/assets-v7/20181227-bighead-01.png" >
+             <img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png" >
 		   </div>
 		   <div><div class="btn_new" onclick="uploadAvatar('avatar');">上傳頭像</div></div>
 		 </div>
@@ -303,13 +303,21 @@
 	  <!-- 專區區塊結束 -->
 	  <!-- 關於我區塊開始 -->
       <div id="tab03" class="tab-inner">
-        <div id="creative_aboutme">
-		  <div>關於我</div>
-		  <div>
-			<textarea id="aboutCreator" name="aboutCreator"><p>我的老婆是米蟲, 輕鬆生活四格小品~</p></textarea>
+	  
+	    <form method="post" class="cmxform" id="userDescriptionForm" action="#">
+
+          <div id="creative_aboutme">
+		    <div>關於我</div>
+		    <div>
+			  <!--<textarea id="aboutCreator" name="aboutCreator"><p>我的老婆是米蟲, 輕鬆生活四格小品~</p></textarea>-->
+			  <textarea id="user_description" onkeydown="return checkCols();" name="user_description"><p>我的老婆是米蟲, 輕鬆生活四格小品!!!</p></textarea>
+		    </div>
+		    <div><a href="javascript:void(0)" onclick="$('#userDescriptionFormSubmit').trigger('click');" ><div class="btn_new btn_main">編輯完成</div></a>
+		    
+            <input type="submit" id="userDescriptionFormSubmit" style="display: none;" onclick="userDescriptionFormUpdate();return false;">		    </div>
 		  </div>
-		  <div><a href="javascript:void(0)" onclick="saveAboutEdit();" ><div class="btn_new btn_main">編輯完成</div></a></div>
-		</div>
+		  
+		</form>
 	  </div>
 	  <!-- 關於我區塊結束 -->
 	<!-- 創作人內容編輯資訊區塊結束 -->
@@ -463,11 +471,14 @@ function test_select(elementId){
 	
 	//關於我編輯區塊
 	$(document).ready(function () {
-		if ($('#aboutCreator').length > 0) { 
-          CKEDITOR.replace('aboutCreator', {
-            filebrowserUploadUrl: 'https://www.pinpinbox.com/index/upload/ckeditor/?class=creative',
-            filebrowserImageUploadUrl: 'https://www.pinpinbox.com/index/upload/ckeditor/?class=creative',
-            filebrowserFlashUploadUrl: 'https://www.pinpinbox.com/index/upload/ckeditor/?class=creative',
+		if ($('#user_description').length > 0) { 
+          CKEDITOR.replace('user_description', {
+            //filebrowserUploadUrl: 'https://www.pinpinbox.com/index/upload/ckeditor/?class=creative',
+            //filebrowserImageUploadUrl: 'https://www.pinpinbox.com/index/upload/ckeditor/?class=creative',
+            //filebrowserFlashUploadUrl: 'https://www.pinpinbox.com/index/upload/ckeditor/?class=creative',
+			filebrowserUploadUrl: 'http://192.168.16.118/uploadckeditor.php',
+            filebrowserImageUploadUrl: 'http://192.168.16.118/uploadckeditor.php',
+            filebrowserFlashUploadUrl: 'http://192.168.16.118/uploadckeditor.php',
             toolbar: 'Full',
             width: '100%',
             height: '400px'
@@ -820,6 +831,46 @@ document.addEventListener("click", closeAllSelect);
     });
       
   //20190129: 此頁移除FOOTER, 讓"返回創作人專區"常駐在下方結束
+  
+  
+  
+  
+  //20190311: 加入關於我FUNCTION
+  // 更新關於我內容
+  function userDescriptionFormUpdate() {
+	
+	console.log(CKEDITOR.instances['user_description'].getData());
+	
+	
+	/*
+    $("#userDescriptionForm").validate({
+      rules: {},
+      messages : {},
+      submitHandler : function(form) {
+          $.post('https://www.pinpinbox.com/index/creative/updateDescription/', {
+              user_description: CKEDITOR.instances['user_description'].getData(),
+          }, function (r) {
+              r = $.parseJSON(r);
+              switch (r.result) {
+                  case 1:
+                      _jBox(r, 'success');
+                      break;
+
+                  default :
+                      _jBox(r, 'error');
+                      break;
+              }
+          });
+      },
+      success: function(error){},
+    });
+	*/
+  }
+
+
+  
+  
+  
 </script>
 
 <?php include_once('layout/_footer.php') ?>

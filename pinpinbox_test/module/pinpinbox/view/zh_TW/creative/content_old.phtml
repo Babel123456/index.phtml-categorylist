@@ -1,0 +1,1002 @@
+<style type="text/css">
+    .pingirl {
+        color: #00acc1;
+    }
+
+    .pingirl:hover {
+        color: #00acc1;
+        text-decoration: underline;
+    }
+</style>
+
+<div id="crea_content">
+    <div id="crea_in">
+        <div class="crea_main_banner">
+            <img id="CreatorCover" src="<?php echo $creative['creator']['user']['cover'] ?>"
+                 onerror="this.src='<?php echo static_file('images/assets-v6/pre-banner.png') ?>' ">
+            <?php if ($creative['creative']['pageState'] == 'creator') { ?>
+                <div class="banner-edit">
+                    <label for="filename" name="uploadCreatorCover" onclick="uploadAvatar('CreatorCover');"></label>
+                </div>
+            <?php } ?>
+            <p name="creative_name"><?php echo nl2br(htmlspecialchars($creative['creator']['user']['creative_name0'])) ?></p>
+
+            <textarea name="creative_name" onkeydown="return checkCols();" rows="2" style="display: none;"
+                      maxlength="22"
+                      placeholder="<?php echo _('請輸入專區名稱') ?>"><?php echo $creative['creator']['user']['creative_name0'] ?></textarea>
+
+            <div class="statistic-box">
+                <ul>
+                    <li></li>
+                    <li><span><?php echo $creative['creator']['album']['formatViewed'] ?></span><?php echo _('瀏覽') ?>
+                    </li>
+                    <li>
+                        <span><?php echo $creative['creator']['user']['formatCollectedbyusers'] ?></span><?php echo _('贊助') ?>
+                    </li>
+                    <li>
+                        <span name="followCount"><?php echo $creative['creator']['followfrom']['formatCount'] ?></span><?php echo _('關注') ?>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- creative info -->
+        <div id="crea_header">
+            <div id="crea_left">
+                <div id="crea_face">
+                    <img src="<?php echo $creative['creator']['user']['picture'] ?>"
+                         onerror="this.src='<?php echo static_file('images/face_sample.svg') ?>'">
+                </div>
+                <?php if ($creative['creative']['pageState'] == 'creator') { ?>
+                    <a href="javascript:void(0)" onclick="uploadAvatar('avatar');">
+                        <img src="<?php echo static_file('images/icon-add.svg') ?>" class="avatar-edit">
+                    </a>
+                <?php } ?>
+            </div>
+            <div class="tab-container">
+                <div class="tab_content">
+                    <div class="tab infoTab active">
+                        <div id="crea_right">
+                            <ul>
+                                <li>
+                                    <div class="title"
+                                         name="creatorName"><?php echo $creative['creator']['user']['name'] ?></div>
+                                </li>
+                                <li>
+									<span class="left_border statistics">
+										<span title="<?php echo $creative['creator']['album']['viewed'] . _('次瀏覽') ?>"><?php echo $creative['creator']['album']['formatViewed'] ?></span>
+                                        <?php echo _('次瀏覽') ?>
+									</span>
+                                    <span class="collectedbyusers statistics">
+										<span title="<?php echo $creative['creator']['user']['formatCollectedbyusers'] . _('次贊助') ?>"><?php echo $creative['creator']['user']['formatCollectedbyusers'] ?></span>
+                                        <?php echo _('次贊助') ?>
+									</span>
+                                    <span class="right_border statistics">
+										<span title="<?php echo $creative['creator']['followfrom']['formatCount'] . _('人關注') ?>"
+                                              name="followCount"><?php echo $creative['creator']['followfrom']['formatCount'] ?></span>
+                                        <?php echo _('人關注') ?>
+									</span>
+                                </li>
+                                <li>
+                                    <div class="icon_group icon_group_info">
+                                        <div name="pc_social_group" class="slider hidden-xs">
+                                            <?php
+                                            foreach ($creative['creator']['creative']['sociallink'] as $k0 => $v0) {
+                                                if (!empty($v0)) {
+                                                    echo '<div class="slider-img">
+														  	<a href="' . $v0 . '" title="' . $k0 . '" target="_blank">
+																<img src="' . static_file('images/assets-v6/icon-link-' . $k0 . '-n.svg') . '">
+															</a>
+														  </div>';
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                        <div name="mobile_social_group" class="autoplay slider">
+                                            <?php
+                                            foreach ($creative['creator']['creative']['sociallink'] as $k0 => $v0) {
+                                                if (!empty($v0)) {
+                                                    echo '<div class="slider-img">
+														  	<a href="' . $v0 . '" title="' . $k0 . '" target="_blank">
+																<img src="' . static_file('images/assets-v6/icon-link-' . $k0 . '-n.svg') . '">
+															</a>
+														  </div>';
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="buttons buttons-box">
+                                <?php
+                                foreach ($creative['creative']['buttons'] as $k0 => $v0) {
+                                    echo '<a style="' . $v0['style'] . '" name="' . $v0['name'] . '" href="' . $v0['href'] . '" class="' . $v0['class'] . '" ' . $v0['onclick'] . '>' . $v0['text'] . '</a>';
+                                }
+
+                                if ($creative['creative']['pageState'] == 'creator') {
+                                    echo '<select id="mobileOptions" style="">
+											<option value="0">' . _('...') . '</option>
+											<option value="cover">' . _('變更背景') . '</option>
+											<option value="avatar">' . _('變更大頭貼') . '</option>
+											<option value="setting">' . _('進階管理') . '</option>
+										</select>';
+
+                                }
+                                ?>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab editTab ">
+                        <div id="crea_right">
+                            <ul>
+                                <li>
+                                    <div class="title"><input type="text" name="username"
+                                                              placeholder="<?php echo _('請輸入你的暱稱') ?>"
+                                                              value="<?php echo $creative['creator']['user']['name'] ?>">
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="left_border statistics"><span><?php echo $creative['creator']['album']['viewed'] ?></span><?php echo _('次瀏覽') ?></span>
+                                    <span class="collectedbyusers statistics"><span><?php echo $creative['creator']['user']['collectedbyusers'] ?></span></span><?php echo _('次贊助') ?></span>
+                                    <span class="right_border statistics"><span><?php echo $creative['creator']['followfrom']['count'] ?></span><?php echo _('人關注') ?></span>
+                                </li>
+                                <li>
+                                    <div class="icon_group icon_group_info">
+                                        <?php
+                                        $creativeChunk = array_chunk($creative['sociallink'], 5, true);
+                                        foreach ($creativeChunk as $k0 => $v0) {
+                                            echo '<div class="form-group edit_social">';
+                                            foreach ($v0 as $k1 => $v1) {
+                                                echo '
+														<label class="col-sm-2 control-label">
+															<img src="' . static_file('images/assets-v6/icon-link-' . $k1 . '-n.svg') . '">
+														</label>
+														<div class="col-sm-10">
+															<input name="sociallink_' . $k1 . '" type="text" value="' . $v1 . '">
+														</div>
+													';
+                                            }
+                                            echo '</div>';
+                                        }
+                                        ?>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="buttons buttons-box">
+                                <?php
+                                foreach ($creative['creative']['buttons'] as $k0 => $v0) {
+                                    echo '<a name="' . $v0['name'] . '" href="' . $v0['href'] . '" class="' . $v0['class'] . '" ' . $v0['onclick'] . '>' . $v0['text'] . '</a>';
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end creative info-->
+        <div class="tab-container">
+            <ul class="etabs">
+                <?php
+                foreach ($creative['creative']['tabLists'] as $k0 => $v0) {
+                    if ($v0['act'] == 'open') echo '<li class="' . $v0['class'] . '"><a href="' . $v0['href'] . '" onclick="' . $v0['onclick'] . '" name="' . $v0['name'] . '">' . $v0['text'] . '</a></li>';
+                }
+                ?>
+            </ul>
+
+            <div id="tab-container" class="tab_content">
+                <!-- 關於我 -->
+                <div id="tab01" class="tab <?php echo $creative['creative']['tabContentLists'][0] ?>">
+                    <?php if ($creative['creative']['pageState'] == 'creator') { ?>
+                        <a href="javascript:void(0);" onclick="$('a[name=tabAboutEdit]').trigger('click');"
+                           class="about-edit about-btn"><?php echo _('編輯自我介紹') ?></a>
+                    <?php } ?>
+                    <div style="clear:both;"></div>
+                    <div class="about_me"> <?php echo ($creative['creator']['user']['description0'] == null) ? _('尚未填寫介紹') : $creative['creator']['user']['description0']; ?> </div>
+                </div>
+
+                <!-- 我的作品 -->
+                <div id="tab02" class="tab <?php echo $creative['creative']['tabContentLists'][1] ?>" name="tabMyAlbum">
+                    <div id="searchkey">
+                        <div class="input-group input-group-sm works-search" style="display: none;">
+                            <select class="form-control">
+                                <option><?php echo _('我的作品') ?></option>
+                            </select>
+                        </div>
+                        <div class="input-group input-group-sm works-search">
+                            <input type="text" class="form-control" id="creative_album_search_key"
+                                   value="<?php echo $c_searchkey ?>">
+                            <span class="input-group-btn">
+								<button class="btn btn-default" type="button" onclick="creative_album_search()"><i
+                                            class="fa fa-search"></i></button>
+							</span>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+
+                <!-- 我的收藏 -->
+                <div id="tab03" class="tab <?php echo $creative['creative']['tabContentLists'][2] ?>" name="tabMyCollect"></div>
+
+                <!-- 我的共用 -->
+                <div id="tab04" class="tab <?php echo $creative['creative']['tabContentLists'][3] ?>" name="tabCooperate"></div>
+
+                <div id="tab05" class="tab <?php echo $creative['creative']['tabContentLists'][4] ?>">
+                    <?php
+                    if ($creative['creator']['discuss'] == 'open' || $creative['creative']['pageState'] == 'creator') {
+                        include(dirname(dirname(__FILE__)) . '/pinpinboard.phtml');
+                    } else {
+                        echo '<div id="pinpinboard"><p style="color: #cdccc2">此用戶關閉了留言功能</p></div>';
+                    }
+                    ?>
+                </div>
+
+                <?php if ($creative['creative']['pageState'] == 'creator') { ?>
+                    <div id="tab06" class="tab ">
+                        <div style="margin-top:15px;">
+                            <textarea id="aboutCreator"
+                                      name="aboutCreator"><?php echo $creative['creator']['user']['description0'] ?></textarea>
+                            <a href="javascript:void(0);" onclick="saveAboutEdit();"
+                               class="about-edit"><?php echo _('編輯完成') ?></a>
+                        </div>
+                    </div>
+                <?php } ?>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var textCreativeNameCols = '<?php echo substr_count(nl2br($creative['creator']['user']['creative_name0']), 'br');  ?>';
+
+    <?php
+    /*Start Creator*/
+    if($creative['creative']['pageState'] == 'creator') {
+    ?>
+
+    function CroppieUpload(uploadType) {
+        var $uploadCrop;
+
+        if (uploadType == 'avatar') {
+            croppieViewportWidth = croppieViewportHeight = 200;
+            croppieBoundaryWidth = croppieBoundaryHeight = 300;
+            resultSize = 'viewport';
+        } else {
+            croppieViewportWidth = 480;
+            croppieViewportHeight = 225;
+            croppieBoundaryWidth = '100%';
+            croppieBoundaryHeight = 400;
+            resultSize = {'width': 960, 'height': 450,};
+        }
+
+        function readFile(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.upload-demo').addClass('ready');
+                    $uploadCrop.croppie('bind', {
+                        url: e.target.result
+                    }).then(function () {
+                        console.log('jQuery bind complete');
+                    });
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+            else {
+                console.log("Sorry - you're browser doesn't support the FileReader API");
+            }
+        }
+
+        $uploadCrop = $('#upload-demo').croppie({
+            enableExif: true,
+            viewport: {
+                width: croppieViewportWidth,
+                height: croppieViewportHeight,
+                type: 'square'//2018-05-18 Lion: 以 circle 裁切 jpg 會有黑邊,
+            },
+            boundary: {
+                width: croppieBoundaryWidth,
+                height: croppieBoundaryHeight,
+            },
+        });
+
+        $('#uploadCroppie').on('change', function () {
+            readFile(this);
+        });
+
+        $('.upload-result').on('click', function (ev) {
+            $uploadCrop.croppie('result', {
+                format: 'jpeg',
+                size: resultSize,
+                type: 'canvas'
+            }).then(function (resp) {
+                $.post('<?php echo self::url('creative', 'croppie') ?>', {
+                    data: resp,
+                    uploadType: uploadType,
+                }, function (r) {
+                    r = $.parseJSON(r);
+                    switch (r.result) {
+                        case 1:
+                            if (uploadType == 'avatar') {
+                                $('#crea_face>img, #member_open>img').attr('src', resp);
+                            } else {
+                                $('img#CreatorCover').attr('src', resp);
+                            }
+
+                            break;
+
+                        default :
+                            site_jBox(r, 'error');
+                            break;
+                    }
+                });
+                uploadView.close();
+            });
+
+        });
+    }
+
+    function edit() {
+        if ($('.infoTab').hasClass('active')) {
+            $('.editTab').addClass('active');
+            $('.infoTab').removeClass('active');
+            $('a[name="buttonEdit"]').hide();
+
+            $('p[name="creative_name"]').hide();
+
+            $('textarea[name="creative_name"], a[name="buttonSave"]').show();
+
+        } else {
+            $('.infoTab').addClass('active');
+            $('.editTab').removeClass('active');
+            $('a[name="buttonEdit"]').show();
+
+            $('p[name="creative_name"]').show();
+            $('textarea[name="creative_name"], a[name="buttonSave"]').hide();
+        }
+    }
+
+    function save() {
+        var user_sociallink = {
+            "blog": $('input[name="sociallink_blog"]').val(),
+            "facebook": $('input[name="sociallink_facebook"]').val(),
+            "google": $('input[name="sociallink_google"]').val(),
+            "instagram": $('input[name="sociallink_instagram"]').val(),
+            "line": $('input[name="sociallink_line"]').val(),
+            "linkedin": $('input[name="sociallink_linkedin"]').val(),
+            "pinterest": $('input[name="sociallink_pinterest"]').val(),
+            "twitter": $('input[name="sociallink_twitter"]').val(),
+            "youtube": $('input[name="sociallink_youtube"]').val(),
+            "web": $('input[name="sociallink_web"]').val(),
+        }
+
+        $.post('<?php echo self::url('creative', 'content_edit')?>', {
+            user_id: '<?php echo $creative['creator']['user']['user_id']?>',
+            username: $('input[name="username"]').val(),
+            creative_name: $('textarea[name="creative_name"]').val(),
+            user_sociallink: JSON.stringify(user_sociallink),
+        }, function (r) {
+            r = $.parseJSON(r);
+            if (r.result == 1) {
+                if (r.message['creative_name']) $('p[name="creative_name"]').show().html(nl2br(htmlspecialchars(r.message['creative_name'])));
+                $('div[name="creatorName"]').show().html($('input[name="username"]').val());
+                $('textarea[name="creative_name"]').hide();
+                $('a[name="buttonSave"]').hide();
+                $('a[name="buttonEdit"]').show();
+                $('.infoTab').addClass('active');
+                $('.editTab').removeClass('active');
+
+                $('div[name="pc_social_group"], div[name="mobile_social_group"]').empty();
+
+                for (var key in user_sociallink) {
+                    if (user_sociallink.hasOwnProperty(key) && user_sociallink[key].length > 0) {
+                        $('div[name="pc_social_group"], div[name="mobile_social_group"]').append(`<div class="slider-img">
+						<a href="${user_sociallink[key]}" title="${key}" target="_blank">
+							<img src="<?php echo URL_STATIC_FILE . M_PACKAGE . '/zh_TW/images/assets-v6/icon-link-'?>${key}-n.svg">
+						</a>
+					</div>`);
+                    }
+                }
+
+            } else if (r.result == 2) {
+                site_jBox(r);
+            } else {
+                site_jBox(r, 'error');
+            }
+        });
+    }
+
+    function saveAboutEdit() {
+        var text = CKEDITOR.instances['aboutCreator'].getData();
+        $.post('<?php echo self::url('creative', 'saveAboutEdit')?>', {
+            user_id: '<?php echo $creative['creator']['user']['user_id']?>',
+            text: text,
+        }, function (r) {
+            r = $.parseJSON(r);
+            if (r.result == 1) {
+                $('.about_me').html(text);
+                $('a[name="tabAbout"]').trigger('click');
+            } else if (r.result == 2) {
+                site_jBox(r);
+            } else {
+                site_jBox(r, 'error');
+            }
+        });
+    }
+
+    function uploadAvatar(uploadType) {
+        var uploadAvatarHtml = `<div class="demo-wrap upload-demo">
+						        <div class="container">
+						            <div class="grid">
+						                <div class="col-1-2" style="display:none;">
+						                    <div class="actions">
+						                        <a class="btn file-btn">
+						                            <input type="file" id="uploadCroppie" value="Choose a file" accept="image/*" />
+						                        </a>
+						                        <button class="upload-result">Result</button>
+						                    </div>
+						                </div>
+						                <div class="col-1-2">
+						                    <div class="upload-msg"></div>
+						                    <div class="upload-demo-wrap">
+						                        <div id="upload-demo"></div>
+						                    </div>
+						                </div>
+						            </div>
+						        </div>
+						    </div><hr>
+						    <div class="uploadCroppieBtnGroup">
+						    	<a class="uploadCroppieBtn" id="reUploadCroppiie" href="javascript:void(0)">` + "<?php echo _('上傳') ?>" + `</a>
+						    	<a class="uploadCroppieBtn uploadCroppieSave" id="saveCroppiie" href="javascript:void(0)">` + "<?php echo _('儲存') ?>" + `</a>
+						    </div>`;
+        if (uploadType == 'avatar') {
+            jBoxtitle = '<?php echo _('Change') ?>';
+            jBoxWidth = 380;
+            jBoxHeight = 470;
+        } else {
+            jBoxtitle = '<?php echo _('專區背景圖片') ?>';
+            jBoxWidth = 1000;
+            jBoxHeight = 600;
+        }
+
+        uploadView = new jBox('Modal', {
+            width: jBoxWidth,
+            height: jBoxHeight,
+            title: jBoxtitle,
+            closeButton: 'title',
+            content: uploadAvatarHtml,
+            id: 'uploadViewJbox',
+            onOpen: function () {
+                CroppieUpload(uploadType);
+                $('.container').css('width', '100%');
+                if (uploadType == 'avatar') {
+                    $('.croppie-container').css('width', '36%');
+                    $('.cr-slider-wrap').css('width', '270%');
+                }
+
+                $('#uploadCroppie').trigger('click');
+
+                $('#saveCroppiie').on('click', function () {
+                    $('button.upload-result').trigger('click');
+                });
+
+                $('#reUploadCroppiie').on('click', function () {
+                    $('#uploadCroppie').trigger('click');
+                })
+            },
+            onCloseComplete: function () {
+                this.destroy();
+            }
+        }).open();
+    };
+
+    $(document).ready(function () {
+        $('a[name=tabAboutEdit]').on('click', function () {
+            CKEDITOR.replace('aboutCreator', {
+                filebrowserUploadUrl: '<?php echo self::url('upload', 'ckeditor', ['class' => M_CLASS]) ?>',
+                filebrowserImageUploadUrl: '<?php echo self::url('upload', 'ckeditor', ['class' => M_CLASS]) ?>',
+                filebrowserFlashUploadUrl: '<?php echo self::url('upload', 'ckeditor', ['class' => M_CLASS]) ?>',
+                toolbar: 'Full',
+                width: '100%',
+                height: '400px'
+            });
+        });
+
+        $('#mobileOptions').on('change', function () {
+            var value = $(this).val();
+            switch (value) {
+                case 'cover' :
+                    uploadAvatar('CreatorCover');
+                    break;
+
+                case 'avatar' :
+                    uploadAvatar('avatar');
+                    break
+
+                case 'setting' :
+                    location.href = "<?php echo self::url('user', 'settings') ?>";
+                    break;
+            }
+
+            $('#mobileOptions').val(0);
+        });
+    });
+
+    <?php } /*End Creator*/?>
+
+    function alert_submit(type, type_id) {
+        var obj = $('input[name=report]:checked');
+        var text = '';
+        if (obj.length < 1) {
+            alert('<?php echo _('Please select a report intent.')?>');
+        } else {
+            var value = obj.val();
+            if (value == 4) {
+                text = $('#input04_textarea').val();
+            }
+            $.post('<?php echo self::url('creative', 'report')?>', {
+                value: value,
+                text: text,
+                type: type,
+                type_id: type_id,
+                url: window.location.href,
+            }, function (r) {
+                r = $.parseJSON(r);
+                if (r.result == 1) {
+                    $('#alert_bg').trigger('click');
+                    alert(r.message);
+                } else if (r.result == 2) {
+                    $('#alert_bg').trigger('click');
+                    location.href = "<?php echo self::url('user', 'login', ['redirect' => self::url('album', 'content', ['report' => true, 'album_id' => null])]) ?>" + id;
+                } else {
+                    $('#alert_bg').trigger('click');
+                    alert(r.message);
+                }
+            });
+        }
+    }
+
+    function buyalbum(id) {
+        $.post('<?php echo self::url('creative', 'buyalbum', query_string_parse())?>', {
+            album_id: id,
+        }, function (r) {
+            r = $.parseJSON(r);
+            switch (r.result) {
+                case 2:
+                    _jBox(r, 'success_notext');
+                    break;
+                case 4:
+                    var myConfirm = new jBox('Confirm', {
+                        cancelButton: '<?php echo _('No')?>',
+                        confirmButton: r.data.property.buyAlbumBoxBtn,
+                        confirm: function () {
+                            $.post('<?php echo self::url('creative', 'buyalbum', query_string_parse())?>', {
+                                album_id: id,
+                                buy: true,
+                            }, function (r2) {
+                                r2 = $.parseJSON(r2);
+
+                                switch (r2.result) {
+                                    case 1:
+                                        var myModal = new jBox('Modal', {
+                                            delayOpen: 300,
+                                            title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span>' + '<img style="vertical-align: middle;" src="<?php echo static_file('images/success.png')?>">',
+                                            onCloseComplete: function () {
+                                                myModal.destroy();
+                                                $('li[data-albumId="' + id + '"]').remove();
+                                                if (r2.data) {
+                                                    if (r2.data.task.message.length > 0) _TaskAlert(r2, 'task');
+                                                }
+                                                if (r2.data.album_count) $('span.albumstatistics').html(r2.data.album_count);
+                                                $('h3[data-album_id="' + id + '"]').prepend('<img src="<?php echo static_file('images/assets-v5/icon-collection-h.svg') ?>">')
+                                            }
+                                        }).setContent(
+                                            '<div class="content">' + r2.message + '</div>'
+                                        ).open();
+                                        break;
+
+                                    case 2:
+                                        _jBox(r2, 'info');
+                                        break;
+
+                                    case 3:
+                                        window.open('<?php echo self::url('user', 'point', ['albumcontent' => encrypt([$user['user_id']])]) ?>', 'userpoint', config = 'height=800,width=1200');
+                                        break;
+                                    default:
+                                        _jBox(r2, 'error');
+                                        break;
+                                }
+                            });
+                        },
+                        onCloseComplete: function () {
+                            myConfirm.destroy();
+                        }
+                    }).setContent(r.data.property.buyAlbumBoxContent).open();
+
+                    break;
+
+                case 5 :
+                    if (r.data) {
+                        if (r.data.task.message.length > 0) _TaskAlert(r, 'task');
+                    }
+                    browseKitRefresh();
+                    browseKit_album('<?php echo self::url('album', 'show_photo')?>', {album_id: id});
+                    break;
+
+
+                default:
+                    _jBox(r, 'error');
+                    break;
+            }
+        });
+    }
+
+    function checkCols() {
+        if (event.keyCode == 13 && textCreativeNameCols >= 1) {
+            return false;
+        } else if (event.keyCode == 13) {
+            textCreativeNameCols++;
+        }
+    }
+
+    function creative_album_search() {
+        var key = $('#creative_album_search_key').val(),
+            url = '<?php echo $creative['creative']['creative_url'] ?>';
+        location.href = url + 'c_searchkey=' + encodeURIComponent(key);
+    }
+
+    function follow() {
+        $.post('<?php echo self::url('creative', 'follow')?>', {
+            user_id: '<?php echo $creative['creator']['user']['user_id']?>',
+        }, function (r) {
+            r = $.parseJSON(r);
+            if (r.result == 1) {
+                r.data['followstatus'] == 1 ? $('.pin_button').text('<?php echo _('關注中')?>').addClass('active') : $('.pin_button').text('<?php echo _('Follow')?>').removeClass('active');
+                $('span[name="followCount"]').html(r.data['count']);
+                if (r.data.task) {
+                    if (r.data.task.message.length > 0 && r.data.task.result) _TaskAlert(r, 'task');
+                }
+            } else {
+                site_jBox(r, 'error');
+            }
+        });
+    }
+
+    function hoverInit() {
+        $('.info_name').hover(function () {
+            $(this).find('h3>a').css('color', '#00acc1');
+        }, function () {
+            $(this).find('h3>a').css('color', '#5b5b5b');
+        });
+
+        if ($(window).width() > 1024) {
+            $('#freewall').on('mouseover', '.item_pic', function () {
+                $(this).find('.blackCover').css('display', 'block');
+                $(this).find('.dropdownItem').css('display', 'block');
+            })
+
+            $('#freewall').on('mouseout', '.item_pic', function () {
+                $(this).find('.blackCover').css('display', 'none');
+                $(this).find('.dropdownItem').css('display', 'none');
+            })
+        }
+    }
+
+    function initailItem(rank) {
+        $.post('<?php echo self::url('creative', 'getItem', ['initial' => true, 'user_id' => $creative['creator']['user']['user_id'], 'rank_id' => null]) ?>' + rank, {
+            creator_id: '<?php echo $creative['creator']['user']['user_id']; ?>',
+            c_searchkey: '<?php echo $c_searchkey ?>',
+        }, function (r) {
+            r = $.parseJSON(r);
+            switch (r.result) {
+                case 1:
+                    var item;
+                    if (r.data.item.length == 0) {
+                        $('#freewall').append(`<div style="margin-top:15px;">${r.message}</div>`);
+                        $('div.end').css('display', 'block');
+                    } else {
+                        for (var i = 0; i < r.data.item.length; i++) {
+                            var loadStatu = null, tags_gift = '';
+                            if (i == (r.data.item.length - 1)) loadStatu = 'onload="$(\'div.item_box\').show();setTimeout(function(){ initailMasonry(); }, 1000);"';
+                            if (r.data.item[i].album_tags) {
+                                tags_gift = `<div class="album_tags_gift">
+                                <img alt="抽獎" title="抽獎" src="<?php echo static_file('images/assets-v6/gift-01.svg'); ?>">
+                                <div class="album_tags_gift_bg"></div>
+                                </div>`;
+                            }
+                            item = `<div class="item_box" style="display:none;">
+                                     ${tags_gift}
+									<div class="item_pic" style="position: relative;">
+										<div class="dropdownItem dropdown-arrow">
+											<div class="btn-group">
+												<p class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+													<i class="fa fa-bars"></i> 
+												</p>
+												<ul class="dropdown-menu" role="menu">${r.data.item[i].menulist.join('')}</ul>
+											</div>
+										</div>
+										<div class="blackCover" onclick="popview('<?php echo self::url('album', 'content') ?>?album_id=${r.data.item[i].type_id}&categoryarea_id=${r.data.item[i].categoryarea_id}');"></div>
+										<div>
+											<a href="javascript:void(0)" onclick="popview('<?php echo self::url('album', 'content') ?>?album_id=${r.data.item[i].type_id}&categoryarea_id=${r.data.item[i].categoryarea_id}');">
+												<img ${loadStatu} src="${r.data.item[i].cover}" height="330" width="220" onerror="this.src=\'<?php echo static_file('images/origin.jpg') ?>\'">
+											</a>
+										</div>
+									</div>
+									<div class="item_info">
+										<div class="info_name creative_info_name">
+											<h3 data-album_id="${r.data.item[i].type_id}" title="${r.data.item[i].name_all}">${r.data.item[i].lock}${r.data.item[i].collect}<a href="javascript:void(0)" onclick="popview('<?php echo self::url('album', 'content') ?>?album_id=${r.data.item[i].type_id}&categoryarea_id=${r.data.item[i].categoryarea_id}');">${r.data.item[i].name}</a></h3>
+											<div class="name_more">
+												<p><a style="color:#9d9d9d" href="${r.data.item[i].name_url}">${r.data.item[i].description}</a></p>
+											</div>
+										</div>
+										<a href="${r.data.item[i].user_url}">
+											<div class="info_user">
+												<div class="user_face"><img src="${r.data.item[i].picture}" height="101" width="101" onerror="this.src=\'<?php echo static_file('images/face_sample.svg') ?>\'"></div>
+												<div class="user_name">
+													<p class="name_id">${r.data.item[i].user_name}</p>
+													<p><i class="fa fa-eye"></i>${r.data.item[i].viewed}</p>
+												</div>
+											</div>
+										</a>
+										<div class="user_dropdown">
+										<div class="dropdown-arrow dropup sub_dropdown-arrow">
+											<p class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+												<i class="fa fa-bars"></i>
+											</p>
+											<ul class="dropdown-menu" role="menu">${r.data.item[i].menulist.join('')}</ul>
+										</div>
+									</div>
+								</div>`;
+                            $('#freewall').append(item);
+                        }
+
+                        if (r.data.more) $('#freewall').append(`<div style="display:none;" class="more"><a href="${r.data.more}"></a></div>
+														   <div class="end image loaditem"><p class="image"><img src="<?php echo static_file('images/8.gif'); ?>" ></p></div>`);
+                        hoverInit();
+                    }
+                    break;
+
+                default :
+                    break;
+            }
+        });
+    }
+
+    function initailMasonry() {
+        var infinitescrollOption = {
+            // debug: true,
+            navSelector: '.more',
+            nextSelector: '.more a',
+            itemSelector: '.item_box',
+            pathParse: function (path, nextPage) {
+                var customPath = path + "&page=";
+                path = [customPath, ''];
+                return path;
+            },
+            errorCallback: function () {
+                $('div.end').css('display', 'block');
+                $('div.loaditem').css('display', 'none');
+            },
+        };
+
+        var $container = $('.water_content');
+
+        $gird = $container.masonry({
+            itemSelector: '.item_box',
+            columnWidth: '.item_box',
+            stagger: 30,
+            gutter: 20,
+        });
+
+        $('div.item_box').animate({opacity: 1});
+
+        $gird.infinitescroll(infinitescrollOption, function (newElements) {
+            var $newElems = $(newElements).css({opacity: 0});
+            $newElems.imagesLoaded(function () {
+                $newElems.animate({opacity: 1});
+                $container.masonry('appended', $newElems, true);
+            });
+            hoverInit();
+        });
+    }
+
+    function share(shareFor, id, qrcode, cover, url) {
+        var _shareFor, _shareText = [];
+        switch (shareFor) {
+            case 'creative':
+                _shareFor = 'shareCreative';
+                _shareText = {
+                    'fb': '<?php echo _('分享我的專區至Facebook!') ?>',
+                    'twitter': '<?php echo _('分享我的專區至twitter!') ?>',
+                    'plusone': '<?php echo _('分享我的專區至Google+!') ?>',
+                    'pinterest': '<?php echo _('分享我的專區至pinterest!') ?>',
+                    'url': '<?php echo Core::get_creative_url($creative['creator']['user']['user_id']) ?>',
+                };
+
+                lineUrl = 'http://line.naver.jp/R/msg/text/?<?php echo urlencode(htmlspecialchars($creative['creator']['user']['creative_name0'], ENT_QUOTES) . '  -  ' . $creative['creative']['creative_url'])?>';
+                break;
+
+            case 'album':
+                _shareFor = 'shareAlbum_' + id;
+                _shareText = {
+                    'fb': '<?php echo _('分享我的作品至Facebook!') ?>',
+                    'twitter': '<?php echo _('分享我的作品至twitter!') ?>',
+                    'plusone': '<?php echo _('分享我的作品至Google+!') ?>',
+                    'pinterest': '<?php echo _('分享我的作品至pinterest!') ?>',
+                    'url': url,
+                };
+
+                lineUrl = 'http://line.naver.jp/R/msg/text/?' + encodeURIComponent(url);
+                break;
+        }
+
+        var str = '<div>' +
+            '<ul class="' + _shareFor + '">' +
+            '<li class="facebook" title="' + _shareText['fb'] + '"></li>' +
+            '<li class="twitter" title="' + _shareText['twitter'] + '"></li>' +
+            '<li class="plusone" title="' + _shareText['plusone'] + '"></li>' +
+            '<li class="pinterest" title="' + _shareText['pinterest'] + '" data-media="' + cover + '"></li>' +
+            '<li class="line" title="<?php echo _('Share album to Line') ?>"></li>' +
+            <?php if($rank_id != 2) { ?>
+            '<li class="qrcode social-likes__widget" title="<?php echo _('開啟QRcode'); ?>"><a class="imagepop" href="' + qrcode + '"><img width="23" src="<?php echo static_file('images/qr.png')?>" style="padding-top:5px;"></a></li>' +
+            <?php } ?>
+            '</ul>' +
+            '</div><br>' +
+            '<div>' +
+            '<input style="width:300px;height:2em;" type="text" class="share_url" value="' + _shareText['url'] + '">' +
+            '</div>';
+
+        box = new jBox('Modal', {
+            closeButton: 'title',
+            title: 'Share it',
+            width: 350,
+            height: 130,
+            zIndex: 200,
+            onOpen: function () {
+                socialLikesButtons.line.clickUrl = lineUrl;
+                $('.' + _shareFor).socialLikes({
+                    url: _shareText['url'],
+                    title: '<?php echo _('Share the pinpinbox!'); ?>',
+                    counters: true,
+                    singleTitle: 'Share it!',
+                });
+
+                $('.imagepop').magnificPopup({type: 'image',});
+            },
+        }).setContent(str).open();
+    }
+
+    function tabSwitch(tab) {
+        if ($('#content').length) $('#content').remove();
+
+        var wrapper = `<div id="content">
+					<div class="water_content" style="min-height: 400px;" id="freewall" ></div>
+					<div style="display:none;" class="end"><p>End</p></div>
+				</div>`;
+
+        $('div[name="' + tab + '"]').append(wrapper);
+
+        switch (tab) {
+            case 'tabMyAlbum' :
+                rank_id = 1;
+                break;
+
+            case 'tabMyCollect' :
+                rank_id = 3;
+                break;
+
+            case 'tabCooperate' :
+                rank_id = 4;
+                break;
+        }
+
+        initailItem(rank_id);
+    }
+
+    function exting_cooperation(album_id) {
+        var box = new jBox('Confirm', {
+            cancelButton: '<?php echo _('No')?>',
+            confirmButton: '<?php echo _('Yes')?>',
+            confirm: function(){
+                $.post('<?php echo self::url('creative', 'exting_cooperation')?>', {
+                    album_id: album_id,
+                }, function (r) {
+                    r = $.parseJSON(r);
+                    if (r.result == 1) {
+                        r.redirect = location.href;
+                        site_jBox(r, 'success');
+                    } else {
+                        site_jBox(r, 'error');
+                    }
+                });
+            },
+            onCloseComplete: function(){
+                box.destroy();
+            }
+        }).setContent(
+            '<div class="content">' +
+            '<p><?php echo _('是否確定退出群組?')?></p>' +
+            '</div>'
+        ).open();
+    }
+
+    $(document).ready(function () {
+        $('.autoplay').slick({
+            slidesToShow: 11.9,
+            slidesToScroll: 1,
+            autoplaySpeed: 2000,
+            arrows: false,
+            infinite: false,
+            responsive: [{
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 10.7
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 6.3
+                }
+            }]
+        });
+        tabSwitch('<?php echo $creative['creative']['tabInitail'] ?>');
+
+        <?php if (isset($_GET['edit']) && $_GET['edit']) echo 'edit();'; ?>
+    });
+
+    $(document).on('click', '#alert_btn', function (e) {
+        alert_submit($(this).data('type'), $(this).data('type_id'));
+    }).on('click', '.alert_btn', function (e) {
+        e.stopPropagation();
+        $('#alert_btn, #next_step').data({'type': $(this).data('type'), 'type_id': $(this).data('type_id')});
+        $('#alert_box').fadeIn();
+        $('input[name=report]').removeAttr('checked');
+        $('#input04_textarea').val('');
+        $('#input04_li').hide();
+    }).on('click', '#close_alert', function (e) {
+        $('#alert_box').fadeOut('slow', function () {
+            $('.step02').hide();
+            $('.step01').show();
+        });
+    }).on('click', '#alert_bg', function (e) {
+        $('#alert_box').fadeOut(function () {
+            $('#close_alert').trigger('click');
+        });
+    }).on('click', '.step02 .cancel', function (e) {
+        $('.step02').hide();
+        $('.step01').show();
+    }).on('click', '#next_step', function (e) {
+        var obj = $('input[name=report]:checked');
+        if (obj.val() == 7) {
+            $('.step01').hide();
+            $('.step02').show();
+        } else {
+            alert_submit($(this).data('type'), $(this).data('type_id'));
+        }
+    });
+
+    $("#creative_album_search_key").keyup(function (e) {
+        if (e.keyCode == 13) {
+            creative_album_search();
+        }
+    });
+
+    //line icon
+    var socialLikesButtons = {
+        line: {
+            clickUrl: '',
+            pupupWidth: 650,
+            popupHeight: 500,
+        }
+    };
+
+</script>
+<!-- Line  -->
+<script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411"></script>

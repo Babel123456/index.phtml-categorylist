@@ -1,0 +1,418 @@
+<!-- 內容頁開始 -->
+<div id="rescuit_ad"><img src="<?php echo static_file('images/recuit_txt02.png')?>" height="25" width="318" alt=""></div>
+<div id="rescuit_content" style="background-color:white;">
+	<div id="rescuit_in_apply">
+		<ul>
+			<li>
+				<div id="tab-container" class="tab-container">
+					<ul class='etabs'>
+						<!-- <li class="active"><a id="personal" href="#tab01"><?php echo _('Individual'); ?></a></li>
+						<li ><a id="company" href="#tab02"><?php echo _('Company'); ?></a></li> -->
+					</ul>
+					<div  class="tab_content ">
+						<div id="tab01" class="tab active">	
+							<ul>
+								<li><h2><?php echo _('Individual'); ?></h2></li>
+								<li><div class="line"></div></li>
+								<li>
+									<form id="personal_form" class="form-horizontal">
+										<div class="control-group">
+											<label class="control-label" for="inputEmail">
+												<span style="color:red">*</span>
+												<?php echo _('Email'); ?>
+											</label>
+											<div class="controls">
+												<input type="text" name="personal_email" value="<?php echo $user['email']; ?>">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><span style="color:red">*</span><?php echo _('國籍'); ?></label>
+											<div class="controls">
+												<select id="personal_country">
+													<option value="">--<?php echo _('國籍'); ?>--</option>
+													<option value="TW"><?php echo _('Taiwan'); ?></option>
+													<option value="otherCountry"><?php echo _('Other Country'); ?></option>
+												</select>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><span style="color:red">*</span><?php echo _('Contact address'); ?></label>
+											<div class="controls" id="personal_country_address">
+											</div>
+										
+										</div>
+										<div class="control-group">
+											<label class="control-label" name="personal_career" for="inputEmail"><span style="color:red">*</span><?php echo _('Job'); ?></label>
+											<div class="controls">
+												<select id="personal_job">
+													<option value="">--<?php echo _('Job'); ?>--</option>
+													<?php
+													foreach ($career as $v0) {
+														echo '<option value="'.$v0['value'].'">'.$v0['text'].'</option>';
+													}
+													?>
+												</select>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><span style="color:red">*</span><?php echo _('ID No.'); ?></label>
+											<div class="controls">
+												<input name="personal_idcardnumber" type="text" placeholder="<?php echo _('ID No.'); ?>">
+											</div>
+										</div>	
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><?php echo _('Unicode'); ?></label>
+											<div class="controls">
+												<input type="text" name="company_vatnumber"  placeholder="<?php echo _('Unicode'); ?>">
+											</div>
+										</div>
+										<input type="submit" style="display:none;" id="personal_apply">
+									</form>
+								</li>
+							</ul>
+						</div>
+						<div id="tab02" class="tab">
+							<ul>
+								<li><h2><?php echo _('Company'); ?></h2></li>
+								<li><div class="line"></div></li>
+								<li>
+									<form id="company_form" class="form-horizontal">
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><span style="color:red">*</span><?php echo _('Email'); ?></label>
+											<div class="controls">
+												<input type="text" name="company_email" value="<?php echo $user['email']; ?>">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><span style="color:red">*</span><?php echo _('國籍'); ?></label>
+											<div class="controls">
+												<select id="company_country">
+													<option value="">--<?php echo _('國籍'); ?>--</option>
+													<option value="TW"><?php echo _('Taiwan'); ?></option>
+													<option value="otherCountry"><?php echo _('Other Country'); ?></option>
+												</select>
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><?php echo _('Name of the Company(Chinese)'); ?></label>
+											<div class="controls">
+												<input type="text" name="company_name_zh_TW"  placeholder="<?php echo _('Name of the Company(Chinese)'); ?>">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><?php echo _('Name of the Company(English)'); ?></label>
+											<div class="controls">
+												<input type="text" name="company_name_en_US"  placeholder="<?php echo _('Name of the Company(Chinese)'); ?>">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><span style="color:red">*</span><?php echo _('Unicode'); ?></label>
+											<div class="controls">
+												<input type="text" name="company_vatnumber"  placeholder="<?php echo _('Unicode'); ?>">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><?php echo _('Tel'); ?></label>
+											<div class="controls">
+												<input type="text" name="company_telephone"  placeholder="<?php echo _('Tel'); ?>">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><span style="color:red">*</span><?php echo _('Add'); ?></label>
+											<div class="controls" id="company_country_address">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputEmail"><?php echo _('Official Website'); ?></label>
+											<div class="controls">
+												<input type="text" name="company_website"  placeholder="<?php echo _('Official Website'); ?>" >
+											</div>
+										</div>
+										<input type="submit" style="display:none;" id="company_apply">
+									</form>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<form class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label" for="inputEmail"><span style="color:red">*</span><?php echo _('Remittance Method'); ?></label>
+						<div class="controls">
+							<select id="pay_option">
+								<option value="">--<?php echo _('Please select country of residence'); ?>--</option>
+							</select>
+						</div>
+					</div>
+					<div id="form1" class="box pay1">
+						<div class="pay_info">
+							<a href="https://www.paypal.com/">Paypal</a>, <?php echo _('A safer and easier trade payment platform across countries.'); ?><br>
+							<?php '<a href="javascript:void(0)">Paypal</a>'._('helps you pay and receive cost of purchase from 203 countries throughout the world.'); ?><br>
+							<?php '<a href="javascript:void(0)">Paypal</a>'._('safeguards all buyers’ transaction that is considered qualified.'); ?>
+						</div>
+						<div class="control-group" >												
+							<label class="control-label" for="inputEmail"><?php echo _('Paypal account'); ?></label>
+							<div class="controls">
+								<input type="text" name="paypal_account" placeholder="<?php echo _('Paypal account'); ?>">
+							</div>
+						</div>
+						<div class="control-group" >												
+							<label class="control-label" for="inputEmail"><?php echo _('Currency for payment'); ?></label>
+							<div class="controls">
+								<select id="paypal_currency">
+									<option value="">--<?php echo _('Currency for payment'); ?>--</option>
+									<?php
+									foreach (json_decode(Core::settings('CURRENCY'), true) as $k0 => $v0) {
+										if($v0 == 'TWD') continue; //此處不提供台幣選項
+										echo '<option value="'.$k0.'">'.$v0.'</option>';
+									}
+									?>																															
+								</select>		
+							</div>
+						</div>				
+					</div>
+					<div id="form2" class="box pay2" style>
+						<div class="pay_info">
+							<?php echo _('If you have other more suitable methods, please fill in the information required in the box below'); ?><br>
+							<?php echo _('To let Pinpinbox know more about your needs, make sure that the filled-in information is correct, or you will be unable to receive the benefits!'); ?><br>
+							<span style="color:red">*<?php echo _('帳戶限於在台灣地區內設立的銀行或郵局'); ?></span>
+						</div>
+						<div class="control-group" >												
+							<label class="control-label" for="inputEmail"><?php echo _('Account Name'); ?></label>
+							<div class="controls">
+								<input name="name" type="text" placeholder="<?php echo _('Account Name'); ?>" >
+							</div>
+						</div>
+						<div class="control-group" >												
+							<label class="control-label" for="inputEmail"><?php echo _('Bank '); ?></label>
+							<div class="controls">
+								<input name="bank" type="text" placeholder="<?php echo _('Bank '); ?>" class="web_url" >
+							</div>
+						</div>
+						<div class="control-group" >												
+							<label class="control-label" for="inputEmail"><?php echo _('Branch'); ?></label>
+							<div class="controls">
+								<input name="branch" type="text" placeholder="<?php echo _('Branch'); ?>" class="web_url" >
+							</div>
+						</div>
+						<div class="control-group" >
+							<label class="control-label" for="inputEmail"><?php echo _('Account No.'); ?></label>
+							<div class="controls">
+								<input name="account" type="text" placeholder="<?php echo _('Account No.'); ?>">
+							</div>
+						</div>
+						<div class="control-group" >
+							<label class="control-label" for="inputEmail"><?php echo _('Remarks'); ?></label>
+							<div class="controls">
+								<textarea name="remark" rows="3"></textarea>
+							</div>
+						</div>
+					</div>	
+				</form>
+			</li>
+			<li style="width:35%; margin:0 auto;" class="textcenter"><div id="slider"></div><p><?php echo _('Slide the lever to verify.'); ?></p></li>
+			<li class="textcenter">
+				<label class="checkbox"><?php echo _('submit means that you have read and accept the ').'<a target="_blank" href="'.self::url('index', 'terms').'">'._('specifications').'</a>'._(' and ').'<a target="_blank" href="'.self::url('index', 'privacy').'">'._('Privacy statement').'</a>';?></label>
+				<span style="color:#ee5b8d;"><?php echo _('為了保障您的權益，您出版後所獲得的收益，會基於銀行法規及國稅局稽核做所得申報'); ?></span><br>
+				<span style="color:#ee5b8d;"><?php echo _('請填寫正確的身份證資料已確保您的權益。'); ?></span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="button">
+	<a class="apply" onclick="_submit()" href="javascript:void(0)"><?php echo _('送出資料'); ?></a>
+	<img style="width:20px;height:20px;margin:0 auto;display:block;" class="loading_img" src="<?php echo static_file('images/loading.gif')?>">
+</div>
+<script>
+function _submit() {
+	if ($('#slider').slider('value') != <?php echo $max?>) {
+		r = {'data': 'Modal', 'message': '<?php echo _('Slide the lever to verify.')?>'};
+		var siteModal = new jBox(r.data, {
+			title: '<span style="display: inline-block;height: 100%;vertical-align: middle;"></span><img style="vertical-align: middle;" src="<?php echo static_file('images/info.png')?>">',
+			maxWidth: 600,
+			minWidth: 100,
+		}).setContent(r.message).open();
+		return;
+	}
+	$('#personal_apply').trigger('click');	
+}
+
+$(function(){
+	$('#slider').slider({
+		animate: true,
+		max: <?php echo $max?>,
+		stop: function(event, ui) {
+			if (ui.value == <?php echo $max?>) {
+				$(this).slider('disable').next('p').css({'color': 'green'}).text('<?php echo _('Authentication passed'); ?>');
+			} else {
+				$(this).find('a').animate({'left': 0});
+			}
+		}
+	});
+
+	$('#pay_option').on('change', function() {
+		$('.box').hide();
+		switch ($(this).val()) {
+			case 'paypal':
+				$('.pay1').show();
+				break;
+
+			case 'other':
+				$('.pay2').show();
+				break;
+		}
+	});
+	
+	//country select => pay option
+	$('#personal_country, #company_country').on('change', function() {	
+		$('#pay_option').find('option').remove();
+		$('.pay1').hide();$('.pay2').hide();
+
+		var apply = $(this).attr('id'),
+			option = [
+				'<option value="">--<?php echo _('Remittance Method'); ?>--</option>' ,
+				'<option value="paypal"><?php echo _('Paypal'); ?></option>',
+				'<option value="other"><?php echo _('國內銀行帳戶'); ?></option>',
+				'<option value="">--<?php echo _('Please select country of residence'); ?>--</option>',
+			];
+
+		switch ($(this).val()) {
+			case 'TW':
+				$('#pay_option').append(option[0],option[2]);
+				$('input[name="personal_idcardnumber"]').removeAttr('disabled');
+				$('input[name="company_vatnumber"]').removeAttr('disabled');
+				
+				var address_element = `<select name="county" style="width:16%"></select>
+									    <select name="district" style="width:16%"></select>
+									    <input name="zipcode" value="" type="text" placeholder="<?php echo _('Zip code'); ?>" autocomplete="off" style="width:12%" readonly >
+									    <input type="text" name="address" placeholder="<?php echo _('Contact address'); ?>" style="width:53%;">`;
+				$('#'+apply+'_address').empty().append(address_element);
+				$('#'+apply+'_address').tw_citySelector('select[name="county"]', 'select[name="district"]', 'input[name="zipcode"]');
+
+				break;
+
+			case 'otherCountry':
+				$('#pay_option').append(option[0],option[1]);
+				$('input[name="personal_idcardnumber"]').attr('disabled', 'true');
+				$('input[name="company_vatnumber"]').attr('disabled', 'true');
+				
+				var address_element = `	<input type="text" maxlength="5" name="zipcode" placeholder="<?php echo _('Zip code'); ?>" style="width:15%;">
+										<input type="text" name="address" placeholder="<?php echo _('Contact address'); ?>" style="width:75%;">`;
+				
+				$('#'+apply+'_address').empty().append(address_element);
+
+				break;
+			
+			default:
+				$('#pay_option').append(option[3]);
+				$('#'+apply+'_address').empty()
+				break;
+		}
+	});
+	
+	$('#personal_form').validate({
+		rules: {},
+		submitHandler: function() {
+			$('.apply').hide().next('img').show();
+
+			var personal_idcardnumber, company_vatnumber, address, _address = $('#personal_country_address'),
+				zipcode = _address.find('input[name=zipcode]').val();
+
+			if ($('#personal_country :selected').val() == 'TW') {
+				personal_idcardnumber = $('input[name=personal_idcardnumber]').val();
+				company_vatnumber = $('input[name=company_vatnumber]').val();
+				address = (_address.find('input[name=address]').val().length > 0 ) 
+							? _address.find('[name="county"] :selected').val()+_address.find('[name="district"] :selected').val()+_address.find('input[name=address]').val() 
+							: null ;
+			} else {
+				address = _address.find('input[name=address]').val();
+			}
+			
+			$.post('<?php echo self::url('creative', 'apply', query_string_parse())?>', {
+				apply: 'personal',
+				personal_email: $('input[name=personal_email]').val(),
+				personal_country: $('#personal_country :selected').val(),
+				personal_zipcode: zipcode,
+				personal_address: address,
+				personal_career: $('#personal_job :selected').val(),
+				personal_idcardnumber: personal_idcardnumber,
+				company_vatnumber: company_vatnumber,
+				remittance :$("#pay_option").val(),
+				paypal_account : $('input[name=paypal_account]').val(),
+				paypal_currency : $('#paypal_currency :selected').val(),
+				name : $('input[name=name]').val(),
+				bank : $('input[name=bank]').val(),
+				branch : $('input[name=branch]').val(),
+				account : $('input[name=account]').val(),
+				remark : $('[name=remark]').val(),
+				captcha: $('#slider').slider('value'),
+			}, function(r) {
+				r = $.parseJSON(r);
+				if (r.result == 1) {
+					_jBox(r, 'success');
+				} else {
+					_jBox(r, 'error');
+				}
+				$('.apply').show().next('img').hide();
+			});
+		}
+	});	
+	
+	$('#company_form').validate({
+		rules: {},
+		submitHandler: function() {
+			$('.apply').hide().next('img').show();
+
+			var company_vatnumber, zipcode, _address = $('#company_country_address'),
+				zipcode = _address.find('input[name=zipcode]').val();
+
+			if ($('#company_country :selected').val() == 'TW') {
+				company_vatnumber = $('input[name=company_vatnumber]').val();
+				address = (_address.find('input[name=address]').val().length > 0 ) 
+							?_address.find('[name="county"] :selected').val()+_address.find('[name="district"] :selected').val()+_address.find('input[name=address]').val() 
+							: null ;
+			} else {
+				address = _address.find('input[name=address]').val();
+			}
+			
+			$.post('<?php echo self::url('creative', 'apply')?>', {
+				apply: 'company',
+				company_email: $('input[name=company_email]').val(),
+				company_country: $('#company_country :selected').val(),
+				company_name_zh_TW: $('input[name=company_name_zh_TW]').val(),
+				company_name_en_US: $('input[name=company_name_en_US]').val(),
+				company_vatnumber: company_vatnumber,
+				company_telephone: $('input[name=company_telephone]').val(),
+				company_zipcode: zipcode,
+				company_address: address,
+				company_website: $('input[name=company_website]').val(),
+				remittance :$("#pay_option").val(),
+				paypal_account : $('input[name=paypal_account]').val(),
+				paypal_currency : $('#paypal_currency :selected').val(),
+				name : $('input[name=name]').val(),
+				bank : $('input[name=bank]').val(),
+				branch : $('input[name=branch]').val(),
+				account : $('input[name=account]').val(),
+				remark : $('[name=remark]').val(),
+				captcha: $('#slider').slider('value'),				
+			}, function(r) {
+				r = $.parseJSON(r);
+				if (r.result == 1) {
+					_jBox(r, 'success');
+				} else if (r.result == 2) {
+					_jBox(r, 'error');
+					$('input[name="'+r.data.target+'"]').focus();
+				} else {
+					_jBox(r, 'error');
+				}
+				$('.apply').show().next('img').hide();
+			});
+		}
+	});
+	
+	$('.loading_img').hide();
+});
+</script>

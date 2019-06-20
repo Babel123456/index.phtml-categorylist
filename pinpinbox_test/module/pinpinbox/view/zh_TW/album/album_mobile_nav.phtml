@@ -1,0 +1,16 @@
+<a href="javascript:void(0)"><h3 class="open_item"><?php echo _('Classification'); ?></h3></a>
+<ul id="open_ul_m" class="open_ul">							
+	<li><div class="line"></div></li>
+	<li><a href="<?php echo self::url('album')?>" <?php if ($categoryarea_id == null) echo 'class="active"'?>><?php echo _('All Albums'); ?></a></li>
+	<?php
+	foreach ($categoryarea as $v0) {
+		$active = ($v0['categoryarea_id'] == $categoryarea_id)? 'active' : null;
+		echo '<li class="cate_down"><a href="javascript:void(0)" class="'.$active.'">'.\Core\Lang::i18n($v0['name']).'</a><ul>';
+		foreach ($v0['category'] as $v1) {
+			$active = ($v1['category_id'] == $category_id)? 'active' : null;
+			echo '<li><a href="'.$v1['url'].'" class="'.$active.'">'.\Core\Lang::i18n($v1['name']).'</a></li>';
+		}
+		echo '</ul></li>';
+	}
+	?>
+</ul>

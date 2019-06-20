@@ -1,0 +1,147 @@
+<!-- 內容頁開始 -->
+<div id="member_content">
+    <div id="member_in">
+        <ul>
+            <form id="js_user_register_form">
+                <li>
+                    <img src="<?php echo static_file('images/register_title.png') ?>" height="22" width="280" alt="">
+                </li>
+
+                <li class="mo_close"><?php echo _('Log in via Facebook'); ?></li>
+                <li>
+                    <a href="javascript:void(0)" id="login_facebook" onclick="logInWithFacebook()"><img
+                                src="<?php echo static_file('images/login_fb.png') ?>" height="50" width="230"
+                                alt=""></a>
+                    <div style="margin: 0px auto; height: 65px; display: none;">
+                        <span style="display: inline-block;height: 100%;vertical-align: middle;"></span>
+                        <img style="vertical-align: middle;width: 20px;height: 20px;margin: 0 auto;margin-right: 5px;"
+                             src="<?php echo static_file('images/loading.gif') ?>">
+                    </div>
+                </li>
+                <li><img src="<?php echo static_file('images/or.png') ?>" height="9" width="460" alt="" class="line_or">
+                </li>
+                <li><?php echo _('Register via basic membership information'); ?></li>
+                <li><input type="text" name="name" id="name" placeholder="<?php echo _('Nickname'); ?>" maxlength="32"
+                           required></li>
+                <li><input type="email" name="account" placeholder="Email帳號" maxlength="64" required></li>
+                <li><input type="password" name="password" id="password" placeholder="<?php echo _('Password'); ?>"
+                           maxlength="32" required></li>
+                <li><input type="password" name="repassword" id="repassword"
+                           placeholder="<?php echo _('Reconfirm your password'); ?>" maxlength="32" required></li>
+                <li><input type="text" name="cellphone" id="mobile-number"
+                           placeholder="<?php echo _('Mobile phone'); ?>" required></li>
+                <li>
+                    <a href="javascript:void(0)" class="member_enter"
+                       onclick="send_smspwd()"><?php echo _('Send verification code'); ?></a>
+                    <img style="display: none; height: 20px; width: 20px;" class="loading_img"
+                         src="<?php echo static_file('images/loading.gif') ?>">
+                </li>
+                <li><?php echo _('Please wait for the verification code sent to your mobile phone'); ?>
+                    <br/><?php echo _('If it takes long, please retype your mobile number and re-click the button '); ?>
+                    <a href="javascript:void(0)"
+                       onclick="resend_sms()"><?php echo _('Send verification code'); ?></a><?php echo _(' and get a new code.'); ?>
+                </li>
+                <li><input type="text" name="smspwd" maxlength="4" required
+                           placeholder="<?php echo _('Enter your received verification code'); ?>"></li>
+                <li><?php echo _('submit means that you have read and accept the ') . '<a target="_blank" href="' . self::url('index', 'terms') . '">' . _('specifications') . '</a>' . _(' and ') . '<a target="_blank" href="' . self::url('index', 'privacy') . '">' . _('Privacy statement') . '</a>'; ?></a>
+                    。
+                </li>
+                <li>
+                    <input type="checkbox" name="newsletter" value="true" checked>&nbsp;&nbsp;<?php echo _('願意收到電子報，掌握最新創作及抽獎資訊') ?>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" id="register_button" class="member_enter"
+                       onclick="$('#js_user_register').trigger('click')"><?php echo _('Register'); ?></a>
+                    <img style="display: none; height: 20px; width: 20px;" class="loading_img"
+                         src="<?php echo static_file('images/loading.gif') ?>">
+                </li>
+                <input style="display:none;" id="js_user_register" type="submit">
+            </form>
+        </ul>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#mobile-number").intlTelInput({defaultCountry: 'auto'});//電話國碼
+
+        $('#js_user_register_form').validate({
+            rules: {
+                repassword: {
+                    equalTo: "#password"
+                },
+            },
+            submitHandler: function () {
+                $('#register_button').eq(0).hide().next('img').show();
+
+                $.post('<?php echo self::url('user', 'register', query_string_parse());?>', {
+                    account: $('input[name="account"]').val(),
+                    name: $('input[name="name"]').val(),
+                    password: $('input[name="password"]').val(),
+                    repassword: $('input[name="repassword"]').val(),
+                    cellphone: $('input[name="cellphone"]').val(),
+                    smspwd: $('input[name="smspwd"]').val(),
+                    newsletter: $('input[name="newsletter"]').prop('checked') ? true : false,
+                }, function (r) {
+                    r = $.parseJSON(r);
+
+                    switch (r.result) {
+                        case 1:
+                            _jBox(r, 'success');
+                            break;
+
+                        case '<?php \Lib\Result::SYSTEM_OK ?>':
+                            location.href = r.redirect;
+                            break;
+
+                        default:
+                            site_jBox(r, 'error');
+                            break;
+                    }
+
+                    $('#register_button').eq(0).show().next('img').hide();
+                });
+            }
+        });
+
+        $('.loading_img').hide();
+    });
+
+    function send_smspwd() {
+        $('.member_enter').eq(0).hide().next('img').show();
+
+        $.post('<?php echo self::url('user', 'send_smspwd')?>', {
+            account: $('input[name="account"]').val(),
+            password: $('input[name="password"]').val(),
+            repassword: $('input[name="repassword"]').val(),
+            cellphone: $('input[name="cellphone"]').val()
+        }, function (r) {
+            r = $.parseJSON(r);
+
+            if (r.result == 1) {
+                site_jBox(r, 'success');
+            } else if (r.result == 2) {
+                site_jBox(r);
+            } else {
+                site_jBox(r, 'error');
+            }
+
+            $('.member_enter').eq(0).show().next('img').hide();
+        });
+    }
+
+    function resend_sms() {
+        var box = _jBox('', 'processing');
+        $.post('<?php echo self::url('user', 'resend_sms')?>', {
+            account: $('input[name="account"]').val(),
+            cellphone: $('input[name="cellphone"]').val()
+        }, function (r) {
+            r = $.parseJSON(r);
+            box.close();
+            if (r.result == 1) {
+                site_jBox(r, 'success');
+            } else {
+                site_jBox(r, 'error');
+            }
+        });
+    }
+</script>

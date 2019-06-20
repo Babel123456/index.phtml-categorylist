@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200px" height="45px" viewBox="0 0 200 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>5D6B329B-A8AC-45BE-B639-57900DD5EEDF</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="200" height="45" rx="5"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="200" height="45" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home-page" transform="translate(-720.000000, -3380.000000)">
+            <g id="創意是美好的起點" transform="translate(0.000000, 3067.000000)">
+                <g id="Group-3" transform="translate(720.000000, 313.000000)">
+                    <use id="Rectangle-19" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                    <text id="我要開始創作" font-family="MicrosoftJhengHeiBold, 微軟正黑體" font-size="16" font-weight="" line-spacing="20" letter-spacing="1" fill="#FFFFFF">
+                        <tspan x="49" y="30">我要開始創作</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

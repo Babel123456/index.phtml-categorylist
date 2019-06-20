@@ -1,0 +1,83 @@
+<?php echo $form ?>
+<script>
+    function add_to_display(imgData) {
+        $('ul#sort li').each(function () {
+            var _this = $(this);
+            if (_this.data('status') != 'set') {
+
+                _this.data({
+                    'status': 'set',
+                    'user_id': imgData.user_id,
+                    'urlfilename': imgData.filename
+                }).children('img').attr('src', imgData.urlFilename);
+                return false;
+            }
+        })
+    }
+
+    $(window).load(function () {
+        $("#sort").sortable();
+        $("#sort li").on('dblclick', function () {
+            $(this).data({'status': 'unset'}).children('img').attr('src', '');
+        })
+        $('#form').validate({
+            ignore: ".cr-slider",
+            rules: {},
+            submitHandler: function () {
+                var exhibit = [];
+                $('ul#sort li').each(function () {
+                    if ($(this).data('status') == 'set') {
+                        exhibit.push([$(this).data('user_id'), $(this).data('urlfilename')]);
+                    }
+                });
+
+                if (exhibit.length < 6) {
+                    alert('請至少填入6位創作人');
+                } else {
+                    $.post('<?php echo $action?>', {
+                        <?php if ('edit' == $_GET['act']) {?>
+                        <?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+                        <?php }?>
+                        name: $('#name').val(),
+                        exhibit: JSON.stringify(exhibit),
+                        sequence: $('#sequence').val(),
+                        act: $('input[name="act"]:checked').val(),
+                    }, function (r) {
+                        r = $.parseJSON(r);
+                        switch (r.result) {
+                            case 0:
+                                formerror(r.message);
+                                break;
+                            case 1:
+                                formconfirm(r);
+                                break;
+                        }
+                    });
+                }
+            }
+        });
+
+
+        $("select[id='indexcreative']").chosen({width: "30%"});
+        $("select[id='indexcreative']").on('change', function(){            
+            $.post('<?php echo self::url('indexpopularity', 'user_search') ?>', {
+                <?php if ('edit' == $_GET['act']) {?>
+                <?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+                <?php }?>
+                user_id: $("select[id='indexcreative']").val(),
+            }, function (r) {
+                r = $.parseJSON(r);
+                switch (r.result) {
+                    case 0:
+                        formerror(r.message);
+                        break;
+                    case 1:
+                        add_to_display(r.data);
+                        break;
+                }
+            });
+        });
+
+
+    });
+</script>

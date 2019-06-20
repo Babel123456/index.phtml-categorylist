@@ -11,42 +11,40 @@
   
   <!--//20190304: 加class name結束-->
 	
-	<!--//20190307: 加div 與 class開始-->
-	<div class="pinpinboard_wrap">
-	<!--//20190307: 加div 與 class結束-->
+	  <!--//20190307: 加div 與 class開始-->
+	  <div class="pinpinboard_wrap">
+	  <!--//20190307: 加div 與 class結束-->
 	
-      <span>
-        <div class="profile_img_wrap">
-          <img class="profile_img" src="https://ppb.sharemomo.com/storage/zh_TW/user/picture$2a39.jpg" onerror="this.src='https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'">
-        </div>
-      </span>
+        <span>
+          <div class="profile_img_wrap">
+            <img class="profile_img" src="https://ppb.sharemomo.com/storage/zh_TW/user/picture$2a39.jpg" onerror="this.src='https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/face_sample.svg'">
+          </div>
+        </span>
 	  
-      <span>
-	  
-        <div class="<?=$type?>_comment_textarea_wrapper" >
-		
-		  <textarea id="<?=$type?>_comment_textarea" placeholder="請先登入會員"
+        <span>
+          <div class="<?=$type?>_comment_textarea_wrapper" >
+		    <textarea id="<?=$type?>_comment_textarea" placeholder="請先登入會員"
 				
 				<!--//20190304: 將min-height: 38px;改成24px開始-->
                 rows="4" maxlength="300" style="min-height: 24px;"
 				<!--//20190304: 將min-height: 38px;改成24px結束-->
 				
                 onfocus="location.href='#'"></textarea>
-        </div>
-		
-		<!--//20190304: 按鈕移至此開始, 加class name-->
-	    <div class="message_leave_btn_area">
-          <a href="javascript:void(0)" class="comment_text_cancel" onclick="cancelCommtent('<?=$type?>');"><span class="btn_new">清除</span></a><a href="javascript:void(0)" class="comment_text_submit" onclick="addCommtent('<?=$type?>', '2');"><span class="btn_new message_submit">送出</span></a>
-        </div>
-	    <!--//20190304: 按鈕移至此結束開始-->
-		
-      </span>
+          </div>
+		  <!--//20190304: 按鈕移至此開始, 加class name-->
+	      <div class="message_leave_btn_area">
+            <a href="javascript:void(0)" class="comment_text_cancel" onclick="cancelCommtent('<?=$type?>');"><span class="btn_new">清除</span></a><a href="javascript:void(0)" class="comment_text_submit" onclick="addCommtent('<?=$type?>', '2');"><span class="btn_new message_submit">送出</span></a>
+          </div>
+	      <!--//20190304: 按鈕移至此結束開始-->
+        </span>
 	
-	<!--//20190307: 加div 與 class開始-->
-	</div>
-	<!--//20190307: 加div 與 class結束-->
-	
-	
+	  <!--//20190307: 加div 與 class開始-->
+	  </div><!-- .pinpinboard_wrap -->
+	  <!--//20190307: 加div 與 class結束-->
+	  
+	<!--//20190307: 補漏DIV開始-->
+	</div><!-- .pinpinboard -->
+	<!--//20190307: 補漏DIV結束-->
 	
   </div><!-- #message_leave -->
 
@@ -259,64 +257,37 @@ $(function(){
         context : function(value) {
           return value;
         },
-		
         index: 1,
-		
       },
 	  
-	// 20190307: 指定選單出現位置與指定CLASSNAME區塊開始  
-	//],{onKeydown: function (e, commands){  
-    //],{appendTo: 'body', className:'<?=$type?>'},{onKeydown: function (e, commands){
+	// 20190307: start here
 	],{ placement: 'top',appendTo: $('[data-type="pinpinboard_<?=$type?>"]'), className:'<?=$type?>'},{onKeydown: function (e, commands){	
-	// 20190307: 指定選單出現位置與指定CLASSNAME區塊結束
-	
-        if(e.ctrlKey && e.keyCode === 74){ // CTRL-J
+	    if(e.ctrlKey && e.keyCode === 74){ // CTRL-J
           return commands.KEY_ENTER;
         }
        }
-	   
-    // 20190307: 移除appendTo: 'body'區塊開始  
-	//},{appendTo: 'body'}).overlay([
-	//}).overlay([
-	},{select: function (e){
-		console.log('select');
-	}
-		
 	}).overlay([
-	// 20190307: 移除appendTo: 'body'區塊結束 
-    {
-          match: /(\[{1}[0-9]+:{1}[^\[\]:]+\]{1})/g,
-          css: {
-          }
+	{
+        match: /(\[{1}[0-9]+:{1}[^\[\]:]+\]{1})/g,
+        css: {
         }
-		
-	// 20190307: 當選單出現時, 位置調整區塊開始
-	//]); 
+      }
 	]).on({
         'textComplete:show': function (e) {
-			
-			$('.<?=$type?>').attr('name', '<?=$type?>_textcomplete_dropdown');
-			
-			//若在專區裡POPUP作品資訊頁
-			if($('.popview_content').length>0){
-			  console.log('.popview_content');
-			  $('[name="<?=$type?>_textcomplete_dropdown"]').addClass('position_absolute');
-			}else{
-			  $('[name="<?=$type?>_textcomplete_dropdown"]').removeClass('position_absolute');
-			}
-			console.log('scroll-1');
-            $('[name="<?=$type?>_textcomplete_dropdown"]').scrollTop(0);
-			//$('[name="<?=$type?>_textcomplete_dropdown"]').addClass('scroll_top');
-			console.log('scroll-2');
-			
-			
-        },
-        'textComplete:hide': function (e) {
+		  $('.<?=$type?>').attr('name', '<?=$type?>_textcomplete_dropdown');if($('.popview_content').length>0){
+		    $('[name="<?=$type?>_textcomplete_dropdown"]').addClass('position_absolute');
+		  }else{
+		    $('[name="<?=$type?>_textcomplete_dropdown"]').removeClass('position_absolute');
+		  }
+		  
+		  // 20190312: 延遲測試(因為所有的動作都在選單出現之前被做了...
+		  setTimeout(function(){$('#textcomplete-dropdown-1').scrollTop(0);},100);
         }
     });
-	// 20190307: 當選單出現時, 位置調整區塊結束
+	// 20190307: end here
 	
 	$('time.timeago').timeago();
+	
 });
 
 </script>

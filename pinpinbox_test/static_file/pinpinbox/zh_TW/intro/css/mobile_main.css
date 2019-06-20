@@ -1,0 +1,433 @@
+html, body, div, span, p, a, del, em, img, ol, ul, li, fieldset, form, label {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+html, body {
+	line-height: 1;
+	min-height:100%;
+	font-family:Artial, Verdana, sans-serif;
+}
+
+body {
+	background: #eeeeee;
+	background: -webkit-linear-gradient(top, #eeeeee, #cccccc 100%);
+	background: -moz-linear-gradient(top, #eeeeee, #cccccc 100%);
+	background: -o-linear-gradient(top, #eeeeee, #cccccc 100%);
+	background: -ms-linear-gradient(top, #eeeeee, #cccccc 100%);
+	background: linear-gradient(top, #eeeeee, #cccccc 100%);
+	background-attachment:fixed;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+p {
+	margin:1em 0;
+	line-height:1.1em;
+}
+
+q {
+	font-style:italic;
+	color:#333;
+}
+
+h1 {
+	font-size:2.91em;
+	margin:0;
+}
+
+h1 > small {
+	text-align:right;
+	display:inline-block;
+	font-size:.71em;
+	text-indent:15em;
+	color:#444;
+}
+
+h2 {
+	color:inherit;
+	font-size:1.91em;
+	margin:2em 0 1em 0;
+}
+
+h2:first-child {margin-top:0;}
+
+h3 {
+	color:#333;
+	font-size:1.41em;
+	margin:1em 0;
+}
+
+h4 {
+	color:#444;
+	font-size:1.11em;
+	margin:1em 0;
+}
+
+.next_btn img {
+	margin-top:-35px;
+}
+
+.arrow_down {
+	height: 0px;
+	position: relative;
+	top:-2%;
+	left:46%;
+}
+
+.arrow_down img{
+	width:8%;
+}
+
+#bg_header {
+	width:100%;
+	height: 91px;
+	background-image:url(../images/bg-01-top.png) ;
+}
+
+#bg_header .home img{
+	margin:1% 4%;
+	width:7%;
+}
+
+#bg_header span{
+	color:black;
+	float: right;
+	margin: 2% 1%;
+	font-family: "微軟正黑體";
+	font-size:2.7em;
+}
+
+#bg_header span a{
+	text-decoration: none;
+	color:black;
+	letter-spacing: 8px;
+	font-weight: bold;
+}
+
+#bg1_wrapper {
+	width:100%;
+	height: 900px;
+	background-image:url(../images/m_BG-01.jpg) ;
+	background-repeat: no-repeat;;
+}
+
+#bg1_wrapper .img_slider{
+	margin:0 auto;
+	width:91%;
+	top:20%;
+}
+
+#bg1_wrapper .item{
+	width: 100%;
+}
+
+#bg1_wrapper li.indicators{
+	width:45px;
+	height:45px;
+	margin:4%;
+	border-radius:100%
+}
+
+#bg2_wrapper {
+	width:100%;
+	height: 1750px;
+	background-image:url(../images/m_BG-02.jpg) ;
+	margin-top:0px;
+}
+
+#bg2_wrapper .bg2_title{
+	width: 100%;
+	height: 15%;
+	margin-bottom: 5%;
+	position: relative;
+	top:4%;
+	left:14%;
+}
+
+#bg2_wrapper .bg2_title img{
+	width: 65%;
+}
+
+#bg2_wrapper .bg2_text{
+	width: 100%;
+	height: 48%;
+	margin-bottom: 5%;
+	position: relative;
+	top:1%;
+	left:8%;
+}
+
+#bg2_wrapper .bg2_text img{
+	width: 83%;
+}
+
+#bg2_wrapper .bg2_content{
+	width: 112%;
+	height: 27%;
+	margin-bottom: 5%;
+	position: relative;
+	top:2%;
+	left:-5%;
+}
+
+#bg2_wrapper .bg2_content img{
+	width: 20%;
+	margin:0 2.3%;
+}
+
+#bg3_wrapper {
+	width:100%;
+	height: 1750px;
+	background-image:url(../images/m_BG-03.jpg) ;
+}
+
+#bg3_wrapper .bg3_title{
+	width: 100%;
+	height: 15%;
+	position: relative;
+	top:3%;
+	left:10%;
+}
+
+#bg3_wrapper .bg3_title img{
+	width: 55%;
+}
+
+#bg3_wrapper .bg3_content_wrapper{
+	width: 100%;
+	height: 90%;
+	position: relative;
+	top:-6%;
+	background-image:url(../images/layer_18.png) ;
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: 93% 90%;
+}
+
+
+#bg3_wrapper .bg3_text{
+	width: 100%;
+	height: 48%;
+	margin-bottom: 5%;
+	position: relative;
+	top:10%;
+	left:3%;
+}
+
+#bg3_wrapper .bg3_text img{
+	width: 93%;
+}
+
+#bg3_wrapper .img_content{
+	width: 100%;
+	height: 48%;
+	position: relative;
+	top:8%;
+	left:0%;
+}
+
+#bg3_wrapper .img_content img.img01{
+	width: 60%;
+}
+
+#bg3_wrapper .img_content img.img02{
+	width: 29%;
+    position: relative;
+    top: -25%;
+}
+
+#bg3_wrapper .img_content img.img03{
+	width: 28%;
+    position: relative;
+    top: -49%;
+    left:61%;
+}
+
+#bg3_wrapper .img_content img.img04{
+	width: 28%;
+    position: relative;
+    top: -27%;
+    left:33%;
+}
+
+#bg4_wrapper {
+	width:100%;
+	height: 1150px;
+	background-image:url(../images/m_BG-04.jpg) ;
+	margin-top:-27px;
+}
+
+#bg4_wrapper .bg4_title{
+	position: relative;
+    text-align: center;
+    top:6%;
+}
+
+#bg4_wrapper .bg4_title img{
+	width:75%;
+}
+
+#bg4_wrapper .bg4_text{
+	width: 100%;
+	position: relative;
+    text-align: center;
+    top:9%;
+    font-size: 3.2em;
+    color:#fff;
+    padding: 0 10%;
+}
+
+#bg4_wrapper #bg4_creative_wrapper{
+	position: relative;
+    text-align: center;
+    top:14%;
+}
+
+#bg4_wrapper .bg4_creative{
+	width:1480px;
+	position: relative;
+    text-align: center;
+}
+
+#bg4_wrapper .bg4_creative a{
+	position: relative;
+	display: inline-block;
+	margin: 0 1%;
+}
+
+#bg4_wrapper .bg4_btn{
+	position: relative;
+    text-align: center;
+    top:19%;
+}
+
+#bg4_wrapper .bg4_btn img{
+	width:60%;
+}
+
+
+#bg_footer {
+	background-image:url(../images/m_BG-05.jpg) ;
+	height: 300px;
+}
+
+#bg_footer .bgf_title{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	top:15%;
+}
+
+#bg_footer .bgf_title img{
+	width: 40%;
+}
+
+#bg_footer .text{
+	position: relative;
+	width: 100%;
+	text-align: center;
+    top: 23%;
+    font-size: 2em;
+    color:#fff;
+}
+
+#bg_footer a{
+	letter-spacing: 25px;
+    color:#fff;
+}
+
+#bg_footer .text2{
+	position: relative;
+	width: 100%;
+	text-align: center;
+    top: 31%;
+    font-size: 2.2em;
+    color:#fff;
+    letter-spacing: 0.1em;
+}
+
+#intro {
+	width:80%;
+	left:50%;
+	top:22em;
+	margin-left:-40%;
+	padding:2em;
+	/*background:#fff;*/
+	text-align:center;
+	border-radius:1em;
+
+	-webkit-transform-origin:0 0;
+	-moz-transform-origin:0 0;
+	-ms-transform-origin:0 0;
+	-o-transform-origin:0 0;
+	transform-origin:0 0;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#intro img {
+	/*margin-top:20%;*/
+}
+
+#transform {
+	width:70%;
+	left:50%;
+	top:20%;
+	margin-left:-35%;
+	text-align:center;
+	font-size:150%;
+
+	.transform-origin(50%, 50%);
+}
+
+#properties {
+	width:100%;
+	height:100%;
+	padding-top:2%;
+	text-align:center;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#easing_wrapper {
+	width:100%;
+	height:100%;
+}
+
+#easing {
+	top:10%;
+	width:50%;
+	z-index:101;
+}
+
+#download {
+	width:80%;
+	left:10%;
+	height:80%;
+	padding:3em;
+	border:0 solid #222;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.twitter-share-button, .twitter-follow-button {
+	vertical-align:middle;
+}

@@ -1,0 +1,94 @@
+<?php echo $form?>
+<script>
+$(function() {
+	$('#form').validate({
+		rules: {},
+		submitHandler: function() {
+			$.post('<?php echo $action?>', {
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				remark: $('#remark').val(),
+				act: $('input[name="act"]:checked').val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+	
+	<?php if ('edit' == $_GET['act']) {?>
+	$('#test, #execute').on('click', function() {
+		var that = $(this);
+		
+		//customize
+		var a_customize = {};
+		for (var k0 in keyvalueremark) {
+			var v0 = keyvalueremark[k0];
+			$.each($('input[name="customize_'+ v0 +'[]"]'), function(k1, v1){
+				if ('undefined' === typeof(a_customize[k1])) a_customize[k1] = {};
+				a_customize[k1][v0] = $(this).val();
+			});
+		}
+		if (!Object.keys(a_customize).length) a_customize = null;
+
+		//param
+		var param = {};
+		param['mode'] = that.data('mode');
+		param['sign'] = that.data('sign');
+		if (a_customize) {
+			$.each(a_customize, function(k0, v0){
+				param[v0.key] = v0.value;
+			});
+		}
+		
+		switch (that.prop('id')) {
+			case 'test':
+				execute(param);
+				break;
+
+			case 'execute':
+				var ready = $.extend(true, {}, param);
+				ready['ready'] = true;
+				
+				$.post('<?php echo $execute?>', ready, function(r) {
+					r = $.parseJSON(r);
+
+					var tooltip = [];
+					if (r.data) {
+						for (var k0 in r.data) {
+							tooltip.push(k0 + ': ' + r.data[k0]);
+						}
+					}
+					if (tooltip.length) tooltip = '[param]<br>' + tooltip.join('<br>') + '<br><br>';
+					
+					jConfirm = new jBox('Confirm', {
+						cancelButton: '<?php echo _('No')?>',
+						confirm: function() {
+							execute(param);
+						},
+						confirmButton: '<?php echo _('Yes')?>',
+						onCloseComplete: function() {
+							jConfirm.destroy();
+						}
+					}).setContent(tooltip + '<?php echo _('Are you sure to execute it?')?>').open();
+				});
+				break;
+		}
+	});
+	<?php }?>
+});
+
+function execute(param) {
+	Pace.track(function() {
+		$.post('<?php echo $execute?>', param, function(r) {
+			r = $.parseJSON(r);
+			switch (r.result) {
+				case 0:formerror(r.message);break;
+				case 1:formsuccess(r.message);break;
+			}
+		});
+	});
+}
+</script>

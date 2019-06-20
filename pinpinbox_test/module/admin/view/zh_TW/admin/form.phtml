@@ -1,0 +1,59 @@
+<?php echo $form?>
+<script>
+$(function() {
+	$('#form').validate({
+		rules: {
+			//form
+			<?php if ('add' == $_GET['act']) {?>
+			account: {
+				required: true,
+				is_letter_and_number: true
+			},
+			password: {
+				required: true,
+				maxlength: 32
+			},
+			<?php }?>
+			repassword: {
+				equalTo: '#password'
+			},
+		},
+		submitHandler: function() {
+			if ($('input[name="admingroup_id"]:checked').length == 0) {
+				formerror('<?php echo _('[Admin Group] is required')?>');
+				return;
+			}
+
+			//admin_admingroup
+			var a_admin_admingroup = [];
+			$.each($('input[name="admingroup_id"]:checked'), function() {
+				var admingroup_id = $(this).val();
+				$.each($('input[name="class[' + admingroup_id + ']"]:checked'), function() {
+					a_admin_admingroup.push({<?php if ('edit' == $_GET['act']) {?>'admin_id': $('#admin_id').val(),<?php }?> 'admingroup_id': admingroup_id, 'class': $(this).val()});
+				});
+			});
+			
+			$.post('<?php echo $action?>', {
+				<?php if ('add' == $_GET['act']) {?>
+				account: $('#account').val(),
+				<?php }?>
+				<?php if ('edit' == $_GET['act']) {?>
+				admin_id: $('#admin_id').val(),
+				oldpassword: $('#oldpassword').val(),
+				<?php }?>
+				password: $('#password').val(),
+				name: $('#name').val(),
+				email: $('#email').val(),
+				act: $('input[name="act"]:checked').val(),
+				admin_admingroup: (a_admin_admingroup.length)? a_admin_admingroup: null,
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+});
+</script>

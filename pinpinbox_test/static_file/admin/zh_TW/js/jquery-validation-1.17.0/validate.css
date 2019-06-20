@@ -1,0 +1,11 @@
+.validate-message {
+    background-color: rgb(255, 203, 203);
+    border: 1px solid rgb(228, 166, 175);
+    border-radius: 2px;
+    color: rgb(240, 68, 77);
+    padding: 2px 6px;
+    position: absolute;
+}
+.validate-message div {
+	width: max-content;
+}

@@ -1,0 +1,47 @@
+<?php echo $form?>
+<script>
+$(window).load(function(){
+	$('#form').validate({
+		rules: {
+			name: {
+				required: true,
+				maxlength: 20
+			}
+		},
+		submitHandler: function() {
+			//admin_admingroup
+			var a_admin_admingroup = [];
+			$.each($('input[name="admin_id"]:checked'), function() {
+				var admin_id = $(this).val();
+				$.each($('input[name="class[' + admin_id + ']"]:checked'), function() {
+					a_admin_admingroup.push({<?php if ('edit' == $_GET['act']) {?>'admingroup_id': $('#admingroup_id').val(),<?php }?> 'admin_id': admin_id, 'class': $(this).val()});
+				});
+			});
+			
+			//adminmenu
+			var a_admingroup_adminmenu = [];
+			$.each($('input[name="adminmenu_id"]:checked'), function() {
+				var adminmenu_id = $(this).val();
+				$.each($('input[name="act[' + adminmenu_id + ']"]:checked'), function() {
+					a_admingroup_adminmenu.push({<?php if ('edit' == $_GET['act']) {?>'admingroup_id': $('#admingroup_id').val(),<?php }?> 'adminmenu_id': adminmenu_id, 'act': $(this).val()});
+				});
+			});
+			
+			$.post('<?php echo $action?>', {
+				<?php if ('edit' == $_GET['act']) {?>
+				admingroup_id: $('#admingroup_id').val(),
+				<?php }?>
+				name: $('#name').val(),
+				admin_admingroup: (a_admin_admingroup.length)? a_admin_admingroup: null,
+				admingroup_adminmenu: (a_admingroup_adminmenu.length)? a_admingroup_adminmenu: null,
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+});
+</script>

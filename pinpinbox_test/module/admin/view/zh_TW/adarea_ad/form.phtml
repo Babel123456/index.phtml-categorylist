@@ -1,0 +1,53 @@
+<?php echo $form?>
+<script>
+$(function() {
+	$('#form').validate({
+		rules: {},
+		submitHandler: function() {
+			if (!$('#adarea_id').val()) {
+				formerror('<?php echo _('Required for : ').$this->get_adminmenu_name_by_class('adarea')?>');
+				return;
+			}
+			if (!$('#ad_id').val()) {
+				formerror('<?php echo _('Required for : ').$this->get_adminmenu_name_by_class('ad')?>');
+				return;
+			}
+			if (!$('#lang_id').val()) {
+				formerror('<?php echo _('Required for : ').$this->get_adminmenu_name_by_class('lang')?>');
+				return;
+			}
+			
+			$.post('<?php echo $action?>', {
+				adarea_id: $('#adarea_id').val(),
+				ad_id: $('#ad_id').val(),
+				lang_id: $('#lang_id').val(),
+				sequence: $('#sequence').val(),
+				act: $('input[name="act"]:checked').val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+
+	<?php if ('edit' == $_GET['act']) {?>
+	$('#lang_id').on('keyup change', function() {
+		$.post('<?php echo self::url(M_CLASS, 'extra0')?>', {		
+			adarea_id: $('#adarea_id').val(),
+			ad_id: $('#ad_id').val(),
+			lang_id: $(this).val(),
+		}, function(r) {
+			r = $.parseJSON(r);
+			$('#sequence').val(r.data.sequence || '');
+			$('input[name="act"]').filter('[value="' + r.data.act + '"]').prop('checked', true);
+			$('#inserttime').text(r.data.inserttime || '');
+			$('#modifytime').text(r.data.modifytime || '');
+			$('#modifyadmin_id').text(r.data.modifyadmin_id || '');
+		});
+	});
+	<?php }?>
+});
+</script>

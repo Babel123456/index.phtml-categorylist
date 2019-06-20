@@ -1,0 +1,52 @@
+<?php echo $index?>
+<script>
+$(function(){
+    $('#grid').kendoGrid({
+    	columns: [
+			{field: 'sms_id', attributes: {'class': 'string'}},
+			{field: 'cellphone', attributes: {'class': 'string'}},
+			{field: 'message', attributes: {'class': 'string'}, encoded: false},
+			{field: 'callback', attributes: {'class': 'string'}},
+			{field: 'request', attributes: {'class': 'string'}, encoded: false, filterable: false, sortable: false},
+			{field: 'return', attributes: {'class': 'string'}, encoded: false, filterable: false, sortable: false},
+			{field: 'inserttime', attributes: {'class': 'date'}, filterable: {ui: function(e){e.kendoDateTimePicker({format: 'yyyy-MM-dd HH:mm:ss'});}}},
+		],
+		dataBinding: function(e) {},
+		dataBound: function(e) {},
+        dataSource: new kendo.data.DataSource({
+    		page: 1,
+    		pageSize: gridpageSize,
+    		serverPaging: true,
+    		serverSorting: true,
+    		serverFiltering: true,
+    		transport: {
+    			read: {
+    				dataType: 'json', //"jsonp" is required for cross-domain requests; use "json" for same-domain requests
+    				type: 'POST',
+    				url: '<?php echo self::url(M_CLASS, 'json')?>',
+    			}
+    		},
+    		schema: {
+    			data: function(r){return r.data;},
+    			total: function(r){return r.total;}
+    		},
+    		sort: {field: 'inserttime', dir: 'desc'}
+    	}),
+        filterable: true,
+        height: gridheight,
+        pageable: {
+            refresh: true,
+            input: true,
+            pageSize: gridpageSize,
+            pageSizes: gridpageSizes,
+        },
+        reorderable: true,
+        resizable: true,
+        selectable: true,
+        sortable: true,
+		toolbar: [
+		  	'excel',
+		],
+    });
+});
+</script>

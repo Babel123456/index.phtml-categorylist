@@ -1,0 +1,78 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+	<ul>
+		<li class="mobiledisplay"><h3>Q&amp;A</h3></li>
+		<!-- include index_nav here-->
+		<?php include('index_nav.phtml') ;?>
+		<li>
+			
+			<div id="memberbox_item">
+				<div id="album_tab">
+				  <h3>Q&amp;A</h3>	
+				</div>
+				
+				<div class="album_all">
+					<div id="term_content">
+						<!--  content -->
+						<div class="album_all">
+							<div id="table_box">
+								<table class="footable" data-page-size="<?php echo count($qanda); ?>">
+									<?php 
+									//印出Type (分類)
+									foreach($type as $k => $v){
+										echo '<thead>
+												<tr class="footable-disabled">
+													<th>'.$v.'</th>
+													<th data-hide="all">'._('Ans').'</th>
+												</tr>
+											 </thead>';
+										//印出與此分類相同type的值
+										foreach($qanda as $k2 => $v2){
+											if($v2->type == $v){
+												echo '<tbody>
+														<tr>
+															<td>'.$v2->title.'</td>
+															<td>'.$v2->answer.'</td>
+														</tr>						              
+													</tbody>';
+											}
+										}
+									}
+									?>
+									<tfoot>
+										<!--
+										<tr>
+											<td colspan="5">
+												<div class="pagination pagination-centered"></div>
+											</td>
+										</tr>
+										-->
+									</tfoot>					               
+								</table>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<script>
+
+$(document ).ready(function() {
+	$('.footable').footable();
+	
+	$('a[name=qanda]').addClass('active');
+
+	$('#album_category ul li ul').hide();
+	$('#album_category > ul > li > a').click(function(){
+		$(this).next().slideToggle('normal');
+	});
+});
+
+$('.open_item').click(function(event){
+	event.stopPropagation();
+	$('.open_ul_mobile').slideToggle();
+});
+</script>

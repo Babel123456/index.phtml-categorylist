@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="335px" height="107px" viewBox="0 0 335 107" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>29A73A7A-DD9D-4614-99F2-D0968139752F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="15" y="23" width="106.590909" height="61.1428571" rx="5"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="106.590909" height="61.1428571" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="web手機版---企業合作" transform="translate(-20.000000, -394.000000)">
+            <g id="多功能行銷工具-cards" transform="translate(20.000000, 180.000000)">
+                <g id="03-掃描開箱" transform="translate(0.000000, 214.000000)">
+                    <text id="消費者透過手機掃描商品條碼，即可取得商品" font-family="MicrosoftJhengHeiRegular, 微軟正黑體" font-size="14" font-weight="normal" line-spacing="20" letter-spacing="1" fill="#4D4D4D">
+                        <tspan x="145" y="39">消費者透過手機掃描商品</tspan>
+                        <tspan x="145" y="59">條碼，即可取得商品資</tspan>
+                        <tspan x="145" y="79">訊、使用心得。</tspan>
+                    </text>
+                    <use id="Rectangle-32" stroke="#0F8399" mask="url(#mask-2)" stroke-width="2" fill="#0F8399" xlink:href="#path-1"></use>
+                    <polygon id="Triangle-2" fill="#0F8399" points="129.431818 53.5 121.818182 57.3214286 121.818182 49.6785714"></polygon>
+                    <text id="掃描開箱" font-family="MicrosoftJhengHeiBold, 微軟正黑體" font-size="18" font-weight="bold" line-spacing="25" letter-spacing="1" fill="#FFFFFF">
+                        <tspan x="30.1868263" y="60">掃描開箱</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

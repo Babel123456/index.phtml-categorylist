@@ -1,0 +1,145 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+	<h2><?php echo _('Member Center'); ?></h2>
+	<ul>
+		<li class="mobiledisplay"><h3><?php echo _('Member Update'); ?></h3></li>
+		<li class="mobiledisplay"><div class="line"></div></li>
+		<li>
+			<?php include 'member_nav.phtml';?>
+			<div id="memberbox_item">
+				<div id="album_tab"><h3><?php echo _('付費升級'); ?></h3></div>
+				<div class="album_all">
+					<div id="promote_box">
+						<div class="promote_list active">
+							<div class="title"><?php echo _('一般帳號') ?></div>
+							<ul>
+								<li>
+									<div class="circle">Free<br></div>
+								</li>
+								<li>
+									<p><?php echo _('Production').':'; ?></p><p class="content">22 <?php echo _('Pages'); ?></p>
+								</li>
+								<li>
+									<p><?php echo _('影片上傳'); ?></p><p class="content">12MB</p>
+								</li>
+								<li>
+									<p><?php echo _('Profit splitting ratio'); ?> <a href="javascript:void(0)" id="question01"><img src="<?php echo static_file('images/question.png') ?>" height="250" width="250" alt=""></a></p>
+									<p class="content"><?php echo _('50&percnt;'); ?></p>
+								</li>
+							</ul>
+						</div>
+						<div class="promote_list">
+							<div class="title"><?php echo _('plus 帳號'); ?></div>
+							<ul>
+								<li>
+									<div class="circle plus">
+										<span class="red">NT$<span class="plus_total"><?php if (!empty($buy['plus'])) echo $buy['plus'][0]['total']?></span></span><br>
+										<select id="plus_buy" name="plus_buy">
+											<?php 
+											if (!empty($buy['plus'])) {
+												foreach ($buy['plus'] as $v0) {
+													echo '<option value="'.$v0['obtain'].'" data-buy_id="'.$v0['buy_id'].'" data-total="'.$v0['total'].'" data-currency="'.$v0['currency'].'" data-original_total="'.$v0['original_total'].'">'.$v0['obtain'].'天</option>';										
+												}											
+											}											
+											?>
+										</select>																					
+									</div>
+								</li>
+								<li>
+									<p><?php echo _('Production'); ?></p><p class="content">200 <?php echo _('Pages'); ?></p>
+								</li>
+								<li>
+									<p><?php echo _('影片上傳'); ?></p><p class="content">100MB</p>
+								</li>
+								<li>
+									<p><?php echo _('Profit splitting ratio'); ?> <a href="javascript:void(0)" id="question03"><img src="<?php echo static_file('images/question.png') ?>" height="250" width="250" alt=""></a></p>
+									<p class="content"><?php echo _('70&percnt;'); ?></p>
+								</li>
+								<li>
+									<p class="content" style="font-size:70%"><?php echo _('*拆分比例隨創作人等級提高'); ?></p>
+								</li>
+								<li><a href="javascript:void(0)" name="plus" onclick="buy(this.name)" class="buy"><?php echo _('我要升級'); ?></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>					
+		</li>
+	</ul>
+</div>
+
+<div id="cashflow"></div>
+
+<script>
+$(function() {
+	//月份 <--> 價格
+	$('#plus_buy').on('keyup change', function() {
+		var that = $(this);
+		$('.plus_total').text(that.find('option:selected').data('total'));
+		$('.plus_original_total').text(that.find('option:selected').data('original_total'));
+	});
+	
+	$('.promote_list').on('click', function() {
+		$(this).addClass('active').siblings().removeClass('active');
+	});
+
+	$('.alert_btn').on('click', function(event) {
+	    event.stopPropagation();
+	    $('#alert_box').fadeIn();
+	});
+
+	document.querySelector('#question01').onclick = function(){
+		swal("<?php echo _('What is earnings split proportion? “,” The proportion of earnings comes from joining the album and style in the sponsored program.'); ?>")
+	};
+	document.querySelector('#question03').onclick = function(){
+		swal("<?php echo _('What is earnings split proportion? “,” The proportion of earnings comes from joining the album and style in the sponsored program.'); ?>")
+	};
+});
+
+function buy(grade) {
+	var starttime = '<?php echo $starttime?>',
+		that = $('#' + grade + '_buy'), days = that.val(), total = that.find('option:selected').data('total');
+	
+	if(grade == 'plus' && false == <?php echo $user_creative ?>) {
+		swal({title:'<?php echo _('您尚未專案註冊') ?>',text:'<?php echo _('升級為plus帳號需先申請專案註冊') ?>'},function(){
+			location.href= '<?php echo self::url('creative', 'apply', ['redirect'=>self::url('user', 'grade')]) ?>';
+		});
+		return;
+	}
+
+	//有效期限
+	var starttime = new Date(starttime), endtime = new Date(starttime);
+	endtime.setDate(starttime.getDate() + parseInt(days, 10));
+	var s_starttime = starttime.getFullYear() + '/' + (starttime.getMonth() + 1) + '/' + starttime.getDate(), s_endtime = endtime.getFullYear() + '/' + (endtime.getMonth() + 1) + '/' + endtime.getDate();
+	
+	var str = '<div class="content">' +
+		'<?php echo _('Grade')?>:&nbsp;<span class="red">' + grade + '</span><br>' +
+		'<?php echo _('Total')?>:&nbsp;<span class="red">NT$' + total + '</span><br>' +
+		'<?php echo _('Valid Date')?>:&nbsp;<span class="red">' + s_starttime + ' ~ ' + s_endtime + '</span><br><br>' +
+		'<?php echo _('System will guide you to the online trading page, are you sure?')?></div>';
+	var myConfirm = new jBox('Confirm', {
+		cancelButton: '<?php echo _('No')?>',
+		confirmButton: '<?php echo _('Yes')?>',
+		confirm: function() {
+			$.post('<?php echo self::url('user', 'grade')?>', {
+				buy_id: that.find('option:selected').data('buy_id'),
+				assets_item: grade,
+				total: parseInt(String(total).replace(/\,/g, ''), 10),
+				currency: that.find('option:selected').data('currency'),
+				obtain: parseInt(String(that.val()).replace(/\,/g, ''), 10),
+			}, function(r) {
+				r = $.parseJSON(r);
+				if (1 == r.result) {
+					window.onbeforeunload = null;
+					$('#cashflow').html(r.data).find('form').submit().remove();
+				} else {
+					site_jBox(r);
+				}
+			});
+		},
+		onCloseComplete: function() {
+			myConfirm.destroy();
+		}
+	}).setContent(str).open();
+}
+</script>

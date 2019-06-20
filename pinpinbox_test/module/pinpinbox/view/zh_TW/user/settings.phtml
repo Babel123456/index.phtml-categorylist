@@ -1,0 +1,400 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+	<h2><?php echo _('Member Center'); ?></h2>
+	<form id="js_user_settings_form">
+	<ul>
+		<li>
+			<?php include 'member_nav.phtml';?>
+		</li>
+		<li>
+			<div id="album_item">
+				<div id="tem_content">
+					<div id="memset_info">
+						<ul>
+							<li><div class="sett_title"><?php echo _('Member Information'); ?></div></li>
+							<li>
+							   <table class="footable">
+									<thead>
+										<tr>
+											<th><?php echo _('Level'); ?></th>
+											<th data-hide="phone"><?php echo _('Album discounted percentage'); ?></th>
+											<th><?php echo _('Total attention'); ?></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<div style="width:23px; height:23px; background-image:url('<?php echo static_file('images/level_icon.png')?>'); background-size: 100%; text-align: center; line-height: 23px; margin-left: 5px; float: left; color: #FFF;" >
+													<?php echo $user_data['level']?>
+												</div>
+											</td>
+											<td><?php echo $user_data['pointsplitrate']['album']?></td>
+											<td class="red"><img src="<?php echo static_file('images/icon_pin.svg'); ?>" height="12" width="8" alt=""><?php echo $user_data['count_from']?></td>
+										</tr>
+									</tbody>
+								</table>
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('Personal photo sticker'); ?></div>
+								<div class="tdtxt">
+									<div id="set_facepic" data-check="picture">
+										<img id="uploadPreview" src="<?php echo $user_data['picture']?>" onerror="this.src='<?php echo static_file('images/face_sample.svg')?>'">
+									</div>
+								</div>
+
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('account'); ?></div>
+								<div class="tdtxt"><?php echo $user_data['account'] ?></div>
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('Nickname'); ?></div>
+								<div class="tdtxt"><?php echo $user_data['name'] ?></div>
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('Zone title'); ?></div>
+								<div class="tdtxt"><?php echo $user_data['creative_name'] ?></div>
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('Web url'); ?></div>
+								<div class="tdtxt code_website"><?php echo 'www.pinpinbox.com/'; ?><input type="text" maxlength="32" class="web_url" placeholder="<?php echo _('個人帳號(英文/數字)'); ?>"  name="user_creative_code" value="<?php echo $user_data['creative_code'] ; ?>" data-check="creative_code"></div>
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('E-mail'); ?></div>
+								<div class="tdtxt"><input type="text" name="user_email" value="<?php echo $user_data['email']?>" placeholder="<?php echo _('E-mail'); ?>" data-check="email"></div>
+							</li>
+							<?php if ($user_data['way'] == 'none') {?>
+							<li>
+								<div class="tdtitle"><?php echo _('Password'); ?></div>
+								<div class="tdtxt"><a href="javascript:;" class="alert_btn"><?php echo _('Password changed'); ?></a></div>
+							</li>
+							<?php }?>
+							<li>
+								<div class="tdtitle"><?php echo _('Mobile number'); ?></div>
+								<div class="tdtxt"><span><?php echo $user_data['cellphone']?></span> <a href="javascript:;" class="phone_btn">變更</a></div>
+							</li>									
+							<li>
+								<div class="tdtitle"><?php echo _('Gender'); ?></div>
+								<div class="tdtxt">
+									<div class="albumedit_down sex">
+										<select id="user_gender" data-check="gender">
+											<option <?php if ($user_data['gender'] == 'none') echo 'selected'?> value="none"><?php echo _('Non-disclosure'); ?></option>
+											<option <?php if ($user_data['gender'] == 'male') echo 'selected'?> value="male"><?php echo _('Male'); ?></option>
+											<option <?php if ($user_data['gender'] == 'female') echo 'selected'?> value="female"><?php echo _('Female'); ?></option>
+										</select>	
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('Birthday'); ?></div>
+								<div class="input-daterange">
+									<input type="text" value="<?php echo $user_data['birthday']?>" class="input-sm form-control web_url" name="user_birthday" maxlength="10" data-check="birthday">
+								</div>		
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('Marital status'); ?></div>
+								<div class="tdtxt">
+									<div class="albumedit_down sex">
+										<select id="user_relationship" data-check="relationship">
+											<option <?php if ($user_data['relationship'] == 'none') echo 'selected'?> value="none"><?php echo _('Non-disclosure'); ?></option>
+											<option <?php if ($user_data['relationship'] == 'married') echo 'selected'?> value="married"><?php echo _('Married'); ?></option>
+											<option <?php if ($user_data['relationship'] == 'single') echo 'selected'?> value="single"><?php echo _('Unmarried'); ?></option>
+										</select>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('居住地'); ?></div>
+								<div class="tdtxt">
+									<div class="albumedit_down sex">
+										<select id="user_address_id_1st" data-check="address_id_1st">
+											<option value="0">--請選擇--</option>
+											<?php 
+											foreach ($address_id_1st as $v0) { 
+												$selected = ($v0['address_id'] == $user_data['address_id_1st'])? 'selected="selected"' : null;
+												echo '<option value="'.$v0['address_id'].'" '.$selected.'>'.$v0['name'].'</option>';
+											}
+											?>
+										</select>
+									</div>
+									<div class="albumedit_down sex">
+										<select id="user_address_id_2nd" data-check="address_id_2nd">
+											<option value="0">--請選擇--</option>
+											<?php 
+											foreach ($address_id_2nd as $v0) {
+												$selected = ($v0['address_id'] == $user_data['address_id_2nd'])? 'selected="selected"' : null;
+												echo '<option value="'.$v0['address_id'].'" '.$selected.'>'.$v0['name'].'</option>';
+											}
+											?>
+										</select>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('Interest'); ?></div>
+								<div class="tdtxt">
+								<?php
+								for ($i = 0 ; $i < 3 ; ++$i) {
+									echo '
+									<div class="albumedit_down cate">
+										<select id="hobby_'.$i.'" data-check="hobby_user-'.$i.'">
+											<option value="">'._('Select').'</option>';
+									
+									foreach ($hobby as $v) {
+										if (!empty($user_data['hobby_user'][$i]) && $user_data['hobby_user'][$i] == $v['hobby_id']) {
+											echo '<option selected value="'.$v['hobby_id'].'">'.$v['name'].'</option>';
+										} else {
+											echo '<option value="'.$v['hobby_id'].'">'.$v['name'].'</option>';
+										}
+									}
+									echo '
+										</select>
+									</div>';
+								}
+								?>
+								</div>
+							</li>
+							<li>
+								<div class="tdtitle"><?php echo _('Message Board'); ?></div>
+								<div class="tdtxt">
+									<input style="width:3%;" type="radio" name="discuss" value="open" data-check="discuss" <?php if ($user_data['discuss'] == 'open' || $user_data['discuss'] == 'none') echo 'checked="true"'?>> <?php echo _('Open'); ?>&emsp;
+									<input style="width:3%;" type="radio" name="discuss" value="close" <?php if ($user_data['discuss'] == 'close') echo 'checked="true"'?>> <?php echo _('Close'); ?>
+								</div>
+							</li>
+                            <li>
+								<div class="tdtitle"><?php echo _('訂閱電子報'); ?></div>
+								<div class="tdtxt">
+									<input style="width:3%;" type="radio" name="newsletter" value="open" data-check="newsletter" <?php if ($user_data['newsletter']) echo 'checked="true"'?>> <?php echo _('Open'); ?>&emsp;
+									<input style="width:3%;" type="radio" name="newsletter" value="close" <?php if (!$user_data['newsletter']) echo 'checked="true"'?>> <?php echo _('Close'); ?>
+								</div>
+							</li>
+							<!-- <li><div class="line"></div></li> -->
+							<li><a href="javascript:void(0)" onclick="before_validate()" class="used"><?php echo _('Edited'); ?></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<input style="display:none;" id="js_user_settings" type="submit" data-status="on">
+	</form>
+</div>
+<script>
+//控制彈跳顯示隱藏
+$(document).on('click', '.phone_btn', function(){
+	event.stopPropagation(); $('#phone_box').fadeIn();
+}).on('click', '.alert_btn', function() {
+	event.stopPropagation(); $('#alert_box').fadeIn();
+}).on('click', '#close_alert, #alert_bg', function(){
+	$('#alert_box').fadeOut('slow', function(){
+		$('div.set_box_content').find(':input').val('');
+		$('p#password_msg').empty();
+	});
+}).on('click', '#close_phone, #phone_bg', function(){ 
+	$('#phone_box').fadeOut('slow', function() {
+		$('div.set_box_content').find(':input').val('');
+		$('p#phone_msg').empty();
+	});
+}).on('change', '#user_address_id_1st', function(){
+	address_id_1st();
+});
+
+function address_id_1st() {
+	if ($('#user_address_id_1st').val() == 1) {
+		$('#user_address_id_2nd').removeAttr('disabled');
+	} else {
+		$('#user_address_id_2nd').val('none').attr('disabled', 'disabled');
+	}
+}
+
+function before_validate() {
+	//upload avatar but without crop
+	var obj = $('#set_facepic').find('div.cropControls>i.cropControlCrop');
+	if (obj.length == 1) {	$(obj).click();	}
+	setTimeout("$('#js_user_settings').trigger('click');",1000)
+}
+
+function _check() {
+	var result = true;
+	var o_data_original = <?php echo json_encode($user_data)?>;
+	function recursive(obj, check) {
+		var a_check = check.split('-'), value = null;
+		if (a_check.length > 1) {
+			var a2_check = $.extend(true, [], a_check);
+			a2_check.shift();
+			value = recursive(obj[a_check[0]], a2_check.join('-'));
+		} else {
+			value = obj[a_check[0]];
+		}
+		
+	    return value;
+	}
+	
+	$.each($('[data-check]'), function(k0, v0) {
+		var that = $(this), val = null;
+		data_original = recursive(o_data_original, that.data('check'));
+		switch (that.data('check')) {
+			case 'picture':
+				val = $('.croppedImg').length? $('.croppedImg').prop('src') : that.find('img').prop('src');
+				break;
+
+			case 'description':
+				val = htmlspecialchars(that.val());
+				break;
+				
+			case 'discuss':
+				val = $('input[name="' + that.prop('name')+ '"]:checked').val();
+				break;
+				
+			default:
+				val = that.val();
+				break;
+		}
+		
+		// if (val.replace(/(\r\n|\n|\r)/gm, '') != data_original.replace(/(\r\n|\n|\r)/gm, '')) {
+		// 	result = false;
+		// 	return false;
+		// }
+	});
+	
+	return result;
+}
+
+function send_smspwd() {
+	$.post('<?php echo self::url('user', 'settings_phone') ?>' , {
+		cellphone: $('input[name="cellphone"]').val(),
+		usefor : 'sms_send',
+	}, function(r) {
+		r = $.parseJSON(r);
+		$('p#phone_msg').html(r.message);
+	});
+}
+
+function verify_phone() {
+	$.post('<?php echo self::url('user', 'settings_phone') ?>' , {
+        cellphone: $('input[name="cellphone"]').val(),
+		smspassword: $('input[name="smspassword"]').val(),
+		usefor : 'editcellphone',
+	}, function(r) {
+		r = $.parseJSON(r);
+		if (r.result == 1) {
+			$('#phone_box').fadeOut('slow', function(){
+				site_jBox(r, 'success');
+			});
+		}else {
+			$('p#phone_msg').html(r.message);
+		}
+	});
+}
+
+window.onbeforeunload = function() {
+	if (!_check()) {
+		return '<?php echo _('The unsaved profiles will be lost, are you sure you want to leave the page?')?>';
+	} else {
+		window.onbeforeunload = null;	
+	}
+}
+	
+$(function(){
+	address_id_1st();
+	
+	$('.loading_img').css('display', 'none');
+	$('#js_user_password_form').validate({
+		rules: {},
+		submitHandler: function() {
+			$('p#password_msg').empty();
+			$('.loading_img').css('display', 'block');
+			$('.loading_img').prev('li').css('display', 'none');
+			$.post('<?php echo self::url('user', 'password') ;?>', {
+				old_pass: $('input[name="old_pass"]').val(),
+				new_pass: $('input[name="new_pass"]').val(),
+				new_pass_check: $('input[name="new_pass_check"]').val()
+			}, function(r) {
+				$('.loading_img').css('display', 'none');
+				$('.loading_img').prev('li').css('display', 'block');
+				r = $.parseJSON(r);
+				if (r.result == 1) {
+					$('input[type=password]').each( function () {
+						$(this).val('');
+					});
+					$('#alert_box').fadeOut('slow', function(){
+						site_jBox(r, 'success');
+					});
+				} else if (r.result == 2) {
+					_jBox(r, 'info');
+				} else {
+					$('p#password_msg').html(r.message);
+				}
+			});
+		}
+	});
+	
+	$('#js_user_settings').on('click', function(e){
+		if($(this).data('status') == 'on'){$(this).data('status', 'off');return true;}else{return false;}
+	});
+	
+	$("#mobile-number").intlTelInput({defaultCountry: 'auto'});//電話國碼
+	$('.footable').footable();
+	$('.input-daterange').datepicker({	
+		startDate: "-80y",
+		endDate: "",
+		format: "yyyy-mm-dd",
+		clearBtn: true,
+		startView: "decade",
+		language: "zh-TW",
+		todayHighlight: true,
+	});		
+	
+	$('#js_user_settings_form').validate({
+		rules: {},
+		submitHandler: function() {
+			var box = _jBox({'message': ''}, 'processing');
+			var user_sociallink = {
+				"web": $('input[name="user_web"]').val(),
+				"facebook": $('input[name="user_facebook"]').val(),
+				"google": $('input[name="user_google"]').val(),
+				"twitter": $('input[name="user_twitter"]').val(),
+				"youtube": $('input[name="user_youtube"]').val(),
+				"instagram": $('input[name="user_instagram"]').val(),
+				"pinterest": $('input[name="user_pinterest"]').val(),
+				"linkedin": $('input[name="user_linkedin"]').val(),
+			}
+
+			$.post('<?php echo self::url('user', 'settings') ;?>', {
+				user_creative_code: $('input[name="user_creative_code"]').val(),
+				user_email : $('input[name="user_email"]').val(),
+				user_gender : $('#user_gender option:selected').val(),
+				user_relationship : $('#user_relationship option:selected').val(),
+				user_birthday : $('input[name="user_birthday"]').val(),
+				user_discuss : $('input[name="discuss"]:checked').val(),
+				user_newsletter : $('input[name="newsletter"]:checked').val(),
+				user_hobby_0 : $('#hobby_0 option:selected').val(),
+				user_hobby_1 : $('#hobby_1 option:selected').val(),
+				user_hobby_2 : $('#hobby_2 option:selected').val(),
+				user_sociallink : JSON.stringify(user_sociallink),
+				user_address_id_1st : $('#user_address_id_1st').val() ,
+				user_address_id_2nd : $('#user_address_id_2nd').val() ,
+			}, function(r) {
+				window.onbeforeunload = null;
+				r = $.parseJSON(r);
+				box.close();
+				if (r.result == 1) {
+					_jBox(r, 'success_notext');
+				} else {
+					$('#js_user_settings').data('status', 'on');
+					_jBox(r, 'error');
+				}
+			});
+		}
+	});
+	
+	$('input[name="user_creative_code"]').on('input', function(e){
+		var val = $(this).val();
+		if(val.match(/[^0-9A-Za-z]/)){
+			var r = {message: '<?php echo _('The creative-code enter only letters and numbers.'); ?>'};
+			_jBox(r, 'error');
+			$(this).val(val.replace(/[^0-9A-Za-z]/ig,"")).blur();
+		}
+	});
+});
+</script>

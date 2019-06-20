@@ -1,0 +1,20 @@
+<div id="phone_box" class="set_box">
+	<div id="phone_bg" class="set_box_bg"></div>
+	<div id="phone_in" class="set_box_in">
+		<div id="phone_top" class="set_box_top">
+			<div id="close_phone" class="close_box"><a href="javascript:void(0)">X</a></div>
+			<?php echo _('簡訊驗證') ;?>
+		</div>
+		<div  class="set_box_content">
+			<ul class="step01">
+				<li class="center"><?php echo _('請輸入欲修改手機號碼') ;?></li>
+				<li class="center"><?php echo _('現在號碼：'). $user_data['cellphone']?></li>
+				<li class="bottom_small"><input type="text" name="cellphone" id="mobile-number" placeholder="<?php echo _('Mobile phone'); ?>"></li>
+				<li class="bottom_small"><a href="javascript:void(0)" class="used" onclick="send_smspwd()"><?php echo _('Send verification code'); ?></a></li>
+				<li class="bottom_big"><input type="text" name="smspassword" placeholder="<?php echo _('Enter your received verification code'); ?>" ></li>
+				<li><a href="javascript:void(0)" onclick="verify_phone()" class="used"><?php echo _('驗證手機號碼'); ?></a></li>
+				<li><p id="phone_msg" class="red"> </p></li>
+			</ul>
+		</div>
+	</div>
+</div>

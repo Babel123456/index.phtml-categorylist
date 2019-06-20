@@ -1,0 +1,86 @@
+<!-- 內容頁開始 -->
+	<div id="album_content">
+		<h2><?php echo _('Member Center'); ?></h2>
+		<ul>
+			<li class="mobiledisplay"><h3><?php echo _('Fees'); ?></h3></li>
+			<li class="mobiledisplay"><div class="line"></div></li>
+			<li class="mobile_open02">
+				<a href="javascript:void(0)" class="active"><?php echo _('Purchasing history query'); ?></a>
+				<a href="<?php echo self::url('user', 'exchange') ?>"><?php echo _('P Point consumption query'); ?></a>
+			</li>
+			<li>
+				<?php include 'member_nav.phtml';?>
+				<div id="memberbox_item">
+					<div id="album_tab">
+						<h3><?php echo _('Fees'); ?></h3>
+					</div>
+					<div class="album_info">
+						<ul>
+							<li>
+								<a href="<?php echo self::url('user', 'order') ?>"><p class="title active"><?php echo _('Purchasing history query'); ?></p></a>
+							</li>
+							<li>
+								<a href="<?php echo self::url('user', 'exchange') ?>"><p class="title"><?php echo _('P Point consumption query'); ?></p></a>
+							</li>
+						</ul>
+					</div>
+					<div class="album_all">
+						<div id="table_box">
+						   <table class="footable" data-limit-navigation="5" data-page-size="10">
+								<thead>
+									<tr>
+										<th>
+											<?php echo _('Purchasing date'); ?>
+										</th>
+										<th data-hide="phone">
+											<?php echo _('Purchased items'); ?>
+										</th>
+										<th >
+											<?php echo _('Amount'); ?>
+										</th>
+										<th data-hide="phone">
+											<?php echo _('Payment status'); ?>
+										</th>
+										<th >
+											<?php echo _('Feedback'); ?>
+										</th>
+										<th data-hide="all">
+											<?php echo _('Remarks'); ?>
+										</th>
+									</tr>
+								</thead>
+								<?php 
+								if(!empty($order)){
+									foreach($order as $k => $v){
+									echo '<tbody>
+										<tr>
+											<td>'.$v['inserttime'].'</td>
+											<td>'.$v['assets'].'</td>
+											<td>'.$v['total'].'</td>
+											<td>'.$v['state'].'</td>
+											<td ><a href="'.self::url('user', 'question').'">'._('回報').'</a></span></td>
+											<td>'.$v['memo'].'</td>
+										</tr>
+									</tbody>';
+									}
+								}
+								?>
+								<tfoot>
+									<tr>
+										<td colspan="6">
+											<div class="pagination pagination-centered"></div>
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+<script type="text/javascript">
+$(function(){
+	$('.footable').footable();
+});
+</script>

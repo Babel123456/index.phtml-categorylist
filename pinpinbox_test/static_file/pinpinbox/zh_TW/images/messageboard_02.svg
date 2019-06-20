@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="138" height="36" viewBox="0 0 138 36">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="138" height="36" fill="#00ACC1" rx="5"/>
+        <text fill="#FFF" font-family="MicrosoftJhengHeiBold, Microsoft JhengHei" font-size="16" letter-spacing="5">
+            <tspan x="54" y="24">留言板</tspan>
+        </text>
+        <g transform="translate(23 6)">
+            <circle cx="12" cy="12" r="12" fill="#FFF"/>
+            <g transform="translate(4.8 6)">
+                <g fill="#FFF" stroke="#00ACC1">
+                    <path d="M11.704 10.566a7.056 7.056 0 0 1-3.365.834c-3.48 0-6.3-2.418-6.3-5.4S4.859.6 8.339.6c3.479 0 6.3 2.418 6.3 5.4 0 1.095-.38 2.114-1.034 2.965l.725 1.81c.203.508-.05.766-.569.57l-2.057-.78z"/>
+                    <path d="M3.296 9.966a7.056 7.056 0 0 0 3.365.834c3.48 0 6.3-2.418 6.3-5.4S10.141 0 6.661 0c-3.479 0-6.3 2.418-6.3 5.4 0 1.095.38 2.114 1.034 2.965l-.725 1.81c-.203.508.05.766.569.57l2.057-.78z"/>
+                </g>
+                <circle cx="3.3" cy="5.7" r="1" fill="#00ACC1"/>
+                <circle cx="6.9" cy="5.7" r="1" fill="#00ACC1"/>
+                <circle cx="10.5" cy="5.7" r="1" fill="#00ACC1"/>
+            </g>
+        </g>
+    </g>
+</svg>

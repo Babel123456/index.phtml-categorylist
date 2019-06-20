@@ -1,0 +1,98 @@
+<?php echo $form ?>
+<script>
+    $(window).load(function () {
+        $('#banner_type').on('change', function () {
+            val = $(this).val();
+            $.post('<?php echo self::url('categoryarea_style', 'style_type') ?>', {
+                value: val,
+                <?php if (!empty($_GET[M_CLASS . '_id'])) echo 'id : "' . $_GET[M_CLASS . '_id'] . ',"'    ?>
+            }, function (r) {
+                r = $.parseJSON(r);
+                switch (r.result) {
+                    case 1 :
+                        $('#layout').html(r.data);
+
+                        switch (val) {
+                            case 'creative' :
+                            case 'video' :
+                                $("#creative_id").on('change', function (evt, params) {
+                                }).chosen({width: "50%",});
+                                break;
+                        }
+                        break;
+
+                    default :
+                        formerror(r.message);
+                        break;
+                }
+            });
+        });
+
+        $('#form').validate({
+            rules: {},
+            submitHandler: function () {
+                var banner_type = $('#banner_type').val();
+
+                switch (banner_type) {
+                    case 'creative' :
+                        var banner_type_data = $('#creative_id').val() == null ? null : JSON.stringify($('#creative_id').val());
+                        break;
+
+                    case 'video' :
+                        var url = $('#url').val(),
+                            link = $('#link').val(),
+                            btntext = $('#btntext').val(),
+                            videotext = $('#videotext').val(),
+                            auto = $('input[name="auto"]').prop('checked'),
+                            mute = $('input[name="mute"]').prop('checked'),
+                            repeat = $('input[name="repeat"]').prop('checked'),
+                            banner_type_data = JSON.stringify({
+                                url: url,
+                                link: encodeURI(link),
+                                btntext: btntext,
+                                videotext: videotext,
+                                auto: auto,
+                                mute: mute,
+                                repeat: repeat
+                            });
+                        break;
+
+                    case 'image' :
+                        var banner_type_data = JSON.stringify({
+                            url: $('#url').val(),
+                            btntext : $('#btntext').val(),
+                        });
+                        break;
+                }
+
+                $.post('<?php echo $action?>', {
+                    <?php if ('edit' == $_GET['act']) {?>
+                    <?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+                    <?php }?>
+                    categoryarea_id: $('#categoryarea_id').val(),
+                    banner_type: $('#banner_type').val(),
+                    banner_type_data: banner_type_data,
+                    image: $('#image').val(),
+                    sequence: $('#sequence').val(),
+                    act: $('input[name="act"]:checked').val(),
+                }, function (r) {
+                    r = $.parseJSON(r);
+                    switch (r.result) {
+                        case 0:
+                            formerror(r.message);
+                            break;
+                        case 1:
+                            formconfirm(r);
+                            break;
+                    }
+                });
+            }
+        });
+
+        <?php
+        if ($banner_type == 'creative') {
+            echo '$("#creative_id").on(\'change\', function(evt, params) {}).chosen({width:"50%",});';
+        }
+        ?>
+    });
+</script>

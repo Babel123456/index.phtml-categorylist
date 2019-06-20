@@ -1,0 +1,61 @@
+<!-- 內容頁開始 -->
+<div id="content_big" class="notifications" style="padding:0px 20px;">
+	<div class="row new_nav">
+		<!-- Left bar  -->
+		<div class="col-md-7 tree_box">
+			<ol class="breadcrumb">
+				<?php echo '<li class="title">'._('通知中心').'</li>'; ?>
+			</ol>
+		</div>
+
+		<div class="col-md-5 setting">
+			<span>
+				<a href="javascript:void(0)"></a>
+			</span>
+		</div>
+	</div>
+
+	<div id="tem_content" >
+		<ul class="notice">
+			<?php
+				$timeline = '';
+				foreach ($allnotifications as $k0 => $v0) {
+					if($k0 == 0) {
+						$timeline = (is_null($v0['time'])) ? date('Y-m-d') : date('Y-m-d' , strtotime($v0['time']));
+						echo '<li>
+							<div class="date">'.$timeline.'</div>
+						</li>
+						<li> <div class="line"></div></li>';
+						
+					} else if( date('Y-m-d' , strtotime($v0['time'])) != $timeline) {
+						$timeline = date('Y-m-d' , strtotime($v0['time']));
+						echo '<li>
+							<div class="date">'.$timeline.'</div>
+						</li>
+						<li> <div class="line"></div></li>';
+					}	
+
+					echo '<li class="list">
+						<a href="'.$v0['target_url'].'">
+							<div class="notice_pic">
+									<img src="'.$v0['trigger_user_pic'].'" onerror="this.src=\''.static_file('images/face_sample.svg').'\'" >			
+							</div>
+
+							<div class="notice_info">
+								<p class="info">'.$v0['message'].'</p>
+								<p class="time"><time datetime="'.$v0['time'].'" class="timeago"></time></p>
+							</div>
+
+							<div class="notice_setting">
+								<p></p>
+							</div>
+						</a>
+
+					</li>';
+					
+				}
+
+			?>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+<div id="content">
+	<a id="url" style="display:none;" data-uri="<?php echo $url; ?>"  onclick="clickHandler(this.dataset.uri)" href="javascript:void(0)"></a>
+	<div style="text-align: center; margin-top: 12%;">
+		<a data-uri="<?php echo $url; ?>" onclick="clickHandler(this.dataset.uri)" href="javascript:void(0)">
+			<img src="<?php echo static_file('images/apple.png') ?>">
+		</a>
+		<a data-uri="<?php echo $url; ?>" onclick="clickHandler(this.dataset.uri)" href="javascript:void(0)">
+			<img src="<?php echo static_file('images/google.png') ?>">
+		</a>
+	</div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('#url').trigger('click');
+})
+</script>

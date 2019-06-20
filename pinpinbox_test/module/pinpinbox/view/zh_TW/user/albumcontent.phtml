@@ -1,0 +1,294 @@
+<!-- 內容頁開始 -->
+<div id="album_content">
+    <h2><?php echo _('Member Center'); ?></h2>
+    <ul>
+        <li class="mobiledisplay"><h3><?php echo _('My Album'); ?><span><?php echo _('Space use'); ?>
+                    ：<?php echo $amount; ?></span></h3></li>
+        <li class="mobiledisplay">
+            <div class="line"></div>
+        </li>
+        <li>
+            <?php include('member_nav.phtml'); ?>
+        </li>
+        <li>
+            <div id="album_item">
+                <div id="tem_content">
+                    <div id="adminalbum">
+                        <ul>
+                            <li>
+                                <div id="slide_pic">
+                                    <ul id="links" class="bxslider02" onclick="">
+                                        <?php
+                                        $preview_edit = ($album['user']['user_id'] == $user['user_id'] && count($album['album']['photo']) > 1) ? '<div id="setting_pic"><a id="preview_setting" href="' . self::url('user', 'albumpreview_setting', ['album_id' => $album['album']['album_id']]) . '">' . _('Edit thumbnail preview') . '</a></div>' : null;
+                                        if (!empty($album['album']['preview'])) {
+                                            echo '<li>
+													<span onclick="browseKit_album(\'' . self::url('album', 'show_photo') . '\', {album_id: \'' . $album['album']['album_id'] . '\'})"><img id="img_0" src="' . URL_UPLOAD . getimageresize($album['album']['cover'], 466, 699) . '" width="265px" height="397px" onerror="img_err(0)" /></span>
+													' . $preview_edit . '
+												</li>';
+                                            // foreach ($album['album']['preview'] as $k => $v) {
+                                            // echo '<li><img id="img_'.$k.'" src="'.URL_UPLOAD.getimageresize($v, 466, 699).'" width="265px" height="397px" onerror="img_err('.$k.')" /></li>';
+                                            // }
+                                        }
+                                        ?>
+                                    </ul>
+
+                                    <div id="location">
+                                        <ul>
+                                            <li class="local_name"><p><?php echo $album['album']['location'] ?></p></li>
+                                            <li>
+                                                <div id="vvv">
+                                                    <?php
+                                                    if (empty($album['album']['location'])) {
+                                                        echo '<img style="width:225px; height:128px" src=' . static_file('images/map_else.png') . '></img>';
+                                                    } else {
+                                                        echo '<iframe width="400" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=\'http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=' . $album['album']['location'] . '&z=16&output=embed&t=\'></iframe>';
+                                                    }
+                                                    ?>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <ul id="social_share" class="social-likes social-likes_notext"
+                                                    data-url="<?php echo self::url('album', 'content', ['album_id' => $album['album']['album_id'], 'categoryarea_id' => $album['categoryarea']['categoryarea_id']]) ?>"
+                                                    data-title="<?php echo $album['album']['name']; ?>">
+                                                    <li class="facebook"
+                                                        title="<?php echo _('Share album to Facebook') ?>"></li>
+                                                    <li class="twitter"
+                                                        title="<?php echo _('Share album to twitter') ?>"></li>
+                                                    <li class="plusone"
+                                                        title="<?php echo _('Share album to Google+') ?>"></li>
+                                                    <li class="pinterest"
+                                                        title="<?php echo _('Share album to pinterest') ?>"
+                                                        data-media="<?php echo URL_UPLOAD . $album['album']['cover']; ?>"></li>
+                                                    <li class="line"
+                                                        title="<?php echo _('Share album to Line') ?>"></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="temp_infobox">
+                                    <ul>
+                                        <li><h3><?php echo $album['album']['name'] ?></h3></li>
+                                        <li><p class="by">by <a
+                                                        href="<?php echo Core::get_creative_url($album['user']['user_id']) ?>"><?php echo $album['user']['name'] ?></a>
+                                            </p></li>
+                                        <li>
+                                            <div class="descrip"><?php echo htmlspecialchars_decode($album['album']['description']) ?></div>
+                                        </li>
+                                        <li>
+                                            <div class="line"></div>
+                                        </li>
+                                        <li>
+                                            <p class="float"><i style="margin-right:5px;"
+                                                                class="fa fa-eye"></i><?php echo $album['albumstatistics']['viewed'] ?>
+                                            </p>
+                                            <p class="float"><?php echo ($album['album']['status'] != _('Off the shelves')) ? $album['album']['status'] : null ?></p>
+                                        </li>
+                                        <li>
+                                            <p class="tdtitle"><?php echo _('Establishing time') ?></p>
+                                            <p class="tdtxt"><?php echo $album['album']['inserttime']; ?></p>
+                                        </li>
+                                        <li>
+                                            <p class="tdtitle"><?php echo _('Privacy Setting') ?></p>
+                                            <p class="tdtxt"><?php echo $album['album']['act'] ?></p>
+                                        </li>
+                                        <li>
+                                            <p class="tdtitle"><?php echo _('Categories') ?></p>
+                                            <p class="tdtxt"><?php echo $album['categoryarea']['name'] . '&gt;' . $album['category']['name'] ?></p>
+                                        </li>
+                                        <li>
+                                            <p class="tdtitle"><?php echo _('Pagination') ?></p>
+                                            <p class="tdtxt"><?php echo $album['album']['page'] . _('pages') ?></p>
+                                        </li>
+                                        <li>
+                                            <p class="tdtitle"><?php echo _('Savings conditions') ?></p>
+                                            <p class="tdtxt money"><?php echo $album['album']['point'] ?>P</p>
+                                        </li>
+                                        <li>
+                                            <p class="tdtitle"><?php echo _('Grading') ?></p>
+                                            <p class="tdtxt"><?php echo $album['album']['rating'] ?></p>
+                                        </li>
+                                        <li>
+                                            <p class="tdtitle"><?php echo _('Weather'); ?></p>
+                                            <p class="tdtxt"><img
+                                                        src="<?php echo static_file('images/weather/' . $album['album']['weather'] . '.png') ?>"
+                                                        height="20" width="20"
+                                                        alt=""><?php echo $album['album']['weather'] ?></p>
+                                        </li>
+                                        <li>
+                                            <p class="tdtitle"><?php echo _('Mood'); ?></p>
+                                            <p class="tdtxt"><img
+                                                        src="<?php echo static_file('images/feel/' . $album['album']['mood'] . '.png') ?>"
+                                                        height="20" width="20"
+                                                        alt=""><?php echo $album['album']['mood'] ?></p>
+                                        </li>
+                                        <li>
+                                            <p class="tdtitle"><?php echo _('Background Music'); ?></p>
+                                            <p class="tdtxt"><?php echo empty($album['audio']['name']) ? _('none') : $album['audio']['name'] ?></p>
+                                        </li>
+                                        <li>
+                                            <div class="qrcode"><img
+                                                        src="<?php echo static_file('images/demo/qr01.png'); ?>"
+                                                        height="196" width="196" alt=""></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div id="commet"><?php echo $disqus ?></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="albumedit">
+                        <?php echo $nav_right; ?>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!-- 手機頁面編輯管理 -->
+<div id="admin_mobile">
+    <a href="<?php echo self::url('user', 'albumcontent_setting', ['album_id' => $album['album']['album_id']]) ?>"
+       class="adminmo_btn p1"><?php echo _('Edit info') ?></a>
+    <?php echo $mobile_diy_bit; ?>
+    <a href="javascript:void(0)"
+       onclick="browseKit_album(\'<?php echo self::url('album', 'show_photo') ?>\', {album_id: \'<?php echo $album['album']['album_id'] ?>\'})"
+       class="adminmo_btn p6"><?php echo _('View album') ?></a>
+    <a href="javascript:void(0)" onclick="delete_album()" class="adminmo_btn p3"><?php echo _('Delete') ?></a>
+</div>
+<script>
+    //有連結但圖不存在
+    function img_err(n) {
+        $('.bx-wrapper').css('height', '340px');
+        $('#img_' + n).attr('src', '<?php echo static_file("/images/origin.jpg")?>');
+    };
+
+    function delete_album() {
+        var myConfirm = new jBox('Confirm', {
+            cancelButton: '<?php echo _('No')?>',
+            confirmButton: '<?php echo _('Yes')?>',
+            confirm: function () {
+                block_modal = new jBox('Modal', {
+                    position: {x: 'center', y: 'center'},
+                    width: 150,
+                    height: 50,
+                    closeOnEsc: false,
+                    closeOnClick: false,
+                    closeButton: 'title',
+                    zIndex: 1500,
+                });
+                block_modal.setContent('<span style="padding-left:20px;font-weight:bold;color:#2299DD";font-size:26px;><?php echo _('Deleting...'); ?><img src="<?php echo static_file('images/loading.gif'); ?>"></span>').open();
+
+                $.post('<?php echo self::url('user', 'delete_album')?>', {
+                    album_id: <?php echo $album['album']['album_id']?>,
+                }, function (r) {
+                    block_modal.close();
+                    r = $.parseJSON(r);
+                    if (r.result == 1) {
+                        site_jBox(r, 'success');
+                    } else {
+                        site_jBox(r, 'error');
+                    }
+                });
+            },
+            onCloseComplete: function () {
+                myConfirm.destroy();
+            }
+        }).setContent(
+            '<div class="content">' +
+            '<?php echo _('Are you sure you want to delete?')?><br><br><div class="keypoint"><p>※<?php echo _('Attention')?>※</p><?php echo _('The album cannot be restored after deleted. The settlement and download count of this album will be removed.')?></div>' +
+            '</div>'
+        ).open();
+    }
+
+    function print() {
+        var r = {result: 1, message: '<?php echo _('Coming Soon.')?>'};
+        site_jBox(r);
+    }
+
+    function album_editor() {
+        $.post('<?php echo self::url('user', 'album_editor')?>', {
+            album_id: '<?php echo $album['album']['album_id'];?>',
+        }, function (r) {
+            r = $.parseJSON(r);
+            switch (r.result) {
+                case 1:
+                    location.href = r.redirect;
+                    break;
+                case 2:
+                    _jBox(r, 'albumProcess');
+                    break;
+                default :
+                    _jBox(r, 'error');
+                    break;
+            }
+
+        });
+    }
+
+    $('.descrip').showMore({
+        minheight: 242,
+        buttontxtmore: '﹀',
+        buttontxtless: '︿',
+        buttoncss: 'more_open',
+        animationspeed: 250
+    });
+
+    $(function () {
+        //沒有連結導致slider無法產生時=>append預設圖
+        if ($('.bxslider02').children('li').length < 1) {
+            var default_img = '<li><img src="<?php echo static_file('images/origin.jpg'); ?>" width="265px" height="397px" /></li>';
+            $('.bxslider02').append(default_img);
+        }
+        $('div.descrip').find('a').each(function (k, v) {
+            $(this).attr('target', '_blank');
+        });
+        $('.imagepop').magnificPopup({type: 'image',});
+
+        var auto_mode = ($(".bxslider02").find('li').length > 1) ? true : false;
+        $('.bxslider02').bxSlider({
+            mode: 'horizontal',
+            captions: true,
+            auto: auto_mode,
+            speed: 800,
+        });
+
+        //transfer link
+        $('.descrip').html($('.descrip').html().autoLink({target: "_blank"}));
+    });
+
+    //initialize social
+    $('#social_share').socialLikes({
+        url: '<?php echo self::url('album', 'content', ['album_id' => $album['album']['album_id'], 'categoryarea_id' => $album['categoryarea']['categoryarea_id']])?>',
+        title: '<?php echo _('pinpinbox album sharing')?>',
+        counters: true,
+        singleTitle: 'Share it!',
+    });
+
+    //counter link
+    $('#social_share').on('popup_closed.social-likes', function (event, service) {
+        $(event.currentTarget).socialLikes({forceUpdate: true});
+        var counter = $(event.currentTarget).find('.social-likes__counter_' + service);
+        counter.text(+(counter.text() || 0) + 1).removeClass('social-likes__counter_empty');
+    });
+
+    deeplink.setup({
+        iOS: {
+            appName: "pinpinbox",
+            appId: "<?php echo Core::settings('IOS_APP_ID'); ?>",
+        },
+        android: {
+            appId: "<?php echo Core::settings('ANDROID_APP_URL'); ?>"
+        }
+    });
+
+    function clickHandler(uri) {
+        deeplink.open(uri);
+        return false;
+    }
+
+</script>
+<!-- Line  -->
+<script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411"></script>

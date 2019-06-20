@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+
+    <link type="text/css" href="<?php echo static_file('css/bootstrap.css') ?>" rel="stylesheet">
+    <link type="text/css" href="<?php echo static_file('css/style.css') ?>" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- 關於我 -->
+<div id="crea_content">
+    <div id="crea_in">
+        <div class="tab-container">
+            <div id="tab01" class="tab" style="display: block;">
+                <div class="about_me"><?php echo ($user['description'] == null) ? _('尚未填寫介紹') : $user['description']; ?></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

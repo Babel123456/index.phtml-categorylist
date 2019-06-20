@@ -1,0 +1,162 @@
+</div><!-- id="content" -->
+<script>
+$(function() {
+	//menu 左箭頭
+	$('#menu').prepend('<span></span>').find('span:first').css({
+		'background': 'url("<?php echo static_file('images/arrow_left.png')?>") no-repeat scroll 0 0 rgba(0, 0, 0, 0)',
+		'cursor': 'pointer',
+		'height': '30px',
+		'left': 0,
+		'margin': '4px 0 0 10%',
+		'opacity': 0.5,
+		'position': 'fixed',
+		'width': '30px'
+	}).on('click', function() {
+		var tmp1 = $('#menu-bar');
+		var left = parseInt(tmp1.css('left'), 10);
+		if (left >= 0) {
+			tmp1.stop(true).animate({
+				'left': '+=25px'
+			}, 400, function(){
+				$(this).animate({
+					'left': 0
+				}, 400);
+			});
+		} else {
+			tmp1.stop(true).animate({
+				'left': '+=250px'
+			}, 800, function(){
+				var left = parseInt(tmp1.css('left'), 10);
+				if (left >= 0) {
+					$(this).animate({
+						'left': 0
+					}, 400);
+				}
+			});
+		}
+	}).hover(
+		function() {
+			$('#menu-bar').stop(true).animate({
+				'left': 0
+			}, 1800);
+			$(this).stop(true).animate({
+				'opacity': 1
+			}, 200);
+		}, function() {
+			var tmp1 = $('#menu-bar');
+			var left = parseInt(tmp1.css('left'), 10);
+			tmp1.stop(true);
+			if (left >= 0) {
+				tmp1.animate({
+					'left': 0
+				}, 400);
+			}
+			$(this).stop(true).animate({
+				'opacity': 0.5
+			}, 200);
+		}
+	);
+	
+	//menu 右箭頭
+	$('#menu').append('<span></span>').find('span:last').css({
+		'background': 'url("<?php echo static_file('images/arrow_right.png')?>") no-repeat scroll 0 0 rgba(0, 0, 0, 0)',
+		'cursor': 'pointer',
+		'height': '30px',
+		'margin': '4px 10% 0 0',
+		'opacity': 0.5,
+		'position': 'fixed',
+		'right': 0,
+		'width': '30px'
+	}).on('click', function() {
+		var tmp1 = $('#menu-bar');
+		var left_max = parseInt($('#menu-visible').width(), 10) - parseInt(tmp1.width(), 10), left_max = left_max < 0 ? left_max : 0;
+		var left = parseInt(tmp1.css('left'), 10);
+		if (left <= left_max) {
+			tmp1.stop(true).animate({
+				'left': '-=25px'
+			}, 400, function(){
+				$(this).animate({
+					'left': left_max
+				}, 400);
+			});
+		} else {
+			tmp1.stop(true).animate({
+				'left': '-=250px'
+			}, 800, function(){
+				var left = parseInt(tmp1.css('left'), 10);
+				if (left <= left_max) {
+					$(this).animate({
+						'left': left_max
+					}, 400);
+				}
+			});
+		}
+	}).hover(
+		function() {
+			var tmp1 = $('#menu-bar');
+			var left_max = parseInt($('#menu-visible').width(), 10) - parseInt(tmp1.width(), 10), left_max = left_max < 0 ? left_max : 0;
+			tmp1.stop(true).animate({
+				'left': left_max
+			}, 1800);
+			$(this).stop(true).animate({
+				'opacity': 1
+			}, 200);
+		}, function() {
+			var tmp1 = $('#menu-bar');
+			var left_max = parseInt($('#menu-visible').width(), 10) - parseInt(tmp1.width(), 10), left_max = left_max < 0 ? left_max : 0;
+			var left = parseInt(tmp1.css('left'), 10);
+			tmp1.stop(true);
+			if (left <= left_max) {
+				tmp1.animate({
+					'left': left_max
+				}, 400);
+			}
+			$(this).stop(true).animate({
+				'opacity': 0.5
+			}, 200);
+		}
+	);
+
+	//選單動畫, 不使用 slideToggle 是因為當快速移動鼠標時, 開關的判定會失誤
+	$('#menu .current').hover(
+		function() {
+			//由於 overflow: hidden 的關係, 這裡要即時變更高度, 讓展開的選單得以出現
+			$('#menu-visible').stop(true).animate({
+				'height': parseInt($('#menu').height(), 10) + parseInt($(this).find('ul').height(), 10)
+			});
+			
+			$(this).find('ul').stop(true).slideDown(250);
+		}, function() {
+			//這裡如果在 slideUp complete 時再變更 #menu-visible 的 height, 會造成在選單上平移時, 下拉選單會開啟又閉合的時間差問題, 因此分別寫就好
+			$(this).find('ul').stop(true).slideUp(200);
+			
+			//恢復為繼承高度; 變更 #menu-visible 的 height 採用 animate 是因為要體現下拉選單關閉的效果, 不然看起來就是直接消失, 以及能 stop
+			$('#menu-visible').stop(true).animate({
+				'height': parseInt($('#menu').height(), 10)
+			});
+		}
+	);
+
+	//#menu-bar 的寬
+	//.current 的寬
+	var menu_width = 0;
+	$('#menu-visible .current').each(function(k1, v1){
+		//使 width 固定, 不隨子選單變動
+		$(this).css('width', $(this).width());
+		
+		menu_width += parseInt($(this).width(), 10);
+	});
+	$('#menu-bar').css('width', menu_width);
+
+	//#menu-visible .current ul li 的寬、高
+	$('#menu-visible .current ul').each(function(k1, v1){
+		var obj = $(this);
+		var item = obj.find('li').length;
+		var width = (obj.parent().width() >= obj.width())? obj.parent().width() : obj.width();
+		obj.css({
+			height: parseInt(item * obj.find('li').height(), 10),
+			width: width
+		});
+	});
+});
+</script>

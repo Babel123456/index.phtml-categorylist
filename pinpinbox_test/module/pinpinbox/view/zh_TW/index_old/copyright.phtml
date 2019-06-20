@@ -1,0 +1,40 @@
+<?php 
+$href = self::url('user', 'question');
+$onclick = null;
+if (empty(self::user_get())) {
+	$href = 'javascript:void(0)';
+	$onclick = 'onclick="var r = {result: 0, message: \''._('Please login first.').'\', redirect: \''.self::url('user', 'login', array('redirect'=>self::url('user', 'question'))).'\'};site_jBox(r);"';
+}
+?>
+
+<div id="album_content">	
+	<ul>
+		<li class="mobiledisplay"><h3><?php echo _('Copyright statement'); ?></h3></li>
+		<?php include('index_nav.phtml') ;?>
+		<li>
+			<div id="memberbox_item">
+				<div id="album_tab">
+				  <h3><?php echo _('Copyright statement'); ?></h3>					
+				</div>
+				<div class="album_all">
+					<div id="term_content"><?php echo $copyright?></div>
+				</div>
+			</div>					
+		</li>
+	</ul>
+</div>
+<script>
+$(function() {
+	$('a[name=copyright]').addClass('active');
+
+	$('#album_category ul li ul').hide();
+	$('#album_category > ul > li > a').click(function() {
+		$(this).next().slideToggle('normal');
+	});
+});
+
+$('.open_item').on('click', function(event) {
+	event.stopPropagation();
+	$('.open_ul_mobile').slideToggle();
+});
+</script>

@@ -1,0 +1,60 @@
+<!-- 共同編輯區塊開始 20180820 -->
+<div class="menu03">
+	<div id="more_share_in">
+		<ul>
+			<li class="search_top">
+				<div class="search_top1">
+					<div class="search_box_header"><?php echo _('搜尋共同編輯創作者') ?></div>
+					<div class="search_box">
+						<div class="input-group">
+							<input type="text" class="form-control" id="searchkey" name="searchkey" value="" placeholder="輸入名稱">
+							<div class="input-group-btn">
+								<button class="btn btn-default" type="button" onclick="_search()">
+									<i class="fa fa-search"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="search_qrcode"><i name="likes" class="fa fa-qrcode fa-2x"></i>
+					</div>
+				</div>
+			</li>
+			<li class="search_result">
+				<div class="product_scroll1" id="creative_search_list">
+					<!-- search result -->
+				</div>
+			</li>
+			<li class="invited_item_list">
+
+                <div class="product_scroll2" id="creative_cooperate_list">
+					<?php
+					foreach ($cooperation_list as $k0 => $v0) {
+						$viewer_option = ($v0['identity'] == 'viewer') ? 'selected="selected"' : null ;
+						$editor_option = ($v0['identity'] == 'editor') ? 'selected="selected"' : null ;
+						$approver_option = ($v0['identity'] == 'approver') ? 'selected="selected"' : null ;
+						echo '<div class="invited_item" id="invited_item_' . $v0['user_id'] . '">
+								<div class="delete_invited" onclick="delete_invited_item(' . $v0['user_id'] . ', \'' . $v0['name'] . '\');" >X</div>
+								<div class="invited_face"><img src="' . $v0['cover'] . '" alt="' . $v0['name'] . '" onerror="this.src=\'' . static_file('images/face_sample.png') . '\'  "></div>
+								<div class="invited_info">
+									<ul>
+										<li class="invited_name">' . $v0['name'] . '</li>
+										<li>
+											<div class="dropdown">
+												<select id="control_box_user_'.$v0['user_id'].'" data-user_id="'.$v0['user_id'].'" data-origin_identity="'.$v0['identity'].'">
+													<option value="viewer" '.$viewer_option.'>瀏覽</option>
+													<option value="editor" '.$editor_option.'>共用</option>
+													<option value="approver" '.$approver_option.'>副管理</option>
+												</select>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>';
+					}
+					?>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- 共同編輯區塊結束 -->

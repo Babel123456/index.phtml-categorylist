@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="420px" height="45px" viewBox="0 0 420 45" enable-background="new 0 0 420 45" xml:space="preserve">
+<g>
+	<g transform="matrix(1 0 0 -1 0 45)">
+		<g>
+			<path id="a" fill="#FFFFFF" d="M5,0h410c2.762,0,5,2.238,5,5v35c0,2.761-2.238,5-5,5H5c-2.761,0-5-2.239-5-5V5
+				C0,2.238,2.239,0,5,0z"/>
+		</g>
+		<path fill="none" stroke="#00ACC1" d="M5.5,0.5h409c2.762,0,5,2.238,5,5v34c0,2.761-2.238,5-5,5H5.5c-2.761,0-5-2.239-5-5v-34
+			C0.5,2.738,2.739,0.5,5.5,0.5z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 176.7241 30)" fill="#0F8399" font-family="MicrosoftJhengHeiBold, Microsoft JhengHei" font-size="16" font-weight="bold" letter-spacing="1">開始發佈</text>
+</g>
+</svg>

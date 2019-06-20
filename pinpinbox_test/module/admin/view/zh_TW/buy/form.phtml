@@ -1,0 +1,85 @@
+<?php echo $form?>
+<script>
+$(function() {
+	$('#form').validate({
+		rules: {},
+		submitHandler: function() {
+			var platform, assets, assets_item, currency;
+			if ('<?php echo $_GET['act']?>' == 'edit') {
+				platform = $('#platform').val();
+				assets = $('#assets').val();
+				assets_item = '<?php echo $assets_item?>';
+				currency = $('#currency').val();
+			} else {
+				platform = $('input[name="platform"]:checked').val();
+				assets = $('input[name="assets"]:checked').val();
+				switch (assets) {
+					case 'usergrade':
+						assets_item = $('input[name="assets_item_usergrade"]:checked').val();
+						break;
+	
+					case 'userpoint':
+						assets_item = $('input[name="assets_item_userpoint"]:checked').val();
+						break;
+	
+					default:
+						formerror('<?php echo _('Unknow case of assets')?>');
+						return;
+						break;
+				}
+				currency = $('input[name="currency"]:checked').val();
+			}
+			if (!platform) {
+				formerror('<?php echo _('Please check the [Platform].')?>');
+				return;
+			}
+			if (!assets) {
+				formerror('<?php echo _('Please check the [Assets].')?>');
+				return;
+			}
+			if (!assets_item) {
+				formerror('<?php echo _('Please check the [Assets Item].')?>');
+				return;
+			}
+			if (!currency) {
+				formerror('<?php echo _('Please check the [Currency].')?>');
+				return;
+			}
+			
+			$.post('<?php echo $action?>', {
+				//form
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				platform: platform,
+				platform_flag: $('#platform_flag').val(),
+				assets: assets,
+				assets_item: assets_item,
+				total: $('#total').val(),
+				currency: currency,
+				obtain: $('#obtain').val(),
+				sequence: $('#sequence').val(),
+				act: $('input[name="act"]:checked').val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:formconfirm(r);break;
+				}
+			});
+		}
+	});
+
+	assets_item_toggle();
+
+	$('input[name="assets"]').on('click', function() {
+		assets_item_toggle();
+	});
+});
+
+function assets_item_toggle() {
+	$('tr[id^="assets_item-tr"]').hide();
+	var assets = '<?php echo $_GET['act']?>' == 'edit'? $('#assets').val() : $('input[name="assets"]:checked').val();
+	$('tr[id="assets_item-tr-' + assets + '"]').show();
+}
+</script>

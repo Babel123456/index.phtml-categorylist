@@ -1,0 +1,103 @@
+<div id="media_upload_box" class="media_upload">
+	<div class="mask common" id="media_close" data-act="set_close"></div>
+	<div id="media_set_in">
+		<div id="media_enter"><a onclick="$('#media_upload_enter').trigger('submit');" href="javascript:void(0)"><?php echo _('確定'); ?></a></div>
+		<header><?php echo _('新增一頁影片'); ?></header>
+		<div id="media_more_tab">
+			<div id="media_top_p1" class="tabs active">
+				<form id="media_upload_enter" action="javascript:void(0)">
+					<div id="media_type_tab">
+						<div class="out_content">
+							<div class="media_info_box">
+								<h3><?php echo _('資訊設定'); ?></h3>
+							</div>
+							<ul>
+								<li>
+									<div class="text_left"><?php echo _('地點'); ?></div>
+									<div class="text_right"><input type="text" class="media_info_loaction" placeholder="<?php echo _('地點'); ?>" maxlength="64"></div>
+								</li>
+								<li>
+									<div class="text_left"><?php echo _('URL 1'); ?></div>
+									<div class="text_right">
+										<input type="text" class="media1_InfoUrlName" placeholder="<?php echo _('連結名稱'); ?>" maxlength="32">
+										<input type="url" class="media1_InfoUrl" placeholder="http://">
+									</div>
+								</li>
+								<li>
+									<div class="text_left"><?php echo _('URL 2'); ?></div>
+									<div class="text_right">
+										<input type="text" class="media2_InfoUrlName" placeholder="<?php echo _('連結名稱'); ?>" maxlength="32">
+										<input type="url" class="media2_InfoUrl" placeholder="http://">
+									</div>
+								</li>
+								<li>
+									<div class="text_left"><?php echo _('描述'); ?></div>
+									<div class="text_right"><textarea class="media_info_description" id="" cols="20" rows="4" class="info03"></textarea></div>
+								</li>
+							</ul>
+							<div class="line"></div>
+						</div>
+						<div class="tab_content ">
+							<div id="" class="type_tabs">
+								<h3><?php echo _('影片設定'); ?></h3>
+								<ul>
+									<li>
+										<label class="film_label">
+											<input type="radio" name="add_media_group" class="triggervideo common r_media_embed" data-rel="media_embed" data-act="triggervideo" />
+											<?php echo _('URL'); ?>
+										</label>
+										<label class="film_label">
+											<input type="radio" name="add_media_group" class="triggervideo common r_media_upload" data-rel="media_upload" data-act="triggervideo"/>
+											<?php echo _('上傳影片'); ?>
+										</label>
+										<span class="fbVideoTips"> <?php echo _('如何嵌入Facebook影片?') ?>
+											<a href="javascript:void(0)" class="vidoetips"><img src="<?php echo static_file('images/question.png') ?>" height="20" width="20"></a>
+										</span>
+									</li>
+									<li class="media_embed film_content">
+										<div style="height:30px;">
+											<div class="text_left"><?php echo _('輸入網址'); ?></div>
+											<div class="text_right">
+												<input id="add_media_url" type="url" placeholder="支援 Youtube / Vimeo / Facebook / Dailymotion 影片" style="margin-bottom:5px;width:360px;">
+												<div id="add_media_area"></div>
+											</div>
+										</div>
+									</li>
+									<li class="media_upload film_content">
+										<div class="text_left">
+                                            <input type="button" class="media_upload_btn" onclick="$('#fileupload_add_media').trigger('click');" value="<?php echo _('Select record'); ?>"><br>
+                                            <input type="button" class="media_upload_btn" onclick="$('#fileupload_add_cover').trigger('click');" value="<?php echo _('選擇封面'); ?>" style="display:none;margin-top:5px;" name="UploadCoverBtn">
+                                        </div>
+										<div class="text_right" name="media_filename"></div>
+										<div>
+											<input id="fileupload_add_media" class="fileupload common" style="display:none;" type="file" name="files[]" data-url="file_upload" data-photo_type="video" data-num="0" data-act="fileupload" data-mediavideo="media" multiple accept="video/mp4" />
+											<input id="fileupload_add_cover" class="fileupload common" style="display:none;" type="file" name="files[]" data-url="file_upload" data-photo_type="video_cover" data-num="0" data-act="fileupload" data-mediavideo="media" accept="image/jpeg,image/png"/>
+										</div>
+										<br>
+										<div id="add_media_area">
+											<video id="media_demo_file" controls  loop muted preload="auto" width="320" height="240" data-mejsoptions='{"alwaysShowControls": true}'>
+												<source class="mp4" type="video/mp4" src="" />
+												<?php echo _('很抱歉！您的瀏覽器不支援 HTML5 Video '); ?> 
+											</video> 
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$('.vidoetips').on('click', function(){
+	var box = new jBox('Modal', {
+		closeButton: 'title',
+		delayOpen: 300,
+		maxWidth: 600,
+		minWidth: 100,
+	}).setContent('<div class="content"><p class="title">如何嵌入Facebook影片?</p><p style="margin:5px 0px;">右鍵點選影片畫面>>選取「顯示影片網址」>> 複製網址 </p></div>').open();
+
+})
+</script>

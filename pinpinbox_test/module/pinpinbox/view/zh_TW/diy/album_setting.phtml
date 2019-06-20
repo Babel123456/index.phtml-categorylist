@@ -1,0 +1,95 @@
+<div id="more_setting_box" class="album_setting">
+	<div class="mask common" id="set_close" data-act="set_close"></div>
+	<div id="more_set_in">		
+		<div id="more_enter"><a onclick="$('#album_enter').trigger('click');" href="javascript:void(0)" ><?php echo _('儲存') ?></a></div>
+		<header><?php echo _('相本進階設定') ?></header>
+		<div id="more_tab">
+			<ul class="etabs">
+				<li class="active"><a href="#top_p2"><?php echo _('音效設定') ?></a></li>
+				<li ><a href="#top_p3"><?php echo _('翻頁設定') ?> </a></li>
+			</ul>
+			<form id="album_form_enter" action="javascript:void(0)" novalidate>
+				<!--音效設定開始-->
+				<div id="top_p2" class="tabs">
+					<div id="music_setting">
+						<ul>
+							<li>
+								<label><input type="radio" name="audio_mode" value="none" class="triggermusic01 common" data-act="triggermusic01" data-rel="nomusic" /><?php echo _('無音樂'); ?></label>
+							</li>
+							<li class="line"></li>
+							<li>
+								<label><input type="radio" name="audio_mode" value="singular" class="triggermusic01 common" data-act="triggermusic01" data-rel="musicsingle" /><?php echo _('單首播放'); ?></label>
+							</li>
+							<li class="music_content musicsingle">
+								<ul>
+									<li>
+										<label><input type="radio" name="singular_mode" value="system" class="triggersingle common" data-act="triggersingle" data-rel="single01"><?php echo _('使用預設音樂'); ?></label>
+									</li>
+									<!-- 系統音樂開始 -->
+									<li class="music_content02 single01">
+										<div class="musicdown">
+											<select name="singular" class="music_album">
+												<?php
+													$audio_checked = ($album['audio_mode']=='singular') ? $album['audio_target'] : null;
+													foreach($audio as $k0 => $v0) {
+														echo ($v0['audio_id'] == $audio_checked) ? '<option data-audio_id="'.$v0['audio_id'].'" value="'.URL_STATIC_FILE.$v0['file'].'" selected="selected">'.$v0['name'].'</option>' : '<option data-audio_id="'.$v0['audio_id'].'" value="'.URL_STATIC_FILE.$v0['file'].'">'.$v0['name'].'</option>';
+													}
+												?>
+											</select>
+										</div>
+										<label><input type="checkbox" name="system_repeat" class="repeat" value="singular_repeat" <?php echo $checked['singular'] ?>><?php echo _('重複播放') ?></label>
+										<div style="clear:both;"></div><br>
+										<div class="film_content">
+											<div id="singular_audio_area">
+												<audio controls id="audio_demo_singular_system">
+													<source src="<?php echo ($album['audio_mode']=='singular') ? $audio_default['singular']['src1'] : null ?>" type="audio/mpeg">Your browser does not support the audio element.
+												</audio> 
+											</div>
+										</div>
+									</li>
+									<!-- 系統音樂結束 -->
+									<li>
+										<label><input type="radio" name="singular_mode" value="file" class="triggersingle common" data-act="triggersingle" data-rel="single02"><?php echo _('自行上傳'); ?></label>											
+									</li>
+									<!-- 上傳音樂開始 -->
+									<li class="music_content02 single02">
+										<div class="music_upload">
+											<div class="inputname music01" name="audio_name_singular" onclick="$('#singular_fileupload').trigger('click');" data-output_name="<?php echo ($album['audio_mode']=='singular') ? $audio_default['singular']['target'] : null ; ?>"><?php echo _('選擇音樂') ?>...</div>
+											<div class="upload" onclick="$('#singular_fileupload').trigger('click');"></div>
+										</div>
+										<label><input type="checkbox"  name="file_repeat" class="repeat" value="singular_repeat" <?php echo $checked['singular'] ?>><?php echo _('重複播放') ?></label>
+										<div style="clear:both;"></div>
+										<div class="film_content">
+											<input id="singular_fileupload" class="fileupload common" style="display:none;" type="file" name="files[]" data-url="file_upload" data-photo_type="audio" data-num="singular" data-act="fileupload" multiple accept="audio/mp3" />
+											<div id="audio_area">
+												<audio controls id="audio_demo_singular">
+													<source src="<?php echo ($album['audio_mode']=='singular') ? $audio_default['singular']['src2'] : null ;?>" type="audio/mpeg">Your browser does not support the audio element.
+												</audio> 
+											</div>
+										</div>
+									</li>
+									<!-- 上傳音樂結束 -->
+								</ul>
+							</li>
+							<li class="line"></li>
+							<li>
+								<label><input type="radio" name="audio_mode" value="plural" class="triggermusic01 common" data-act="triggermusic01" data-rel="musicmulti" /><?php echo _('設定多首') ?></label>
+							</li>	
+							<li class="music_content musicmulti">
+								<div id="musicmulti_box"></div>
+							</li>
+						</ul>
+					</div>	
+				</div>
+				<!--音效設定結束-->
+				<!--自動翻頁開始-->
+				<div id="top_p3" class="tabs">
+					<div id="tips"><?php echo _('※翻頁效果僅呈現於APP') ?></div>
+					<div id="page_turn"></div>
+				</div>		
+				<!--自動翻頁結束-->
+				<input type="submit" id="album_enter" style="display:none;">
+			</form>
+		</div>
+	</div>	
+</div>

@@ -1,0 +1,102 @@
+<?php echo $form?>
+<script>
+$(window).load(function(){
+	$("#form").validate({
+		rules: {
+			<?php if ('add' == $_GET['act']) {?>
+			level: 'required',
+			<?php }?>
+			name: 'required'
+		},
+		submitHandler: function() {
+			$.post('<?php echo $action?>', {
+				<?php if ('add' == $_GET['act']) {?>
+				level: $('#level').val(),
+				up: $('#up').val(),
+				<?php }?>
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				name: $('#name').val(),
+				act: $('input[name="act"]:checked').val(),
+				sequence: $('#sequence').val()
+			}, function(response){
+				response = $.parseJSON(response);
+				var result = response.result, message = response.message, redirect = response.redirect;
+				if (result) {
+					location.href = confirm(message)? redirect : location.href;
+				} else {
+					alert(message);
+				}
+			});
+		}
+	});
+	
+	<?php if ('edit' == $_GET['act']) {?>
+	jQuery('#jqgrid').jqGrid({
+		caption: '<?php echo $this->get_adminmenu_name_by_class('newsarea_news')?>',
+	   	url: '<?php echo self::url('newsarea_news', 'json', array('newsarea_id'=>$_GET['newsarea_id']))?>',
+	   	mtype: 'GET',
+		datatype: 'json',
+	   	colNames: ['newsarea_news_id', 'newsarea_id', 'news_id', 'sequence', 'modifytime', 'modifyname'],
+	   	colModel: [
+			{name:'newsarea_news_id', index:'newsarea_news.newsarea_news_id', width:2, align:'right'},
+	   		{name:'newsarea_id', index:'newsarea_news.newsarea_id', width:3},
+	   		{name:'news_id', index:'newsarea_news.news_id', width:3},
+	   		{name:'sequence', index:'newsarea_news.sequence', width:2, align:'right', editable:true, editrules:{integer:true, minValue:0, maxValue:255}},
+	   		{name:'modifytime', index:'newsarea_news.modifytime', width:3, align:'center'},
+	   		{name:'modifyname', index:'newsarea_news.modifyadmin_id', width:2, align:'center'}
+	   	],
+	   	rowNum: 20,
+	   	rowList: [20,50,100],
+	    autowidth: true,
+	    height: 'auto',
+	   	pager: '#pjqgrid',
+	   	sortname: 'newsarea_news.modifytime',
+	   	sortorder: 'desc',
+	   	viewrecords: true,
+	    gridview: true,
+	    gridComplete: function () {
+	    },
+	    cellEdit: true,
+	    cellurl: '<?php echo self::url('newsarea_news', 'jqgrid_edit')?>',
+	    beforeSubmitCell: function (id, celname, value, iRow, iCol) {
+	    	var ret = jQuery('#jqgrid').jqGrid('getRowData', id);
+	    	return {'newsarea_news_id': ret.newsarea_news_id, 'celname': celname, 'value': value};
+	    }
+	});
+	/*
+	 * [Searching -> Toolbar Searching]
+	 * searchOnEnter: 是否需要按 Enter 進行搜尋
+	 */
+	jQuery('#jqgrid').jqGrid('filterToolbar', {stringResult: true, searchOnEnter: true});
+	jQuery('#jqgrid').jqGrid('navGrid', '#pjqgrid', {
+		search: false,
+		addfunc: function () {
+			location.href = '<?php echo self::url('newsarea_news', 'form', array('act'=>'add', 'newsarea_id'=>$_GET['newsarea_id']))?>';
+		},
+		editfunc: function (id) {
+			var ret = jQuery('#jqgrid').jqGrid('getRowData', id);
+			location.href = '<?php echo self::url('newsarea_news', 'form', array('act'=>'edit'))?>&newsarea_news_id='+ret.newsarea_news_id;
+		},
+		delfunc: function (id) {
+			if (confirm('<?php echo _('Are you sure to delete it?')?>') && id) {
+				var ret = jQuery('#jqgrid').jqGrid('getRowData', id);
+				$.post('<?php echo self::url('newsarea_news', 'delete')?>', {
+					newsarea_news_id: ret.newsarea_news_id
+				}, function(response) {
+					var response = $.parseJSON(response);
+					var result = response.result, message = response.message;
+					if (result) {
+						jQuery('#jqgrid').jqGrid('delRowData', id);
+						alert(message);
+					} else {
+						alert(message);
+					}
+				});
+			}
+		}
+	});
+	<?php }?>
+});
+</script>

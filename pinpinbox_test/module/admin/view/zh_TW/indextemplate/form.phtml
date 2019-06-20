@@ -1,0 +1,77 @@
+<?php echo $form?>
+<script>
+
+function add_to_display(obj){
+	var [template_id ,	template_cover_src	] = [ $(obj).data('template_id'), $(obj).data('cover_src')	];
+	$('ul#sort li').each(function(){
+		var _this = $(this);
+		if(_this.data('status') != 'set'){
+			_this.data({'status':'set', 'template_id': template_id}).children('img').attr('src', template_cover_src);
+			return false;
+		}
+	})
+}
+
+$(window).load(function() {
+	$( "#sort" ).sortable();
+
+	$( "#sort li").on('dblclick', function(){
+		$(this).data({'status': 'unset'}).children('img').attr('src', '');
+	})
+
+	$('#form').validate({
+		rules: {},
+		submitHandler: function() {
+			var exhibit = [];
+			$('ul#sort li').each(function(){ if($(this).data('status') == 'set'){exhibit.push($(this).data('template_id'));}});
+			if(exhibit.length < 4) {			
+				alert('請至少選擇四組模板');
+			} else {
+				$.post('<?php echo $action?>', {
+					<?php if ('edit' == $_GET['act']) {?>
+					<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+					<?php }?>
+					name: $('#name').val(),
+					exhibit :  JSON.stringify(exhibit),
+					sequence: $('#sequence').val(),
+					act: $('input[name="act"]:checked').val(),
+				}, function(r) {
+					r = $.parseJSON(r);
+					switch (r.result) {
+						case 0:formerror(r.message);break;
+						case 1:formconfirm(r);break;
+					}
+				});
+			}
+		}
+	});
+	
+	//Fetch album info
+	$('#search_template').on('blur', function(){
+			$.post('<?php echo self::url('indextemplate', 'template_search') ?>' ,{
+				<?php if ('edit' == $_GET['act']) {?>
+				<?php echo M_CLASS?>_id: $('#<?php echo M_CLASS?>_id').val(),
+				<?php }?>
+				template_id: $(this).val(),
+			}, function(r) {
+				r = $.parseJSON(r);
+				switch (r.result) {
+					case 0:formerror(r.message);break;
+					case 1:
+						if($('#template_show').length < 1) { $('#search_template').parent().append('<div id="template_show"></div>');	}
+
+						var data = $.parseJSON(r.data),
+							obj =  `<p>模板名稱 : ${data.template}</p><p>作者名稱 : ${data.user}</p>
+									<p><img width="220" height="330" src="${data.cover}"></p>
+									<p><a onclick="add_to_display(this)" href="javascript:void(0)" data-template_id="${data.template_id}" data-cover_src="${data.cover}">加入展示</p>`;
+						$('#template_show').html(obj);
+						break;
+				}
+			});
+	}).on('keypress', function(e){
+		if(e.keyCode == 13) {$(this).blur();return false;}
+	});
+
+
+});
+</script>

@@ -1,0 +1,31 @@
+<div id="album_content">
+	<ul>
+		<li class="mobiledisplay"><h3><?php echo _('Privacy terms.'); ?></h3></li>
+		<?php include('index_nav.phtml') ;?>
+		<li>
+			<div id="memberbox_item">
+				<div id="album_tab">
+				  <h3><?php echo _('Privacy terms.'); ?></h3>					
+				</div>
+				<div class="album_all">
+					<div id="term_content"><?php echo $privacy?></div>
+				</div>
+			</div>					
+		</li>
+	</ul>
+</div>
+<script>
+$(function() {
+	$('a[name=privacy]').addClass('active');
+
+	$('#album_category ul li ul').hide();
+	$('#album_category > ul > li > a').click(function() {
+		$(this).next().slideToggle('normal');
+	});
+});
+
+$('.open_item').on('click', function(event) {
+	event.stopPropagation();
+	$('.open_ul_mobile').slideToggle();
+});
+</script>

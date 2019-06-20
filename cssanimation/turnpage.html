@@ -1,0 +1,40 @@
+<div class="centered">
+  <div class="book-bg">
+    <div class="book-cover"></div>
+  </div>
+</div>
+<style>
+.centered{
+  position:absolute;
+  top:50%;
+  left:50%;
+  trasform:translate(-50%,-50%); 
+}
+
+.book-bg{
+  position:relative;
+  width:200px;
+  height:192px;
+  background:url('https://image.ibb.co/mCjO00/400x577page.jpg') no-repeat;
+  background-size: contain;
+  transform-style:preserve-3d;
+  /*控制 3d 透視的景深 數字越小則拉伸的狀況越誇張*/
+  perspective:600px;
+}
+
+.book-cover{
+  position:absolute;
+  background:url('https://image.ibb.co/irG0DL/book-cover.jpg') no-repeat;
+  background-size: contain;
+  width:100%;
+  height:100%;
+  /*將起始點設定在書背上*/
+  transform-origin:0 50%;
+  transition:all .3s ease ;
+}
+
+/*滑入書封面時 做出翻轉書皮的動作*/
+.book-bg:hover .book-cover{
+  transform: rotateY(-60deg);
+}
+</style>

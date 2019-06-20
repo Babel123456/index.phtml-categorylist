@@ -1,0 +1,94 @@
+<?php echo $html_highcharts?>
+<?php echo $html_jqgrid?>
+<script>
+$(window).load(function(){
+	//圖表
+	$('#highcharts').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: '<?php echo $this->get_adminmenu_name_by_class(M_CLASS)?>'
+        },
+        subtitle: {
+        },
+        xAxis: {
+            categories: [<?php if (!empty($x)) echo "'".implode("','", str_replace(date('Y-'), '', $x))."'"?>]
+        },
+        yAxis: {
+        },
+        tooltip: {
+        	crosshairs: true,
+        	shared: true
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: true
+            }
+        },
+        series: <?php echo $series?>
+	});
+});
+
+jQuery('#jqgrid').jqGrid({
+	caption: '<?php echo $this->get_adminmenu_name_by_class(M_CLASS)?>',
+   	url: '<?php echo self::url(M_CLASS, 'json')?>',
+   	mtype: 'GET',
+	datatype: "json",
+   	colNames: ['sitearea_id', 'name', 'modifytime', 'modifyname'],
+   	colModel: [
+   		{name:'sitearea_id', index:'sa.sitearea_id', width:30},
+   		{name:'name', index:'sa.name', width:50},
+   		{name:'modifytime', index:'sa.modifytime', width:20, align:'center'},
+   		{name:'modifyname', index:'a.name', width:15, align:'center'}
+   	],
+   	rowNum: 20,
+   	rowList: [20,50,100],
+    autowidth: true,
+    height: 'auto',
+   	pager: '#pjqgrid',
+   	sortname: 'modifytime',
+   	sortorder: 'desc',
+   	viewrecords: true,
+    gridview: true
+});
+
+jQuery('#jqgrid').jqGrid('filterToolbar', {stringResult: true, searchOnEnter: true});
+
+jQuery('#jqgrid').jqGrid('navGrid', '#pjqgrid', {
+	search: false,
+	addfunc: function () {
+		location.href = '<?php echo self::url(M_CLASS, 'form', array('act' => 'add'))?>';
+	},
+	editfunc: function (id) {
+		var ret = jQuery("#jqgrid").jqGrid('getRowData', id);
+
+		location.href = '<?php echo self::url(M_CLASS, 'form', array('act' => 'edit'))?>&sitearea_id='+ret.sitearea_id;
+	},
+	delfunc: function (id) {
+		if (confirm('<?php echo _('Are you sure to delete it?')?>') && id) {
+			var ret = jQuery("#jqgrid").jqGrid('getRowData', id);
+			
+			$.post('<?php echo self::url(M_CLASS, 'delete')?>', {
+				sitearea_id: ret.sitearea_id
+			}, function(response){
+				response = $.parseJSON(response);
+
+				var result = response.result;
+				var message = response.message;
+				
+				if (result) {
+					jQuery("#jqgrid").jqGrid('delRowData', id);
+					
+					alert(message);
+				} else {
+					alert(message);
+				}
+			});
+		}
+	}
+});
+</script>
