@@ -236,20 +236,23 @@
 		position: relativ;
 		width: 360px;
 		height: 96px;
-		@include breakpoint(max-width $screen_width1200){
+		@include breakpoint(max-width $screen_width1600){
   	      //width: 18.75%;
-		  width: 32%;
+		  //width: 32%;
+		  width: 24%;
   	    }
   	    @include breakpoint(max-width $screen_width768){
 		  height: 64px;
   	    }
   	    @include breakpoint(max-width $screen_width500){
 		  height: 48px;
-		  @include width-max-content;
-		  padding: 0 32px;
+		  //@include width-max-content;
+		  //padding: 0 32px;
+		  padding: 0 16px;
   	    }
 		@include breakpoint(max-width $screen_width400){
-		  padding: 0 16px;
+		  //padding: 0 16px;
+		  @include width-max-content;
 		}
 		&:nth-child(2){
 		  @include breakpoint(max-width $screen_width768){
@@ -257,11 +260,12 @@
   	      }
 		}
       }
-	  &>div:nth-child(2){
-	    border-left: $border_width $border_style $grey_color2;
-		border-right: $border_width $border_style $grey_color2;
+	  
+	  &>div:not(:last-child){
+	    border-right: $border_width $border_style $grey_color2;
 	  }
-	  .pin_num_area, .work_num_area, .creator_num_area{
+	  
+	  .view_num_area, .pin_num_area, .work_num_area, .creator_num_area{
 		@include display-flex(center,column);
 		justify-content: center;
 		height: inherit;
@@ -279,7 +283,8 @@
 		 font-size: $font_size20;
       }
   	  @include breakpoint(max-width $screen_width500){
-		font-size: $font_size18;
+		//font-size: $font_size18;
+		font-size: $font_size14;
 		margin-bottom: 4px;
       }
     }

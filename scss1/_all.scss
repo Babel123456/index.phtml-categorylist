@@ -631,6 +631,74 @@ input[type="text"],input[type="password"]{
   /* 通知選單結束 */
 }
 
+/* header v2 */
+.header_v2{
+  height: 192px !important;
+  background: yellow !important;
+  font-size: 16px;
+  .logo_left_area{
+    &>div:not(:first-child){
+	  margin-left: 64px;
+	}
+    text-align: left;
+    @include display-flex(center,row);
+	.social_link{
+	  img{
+	    width: 36px;
+		height: 36px;
+	  }
+	  &:last-child{
+	    margin-left: 16px;
+	  }
+	}
+  }//.logo_left_area
+  .header_logo{
+	width: 240px !important;
+	background: url("../images/assets-v7/logo.svg") no-repeat center left !important;
+	background-size: 240px 52px !important;
+	background-color: pink !important;
+    margin: 0 248px;
+	@include breakpoint(max-width $screen_width1919){
+	  margin: 0 12.92%;
+	}
+  }
+  .header_search{
+    @include flex(1);
+	margin-left: 0;
+	background: lavender;
+	i{
+      font-size: 18px !important;  
+	}
+	.header_search_box{
+	  width: 240px !important;
+	  height: 22px !important;
+	  background: none !important;
+	  border-radius: 0 !important;
+	  background: #fff !important;
+	  border-bottom: 1px solid #4d4d4d;
+	  .search_btn{
+		//height: $search_box_height32;
+		padding: 0!important;
+        font-size: $font_size16 !important;
+        border-radius: 0 !important;
+		background: none !important;
+		border: none !important;
+		.search_type{
+		  font-size: 12px;
+		}
+		i{
+		  font-size: 12px !important;  
+		}
+	  }
+	}
+  }
+ 
+  
+  
+  
+}
+
+
 /* FOOTER區塊開始 */
 #footer{
   position: relative;
