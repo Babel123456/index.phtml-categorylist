@@ -213,6 +213,7 @@
 .carousel_btn_off{
 }
 /* 輪播設定結束 */
+
 /* 累積贊助次數開始 */
   .plan_info_count{
     position: relative;
@@ -290,6 +291,481 @@
     }
   }
   /* 累積贊助次數結束 */
+
+
+
+/* banner v2 */
+.banner_v2{ //包含累計數字區塊
+  position: relative;
+  margin-top: 192px; //符合header v2's fixed
+  @include breakpoint(max-width $screen_width768){
+    margin-top: 0;
+  }
+  width: $width100p;
+  //height: $height100p;
+  
+  //輪播設定
+  .owl-wrapper{
+	.owl-item{ 
+    }
+  }
+  .owl-carousel .owl-wrapper-outer {
+    box-shadow: none;  //無陰影
+  }
+  
+  .banner_carousel_area_v2{
+    position: relative;
+  }
+  
+  .banner_carousel_v2{
+	position: relative;
+    height: 500px;
+    width: $width100p;
+	//overflow: hidden;
+	@include breakpoint(max-width $screen_width1200){
+	  height: 480px;
+    }
+	@include breakpoint(max-width $screen_width1024){
+	  height: 400px;
+	}
+	@include breakpoint(max-width $screen_width768){
+	  //height: 460px;
+	  height: 340px;
+	}
+	@include breakpoint(max-width $screen_width600){
+	  //height: 420px;
+	  //height: 320px;
+	}
+	@include breakpoint(max-width $screen_width500){
+	  //height: 320px;
+	  //height: 280px;
+	  height: 300px;
+	}
+	@include breakpoint(max-width $screen_width400){
+	  //height: 300px;
+	  height: 260px;
+	}
+	@include breakpoint(max-width $screen_width360){
+	  //height: 260px;
+	  height: 240px;
+	}
+	img{
+      object-fit: cover;
+      width: $width100p;
+      //width: auto;
+	  height: 500px;
+	  display: block;
+      margin: auto;
+	  
+	  @include breakpoint(max-width $screen_width1200){
+	  height: 480px;
+    }
+	@include breakpoint(max-width $screen_width1024){
+	  height: 400px;
+	}
+	@include breakpoint(max-width $screen_width768){
+	  //height: 460px;
+	  height: 340px;
+	}
+	@include breakpoint(max-width $screen_width600){
+	  //height: 420px;
+	  //height: 320px;
+	}
+	@include breakpoint(max-width $screen_width500){
+	  //height: 320px;
+	  //height: 280px;
+	  height: 300px;
+	}
+	@include breakpoint(max-width $screen_width400){
+	  //height: 300px;
+	  height: 260px;
+	}
+	@include breakpoint(max-width $screen_width360){
+	  //height: 260px;
+	  height: 240px;
+	}
+	  
+    }
+  }//#banner_carousel
+  .owl-buttons{
+      position: absolute;
+	  right: 0;
+	  bottom: 0;
+	  z-index: 10;
+	  @include breakpoint(max-width $screen_width768){
+	    top: 50%;
+		bottom: unset;
+		width: 100%;
+	  }
+	  i{
+        -webkit-text-stroke: 1px #d4d4d4;
+      }
+	  &>div{
+	    display: inline-block;
+	  }
+	  .owl-prev, .owl-next{
+	    position: relative;
+	    text-align: center;
+	    width: 56px;
+		height: 56px;
+		line-height: 56px;
+		background: #d4d4d4;
+		@include breakpoint(max-width $screen_width768){
+		  position: absolute;
+		  width: 36px;
+		  height: 36px;
+		  line-height: 36px;
+		}
+	  }
+	  .owl-prev{
+	    @include breakpoint(max-width $screen_width768){
+	      left: 0; 
+		}
+	  }
+	  .owl-next{
+	    margin-left: 16px;
+		@include breakpoint(max-width $screen_width768){
+		  margin-left: 0;
+	      right: 0; 
+		  margin-right: -6px;
+		}
+	  } 
+  }//.owl-buttons
+
+  //累計數字區塊
+  .plan_info_count_v2{
+    position: relative;
+	margin-top: -22px;
+	@include breakpoint(max-width $screen_width768){
+	  margin-top: 0;
+	}
+	.plan_info_count_area{
+	  margin-left: 64px;
+	  @include display-flex(center,row);
+	  @include breakpoint(max-width $screen_width1024){
+	    margin-left: 32px;
+	  }
+	  @include breakpoint(max-width $screen_width768){
+	    margin-left: 16px;
+		@include flex-wrap(wrap);
+	  }
+	  &>div{
+	    width: 280px;
+		height: 160px;
+		@include display-flex(flex-end,row);
+		//border-left: 1px solid $grey_color;
+		@include breakpoint(max-width $screen_width768){
+		  width: 50%;
+		  height: 56px;
+		}
+		&>div{
+		  margin-left: 32px;
+		  @include breakpoint(max-width $screen_width768){
+		    margin-left: 16px;
+		  }
+		  &::before{
+		    content: '';
+		    width: 40px;
+			display: inline-block;
+			margin-left: -32px;
+			margin-bottom: -40px;
+		    @include breakpoint(max-width $screen_width768){
+		      border-bottom: 1px solid $grey_color2;
+		    }
+		  }
+		}
+		&::before{
+          content:"";
+		  height: 160px;
+		  @include breakpoint(max-width $screen_width768){
+		    margin-bottom: -16px;
+		    //height: 56px;
+			height: 72px;
+		  }
+          border-left: 1px solid $grey_color;
+        }
+	  }
+	  
+	  span{
+	    display: inline-block;
+		font-size: $font_size18;
+		@include breakpoint(max-width $screen_width768){
+	      font-size: $font_size12;
+		}
+	  }
+	  .plan_info_num{
+	    display: block;
+		font-weight: 500px;
+		margin-bottom: 12px;
+	    font-size: $font_size28;
+		@include breakpoint(max-width $screen_width768){
+		  margin-bottom: 4px;
+		  font-size: $font_size16;
+		}
+	  }
+	}
+  }
+}//.banner_v2
+
+
+/* main_content_v2 */
+.main_content_v2{
+
+// 推薦區塊開始 v2 -----------------------------------------------------
+    .recommend_area{
+	  position: relative;
+	  text-align: center;
+	  margin-top: 96px;
+	  @include breakpoint(max-width $screen_width768){
+	    margin-top: 48px;
+	  }
+      .recommend_title_area{
+        text-align: right;
+	    @include breakpoint(max-width $screen_width768){
+		  margin-left: 88px;
+	      text-align: center;
+	    }
+        &>div{
+	      display: inline-block;
+	    }
+	    .recommend_title{
+	      font-weight: initial;
+	      font-size: $font_size24;
+	      @include breakpoint(max-width $screen_width768){
+	        font-size: $font_size16;
+			font-size: $font_size18;
+	      }
+	    }
+	    .recommend_cat_btn{
+	      display: none;
+		  cursor: pointer;
+	      @include breakpoint(max-width $screen_width768){
+	        display: inline-block;
+		    margin-left: 16px;
+		    font-size: $font_size12;
+			font-size: $font_size14;
+	      }
+		  .recommend_cat_btn_name{
+		    font-weight: initial;
+		  }
+	      .recommend_cat_btn_icon{
+	        margin-left: 4px;
+	      }
+	    }
+      }//.recommend_title_area
+	  .recommend_content{
+		position: relative;
+		@include display-inline-flex(flex-start,row);
+		background: lightblue;
+		margin-bottom: 120px;
+		@include breakpoint(max-width $screen_width768){
+		  margin-bottom: 68px;
+		}
+		&>div{
+		  @include flex(-1 0 0);
+		}
+		.recommend_menu{
+		  position: relative;
+		  background: $sub_color;
+		  @include breakpoint(max-width $screen_width768){
+		    display: none;
+		    position: absolute;
+			top: 44px;
+			left: 0;
+		    width: 100%;
+			height: 100vh;
+			opacity: 0.95;
+		  }
+		  i{
+		    display: none;
+		    position: absolute;
+			top: 16px;
+			right: 16px;
+		    color: $grey_color;
+		    font-size: 20px;
+		  }
+		  ul{
+		    @include breakpoint(max-width $screen_width768){
+			  margin-top: 32px;
+			}
+		    li{
+			  position: relative;
+		      display: block;
+			  margin: 0 auto 32px auto;
+			  @include width-max-content;
+			  font-size: 18px;
+			  a{
+			    color: $grey_color1; //$grey_color2;
+				&:hover{
+				  color: $main_color2;
+				}
+			  }
+			  &.active{
+			    a{
+			      color: $grey_color;
+				}
+			  }
+			  &.active:before{
+			    position: absolute;
+				top: 8px;
+				left: -72px; //48px+24px
+			    content: '';
+			    display: inline-block;
+				width: 48px;
+				border-top: 2px solid $grey_color;
+			  }
+		    }
+		  }
+		  
+		}
+		.recommend_works{
+		  position: relative;
+		  background: ivory;
+		  margin-left: 124px;
+		  width: 1296px; //300X4 + 32X3
+		  @include breakpoint(max-width $screen_width1919){
+		    width: 67.5%;
+		  }
+		  @include breakpoint(max-width $screen_width768){
+		    margin-left: 0;
+		  }
+		  .recommend_works_carousel{
+		    //width: 100%;
+		  }
+		  .page{
+		    width: 300px;
+			background: lavender;
+		  }
+		  .owl-buttons{
+		    display: none;
+			@include breakpoint(max-width $screen_width768){
+		      display: block;
+		    }
+		  }
+		  .recommend_works_item{ //作品樣式
+		    width: 300px;
+		    position: relative;
+			@include border-radius(4px);
+			overflow: hidden;
+			.recommend_creative_wrap{
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  padding: 32px;
+			  width:100%;
+              height:100%;
+			  @include display-flex(flex-end,column); 
+			  &>div{
+			    //@include flex(-1 0 0);
+			  }
+			  color: $sub_color;
+			  background: rgba(77,77,77,0.9);
+			  i{
+			    -webkit-text-stroke: 1px rgba(77,77,77,0.9);
+			  }
+			  .recommend_creative_info{
+			    width: 100%;
+			    @include flex(1);
+                @include display-flex(flex-end,column); 
+				justify-content: center;
+			    .recommend_creative_info_wrap{
+				  width: 100%;
+                  display: block;
+				}
+			  
+				.recommend_creative_title{
+				  overflow: hidden;
+				  font-size: $font_size16;
+				  font-weight: initial;
+				  text-align: justify;
+				  line-height: 32px;
+				  @include line-clamp(vertical,2);
+				
+				}
+				.recommend_creative_name{
+				  margin-top: 48px;
+				  font-size: $font_size14;
+				  a{
+				    width: 100%;
+				    @include display-flex(flex-end,row);
+				    color: $sub_color;
+					&:hover{
+					  color: $main_color2;
+					}
+					span{
+					  @include flex(2);
+					  @include ellipsis;
+		              @include line-clamp(vertical,1);
+		              @include word-break;
+					}
+					i{
+					  @include flex(1);
+				      margin-left: 8px;
+				      font-size: $font_size18;
+				    }
+				  }
+				  
+				  &:before{
+				    content: '';
+					position: absolute;
+					top: 52%;
+					left: 0;
+					display: inline-block;
+					width: 236px;
+				    border-bottom: 1px solid #d4d4d4;  
+				  }
+				}
+			  }
+			  .recommend_creative_icon{
+			    margin-top: 32px; 
+			    text-align: right;
+				font-size: $font_size24;
+				i{
+				  margin-left: 16px;
+				}
+			  }
+			}//.recommend_creative_wrap
+			.recommend_works_wrap{
+			  //position: relative;
+			  .recommend_works_photo{
+			    img{
+				  width: 300px;
+				}
+			  }
+			  .recommend_works_desc{
+			    text-align: right;
+			    .profile_img_wrap{
+				  display: inline-block;
+				  width: 64px;
+				  height: 64px;
+				  border: 4px $border_style $sub_color;
+				}
+			  }
+			}//.recommend_works_wrap
+		  }//.recommend_works_item
+		  .recommend_works_item_hover:hover{
+		    .recommend_creative_wrap{
+			  @include display-flex(center,column); 
+			}
+		  }
+		  
+		  
+		}//.recommend_content_works
+	  }//.recommend_content
+	  .recommend_more_btn{
+	    margin-bottom: 96px;
+	    text-align: center;
+		@include breakpoint(max-width $screen_width768){
+		  margin-bottom: 48px;
+		}
+	  }
+    }//.recommend_area
+	// 推薦區塊結束 v2 -----------------------------------------------------
+}
+
+
+
+
 /* 主要內容開始 */
 #content{
   /* 與上方fixed header距離 */
@@ -320,6 +796,26 @@
     @include breakpoint(max-width $screen_width500){
       width: $width100p;
   	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     /*  熱門推薦區塊開始 */
     ul{
       li{

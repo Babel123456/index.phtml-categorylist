@@ -64,6 +64,11 @@ body{
   
 }
 
+//讓所有font awesome瘦一點
+i:not(.fa-caret-down){
+  -webkit-text-stroke: 1px #fff;
+}
+
 /* 大頭圖設定 */
 .profile_img_wrap{
   overflow: hidden;
@@ -633,69 +638,330 @@ input[type="text"],input[type="password"]{
 
 /* header v2 */
 .header_v2{
-  height: 192px !important;
-  background: yellow !important;
-  font-size: 16px;
-  .logo_left_area{
-    &>div:not(:first-child){
-	  margin-left: 64px;
-	}
-    text-align: left;
-    @include display-flex(center,row);
-	.social_link{
-	  img{
-	    width: 36px;
-		height: 36px;
-	  }
-	  &:last-child{
-	    margin-left: 16px;
-	  }
-	}
-  }//.logo_left_area
-  .header_logo{
-	width: 240px !important;
-	background: url("../images/assets-v7/logo.svg") no-repeat center left !important;
-	background-size: 240px 52px !important;
-	background-color: pink !important;
-    margin: 0 248px;
-	@include breakpoint(max-width $screen_width1919){
-	  margin: 0 12.92%;
-	}
+  position: fixed; 
+  top: 0px; 
+  z-index: 999;
+  width: $width100p;
+  height: 192px;
+  background: #fff;
+  border-bottom: 1px solid #d4d4d4;
+  @include breakpoint(max-width $screen_width768){
+	padding: 0 16px;
+	height: 44px;
   }
-  .header_search{
-    @include flex(1);
-	margin-left: 0;
-	background: lavender;
-	i{
-      font-size: 18px !important;  
+  @include display-flex(center,row);
+  .header_v2_top{
+    width: 100%;
+	@include display-flex(center,row);
+	@include breakpoint(max-width $screen_width1200){
+	  //margin: 0 16px;
 	}
-	.header_search_box{
-	  width: 240px !important;
-	  height: 22px !important;
-	  background: none !important;
-	  border-radius: 0 !important;
-	  background: #fff !important;
-	  border-bottom: 1px solid #4d4d4d;
-	  .search_btn{
-		//height: $search_box_height32;
-		padding: 0!important;
-        font-size: $font_size16 !important;
-        border-radius: 0 !important;
-		background: none !important;
-		border: none !important;
-		.search_type{
-		  font-size: 12px;
-		}
-		i{
-		  font-size: 12px !important;  
-		}
+	&>div{
+	  @include flex(-1 0 0);
+	}
+	.top_left_area{
+	  @include flex(2);
+      &>div:not(:first-child){
+	    margin-left: 64px;
+		@include breakpoint(max-width $screen_width1200){
+	      margin-left: 32px;
+	    }
+		@include breakpoint(max-width $screen_width960){
+	      margin-left: 16px;
+	    }
 	  }
-	}
-  }
- 
-  
-  
-  
+      @include display-flex(center,row);
+	  //justify-content: flex-end;
+	  justify-content: center;
+	  @include breakpoint(max-width $screen_width768){
+	    display: none;
+	  }
+	  .social_link:last-child{
+	    @include breakpoint(max-width $screen_width960){
+	      margin-left: 8px;
+	    }
+	  }
+     }//.top_left_area
+	 .social_link{
+	   img{
+	     width: 36px;
+	     height: 36px;
+		 @include breakpoint(max-width $screen_width960){
+	       width: 34px;
+	       height: 34px;
+	     }
+		 @include breakpoint(max-width $screen_width800){
+	       width: 32px;
+	       height: 32px;
+	     }
+	   }
+	   /*
+	   &:last-child{
+	     margin-left: 16px;
+		 @include breakpoint(max-width $screen_width960){
+	       margin-left: 8px;
+	     }
+	   }
+	   */
+	 }
+	 .top_center_area{
+	   .header_logo_v2{
+	     user-select: none;
+	     background: url("../images/assets-v7/logo.svg") no-repeat center left;
+	     background-size: 240px 52px;
+		 @include breakpoint(max-width $screen_width960){
+		   width: 220px;
+		   background-size: 220px 46px;
+         }
+	     @include breakpoint(max-width $screen_width768){
+	       overflow: hidden;
+		   width: 26px;
+	       height: 31px;
+		   line-height: 31px;
+		   background-size: 26px 27px !important;
+		   background: url("../images/assets-v7/m_logo.svg") no-repeat center left;
+         }
+		 a{ 
+	       display: block;
+		   width: 240px;
+	       height: 52px;
+	       color: transparent; 
+		   @include breakpoint(max-width $screen_width960){
+		     //width: 220px;
+		     //height: 46px;
+           }
+	     }
+	   }
+	 }//.top_center_area
+	 .top_right_area{
+	   @include flex(2);
+	   //justify-content: flex-start;
+	   justify-content: center;
+	   @include breakpoint(max-width $screen_width1200){
+	     //@include flex(1);
+	   }
+	   @include breakpoint(max-width $screen_width768){
+	     justify-content: flex-end;
+	   }
+	   width: 100%;
+	   @include display-flex(center,row);
+	   &>div{
+	     @include flex(-1 0 0);
+	   }
+	   .header_search_v2{
+	     width: 240px;
+		 @include breakpoint(max-width $screen_width1440){
+	       width: 200px;
+	     }
+		 @include breakpoint(max-width $screen_width1200){
+	       width: 180px;
+	     }
+		 @include breakpoint(max-width $screen_width960){
+	       width: 130px;
+	     }
+		 @include breakpoint(max-width $screen_width800){
+	       width: 120px;
+	     }
+		 @include breakpoint(max-width $screen_width768){
+	       width: 216px;
+		   display: none;
+	     }
+		 &.search_box_open{
+		   display: block;
+		 }
+		 border-bottom: 1px solid #4d4d4d;
+	     .header_search_box{
+		   position: relative;
+		   magrin-bottom: 8px;
+		   background: none;
+	       @include display-flex(center,row);
+		   &>div{
+		     @include flex(-1 0 0);
+		   }
+		   .search_btn{
+		     cursor: pointer;
+		     .search_type{
+			   //font-size: 12px;
+			   font-size: 14px;
+			 }
+			 i{
+			   font-size: 12px;
+			 }
+			 .dropdown_menu{
+			   left: 0;
+			   right: unset;
+			   ul li{
+			     font-size: 14px !important;
+			   }
+			 }
+		   }
+		   .search_input_text{
+		     @include flex(2);
+		     .search_text{
+			   margin-bottom: -2px;
+			   width: 100%;  
+			   font-size: 14px;
+			   background: none;
+			   @include breakpoint(max-width $screen_width1024){
+	             padding: 0 8px;
+	           }
+			 }
+		   }
+		   .search_icon{
+		     i{
+			   font-size: 18px;
+			   @include breakpoint(max-width $screen_width768){
+	             font-size: 20px;
+	           }
+			 }
+		   }
+		 }
+	   }//.header_search_v2
+	   
+	   .header_menu_v2{
+	     @include width-max-content;
+	     margin-left: 64px;
+		 @include breakpoint(max-width $screen_width1200){
+	       margin-left: 32px;
+	     }
+		 @include breakpoint(max-width $screen_width960){
+	       margin-left: 16px;
+	     }
+		 @include breakpoint(max-width $screen_width960){
+	       margin-left: 16px;
+	     }
+		 @include breakpoint(max-width $screen_width768){
+	       margin-left: 0;
+	     }
+		 .login_link{
+		   @include display-flex(center,row);
+		   @include breakpoint(max-width $screen_width768){
+	         display: none;
+	       }
+		   img{
+			 width: 36px;
+			 height: 36px;
+			 @include breakpoint(max-width $screen_width960){
+	           width: 34px;
+	           height: 34px;
+	         }
+		     @include breakpoint(max-width $screen_width800){
+	           width: 32px;
+	           height: 32px;
+	         }
+		   }
+		   i{
+			 margin-left: 8px;
+			 font-size: 24px;
+		   }
+		 }
+		 .dropdown_menu{ //登入選單
+		   top: 191px; //192px;
+		   padding: 0; //先歸零以符合新首頁樣式選單
+		   @include breakpoint(max-width $screen_width768){
+	         top: 43px; //44px;
+	       } 
+		 }
+		 .login_menu{  //登入選單
+		   font-size: 16px;
+		   text-align: center;
+		   width: 480px;
+		   max-height: $menu_header_height;
+		   @include breakpoint(max-width $screen_width768){
+	         width: 100%;
+			 max-height: 100vh;
+	       }
+		   a{
+		     font-weight: 500 !important;
+		   }
+		   &>ul{
+		     //padding: 32px;
+		       &>li{
+			     &:not(:last-child){
+			       border-bottom: 1px solid $grey_color2;
+				 }
+			     width: 100%;
+				 text-align: center;
+				 &>ul{
+				   padding-bottom: 32px;
+				   &>li{
+				     margin-top: 32px;
+				   }
+				 }
+			     .login_menu_user_info{ //小版出現作者頭圖姓名
+				   display: none;
+			       @include breakpoint(max-width $screen_width768){
+				     margin-left: -40px;
+	                 @include display-flex(center,row);
+			         justify-content: center;
+	               } 
+				   .login_menu_user_info_image{
+			         width: 24px;
+				     height: 24px;
+			       }
+			       .login_menu_user_info_name{
+			         margin-left: 16px;
+				     color: $main_color2;
+			       }
+			     }
+				 .sign_link ~ .social_link_area{ //未登入時, 要改樣式
+				   padding: 32px;
+				   border-top: 1px solid #d4d4d4;
+				 }
+		      }
+			  .social_link_area{
+			    &>div{
+				  display: inline-block;
+				  &:last-child{
+				    margin-left: 16px;
+				  }
+				}
+				
+			  }
+		   }//ul
+		   .btn_new{
+		     margin-bottom: 32px;
+		     width: 296px;
+			 height: 40px;
+		   }
+		 }//.login_menu
+	   }//.header_menu_v2
+	   
+	   .mobile_menu_v2{ //手機選單
+	     i{ 
+		   font-size: 20px; 
+		 }
+		 &>div{
+		   display: inline-block;
+		   &:not(:first-child){
+		     margin-left: 16px;
+		   }
+		 }
+		 .search_m{
+		   display: none;
+		   @include breakpoint(max-width $screen_width768){
+	         display: inline-block;
+	       }
+		 }
+		 .login_m{
+		   display: none;
+		   @include breakpoint(max-width $screen_width768){
+	         display: inline-block;
+	       }
+		 }
+		 .header_search_close_v2{
+		   display: none;
+		   &.search_close_open{
+		     display: inline-block;
+		   }
+		 }
+	   }
+	   
+	   
+	   
+	 }//.top_right_area
+	 
+  }//.header_v2_top
 }
 
 
@@ -884,7 +1150,8 @@ input[type="text"],input[type="password"]{
 	}
   }
 }
-#p_link { 
+#p_link {
+  display: none;
   width: $width100p;
   height: auto;
   @include breakpoint(max-width $screen_width768){
@@ -960,6 +1227,23 @@ input[type="text"],input[type="password"]{
   background: rgba(77,77,77,0.75);
   //@include opacity(0.75);
 }
+
+/* 按鈕 v2 */
+.btn_new_v2{
+  display: inline-block;
+  width: 192px;
+  height: 96px;
+  line-height: 96px;
+  text-align: center;
+  font-size: $font_size16;
+  border: 1px solid $grey_color;
+  @include breakpoint(max-width $screen_width768){
+    width: 144px;
+    height: 72px;
+    line-height: 72px;
+  }
+}
+
 /* 標題-粗體 */
 [id*="_title"],[id*="_name"],[class*="_title"]{ //,[class*="_name"]
   font-weight: $font_weight;
@@ -1074,6 +1358,7 @@ label.error {
   left: unset;
   right: 0;
   border: $menu_bolder_width $menu_bolder_style $menu_border_color;
+  @include border-radius(0); //先歸零以符合新首頁樣式選單
   background: $sub_color;
   overflow: auto;
   &>ul{
@@ -1096,4 +1381,18 @@ label.error {
 /* 20190115: 為了配合輪播鈕樣式, 頁面SCROLL時, HEADER出現下方線 */
 .header_sticky{
   border-bottom: 1px solid $border_color !important;
+}
+
+/* header v2's */
+.header_sticky_v2{
+  height: 96px;
+  @include breakpoint(max-width $screen_width768){ 
+    height: 44px;
+  }
+  .dropdown_menu{
+    top: 95px !important;
+	@include breakpoint(max-width $screen_width768){ 
+      top: 43px !important;
+    }
+  }
 }
