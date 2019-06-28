@@ -391,14 +391,14 @@
       position: absolute;
 	  right: 0;
 	  bottom: 0;
-	  z-index: 10;
+	  z-index: 8;
 	  @include breakpoint(max-width $screen_width768){
 	    top: 50%;
 		bottom: unset;
 		width: 100%;
 	  }
 	  i{
-        -webkit-text-stroke: 1px #d4d4d4;
+        -webkit-text-stroke: 1px $grey_color2;
       }
 	  &>div{
 	    display: inline-block;
@@ -409,7 +409,7 @@
 	    width: 56px;
 		height: 56px;
 		line-height: 56px;
-		background: #d4d4d4;
+		background: $grey_color2;
 		@include breakpoint(max-width $screen_width768){
 		  position: absolute;
 		  width: 36px;
@@ -427,7 +427,6 @@
 		@include breakpoint(max-width $screen_width768){
 		  margin-left: 0;
 	      right: 0; 
-		  margin-right: -6px;
 		}
 	  } 
   }//.owl-buttons
@@ -513,7 +512,6 @@
 
 // 推薦區塊開始 v2 -----------------------------------------------------
     .recommend_area{
-	  position: relative;
 	  text-align: center;
 	  margin-top: 96px;
 	  @include breakpoint(max-width $screen_width768){
@@ -554,12 +552,13 @@
 	    }
       }//.recommend_title_area
 	  .recommend_content{
-		position: relative;
+		
 		@include display-inline-flex(flex-start,row);
 		background: lightblue;
-		margin-bottom: 120px;
+		margin: 96px auto 120px auto;
 		@include breakpoint(max-width $screen_width768){
-		  margin-bottom: 68px;
+		  margin: 16px auto 68px auto;
+		  //margin: 16px auto 48px auto;
 		}
 		&>div{
 		  @include flex(-1 0 0);
@@ -569,7 +568,8 @@
 		  background: $sub_color;
 		  @include breakpoint(max-width $screen_width768){
 		    display: none;
-		    position: absolute;
+		    position: fixed;
+			z-index: 10;
 			top: 44px;
 			left: 0;
 		    width: 100%;
@@ -623,40 +623,77 @@
 		  background: ivory;
 		  margin-left: 124px;
 		  width: 1296px; //300X4 + 32X3
-		  @include breakpoint(max-width $screen_width1919){
+		  @include breakpoint(max-width $screen_width1440){
 		    width: 67.5%;
 		  }
 		  @include breakpoint(max-width $screen_width768){
-		    margin-left: 0;
+		    margin: 0 auto;
+			width: 100%;
 		  }
 		  .recommend_works_carousel{
 		    //width: 100%;
 		  }
 		  .page{
 		    width: 300px;
-			background: lavender;
+			float: left;
+			&:not(:first-child){
+			  margin-left: 32px;
+			}
+			@include breakpoint(max-width $screen_width768){
+		       float: none;
+			   width: 100%;
+		    }
 		  }
 		  .owl-buttons{
 		    display: none;
-			@include breakpoint(max-width $screen_width768){
-		      display: block;
-		    }
-		  }
+            position: absolute;
+	        z-index: 8;
+	        @include breakpoint(max-width $screen_width768){
+	          display: block;
+			  top: 50%;
+		      bottom: unset;
+		      width: 100%;
+	        }
+	        i{
+              -webkit-text-stroke: 1px $grey_color2;
+            }
+	        &>div{
+	          display: inline-block;
+	        }
+	        .owl-prev, .owl-next{
+	          text-align: center;
+	          background: $grey_color2;
+		      @include breakpoint(max-width $screen_width768){
+		        position: absolute;
+		        width: 36px;
+		        height: 36px;
+		        line-height: 36px;
+		      }
+	        }
+	        .owl-prev{
+	          left: 0;
+	        }
+	        .owl-next{
+	          margin-left: 0;
+	          right: 0; 
+	        } 
+          }//.owl-buttons
 		  .recommend_works_item{ //作品樣式
-		    width: 300px;
 		    position: relative;
 			@include border-radius(4px);
 			overflow: hidden;
 			.recommend_creative_wrap{
 			  position: absolute;
+			  z-index: 1;
 			  top: 0;
 			  left: 0;
 			  padding: 32px;
 			  width:100%;
               height:100%;
 			  @include display-flex(flex-end,column); 
+			  //display: none;
 			  &>div{
-			    //@include flex(-1 0 0);
+			    @include flex(-1 0 0);
 			  }
 			  color: $sub_color;
 			  background: rgba(77,77,77,0.9);
@@ -670,23 +707,27 @@
 				justify-content: center;
 			    .recommend_creative_info_wrap{
 				  width: 100%;
-                  display: block;
+                  //display: block;
+				  @include display-flex(flex-end,column);
 				}
 			  
 				.recommend_creative_title{
+				  
 				  overflow: hidden;
 				  font-size: $font_size16;
 				  font-weight: initial;
 				  text-align: justify;
 				  line-height: 32px;
-				  @include line-clamp(vertical,2);
-				
+				  max-height: 80; //16X5
+				  //@include line-clamp(vertical,5);
+				  @include line-clamp(vertical,1);
 				}
 				.recommend_creative_name{
 				  margin-top: 48px;
 				  font-size: $font_size14;
 				  a{
 				    width: 100%;
+					text-align: right;
 				    @include display-flex(flex-end,row);
 				    color: $sub_color;
 					&:hover{
@@ -699,7 +740,7 @@
 		              @include word-break;
 					}
 					i{
-					  @include flex(1);
+					  @include flex(-1 0 0);
 				      margin-left: 8px;
 				      font-size: $font_size18;
 				    }
@@ -707,12 +748,11 @@
 				  
 				  &:before{
 				    content: '';
-					position: absolute;
-					top: 52%;
-					left: 0;
+					margin-left: -64px;
+					margin-bottom: 16px;
 					display: inline-block;
 					width: 236px;
-				    border-bottom: 1px solid #d4d4d4;  
+				    border-bottom: 1px solid $grey_color2;  
 				  }
 				}
 			  }
@@ -729,23 +769,52 @@
 			  //position: relative;
 			  .recommend_works_photo{
 			    img{
-				  width: 300px;
+				  width: 100%; //300px;
+				  vertical-align: middle;
+				  @include border-radius(4px);
 				}
 			  }
 			  .recommend_works_desc{
+			    display: none;
+			    margin-top: -80px; //64px + 16px
 			    text-align: right;
+				@include breakpoint(max-width $screen_width768){
+		          display: block;
+		        }
+				&>div:not(:last-child){
+				  margin-bottom: 32px;
+				}
 			    .profile_img_wrap{
 				  display: inline-block;
 				  width: 64px;
 				  height: 64px;
 				  border: 4px $border_style $sub_color;
 				}
+				.recommend_works_title{
+				  text-align: left;
+				  font-weight: initial;
+				  //先設定最多3行
+				  overflow: hidden;
+				  font-size: $font_size16;
+				  line-height: 32px;
+				  @include line-clamp(vertical,3);
+				}
+				.recommend_works_view{
+				  font-size: $font_size14;
+				  &:before{
+				    content: '';
+					width: 100%;
+					margin-bottom: 16px;
+					display: inline-block;
+				    border-bottom: 1px solid $grey_color2;  
+				  }
+				}
 			  }
 			}//.recommend_works_wrap
 		  }//.recommend_works_item
 		  .recommend_works_item_hover:hover{
 		    .recommend_creative_wrap{
-			  @include display-flex(center,column); 
+			  @include display-flex(flex-end,column); 
 			}
 		  }
 		  

@@ -60,17 +60,17 @@
 			  <i class="recommend_menu_close fa fa-times"></i>
 			  <ul class="recommend_menu_list">
 			    
-			    <li class="active" data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=4"><a href="#tab02">平面摄影</a></li>
-				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=1"><a href="#tab03">旅遊達人</a></li>
-				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=5"><a href="#tab04">生活寫手</a></li>
-				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=12"><a href="#tab05">音樂創作</a></li>
-				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=1"><a href="#tab06">Youtuber</a></li>
-				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><a href="#tab09">電腦繪圖</a></li>
+			    <li class="active" data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=4"><a href="#tab01">平面摄影</a></li>
+				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=1"><a href="#tab02">旅遊達人</a></li>
+				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=5"><a href="#tab03">生活寫手</a></li>
+				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=12"><a href="#tab04">音樂創作</a></li>
+				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=1"><a href="#tab05">Youtuber</a></li>
+				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><a href="#tab06">電腦繪圖</a></li>
+				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><a href="#tab07">插畫家</a></li>
 				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><a href="#tab08">漫畫家</a></li>
-				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><a href="#tab10">插畫家</a></li>
-				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><a href="#tab07">畫家</a></li>
-				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><a href="#tab11">動畫</a></li>
-				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><a href="#tab01">其他</a></li>
+				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><a href="#tab09">畫家</a></li>
+				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><a href="#tab10">動畫</a></li>
+				<li data-href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=3"><a href="#tab11">其他</a></li>
 				
 			  </ul>
 			</div><!-- .recommend_menu -->
@@ -79,13 +79,14 @@
 			
 			  <div class="recommend_works_carousel"><!--  owl-carousel -->
 		         
+				<!-- 第一個作品開始 -->
 				<div class="page">
 				  <div id="recommend_works_item01" class="recommend_works_item">
 				    <div class="recommend_creative_wrap">
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
 					      <div class="recommend_creative_title">週末到美術館欣賞王信女士的攝影展，身為台灣報導攝影的先鋒，她的攝影著實地令我著迷。黑白基調的系列照，都感覺得到她背後想傳達的故事。尤其喜歡她的人道關懷精神去對議題進行拍攝</div>
-					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/FSCHOU"><span>FS灣報導攝影的先鋒，她的攝影著實地令我著迷。黑白基調的系列照，都感覺得到她背後想傳達的故事。尤其喜歡她的人</span><i class="fa fa-arrow-right"></i></a></div>
+					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/FSCHOU"><span>FS</span><i class="fa fa-arrow-right"></i></a></div>
 					    </div>
 					  </div>
 					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
@@ -93,18 +94,44 @@
 					<div class="recommend_works_wrap">
 					  <div class="recommend_works_photo"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20161107/582034171fecd.jpg"></div>
 					  <div class="recommend_works_desc">
-					    <!--
 						<div class="profile_img_wrap">
-			              <img class="profile_img" src="https://cdn.pinpinbox.com/storage/zh_TW/user/161/picture$5d1b.jpg">
+			              <a href="https://www.pinpinbox.com/FSCHOU" title="FS" ><img class="profile_img" src="https://cdn.pinpinbox.com/storage/zh_TW/user/161/picture$5d1b.jpg"></a>
 						</div>
 						<div class="recommend_works_title">［分享］另一種目線－王信攝影展</div>
 						<div class="recommend_works_view">瀏覽 : 950</div>
-						-->
 					  </div>
 					</div>
-				  
 				  </div><!-- .recommend_works_item -->
 		        </div><!-- .page -->
+				<!-- 第一個作品結束 -->
+				
+				<!-- 第二個作品開始 -->
+				<div class="page">
+				  <div id="recommend_works_item01" class="recommend_works_item">
+				    <div class="recommend_creative_wrap">
+					  <div class="recommend_creative_info">
+					    <div class="recommend_creative_info_wrap">
+					      <div class="recommend_creative_title">攝影作品-人像 (攝影 婚攝 微電影)我是語紳(Louise)， 從事旅遊攝影、婚禮攝影、活動攝影工作，用平面攝影或微電影來呈現，有需要攝影服務的朋友，可先加我的Line ID：louisechen4962 電話：0933-873-255 Digit camera 影像學院 人像講師</div>
+					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/Louise"><span>陳語紳</span><i class="fa fa-arrow-right"></i></a></div>
+					    </div>
+					  </div>
+					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
+					</div>
+					<div class="recommend_works_wrap">
+					  <div class="recommend_works_photo"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20170105/586e062014807.jpg"></div>
+					  <div class="recommend_works_desc">
+						<div class="profile_img_wrap">
+			              <a href="https://www.pinpinbox.com/FSCHOU" title="FS" ><img class="profile_img" src="https://cdn.pinpinbox.com/storage/zh_TW/user/389/picture$e305.jpg"></a>
+						</div>
+						<div class="recommend_works_title">攝影作品-人像 (攝影 婚攝 微電影)</div>
+						<div class="recommend_works_view">瀏覽 : 589</div>
+					  </div>
+					</div>
+				  </div><!-- .recommend_works_item -->
+		        </div><!-- .page -->
+				<!-- 第二個作品結束 -->
+				
+				
 		        
 		      </div>
 		      <div class="owl-buttons">
@@ -158,7 +185,7 @@
 		
 		
 		  
-	  </div><!-- .main_content -->
+	  </div><!-- .main_content_v2 -->
 	  
 	  <div class="main_content2">
 		 
@@ -179,7 +206,7 @@ $(document).ready(function() {
       time: 1000
   });
   //判斷HOVER動作
-  //addhover();
+  addhover();
   //輪播
    var owl1 = $(".banner_carousel_v2");
    owl1.owlCarousel({
@@ -205,8 +232,25 @@ $(document).ready(function() {
     }
 });
 
+  //當HEADER選單被按時, 關閉推薦選單
+  $('#login_m').click(function(e) {
+	if(($('#recommend_menu').length ===1) && $('.recommend_menu_close').hasClass('show_block') ){
+	  $('.recommend_menu_close').click();
+    }
+  });
+  $('#search_m').click(function(e) {
+	if(($('#recommend_menu').length ===1) && $('.recommend_menu_close').hasClass('show_block') ){
+	  $('.recommend_menu_close').click();
+    }
+  });
+
+
+
+//當WIDNWOS RESIZE時, 關閉選單
+$( window ).resize(function(evt) {
+  addhover();
+});
 //hover動作判斷
-/*
 function addhover(){
   if($( window ).width()> 768){
     $(".recommend_works_item").addClass('recommend_works_item_hover');
@@ -214,7 +258,6 @@ function addhover(){
     $(".recommend_works_item").removeClass('recommend_works_item_hover');
   }
 } 
-*/
 </script>
 
 <?php include_once('layout/_footer_v2.php') ?>
