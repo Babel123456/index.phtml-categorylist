@@ -687,13 +687,14 @@
 			  z-index: 1;
 			  top: 0;
 			  left: 0;
-			  padding: 32px;
+			  //padding: 32px;
+			  padding: 32px 32px 32px 0;
 			  width:100%;
               height:100%;
 			  @include display-flex(flex-end,column); 
 			  //display: none;
 			  &>div{
-			    @include flex(-1 0 0);
+			    //@include flex(-1 0 0);
 			  }
 			  color: $sub_color;
 			  background: rgba(77,77,77,0.9);
@@ -701,30 +702,44 @@
 			    -webkit-text-stroke: 1px rgba(77,77,77,0.9);
 			  }
 			  .recommend_creative_info{
+			    padding-left: 32px;
 			    width: 100%;
-			    @include flex(1);
+			    @include flex(1); //讓INFO撐高
                 @include display-flex(flex-end,column); 
 				justify-content: center;
 			    .recommend_creative_info_wrap{
+				  position: relative;
 				  width: 100%;
-                  //display: block;
-				  @include display-flex(flex-end,column);
+				  height: 100%;
+                  display: block;
+				  .recommend_creative_info_area{
+				    position: relative;
+				    @include display-flex(flex-end,column);
+					height: 100%;
+					justify-content: center;
+				  }
 				}
 			  
 				.recommend_creative_title{
-				  
 				  overflow: hidden;
 				  font-size: $font_size16;
 				  font-weight: initial;
 				  text-align: justify;
 				  line-height: 32px;
-				  max-height: 80; //16X5
+				  min-height: 32px;
+				  max-height: 160px; //32X5
 				  //@include line-clamp(vertical,5);
-				  @include line-clamp(vertical,1);
+				  @include ellipsis;
+				  @include word-break;
+				  margin-bottom: 32px;
+				  //@include line-clamp(vertical,1);
+				  
 				}
 				.recommend_creative_name{
-				  margin-top: 48px;
+				  //margin-top: 48px;
+				  margin-top: 16px;
 				  font-size: $font_size14;
+				  line-height: 20px;
 				  a{
 				    width: 100%;
 					text-align: right;
@@ -745,15 +760,17 @@
 				      font-size: $font_size18;
 				    }
 				  }
-				  
-				  &:before{
+				  &:after{
 				    content: '';
-					margin-left: -64px;
-					margin-bottom: 16px;
+					//position: absolute;
+					position: relative;
 					display: inline-block;
-					width: 236px;
+					top: -46px;
+					left: -30px;
+					width: 240px;
 				    border-bottom: 1px solid $grey_color2;  
 				  }
+				  
 				}
 			  }
 			  .recommend_creative_icon{

@@ -85,9 +85,11 @@
 				    <div class="recommend_creative_wrap">
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
-					      <div class="recommend_creative_title">週末到美術館欣賞王信女士的攝影展，身為台灣報導攝影的先鋒，她的攝影著實地令我著迷。黑白基調的系列照，都感覺得到她背後想傳達的故事。尤其喜歡她的人道關懷精神去對議題進行拍攝</div>
-					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/FSCHOU"><span>FS</span><i class="fa fa-arrow-right"></i></a></div>
-					    </div>
+						  <div class="recommend_creative_info_area">
+					        <div class="recommend_creative_title">週末到美術館欣賞王信女士的攝影展，身為台灣報導攝影的先鋒，她的攝影著實地令我著迷。黑白基調的系列照，都感覺得到她背後想傳達的故事。尤其喜歡她的人道關懷精神去對議題進行拍攝</div>
+					        <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/FSCHOU"><span>FS</span><i class="fa fa-arrow-right"></i></a></div>
+					      </div>
+						</div>
 					  </div>
 					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
 					</div>
@@ -107,13 +109,15 @@
 				
 				<!-- 第二個作品開始 -->
 				<div class="page">
-				  <div id="recommend_works_item01" class="recommend_works_item">
+				  <div id="recommend_works_item02" class="recommend_works_item">
 				    <div class="recommend_creative_wrap">
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
-					      <div class="recommend_creative_title">攝影作品-人像 (攝影 婚攝 微電影)我是語紳(Louise)， 從事旅遊攝影、婚禮攝影、活動攝影工作，用平面攝影或微電影來呈現，有需要攝影服務的朋友，可先加我的Line ID：louisechen4962 電話：0933-873-255 Digit camera 影像學院 人像講師</div>
-					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/Louise"><span>陳語紳</span><i class="fa fa-arrow-right"></i></a></div>
-					    </div>
+						  <div class="recommend_creative_info_area">
+					        <div class="recommend_creative_title">攝影作品-人像 (攝影 婚攝 微電影)我是語紳(Louise)， 從事旅遊攝影、婚禮攝影、活動攝影工作，用平面攝影或微電影來呈現，有需要攝影服務的朋友，可先加我的Line ID：louisechen4962 電話：0933-873-255 Digit camera 影像學院 人像講師</div>
+					        <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/Louise"><span>陳語紳</span><i class="fa fa-arrow-right"></i></a></div>
+					      </div>
+						</div>
 					  </div>
 					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
 					</div>
