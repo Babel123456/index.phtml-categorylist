@@ -11,6 +11,11 @@
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.zh-TW.js"></script>
 
+  <!-- 大版瀑布流 -->
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/masonry/js/masonry.pkgd.min.js"></script>
+  
+ 
   <!-- BANNER輪播區塊開始 -->
   <div id="bannner_v2" class="banner_v2">
     <div id="banner_carousel_area_v2" class="banner_carousel_area_v2">
@@ -77,6 +82,7 @@
 			
 			<div class="recommend_works">
 			
+			
 			  <div class="recommend_works_carousel"><!--  owl-carousel -->
 		         
 				<!-- 第一個作品開始 -->
@@ -85,11 +91,9 @@
 				    <div class="recommend_creative_wrap">
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
-						  <div class="recommend_creative_info_area">
-					        <div class="recommend_creative_title">週末到美術館欣賞王信女士的攝影展，身為台灣報導攝影的先鋒，她的攝影著實地令我著迷。黑白基調的系列照，都感覺得到她背後想傳達的故事。尤其喜歡她的人道關懷精神去對議題進行拍攝</div>
-					        <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/FSCHOU"><span>FS</span><i class="fa fa-arrow-right"></i></a></div>
-					      </div>
-						</div>
+					      <div class="recommend_creative_title">週末到美術館欣賞王信女士的攝影展，身為台灣報導攝影的先鋒，她的攝影著實地令我著迷。黑白基調的系列照，都感覺得到她背後想傳達的故事。尤其喜歡她的人道關懷精神去對議題進行拍攝</div>
+					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/FSCHOU"><span>FS</span><i class="fa fa-arrow-right"></i></a></div>
+					    </div>
 					  </div>
 					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
 					</div>
@@ -113,11 +117,35 @@
 				    <div class="recommend_creative_wrap">
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
-						  <div class="recommend_creative_info_area">
-					        <div class="recommend_creative_title">攝影作品-人像 (攝影 婚攝 微電影)我是語紳(Louise)， 從事旅遊攝影、婚禮攝影、活動攝影工作，用平面攝影或微電影來呈現，有需要攝影服務的朋友，可先加我的Line ID：louisechen4962 電話：0933-873-255 Digit camera 影像學院 人像講師</div>
-					        <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/Louise"><span>陳語紳</span><i class="fa fa-arrow-right"></i></a></div>
-					      </div>
+					      <div class="recommend_creative_title">攝影作品</div>
+					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/index/creative/content/?user_id=9802"><span>Ta Ke Chang</span><i class="fa fa-arrow-right"></i></a></div>
+					    </div>
+					  </div>
+					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
+					</div>
+					<div class="recommend_works_wrap">
+					  <div class="recommend_works_photo"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20190210/5c5fa92db9041.jpg"></div>
+					  <div class="recommend_works_desc">
+						<div class="profile_img_wrap">
+			              <a href="https://www.pinpinbox.com/index/creative/content/?user_id=9802" title="Ta Ke Chang" ><img class="profile_img" src="https://cdn.pinpinbox.com/storage/zh_TW/user/9802/picture$c4bf.jpg"></a>
 						</div>
+						<div class="recommend_works_title">攝影作品</div>
+						<div class="recommend_works_view">瀏覽 : 26</div>
+					  </div>
+					</div>
+				  </div><!-- .recommend_works_item -->
+		        </div><!-- .page -->
+				<!-- 第二個作品結束 -->
+				
+				<!-- 第三個作品開始 -->
+				<div class="page">
+				  <div id="recommend_works_item03" class="recommend_works_item">
+				    <div class="recommend_creative_wrap">
+					  <div class="recommend_creative_info">
+					    <div class="recommend_creative_info_wrap">
+					      <div class="recommend_creative_title">攝影作品-人像 (攝影 婚攝 微電影)我是語紳(Louise)， 從事旅遊攝影、婚禮攝影、活動攝影工作，用平面攝影或微電影來呈現，有需要攝影服務的朋友，可先加我的Line ID：louisechen4962 電話：0933-873-255 Digit camera 影像學院 人像講師</div>
+					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/Louise"><span>陳語紳</span><i class="fa fa-arrow-right"></i></a></div>
+					    </div>
 					  </div>
 					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
 					</div>
@@ -133,7 +161,60 @@
 					</div>
 				  </div><!-- .recommend_works_item -->
 		        </div><!-- .page -->
-				<!-- 第二個作品結束 -->
+				<!-- 第三個作品結束 -->
+				
+				
+				<!-- 第四個作品開始 -->
+				<div class="page">
+				  <div id="recommend_works_item03" class="recommend_works_item">
+				    <div class="recommend_creative_wrap">
+					  <div class="recommend_creative_info">
+					    <div class="recommend_creative_info_wrap">
+					      <div class="recommend_creative_title">與鯨鯊ㄧ起吃早餐</div>
+					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4630"><span>Eric Chang</span><i class="fa fa-arrow-right"></i></a></div>
+					    </div>
+					  </div>
+					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
+					</div>
+					<div class="recommend_works_wrap">
+					  <div class="recommend_works_photo"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20171013/59e040cf4330b.jpg"></div>
+					  <div class="recommend_works_desc">
+						<div class="profile_img_wrap">
+			              <a href="https://www.pinpinbox.com/index/creative/content/?user_id=4630" title="Eric Chang" ><img class="profile_img" src="https://cdn.pinpinbox.com/storage/zh_TW/user/4630/picture$8dff.jpg"></a>
+						</div>
+						<div class="recommend_works_title">與鯨鯊ㄧ起吃早餐</div>
+						<div class="recommend_works_view">瀏覽 : 9</div>
+					  </div>
+					</div>
+				  </div><!-- .recommend_works_item -->
+		        </div><!-- .page -->
+				<!-- 第四個作品結束 -->
+				
+				<!-- 第五個作品開始 -->
+				<div class="page">
+				  <div id="recommend_works_item03" class="recommend_works_item">
+				    <div class="recommend_creative_wrap">
+					  <div class="recommend_creative_info">
+					    <div class="recommend_creative_info_wrap">
+					      <div class="recommend_creative_title">花</div>
+					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/index/creative/content/?user_id=8941"><span>劉光智</span><i class="fa fa-arrow-right"></i></a></div>
+					    </div>
+					  </div>
+					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
+					</div>
+					<div class="recommend_works_wrap">
+					  <div class="recommend_works_photo"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20180801/5b6132bd4eb51.jpg"></div>
+					  <div class="recommend_works_desc">
+						<div class="profile_img_wrap">
+			              <a href="https://www.pinpinbox.com/index/creative/content/?user_id=8941" title="劉光智" ><img class="profile_img" src="https://cdn.pinpinbox.com/storage/zh_TW/user/8941/picture$25e8.jpg"></a>
+						</div>
+						<div class="recommend_works_title">花</div>
+						<div class="recommend_works_view">瀏覽 : 2</div>
+					  </div>
+					</div>
+				  </div><!-- .recommend_works_item -->
+		        </div><!-- .page -->
+				<!-- 第五個作品結束 -->
 				
 				
 		        
@@ -181,8 +262,19 @@
       });
     }
 	
-	
-	
+	//瀑布流內容
+	if($('.recommend_works_carousel').length>0){
+	  var $container = $('.recommend_works_carousel');
+      $container.imagesLoaded(function () {
+        $container.masonry({
+          itemSelector: '.page',
+          columnWidth: '.page',
+          gutter: 32,
+        });
+        $('div.page').animate({opacity: 1});
+      });
+      
+	}
 	
 		
 		</script>

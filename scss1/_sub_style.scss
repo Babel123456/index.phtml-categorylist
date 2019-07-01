@@ -553,18 +553,20 @@
       }//.recommend_title_area
 	  .recommend_content{
 		
-		@include display-inline-flex(flex-start,row);
-		background: lightblue;
-		margin: 96px auto 120px auto;
+		//@include display-inline-flex(flex-start,row);
+		margin: 96px auto 88px auto; //88 = 120 - 32
 		@include breakpoint(max-width $screen_width768){
 		  margin: 16px auto 68px auto;
 		  //margin: 16px auto 48px auto;
 		}
 		&>div{
-		  @include flex(-1 0 0);
+		  //@include flex(-1 0 0);
+		  display: inline-block;
+		  vertical-align: top;
 		}
 		.recommend_menu{
 		  position: relative;
+		  
 		  background: $sub_color;
 		  @include breakpoint(max-width $screen_width768){
 		    display: none;
@@ -620,29 +622,71 @@
 		}
 		.recommend_works{
 		  position: relative;
-		  background: ivory;
 		  margin-left: 124px;
 		  width: 1296px; //300X4 + 32X3
-		  @include breakpoint(max-width $screen_width1440){
-		    width: 67.5%;
+		  @include breakpoint(max-width $screen_width1800){
+		    //width: 1168px;
+			width: 67.5%;
+			margin-left: 96px; 
+			//margin-left: 6.4%;
 		  }
+		  @include breakpoint(max-width $screen_width1024){
+		    margin-left: 64px; 
+		  }
+		  /*
+		  @include breakpoint(max-width $screen_width1600){
+		    width: 1088px;
+		  }
+		  @include breakpoint(max-width $screen_width1440){
+		    width: 998px;
+		  }
+		  */
 		  @include breakpoint(max-width $screen_width768){
 		    margin: 0 auto;
 			width: 100%;
 		  }
 		  .recommend_works_carousel{
-		    //width: 100%;
+		    position: relative;
+		    width: 100%;
+			//當大版時直式橫排??
+			//display: flex;
+            //flex-flow: column wrap;
+            //max-height: 800px;
+			
 		  }
 		  .page{
 		    width: 300px;
-			float: left;
+			margin-bottom: 32px;
+			//float: left;
 			&:not(:first-child){
-			  margin-left: 32px;
+			  //margin-left: 32px;
+			  @include breakpoint(max-width $screen_width1800){
+		        //margin-left:16px;
+		      }
 			}
+			@include breakpoint(max-width $screen_width1800){
+		      //width: 30%;
+			  width: 24%;
+		    }
+			@include breakpoint(max-width $screen_width1024){
+		      width: 45%; 
+		    }
+			/*
+			@include breakpoint(max-width $screen_width1800){
+		      width: 280px;
+		    }
+			@include breakpoint(max-width $screen_width1600){
+		      width: 260px;
+		    }
+			@include breakpoint(max-width $screen_width1440){
+		      width: 240px;
+		    }
+			*/
 			@include breakpoint(max-width $screen_width768){
-		       float: none;
+		       //float: none;
 			   width: 100%;
 		    }
+			
 		  }
 		  .owl-buttons{
 		    display: none;
@@ -692,14 +736,16 @@
 			  width:100%;
               height:100%;
 			  @include display-flex(flex-end,column); 
-			  //display: none;
+			  display: none;
 			  &>div{
 			    //@include flex(-1 0 0);
 			  }
 			  color: $sub_color;
 			  background: rgba(77,77,77,0.9);
+			  //background: rgba(0,0,0,0.9);
 			  i{
 			    -webkit-text-stroke: 1px rgba(77,77,77,0.9);
+				//-webkit-text-stroke: 1px rgba(0,0,0,0.9);
 			  }
 			  .recommend_creative_info{
 			    padding-left: 32px;
@@ -708,18 +754,11 @@
                 @include display-flex(flex-end,column); 
 				justify-content: center;
 			    .recommend_creative_info_wrap{
-				  position: relative;
-				  width: 100%;
-				  height: 100%;
-                  display: block;
-				  .recommend_creative_info_area{
 				    position: relative;
-				    @include display-flex(flex-end,column);
+				    @include display-flex(flex-start,column);
 					height: 100%;
 					justify-content: center;
 				  }
-				}
-			  
 				.recommend_creative_title{
 				  overflow: hidden;
 				  font-size: $font_size16;
@@ -765,7 +804,7 @@
 					//position: absolute;
 					position: relative;
 					display: inline-block;
-					top: -46px;
+					top: -50px;
 					left: -30px;
 					width: 240px;
 				    border-bottom: 1px solid $grey_color2;  
@@ -774,7 +813,7 @@
 				}
 			  }
 			  .recommend_creative_icon{
-			    margin-top: 32px; 
+			    //margin-top: 32px; 
 			    text-align: right;
 				font-size: $font_size24;
 				i{
@@ -831,6 +870,7 @@
 		  }//.recommend_works_item
 		  .recommend_works_item_hover:hover{
 		    .recommend_creative_wrap{
+			  transition:all .8s;
 			  @include display-flex(flex-end,column); 
 			}
 		  }
