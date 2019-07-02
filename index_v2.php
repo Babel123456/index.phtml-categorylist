@@ -3,9 +3,13 @@
 <?php include_once('layout/_header_v2.php') ?>
   
   <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" />
+  
   <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" />
   <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" />
+  
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/js/owl.carousel.min.js"></script>
+  
+  
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/waypoint/js/waypoint.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/jquery-timeago-master/js/jquery.timeago.js"></script>
@@ -83,7 +87,7 @@
 			<div class="recommend_works">
 			
 			
-			  <div class="recommend_works_carousel"><!--  owl-carousel -->
+			  <div class="recommend_works_carousel "><!-- owl-carousel -->
 		         
 				<!-- 第一個作品開始 -->
 				<div class="page">
@@ -235,50 +239,6 @@
 		</div><!-- .recommend_area -->
 		<!-- 推薦區塊結束 -->  
 		
-		<script>
-		//推薦選單出現與否
-	$('.recommend_cat_btn').click(function() {
-      $('#recommend_menu').addClass('show_block');
-	  $('.recommend_menu_close').addClass('show_block');
-    })
-	$('.recommend_menu_close').click(function() {
-      $('#recommend_menu').removeClass('show_block');
-	  $('.recommend_menu_close').removeClass('show_block');
-    })
-	//推薦選單被選到加樣式與動作
-    if($('.recommend_menu_list').length>0){
-      var $li = $('ul.recommend_menu_list li');
-      $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
-	  $li.click(function(){
-        $(this).addClass('active').siblings('.active').removeClass('active');
-		//當選單按下, 依類別給分類按鈕名稱
-		$('.recommend_cat_btn_name').text($(this).text());
-		//設定MORE按鈕的連結
-		 $('.recommend_more_btn a').attr('href', $(this).data('href'));
-		//若小版選單開啟
-		if($('.recommend_menu_close').hasClass('show_block')){
-		  $('.recommend_menu_close').click();
-		}
-      });
-    }
-	
-	//瀑布流內容
-	if($('.recommend_works_carousel').length>0){
-	  var $container = $('.recommend_works_carousel');
-      $container.imagesLoaded(function () {
-        $container.masonry({
-          itemSelector: '.page',
-          columnWidth: '.page',
-          gutter: 32,
-        });
-        $('div.page').animate({opacity: 1});
-      });
-      
-	}
-	
-		
-		</script>
-		
 		
 		  
 	  </div><!-- .main_content_v2 -->
@@ -315,10 +275,10 @@ $(document).ready(function() {
 		stopOnHover: true
     });
 	
-	$('.owl-prev').click(function() {
+	$('.banner_carousel_area_v2 .owl-prev').click(function() {
       owl1.trigger('owl.prev',[300]);
     })
-    $('.owl-next').click(function() {
+    $('.banner_carousel_area_v2 .owl-next').click(function() {
       owl1.trigger('owl.next',[300]);
     })
 	
@@ -326,6 +286,39 @@ $(document).ready(function() {
     if($('.banner_carousel_v2 .page').length ===1 ){
 	 $('#banner_carousel_area_v2 .owl-buttons').css('display','none');
     }
+	
+	//推薦選單出現與否
+	$('.recommend_cat_btn').click(function() {
+      $('#recommend_menu').addClass('show_block');
+	  $('.recommend_menu_close').addClass('show_block');
+    })
+	$('.recommend_menu_close').click(function() {
+      $('#recommend_menu').removeClass('show_block');
+	  $('.recommend_menu_close').removeClass('show_block');
+    })
+	//推薦選單被選到加樣式與動作
+    if($('.recommend_menu_list').length>0){
+      var $li = $('ul.recommend_menu_list li');
+      $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
+	  $li.click(function(){
+        $(this).addClass('active').siblings('.active').removeClass('active');
+		//當選單按下, 依類別給分類按鈕名稱
+		$('.recommend_cat_btn_name').text($(this).text());
+		//設定MORE按鈕的連結
+		 $('.recommend_more_btn a').attr('href', $(this).data('href'));
+		//若小版選單開啟
+		if($('.recommend_menu_close').hasClass('show_block')){
+		  $('.recommend_menu_close').click();
+		}
+      });
+    }
+	
+	
+	
+	
+	//推薦作品區大小版不同功能
+	recommand_js();
+	
 });
 
   //當HEADER選單被按時, 關閉推薦選單
@@ -345,6 +338,7 @@ $(document).ready(function() {
 //當WIDNWOS RESIZE時, 關閉選單
 $( window ).resize(function(evt) {
   addhover();
+  recommand_js();
 });
 //hover動作判斷
 function addhover(){
@@ -354,6 +348,70 @@ function addhover(){
     $(".recommend_works_item").removeClass('recommend_works_item_hover');
   }
 } 
+
+//推薦作品區大小版不同功能
+function recommand_js(){
+	console.log('recommand_js: start');
+	if($('.recommend_works_carousel').length>0){
+	
+	
+	if($( window ).width()> 768){
+	  console.log('recommand_js: >960');
+	  //var owl2 = $(".recommend_works_carousel");
+	  //owl2.owlCarousel('remove');
+	  //瀑布流內容
+	    var $container = $('.recommend_works_carousel');
+        $container.imagesLoaded(function () {
+          $container.masonry({
+            itemSelector: '.page',
+            columnWidth: '.page',
+            gutter: 32,
+          });
+          $('div.page').animate({opacity: 1});
+        });
+	}else{
+	  console.log('recommand_js: <=960');
+	    //var $container = $('.recommend_works_carousel');
+		//$container.masonry('remove');
+	  
+	  
+      //推薦作品小版時輪播 .recommend_works_carousel
+	  
+	  var owl2 = $(".recommend_works_carousel");
+      owl2.owlCarousel({
+        singleItem:true,
+        lazyLoad: true,
+        autoPlay: false,
+        slideSpeed: 2000,
+        pagination: false,
+        navigation: false,
+		stopOnHover: true,
+      });
+	  
+	  
+	  
+	  $('.recommend_works .owl-prev').click(function() {
+		owl2.trigger('owl.prev',[300]);
+		console.log('.recommend_works_carousel .owl-prev2');
+      })
+      $('.recommend_works .owl-next').click(function() {
+        owl2.trigger('owl.next',[300]);
+		console.log('.recommend_works_carousel .owl-next2');
+      })
+	  
+	  
+	}
+	
+	
+	
+	
+	}
+	
+	
+  
+}
+
+
 </script>
 
 <?php include_once('layout/_footer_v2.php') ?>

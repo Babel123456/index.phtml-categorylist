@@ -1390,7 +1390,8 @@ label.error {
     height: 44px;
   }
   .dropdown_menu{
-    top: 95px !important;
+    //top: 95px !important;
+	top: 39px !important;
 	@include breakpoint(max-width $screen_width768){ 
       top: 43px !important;
     }
