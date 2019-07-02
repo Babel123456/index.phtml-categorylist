@@ -1389,9 +1389,19 @@ label.error {
   @include breakpoint(max-width $screen_width768){ 
     height: 44px;
   }
+  .login_menu_area{
+    .dropdown_menu{
+      top: 95px !important;
+	}
+  }
+  .header_search_v2{
+    .dropdown_menu{
+      top: 39px !important;
+	}
+  }
   .dropdown_menu{
     //top: 95px !important;
-	top: 39px !important;
+	//top: 39px !important;
 	@include breakpoint(max-width $screen_width768){ 
       top: 43px !important;
     }

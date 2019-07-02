@@ -387,7 +387,7 @@
 	  
     }
   }//#banner_carousel
-  .owl-buttons{
+  .owl-nav{
       position: absolute;
 	  right: 0;
 	  bottom: 0;
@@ -398,7 +398,7 @@
 		width: 100%;
 	  }
 	  i{
-        -webkit-text-stroke: 1px $grey_color2;
+        -webkit-text-stroke: 1px $grey_color3; //$grey_color2;
       }
 	  &>div{
 	    display: inline-block;
@@ -409,7 +409,7 @@
 	    width: 56px;
 		height: 56px;
 		line-height: 56px;
-		background: $grey_color2;
+		background: $grey_color3 !important;
 		@include breakpoint(max-width $screen_width768){
 		  position: absolute;
 		  width: 36px;
@@ -433,6 +433,7 @@
 
   //累計數字區塊
   .plan_info_count_v2{
+    z-index: 1;
     position: relative;
 	margin-top: -22px;
 	@include breakpoint(max-width $screen_width768){
@@ -509,13 +510,14 @@
 
 /* main_content_v2 */
 .main_content_v2{
-  //text-align: center;
+  text-align: center;
 // 推薦區塊開始 v2 -----------------------------------------------------
     .recommend_area{
-	  //display: inline-block;
+	  display: inline-block;
 	  text-align: center;
 	  margin-top: 96px;
 	  @include breakpoint(max-width $screen_width768){
+	    display: block;
 	    margin-top: 48px;
 	  }
       .recommend_title_area{
@@ -663,14 +665,7 @@
 		    margin-left: 48px;
 			width: 522px;
 		  }
-		  /*
-		  @include breakpoint(max-width $screen_width1600){
-		    width: 1088px;
-		  }
-		  @include breakpoint(max-width $screen_width1440){
-		    width: 998px;
-		  }
-		  */
+		  
 		  @include breakpoint(max-width $screen_width768){
 		    margin: 0 auto;
 			width: 100%;
@@ -702,6 +697,43 @@
 		    width: 300px;
 			margin-bottom: 32px;
 			//float: left;
+			/*
+			&:before{ //為了讓不齊頭
+			  content: '';
+			  position: relative;
+			  display: inline-block;
+			  width: 100%;
+			  border-top: 1px solid pink;
+			}
+			*/
+			&top0:before{ 
+			  content: '';
+			  position: relative;
+			  display: inline-block;
+			  width: 100%;
+			  height: 0px;
+			}
+			&.top32:before{
+			  content: '';
+			  position: relative;
+			  display: inline-block;
+			  width: 100%;
+			  height: 32px;
+			}
+			&.top64:before{
+			  content: '';
+			  position: relative;
+			  display: inline-block;
+			  width: 100%;
+			  height: 64px;
+			}
+			&.top96:before{
+			  content: '';
+			  position: relative;
+			  display: inline-block;
+			  width: 100%;
+			  height: 96px;
+			}
 			&:not(:first-child){
 			  //margin-left: 32px;
 			  @include breakpoint(max-width $screen_width1800){
@@ -735,42 +767,34 @@
 			@include breakpoint(max-width $screen_width960){
 			  width: 244px;
 		    }
-			/*
-			@include breakpoint(max-width $screen_width1919){
-		      width: 22.8%;
-			  //width: 18%;
-		    }
 			
-			@include breakpoint(max-width $screen_width1600){
-		      //width: 30%;
-			  width: 24%;
-			  width: 22%;
-		    }
-			@include breakpoint(max-width $screen_width1200){
-		      width: 21%;
-		    }
-			@include breakpoint(max-width $screen_width1024){
-		      //width: 45%; 
-		    }
-			*/
-			/*
-			@include breakpoint(max-width $screen_width1800){
-		      width: 280px;
-		    }
-			@include breakpoint(max-width $screen_width1600){
-		      width: 260px;
-		    }
-			@include breakpoint(max-width $screen_width1440){
-		      width: 240px;
-		    }
-			*/
 			@include breakpoint(max-width $screen_width768){
 			//float: none;
-			   width: 100%;
+			   //width: 100%;
+			   width: 400px;
+		    }
+			@include breakpoint(max-width $screen_width500){
+			//float: none;
+			   //width: 100%;
+			   width: 411px;
+			   //width: 300px;
+			   
 		    }
 			
+			@include breakpoint(max-width $screen_width400){
+			//float: none;
+			   //width: 100%;
+			   width: 300px;
+			   //width: 90%;
+		    }
+			@include breakpoint(max-width $screen_width360){
+			//float: none;
+			   //width: 100%;
+			   width: 286px;
+			   //width: 90%;
+		    }
 		  }
-		  .owl-buttons{
+		  .owl-nav{
 		    display: none;
             position: absolute;
 	        z-index: 8;
@@ -781,14 +805,14 @@
 		      width: 100%;
 	        }
 	        i{
-              -webkit-text-stroke: 1px $grey_color2;
+              -webkit-text-stroke: 1px $grey_color3;
             }
 	        &>div{
 	          display: inline-block;
 	        }
 	        .owl-prev, .owl-next{
 	          text-align: center;
-	          background: $grey_color2;
+	          background: $grey_color3 !important;
 		      @include breakpoint(max-width $screen_width768){
 		        position: absolute;
 		        width: 36px;
@@ -807,6 +831,7 @@
 		  .recommend_works_item{ //作品樣式
 		    position: relative;
 			width: 100%;
+			cursor: pointer;
 			@include border-radius(4px);
 			overflow: hidden;
 			.recommend_creative_wrap{
@@ -819,7 +844,7 @@
 			  width:100%;
               height:100%;
 			  @include display-flex(flex-end,column); 
-			  display: none;
+			  //display: none;
 			  &>div{
 			    @include flex(-1 0 0);
 			  }
@@ -863,19 +888,25 @@
 				  //margin-top: 48px;
 				  margin-top: 16px;
 				  font-size: $font_size14;
-				  line-height: 20px;
+				  //line-height: 20px;
 				  a{
-				    width: 100%;
+				    //width: 100%;
 					text-align: right;
 				    @include display-flex(flex-end,row);
-				    color: $sub_color;
+				    //display: inline-block;
+					overflow: hidden;
+					height: 20px;
+					line-height: 20px;
+					color: $sub_color;
 					&:hover{
 					  color: $main_color2;
 					}
 					span{
 					  @include flex(2);
-					  @include ellipsis;
+					  //@include ellipsis;
 		              @include line-clamp(vertical,1);
+					  
+					  //@include ellipsis-oneline;
 		              @include word-break;
 					}
 					i{

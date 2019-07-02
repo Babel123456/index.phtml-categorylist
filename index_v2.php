@@ -2,13 +2,17 @@
 <!-- 引用 header 新版 -->
 <?php include_once('layout/_header_v2.php') ?>
   
-  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.carousel.css" rel="stylesheet" />
+  <link type="text/css" href="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/jquery-textcomplete/media/stylesheets/textcomplete.css" rel="stylesheet" />
   
-  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.theme.css" rel="stylesheet" />
-  <link type="text/css" href="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/css/owl.transitions.css" rel="stylesheet" />
+  <link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/jBox.css" rel="stylesheet" />
+  <link type="text/css" href="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.css" rel="stylesheet" />
   
-  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/owl.carousel/js/owl.carousel.min.js"></script>
+  <!-- 新版輪播 -->
+  <link type="text/css" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <link type="text/css" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet" />
   
+  
+  <script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
   
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/waypoint/js/waypoint.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/counterjs/js/jquery.counterup.min.js"></script>
@@ -19,6 +23,14 @@
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/imagesloaded.pkgd.min.js"></script>
   <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/masonry/js/masonry.pkgd.min.js"></script>
   
+  <!-- POPUP開啟作品資訊頁 -->
+  <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/jquery-textcomplete/jquery.textcomplete.js"></script>
+  <script type="text/javascript" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/jquery-textcomplete/jquery.overlay.js"></script>
+  
+  <script type="text/javascript" src="https://www.pinpinbox.com/js/jBox-0.4.8/jBox.min.js"></script>
+  <script type="text/javascript" src="https://www.pinpinbox.com/js/jBox-0.4.8/plugins/Confirm/jBox.Confirm.min.js"></script>
+  <script type="text/javascript" src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/js/autolink-min.js"></script>
+ 
  
   <!-- BANNER輪播區塊開始 -->
   <div id="bannner_v2" class="banner_v2">
@@ -34,10 +46,6 @@
 			   <img alt="創作土壤" class="lazyOwl" data-src="https://cdn.pinpinbox.com/upload/admin/ad/20190613/5d0214a4c034c.png" src="https://cdn.pinpinbox.com/upload/admin/ad/20190613/5d0214a4c034c.png" />
 			 </a>
 		   </div>
-		</div>
-		<div class="owl-buttons">
-		  <div class="owl-prev"><i class="fa fa-chevron-left"></i></div>
-		  <div class="owl-next"><i class="fa fa-chevron-right"></i></div>
 		</div>
 	</div><!-- .banner_carousel_area_v2 -->
 	
@@ -91,12 +99,12 @@
 		         
 				<!-- 第一個作品開始 -->
 				<div class="page">
-				  <div id="recommend_works_item01" class="recommend_works_item">
-				    <div class="recommend_creative_wrap">
+				  <div id="recommend_works_item01" class="recommend_works_item" onclick="popview('http://localhost/creative_content.php');">
+				    <div class="recommend_creative_wrap" >
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
 					      <div class="recommend_creative_title">週末到美術館欣賞王信女士的攝影展，身為台灣報導攝影的先鋒，她的攝影著實地令我著迷。黑白基調的系列照，都感覺得到她背後想傳達的故事。尤其喜歡她的人道關懷精神去對議題進行拍攝</div>
-					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/FSCHOU"><span>FS</span><i class="fa fa-arrow-right"></i></a></div>
+					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/FSCHOU"><span>FSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFS</span><i class="fa fa-arrow-right"></i></a></div>
 					    </div>
 					  </div>
 					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
@@ -117,7 +125,7 @@
 				
 				<!-- 第二個作品開始 -->
 				<div class="page">
-				  <div id="recommend_works_item02" class="recommend_works_item">
+				  <div id="recommend_works_item02" class="recommend_works_item" onclick="popview('http://localhost/creative_content.php');">
 				    <div class="recommend_creative_wrap">
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
@@ -143,7 +151,7 @@
 				
 				<!-- 第三個作品開始 -->
 				<div class="page">
-				  <div id="recommend_works_item03" class="recommend_works_item">
+				  <div id="recommend_works_item03" class="recommend_works_item" onclick="popview('http://localhost/creative_content.php');">
 				    <div class="recommend_creative_wrap">
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
@@ -170,7 +178,7 @@
 				
 				<!-- 第四個作品開始 -->
 				<div class="page">
-				  <div id="recommend_works_item03" class="recommend_works_item">
+				  <div id="recommend_works_item03" class="recommend_works_item" onclick="popview('http://localhost/creative_content.php');">
 				    <div class="recommend_creative_wrap">
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
@@ -196,7 +204,7 @@
 				
 				<!-- 第五個作品開始 -->
 				<div class="page">
-				  <div id="recommend_works_item03" class="recommend_works_item">
+				  <div id="recommend_works_item03" class="recommend_works_item" onclick="popview('http://localhost/creative_content.php');">
 				    <div class="recommend_creative_wrap">
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
@@ -223,12 +231,7 @@
 				
 		        
 		      </div>
-		      <div class="owl-buttons">
-		        <div class="owl-prev"><i class="fa fa-chevron-left"></i></div>
-		        <div class="owl-next"><i class="fa fa-chevron-right"></i></div>
-		      </div>
-			
-			
+		      
 			</div><!-- .recommend_content_works -->
 			
 		  </div>
@@ -265,27 +268,19 @@ $(document).ready(function() {
   addhover();
   //輪播
    var owl1 = $(".banner_carousel_v2");
-   owl1.owlCarousel({
-        singleItem:true,
-        lazyLoad: true,
-        autoPlay: false,
-        slideSpeed: 2000,
-        pagination: false,
-        navigation: false,
-		stopOnHover: true
-    });
-	
-	$('.banner_carousel_area_v2 .owl-prev').click(function() {
-      owl1.trigger('owl.prev',[300]);
-    })
-    $('.banner_carousel_area_v2 .owl-next').click(function() {
-      owl1.trigger('owl.next',[300]);
-    })
+	owl1.owlCarousel({
+    loop:true,
+	items:1,
+	nav:true,
+	dots:false,
+	smartSpeed:300,
+	navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>']
+	})
 	
 	//輪播沒有第二頁時, 不秀左右按鈕鍵
-    if($('.banner_carousel_v2 .page').length ===1 ){
-	 $('#banner_carousel_area_v2 .owl-buttons').css('display','none');
-    }
+    //if($('.banner_carousel_v2 .page').length ===1 ){
+	 //$('#banner_carousel_area_v2 .owl-buttons').css('display','none');
+    //}
 	
 	//推薦選單出現與否
 	$('.recommend_cat_btn').click(function() {
@@ -314,6 +309,7 @@ $(document).ready(function() {
     }
 	
 	
+
 	
 	
 	//推薦作品區大小版不同功能
@@ -342,7 +338,8 @@ $( window ).resize(function(evt) {
 });
 //hover動作判斷
 function addhover(){
-  if($( window ).width()> 768){
+	
+  if( window.innerWidth > 768){
     $(".recommend_works_item").addClass('recommend_works_item_hover');
   }else{
     $(".recommend_works_item").removeClass('recommend_works_item_hover');
@@ -351,15 +348,13 @@ function addhover(){
 
 //推薦作品區大小版不同功能
 function recommand_js(){
-	console.log('recommand_js: start');
-	if($('.recommend_works_carousel').length>0){
+
+  if($('.recommend_works_carousel').length>0){
 	
+	console.log($( window ).width());
+	if( window.innerWidth > 768){
 	
-	if($( window ).width()> 768){
-	  console.log('recommand_js: >960');
-	  //var owl2 = $(".recommend_works_carousel");
-	  //owl2.owlCarousel('remove');
-	  //瀑布流內容
+	 //瀑布流內容
 	    var $container = $('.recommend_works_carousel');
         $container.imagesLoaded(function () {
           $container.masonry({
@@ -369,47 +364,125 @@ function recommand_js(){
           });
           $('div.page').animate({opacity: 1});
         });
+		$('.recommend_works_carousel').removeClass('owl-carousel');
+		$('.recommend_works_carousel .page').removeClass('top0');
+		$('.recommend_works_carousel .page').removeClass('top32');
+		$('.recommend_works_carousel .page').removeClass('top64');
+		$('.recommend_works_carousel .page').removeClass('top96');
+		console.log('mansory');
+		
+		//不齊頭排列
+		var random_margintop = margintop_range([0,32,64,96], 4);
+		//if( window.innerWidth > 1423){ //1440
+		if( $( window ).width() > 1440){ //1440
+		  for (var i=0; i<=3; i++) {
+			$( ".recommend_works_carousel .page:nth-child("+(i+1)+")").addClass('top'+random_margintop[i]);
+		  }
+		}else if(($( window ).width() <= 1439) && ($( window ).width() > 1024)){
+		  for (var i=0; i<=2; i++) {
+			$( ".recommend_works_carousel .page:nth-child("+(i+1)+")").addClass('top'+random_margintop[i]);
+		  }
+		}else if( $( window ).width() <= 1024){
+		  for (var i=0; i<=1; i++) {
+			$( ".recommend_works_carousel .page:nth-child("+(i+1)+")").addClass('top'+random_margintop[i]);
+		  }
+		}
 	}else{
-	  console.log('recommand_js: <=960');
-	    //var $container = $('.recommend_works_carousel');
-		//$container.masonry('remove');
-	  
-	  
-      //推薦作品小版時輪播 .recommend_works_carousel
-	  
-	  var owl2 = $(".recommend_works_carousel");
-      owl2.owlCarousel({
-        singleItem:true,
-        lazyLoad: true,
-        autoPlay: false,
-        slideSpeed: 2000,
-        pagination: false,
-        navigation: false,
-		stopOnHover: true,
-      });
-	  
-	  
-	  
-	  $('.recommend_works .owl-prev').click(function() {
-		owl2.trigger('owl.prev',[300]);
-		console.log('.recommend_works_carousel .owl-prev2');
-      })
-      $('.recommend_works .owl-next').click(function() {
-        owl2.trigger('owl.next',[300]);
-		console.log('.recommend_works_carousel .owl-next2');
-      })
-	  
-	  
+	    
+	  $('.recommend_works_carousel').addClass('owl-carousel');
+	    var owl2 = $(".recommend_works_carousel");
+	    owl2.owlCarousel({
+	    items:2,
+	    loop: true,
+	    center: true,
+	    margin: 24,
+        autoWidth:true,
+	    nav:true,
+	    dots:false,
+	    smartSpeed:300,
+	    autoHeight: false,
+	    navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+	  })
+	  console.log('carousel');
 	}
-	
-	
-	
-	
-	}
-	
+  }
 	
   
+}//recommand_js()
+
+//瀑布流不齊頭排列亂數
+function margintop_range(range, n) {
+  var sample = [];
+  for(var i=0; i<n; i++) {
+    sample.push(range.splice(Math.random()*range.length,1));
+  }
+  return sample;
 }
+
+//POPUP開啟作品資訊頁
+//POPVIEW
+	function popview(url) {
+	  
+	$('.jBox-wrapper').remove();
+	//url = 'http://localhost/album_content.php';
+	//url = 'http://192.168.16.115/album_content.php';
+	url = 'http://192.168.16.118/album_content.php';
+	
+	//url='http://localhost/messageboard2.html';
+	//url='http://localhost/popup.html';
+	//url='http://localhost/testdivscroll.html';
+	$.post(url, {
+	  data : null,
+	}, function(r) {
+		
+		//r='<div id="album_content_area" class="album_content_area"><div class="album_content_intro_area"> <div class="album_content_right_area"> <div class="album_content_donate_area"> <div class="album_content_intro_info"> <div class="album_content_creative_info"> <div class="album_content_creative_info_img"><a href="https://www.pinpinbox.com/papid" title="小愉兒社會福利基金會小愉兒社會福利基金會小愉兒社會福利基金會"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/3876/picture$7c7d.jpg"></a></div> <div class="album_content_creative_info_name"><span><a href="https://www.pinpinbox.com/papid" title="小愉兒社會福利">小愉兒社會福利</a></span><span class="sub_desc">2018/11/08</span></div> </div> <div class="album_content_creative_info_num"> <div class="album_content_creative_info_pin"><a href="javascript:void(0)" title="釘一下" ><i name="likes" class="fa fa-thumb-tack"></i>57</a></div> <div class="album_content_creative_info_view"><i class="fa fa-eye"></i>788446</div> </div> </div> <div class="album_content_donate"> <div class="donate_btn"> <span class="btn_new btn_main">贊助</span> </div> <div class="donate_desc"> <span>贊助條件</span> <span>1200P</span> <span class="p_to_nt">(600TWD)</span> </div> <div class="album_content_back" onclick="$(\'.jBox-closeButton\').click();"> <span><i class="fa fa-angle-left"></i></span> <span>返回</span> </div> </div> <div class="activity_vote"> <div class="activity_vote_desc">作品正在參加活動</div> <div class="activity_vote_area"> <span class="activity_vote_title">我的創意我的傳藝我的創意我的傳藝</span> <span class="btn_new btn_main">投票</span> </div> </div> <div id="removeInPop" class="intro_see_more_area"> <div class="intro_title">你可能會想看</div> <div class="intro_see_more"> <div class="intro_see_more_box"> <a href="https://www.pinpinbox.com/index/album/content/?album_id=15124&categoryarea_id=13&click=cover" title="【公益募資】認購$60手工餅乾｜愉你同在，送愛到育幼院｜小愉兒 x pinpinbox"> <div class="intro_see_more_img"> <div class="intro_see_more_img_position"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181227/5c24b13e8af47.jpg" ></div> </div> <div class="intro_see_more_name">【公益募資】認購$60手工餅乾｜愉你同在，送愛到育幼院｜小愉兒 x pinpinbox</div> </a> </div> <div class="intro_see_more_box"> <a href="https://www.pinpinbox.com/index/album/content/?album_id=15122&categoryarea_id=13&click=cover" title="【公益募資】家園募資計劃｜小愉兒們想要有個家…｜小愉兒 x pinpinbox"> <div class="intro_see_more_img"> <div class="intro_see_more_img_position"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181112/5be915bbdf0b0.jpg"></div> </div> <div class="intro_see_more_name">【公益募資】家園募資計劃｜小愉兒們想要有個家…｜小愉兒 x pinpinbox</div> </a> </div> <div class="intro_see_more_box"> <a href="https://www.pinpinbox.com/index/album/content/?album_id=10313&categoryarea_id=13&click=cover" title="小愉兒聖誕公益活動形象影片 | pinpinbox"> <div class="intro_see_more_img"> <div class="intro_see_more_img_position"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181108/5be3bc4d518b5.jpg"></div> </div> <div class="intro_see_more_name">小愉兒聖誕公益活動形象影片 | pinpinbox</div> </a> </div> <div class="intro_see_more_box"> <a href="https://www.pinpinbox.com/index/album/content/?album_id=15124&categoryarea_id=13&click=cover" title="【公益募資】認購$60手工餅乾｜愉你同在，送愛到育幼院｜小愉兒 x pinpinbox"> <div class="intro_see_more_img"> <div class="intro_see_more_img_position"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181112/5be915bbdf0b0.jpg" ></div> </div> <div class="intro_see_more_name">【公益募資】認購$60手工餅乾｜愉你同在，送愛到育幼院｜小愉兒 x pinpinbox</div> </a> </div> <div class="intro_see_more_box"> <a href="https://www.pinpinbox.com/index/album/content/?album_id=15122&categoryarea_id=13&click=cover" title="【公益募資】家園募資計劃｜小愉兒們想要有個家…｜小愉兒 x pinpinbox"> <div class="intro_see_more_img"> <div class="intro_see_more_img_position"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181112/5be915bbdf0b0.jpg" ></div> </div> <div class="intro_see_more_name">【公益募資】家園募資計劃｜小愉兒們想要有個家…｜小愉兒 x pinpinbox</div> </a> </div> <div class="intro_see_more_box"> <a href="https://www.pinpinbox.com/index/album/content/?album_id=10313&categoryarea_id=13&click=cover" title="小愉兒聖誕公益活動形象影片 | pinpinbox"> <div class="intro_see_more_img"> <div class="intro_see_more_img_position"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181108/5be3bc4d518b5.jpg"></div> </div> <div class="intro_see_more_name">小愉兒聖誕公益活動形象影片 | pinpinbox</div> </a> </div> </div> </div> </div> </div> <div class="album_content_left_area"> <div id="album_content_main" class="album_content_main"> <div class="album_content_box"> <div class="album_content_box_img"> <div class="album_content_box_img_area"> <img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181128/5bfdbf7f49ea0.jpg" alt="【公益募資】認購$60手工餅乾｜愉你同在，送愛到育幼院｜小愉兒 x pinpinbox" title="【公益募資】認購$60手工餅乾｜愉你同在，送愛到育幼院｜小愉兒 x pinpinbox"> </div> <div class="album_content_box_img_btn"  ><div class="btn_new btn_dark_opacity">進入觀看</div></div> </div> <div class="album_content_box_info"> <div class="album_content_box_icon"> <div class="album_content_box_icons"><span><i class="fa fa-volume-down"></i><i class="fa fa-play-circle"></i><i class="fa fa-gift"></i></span></div> <div class="album_content_box_pages"><span>14頁</span></div> <div class="album_content_box_menu_btn"> <i class="fa fa-ellipsis-h"></i> <div class="content_box_menu"> <ul> <li><a href="javascript:void(0)" 分享</a></li> <li data-albumid="4902"><a onclick="buyalbum(4902);" href="javascript:void(0)">收藏</a></li> <li><a class="alert_btn" href="javascript:void(0)" data-type="album" data-type_id="4902">檢舉</a></li> </ul> </div> </div> </div> <div class="content_box_name">【公益募資】認購$60手工餅乾｜愉你同在，送愛到育幼院｜小愉兒 x pinpinbox</div> <div id="album_content_desc" class="album_content_desc"> <div id="album_content_box_desc" class="album_content_box_desc" >✦ 一份溫暖、兩倍愛心<br>不是每個孩子都擁有溫暖的聖誕節，我們希望透過親手製作的手工愛心餅乾，給予育幼院的孩子們溫暖。<br>只要$60就能認購一份餅乾，我們將替您把這份愛送至育幼院，同時幫助小愉兒及弱勢孩子們！<br> 邀請您和小愉兒一起，把這份愛送給育幼院的寶貝們。<br><br>✦ 「愛他，就要讓他自立自強」<br>小愉兒是父母希望「愉快長大」的心智障礙孩子們，更是最認真、熱情、用心的點心烘焙師！<br><br>✦ 您的愛心將於12月起送至台北各大育幼院！<br> 財團法人台灣兒童暨家庭扶助基金會大同育幼院、財團法人基督教台北市私立伯大尼兒少家園、社團法人中華育幼機構兒童關懷協會、財團法人基督教聖道兒少福利基金會附屬台北市私立聖道兒童之家、財團法人天主教善牧社會福利基金會、新北普賢慈海家園、台灣展翅協會、社團法人世界和平會…持續增加中。<br> <br>✓ 不知道如何認購？就讓pinpinbox小老師教你：<br><a href="https://www.pinpinbox.com/index/album/content/?album_id=15111&amp;categoryarea_id=11&amp;autoplay=1" target="_blank">https://www.pinpinbox.com/index/album/content/?album_id=15111&amp;categoryarea_id=11&amp;autoplay=1</a><br><br> ✓ 注意事項：<br>1. 請於認購後留下詳細資料，以便發票寄送。<br>2. 購買份數及填寫P點(價錢)請見作品內頁價目表。<br>3. 認購此專案，您將不會獲得手工餅乾，本次募資餅乾將統一由pinpinbox發送至台北各大育幼院。<br><br>✓ 若有任何疑問，請洽「pinpinbox」Facebook粉絲團：<br> <a href="https://www.facebook.com/cpinpinbox/?ref=aymt_homepage_panel" target="_blank">https://www.facebook.com/cpinpinbox/?ref=aymt_homepage_panel</a> </div> <div id="album_content_desc_more" class="btn_new">更多</div> </div> </div> </div> <div class="activity_vote"> <div class="activity_vote_desc">作品正在參加活動</div> <div class="activity_vote_area"> <span class="activity_vote_title">我的創意我的傳藝我的創意我的傳藝</span> <span class="btn_new btn_main">投票</span> </div> </div> <div class="message_board_box"> <div class="message_reply_count">572则回复</div> <div class="message_board"> <div id="album_content_message_leave" class="message_leave"> <div id="album_content_pinpinboard" class="pinpinboard"> <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$3a34.jpg"></span> <span><textarea id="album_content_user_comment" rows="4" maxlength="300" placeholder="有什麼想表達的嗎?"></textarea></span> </div> <div><span class="btn_new">清除</span><span class="btn_new message_submit">送出</span></div> </div> <div id="album_content_message_list" class="message_list"> <div class="message_item"> <div> <span><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.svg"></span> </div> <div> <div><span><a href="javascript:void(0);" > 陈天</a></span><span><time datetime="2018/05/28 03:05:33" class="timeago">21天之前</time></span></div> <div> <div class="comment_reply_text">眭老师您好翻越千山万水，我都要看你节目我是内地粉丝翻墙，看你节目网络不稳定</div> <div><span class="delete_box"><i class="fa fa-times"></i></span></div> </div> </div> </div> <div class="message_item"> <div> <span><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/4376/picture$b787.jpg"></span> </div> <div> <div><span><a href="javascript:void(0);" > 眭澔平</a></span><span><time datetime="999/05/17 10:05:26" class="timeago">21天之前</time></span></div> <div> <div class="comment_reply_text"><span><a class="message_tag" target="_blank" href="https://www.pinpinbox.com/index/creative/content/?user_id=4563">June Wu</a></span> 謝謝！每週都會有新影片。2018/10/17 澔平持續深入非洲，探索中非俾格米人最原始部落，參與世人未曾知曉的團圓祭典，傾聽花開的聲音。</div> <div><span class="delete_box"><i class="fa fa-times"></i></span></div> </div> </div> </div> </div> </div> </div> </div> <div id="album_content_social_links_box" class="social_links_box"> <div class="social_links_title">分享</div> <div class="social_links_box_area"> <div id="album_content_social_links" class="social_links"> <a href="href="https://cdn.pinpinbox.com/storage/zh_TW/user/3876/album/15124/qrcode$d2f5.jpg" title="顯示QRcode" target="_blank"> <img src="images/assets-v7/qr_square.png" > </a> </div> <div id="album_content_social_links2" class="social_links2" title="複製作品網址" ><i class="fa fa-link"></i></div> </div> </div> <div id="snackbar"> <span>已複製到剪貼簿</span> <span><input id="page_url" type="text" value="https://www.pinpinbox.com/index/album/content/?album_id=15124&click=name"></span> </div> </div> </div> </div> </div>';
+		content = $(r).find('#album_content_area');
+		//content = r;
+		//pinpinboard = $(r).find('#album_content_pinpinboard');
+		script = $(r).filter('script[name="popview"]');
+		
+		
+        
+		if(!$('#JboxPopview').length) {
+			var popview = new jBox('Modal', {
+				addClass : 'popview_content',
+				id : 'JboxPopview',
+				//width: 1200,
+	            //height: 1600,
+				//height: 820,
+				
+				//20190222: 樣式移至CSS控制區塊開始
+	            zIndex : 1000,
+				//20190222: 樣式移至CSS控制區塊結束
+				
+				target: $('body'), //20181214: Add for position 
+				isolateScroll: false, //20190212: mouse wheel
+				onCloseComplete: function() {
+			  		//processAjaxData("https://www.pinpinbox.com/papid?rank_id=1&");
+					popview.destroy();
+					browseKitRefresh();
+				},
+				onOpen : function(){
+                  //processAjaxData(url);
+                  //$('li.removeInPop').remove();
+					//$('#removeInPop').remove();
+                  //$('.jBox-content').append(pinpinboard);
+                  $('.jBox-content').append(script);
+                  //$('#pinpinboardAnchor').on('click', function(){
+						//$('.jBox-content').animate({scrollTop:$('.comment_info_textarea').offset().top}, 10);
+					//})
+                  //$('.jBox-content .descrip').html( $('.jBox-content .descrip').html().autoLink({ target: "_blank" }) ) ;
+					$('.jBox-content .descrip').html( $('.jBox-content .descrip').html() ) ;
+					window.onpopstate = function(event) { popview.close();};
+				
+				},
+			}).setContent(content).open();
+		}//if(!$('#JboxPopview').length)
+		//$(window).trigger('resize');	
+	});
+}////POPVIEW
+
+
 
 
 </script>
