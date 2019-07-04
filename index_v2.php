@@ -95,7 +95,7 @@
 			<div class="recommend_works">
 			
 			
-			  <div class="recommend_works_carousel "><!-- owl-carousel -->
+			  <div class="recommend_works_carousel"><!-- owl-carousel -->
 		         
 				<!-- 第一個作品開始 -->
 				<div class="page">
@@ -104,7 +104,12 @@
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
 					      <div class="recommend_creative_title">週末到美術館欣賞王信女士的攝影展，身為台灣報導攝影的先鋒，她的攝影著實地令我著迷。黑白基調的系列照，都感覺得到她背後想傳達的故事。尤其喜歡她的人道關懷精神去對議題進行拍攝</div>
-					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/FSCHOU"><span>FSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFS</span><i class="fa fa-arrow-right"></i></a></div>
+					      <div class="recommend_creative_name">
+						    <div class="recommend_creative_name_wrap">
+						      <span><a href="https://www.pinpinbox.com/FSCHOU">FSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFSFS</a></span>
+						      <span><a href="https://www.pinpinbox.com/FSCHOU"><i class="fa fa-arrow-right"></a></i></span>
+						    </div>
+						  </div>
 					    </div>
 					  </div>
 					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
@@ -115,7 +120,7 @@
 						<div class="profile_img_wrap">
 			              <a href="https://www.pinpinbox.com/FSCHOU" title="FS" ><img class="profile_img" src="https://cdn.pinpinbox.com/storage/zh_TW/user/161/picture$5d1b.jpg"></a>
 						</div>
-						<div class="recommend_works_title">［分享］另一種目線－王信攝影展</div>
+						<div class="recommend_works_title">［分享］另一種目線－王信攝影展另一種目線－王信攝影展另一種目線－王信攝影展另一種目線－王信攝影展另一種目線－王信攝影展另一種目線－王信攝影展另一種目線－王信攝影展另一種目線－王信攝影展</div>
 						<div class="recommend_works_view">瀏覽 : 950</div>
 					  </div>
 					</div>
@@ -130,8 +135,13 @@
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
 					      <div class="recommend_creative_title">攝影作品</div>
-					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/index/creative/content/?user_id=9802"><span>Ta Ke Chang</span><i class="fa fa-arrow-right"></i></a></div>
-					    </div>
+					      <div class="recommend_creative_name">
+						    <div class="recommend_creative_name_wrap">
+						      <span><a href="https://www.pinpinbox.com/index/creative/content/?user_id=9802">Ta Ke Chang</a></span>
+						      <span><a href="https://www.pinpinbox.com/index/creative/content/?user_id=9802"><i class="fa fa-arrow-right"></i></a></span>
+						    </div>
+						  </div>
+						</div>
 					  </div>
 					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
 					</div>
@@ -156,8 +166,13 @@
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
 					      <div class="recommend_creative_title">攝影作品-人像 (攝影 婚攝 微電影)我是語紳(Louise)， 從事旅遊攝影、婚禮攝影、活動攝影工作，用平面攝影或微電影來呈現，有需要攝影服務的朋友，可先加我的Line ID：louisechen4962 電話：0933-873-255 Digit camera 影像學院 人像講師</div>
-					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/Louise"><span>陳語紳</span><i class="fa fa-arrow-right"></i></a></div>
-					    </div>
+					      <div class="recommend_creative_name">
+						    <div class="recommend_creative_name_wrap">
+						      <span><a href="https://www.pinpinbox.com/Louise">陳語紳</a></span>
+						      <span><a href="https://www.pinpinbox.com/Louise"><i class="fa fa-arrow-right"></a></i></span>
+						    </div>
+						  </div>
+						</div>
 					  </div>
 					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
 					</div>
@@ -183,8 +198,13 @@
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
 					      <div class="recommend_creative_title">與鯨鯊ㄧ起吃早餐</div>
-					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4630"><span>Eric Chang</span><i class="fa fa-arrow-right"></i></a></div>
-					    </div>
+					      <div class="recommend_creative_name">
+						    <div class="recommend_creative_name_wrap">
+						      <span><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4630">Eric Chang</a></span>
+						      <span><a href="https://www.pinpinbox.com/index/creative/content/?user_id=4630"><i class="fa fa-arrow-right"></a></i></span>
+						    </div>
+						  </div>
+						</div>
 					  </div>
 					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
 					</div>
@@ -209,8 +229,13 @@
 					  <div class="recommend_creative_info">
 					    <div class="recommend_creative_info_wrap">
 					      <div class="recommend_creative_title">花</div>
-					      <div class="recommend_creative_name"><a href="https://www.pinpinbox.com/index/creative/content/?user_id=8941"><span>劉光智</span><i class="fa fa-arrow-right"></i></a></div>
-					    </div>
+					      <div class="recommend_creative_name">
+						    <div class="recommend_creative_name_wrap">
+						      <span><a href="https://www.pinpinbox.com/index/creative/content/?user_id=8941">劉光智</a></span>
+						      <span><a href="https://www.pinpinbox.com/index/creative/content/?user_id=8941"><i class="fa fa-arrow-right"></a></i></span>
+						    </div>
+						  </div>
+						</div>
 					  </div>
 					  <div class="recommend_creative_icon"><i class="fa fa-play-circle"></i><i class="fa fa-volume-down"></i></div>
 					</div>
@@ -230,7 +255,7 @@
 				
 				
 		        
-		      </div>
+		      </div><!-- .recommend_works_carousel -->
 		      
 			</div><!-- .recommend_content_works -->
 			
@@ -243,12 +268,235 @@
 		<!-- 推薦區塊結束 -->  
 		
 		
+		<!-- 合作區塊開始 -->
+		<div class="cooperation_area">
+		  <div class="cooperation_title_area">
+		    <div class="cooperation_title">Cooperation</div>
+		  </div>
+		  <div class="cooperation_content">
+		    <div class="cooperation_sample">
+			  <!-- 範例1開始 -->
+			  <div id="cooperation_sample_item01" class="cooperation_sample_item">
+			    <div class="cooperation_sample_photo">
+				  <div class="cooperation_sample_photo_wrap"><img src="https://cdn.pinpinbox.com/storage/zh_TW/user/499/cover$160d.jpg"></div>
+				</div>
+				<div class="cooperation_sample_info">
+				  <a href="https://www.pinpinbox.com/ili2016">
+				    <div class="cooperation_sample_title">鄭家純《純‧旅行》寫真特刊 抽簽名寫真書鄭家純《純‧旅行》寫真特刊 抽簽名寫真書鄭家純《純‧旅行》寫真特刊 抽簽名寫真書鄭家純《純‧旅行》寫真特刊 抽簽名寫真書</div>
+				    <div class="cooperation_sample_desc">虛擬、實體寫真一次擁有鄭家純。8/11 晚間6點開跑，使用pinpinbox App開啟並收藏《純‧旅行》特刊，就有機會抽到鄭家純親筆簽名寫真書以及多項好禮！
+				  (活動延長至8/18)獎項壹：鄭家純簽名寫真書晴天版、陰天版
+獎項貳：愛藝享文創品7.5折券
+(購買處 http://goo.gl/8WesNx)
+獎項參：冒險少年浩平周邊商品7.5折券
+(購買處 http://goo.gl/8WesNx)
+獎項肆：The Scent 用餐9折券
+</div>
+                  </a>
+				</div>
+			  </div>
+			  <!-- 範例1結束 -->
+			  
+			  <!-- 範例2開始 -->
+			  <div id="cooperation_sample_item02" class="cooperation_sample_item">
+			    <div class="cooperation_sample_photo">
+				  <div class="cooperation_sample_photo_wrap"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20180706/5b3f3acd7f1dc.jpg"></div>
+				</div>
+				<div class="cooperation_sample_info">
+				  <a href="https://www.pinpinbox.com/xinlishiang">
+				    <div class="cooperation_sample_title">【釘美食特輯】邵爺下廚啦</div>
+				    <div class="cooperation_sample_desc">沒有錯！邵爺親自下廚煮給你吃！
+今天來到位於樂利路的立祥公寓，一嚐單純又充滿濃烈人情味的牛肉麵。
+不過那個廚師好眼熟…
+趕緊觀看完整影片，一探究竟。
+
+購買牛肉麵：https://www.xinlishiang.com/ecommerce/
+</div>
+                  </a>
+				</div>
+			  </div>
+			  <!-- 範例2結束 -->
+			  
+			  
+			  <!-- 範例3開始 -->
+			  <div id="cooperation_sample_item03" class="cooperation_sample_item">
+			    <div class="cooperation_sample_photo">
+				  <div class="cooperation_sample_photo_wrap"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20181213/5c1230c6cf18f.jpg"></div>
+				</div>
+				<div class="cooperation_sample_info">
+				  <a href="https://www.pinpinbox.com/fantasytour">
+				    <div class="cooperation_sample_title">【夢想起航 X 麗星郵輪】跟著NANA來一場夢幻的出航</div>
+				    <div class="cooperation_sample_desc">【夢想起航 X 麗星郵輪】
+
+●風和日麗的好心情
+快跟著NANA一起踏上夢想的旅程
+搭上麗星郵輪，體驗美食、美景以及數不盡的夢幻設施吧！
+
+●上順帶你出去玩→ http://www.fantasy-tours.com/?AspxAutoDetectCookieSupport=1
+想看更多nana的旅程請關注上順旅遊
+#pinpinbox #上順旅行社 #麗星郵輪 #NANA #石垣島</div>
+                  </a>
+				</div>
+			  </div>
+			  <!-- 範例3結束 -->
+			  
+			  
+			  <!-- 範例4開始 -->
+			  <div id="cooperation_sample_item03" class="cooperation_sample_item">
+			    <div class="cooperation_sample_photo">
+				  <div class="cooperation_sample_photo_wrap"><img src="https://cdn.pinpinbox.com/upload/pinpinbox/diy/20180715/5b4aa86bb6f51.jpg"></div>
+				</div>
+				<div class="cooperation_sample_info">
+				  <a href="https://www.pinpinbox.com/johnnyleo">
+				    <div class="cooperation_sample_title">【pinpinbox X 漫畫家特輯】一支筆 一張紙</div>
+				    <div class="cooperation_sample_desc">廖老師展示創作精神 - 以 一支筆 一張紙 的概念來形容漫畫創作就是如此的簡單可以開始，但是漫畫創作的背後更是一段大家各自不同的人生創作歷程。</div>
+                  </a>
+				</div>
+			  </div>
+			  <!-- 範例4結束 -->
+			  
+			</div>
+		  </div><!-- .cooperation_content -->
+		</div><!-- .cooperation_area -->
+		<!-- 合作區塊結束 -->
+		
+		<!-- 伙伴區塊開始 -->
+		<div class="partner_area">
+		  <div class="partner_title_area">
+		    <div class="partner_title">Top recommend</div>
+		  </div>
+		  <div class="partner_content">
+		    <div class="partner_carousel owl-carousel"><!--  -->
+		         
+				<div class="page">
+				  <div id="partner_item01" class="partner_item">
+				    <a href="#partner_item01">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-1.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+				<div class="page">
+				  <div id="partner_item02" class="partner_item">
+				    <a href="#partner_item02">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-7.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+				<div class="page">
+				  <div id="partner_item03" class="partner_item">
+				    <a href="#partner_item03">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-10.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+				<div class="page">
+				  <div id="partner_item04" class="partner_item">
+				    <a href="#partner_item04">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-8.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+				<div class="page">
+				  <div id="partner_item05" class="partner_item">
+				    <a href="#partner_item05">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-12.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+				<div class="page">
+				  <div id="partner_item06" class="partner_item">
+				    <a href="#partner_item06">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-3.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+				<div class="page">
+				  <div id="partner_item07" class="partner_item">
+				    <a href="#partner_item07">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-5.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+				<div class="page">
+				  <div id="partner_item08" class="partner_item">
+				    <a href="#partner_item08">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-11.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+				<div class="page">
+				  <div id="partner_item09" class="partner_item">
+				    <a href="#partner_item09">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-9.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+				<div class="page">
+				  <div id="partner_item10" class="partner_item">
+				    <a href="#partner_item10">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-6.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+				<div class="page">
+				  <div id="partner_item11" class="partner_item">
+				    <a href="#partner_item11">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-4.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+				<div class="page">
+				  <div id="partner_item12" class="partner_item">
+				    <a href="#partner_item12">
+					  <div class="partner_item_photo">
+					    <div class="partner_item_photo_wrap"><img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v5/cooperation-2.png"></div>
+				      </div>
+					</a>
+				  </div>
+				</div>
+				
+		    </div><!-- .partner_carousel -->
+		  </div>
+		</div><!-- .cooperation_area -->
+		<!-- 伙伴區塊結束 -->
 		  
 	  </div><!-- .main_content_v2 -->
-	  
+	  <!--
 	  <div class="main_content2">
 		 
-	  </div><!-- .main_content2 -->
+	  </div> .main_content2 -->
   </div><!-- .content -->
   <!-- 主要內容區結束 -->
 
@@ -308,7 +556,17 @@ $(document).ready(function() {
       });
     }
 	
-	
+	//伙伴區塊
+	var owl3 = $(".partner_carousel");
+	  owl3.owlCarousel({
+	  items: 6,
+	  slideBy: 'page',
+	  nav:true,
+	  dots:false,
+	  smartSpeed:300,
+	  navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+	  
+	})
 
 	
 	

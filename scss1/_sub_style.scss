@@ -510,9 +510,42 @@
 
 /* main_content_v2 */
 .main_content_v2{
+  //讓所有font awesome瘦一點, 不影現行網站其他FONTAWESOME
+  i:not(.fa-caret-down){
+    -webkit-text-stroke: 1px #fff;
+  }
   text-align: center;
+  
+  //共同設定
+  .recommend_area, .cooperation_area, partner_area{
+    //display: inline-block;
+	text-align: center;
+	margin-top: 96px;
+	@include breakpoint(max-width $screen_width768){
+	  display: block;
+	  margin-top: 48px;
+	}
+  }
+  .recommend_title, .cooperation_title, .partner_title{
+    text-align: right;
+	font-weight: initial;
+	font-size: $font_size24;
+	@include breakpoint(max-width $screen_width768){
+	  font-size: $font_size16;
+	  font-size: $font_size18;
+	} 
+  }
+  .recommend_content, .cooperation_content, .partner_content{
+    margin: 96px auto 88px auto; //88 = 120 - 32
+	@include breakpoint(max-width $screen_width768){
+	  margin: 16px auto 64px auto;
+	}
+  }
+  
 // 推薦區塊開始 v2 -----------------------------------------------------
-    .recommend_area{
+  
+   .recommend_area{
+	  /*
 	  display: inline-block;
 	  text-align: center;
 	  margin-top: 96px;
@@ -520,15 +553,17 @@
 	    display: block;
 	    margin-top: 48px;
 	  }
+	  */
       .recommend_title_area{
-        text-align: right;
+        //text-align: right;
 	    @include breakpoint(max-width $screen_width768){
 		  margin-left: 88px;
 	      text-align: center;
 	    }
         &>div{
-	      display: inline-block;
+	      //display: inline-block;
 	    }
+		/*
 	    .recommend_title{
 	      font-weight: initial;
 	      font-size: $font_size24;
@@ -537,6 +572,7 @@
 			font-size: $font_size18;
 	      }
 	    }
+		*/
 	    .recommend_cat_btn{
 	      display: none;
 		  cursor: pointer;
@@ -555,13 +591,15 @@
 	    }
       }//.recommend_title_area
 	  .recommend_content{
-		
+		/*
 		//@include display-inline-flex(flex-start,row);
 		margin: 96px auto 88px auto; //88 = 120 - 32
 		@include breakpoint(max-width $screen_width768){
-		  margin: 16px auto 68px auto;
+		  //margin: 16px auto 68px auto;
+		  margin: 16px auto 64px auto;
 		  //margin: 16px auto 48px auto;
 		}
+		*/
 		&>div{
 		  //@include flex(-1 0 0);
 		  display: inline-block;
@@ -628,24 +666,16 @@
 		  
 		}
 		.recommend_works{
-		  //border: 1px solid $grey_color;
 		  position: relative;
 		  margin-left: 124px;
 		  width: 1296px; //300X4 + 32X3
-		  //width: 1298px;
 		  @include breakpoint(max-width $screen_width1800){
-		    //width: 1168px;
-			width: 67.5%;
+		    width: 67.5%;
 			width: 1024px;
-			//width: 1026px;
-			//width: 70%;
-			margin-left: 96px; 
-			//margin-left: 6.4%;
+			margin-left: 96px; //6.4%;
 		  }
 		  @include breakpoint(max-width $screen_width1440){
 		    width: 960px;
-			//width: 962px;
-			//width: 902px;
 			width: 800px;
 			width: 798px;
 			margin-left: 64px;
@@ -653,59 +683,32 @@
 		  @include breakpoint(max-width $screen_width1200){
 		     
 			margin-left: 48px; 
-			//width: 722px;
 			width: 720px;
 		  }
 		  @include breakpoint(max-width $screen_width1024){
 		    margin-left: 64px;
-			//width: 602px;
 			width: 600px;
 		  }
 		  @include breakpoint(max-width $screen_width960){
 		    margin-left: 48px;
 			width: 522px;
 		  }
-		  
 		  @include breakpoint(max-width $screen_width768){
 		    margin: 0 auto;
 			width: 100%;
 		  }
-		  
 		  .owl-carousel .owl-wrapper-outer {
             box-shadow: none;  //無陰影
 	      }
 		  .owl-item{
-		    //float: none;
-			//display: inline-block;
 		  }
-		  
 		  .recommend_works_carousel{
 		    position: relative;
 		    width: 100%;
-			//當大版時直式橫排??
-			//display: flex;
-            //flex-flow: column wrap;
-			//max-height: 800px;
-			//max-height: 840px;
-			//min-height: 840px;
-			@include breakpoint(max-width $screen_width768){
-		      //min-height: 622px;
-		    }
-			
 		  }
 		  .page{
 		    width: 300px;
 			margin-bottom: 32px;
-			//float: left;
-			/*
-			&:before{ //為了讓不齊頭
-			  content: '';
-			  position: relative;
-			  display: inline-block;
-			  width: 100%;
-			  border-top: 1px solid pink;
-			}
-			*/
 			&top0:before{ 
 			  content: '';
 			  position: relative;
@@ -734,7 +737,7 @@
 			  width: 100%;
 			  height: 96px;
 			}
-			&:not(:first-child){
+			&:not(:first-child){ //已寫在JS設定
 			  //margin-left: 32px;
 			  @include breakpoint(max-width $screen_width1800){
 		        //margin-left:16px;
@@ -742,56 +745,32 @@
 			}
 			@include breakpoint(max-width $screen_width1800){
 		      width: 232px;
-			  
-			  //width: 18%;
 		    }
 			@include breakpoint(max-width $screen_width1440){
-		      //width: 216px;
-			  //width: 288px;
-			  //width: 268px;
 			  width: 244px;
 		    }
 			@include breakpoint(max-width $screen_width1200){
-		      //width: 216px;
-			  //width: 288px;
-			  //width: 268px;
 			  width: 218px;
 		    }
 			@include breakpoint(max-width $screen_width1024){
-		      //width: 216px;
-			  //width: 288px;
-			  //width: 268px;
 			  width: 278px;
 			  width: 284px;
 		    }
 			@include breakpoint(max-width $screen_width960){
 			  width: 244px;
 		    }
-			
 			@include breakpoint(max-width $screen_width768){
-			//float: none;
-			   //width: 100%;
-			   width: 400px;
+			  width: 400px;
 		    }
 			@include breakpoint(max-width $screen_width500){
-			//float: none;
-			   //width: 100%;
-			   width: 411px;
-			   //width: 300px;
-			   
+			  width: 411px;
+			  //width: 300px;
 		    }
-			
 			@include breakpoint(max-width $screen_width400){
-			//float: none;
-			   //width: 100%;
-			   width: 300px;
-			   //width: 90%;
+			  width: 300px;
 		    }
 			@include breakpoint(max-width $screen_width360){
-			//float: none;
-			   //width: 100%;
-			   width: 286px;
-			   //width: 90%;
+			  width: 286px;
 		    }
 		  }
 		  .owl-nav{
@@ -889,10 +868,32 @@
 				  margin-top: 16px;
 				  font-size: $font_size14;
 				  //line-height: 20px;
-				  a{
-				    //width: 100%;
+				  .recommend_creative_name_wrap{
+				    height: 20px;
+					line-height: 20px;
+					overflow: hidden;
 					text-align: right;
 				    @include display-flex(flex-end,row);
+				  
+				  }
+				  span:first-child{
+					  @include flex(-1 0 0);
+					  @include flex(2);
+					  //@include ellipsis;
+		              @include line-clamp(vertical,1);
+					  
+					  //@include ellipsis-oneline;
+		              @include word-break;
+					}
+					span:last-child{
+					  @include flex(-1 0 0);
+				      margin-left: 8px;
+				      font-size: $font_size18;
+					}
+				  a{
+				    //width: 100%;
+					//text-align: right;
+				    //@include display-flex(flex-end,row);
 				    //display: inline-block;
 					overflow: hidden;
 					height: 20px;
@@ -901,18 +902,11 @@
 					&:hover{
 					  color: $main_color2;
 					}
-					span{
-					  @include flex(2);
-					  //@include ellipsis;
-		              @include line-clamp(vertical,1);
-					  
-					  //@include ellipsis-oneline;
-		              @include word-break;
-					}
+					
 					i{
-					  @include flex(-1 0 0);
-				      margin-left: 8px;
-				      font-size: $font_size18;
+					  //@include flex(-1 0 0);
+				      //margin-left: 8px;
+				      //font-size: $font_size18;
 				    }
 				  }
 				  &:after{
@@ -1001,7 +995,7 @@
 		}//.recommend_content_works
 	  }//.recommend_content
 	  .recommend_more_btn{
-	    margin-bottom: 96px;
+	    //margin-bottom: 96px;
 	    text-align: center;
 		@include breakpoint(max-width $screen_width768){
 		  margin-bottom: 48px;
@@ -1009,7 +1003,243 @@
 	  }
     }//.recommend_area
 	// 推薦區塊結束 v2 -----------------------------------------------------
-}
+
+    // 範例區塊開始 --------------------------------------------------------
+	
+	.cooperation_area{
+	  background: #fafafa;
+	  padding-top: 96px;
+	  @include breakpoint(max-width $screen_width768){
+		 padding-top: 48px;
+	  }
+	}
+	.cooperation_title_area{  //跟著推薦區標題
+	  text-align: right;
+	  @include breakpoint(max-width $screen_width768){
+	    text-align: center;
+	  }
+	}
+	.cooperation_content{
+	  margin: 96px auto 64px auto;
+	  @include breakpoint(max-width $screen_width768){
+	    margin: 48px auto 64px auto;
+	  }
+	}
+	.cooperation_sample{
+	  @include display-flex(center,row);
+      @include flex-flow(row wrap);	  
+	  justify-content: center;
+	  .cooperation_sample_item{
+	    position: relative;
+		width: 640px;
+		&:nth-child(odd){
+		  margin-right: 64px;
+		  @include breakpoint(max-width $screen_width768){
+		  margin-right: 0;
+		  }
+		}
+		@include breakpoint(max-width $screen_width1600){
+		  width: 480px;
+		}
+		@include breakpoint(max-width $screen_width1200){
+		  width: 420px;
+		}
+		@include breakpoint(max-width $screen_width1024){
+		  width: 340px;
+		}
+		@include breakpoint(max-width $screen_width960){
+		  width: 300px;
+		}
+		@include breakpoint(max-width $screen_width768){
+		  width: 100%;
+		}
+	    .cooperation_sample_photo{
+		  overflow: hidden;
+		  .cooperation_sample_photo_wrap{
+		    position: relative;
+		    //width: 100%;
+            padding-top: 68.75%; //640X440
+			img{
+			  @include absolute-middle;
+			  width: 100%;
+			  height: 100%;
+			  object-fit: cover;
+			}
+		  }
+		}//.cooperation_sample_photo
+		.cooperation_sample_info{
+		  position: relative;
+		  z-index: 1;
+		  margin: -64px 32px 64px 32px;
+		  padding: 32px;
+		  text-align: left;
+		  background: rgba(255,255,255,0.95);
+		  @include breakpoint(max-width $screen_width768){
+		    margin: -32px 16px 48px 16px;
+		    padding: 16px;
+		  }
+		  .cooperation_sample_title{
+		    overflow: hidden;
+		    font-size: $font_size18;
+			line-height: 36px;
+			@include line-clamp(vertical,1);
+		    @include word-break;
+			@include breakpoint(max-width $screen_width768){
+		      font-size: $font_size16;
+		      line-height: 28px;
+			  @include line-clamp(vertical,2);
+		    }
+			&:before{
+			  position: absolute;
+			  top: 12px;
+			  left: 50%;
+			  content: '';
+			  display: inline-block;
+			  width: 0;
+              height: 0;
+              border-style: solid;
+              //border-width: 18px 9px 0 9px;
+			  border-width: 12px 6px 0 6px;
+              border-color: $main_color2 transparent transparent transparent;
+			  @include breakpoint(max-width $screen_width1600){
+			    border-width: 10px 6px 0 6px;
+			  }
+			  @include breakpoint(max-width $screen_width768){
+			    display: none;
+			  }
+			}
+		  }
+		  .cooperation_sample_desc{
+		    overflow: hidden;
+		    margin-top: 16px;
+		    font-size: 16px;
+			line-height: 28px;
+			min-height: 140px; //28X5
+			max-height: 140px; //28X5
+			text-align:justify;
+		    @include line-clamp(vertical,5);
+			@include breakpoint(max-width $screen_width768){
+		      font-size: $font_size14;
+		      line-height: 24px;
+			  @include line-clamp(vertical,4);
+		    }
+		  }
+		}//.cooperation_sample_info
+		
+	  }
+	}
+    // 範例區塊結束 --------------------------------------------------------
+	
+	// 伙伴區塊開始 --------------------------------------------------------
+	.partner_content{
+	  display: inline-block;
+	  position: relative;
+	}
+	
+	.partner_carousel{
+	    position: relative;
+		width: 1440px;
+	    height: 360px; //2 rows
+		@include breakpoint(max-width $screen_width1600){
+	      width: 1200px;
+	    }
+		@include breakpoint(max-width $screen_width1440){
+	      width: 960px;
+	    }
+		@include breakpoint(max-width $screen_width1200){
+	      width: 720px;
+	    }
+		@include breakpoint(max-width $screen_width960){
+	      width: 480px;
+	    }
+		
+		.owl-stage{
+		  writing-mode: vertical-lr;
+		  width: 1440px !important;
+		  @include breakpoint(max-width $screen_width1600){
+	        width: 1200px !important;
+	      }
+		  @include breakpoint(max-width $screen_width1440){
+	        width: 960px !important;
+	      }
+		  
+		}
+		
+		.owl-item{
+		  position: relative;
+		  float: left;
+		  width: 240px !important;
+		  margin: 0 !important;
+		  &:nth-child(4n),&:nth-child(4n+1){ //1, 4, 5, 8, 9, 12...
+	        background: #d4d4d4;
+          }
+		}
+		
+		
+		.owl-nav{
+            position: absolute;
+	        top: 50%;
+		    width: 100%;
+	        @include breakpoint(max-width $screen_width768){
+	          display: none;  
+	        }
+	        i{
+              -webkit-text-stroke: 1px #ffffff;
+            }
+	        &>div{
+	          display: inline-block;
+	        }
+	        .owl-prev, .owl-next{
+			  position: absolute;
+	          text-align: center;
+	          background: #ffffff !important;
+			  width: 56px;
+		      height: 56px;
+		      line-height: 56px;
+		      @include breakpoint(max-width $screen_width768){
+		        width: 36px;
+		        height: 36px;
+		        line-height: 36px;
+		      }
+	        }
+	        .owl-prev{
+	          left: -56px;
+	        }
+	        .owl-next{
+	          right: -56px; 
+	        } 
+          }//.owl-buttons
+		
+	 }
+	.partner_item{
+	  width: 240px;
+	  height: 180px;
+	  
+	  overflow: hidden;
+	  
+	  &>a{
+	    cursor: default;
+	  }
+	  
+	  .partner_item_photo{
+	    position: relative;
+	    width: 100%;
+		height: 100%;
+		padding: 22px 26px;
+		img{
+		  @include absolute-middle;
+		  //top: -10%;
+		  width: 100%; //120%; //140%;
+		  height: 100%; //120%; //140%;
+		  object-fit: cover;
+		  @include opacity(0.9);
+		}
+	  }
+	}//.partner_item
+	// 伙伴區塊結束 --------------------------------------------------------
+	
+	
+}//.main_content_v2
 
 
 
@@ -1044,26 +1274,6 @@
     @include breakpoint(max-width $screen_width500){
       width: $width100p;
   	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
     /*  熱門推薦區塊開始 */
     ul{
       li{
