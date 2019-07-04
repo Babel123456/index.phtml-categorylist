@@ -517,7 +517,7 @@
   text-align: center;
   
   //共同設定
-  .recommend_area, .cooperation_area, partner_area{
+  .recommend_area, .cooperation_area, .partner_area{
     //display: inline-block;
 	text-align: center;
 	margin-top: 96px;
@@ -527,10 +527,13 @@
 	}
   }
   .recommend_title, .cooperation_title, .partner_title{
+    margin-right: 10%;
     text-align: right;
 	font-weight: initial;
 	font-size: $font_size24;
 	@include breakpoint(max-width $screen_width768){
+	  margin-right: 0;
+	  text-align: center;
 	  font-size: $font_size16;
 	  font-size: $font_size18;
 	} 
@@ -709,34 +712,29 @@
 		  .page{
 		    width: 300px;
 			margin-bottom: 32px;
-			&top0:before{ 
+			&.margin_top1:before{
 			  content: '';
-			  position: relative;
-			  display: inline-block;
-			  width: 100%;
-			  height: 0px;
+	          width: 100%;
+	          height: 0;
 			}
-			&.top32:before{
-			  content: '';
-			  position: relative;
-			  display: inline-block;
-			  width: 100%;
-			  height: 32px;
-			}
-			&.top64:before{
-			  content: '';
-			  position: relative;
-			  display: inline-block;
-			  width: 100%;
-			  height: 64px;
-			}
-			&.top96:before{
-			  content: '';
-			  position: relative;
-			  display: inline-block;
-			  width: 100%;
-			  height: 96px;
-			}
+			&.margin_top2:before{
+	          content: '';
+	          display: inline-block;
+	          width: 100%;
+	          height: 32px;
+            }
+			&.margin_top3:before{
+	          content: '';
+	          display: inline-block;
+	          width: 100%;
+	          height: 64px;
+            }
+			&.margin_top4:before{
+	          content: '';
+	          display: inline-block;
+	          width: 100%;
+	          height: 96px;
+            }
 			&:not(:first-child){ //已寫在JS設定
 			  //margin-left: 32px;
 			  @include breakpoint(max-width $screen_width1800){
@@ -1134,6 +1132,10 @@
 	.partner_content{
 	  display: inline-block;
 	  position: relative;
+	  margin-bottom: 218px;
+	  @include breakpoint(max-width $screen_width768){
+	    margin: 48px auto 0 auto;
+	  }
 	}
 	
 	.partner_carousel{
@@ -1150,20 +1152,36 @@
 	      width: 720px;
 	    }
 		@include breakpoint(max-width $screen_width960){
-	      width: 480px;
+		  width: 600px;
 	    }
+		@include breakpoint(max-width $screen_width768){
+		  width: 376px;
+		  //height: 852px;
+	    }
+		
+		.owl-stage-outer{
+		  @include breakpoint(max-width $screen_width768){
+	        height: 852px;
+	      }
+		}
 		
 		.owl-stage{
 		  writing-mode: vertical-lr;
-		  width: 1440px !important;
-		  @include breakpoint(max-width $screen_width1600){
-	        width: 1200px !important;
+		  @include breakpoint(max-width $screen_width768){
+	        writing-mode: horizontal-tb;
+			width: 376px !important;
 	      }
-		  @include breakpoint(max-width $screen_width1440){
-	        width: 960px !important;
-	      }
-		  
 		}
+		
+		.page{
+		  @include breakpoint(max-width $screen_width768){
+		    float:left;
+			&:nth-child(4n),&:nth-child(4n+1){ //1, 4, 5, 8, 9, 12...
+	          background: #d4d4d4;
+            }
+	      }
+		}
+		
 		
 		.owl-item{
 		  position: relative;
@@ -1173,6 +1191,12 @@
 		  &:nth-child(4n),&:nth-child(4n+1){ //1, 4, 5, 8, 9, 12...
 	        background: #d4d4d4;
           }
+		  @include breakpoint(max-width $screen_width960){
+	        width: 200px !important;
+	      }
+		  @include breakpoint(max-width $screen_width768){
+	        width: 188px !important;
+	      }
 		}
 		
 		
@@ -1214,9 +1238,15 @@
 	.partner_item{
 	  width: 240px;
 	  height: 180px;
-	  
 	  overflow: hidden;
-	  
+	  @include breakpoint(max-width $screen_width960){
+		 width: 200px;
+		 height: 150px;
+	  }
+	  @include breakpoint(max-width $screen_width768){
+		 width: 188px;
+		 height: 142px;
+	  }
 	  &>a{
 	    cursor: default;
 	  }

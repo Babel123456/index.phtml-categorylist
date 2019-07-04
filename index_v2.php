@@ -95,7 +95,7 @@
 			<div class="recommend_works">
 			
 			
-			  <div class="recommend_works_carousel"><!-- owl-carousel -->
+			  <div class="recommend_works_carousel">
 		         
 				<!-- 第一個作品開始 -->
 				<div class="page">
@@ -365,7 +365,7 @@
 		    <div class="partner_title">Top recommend</div>
 		  </div>
 		  <div class="partner_content">
-		    <div class="partner_carousel owl-carousel"><!--  -->
+		    <div class="partner_carousel">
 		         
 				<div class="page">
 				  <div id="partner_item01" class="partner_item">
@@ -515,88 +515,58 @@ $(document).ready(function() {
   //判斷HOVER動作
   addhover();
   //輪播
-   var owl1 = $(".banner_carousel_v2");
-	owl1.owlCarousel({
+  var owl1 = $(".banner_carousel_v2");
+  owl1.owlCarousel({
     loop:true,
-	items:1,
-	nav:true,
-	dots:false,
-	smartSpeed:300,
-	navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>']
-	})
-	
-	//輪播沒有第二頁時, 不秀左右按鈕鍵
-    //if($('.banner_carousel_v2 .page').length ===1 ){
-	 //$('#banner_carousel_area_v2 .owl-buttons').css('display','none');
-    //}
-	
-	//推薦選單出現與否
-	$('.recommend_cat_btn').click(function() {
-      $('#recommend_menu').addClass('show_block');
-	  $('.recommend_menu_close').addClass('show_block');
-    })
-	$('.recommend_menu_close').click(function() {
-      $('#recommend_menu').removeClass('show_block');
-	  $('.recommend_menu_close').removeClass('show_block');
-    })
-	//推薦選單被選到加樣式與動作
-    if($('.recommend_menu_list').length>0){
-      var $li = $('ul.recommend_menu_list li');
-      $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
-	  $li.click(function(){
-        $(this).addClass('active').siblings('.active').removeClass('active');
-		//當選單按下, 依類別給分類按鈕名稱
-		$('.recommend_cat_btn_name').text($(this).text());
-		//設定MORE按鈕的連結
-		 $('.recommend_more_btn a').attr('href', $(this).data('href'));
-		//若小版選單開啟
-		if($('.recommend_menu_close').hasClass('show_block')){
-		  $('.recommend_menu_close').click();
-		}
-      });
-    }
-	
-	//伙伴區塊
-	var owl3 = $(".partner_carousel");
-	  owl3.owlCarousel({
-	  items: 6,
-	  slideBy: 'page',
-	  nav:true,
-	  dots:false,
-	  smartSpeed:300,
-	  navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
-	  
-	})
-
-	
-	
-	//推薦作品區大小版不同功能
-	recommand_js();
+    items:1,
+    nav:true,
+    dots:false,
+    smartSpeed:300,
+    navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>']
+  })
+  
+  //推薦選單出現與否(小版獨立出現)
+  $('.recommend_cat_btn').click(function() {
+    $('#recommend_menu').addClass('show_block');
+    $('.recommend_menu_close').addClass('show_block');
+  })
+  $('.recommend_menu_close').click(function() {
+    $('#recommend_menu').removeClass('show_block');
+    $('.recommend_menu_close').removeClass('show_block');
+  })
+  //推薦選單被選到加樣式與動作
+  if($('.recommend_menu_list').length>0){
+    var $li = $('ul.recommend_menu_list li');
+    $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
+    $li.click(function(){
+      $(this).addClass('active').siblings('.active').removeClass('active');
+  	  //當選單按下, 依類別給分類按鈕名稱
+  	  $('.recommend_cat_btn_name').text($(this).text());
+  	  //設定MORE按鈕的連結
+  	  $('.recommend_more_btn a').attr('href', $(this).data('href'));
+  	  //若小版選單開啟
+  	  if($('.recommend_menu_close').hasClass('show_block')){
+  	    $('.recommend_menu_close').click();
+  	  }
+    });
+  }
+  
+  //推薦作品區大小版不同功能
+  recommand_js();
+  //合作伙伴區大小版不同功能
+  partner_js();
 	
 });
-
-  //當HEADER選單被按時, 關閉推薦選單
-  $('#login_m').click(function(e) {
-	if(($('#recommend_menu').length ===1) && $('.recommend_menu_close').hasClass('show_block') ){
-	  $('.recommend_menu_close').click();
-    }
-  });
-  $('#search_m').click(function(e) {
-	if(($('#recommend_menu').length ===1) && $('.recommend_menu_close').hasClass('show_block') ){
-	  $('.recommend_menu_close').click();
-    }
-  });
-
-
 
 //當WIDNWOS RESIZE時, 關閉選單
 $( window ).resize(function(evt) {
   addhover();
   recommand_js();
+  partner_js();
 });
+
 //hover動作判斷
 function addhover(){
-	
   if( window.innerWidth > 768){
     $(".recommend_works_item").addClass('recommend_works_item_hover');
   }else{
@@ -606,50 +576,43 @@ function addhover(){
 
 //推薦作品區大小版不同功能
 function recommand_js(){
-
   if($('.recommend_works_carousel').length>0){
-	
 	console.log($( window ).width());
 	if( window.innerWidth > 768){
-	
-	 //瀑布流內容
-	    var $container = $('.recommend_works_carousel');
-        $container.imagesLoaded(function () {
-          $container.masonry({
-            itemSelector: '.page',
-            columnWidth: '.page',
-            gutter: 32,
-          });
-          $('div.page').animate({opacity: 1});
+	  //大版瀑布流
+	  var $container = $('.recommend_works_carousel');
+      $container.imagesLoaded(function () {
+        $container.masonry({
+          itemSelector: '.page',
+          columnWidth: '.page',
+          gutter: 32,
         });
-		$('.recommend_works_carousel').removeClass('owl-carousel');
-		$('.recommend_works_carousel .page').removeClass('top0');
-		$('.recommend_works_carousel .page').removeClass('top32');
-		$('.recommend_works_carousel .page').removeClass('top64');
-		$('.recommend_works_carousel .page').removeClass('top96');
-		console.log('mansory');
-		
-		//不齊頭排列
-		var random_margintop = margintop_range([0,32,64,96], 4);
-		//if( window.innerWidth > 1423){ //1440
-		if( $( window ).width() > 1440){ //1440
-		  for (var i=0; i<=3; i++) {
-			$( ".recommend_works_carousel .page:nth-child("+(i+1)+")").addClass('top'+random_margintop[i]);
-		  }
-		}else if(($( window ).width() <= 1439) && ($( window ).width() > 1024)){
-		  for (var i=0; i<=2; i++) {
-			$( ".recommend_works_carousel .page:nth-child("+(i+1)+")").addClass('top'+random_margintop[i]);
-		  }
-		}else if( $( window ).width() <= 1024){
-		  for (var i=0; i<=1; i++) {
-			$( ".recommend_works_carousel .page:nth-child("+(i+1)+")").addClass('top'+random_margintop[i]);
-		  }
-		}
+        $('div.page').animate({opacity: 1});
+      });
+	  //移除小版OWL CAROUSEL CLASS
+	  if($('.recommend_works_carousel').hasClass('owl-carousel')){
+	    $('.recommend_works_carousel').removeClass('owl-carousel');
+	    $(".recommend_works_carousel").trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
+         $(".recommend_works_carousel").find('.owl-stage-outer').children().unwrap();
+	    console.log('remove carousel');
+	  }
+	  //移除先前設定
+	  $('.recommend_works_carousel .page').attr( 'class', $('.recommend_works_carousel .page').attr('class').replace(/\bmargin_top\d+\b/g, '') );
+	  //不齊頭排列
+	  var random_margintop = margintop_range([1,2,3,4], 4);
+	  $('.recommend_works_carousel').masonry({ columnWidth: '.page', animate: true });
+	  for(i=0;i<$('.recommend_works_carousel .page').length;i++){
+	    //找出第一排
+	    if($('.recommend_works_carousel .page:nth-child('+(i+1)+')').position().top===0){
+	      //加上不齊頭高度
+	      $('.recommend_works_carousel .page:nth-child('+(i+1)+')').addClass('margin_top'+random_margintop[i]);
+	    }
+	  }
+	  console.log('mansory');
 	}else{
-	    
-	  $('.recommend_works_carousel').addClass('owl-carousel');
-	    var owl2 = $(".recommend_works_carousel");
-	    owl2.owlCarousel({
+	  //小版輪播
+	  $('.recommend_works_carousel').masonry('destroy');  
+	   var carousel_Settings = {
 	    items:2,
 	    loop: true,
 	    center: true,
@@ -660,12 +623,13 @@ function recommand_js(){
 	    smartSpeed:300,
 	    autoHeight: false,
 	    navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
-	  })
+	  };
+	  $('.recommend_works_carousel').addClass('owl-carousel');
+	  var owl2 = $('.recommend_works_carousel');
+	  owl2.owlCarousel(carousel_Settings);
 	  console.log('carousel');
 	}
   }
-	
-  
 }//recommand_js()
 
 //瀑布流不齊頭排列亂數
@@ -677,10 +641,36 @@ function margintop_range(range, n) {
   return sample;
 }
 
-//POPUP開啟作品資訊頁
+//合作伙伴區大小版不同功能
+function partner_js(){
+  if( window.innerWidth > 768){
+	//大版輪播
+	var carousel_Settings = {
+	  items: 6,
+	  slideBy: 'page',
+	  nav:true,
+	  dots:false,
+	  smartSpeed:300,
+	  navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+	};
+	$('.partner_carousel').addClass('owl-carousel');
+	var owl3 = $('.partner_carousel');
+	owl3.owlCarousel(carousel_Settings);
+  }else{
+	//移除小版OWL CAROUSEL CLASS
+	if($('.partner_carousel').hasClass('owl-carousel')){
+	  $('.partner_carousel').removeClass('owl-carousel');
+	  $('.partner_carousel').trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
+      $('.partner_carousel').find('.owl-stage-outer').children().unwrap();
+	  console.log('remove carousel');
+	}
+  }
+}
+
+
+//POPUP開啟作品資訊頁(拷專區的JS來)---------------------------------------------------------------------------------------
 //POPVIEW
 	function popview(url) {
-	  
 	$('.jBox-wrapper').remove();
 	//url = 'http://localhost/album_content.php';
 	//url = 'http://192.168.16.115/album_content.php';

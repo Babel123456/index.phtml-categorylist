@@ -961,6 +961,120 @@ input[type="text"],input[type="password"]{
 }
 
 
+/* FOOTER V2區塊開始 */
+.footer_v2{
+  position: relative;
+  width: 100%;
+  height: 304px;
+  @include display-flex(center,row);
+  justify-content: center;
+  background: $grey_color;
+  color: $sub_color;
+  @include breakpoint(max-width $screen_width768){
+    height: 174px;
+  }
+  a{
+    color: $sub_color;
+  }
+  .footer_area_v2{
+    position: relative;
+	width: 100%;
+	@include display-flex(center,row);
+	justify-content: center;
+	&>div{
+	  @include flex(-1 0 0);
+	}
+	&>div:first-child{
+	  margin-right: 192px;
+	  @include breakpoint(max-width $screen_width1024){
+	    margin-right: 32px;
+	  }
+	  @include breakpoint(max-width $screen_width768){
+        margin-right: 0;
+		@include flex(0 0 50%);
+      }
+	}
+	&>div:last-child{
+	  @include breakpoint(max-width $screen_width768){
+	    @include flex(0 0 138px);
+	  }
+	}
+	@include breakpoint(max-width $screen_width768){
+      margin: 20px 16px;
+	  @include display-flex(flex-start,row);
+	  justify-content: flex-start;
+    }
+	
+  }//.footer_area_v2
+  .social_link{
+    display: inline-block;
+	&:not(:first-child){
+	  margin-left: 32px;
+	  @include breakpoint(max-width $screen_width960){
+	    margin-left: 16px;
+	  }
+	  @include breakpoint(max-width $screen_width768){
+	    margin-left: 0;
+		margin-top: 8px;
+		display: block;
+	  }
+	}
+	
+	img{
+	  width: 48px;
+	  height: 48px;
+	  @include breakpoint(max-width $screen_width1024){
+	     width: 42px;
+	     height: 42px;
+	  }
+	  @include breakpoint(max-width $screen_width800){
+	    width: 36px;
+	    height: 36px;
+	  }
+    }
+  }
+  
+  .copy_right{
+    margin-top: 32px;
+	@include breakpoint(max-width $screen_width768){
+	  display: none;
+	}
+  }
+  .service_link{
+    margin-left: 32px;
+	display: inline-block;
+	//display: inline;
+	font-size: $font_size16;
+	@include breakpoint(max-width $screen_width960){
+	  margin-left: 16px;
+	}
+	@include breakpoint(max-width $screen_width768){
+	  margin-bottom: 32px;
+	  
+		font-size: $font_size12;
+	    line-height: 18px;
+	}
+	&:nth-child(3):after { 
+	  content:"\A"; white-space:pre; 
+	}
+	&:first-child{
+	  margin-left: 16px;
+	  @include breakpoint(max-width $screen_width960){
+	  margin-left: 8px;
+	}
+	}
+	&:nth-child(odd){
+	  @include breakpoint(max-width $screen_width768){
+	    margin-left:0;
+	  }
+	}
+  }
+  
+}
+/* FOOTER V2區塊結束 */
+
+
+
 /* FOOTER區塊開始 */
 #footer{
   position: relative;

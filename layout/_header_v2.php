@@ -41,7 +41,7 @@
 		</div>
 		<div class="social_link">
 		  <a href="https://www.youtube.com/channel/UCAUmAHykldcgI7Vc4OgyOPA" title="youtube" target="_blank">
-		    <img src="images/assets-v7/social_youtube.png">
+		    <img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v7/social_youtube.png">
 		  </a>
 		</div>
 	  </div>
@@ -162,7 +162,7 @@
 		                </div>
 		                <div class="social_link">
 		                  <a href="https://www.youtube.com/channel/UCAUmAHykldcgI7Vc4OgyOPA" title="youtube" target="_blank">
-		                    <img src="images/assets-v7/social_youtube.png">
+		                    <img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v7/social_youtube.png">
 		                  </a>
 		                </div>
 					  </li>
@@ -173,10 +173,10 @@
 		      </ul>
 			  
 			  <!-- 登入後才會出現按鈕: 登入改英文字-->
-			  
 		      <a href="#"><div class="btn_new">Sing out</div></a>
 			  
 	        </div>
+			
 		  </div><!-- .login_menu_area -->  
 		  
 		</div><!-- .header_menu -->
