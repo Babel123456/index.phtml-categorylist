@@ -27,7 +27,7 @@
 	
 	  <div class="top_left_area">
 		<div class="service_link"><a href="#">Service</a></div>
-		<div class="service_link"><a href="#">Content</a></div>
+		<div class="service_link"><a href="#">Contact</a></div>
 		<div class="social_link">
 		  <a href="https://www.facebook.com/pinpinboxtw/" title="facebook" target="_blank">
 		    <img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v7/social_facebook.png" title="facebook">
@@ -84,11 +84,20 @@
 			<!-- 大版未登入時出現區塊結束-->
 			
 		    
+			<!-- 大版登入與未登入時出現區塊開始-->
 			<div id="login_link" class="login_link" class="dropdown-sign dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 		      
 			  <a href="javascript:void(0);" id="login" class="login">
+			    
+				<!-- 20190708: 頭圖漏了包DIV, 與加CLASS
                 <img onerror="this.src='https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/face_sample.png'" src="https://cdn.pinpinbox.com/storage/zh_TW/user/4581/picture$18d7.jpg">
-              </a>
+                -->
+				
+				<div class="profile_img_wrap">
+				  <img class="profile_img" src="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/images/login.png">
+			    </div>
+				
+			  </a>
 			  <i id="login_w" class="fa fa-bars login_w"></i>
 			
 			</div>
@@ -97,7 +106,6 @@
 			
 		      <ul>		
 			  　<!-- 已登入會出現區塊開始 -->
-								
 		        <li>
 		            <ul>
 					  <li class="login_menu_user_info">
@@ -106,7 +114,7 @@
 			                <img class="profile_img" src="https://cdn.pinpinbox.com/storage/zh_TW/user/4069/picture$ea13.jpg">
 		                  </div>
 					    </div>
-					    <div class="login_menu_user_info_name">Michael Jordan</div>
+					    <div class="login_menu_user_info_name">一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十</div>
 				      </li>
 					
 			          <li><a href="creative_content.php#tab0">我的作品</a></li>
@@ -130,19 +138,16 @@
 			          <li><a href="#">回報記錄</a></li>
 			        </ul>
 		        </li>
-				
 				<!-- 已登入會出現區塊結束 -->
 				
 				<li>
 		            <ul>
 					  <!-- 未登入小版區塊開始 -->
-					  <!--
 				      <li class="sign_link">
 		                <ul>
 			              <li><a href="#">Sign in | up</a></li>
 			            </ul>
 		              </li>
-				      -->
 					  <!-- 未登入小版區塊結束 -->
 					
 					  <!-- 有無登入都出現區塊開始 -->
@@ -153,8 +158,7 @@
 		                  <a href="https://www.facebook.com/pinpinboxtw/" title="facebook" target="_blank">
 		                    <img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v7/social_facebook.png" title="facebook">
                           </a>
-		                </div>
-		                <div class="social_link">
+		                </div><div class="social_link">
 		                  <a href="https://www.youtube.com/channel/UCAUmAHykldcgI7Vc4OgyOPA" title="youtube" target="_blank">
 		                    <img src="https://cdn.pinpinbox.com/static_file/pinpinbox/zh_TW/images/assets-v7/social_youtube.png">
 		                  </a>
@@ -170,7 +174,7 @@
 		      <a href="#"><div class="btn_new">Sing out</div></a>
 			  
 	        </div>
-			
+			<!-- 大版登入與未登入時出現區塊結束-->
 		  </div><!-- .login_menu_area -->  
 		  
 		</div><!-- .header_menu -->
@@ -188,7 +192,6 @@
 	  </div><!-- .top_right_area -->
 	
 	</div>
-	
   </div>
   <!-- 表頭區塊結束 -->  
   <link type="text/css" href="https://ppb.sharemomo.com/static_file/pinpinbox/zh_TW/js/jquery-textcomplete/media/stylesheets/textcomplete.css" rel="stylesheet" />
@@ -353,8 +356,6 @@
 				<!-- 第二個作品結束 -->
 				
 				
-				
-				
 				<!-- 第四個作品開始 -->
 				<div class="page">
 				  <div id="recommend_works_item03" class="recommend_works_item" onclick="popview('http://localhost/creative_content.php');">
@@ -461,7 +462,11 @@
 		  </div>
 		  <div class="recommend_more_btn">
 		    <!-- 更多連結由分類標籤決定 -->
-		    <a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=4"><div class="btn_new_v2">more</div></a>
+			
+		    <a href="https://www.pinpinbox.com/index/album/explore/?categoryarea_id=4"><div class="btn_new_v2">more</div>
+			<!-- 20170719 增加箭頭符號開始 --><div class="btn_new_v2_icon"><i class="fa fa-chevron-right"></i></div><!-- 20170718: 增加箭頭符號結束 -->
+			</a>
+			
 		  </div>
 		</div><!-- .recommend_area -->
 		<!-- 推薦區塊結束 -->  
@@ -553,7 +558,13 @@
 			  </div>
 			  <!-- 範例4結束 -->
 			  
-			</div>
+			</div><!-- .cooperation_sample -->
+			<div class="cooperation_more_btn">
+		      <a href="#"><div class="btn_new_v2">contact</div>
+			  <!-- 20170719 增加箭頭符號開始 --><div class="btn_new_v2_icon"><i class="fa fa-chevron-right"></i></div><!-- 20170718: 增加箭頭符號結束 -->
+			  </a>
+			  
+		    </div>
 		  </div><!-- .cooperation_content -->
 		</div><!-- .cooperation_area -->
 		<!-- 合作區塊結束 -->
@@ -561,7 +572,12 @@
 		<!-- 伙伴區塊開始 -->
 		<div class="partner_area">
 		  <div class="partner_title_area">
-		    <div class="partner_title">Top recommend</div>
+		    <div class="partner_title">Partner</div>
+			
+			<!-- 20170719 增加感謝語開始 -->
+			<div class="partner_desc">we thank partners for trusting us</div>
+			<!-- 20170719 增加感謝語結束 -->
+			
 		  </div>
 		  <div class="partner_content">
 		    <div class="partner_carousel">
@@ -734,8 +750,10 @@ $(document).ready(function() {
   //推薦選單被選到加樣式與動作
   if($('.recommend_menu_list').length>0){
     var $li = $('ul.recommend_menu_list li');
-    $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
-    $li.click(function(){
+    //20190719 移除
+	//$($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
+    //20190719 移除
+	$li.click(function(){
       $(this).addClass('active').siblings('.active').removeClass('active');
   	  //當選單按下, 依類別給分類按鈕名稱
   	  $('.recommend_cat_btn_name').text($(this).text());
@@ -751,7 +769,9 @@ $(document).ready(function() {
   //推薦作品區大小版不同功能
   recommand_js();
   //合作伙伴區大小版不同功能
-  partner_js();
+  
+  //20190719 改版移除
+  //partner_js();
 	
 });
 
@@ -759,7 +779,9 @@ $(document).ready(function() {
 $( window ).resize(function(evt) {
   addhover();
   recommand_js();
-  partner_js();
+  
+  //20190719 改版移除
+  //partner_js();
   
 });
 
@@ -805,8 +827,11 @@ function recommand_js(){
 	    }
 	  }
 	}else{
-	  //小版輪播
-	  $('.recommend_works_carousel').masonry('destroy');  
+	  //小版輪播	  
+	  //20190719 先偵測是否已有瀑布流, 再移除
+	  //$('.recommend_works_carousel').masonry('destroy');
+	  if($('.recommend_works_carousel').data('masonry')?true:false){$('.recommend_works_carousel').masonry('destroy');};
+	  
 	   var carousel_Settings = {
 	    items:2,
 	    loop: true,
@@ -835,7 +860,10 @@ function margintop_range(range, n) {
   return sample;
 }
 
+
 //合作伙伴區大小版不同功能
+//20190719 改版移除
+/*
 function partner_js(){
   if( window.innerWidth > 768){
 	//大版輪播
@@ -859,6 +887,7 @@ function partner_js(){
 	}
   }
 }
+*/
 
 
 //POPUP開啟作品資訊頁(拷專區的JS來)---------------------------------------------------------------------------------------
@@ -978,8 +1007,30 @@ $(document).ready(function() {
 		$("html,body").animate({scrollTop:0},900);
 		return false;
 	});
+	
   
-  //20190704 新選單V2區塊開始
+  // 觸發小版搜尋框
+  $('#search_m').click(function() {
+	$('#header_search_v2').addClass("search_box_open");
+	$('#search_m').addClass("hide");
+	$('#login_m').addClass("hide");
+	$('#header_search_close_v2').addClass("search_close_open");
+    $('#login_menu').hide();
+  });
+  
+  //關閉小版搜尋框
+  $('#header_search_close_v2').click(function() {
+	$('#header_search_v2').removeClass("search_box_open");
+	$('#search_m').removeClass("hide");
+	$('#login_m').removeClass("hide");
+	$('#header_search_close_v2').removeClass("search_close_open");
+	//20190717, 置換hide方式
+	//$('#login_menu').hide();
+	$('#login_menu').removeClass("show_block");
+  });
+  
+  
+  //新選單V2區塊開始
   //當HEADER選單被按時, 關閉推薦選單
   $('#login_m').click(function(e) {
     if(($('#recommend_menu').length ===1) && $('.recommend_menu_close').hasClass('show_block') ){
@@ -991,11 +1042,35 @@ $(document).ready(function() {
       $('.recommend_menu_close').click();
     }
   });
-  //20190704 新選單V2區塊結束  
+  //新選單V2區塊結束  
+  
+  
+  //觸發大版選單
+  $('#login_m').click(function(e) {
+	e.stopPropagation();
+	//20190717, 置換hide方式
+	//$('#login_menu').toggle();
+	$('#login_menu').addClass("show_block");
+	
+    $('#login_m').addClass("hide");
+	$('#header_search_close_v2').addClass("search_close_open");
+  });
+  
+  //header滑動時header -> header_v2
+  window.onscroll = function() {($( window ).width()> 768)? header_sticky(): false;};
+  var header = document.getElementById("header_v2");
+  var sticky = header.offsetTop;
+  function header_sticky(){
+    if (window.pageYOffset > sticky){
+	  header.classList.add("header_sticky_v2");
+    }else{
+	  header.classList.remove("header_sticky_v2");
+    }
+  }
   
 });
 
-
+// 以下為之前的JS ----------------------------------------------------------------------------
 // 20190621 加上MARS FUNCTION, 讓搜尋選單切換字開始
   // MARS v2
     $('a.searchtype').on('click', function(){
@@ -1008,20 +1083,6 @@ $(document).ready(function() {
 	function _search() {
 	}
 // 20190621 加上MARS FUNCTION, 讓搜尋選單切換字結束
-
-
-
-// 20190704 header -> header_v2
-  window.onscroll = function() {($( window ).width()> 768)? header_sticky(): false;};
-  var header = document.getElementById("header_v2");
-  var sticky = header.offsetTop;
-  function header_sticky(){
-    if (window.pageYOffset > sticky){
-	  header.classList.add("header_sticky_v2");
-    }else{
-	  header.classList.remove("header_sticky_v2");
-    }
-  }
 
 
 //20190121: 重製作下拉選單開始
@@ -1143,6 +1204,7 @@ document.addEventListener("click", closeAllSelect);
     return false;
 }
 //20190121: 加入原有的DEEPLINK FUNCTION開始
+
 
 </script>
   
