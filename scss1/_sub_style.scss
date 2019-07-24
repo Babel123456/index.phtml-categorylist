@@ -398,7 +398,11 @@
 		width: 100%;
 	  }
 	  i{
-        -webkit-text-stroke: 1px $grey_color3; //$grey_color2;
+        -webkit-text-stroke: 1.5px $grey_color3; //$grey_color2;
+		font-size: $font_size20;
+		@include breakpoint(max-width $screen_width768){
+		  font-size: $font_size16;
+		}
       }
 	  &>div{
 	    display: inline-block;
@@ -408,7 +412,6 @@
 	    text-align: center;
 	    width: 56px;
 		height: 56px;
-		line-height: 56px;
 		background: $grey_color3 !important;
 		@include breakpoint(max-width $screen_width768){
 		  position: absolute;
@@ -435,7 +438,8 @@
   .plan_info_count_v2{
     z-index: 1;
     position: relative;
-	margin-top: -22px;
+	//margin-top: -22px;
+	pointer-events: none;
 	@include breakpoint(max-width $screen_width768){
 	  margin-top: 0;
 	}
@@ -451,7 +455,8 @@
 	  }
 	  &>div{
 	    width: 280px;
-		height: 160px;
+		//height: 160px;
+		height: 96px;
 		@include display-flex(flex-end,row);
 		//border-left: 1px solid $grey_color;
 		@include breakpoint(max-width $screen_width768){
@@ -465,10 +470,13 @@
 		  }
 		  &::before{
 		    content: '';
-		    width: 40px;
+		    //width: 40px;
+			width: 42px;
 			display: inline-block;
-			margin-left: -32px;
-			margin-bottom: -40px;
+			//margin-left: -32px;
+			margin-left: -34px;
+			//margin-bottom: -40px;
+			margin-bottom: -42px;
 		    @include breakpoint(max-width $screen_width768){
 		      border-bottom: 1px solid $grey_color2;
 		    }
@@ -476,29 +484,45 @@
 		}
 		&::before{
           content:"";
-		  height: 160px;
+		  //height: 160px;
+		  height: 96px;
 		  @include breakpoint(max-width $screen_width768){
-		    margin-bottom: -16px;
+		    //margin-bottom: -16px;
+			margin-bottom: -12px;
 		    //height: 56px;
-			height: 72px;
+			//height: 72px;
+			height: 68px;
 		  }
-          border-left: 1px solid $grey_color;
+          //border-left: 1px solid $grey_color;
+		  border-left: 1px solid $grey_color2;
         }
 	  }
 	  
 	  span{
 	    display: inline-block;
-		font-size: $font_size18;
+		vertical-align: top;
+		//font-size: $font_size18;
+		font-size: $font_size14;
+		line-height: 16px;
 		@include breakpoint(max-width $screen_width768){
+		  margin-bottom: 4px;
 	      font-size: $font_size12;
+		  //font-size: $font_size10;
+		  //@include scale(0.83,0.83);  //font-size: 10px;
+		  line-height: 14px;
 		}
 	  }
 	  .plan_info_num{
 	    display: block;
-		font-weight: 500px;
-		margin-bottom: 12px;
-	    font-size: $font_size28;
+		font-weight: 700;
+		//margin-bottom: 12px;
+		margin-bottom: 8px;
+	    //font-size: $font_size28;
+		font-size: $font_size24;
+		line-height: 28px;
 		@include breakpoint(max-width $screen_width768){
+		  //line-height: 20px;
+		  line-height: 18px;
 		  margin-bottom: 4px;
 		  font-size: $font_size16;
 		}
@@ -519,69 +543,127 @@
   //共同設定
   .recommend_area, .cooperation_area, .partner_area{
     //display: inline-block;
-	text-align: center;
+	//text-align: center;
 	margin-top: 96px;
 	@include breakpoint(max-width $screen_width768){
 	  display: block;
 	  margin-top: 48px;
+	  //margin-top: 44px;
 	}
   }
+  //加入標題裝飾橫線設定
+  .recommend_title_area, .cooperation_title_area, .partner_title_area{
+    position: relative;
+	width: 100%;
+	overflow: hidden;
+  }
+  //標題區塊共同設定
   .recommend_title, .cooperation_title, .partner_title{
-    margin-right: 10%;
+    //margin-right: 10%;
+    //text-align: right;
+	//font-weight: initial;
+	//font-size: $font_size24;
+	font-family: sans-serif;
+	font-size: $font_size32;
+	letter-spacing: 4px;
+	display: inline-block;
+	@include breakpoint(max-width $screen_width768){
+	  font-size: $font_size16;
+	  letter-spacing: 1.5px;
+	}
+  }
+  
+  //伙伴區塊先不加入標題旁橫線設定
+  .recommend_title, .cooperation_title{
+    background: $sub_color;
+    padding: 0 72px;
+	&:after{
+	   content: '';
+	   display: block;
+	   position: absolute;
+	   z-index: -1;
+	   width: 50%;
+	   top: 50%;
+	   border-bottom: 1px solid $grey_color2;
+	   left:0;
+	   @include breakpoint(max-width $screen_width768){
+	     border: none;
+	   }
+	}
+	@include breakpoint(max-width $screen_width768){
+	  //margin-right: 0;
+	  //text-align: center;
+	  //font-size: $font_size16;
+	  padding: 0;
+	} 
+  }
+  //奇數區塊標題裝飾橫線在右
+  &>div:nth-child(odd){
+    div[class*="_title"]:after{
+	  left: unset;
+	  right: 0;
+	}
+  }
+  //第二區塊要頭頂區隔線
+  &>div:nth-child(2){
+    @include breakpoint(max-width $screen_width768){
+      border-top: 1px solid #d4d4d4;
+	}
+  }
+  
+  .recommend_content, .cooperation_content, .partner_content{
+    //margin: 96px auto 88px auto; //88 = 120 - 32
+	margin: 72px auto 0 auto; //88 = 120 - 32
+	@include breakpoint(max-width $screen_width768){
+	  margin: 16px auto 26px auto;
+	}
+  }
+  
+  //按鈕共同設定
+  .recommend_more_btn, .cooperation_more_btn{
+    position: relative;
+	//margin-right: 10%;
+	margin-right: 11.5%;
     text-align: right;
-	font-weight: initial;
-	font-size: $font_size24;
 	@include breakpoint(max-width $screen_width768){
 	  margin-right: 0;
 	  text-align: center;
-	  font-size: $font_size16;
-	  font-size: $font_size18;
-	} 
-  }
-  .recommend_content, .cooperation_content, .partner_content{
-    margin: 96px auto 88px auto; //88 = 120 - 32
-	@include breakpoint(max-width $screen_width768){
-	  margin: 16px auto 64px auto;
+	}
+	&>a>div{
+	  display: inline-block;
+	}
+	.btn_new_v2_icon{
+	  pointer-events: none;
+	  margin-left: -18px;
+	  i{
+	    font-size: $font_size18;
+	  }
+	  @include breakpoint(max-width $screen_width768){
+	    display: none;
+	  }
 	}
   }
   
 // 推薦區塊開始 v2 -----------------------------------------------------
   
    .recommend_area{
-	  /*
-	  display: inline-block;
-	  text-align: center;
-	  margin-top: 96px;
-	  @include breakpoint(max-width $screen_width768){
-	    display: block;
-	    margin-top: 48px;
-	  }
-	  */
-      .recommend_title_area{
-        //text-align: right;
+	  .recommend_title_area{
 	    @include breakpoint(max-width $screen_width768){
-		  margin-left: 88px;
+		  //margin-left: 48px;
 	      text-align: center;
 	    }
-        &>div{
-	      //display: inline-block;
-	    }
-		/*
-	    .recommend_title{
-	      font-weight: initial;
-	      font-size: $font_size24;
+		.recommend_title{
 	      @include breakpoint(max-width $screen_width768){
-	        font-size: $font_size16;
-			font-size: $font_size18;
+			display: inline-block;
 	      }
 	    }
-		*/
-	    .recommend_cat_btn{
+		.recommend_cat_btn{
 	      display: none;
 		  cursor: pointer;
 	      @include breakpoint(max-width $screen_width768){
 	        display: inline-block;
 		    margin-left: 16px;
+			margin-right: -76px; //讓TITLE置中
 		    font-size: $font_size12;
 			font-size: $font_size14;
 	      }
@@ -594,15 +676,10 @@
 	    }
       }//.recommend_title_area
 	  .recommend_content{
-		/*
-		//@include display-inline-flex(flex-start,row);
-		margin: 96px auto 88px auto; //88 = 120 - 32
+	    //margin: 80px auto 96px auto; //MORE與作品距離120px
 		@include breakpoint(max-width $screen_width768){
-		  //margin: 16px auto 68px auto;
-		  margin: 16px auto 64px auto;
-		  //margin: 16px auto 48px auto;
+		  //margin: 16px auto 64px auto;
 		}
-		*/
 		&>div{
 		  //@include flex(-1 0 0);
 		  display: inline-block;
@@ -610,7 +687,6 @@
 		}
 		.recommend_menu{
 		  position: relative;
-		  
 		  background: $sub_color;
 		  @include breakpoint(max-width $screen_width768){
 		    display: none;
@@ -619,27 +695,44 @@
 			top: 44px;
 			left: 0;
 		    width: 100%;
-			height: 100vh;
 			opacity: 0.95;
+			overflow: scroll;
 		  }
 		  i{
 		    display: none;
-		    position: absolute;
-			top: 16px;
+		    //position: absolute;
+			position: fixed;
+			z-index: 11;
+			//top: 16px;
+			top: 60px;
 			right: 16px;
 		    color: $grey_color;
 		    font-size: 20px;
 		  }
 		  ul{
 		    @include breakpoint(max-width $screen_width768){
-			  margin-top: 32px;
+			  @include width-max-content;
+			  display: inline-block;
+			  height: 100vh;
 			}
 		    li{
 			  position: relative;
 		      display: block;
-			  margin: 0 auto 32px auto;
+			  //margin: 0 auto 32px auto; //文字置中排列
+			  margin: 0 0 32px 0; //文字靠左排列
 			  @include width-max-content;
 			  font-size: 18px;
+			  @include breakpoint(max-width $screen_width768){
+			    margin-top: 32px;
+			  }
+			  &:last-child{
+			    margin-bottom: 0;
+				@include breakpoint(max-width $screen_width768){
+			      margin-bottom: 32px;
+				  //height: 100vh;
+			      padding-bottom: 196px;
+			    }
+			  }
 			  a{
 			    color: $grey_color1; //$grey_color2;
 				&:hover{
@@ -651,7 +744,7 @@
 			      color: $grey_color;
 				}
 			  }
-			  &.active:before{
+			  &.active::before{
 			    position: absolute;
 				top: 8px;
 				left: -72px; //48px+24px
@@ -670,31 +763,39 @@
 		}
 		.recommend_works{
 		  position: relative;
-		  margin-left: 124px;
-		  width: 1296px; //300X4 + 32X3
+		  //margin-left: 124px;
+		  //margin-left: 118px;
+		  margin-left: 86px;
+		  //width: 1296px; //300X4 + 32X3
+		  width: 1324px; //434X2 + 360 + 32X3
+		  width: 1366px;
+		  
 		  @include breakpoint(max-width $screen_width1800){
+		  
 		    width: 67.5%;
 			width: 1024px;
-			margin-left: 96px; //6.4%;
+			margin-left: 118px; //6.4%;
 		  }
 		  @include breakpoint(max-width $screen_width1440){
 		    width: 960px;
 			width: 800px;
 			width: 798px;
-			margin-left: 64px;
+			//margin-left: 64px;
 		  }
 		  @include breakpoint(max-width $screen_width1200){
 		     
-			margin-left: 48px; 
+			margin-left: 64px; 
 			width: 720px;
 		  }
 		  @include breakpoint(max-width $screen_width1024){
 		    margin-left: 64px;
-			width: 600px;
+			//width: 600px;
+			width: 620px;
 		  }
 		  @include breakpoint(max-width $screen_width960){
 		    margin-left: 48px;
-			width: 522px;
+			//width: 522px;
+			width: 580px;
 		  }
 		  @include breakpoint(max-width $screen_width768){
 		    margin: 0 auto;
@@ -708,32 +809,62 @@
 		  .recommend_works_carousel{
 		    position: relative;
 		    width: 100%;
+			margin-left: 32px;
+			margin-bottom: -32px;
+			@include breakpoint(max-width $screen_width1800){
+			  margin-left: 0;
+		      margin-bottom: 0;
+		    }
 		  }
 		  .page{
-		    width: 300px;
+		    
 			margin-bottom: 32px;
-			&.margin_top1:before{
+			&:not(:nth-child(3)){
+			  width: 434px;
+			  //height: 290px;
+			  .recommend_works_photo{
+			    //padding-top: 133.33% !important; /* 3:4 Aspect Ratio */
+			    //padding-top: 138% !important;
+				
+			    //padding-top: 66.66%; /* 3:2 Aspect Ratio */
+			    padding-top: 67%;
+				img{
+				  @include absolute-middle;
+				}
+			  }
+			}
+			&:nth-child(3){
+			  width: 360px;
+			  //height: 496px;
+			  max-height: 580px; //太長會與MORE BTN重疊
+			  .recommend_works_photo{
+			    img{
+				  vertical-align: middle;
+				}
+			  }
+			}
+			&.margin_top1::before{
 			  content: '';
 	          width: 100%;
 	          height: 0;
 			}
-			&.margin_top2:before{
+			&.margin_top2::before{
 	          content: '';
-	          display: inline-block;
-	          width: 100%;
-	          height: 32px;
+	          display: block;
+			  width: 100%;
+	          height: 64px; //32px;
             }
-			&.margin_top3:before{
+			&.margin_top3::before{
 	          content: '';
-	          display: inline-block;
+	          display: block;
 	          width: 100%;
-	          height: 64px;
+	          height: 32px; //64px;
             }
-			&.margin_top4:before{
+			&.margin_top4::before{
 	          content: '';
-	          display: inline-block;
+	          display: block;
 	          width: 100%;
-	          height: 96px;
+	          height: 164px; //96px;
             }
 			&:not(:first-child){ //已寫在JS設定
 			  //margin-left: 32px;
@@ -741,6 +872,7 @@
 		        //margin-left:16px;
 		      }
 			}
+			/*
 			@include breakpoint(max-width $screen_width1800){
 		      width: 232px;
 		    }
@@ -757,8 +889,17 @@
 			@include breakpoint(max-width $screen_width960){
 			  width: 244px;
 		    }
+			*/
+			@include breakpoint(max-width $screen_width1440){
+			  width: 46% !important;
+			}
 			@include breakpoint(max-width $screen_width768){
-			  width: 400px;
+			  width: 400px !important;
+			  margin-bottom: 0;
+			  .recommend_works_photo{
+			    padding-top: 100% !important; /* 1:1 Aspect Ratio */
+			  }
+			  
 		    }
 			@include breakpoint(max-width $screen_width500){
 			  width: 411px;
@@ -770,6 +911,8 @@
 			@include breakpoint(max-width $screen_width360){
 			  width: 286px;
 		    }
+			
+			
 		  }
 		  .owl-nav{
 		    display: none;
@@ -777,8 +920,9 @@
 	        z-index: 8;
 	        @include breakpoint(max-width $screen_width768){
 	          display: block;
-			  top: 50%;
-		      bottom: unset;
+			  //top: 50%;
+		      top: 35%;
+			  bottom: unset;
 		      width: 100%;
 	        }
 	        i{
@@ -817,11 +961,13 @@
 			  top: 0;
 			  left: 0;
 			  //padding: 32px;
-			  padding: 32px 32px 32px 0;
+			  //padding: 32px 32px 32px 0;
+			  padding: 32px 32px 16px 0; //16px->以防照片太扁
 			  width:100%;
               height:100%;
 			  @include display-flex(flex-end,column); 
 			  //display: none;
+			  opacity: 0;
 			  &>div{
 			    @include flex(-1 0 0);
 			  }
@@ -835,10 +981,13 @@
 			  .recommend_creative_info{
 			    padding-left: 32px;
 			    width: 100%;
+				height: 100%;
 			    @include flex(1); //讓INFO撐高
                 @include display-flex(flex-end,column); 
 				justify-content: center;
 			    .recommend_creative_info_wrap{
+				    margin-top: 32px; //16px->以防照片太扁
+					margin-top: 16px; //16px->以防照片太扁
 				    position: relative;
 				    @include display-flex(flex-start,column);
 					width: 100%;
@@ -852,8 +1001,8 @@
 				  text-align: justify;
 				  line-height: 32px;
 				  min-height: 32px;
-				  max-height: 160px; //32X5
-				  //@include line-clamp(vertical,5);
+				  max-height: 96px; //32X3
+				  @include line-clamp(vertical,3);
 				  @include ellipsis;
 				  @include word-break;
 				  margin-bottom: 32px;
@@ -866,13 +1015,14 @@
 				  margin-top: 16px;
 				  font-size: $font_size14;
 				  //line-height: 20px;
+				  text-align: right;
 				  .recommend_creative_name_wrap{
 				    height: 20px;
 					line-height: 20px;
 					overflow: hidden;
 					text-align: right;
-				    @include display-flex(flex-end,row);
-				  
+				    //@include display-flex(flex-end,row);
+					@include display-inline-flex(flex-end,row);
 				  }
 				  span:first-child{
 					  @include flex(-1 0 0);
@@ -889,13 +1039,6 @@
 				      font-size: $font_size18;
 					}
 				  a{
-				    //width: 100%;
-					//text-align: right;
-				    //@include display-flex(flex-end,row);
-				    //display: inline-block;
-					overflow: hidden;
-					height: 20px;
-					line-height: 20px;
 					color: $sub_color;
 					&:hover{
 					  color: $main_color2;
@@ -917,7 +1060,8 @@
 					right: 32px;
 					//right: 26px;
 					//width: 240px;
-					width: 100%;
+					//width: 100%;
+					width: 102%;
 				    border-bottom: 1px solid $grey_color2;  
 				  }
 				  
@@ -925,7 +1069,8 @@
 			  }
 			  .recommend_creative_icon{
 			    //margin-top: 32px; 
-			    margin-top: 16px; 
+			    //margin-top: 16px; 
+				margin-top: 18px; //16px->以防照片太扁
 				text-align: right;
 				font-size: $font_size24;
 				i{
@@ -936,9 +1081,17 @@
 			.recommend_works_wrap{
 			  //position: relative;
 			  .recommend_works_photo{
+			  
+			    background: url('../images/assets-v7/grey-bg.png') 100% 100%;
+				@include border-radius(4px);
+			    position: relative;
+				width: 100%;
+				
 			    img{
 				  width: 100%; //300px;
-				  vertical-align: middle;
+				  height: 100%;
+				  @include opacity(0.9);
+				  object-fit: cover;
 				  @include border-radius(4px);
 				}
 			  }
@@ -962,15 +1115,15 @@
 				.recommend_works_title{
 				  text-align: left;
 				  font-weight: initial;
-				  //先設定最多3行
+				  //先設定最多2行
 				  overflow: hidden;
 				  font-size: $font_size16;
 				  line-height: 32px;
-				  @include line-clamp(vertical,3);
+				  @include line-clamp(vertical,2);
 				}
 				.recommend_works_view{
 				  font-size: $font_size14;
-				  &:before{
+				  &::before{
 				    content: '';
 					width: 100%;
 					margin-bottom: 16px;
@@ -981,6 +1134,7 @@
 			  }
 			}//.recommend_works_wrap
 		  }//.recommend_works_item
+		  /*
 		  .recommend_works_item_hover:hover{
 		    .recommend_creative_wrap{
 			  transition:all .8s;
@@ -988,13 +1142,17 @@
 			  @include display-flex(flex-end,column); 
 			}
 		  }
-		  
+		  */
 		  
 		}//.recommend_content_works
 	  }//.recommend_content
 	  .recommend_more_btn{
 	    //margin-bottom: 96px;
-	    text-align: center;
+	    //text-align: center;
+		margin-top: -64px;
+		@include breakpoint(max-width $screen_width1800){
+		  margin-top: 0;
+		}
 		@include breakpoint(max-width $screen_width768){
 		  margin-bottom: 48px;
 		}
@@ -1005,25 +1163,42 @@
     // 範例區塊開始 --------------------------------------------------------
 	
 	.cooperation_area{
-	  background: #fafafa;
-	  padding-top: 96px;
+	  //background: #fafafa;
+	  //padding-top: 96px;
 	  @include breakpoint(max-width $screen_width768){
-		 padding-top: 48px;
+		 //padding-top: 48px;
 	  }
 	}
 	.cooperation_title_area{  //跟著推薦區標題
-	  text-align: right;
+	  //text-align: right;
 	  @include breakpoint(max-width $screen_width768){
-	    text-align: center;
+	    padding-top: 48px;
+		text-align: center;
 	  }
 	}
 	.cooperation_content{
-	  margin: 96px auto 64px auto;
+	  //padding-bottom: 96px;
+	  //margin: 96px auto 64px auto;
+	  //margin: 96px auto 0 auto;
 	  @include breakpoint(max-width $screen_width768){
-	    margin: 48px auto 64px auto;
+	    //margin: 48px auto 64px auto;
+		//margin: 48px auto 0 auto;
+		//padding-bottom: 48px;
 	  }
 	}
+	
+	.cooperation_more_btn{
+	  margin-top: -32px;
+	  @include breakpoint(max-width $screen_width768){
+		margin-top: -22px;
+	  }
+	}
+	
 	.cooperation_sample{
+	  //margin-bottom: 32px;
+	  @include breakpoint(max-width $screen_width768){
+		margin-bottom: 0;
+	  }
 	  @include display-flex(center,row);
       @include flex-flow(row wrap);	  
 	  justify-content: center;
@@ -1033,8 +1208,11 @@
 		&:nth-child(odd){
 		  margin-right: 64px;
 		  @include breakpoint(max-width $screen_width768){
-		  margin-right: 0;
+		    margin-right: 0;
 		  }
+		}
+		@include breakpoint(max-width $screen_width1800){
+		  width: 580px;
 		}
 		@include breakpoint(max-width $screen_width1600){
 		  width: 480px;
@@ -1057,21 +1235,63 @@
 		    position: relative;
 		    //width: 100%;
             padding-top: 68.75%; //640X440
+			background: url('../images/assets-v7/grey-bg.png') 100% 100%;
 			img{
 			  @include absolute-middle;
 			  width: 100%;
 			  height: 100%;
 			  object-fit: cover;
+			  @include opacity(0.9);
 			}
 		  }
 		}//.cooperation_sample_photo
 		.cooperation_sample_info{
 		  position: relative;
+		  //border: $border_width $border_style $grey_color2;
 		  z-index: 1;
 		  margin: -64px 32px 64px 32px;
 		  padding: 32px;
 		  text-align: left;
 		  background: rgba(255,255,255,0.95);
+		  
+		  &>a{
+		    &::before{
+			  content: "";
+			  position: absolute;
+              z-index: -1;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+			  border: $border_width $border_style $grey_color2;
+			}
+			transform: perspective(1px) translateZ(0);
+		    transition-property: color;
+		    transition-duration: 0.5s;
+			&::after{
+		      content: "";
+              position: absolute;
+              z-index: -1;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: $main_color2;
+              -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+              -webkit-transform-origin: 50% 0;
+              transform-origin: 50% 0;
+              -webkit-transition-property: transform;
+              transition-property: transform;
+              -webkit-transition-duration: 0.5s;
+              transition-duration: 0.5s;
+              //-webkit-transition-timing-function: ease-out;
+              //transition-timing-function: ease-out;
+			  
+			  //-webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+              //transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+		    }
+		  }
 		  @include breakpoint(max-width $screen_width768){
 		    margin: -32px 16px 48px 16px;
 		    padding: 16px;
@@ -1087,7 +1307,7 @@
 		      line-height: 28px;
 			  @include line-clamp(vertical,2);
 		    }
-			&:before{
+			&::before{
 			  position: absolute;
 			  top: 12px;
 			  left: 50%;
@@ -1119,29 +1339,114 @@
 			@include breakpoint(max-width $screen_width768){
 		      font-size: $font_size14;
 		      line-height: 24px;
+			  min-height: 96px; //24X4
 			  @include line-clamp(vertical,4);
 		    }
 		  }
 		}//.cooperation_sample_info
-		
+		/*
+		.cooperation_sample_info_hover:hover{
+		  background: rgba(0,172,193,0.95);
+		  a:hover{
+			color: $sub_color !important;
+		  }
+		}
+		*/
 	  }
 	}
     // 範例區塊結束 --------------------------------------------------------
 	
 	// 伙伴區塊開始 --------------------------------------------------------
-	.partner_content{
-	  display: inline-block;
+	.partner_area{
 	  position: relative;
-	  margin-bottom: 218px;
+	  width: 100%;
+	  background: $grey_color4;
+	  padding-top: 72px;
+	  @include display-flex(flex-start,row);
+	  justify-content: center;
+	  &>div{
+	    @include flex(-1 0 0);
+	  }
 	  @include breakpoint(max-width $screen_width768){
-	    margin: 48px auto 0 auto;
+	    padding-top: 48px; 
+		@include display-flex(flex-start,column);
+	  }
+	  .partner_title_area{
+	    text-align: left;
+	    width: 240px;
+		@include breakpoint(max-width $screen_width1200){
+	      width: 180px;
+	    }
+		@include breakpoint(max-width $screen_width768){
+		  text-align: center;
+		  width: 100%;
+		}
+		.partner_title{
+		  width: 100%;
+		  padding-bottom: 32px;
+		  border-bottom: $border_width $border_style $grey_color2;
+		  
+		  @include breakpoint(max-width $screen_width768){
+	        padding-bottom: 16px;
+			border-bottom: none;
+	      }
+		}
+	    .partner_desc{
+		  padding-top: 32px;
+	      //width: 160px;
+		  width: 170px;
+	      font-weight: normal;
+	      font-size: $font_size16;
+		  line-height: 32px;
+		  text-align: left;
+		  @include breakpoint(max-width $screen_width768){
+		    padding-top: 0;
+		    width: 100%;
+		    font-size: $font_size12;
+			text-align: center;
+			line-height: 16px;
+		  }
+	    }
+	  }
+	}
+	
+	.partner_content{
+	  position: relative;
+	  margin: 0 0 72px 96px;
+	  width: 936px; //832 + 104
+	  //display: inline-block;
+	  //margin-bottom: 218px;
+	  @include breakpoint(max-width $screen_width1440){
+	    margin: 0 0 72px 32px;
+		width: 840px;
+	  }
+      @include breakpoint(max-width $screen_width1200){
+		width: 750px;
+	  }
+	  @include breakpoint(max-width $screen_width1024){
+		//margin: 0 0 72px 24px;
+		width: 580px;
+	  }
+	  @include breakpoint(max-width $screen_width960){
+		//width: 560px;
+		width: 480px;
+	  }
+	  @include breakpoint(max-width $screen_width768){
+	    margin: 16px auto 32px auto;
+		width: 100%;
 	  }
 	}
 	
 	.partner_carousel{
 	    position: relative;
-		width: 1440px;
-	    height: 360px; //2 rows
+		@include display-flex(flex-start,row);
+	    @include flex-wrap(wrap);
+	    //justify-content: center;
+		/*
+		//width: 1440px;
+		width: 1260px;
+		//height: 360px; //2 rows
+		height: 316px;
 		@include breakpoint(max-width $screen_width1600){
 	      width: 1200px;
 	    }
@@ -1153,92 +1458,47 @@
 	    }
 		@include breakpoint(max-width $screen_width960){
 		  width: 600px;
+		  height: 300px;
 	    }
 		@include breakpoint(max-width $screen_width768){
 		  width: 376px;
 		  //height: 852px;
 	    }
-		
-		.owl-stage-outer{
-		  @include breakpoint(max-width $screen_width768){
-	        height: 852px;
-	      }
-		}
-		
-		.owl-stage{
-		  writing-mode: vertical-lr;
-		  @include breakpoint(max-width $screen_width768){
-	        writing-mode: horizontal-tb;
-			width: 376px !important;
-	      }
-		}
-		
-		.page{
-		  @include breakpoint(max-width $screen_width768){
-		    float:left;
-			&:nth-child(4n),&:nth-child(4n+1){ //1, 4, 5, 8, 9, 12...
-	          background: #d4d4d4;
-            }
-	      }
-		}
-		
-		
-		.owl-item{
-		  position: relative;
-		  float: left;
-		  width: 240px !important;
-		  margin: 0 !important;
-		  &:nth-child(4n),&:nth-child(4n+1){ //1, 4, 5, 8, 9, 12...
-	        background: #d4d4d4;
-          }
-		  @include breakpoint(max-width $screen_width960){
-	        width: 200px !important;
-	      }
-		  @include breakpoint(max-width $screen_width768){
-	        width: 188px !important;
-	      }
-		}
-		
-		
-		.owl-nav{
-            position: absolute;
-	        top: 50%;
-		    width: 100%;
-	        @include breakpoint(max-width $screen_width768){
-	          display: none;  
-	        }
-	        i{
-              -webkit-text-stroke: 1px #ffffff;
-            }
-	        &>div{
-	          display: inline-block;
-	        }
-	        .owl-prev, .owl-next{
-			  position: absolute;
-	          text-align: center;
-	          background: #ffffff !important;
-			  width: 56px;
-		      height: 56px;
-		      line-height: 56px;
-		      @include breakpoint(max-width $screen_width768){
-		        width: 36px;
-		        height: 36px;
-		        line-height: 36px;
-		      }
-	        }
-	        .owl-prev{
-	          left: -56px;
-	        }
-	        .owl-next{
-	          right: -56px; 
-	        } 
-          }//.owl-buttons
-		
+		@include breakpoint(max-width $screen_width500){
+		  width: 100%;
+		  //display: block;
+		  //margin: 0 auto;
+		  height: 100%;
+		  @include display-flex(center,row);
+		  @include flex-wrap(wrap);
+		  justify-content: center;
+	    }
+		*/
+		@include breakpoint(max-width $screen_width768){
+		  //justify-content: center;
+		  justify-content: space-between;
+	    }
+	 
+	   //第二排的第一個要往右移半個
+	   .page:nth-child(5){
+	     margin-left: 104px;
+		 @include breakpoint(max-width $screen_width1024){
+		   margin-left: 0;
+	     }
+		 @include breakpoint(max-width $screen_width768){
+		   //margin-left: 0;
+	     }
+	   }
 	 }
+	 
+	 
 	.partner_item{
-	  width: 240px;
-	  height: 180px;
+	  //width: 240px;
+	  width: 208px;
+	  //height: 180px;
+	  height: 112px;
 	  overflow: hidden;
+	  /*
 	  @include breakpoint(max-width $screen_width960){
 		 width: 200px;
 		 height: 150px;
@@ -1247,6 +1507,31 @@
 		 width: 188px;
 		 height: 142px;
 	  }
+	  */
+	  @include breakpoint(max-width $screen_width1440){
+		width: 180px;
+		height: 100px;
+	  }
+	  @include breakpoint(max-width $screen_width1200){
+		width: 160px;
+		height: 88px;
+	  }
+	  @include breakpoint(max-width $screen_width1024){
+		width: 180px;
+		height: 100px;
+		margin-bottom: 8px;
+	  }
+	  @include breakpoint(max-width $screen_width960){
+		//width: 180px;
+		//height: 100px;
+		width: 160px;
+		height: 88px;
+		margin-bottom: 8px;
+	  }
+	  @include breakpoint(max-width $screen_width768){
+		 width: 32vw;
+	  }
+	  
 	  &>a{
 	    cursor: default;
 	  }
@@ -1255,14 +1540,18 @@
 	    position: relative;
 	    width: 100%;
 		height: 100%;
-		padding: 22px 26px;
 		img{
 		  @include absolute-middle;
 		  //top: -10%;
 		  width: 100%; //120%; //140%;
 		  height: 100%; //120%; //140%;
 		  object-fit: cover;
-		  @include opacity(0.9);
+		  //@include opacity(0.9);
+		  mix-blend-mode: multiply;
+		  @include breakpoint(max-width $screen_width768){
+		    width: 84%;
+		    height: 84%;
+	      }
 		}
 	  }
 	}//.partner_item
@@ -1270,6 +1559,52 @@
 	
 	
 }//.main_content_v2
+//所有main_content_v2裡的HOVER動作
+.main_content_v2_hover{
+  .recommend_works_item:hover{
+	.recommend_creative_wrap{
+	  //transition:all .8s;
+	  transition: .5s ease;
+	  text-align: center;
+	  @include display-flex(flex-end,column); 
+	  //display: flex !important;
+	  //align-items: flex-end !important;
+	  //flex-direction: column !important;
+	  opacity: 1 !important;
+	}
+  }
+  .cooperation_sample_info:hover{
+    //background: rgba(0,172,193,0.95) !important;
+	&>a{
+	  &::before{
+	    border: $border_width $border_style $main_color2;
+	  }
+	  &::after{
+      -webkit-transform: scaleY(1) !important;
+      transform: scaleY(1) !important;
+      -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+      transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+	  //border: 1px solid $main_color2;
+	}
+	
+	}
+	
+	a{color: $sub_color !important;}
+	a:hover{
+	  color: $sub_color !important;
+	}
+	.cooperation_sample_title::before{
+	  content:'';
+	}
+  }
+  /*
+  .btn_new_v2:hover{
+    &::before{
+      border-bottom: 1px solid $main_color2;
+    }
+  }
+  */
+}
 
 
 
@@ -4685,7 +5020,7 @@
 	    transform: none;
 	  }
 	  
-	  .at-resp-share-element:after, .at-resp-share-element:before{
+	  .at-resp-share-element:after, .at-resp-share-element::before{
 	    content: '';
 		width: 0;
 	  }

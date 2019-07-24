@@ -63,22 +63,22 @@ $font_weight: 700; //500;
 $letter_spacing: 1.5px;
 $letter_spacing2: 2px;
 $line_height: 25px;
-$font_size12: 12px; //.pin_creator
+$font_size10: 10px;
+$font_size12: 12px;
 $font_size14: 14px;
 $font_size16: 16px;
 $font_size18: 18px;
 $font_size20: 20px;
-$font_size22: 22px; //.mobile_menu i, .plan_info, #creative_name, .album_content_box_icon i
-$font_size24: 24px; //#alert_top_new, .main_content ul li, .story_img, .step_title, .plan_info,
-                    //.creative_title div, .creative_num, .btn_back_creative, #creative_phone, 
-					//#creative_password, #creative_aboutme, .album_content_back, .content_box_name
-$font_size26: 26px; //.main_content2 .tab-container ui li, .star_name, .lock_box i
-$font_size28: 28px; //.plan_info_num, .lock_box i
-$font_size38: 38px; //.main_content2 .tab-container ui li, .creative_num
+$font_size22: 22px;
+$font_size24: 24px;
+
+$font_size26: 26px; 
+$font_size28: 28px; 
+$font_size38: 38px; 
 $font_size42: 42px; 
-$font_size48: 48px; //.creative_title div, .creative_num
-                    //.main_content2 .tab-container ui li
+$font_size48: 48px; 
 					
+$font_size32: 32px;
 					
 /* font color */
 $main_color1: #0f8399;
@@ -91,6 +91,7 @@ $grey_color: #4d4d4d;
 $grey_color1: #9e9e9e;
 $grey_color2: #d4d4d4;
 $grey_color3: #f2f2f2;
+$grey_color4: #fafafa;
 $grey_gradient_light: #ededed;
 $grey_gradient_dark: #d7d7d7;
 $pink_color: #ad1457;

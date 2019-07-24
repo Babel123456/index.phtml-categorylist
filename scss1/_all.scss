@@ -1,6 +1,10 @@
 /* _all.scss */
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=cyrillic-ext,latin,greek-ext);
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+//20190719 小K新樣式
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
+
 //20190123: 小K字型(思源柔體)
 @font-face {
   font-family: Gen Jyuu GothicL Regular;
@@ -32,9 +36,11 @@ a:focus{
   color: $grey_color;
 }
 body{
-  font-family: $font_family, $font_family2;
+  //font-family: $font_family, $font_family2;
   font-family: Gen Jyuu GothicL Regular;
   font-family: Gen Jyuu GothicL Regular, $font_family, $font_family2;
+  
+  font-family: $font_family, $font_family2;
   font-size: $font_size16; 
   color: $grey_color;
   background: $sub_color;
@@ -61,7 +67,9 @@ body{
   ::-webkit-scrollbar-thumb:hover {
     //background: $grey_color2; //Handle on hover
   }
-  
+  i{
+    //-webkit-text-stroke: 1px $sub_color;
+  }
 }
 
 
@@ -75,6 +83,7 @@ body{
   background: url('../images/assets-v7/grey-bg.png') 100% 100%;
   //img{
   .profile_img{
+    object-fit: cover;
     width: $img_width100p;
     vertical-align: middle;
     @include opacity(0.9);
@@ -492,7 +501,7 @@ input[type="text"],input[type="password"]{
   #login_menu, .login_menu{
     width: $menu_width;
     max-height: $menu_header_height;
-	font-size: $menu_font18;
+	//font-size: $menu_font18;
 	@include breakpoint(max-width $screen_width768){
       width: $width100p;
 	  max-height: $menu_header_max_height; //96vh;
@@ -656,6 +665,7 @@ input[type="text"],input[type="password"]{
 	  @include flex(-1 0 0);
 	}
 	.top_left_area{
+	  font-weight: $font_weight;
 	  @include flex(2);
       &>div:not(:first-child){
 	    margin-left: 64px;
@@ -691,14 +701,12 @@ input[type="text"],input[type="password"]{
 	       height: 32px;
 	     }
 	   }
-	   /*
 	   &:last-child{
-	     margin-left: 16px;
+	     margin-left: 16px !important;
 		 @include breakpoint(max-width $screen_width960){
-	       margin-left: 8px;
+	       //margin-left: 8px !important;
 	     }
 	   }
-	   */
 	 }
 	 .top_center_area{
 	   .header_logo_v2{
@@ -815,6 +823,7 @@ input[type="text"],input[type="password"]{
 	   }//.header_search_v2
 	   
 	   .header_menu_v2{
+	     
 	     @include width-max-content;
 	     margin-left: 64px;
 		 @include breakpoint(max-width $screen_width1200){
@@ -829,12 +838,25 @@ input[type="text"],input[type="password"]{
 		 @include breakpoint(max-width $screen_width768){
 	       margin-left: 0;
 	     }
+		 
+		 .login_menu_area{
+		   &>.sign_link{
+		     @include breakpoint(max-width $screen_width768){ 
+			   display: none;
+	         }
+		   }
+		 }
+		 
 		 .login_link{
+		   cursor: pointer;
 		   @include display-flex(center,row);
 		   @include breakpoint(max-width $screen_width768){
 	         display: none;
 	       }
-		   img{
+		   //img{
+		   .profile_img_wrap{
+		     //@include border-radius($border_radius100p);
+			 border: none;
 			 width: 36px;
 			 height: 36px;
 			 @include breakpoint(max-width $screen_width960){
@@ -845,6 +867,9 @@ input[type="text"],input[type="password"]{
 	           width: 32px;
 	           height: 32px;
 	         }
+			 .profile_img{
+		       height: 100%;
+		     }
 		   }
 		   i{
 			 margin-left: 8px;
@@ -854,24 +879,38 @@ input[type="text"],input[type="password"]{
 		 .dropdown_menu{ //登入選單
 		   top: 191px; //192px;
 		   padding: 0; //先歸零以符合新首頁樣式選單
+		   padding-bottom: 192px; //為符合選單滿高度100vh
+		   img{
+		     margin-right: 0; 
+		   }
 		   @include breakpoint(max-width $screen_width768){
 	         top: 43px; //44px;
+			 min-width: initial;
+			 //padding-bottom: 44px; //為符合選單滿高度100vh
 	       } 
 		 }
+		 .show_block{
+           //max-height: -moz-max-content !important;
+           //max-height: -webkit-max-content !important; 
+           //max-height: none !important;
+		   max-height: 100vh !important;
+         }
 		 .login_menu{  //登入選單
 		   font-size: 16px;
+	       line-height: 20px;
+		   font-weight: $font_weight;
 		   text-align: center;
 		   width: 480px;
-		   max-height: $menu_header_height;
+		   //max-height: $menu_header_height;
+		   height: 100vh;
 		   @include breakpoint(max-width $screen_width768){
 	         width: 100%;
-			 max-height: 100vh;
+			 //max-height: 100vh;
 	       }
 		   a{
-		     font-weight: 500 !important;
+		     font-weight: $font_weight !important;
 		   }
 		   &>ul{
-		     //padding: 32px;
 		       &>li{
 			     &:not(:last-child){
 			       border-bottom: 1px solid $grey_color2;
@@ -879,23 +918,37 @@ input[type="text"],input[type="password"]{
 			     width: 100%;
 				 text-align: center;
 				 &>ul{
+				   //padding: 0 32px;
 				   padding-bottom: 32px;
 				   &>li{
+				     padding: 0 32px;
 				     margin-top: 32px;
 				   }
 				 }
 			     .login_menu_user_info{ //小版出現作者頭圖姓名
 				   display: none;
 			       @include breakpoint(max-width $screen_width768){
-				     margin-left: -40px;
+				     //margin-left: -40px;
 	                 @include display-flex(center,row);
 			         justify-content: center;
 	               } 
 				   .login_menu_user_info_image{
-			         width: 24px;
-				     height: 24px;
+					 .profile_img_wrap{
+					   width: 24px;
+				       height: 24px;
+					   border: none;
+					   .profile_img{
+					     height: 100%; 
+					   }
+					 }
 			       }
 			       .login_menu_user_info_name{
+				     margin-right: 40px;
+				     text-align: left;
+				     overflow: hidden;
+					 line-height: 20px;
+					 @include line-clamp(vertical,1);
+		             @include word-break;
 			         margin-left: 16px;
 				     color: $main_color2;
 			       }
@@ -965,20 +1018,23 @@ input[type="text"],input[type="password"]{
 .footer_v2{
   position: relative;
   width: 100%;
-  height: 304px;
+  //height: 304px;
+  height: 192px;
   @include display-flex(center,row);
   justify-content: center;
   background: $grey_color;
   color: $sub_color;
   @include breakpoint(max-width $screen_width768){
-    height: 174px;
+    height: 112px;
+	padding: 32px 0;
+	@include display-flex(flex-start,row);
   }
   a{
     color: $sub_color;
   }
   .footer_area_v2{
     position: relative;
-	width: 100%;
+	//width: 100%;
 	@include display-flex(center,row);
 	justify-content: center;
 	&>div{
@@ -990,20 +1046,24 @@ input[type="text"],input[type="password"]{
 	    margin-right: 32px;
 	  }
 	  @include breakpoint(max-width $screen_width768){
-        margin-right: 0;
-		@include flex(0 0 50%);
+	    margin-right: 0;
+		@include flex(0);
       }
 	}
 	&>div:last-child{
 	  @include breakpoint(max-width $screen_width768){
-	    @include flex(0 0 138px);
+	    @include flex(1);
 	  }
 	}
 	@include breakpoint(max-width $screen_width768){
-      margin: 20px 16px;
-	  @include display-flex(flex-start,row);
+	  @include display-inline-flex(flex-start,row);
 	  justify-content: flex-start;
     }
+	.footer_social_link{
+	  .social_link{
+	    display: none;
+	  }
+	}
 	
   }//.footer_area_v2
   .social_link{
@@ -1035,7 +1095,7 @@ input[type="text"],input[type="password"]{
   }
   
   .copy_right{
-    margin-top: 32px;
+    //margin-top: 32px;
 	@include breakpoint(max-width $screen_width768){
 	  display: none;
 	}
@@ -1049,23 +1109,28 @@ input[type="text"],input[type="password"]{
 	  margin-left: 16px;
 	}
 	@include breakpoint(max-width $screen_width768){
-	  margin-bottom: 32px;
-	  
-		font-size: $font_size12;
-	    line-height: 18px;
+	  margin-left: 32px;
+	  font-size: $font_size12;
+	  line-height: 16px;
 	}
 	&:nth-child(3):after { 
 	  content:"\A"; white-space:pre; 
+	  @include breakpoint(max-width $screen_width768){
+	    content:"";
+	  }
 	}
 	&:first-child{
 	  margin-left: 16px;
 	  @include breakpoint(max-width $screen_width960){
-	  margin-left: 8px;
-	}
+	    margin-left: 8px;
+	  }
+	  @include breakpoint(max-width $screen_width768){
+	    margin-left:0;
+	  }
 	}
 	&:nth-child(odd){
 	  @include breakpoint(max-width $screen_width768){
-	    margin-left:0;
+	    //margin-left:0;
 	  }
 	}
   }
@@ -1280,7 +1345,7 @@ input[type="text"],input[type="password"]{
     display: block !important;
   //}
 }
-.notifier_icon:before{
+.notifier_icon::before{
   content: ' ';
 }
 .notifier_icon{
@@ -1341,16 +1406,52 @@ input[type="text"],input[type="password"]{
 /* 按鈕 v2 */
 .btn_new_v2{
   display: inline-block;
-  width: 192px;
-  height: 96px;
-  line-height: 96px;
-  text-align: center;
-  font-size: $font_size16;
-  border: 1px solid $grey_color;
+  //width: 192px;
+  width: 196px;
+  //height: 96px;
+  height: 64px;
+  //line-height: 96px;
+  line-height: 64px;
+  //text-align: center;
+  text-align: left;
+  //font-size: $font_size16;
+  //font-size: $font_size24;
+  font-size: $font_size18;
+  //border: 1px solid $grey_color;
+  //border-bottom: 1px solid $grey_color;
   @include breakpoint(max-width $screen_width768){
-    width: 144px;
-    height: 72px;
-    line-height: 72px;
+    font-size: $font_size16;
+	text-align: right;
+    //width: 144px;
+	//width: 152px;
+	width: max-content;
+    //height: 72px;
+	height: 18px;
+    //line-height: 72px;
+	line-height: 18px;
+	border: none;
+  }
+  &::before{
+    position: absolute;
+	content: '';
+	//display: block;
+	display: inline-block;
+	width: 196px;
+    border-bottom: 1px solid $grey_color;
+    top: 63px;
+	@include breakpoint(max-width $screen_width768){
+	  position: relative;
+	  top: -5px;
+	  right: 16px;
+	  width: 96px;
+	  border-bottom: 1px solid $grey_color;
+    }
+  }
+}
+
+.btn_new_v2:hover{
+  &::before{
+    border-bottom: 1px solid $main_color2;
   }
 }
 
@@ -1471,6 +1572,7 @@ label.error {
   @include border-radius(0); //先歸零以符合新首頁樣式選單
   background: $sub_color;
   overflow: auto;
+  @include box-shadow(none);
   &>ul{
     &>li{
 	  @include width-max-content;
@@ -1502,6 +1604,11 @@ label.error {
   .login_menu_area{
     .dropdown_menu{
       top: 95px !important;
+	  padding-bottom: 96px; //為符合選單滿高度100vh
+	  @include breakpoint(max-width $screen_width768){ 
+        top: 43px !important;
+		//padding-bottom: 44px; //為符合選單滿高度100vh
+      }
 	}
   }
   .header_search_v2{
@@ -1513,7 +1620,7 @@ label.error {
     //top: 95px !important;
 	//top: 39px !important;
 	@include breakpoint(max-width $screen_width768){ 
-      top: 43px !important;
+      //top: 43px !important;
     }
   }
 }

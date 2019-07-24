@@ -70,6 +70,13 @@
   -webkit-transform: scaleY($scaleY);
   transform: scaleY($scaleY);
 }
+@mixin box-shadow($box-shadow){
+  -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+}
+
+
 @mixin border-box($border-box){
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -185,6 +192,14 @@
   -webkit-transform: scaleY($scaleY);
   transform: scaleY($scaleY);
 }
+@mixin scale($scaleX,$scaleY){
+  -moz-transform: scale($scaleX,$scaleY);
+  -o-transform: scale($scaleX,$scaleY);
+  -webkit-transform: scale($scaleX,$scaleY);
+  transform: scale($scaleX,$scaleY);
+}
+
+
 @mixin border-box($border-box){
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
